@@ -1,5 +1,4 @@
 VERSION 5.00
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmsucesos 
    Caption         =   "Sucesos en Tiempo Real"
@@ -14,7 +13,7 @@ Begin VB.Form frmsucesos
    ScaleHeight     =   6225
    ScaleWidth      =   7470
    StartUpPosition =   3  'Windows Default
-   Begin ComctlLib.ListView ListView1 
+   Begin MSComctlLib.ListView ListView1 
       Height          =   735
       Left            =   3480
       TabIndex        =   13

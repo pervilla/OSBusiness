@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmPesos 
    Caption         =   "Transfer. Import. (Recepción de Información)"
    ClientHeight    =   6900
@@ -98,7 +98,7 @@ Begin VB.Form frmPesos
          Width           =   3975
       End
    End
-   Begin ComctlLib.ProgressBar barra 
+   Begin MSComctlLib.ProgressBar barra 
       Height          =   195
       Left            =   0
       TabIndex        =   1

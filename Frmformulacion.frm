@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.2#0"; "Comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frmformulacion 
    Caption         =   "Formulación"
    ClientHeight    =   5220
@@ -12,7 +12,7 @@ Begin VB.Form Frmformulacion
    MinButton       =   0   'False
    ScaleHeight     =   5220
    ScaleWidth      =   10950
-   Begin ComctlLib.ListView ListView1 
+   Begin MSComctlLib.ListView ListView1 
       Height          =   375
       Left            =   840
       TabIndex        =   21

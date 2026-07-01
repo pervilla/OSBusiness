@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Begin VB.Form FrmPedPro 
    Caption         =   "Pedidos a Proveedores"
@@ -14,7 +14,7 @@ Begin VB.Form FrmPedPro
    ScaleHeight     =   6975
    ScaleWidth      =   9450
    WindowState     =   2  'Maximized
-   Begin ComctlLib.ListView ListView2 
+   Begin MSComctlLib.ListView ListView2 
       Height          =   735
       Left            =   9120
       TabIndex        =   27
@@ -35,7 +35,7 @@ Begin VB.Form FrmPedPro
       Appearance      =   1
       NumItems        =   0
    End
-   Begin ComctlLib.ListView ListView1 
+   Begin MSComctlLib.ListView ListView1 
       Height          =   735
       Left            =   6000
       TabIndex        =   23

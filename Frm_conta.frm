@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.1#0"; "COMCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form FORM_CONTA 
@@ -131,7 +131,7 @@ Begin VB.Form FORM_CONTA
       Top             =   5400
       Width           =   1095
    End
-   Begin ComctlLib.ProgressBar Barra 
+   Begin MSComctlLib.ProgressBar Barra 
       Height          =   255
       Left            =   1800
       TabIndex        =   14

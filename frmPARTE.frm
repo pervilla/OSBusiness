@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.2#0"; "Comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#4.6#0"; "CRYSTL32.OCX"
 Begin VB.Form frmPARTE 
@@ -177,7 +177,7 @@ Begin VB.Form frmPARTE
       Top             =   5280
       Width           =   1215
    End
-   Begin ComctlLib.ListView ListView1 
+   Begin MSComctlLib.ListView ListView1 
       Height          =   495
       Left            =   6840
       TabIndex        =   17
@@ -341,7 +341,7 @@ Begin VB.Form frmPARTE
          Top             =   480
          Width           =   1215
       End
-      Begin ComctlLib.ProgressBar pb 
+      Begin MSComctlLib.ProgressBar pb 
          Height          =   135
          Left            =   6360
          TabIndex        =   49

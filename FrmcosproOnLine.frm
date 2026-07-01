@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form FrmcosproOnLine 
    ClientHeight    =   1260
    ClientLeft      =   60
@@ -27,7 +27,7 @@ Begin VB.Form FrmcosproOnLine
       Top             =   0
       Width           =   375
    End
-   Begin ComctlLib.ProgressBar P1 
+   Begin MSComctlLib.ProgressBar P1 
       Height          =   195
       Left            =   360
       TabIndex        =   5
@@ -39,7 +39,7 @@ Begin VB.Form FrmcosproOnLine
       _Version        =   327682
       Appearance      =   1
    End
-   Begin ComctlLib.ProgressBar P2 
+   Begin MSComctlLib.ProgressBar P2 
       Height          =   195
       Left            =   360
       TabIndex        =   6

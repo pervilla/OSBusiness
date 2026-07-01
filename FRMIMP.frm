@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.1#0"; "COMCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#4.6#0"; "CRYSTL32.OCX"
 Begin VB.Form FRMIMP 
    Caption         =   "Impresiones ..."
@@ -13,7 +13,7 @@ Begin VB.Form FRMIMP
    MinButton       =   0   'False
    ScaleHeight     =   2505
    ScaleWidth      =   5190
-   Begin ComctlLib.ProgressBar ProgBar 
+   Begin MSComctlLib.ProgressBar ProgBar 
       Height          =   255
       Left            =   360
       TabIndex        =   4

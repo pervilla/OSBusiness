@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.2#0"; "Comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmStockG 
    Caption         =   "Stock por Regla."
    ClientHeight    =   4515
@@ -21,7 +21,7 @@ Begin VB.Form frmStockG
       Top             =   3720
       Width           =   1215
    End
-   Begin ComctlLib.ListView ListView1 
+   Begin MSComctlLib.ListView ListView1 
       Height          =   375
       Left            =   3960
       TabIndex        =   16

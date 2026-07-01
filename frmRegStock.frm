@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Begin VB.Form frmRegStock 
@@ -256,7 +256,7 @@ Begin VB.Form frmRegStock
          Width           =   3375
       End
    End
-   Begin ComctlLib.ProgressBar ProBar 
+   Begin MSComctlLib.ProgressBar ProBar 
       Height          =   255
       Left            =   240
       TabIndex        =   16

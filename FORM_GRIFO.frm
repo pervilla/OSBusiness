@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.2#0"; "COMCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.1#0"; "RICHTX32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#4.6#0"; "CRYSTL32.OCX"
 Begin VB.Form FORM_GRIFO 
@@ -27,7 +27,7 @@ Begin VB.Form FORM_GRIFO
    ScaleWidth      =   9480
    Tag             =   "55"
    WindowState     =   2  'Maximized
-   Begin ComctlLib.ListView LV_ART2 
+   Begin MSComctlLib.ListView LV_ART2 
       Height          =   375
       Left            =   3360
       TabIndex        =   133
@@ -259,7 +259,7 @@ Begin VB.Form FORM_GRIFO
          Width           =   735
       End
    End
-   Begin ComctlLib.ProgressBar Barra 
+   Begin MSComctlLib.ProgressBar Barra 
       Height          =   320
       Left            =   120
       TabIndex        =   54
@@ -319,7 +319,7 @@ Begin VB.Form FORM_GRIFO
       Visible         =   0   'False
       Width           =   375
    End
-   Begin ComctlLib.ListView LV_VEN2 
+   Begin MSComctlLib.ListView LV_VEN2 
       Height          =   375
       Left            =   4440
       TabIndex        =   110
@@ -342,7 +342,7 @@ Begin VB.Form FORM_GRIFO
       Appearance      =   1
       NumItems        =   0
    End
-   Begin ComctlLib.ListView LV_VEN 
+   Begin MSComctlLib.ListView LV_VEN 
       Height          =   495
       Left            =   5640
       TabIndex        =   81
@@ -365,7 +365,7 @@ Begin VB.Form FORM_GRIFO
       Appearance      =   1
       NumItems        =   0
    End
-   Begin ComctlLib.ListView LV_CCM 
+   Begin MSComctlLib.ListView LV_CCM 
       Height          =   375
       Left            =   6480
       TabIndex        =   78
@@ -388,7 +388,7 @@ Begin VB.Form FORM_GRIFO
       Appearance      =   1
       NumItems        =   0
    End
-   Begin ComctlLib.ListView LV_CLI 
+   Begin MSComctlLib.ListView LV_CLI 
       Height          =   375
       Left            =   7320
       TabIndex        =   76
@@ -411,7 +411,7 @@ Begin VB.Form FORM_GRIFO
       Appearance      =   1
       NumItems        =   0
    End
-   Begin ComctlLib.ListView LV_ART 
+   Begin MSComctlLib.ListView LV_ART 
       Height          =   375
       Left            =   8160
       TabIndex        =   77
@@ -12137,7 +12137,7 @@ End If
 
 End Sub
 
-Private Sub LV_ART_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub LV_ART_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
  loc_key = LV_ART.SelectedItem.Index
  If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
@@ -12191,7 +12191,7 @@ End If
 
 End Sub
 
-Private Sub LV_ART2_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub LV_ART2_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
  loc_key = LV_ART2.SelectedItem.Index
  If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
@@ -12251,7 +12251,7 @@ End If
 
 End Sub
 
-Private Sub LV_CLI_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub LV_CLI_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
   loc_key = LV_CLI.SelectedItem.Index
   i_codcli.Text = Trim(LV_CLI.ListItems.Item(loc_key).Text) & " "
@@ -12293,7 +12293,7 @@ End If
 
 End Sub
 
-Private Sub LV_VEN_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub LV_VEN_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
   loc_key = LV_VEN.SelectedItem.Index
   i_codven.Text = Trim(LV_VEN.ListItems.Item(loc_key).Text) & " "

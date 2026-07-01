@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "CRYSTL32.OCX"
@@ -645,7 +645,7 @@ Begin VB.Form FORMGEN
          Width           =   885
       End
    End
-   Begin ComctlLib.ListView LV_TRA 
+   Begin MSComctlLib.ListView LV_TRA 
       Height          =   375
       Left            =   6840
       TabIndex        =   177
@@ -668,7 +668,7 @@ Begin VB.Form FORMGEN
       Appearance      =   1
       NumItems        =   0
    End
-   Begin ComctlLib.ListView LV_ART 
+   Begin MSComctlLib.ListView LV_ART 
       Height          =   375
       Left            =   10440
       TabIndex        =   107
@@ -691,7 +691,7 @@ Begin VB.Form FORMGEN
       Appearance      =   1
       NumItems        =   0
    End
-   Begin ComctlLib.ListView LV_CLI 
+   Begin MSComctlLib.ListView LV_CLI 
       Height          =   375
       Left            =   9600
       TabIndex        =   106
@@ -714,7 +714,7 @@ Begin VB.Form FORMGEN
       Appearance      =   1
       NumItems        =   0
    End
-   Begin ComctlLib.ListView LV_CCM 
+   Begin MSComctlLib.ListView LV_CCM 
       Height          =   375
       Left            =   8760
       TabIndex        =   108
@@ -737,7 +737,7 @@ Begin VB.Form FORMGEN
       Appearance      =   1
       NumItems        =   0
    End
-   Begin ComctlLib.ListView LV_VEN 
+   Begin MSComctlLib.ListView LV_VEN 
       Height          =   375
       Left            =   7920
       TabIndex        =   111
@@ -1927,7 +1927,7 @@ Begin VB.Form FORMGEN
       Top             =   2910
       Width           =   1335
    End
-   Begin ComctlLib.ProgressBar Barra 
+   Begin MSComctlLib.ProgressBar Barra 
       Height          =   195
       Left            =   0
       TabIndex        =   79
@@ -18652,7 +18652,7 @@ End If
 End Sub
 
 
-Private Sub LV_ART_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub LV_ART_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
  loc_key = LV_ART.SelectedItem.Index
  If LK_CODTRA <> 2401 Then GoTo SALTA2401
@@ -18752,7 +18752,7 @@ End If
 
 End Sub
 
-Private Sub LV_CCM_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub LV_CCM_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
   loc_key = LV_CCM.SelectedItem.Index
   i_codban.Text = Trim(LV_CCM.ListItems.Item(loc_key).Text) & " "
@@ -18796,7 +18796,7 @@ End If
 
 End Sub
 
-Private Sub LV_CLI_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub LV_CLI_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
   loc_key = LV_CLI.SelectedItem.Index
   i_codcli.Text = Trim(LV_CLI.ListItems.Item(loc_key).Text) & " "
@@ -18838,7 +18838,7 @@ End If
 
 End Sub
 
-Private Sub LV_VEN_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub LV_VEN_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
   loc_key = LV_VEN.SelectedItem.Index
   i_codven.Text = Trim(LV_VEN.ListItems.Item(loc_key).Text) & " "

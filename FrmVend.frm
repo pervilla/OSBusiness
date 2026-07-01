@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Begin VB.Form FrmVen 
    Caption         =   "Maestro de Vendedores"
@@ -15,7 +15,7 @@ Begin VB.Form FrmVen
    ScaleHeight     =   5310
    ScaleWidth      =   8325
    WindowState     =   2  'Maximized
-   Begin ComctlLib.ListView ListView1 
+   Begin MSComctlLib.ListView ListView1 
       Height          =   495
       Left            =   6510
       TabIndex        =   11
@@ -2036,7 +2036,7 @@ End If
 
 End Sub
 
-Private Sub ListView1_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub ListView1_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
  loc_key = ListView1.SelectedItem.Index
  Txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "

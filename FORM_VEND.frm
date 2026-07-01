@@ -1,9 +1,8 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form FORM_COTV 
    BackColor       =   &H00C0C0C0&
    Caption         =   "Cotizacoines"
@@ -633,7 +632,7 @@ Begin VB.Form FORM_COTV
       Top             =   6720
       Width           =   1335
    End
-   Begin ComctlLib.ProgressBar Barra 
+   Begin MSComctlLib.ProgressBar Barra 
       Height          =   315
       Left            =   2400
       TabIndex        =   3
@@ -900,7 +899,7 @@ Begin VB.Form FORM_COTV
          MultiLine       =   0   'False
          TextRTF         =   $"FORM_COTV.frx":0020
       End
-      Begin ComctlLib.ProgressBar PB 
+      Begin MSComctlLib.ProgressBar PB 
          Height          =   255
          Left            =   240
          TabIndex        =   5

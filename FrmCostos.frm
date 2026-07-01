@@ -1,9 +1,8 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.5#0"; "comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "richtx32.ocx"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "mscomctl.OCX"
 Begin VB.Form Frmcospro 
    Caption         =   "Tipo de Cambio y Costeo de Articulos"
    ClientHeight    =   7455
@@ -650,7 +649,7 @@ Begin VB.Form Frmcospro
          Top             =   300
          Width           =   1695
       End
-      Begin ComctlLib.ProgressBar ProgBar 
+      Begin MSComctlLib.ProgressBar ProgBar 
          Height          =   195
          Left            =   120
          TabIndex        =   5
@@ -681,7 +680,7 @@ Begin VB.Form Frmcospro
          Top             =   2520
          Width           =   1815
       End
-      Begin ComctlLib.ProgressBar P1 
+      Begin MSComctlLib.ProgressBar P1 
          Height          =   195
          Left            =   600
          TabIndex        =   55
@@ -693,7 +692,7 @@ Begin VB.Form Frmcospro
          _Version        =   327682
          Appearance      =   1
       End
-      Begin ComctlLib.ProgressBar P2 
+      Begin MSComctlLib.ProgressBar P2 
          Height          =   195
          Left            =   600
          TabIndex        =   56

@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Begin VB.Form FrmImp2 
@@ -940,7 +940,7 @@ Begin VB.Form FrmImp2
          Width           =   1335
       End
    End
-   Begin ComctlLib.ListView ListView1 
+   Begin MSComctlLib.ListView ListView1 
       Height          =   375
       Left            =   4080
       TabIndex        =   103
@@ -1062,7 +1062,7 @@ Begin VB.Form FrmImp2
          Width           =   2175
       End
    End
-   Begin ComctlLib.ListView ListView2 
+   Begin MSComctlLib.ListView ListView2 
       Height          =   375
       Left            =   6000
       TabIndex        =   69
@@ -1633,7 +1633,7 @@ Begin VB.Form FrmImp2
       Visible         =   0   'False
       Width           =   1095
    End
-   Begin ComctlLib.ProgressBar ProgBar 
+   Begin MSComctlLib.ProgressBar ProgBar 
       Height          =   195
       Left            =   0
       TabIndex        =   18
@@ -4536,7 +4536,7 @@ End If
 
 End Sub
 
-Private Sub ListView2_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub ListView2_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
  loc_key = ListView2.SelectedItem.Index
  txt_cli.Text = Trim(ListView2.ListItems.Item(loc_key).Text) & " "

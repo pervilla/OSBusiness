@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.5#0"; "comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmBuscacta 
    Caption         =   "Busqueda de Cuentas Contables"
    ClientHeight    =   5070
@@ -19,7 +19,7 @@ Begin VB.Form frmBuscacta
       TabIndex        =   0
       Top             =   480
       Width           =   6615
-      Begin ComctlLib.TreeView TreeView1 
+      Begin MSComctlLib.TreeView TreeView1 
          Height          =   3135
          Left            =   120
          TabIndex        =   2
@@ -421,7 +421,7 @@ End If
 End Sub
 
 
-Private Sub TreeView1_NodeClick(ByVal Node As ComctlLib.Node)
+Private Sub TreeView1_NodeClick(ByVal Node As MSComctlLib.Node)
 Dim wcuenta As String
 Dim windex As String
 If Trim(TreeView1.Nodes.Item(TreeView1.SelectedItem.Index).Tag) = "RAIZ" Then

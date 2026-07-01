@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmBancos 
    Caption         =   "Maestro de Bancos"
    ClientHeight    =   6480
@@ -15,7 +15,7 @@ Begin VB.Form frmBancos
    ScaleHeight     =   6480
    ScaleWidth      =   11595
    WindowState     =   2  'Maximized
-   Begin ComctlLib.ListView ListView1 
+   Begin MSComctlLib.ListView ListView1 
       Height          =   615
       Left            =   7200
       TabIndex        =   21
@@ -281,7 +281,7 @@ Begin VB.Form frmBancos
          WhatsThisHelpID =   18
          Width           =   1215
       End
-      Begin ComctlLib.ProgressBar PB 
+      Begin MSComctlLib.ProgressBar PB 
          Height          =   135
          Left            =   7800
          TabIndex        =   22
@@ -1445,7 +1445,7 @@ End If
 
 End Sub
 
-Private Sub ListView1_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub ListView1_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
  loc_key = ListView1.SelectedItem.Index
  Txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "

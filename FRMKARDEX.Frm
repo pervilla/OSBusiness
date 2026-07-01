@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.5#0"; "comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
 Begin VB.Form KARDEX 
    Caption         =   "Consulta de Kardex de Articulo"
@@ -82,7 +82,7 @@ Begin VB.Form KARDEX
       Top             =   690
       Width           =   1245
    End
-   Begin ComctlLib.ListView ListView1 
+   Begin MSComctlLib.ListView ListView1 
       Height          =   735
       Left            =   5280
       TabIndex        =   12
@@ -600,7 +600,7 @@ Begin VB.Form KARDEX
       _ExtentY        =   847
       _Version        =   393216
    End
-   Begin ComctlLib.ProgressBar PB 
+   Begin MSComctlLib.ProgressBar PB 
       Height          =   255
       Left            =   1680
       TabIndex        =   13
@@ -2097,7 +2097,7 @@ End If
 
 End Sub
 
-Private Sub ListView1_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub ListView1_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
  loc_key = ListView1.SelectedItem.Index
  i_codart2.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "

@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form PRODIA 
    BackColor       =   &H00C0C0C0&
    Caption         =   "Actualizacion de Fechas"
@@ -140,7 +140,7 @@ Begin VB.Form PRODIA
       Top             =   4920
       Width           =   1455
    End
-   Begin ComctlLib.ProgressBar ProgBar 
+   Begin MSComctlLib.ProgressBar ProgBar 
       Height          =   195
       Left            =   240
       TabIndex        =   3

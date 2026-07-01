@@ -1,7 +1,6 @@
 VERSION 5.00
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
-Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.MDIForm MDIForm1 
    BackColor       =   &H00E0E0E0&
    Caption         =   "MEDINAFARMA"
@@ -14,7 +13,7 @@ Begin VB.MDIForm MDIForm1
    LockControls    =   -1  'True
    Picture         =   "MDIGeneral.frx":57E2
    WindowState     =   2  'Maximized
-   Begin ComctlLib.Toolbar Toolbar2 
+   Begin MSComctlLib.Toolbar Toolbar2 
       Align           =   2  'Align Bottom
       Height          =   420
       Left            =   0

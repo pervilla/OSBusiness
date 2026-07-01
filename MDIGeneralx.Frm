@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#4.6#0"; "CRYSTL32.OCX"
 Begin VB.MDIForm MDIForm1 
    BackColor       =   &H00E0E0E0&
@@ -13,7 +13,7 @@ Begin VB.MDIForm MDIForm1
    Moveable        =   0   'False
    Picture         =   "MDIGeneral.frx":0442
    WindowState     =   2  'Maximized
-   Begin ComctlLib.Toolbar Toolbar1 
+   Begin MSComctlLib.Toolbar Toolbar1 
       Align           =   1  'Align Top
       Height          =   420
       Left            =   0
@@ -180,7 +180,7 @@ Begin VB.MDIForm MDIForm1
          Visible         =   0   'False
          Width           =   4215
       End
-      Begin ComctlLib.ProgressBar ProBar 
+      Begin MSComctlLib.ProgressBar ProBar 
          Height          =   240
          Left            =   7680
          TabIndex        =   1
@@ -203,7 +203,7 @@ Begin VB.MDIForm MDIForm1
          Width           =   255
       End
    End
-   Begin ComctlLib.Toolbar Toolbar2 
+   Begin MSComctlLib.Toolbar Toolbar2 
       Align           =   2  'Align Bottom
       Height          =   420
       Left            =   0
@@ -394,7 +394,7 @@ Begin VB.MDIForm MDIForm1
       _Version        =   262150
       ReportFileName  =   "C:\Archivos de programa\PROYECTO WINDOWS NT\tablas.rpt"
    End
-   Begin ComctlLib.ImageList ImageList2 
+   Begin MSComctlLib.ImageList ImageList2 
       Left            =   0
       Top             =   960
       _ExtentX        =   1005
@@ -2555,7 +2555,7 @@ SALE:
 
 End Sub
 
-Private Sub Toolbar1_ButtonClick(ByVal Button As ComctlLib.Button)
+Private Sub Toolbar1_ButtonClick(ByVal Button As MSComctlLib.Button)
 Dim RetVal
 Dim wclave As String
 On Error GoTo sal

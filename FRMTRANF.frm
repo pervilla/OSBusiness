@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.2#0"; "Comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#4.6#0"; "CRYSTL32.OCX"
 Begin VB.Form FrmTranf 
    BackColor       =   &H00C0C0C0&
@@ -223,7 +223,7 @@ Begin VB.Form FrmTranf
       Top             =   6600
       Width           =   1575
    End
-   Begin ComctlLib.ListView ListView1 
+   Begin MSComctlLib.ListView ListView1 
       Height          =   495
       Left            =   7200
       TabIndex        =   8
@@ -276,7 +276,7 @@ Begin VB.Form FrmTranf
       Top             =   6600
       Width           =   1095
    End
-   Begin ComctlLib.ProgressBar Barra 
+   Begin MSComctlLib.ProgressBar Barra 
       Height          =   315
       Left            =   3360
       TabIndex        =   3
@@ -790,7 +790,7 @@ Private Sub ListView1_GotFocus()
 
 End Sub
 
-Private Sub ListView1_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub ListView1_ItemClick(ByVal Item As MSComctlLib.ListItem)
 'If loc_key <> 0 Then
 ' loc_key = ListView1.SelectedItem.Index
 ' TEXTOVAR.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "

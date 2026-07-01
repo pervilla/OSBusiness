@@ -1,10 +1,9 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "Comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "richtx32.ocx"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form FORM_COT 
    BackColor       =   &H00C0C0C0&
    Caption         =   "Pedidos."
@@ -228,7 +227,7 @@ Begin VB.Form FORM_COT
          Strikethrough   =   0   'False
       EndProperty
    End
-   Begin ComctlLib.ListView ListView2 
+   Begin MSComctlLib.ListView ListView2 
       Height          =   495
       Left            =   7470
       TabIndex        =   68
@@ -249,7 +248,7 @@ Begin VB.Form FORM_COT
       Appearance      =   1
       NumItems        =   0
    End
-   Begin ComctlLib.ListView ListView1 
+   Begin MSComctlLib.ListView ListView1 
       Height          =   495
       Left            =   5670
       TabIndex        =   25
@@ -1387,7 +1386,7 @@ Begin VB.Form FORM_COT
          MultiLine       =   0   'False
          TextRTF         =   $"FORM_COT.frx":0892
       End
-      Begin ComctlLib.ProgressBar PB 
+      Begin MSComctlLib.ProgressBar PB 
          Height          =   255
          Left            =   240
          TabIndex        =   21
@@ -2795,7 +2794,7 @@ Private Sub ListView1_GotFocus()
 
 End Sub
 
-Private Sub ListView1_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub ListView1_ItemClick(ByVal Item As MSComctlLib.ListItem)
 'If loc_key <> 0 Then
 ' loc_key = ListView1.SelectedItem.Index
 ' TEXTOVAR.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "

@@ -1,8 +1,7 @@
 VERSION 5.00
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form RCRYSTAL 
    Caption         =   "Listado en Crystal Report"
    ClientHeight    =   7740
@@ -940,7 +939,7 @@ Begin VB.Form RCRYSTAL
          Width           =   2655
       End
    End
-   Begin ComctlLib.ListView ListView1 
+   Begin MSComctlLib.ListView ListView1 
       Height          =   495
       Left            =   8880
       TabIndex        =   22
@@ -961,7 +960,7 @@ Begin VB.Form RCRYSTAL
       Appearance      =   1
       NumItems        =   0
    End
-   Begin ComctlLib.ListView ListView2 
+   Begin MSComctlLib.ListView ListView2 
       Height          =   375
       Left            =   8040
       TabIndex        =   26
@@ -981,7 +980,7 @@ Begin VB.Form RCRYSTAL
       Appearance      =   1
       NumItems        =   0
    End
-   Begin ComctlLib.ListView ListView3 
+   Begin MSComctlLib.ListView ListView3 
       Height          =   375
       Left            =   7200
       TabIndex        =   34
@@ -3362,7 +3361,7 @@ End If
 
 End Sub
 
-Private Sub ListView1_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub ListView1_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
  loc_key = ListView1.SelectedItem.Index
  i_codart2.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
@@ -3395,7 +3394,7 @@ End If
 
 End Sub
 
-Private Sub ListView2_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub ListView2_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
  loc_key = ListView2.SelectedItem.Index
  txt_cli.Text = Trim(ListView2.ListItems.Item(loc_key).Text) & " "
@@ -6858,7 +6857,7 @@ End If
 
 End Sub
 
-Private Sub ListView3_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub ListView3_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
  loc_key = ListView3.SelectedItem.Index
  Txt_key.Text = Trim(ListView3.ListItems.Item(loc_key).Text) & " "

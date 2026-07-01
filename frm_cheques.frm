@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.5#0"; "comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Begin VB.Form frm_cheques 
@@ -17,7 +17,7 @@ Begin VB.Form frm_cheques
    ScaleHeight     =   6450
    ScaleWidth      =   9510
    WindowState     =   2  'Maximized
-   Begin ComctlLib.ListView LV_CCM 
+   Begin MSComctlLib.ListView LV_CCM 
       Height          =   375
       Left            =   7560
       TabIndex        =   12
@@ -555,7 +555,7 @@ Begin VB.Form frm_cheques
       WindowMinButton =   -1  'True
       PrintFileLinesPerPage=   60
    End
-   Begin ComctlLib.ProgressBar PB 
+   Begin MSComctlLib.ProgressBar PB 
       Height          =   255
       Left            =   4200
       TabIndex        =   31
@@ -1178,7 +1178,7 @@ End If
 
 End Sub
 
-Private Sub LV_CCM_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub LV_CCM_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
  loc_key = LV_CCM.SelectedItem.Index
  i_codban.Text = Trim(LV_CCM.ListItems.Item(loc_key).Text) & " "
