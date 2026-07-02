@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmCLI 
    Caption         =   "Clientes / Proveedores"
    ClientHeight    =   5805
@@ -95,7 +95,7 @@ Begin VB.Form frmCLI
          Width           =   2535
       End
    End
-   Begin ComctlLib.ListView ListView1 
+   Begin MSComctlLib.ListView ListView1 
       Height          =   2055
       Left            =   1320
       TabIndex        =   41
@@ -151,7 +151,7 @@ Begin VB.Form frmCLI
             Visible         =   0   'False
             Width           =   1575
          End
-         Begin ComctlLib.ProgressBar PB2 
+         Begin MSComctlLib.ProgressBar PB2 
             Height          =   135
             Left            =   7560
             TabIndex        =   106
@@ -188,7 +188,7 @@ Begin VB.Form frmCLI
             Top             =   840
             Width           =   1815
          End
-         Begin ComctlLib.ProgressBar PB 
+         Begin MSComctlLib.ProgressBar PB 
             Height          =   135
             Left            =   7560
             TabIndex        =   105
@@ -3390,7 +3390,7 @@ End If
 
 End Sub
 
-Private Sub ListView1_ItemClick(ByVal Item As ComctlLib.ListItem)
+Private Sub ListView1_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
  loc_key = ListView1.SelectedItem.Index
  Txt_key.text = Trim(ListView1.ListItems.Item(loc_key).text) & " "

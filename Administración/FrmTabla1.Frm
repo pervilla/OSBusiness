@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
 Begin VB.Form FrmTabla1 
    AutoRedraw      =   -1  'True
@@ -244,7 +244,7 @@ Begin VB.Form FrmTabla1
          Visible         =   0   'False
          Width           =   1935
       End
-      Begin ComctlLib.ProgressBar ProgBar 
+      Begin MSComctlLib.ProgressBar ProgBar 
          Height          =   255
          Left            =   3120
          TabIndex        =   15
@@ -375,7 +375,7 @@ Begin VB.Form FrmTabla1
       Top             =   120
       Width           =   855
    End
-   Begin ComctlLib.ImageList ImageList1 
+   Begin MSComctlLib.ImageList ImageList1 
       Left            =   2280
       Top             =   5760
       _ExtentX        =   1005

@@ -146,7 +146,7 @@ Begin VB.Form PASSFORM
       End
       Begin VB.Label Label7 
          BackStyle       =   0  'Transparent
-         Caption         =   "Compaï¿½ia por Defecto :"
+         Caption         =   "Compañia por Defecto :"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -164,7 +164,7 @@ Begin VB.Form PASSFORM
          Width           =   2295
       End
       Begin VB.Label Label1 
-         Caption         =   "Descripciï¿½n: "
+         Caption         =   "Descripción: "
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -392,7 +392,6 @@ Dim PASSW  As String * 10
 Dim VECES As Integer
 Dim LOC_FLAG_OJO As String
 Public Function WRITE1_READ2(WMODO As Integer, Optional wWRITE) As String
-LogTrace "PASSFORM: WRITE1_READ2 inicio"
 Dim RUTA As String
 On Error GoTo sale
 RUTA = "C:\" & "CODUSU$.txt"
@@ -484,10 +483,10 @@ If cal_llave!CAL_INDICE <> 1 Then
 End If
   ' VER SI LA FECHA NO ES DEL DIA
 SALTA_TODO:
-  pub_mensaje = "ï¿½La fecha de la compaï¿½ia es diferente que el computador!"
-  pub_mensaje = pub_mensaje & pb & "Fecha de la Compaï¿½ia       : " & Format(fecha_proceso, "dd mmm yyyy")
+  pub_mensaje = "¡La fecha de la compañia es diferente que el computador!"
+  pub_mensaje = pub_mensaje & pb & "Fecha de la Compañia       : " & Format(fecha_proceso, "dd mmm yyyy")
   pub_mensaje = pub_mensaje & Chr(13) & "Fecha de del Computador : " & Format(Date, "dd mmm yyyy")
-  pub_mensaje = pub_mensaje & pb & "ï¿½Desea ingresar al sistema..?"
+  pub_mensaje = pub_mensaje & pb & "¿Desea ingresar al sistema..?"
   If CDate(fecha_proceso.Text) <> Date Then
     Pub_Respuesta = MsgBox(pub_mensaje, vbOKCancel + vbInformation, Pub_Titulo)
     If Pub_Respuesta = vbCancel Then
@@ -562,7 +561,6 @@ End If
 End Sub
 
 Private Sub Form_Activate()
-LogInfo "PASSFORM: Activate"
 LOC_FLAG_OJO = ""
 VECES = 0
 Screen.MousePointer = 11
@@ -633,7 +631,6 @@ fin:
 End Sub
 
 Private Sub Form_Load()
-LogInfo "PASSFORM: Inicio Form_Load"
 CenterMe PASSFORM
 LOC_FLAG_OJO = ""
 PS_GEN(0) = 0
@@ -643,7 +640,6 @@ If GEN.EOF Then
 Else
  lblempresa.Caption = Trim(GEN!GEN_NOMBRE)
 End If
-LogInfo "PASSFORM: Fin Form_Load - Usuario: " & LK_CODUSU
 End Sub
 
 Private Sub salir_Click()
@@ -847,13 +843,8 @@ PASO_TODO:
        LK_FAC_IMP = Nulo_Valors(usu!usu_fac_imp)
        LK_USU_STOCK = Nulo_Valors(usu!usu_stock)
        LOC_FLAG_OJO = Nulo_Valors(usu!usu_flag_ojo)
-        LK_DEVICE_FBG = Nulo_Valors(usu!USU_DEVICE_FBG)
-        PSUSU_LLAVE(0) = "ADMIN"
-        usu_llave.Requery
-        If Not usu_llave.EOF Then
-           LK_CLAVE_GERENCIA = Trim(usu_llave!usu_clave2)
-        End If
-        Text2.Enabled = False
+       LK_DEVICE_FBG = Nulo_Valors(usu!USU_DEVICE_FBG)
+       Text2.Enabled = False
        Timer1.Enabled = True
        Text1.Enabled = True
        Text1.SetFocus
@@ -872,7 +863,7 @@ End Sub
 
 Public Function INGRESO_PASS(TEXTO) As String
 cade = " ABCDEFGHIJKLMNOPQSRTVWXYZ0123456789"
-SIMB = "ï¿½~!@#$%^&*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½+ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½"
+SIMB = "ò~!@#$%^&*¤¶§éû¬½¼©¥+ãÃÓ¦¢ƒ×Ø£øÜïëÇ"
 TOT = Len(TEXTO)
 For I = 1 To TOT
  tem = InStr(1, cade, Mid(UCase(TEXTO), I, 1))
@@ -884,7 +875,7 @@ End Function
 
 Public Function SALIDA_PASS(TEXTO) As String
 cade = " ABCDEFGHIJKLMNOPQSRTVWXYZ0123456789"
-SIMB = "ï¿½~!@#$%^&*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½+ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½"
+SIMB = "ò~!@#$%^&*¤¶§éû¬½¼©¥+ãÃÓ¦¢ƒ×Ø£øÜïëÇ"
 TOT = Len(TEXTO)
 For I = 1 To TOT
  tem = InStr(1, SIMB, Mid(TEXTO, I, 1))

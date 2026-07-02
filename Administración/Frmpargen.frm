@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form FrmParGen 
    Caption         =   "Definición de Compañia"
    ClientHeight    =   5310
@@ -340,7 +340,7 @@ Begin VB.Form FrmParGen
             Top             =   600
             Width           =   3255
          End
-         Begin ComctlLib.ProgressBar pb 
+         Begin MSComctlLib.ProgressBar pb 
             Height          =   255
             Left            =   360
             TabIndex        =   57

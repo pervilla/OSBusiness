@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form FrmSub 
    Caption         =   "Configuración de Transacciones"
    ClientHeight    =   6660
@@ -1166,7 +1166,7 @@ Begin VB.Form FrmSub
             Top             =   720
             Width           =   975
          End
-         Begin ComctlLib.ProgressBar bp 
+         Begin MSComctlLib.ProgressBar bp 
             Height          =   195
             Left            =   2160
             TabIndex        =   126

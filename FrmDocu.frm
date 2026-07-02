@@ -186,7 +186,7 @@ Begin VB.Form frmDocu
          Y2              =   1080
       End
       Begin VB.Label lcruze 
-         Caption         =   "Doc. Nï¿½ 2:"
+         Caption         =   "Doc. Nº 2:"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -205,7 +205,7 @@ Begin VB.Form frmDocu
          Width           =   855
       End
       Begin VB.Label lcruze 
-         Caption         =   "Doc. Nï¿½ 1:"
+         Caption         =   "Doc. Nº 1:"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -1173,7 +1173,7 @@ Begin VB.Form frmDocu
       End
       Begin VB.Label l_fecha_compra 
          AutoSize        =   -1  'True
-         Caption         =   "Fec. Emisiï¿½n :"
+         Caption         =   "Fec. Emisión :"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1257,7 +1257,7 @@ Begin VB.Form frmDocu
          Width           =   1575
       End
       Begin VB.Label lbldireccion 
-         Caption         =   "Direcciï¿½n Entrega:"
+         Caption         =   "Dirección Entrega:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1499,7 +1499,7 @@ Begin VB.Form frmDocu
          Width           =   1485
       End
       Begin VB.Label lblcondicion 
-         Caption         =   "Condiciï¿½n:"
+         Caption         =   "Condición:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1804,7 +1804,7 @@ Begin VB.Form frmDocu
       End
       Begin VB.Label lblNumfac 
          BackStyle       =   0  'Transparent
-         Caption         =   "Nï¿½ de Documento"
+         Caption         =   "Nº de Documento"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -1831,7 +1831,7 @@ Begin VB.Form frmDocu
       End
       Begin VB.Label lbldocu 
          Alignment       =   2  'Center
-         Caption         =   "Operaciï¿½n"
+         Caption         =   "Operación"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -2346,7 +2346,7 @@ If ID_SEC_DOC2 = 2 Or ID_SEC_DOC2 = 4 Then
  End If
  
 End If
-pub_mensaje = "Documentos Validados Hacer en Cruze de Documento   ï¿½Desea Continuar... ?"
+pub_mensaje = "Documentos Validados Hacer en Cruze de Documento   ¿Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    GoTo fincruze
@@ -2432,7 +2432,7 @@ If LOC_TIPMOV = 0 Or Trim(d_fecha.Caption) = "" Then
 Exit Sub
 End If
 If frmdocu.LBLEXTORNO.Visible Then
-  MsgBox "Impresiï¿½n No Procede...", 48, Pub_Titulo
+  MsgBox "Impresión No Procede...", 48, Pub_Titulo
   Exit Sub
 End If
 If LOC_TIPMOV = 30 Then
@@ -2457,7 +2457,7 @@ If LOC_TIPMOV <> 96 Then
 End If
 If LOC_TIPMOV = 10 Then
  If chetrans.Value = 1 And Val(Right(TRANS.Text, 3)) = 0 Then
-      MsgBox "Estï¿½ Activada a opciï¿½n de Transportista. Seleccione un Transportista ?", 48, Pub_Titulo
+      MsgBox "Está Activada a opción de Transportista. Seleccione un Transportista ?", 48, Pub_Titulo
      Exit Sub
  End If
 End If
@@ -2652,7 +2652,7 @@ If cli_llave.EOF Then
    MsgBox "Codigo de Proveedor no Existe", 48, Pub_Titulo
    Exit Sub
 End If
-pub_mensaje = "Cambiar por el codigo : " & Chr(13) & cli_llave!cli_codclie & " - " & Trim(cli_llave!cli_nombre) & Chr(13) & "   ï¿½Desea Continuar... ?"
+pub_mensaje = "Cambiar por el codigo : " & Chr(13) & cli_llave!cli_codclie & " - " & Trim(cli_llave!cli_nombre) & Chr(13) & "   ¿Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -2907,7 +2907,7 @@ If LOC_TIPMOV <> 20 Then Exit Sub
      End If
   End If
 
- cap_valor = InputBox("Modificaciï¿½n de Descto de Mercaderia  en valor en Nuevos Soles S/.= " & Chr(13) & "el valor afecta a costo promedio mas no al documento.", " Descto(%)", d_descto.Caption)
+ cap_valor = InputBox("Modificación de Descto de Mercaderia  en valor en Nuevos Soles S/.= " & Chr(13) & "el valor afecta a costo promedio mas no al documento.", " Descto(%)", d_descto.Caption)
  If cap_valor = "" Then Exit Sub
  If Val(cap_valor) = 0 Then
   pub_mensaje = "Valor S/. 0.00( para el Descto... desea continuar... "
@@ -2945,7 +2945,7 @@ If SUMA_VALOR <> 0 Then
      
      fila = fila + 1
  Loop
-pub_mensaje = "Chequear los datos del calculo. Total de Descto en " & d_moneda.Caption & " = " & Format(ww_desc, "0.00") & " - Confirmar la modificaciï¿½n ? "
+pub_mensaje = "Chequear los datos del calculo. Total de Descto en " & d_moneda.Caption & " = " & Format(ww_desc, "0.00") & " - Confirmar la modificación ? "
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    txtnumfac_KeyPress 13
@@ -3191,7 +3191,7 @@ If LOC_TIPMOV <> 20 Then Exit Sub
   End If
 
 
- cap_valor = InputBox("Modificaciï¿½n de Flete en Mercaderia  S/. = ", "Fletes en S/.", d_flete.Caption)
+ cap_valor = InputBox("Modificación de Flete en Mercaderia  S/. = ", "Fletes en S/.", d_flete.Caption)
  If cap_valor = "" Then Exit Sub
  If Val(cap_valor) = 0 Then
   pub_mensaje = "Valor 0.00 para el Flete... desea continuar... "
@@ -3237,7 +3237,7 @@ Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
      fila = fila + 1
    Loop
 
-pub_mensaje = "Chequear los datos del calculo. Total de Flete : " & Format(ww_desc, "0.00") & " - Confirmar la modificaciï¿½n ? "
+pub_mensaje = "Chequear los datos del calculo. Total de Flete : " & Format(ww_desc, "0.00") & " - Confirmar la modificación ? "
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    txtnumfac_KeyPress 13
@@ -3357,7 +3357,7 @@ End Sub
 Private Sub DOCANEXO_Click()
 
 If loc_acceso_descto <> "A" Then
-  MsgBox "NO tiene Acceso a esta Opciï¿½n...", 48, Pub_Titulo
+  MsgBox "NO tiene Acceso a esta Opción...", 48, Pub_Titulo
   Exit Sub
 End If
 
@@ -3444,9 +3444,6 @@ End If
 End Sub
 
 Private Sub Form_Load()
-    CenterMe frmDocu
-    frmDocu.Width = 12120
-    frmDocu.Height = 8500
 Dim SQL As String
 Unload FORMGEN
 'Unload FORM_GRIFO
@@ -3516,7 +3513,7 @@ LOC_TIPMOV = 0
 temporal = "X"
 cmbFBG.Clear
 lblflete.Caption = "Ajuste"
-lblNumfac.Caption = "Nï¿½ de Doc."
+lblNumfac.Caption = "Nº de Doc."
 temporal = ""
 tempo_serie = ""
 WGUIA_RELA = ""
@@ -3764,7 +3761,7 @@ If LOC_TIPMOV = 93 Or LOC_TIPMOV = 5 Or LOC_TIPMOV = 6 Or LOC_TIPMOV = 100 Or LO
    TRANS.Visible = True
  End If
 Else
- lblDireccion.Caption = "Direcciï¿½n Entrega:"
+ lblDireccion.Caption = "Dirección Entrega:"
  lbldomicilio.Caption = "Domicilio:"
  
 End If
@@ -3779,7 +3776,7 @@ If LOC_TIPMOV = 102 Or OC_TIPMOV = 100 Or LOC_TIPMOV = 10 Or LOC_TIPMOV = 97 Or 
  Doc_EL = Nulo_Valors(far_r!FAR_DOC_ELECTRONICO)
  
  If LK_EMP <> "HER" Then
-   txtdocu.Caption = "G/ " & far_r!far_serguia & " - " & far_r!far_numguia & " - Nï¿½.O/C :" & Trim(Nulo_Valors(far_r!FAR_OC))
+   txtdocu.Caption = "G/ " & far_r!far_serguia & " - " & far_r!far_numguia & " - Nº.O/C :" & Trim(Nulo_Valors(far_r!FAR_OC))
  Else
    txtdocu.Caption = "G/ " & far_r!far_serguia & " - " & far_r!far_numguia
  End If
@@ -3928,7 +3925,7 @@ End If
 
 PASACLI:
 If LK_FLAG_GRIFO = "A" And far_r!FAR_tipmov = 20 Then
- d_nomven.Caption = "Turno: " & Format(far_r!far_turno, "00") & Chr(13) & "Nï¿½.Carga: " & far_r!FAR_PEDFAC
+ d_nomven.Caption = "Turno: " & Format(far_r!far_turno, "00") & Chr(13) & "Nº.Carga: " & far_r!FAR_PEDFAC
 End If
 If LOC_TIPMOV = 20 Then GoTo a_vendedor
 If far_r!FAR_cp <> "P" Or LOC_TIPMOV = 97 Then
@@ -4124,7 +4121,7 @@ LOC_ARROZ = ""
    d_dire = rs!DIRCOMP
    rs.MoveNext
   Loop
- 'termina llenar direccciï¿½n
+ 'termina llenar direccción
  WS_SUM_DESCT = 0
 subtotal2 = 0
 conteo_cantidad = 0
@@ -4197,7 +4194,7 @@ Do Until far_r.EOF
      End If
      ''If all_llave!ALL_SIGNO_CCM <> 0 Then
       grid_fac2.Rows = grid_fac2.Rows + 1
-      grid_fac2.TextMatrix(grid_fac2.Rows - 1, 0) = "Relaciï¿½n Conable: "
+      grid_fac2.TextMatrix(grid_fac2.Rows - 1, 0) = "Relación Conable: "
       grid_fac2.Rows = grid_fac2.Rows + 1
       grid_fac2.TextMatrix(grid_fac2.Rows - 1, 0) = "'" & all_llave!ALL_CTAG1 & " = " & Format(all_llave!ALL_IMPG1, "#,#00.00")
       grid_fac2.Rows = grid_fac2.Rows + 1
@@ -4205,7 +4202,7 @@ Do Until far_r.EOF
        grid_fac2.TextMatrix(grid_fac2.Rows - 1, 0) = "'" & all_llave!ALL_CTAG2 & " = " & Format(all_llave!ALL_IMPG2, "#,#00.00")
       End If
       grid_fac2.Rows = grid_fac2.Rows + 1
-      grid_fac2.TextMatrix(grid_fac2.Rows - 1, 0) = "' Fec. Cancelaciï¿½n: " & all_llave!ALL_FECHA_CAN
+      grid_fac2.TextMatrix(grid_fac2.Rows - 1, 0) = "' Fec. Cancelación: " & all_llave!ALL_FECHA_CAN
       
       grid_fac2.Rows = grid_fac2.Rows + 1
       grid_fac2.TextMatrix(grid_fac2.Rows - 1, 0) = "' Fec.Contable: " & all_llave!ALL_FECHA_PRO
@@ -4381,7 +4378,7 @@ If LOC_TIPMOV = 96 Then
    grid_fac2.TextMatrix(0, 8) = "Saldo    "
    grid_fac2.TextMatrix(0, 9) = "Efectivo"
    grid_fac2.TextMatrix(0, 10) = "Nueva Fecha"
-   grid_fac2.TextMatrix(0, 11) = "Nï¿½. Cheque"
+   grid_fac2.TextMatrix(0, 11) = "Nº. Cheque"
    grid_fac2.TextMatrix(0, 12) = "Importe"
    grid_fac2.TextMatrix(0, 13) = "Banco"
    grid_fac2.TextMatrix(0, 14) = "Fec.Cobrar"
@@ -4404,7 +4401,7 @@ If LOC_TIPMOV = 96 Then
 Else
    grid_fac2.Clear
    grid_fac2.Cols = 13
-   grid_fac2.TextMatrix(0, 0) = "Descripciï¿½n"
+   grid_fac2.TextMatrix(0, 0) = "Descripción"
    grid_fac2.TextMatrix(0, 1) = "Codigo"
    grid_fac2.TextMatrix(0, 2) = "Cantidad"
    grid_fac2.TextMatrix(0, 3) = "Unidad"
@@ -5217,7 +5214,7 @@ If LOC_TIPMOV = 10 Then
     PUB_CODVEN = Val(d_codven.Caption)
     LEER_PAR_LLAVE
     If pac_llave.EOF Then
-       MsgBox "No se ha definido archivos de Impresiï¿½n", 48, Pub_Titulo
+       MsgBox "No se ha definido archivos de Impresión", 48, Pub_Titulo
        Exit Function
     End If
 End If
@@ -5315,7 +5312,7 @@ End If
         GoTo pasa_todo
     End If
     If LOC_TIPMOV = 20 Then
-        frmdocu.Reportes.WindowTitle = "KARDEX Nï¿½ :" & Format(PU_NUMSER, "000") & " - " & Format(PU_NUMFAC, "0000000")
+        frmdocu.Reportes.WindowTitle = "KARDEX Nº :" & Format(PU_NUMSER, "000") & " - " & Format(PU_NUMFAC, "0000000")
         pub_mensaje = "Inventario Valorado (Si), Inventario en Unidades (No) "
         Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
         If Pub_Respuesta = vbYes Then
@@ -5331,7 +5328,7 @@ End If
     End If
     If LOC_TIPMOV = 75 Or LOC_TIPMOV = 93 Or LOC_TIPMOV = 102 Then
         wser = PU_NUMSER
-        frmdocu.Reportes.WindowTitle = "KARDEX Nï¿½ :" & Format(PU_NUMSER, "000") & " - " & Format(PU_NUMFAC, "0000000")
+        frmdocu.Reportes.WindowTitle = "KARDEX Nº :" & Format(PU_NUMSER, "000") & " - " & Format(PU_NUMFAC, "0000000")
         If LOC_TIPMOV = 93 Then
         frmdocu.Reportes.ReportFileName = wRuta + "CAMBP.RPT"
         End If
@@ -5348,7 +5345,7 @@ End If
     End If
     If LOC_TIPMOV = 99 Then
         wser = PU_NUMSER
-        frmdocu.Reportes.WindowTitle = "KARDEX Nï¿½ :" & Format(PU_NUMSER, "000") & " - " & Format(PU_NUMFAC, "0000000")
+        frmdocu.Reportes.WindowTitle = "KARDEX Nº :" & Format(PU_NUMSER, "000") & " - " & Format(PU_NUMFAC, "0000000")
         frmdocu.Reportes.ReportFileName = wRuta + "VOCCM.RPT"
         pub_cadena = "{ALLOG.ALL_CODCIA} = '" & LK_CODCIA & "' AND {ALLOG.ALL_NUMSER}= '" & wser & "'  AND {ALLOG.ALL_NUMFAC} = " & PU_NUMFAC
         frmdocu.Reportes.Formulas(1) = ""
@@ -5449,7 +5446,7 @@ End If
        Reportes.Formulas(18) = ""
        Reportes.Formulas(19) = ""
        Reportes.Formulas(20) = ""
-       pub_mensaje = "Desea Imprimir la " & Trim(frmdocu.Reportes.WindowTitle) & "   ï¿½Desea Continuar... ?"
+       pub_mensaje = "Desea Imprimir la " & Trim(frmdocu.Reportes.WindowTitle) & "   ¿Desea Continuar... ?"
        Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
        If Pub_Respuesta = vbYes Then
          frmdocu.Reportes.SelectionFormula = pub_cadena
@@ -5508,7 +5505,7 @@ PASA_OP:
          End If
          End If
          
-         pub_mensaje = "Desea Imprimir la " & Trim(frmdocu.Reportes.WindowTitle) & "   ï¿½ Continuar... ?"
+         pub_mensaje = "Desea Imprimir la " & Trim(frmdocu.Reportes.WindowTitle) & "   ¿ Continuar... ?"
          Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
          If Pub_Respuesta = vbYes Then
            frmdocu.Reportes.SelectionFormula = pub_cadena
@@ -5927,7 +5924,7 @@ Else
   Else
     lblflete.Caption = "Ajuste"
   End If
-  lblNumfac.Caption = "Nï¿½ de Doc."
+  lblNumfac.Caption = "Nº de Doc."
   lblpersona.Caption = "Cliente :"
 '  lblven.Visible = True
   If LOC_TIPMOV = 97 Then
@@ -5951,7 +5948,7 @@ Else
  ElseIf LOC_TIPMOV = 20 Then
 '  lblven.Visible = False
   lblpersona.Caption = "Proveedor :"
-  lblNumfac.Caption = "Nï¿½de Kardex"
+  lblNumfac.Caption = "Nºde Kardex"
   lblflete.Caption = "Flete"
   cmbFBG.AddItem "K = Kardex"
   cmbFBG.AddItem "F = Facturas"
@@ -5959,7 +5956,7 @@ Else
   cmbFBG.ListIndex = 0
  ElseIf LOC_TIPMOV = 99 Or LOC_TIPMOV = 30 Then
   lblpersona.Caption = "Proveedor :"
-  lblNumfac.Caption = "Nï¿½de Kardex"
+  lblNumfac.Caption = "Nºde Kardex"
   lblflete.Caption = "Flete"
   cmbFBG.AddItem "K = Kardex"
   If LOC_TIPMOV = 30 Then cmdImp.Enabled = True

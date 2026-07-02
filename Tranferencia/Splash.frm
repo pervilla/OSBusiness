@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.2#0"; "Comctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form Splash 
    AutoRedraw      =   -1  'True
    BackColor       =   &H00FFFFFF&
@@ -25,7 +25,7 @@ Begin VB.Form Splash
    ScaleHeight     =   1905
    ScaleWidth      =   7890
    WhatsThisHelp   =   -1  'True
-   Begin ComctlLib.ProgressBar rctStatusBar 
+   Begin MSComctlLib.ProgressBar rctStatusBar 
       Height          =   165
       Left            =   1920
       TabIndex        =   3

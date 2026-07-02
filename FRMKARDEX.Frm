@@ -644,7 +644,7 @@ Begin VB.Form KARDEX
       Width           =   1455
    End
    Begin VB.Label lblmensaje 
-      Caption         =   "Procesando Informaciï¿½n ..."
+      Caption         =   "Procesando Información ..."
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -702,7 +702,7 @@ Private Sub Command2_Click()
 ff_flag = "A"
 Dim Xx As rdoQuery
 Dim ver_xx As rdoResultset
-pub_mensaje = "Solo el Administrador del Sistema Sabe esta Opciï¿½n , si no lo conoce no procesar, puede durar varios minutos ....ï¿½ Continuar proceso ? . .."
+pub_mensaje = "Solo el Administrador del Sistema Sabe esta Opción , si no lo conoce no procesar, puede durar varios minutos ....¿ Continuar proceso ? . .."
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -994,7 +994,7 @@ FINAL = "S"
 
         If checias.Value = 0 Then GoTo go_una
         If LK_CODCIA = "09" Or LK_CODCIA = "50" Then
-           'Costeo_Chepen ' solo pï¿½ra la botica chepen
+           'Costeo_Chepen ' solo pàra la botica chepen
 go_una:
            wol_codcia = "('" & LK_CODCIA & "')"
         Else
@@ -1037,11 +1037,11 @@ go_una:
        far_codart.MoveLast
     End If
 
-    PB.Value = 0
-    PB.Min = 0
-    PB.Max = far_codart.RowCount
+    pbValue = 0
+    pbMin = 0
+    pbMax = far_codart.RowCount
     LblMensaje.Visible = True
-    PB.Visible = True
+    pb.Visible = True
     wFAR_CODART = far_codart
     Band = "A"
   End If
@@ -1159,10 +1159,10 @@ Do Until FINAL = "S"
 '     SQ_OPER = 1
 '     PUB_CODCIA = xCODCIA
      PUB_CODVEN = Nulo_Valor0(wFAR_CODART!FAR_CODVEN)
-     LEER_VEN_LLAVE
-     If Not ven_llave.EOF Then
-          KARDEX.GridK.TextMatrix(fila1, 18) = ven_llave!VEM_NOMBRE
-     End If
+'     LEER_VEN_LLAVE
+'     If Not ven_llave.EOF Then
+          KARDEX.GridK.TextMatrix(fila1, 18) = PUB_CODVEN ' ven_llave!VEM_NOMBRE
+'     End If
     Else
       SQ_OPER = 1
       PUB_CODCIA = wFAR_CODART!FAR_CODCIA ' xCODCIA
@@ -1330,9 +1330,9 @@ pasa:
        Else
           If i_maximo.Visible Then
             If fila1 > i_maximo.Text Then
-               pub_mensaje = "Hay mï¿½s registros... desea ver mas Registros ?"
+               pub_mensaje = "Hay más registros... desea ver mas Registros ?"
                Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-               If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
+               If Pub_Respuesta = vbYes Then   ' El usuario eligió
                   i_maximo.Text = i_maximo.Text + 100
                Else
                  FINAL = "S"
@@ -1342,7 +1342,7 @@ pasa:
        End If
     Else
        far_codart.MovePrevious
-'       PB.Value = fila1
+'       pbValue = fila1
        If far_codart.BOF Then FINAL = "S"
     End If
 
@@ -1515,7 +1515,6 @@ If i_codart2.Visible Then Azul i_codart2, i_codart2
 End Sub
 
 Private Sub Form_Load()
-CenterMe KARDEX
 Dim fech As String
 Dim wwano As Integer
 pub_cadena = "SELECT PED_FECHA,PED_NUMSER ,PED_NUMFAC, PED_CONDI,PED_CODVEN , PED_CODART , PED_CANTIDAD, PED_EQUIV , PED_CODCLIE FROM PEDIDOS " & _
@@ -1680,7 +1679,7 @@ KARDEX.GridK.Visible = False
 End Sub
 Private Sub i_codart2_KeyDown(KeyCode As Integer, Shift As Integer)
 Dim strFindMe As String
-Dim itmFound As MSComctlLib.ListItem    ' Variable FoundItem.
+Dim itmFound As ListItem    ' Variable FoundItem.
 If KeyCode = 113 Then
   If option1(0).Value Then
     option1(0).Value = False
@@ -1784,7 +1783,7 @@ Private Sub i_codart2_KeyPress(KeyAscii As Integer)
 Dim VALOR As String
 Dim tf As Integer
 Dim I, car
-Dim itmFound As MSComctlLib.ListItem
+Dim itmFound As ListItem
 Dim unid_max As Integer
 car = Chr(KeyAscii)
 KeyAscii = Asc(UCase(car))
@@ -2042,7 +2041,7 @@ End If
 If KeyCode = 40 Or KeyCode = 38 Or KeyCode = 34 Or KeyCode = 33 Then
  Exit Sub
 End If
-Dim itmFound As MSComctlLib.ListItem    ' Variable FoundItem.
+Dim itmFound As ListItem    ' Variable FoundItem.
 If ListView1.Visible Then
   Set itmFound = ListView1.FindItem(LTrim(i_codart2.Text), lvwText, , lvwPartial)
   If itmFound Is Nothing Then
@@ -2217,7 +2216,7 @@ KARDEX.GridK.TextMatrix(0, 0) = "Fec.Proc"
 KARDEX.GridK.TextMatrix(0, 1) = "Fec.Emis."
 KARDEX.GridK.TextMatrix(0, 2) = "Documento"
 KARDEX.GridK.TextMatrix(0, 3) = "Concepto"
-KARDEX.GridK.TextMatrix(0, 4) = "Descripciï¿½n"
+KARDEX.GridK.TextMatrix(0, 4) = "Descripción"
 
 KARDEX.GridK.TextMatrix(0, 5) = "Ingreso"
 KARDEX.GridK.TextMatrix(0, 6) = "Salida"

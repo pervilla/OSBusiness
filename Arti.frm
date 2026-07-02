@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
-Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Begin VB.Form frmARTI 
    Caption         =   "Maestro de Articulos"
    ClientHeight    =   12075
@@ -125,7 +125,7 @@ Begin VB.Form frmARTI
          Width           =   1215
       End
       Begin VB.Label Label10 
-         Caption         =   "Nï¿½ Lista a Usar :"
+         Caption         =   "Nº Lista a Usar :"
          Height          =   255
          Index           =   0
          Left            =   1920
@@ -142,7 +142,25 @@ Begin VB.Form frmARTI
          Width           =   1335
       End
    End
-    End
+   Begin VB.CheckBox art_situacion 
+      Caption         =   "DesActivado"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00000080&
+      Height          =   255
+      Left            =   7200
+      TabIndex        =   263
+      Top             =   1320
+      Width           =   2175
+   End
+   Begin VB.Frame fragen 
       Caption         =   "Calcular Stock Minimos y Maximos por Promedio."
       Height          =   2895
       Left            =   2520
@@ -1099,7 +1117,7 @@ Begin VB.Form frmARTI
          Width           =   1335
       End
       Begin VB.CommandButton cmdconfirma 
-         Caption         =   "Con&firmar Grabaciï¿½n"
+         Caption         =   "Con&firmar Grabación"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1192,7 +1210,7 @@ Begin VB.Form frmARTI
       End
       Begin VB.Label lblnomarti 
          AutoSize        =   -1  'True
-         Caption         =   "Descripciï¿½n del Articulo"
+         Caption         =   "Descripción del Articulo"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1230,7 +1248,7 @@ Begin VB.Form frmARTI
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      TabCaption(0)   =   "&Definiciï¿½n de Estructura"
+      TabCaption(0)   =   "&Definición de Estructura"
       TabPicture(0)   =   "Arti.frx":0A97
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "Fvarios"
@@ -1247,17 +1265,17 @@ Begin VB.Form frmARTI
       TabCaption(1)   =   "&Porcentajes"
       TabPicture(1)   =   "Arti.frx":0AB3
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "CERO"
+      Tab(1).Control(0)=   "Fcomi"
       Tab(1).Control(1)=   "Fop"
-      Tab(1).Control(2)=   "Fcomi"
+      Tab(1).Control(2)=   "CERO"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Otras Opciones"
       TabPicture(2)   =   "Arti.frx":0ACF
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Frame5"
-      Tab(2).Control(1)=   "Frame4"
-      Tab(2).Control(2)=   "frarelacion"
-      Tab(2).Control(3)=   "frmpro"
+      Tab(2).Control(0)=   "frmpro"
+      Tab(2).Control(1)=   "frarelacion"
+      Tab(2).Control(2)=   "Frame4"
+      Tab(2).Control(3)=   "Frame5"
       Tab(2).ControlCount=   4
       Begin VB.CheckBox cheoferta 
          Caption         =   "Esta en Oferta !"
@@ -1640,7 +1658,7 @@ Begin VB.Form frmARTI
             Width           =   2385
          End
          Begin VB.CheckBox exigv 
-            Caption         =   "Exoneraciï¿½n IGV"
+            Caption         =   "Exoneración IGV"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   9.75
@@ -1756,24 +1774,6 @@ Begin VB.Form frmARTI
             Visible         =   0   'False
             Width           =   720
          End
-            Begin VB.CheckBox art_situacion 
-               Caption         =   "DesActivado"
-               BeginProperty Font 
-                  Name            =   "Tahoma"
-                  Size            =   9.75
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H00000080&
-               Height          =   255
-               Left            =   7200
-               TabIndex        =   263
-               Top             =   1320
-               Width           =   2175
-            End
       End
       Begin VB.Frame frarelacion 
          Caption         =   "Articulo Relacionado con Almacen Defectuoso : "
@@ -1803,7 +1803,7 @@ Begin VB.Form frmARTI
             Width           =   855
          End
          Begin VB.CommandButton cmdquitar 
-            Caption         =   "&Quitar Relaciï¿½n"
+            Caption         =   "&Quitar Relación"
             Height          =   600
             Left            =   5640
             Picture         =   "Arti.frx":136F
@@ -1834,7 +1834,7 @@ Begin VB.Form frmARTI
          End
          Begin VB.Label lblLabels 
             AutoSize        =   -1  'True
-            Caption         =   "Codigo de Relaciï¿½n"
+            Caption         =   "Codigo de Relación"
             ForeColor       =   &H00000000&
             Height          =   195
             Index           =   5
@@ -1855,7 +1855,7 @@ Begin VB.Form frmARTI
          End
       End
       Begin VB.Frame frmpro 
-         Caption         =   "Relaciï¿½n de Procesos"
+         Caption         =   "Relación de Procesos"
          Height          =   375
          Left            =   -74640
          TabIndex        =   81
@@ -1878,7 +1878,7 @@ Begin VB.Form frmARTI
             Width           =   1140
          End
          Begin VB.CommandButton cmdp 
-            Caption         =   "Activar Relaciï¿½n"
+            Caption         =   "Activar Relación"
             Height          =   735
             Left            =   0
             TabIndex        =   83
@@ -2469,7 +2469,7 @@ Begin VB.Form frmARTI
          End
          Begin VB.Label lblart 
             AutoSize        =   -1  'True
-            Caption         =   "Divisiï¿½n:"
+            Caption         =   "División:"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -2524,7 +2524,7 @@ Begin VB.Form frmARTI
             Width           =   1455
          End
          Begin VB.CheckBox cheespecial 
-            Caption         =   "Actualizaciï¿½n en Bloque"
+            Caption         =   "Actualización en Bloque"
             ForeColor       =   &H00808000&
             Height          =   495
             Left            =   3720
@@ -3253,7 +3253,7 @@ Begin VB.Form frmARTI
       End
       Begin VB.Label LblDatos 
          AutoSize        =   -1  'True
-         Caption         =   "Nï¿½. Dir."
+         Caption         =   "Nº. Dir."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -3492,7 +3492,7 @@ Begin VB.Form frmARTI
          Width           =   900
       End
       Begin VB.Label Label2 
-         Caption         =   "    Relaciï¿½n      Cia  -  Cuenta"
+         Caption         =   "    Relación      Cia  -  Cuenta"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -4109,7 +4109,7 @@ Begin VB.Form frmARTI
       Width           =   1300
    End
    Begin VB.CommandButton cmdModificar 
-      Caption         =   "&Modificaciï¿½n"
+      Caption         =   "&Modificación"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -4844,7 +4844,7 @@ txtnombre.Text = ARMA_NOMBRE
 End Sub
 
 Private Sub art_situacion_Click()
-If Left(cmdModificar.Caption, 2) <> "&G" Then Exit Sub
+If Left(CmdModificar.Caption, 2) <> "&G" Then Exit Sub
 If art_situacion.Value = 0 Then
   If flag_art_situacion = 1 Then
     If wflag_bloq_desactiva = "A" Then
@@ -5235,12 +5235,12 @@ Private Sub cmdact6_Click()
 Dim WVA As Currency
 Dim ARMAD  As String
 Dim ARMAS As String
-If Val(cmbtipo.Text) = 1 Or Val(cmbtipo.Text) = -1 Then
+If Val(cmbTipo.Text) = 1 Or Val(cmbTipo.Text) = -1 Then
 Else
-  MsgBox "Selecione el Tipo de Operaciï¿½n. ", 48, Pub_Titulo
+  MsgBox "Selecione el Tipo de Operación. ", 48, Pub_Titulo
   Exit Sub
 End If
-pub_mensaje = "Actualziar esta Lista ï¿½Desea Continuar... ?"
+pub_mensaje = "Actualziar esta Lista ¿Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -5254,7 +5254,7 @@ Else
 End If
 WVA = Val(txtporlista.Text)
 
-If Val(cmbtipo.Text) = 1 Then
+If Val(cmbTipo.Text) = 1 Then
 WVA = 1 + (WVA / 100)
 Else
 WVA = ((100 - WVA) / 100)
@@ -5378,7 +5378,7 @@ Else
   Exit Sub
 End If
 MsgBox "Usted a escogido la opcion de : " & Chr(13) & cmdptipo.Text, 48, Pub_Titulo
-pub_mensaje = "Confirmar la actualizacion de Precios...   ï¿½Desea Continuar... ?"
+pub_mensaje = "Confirmar la actualizacion de Precios...   ¿Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -5840,7 +5840,7 @@ chep9.Value = 0
 
 cmdptipo.Clear
 cmdptipo.AddItem "1 =Porcentaje Adicional al Costo Promedio C/IGV"
-cmdptipo.AddItem "2 =Porcentaje de Disminuciï¿½n al Precio C/IGV"
+cmdptipo.AddItem "2 =Porcentaje de Disminución al Precio C/IGV"
 cmdptipo.ListIndex = 0
 fraactlinea.Visible = True
 End Sub
@@ -5858,7 +5858,7 @@ End If
 
 
 var_codven = Val(Left(cmdvend.Text, 3))
-var_codart = Val(txt_key.Text)
+var_codart = Val(Txt_key.Text)
 If var_codven = 0 Then Exit Sub
 If var_codart = 0 Then
   MsgBox "No procede, especifique un producto y un Vendedor ", 48, Pub_Titulo
@@ -5981,7 +5981,7 @@ llave_data.MoveNext
 Loop
 
 cmdactvend.Caption = "Actualizar"
-MsgBox "Actualizaciï¿½n Terminada "
+MsgBox "Actualización Terminada "
 cheespecial.Value = 0
 cmdactvend.Enabled = False
 
@@ -6006,14 +6006,14 @@ If Left(cmbcal.Text, 1) = "<" Then
  Exit Sub
 End If
 
-wnombre = InputBox("Ingrese la Descripciï¿½n del Articulo :", Pub_Titulo, Trim(txtnombre.Text))
+wnombre = InputBox("Ingrese la Descripción del Articulo :", Pub_Titulo, Trim(txtnombre.Text))
 If wnombre = "" Then
   Screen.MousePointer = 0
   Exit Sub
 End If
 If Trim(wnombre) = "" Then
   Screen.MousePointer = 0
-  MsgBox "Descripciï¿½n NO Validad.", 48, Pub_Titulo
+  MsgBox "Descripción NO Validad.", 48, Pub_Titulo
   Exit Sub
 End If
 LOC_NOMBRE = wnombre
@@ -6061,7 +6061,7 @@ End If
 If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
    pu_alterno = Trim(txt_alterno.Text)
 Else
-   PUB_KEY = Val(txt_key.Text)
+   PUB_KEY = Val(Txt_key.Text)
 End If
 PUB_CODCIA = LK_CODCIA
 LOC_OPER = 1
@@ -6100,18 +6100,9 @@ MsgBox " Intente Nuevamente..", 48, Pub_Titulo
      
 End Sub
 
-Private Sub AgregarUnidad_Click()
-    If grid_unid.Rows > 1 Then
-        grid_unid.Rows = grid_unid.Rows + 1
-    End If
-    grid_unid.Row = grid_unid.Rows - 1
-    grid_unid.Col = 0
-    grid_unid.SetFocus
-End Sub
-
 Private Sub cmdAgregar_Click()
 Dim loc_flag As String
-If Trim(txt_key.Text) = "1" Then
+If Trim(Txt_key.Text) = "1" Then
      MENSAJE_ARTI "No Procede. .."
      Exit Sub
 End If
@@ -6130,8 +6121,8 @@ If Left(cmdAgregar.Caption, 2) = "&A" Then
     End If
     ws_flag_equiv = "A"
     cmdAgregar.Caption = "&Grabar"
-    cmdCancelar.Enabled = True
-    cmdModificar.Enabled = False
+    cmdcancelar.Enabled = True
+    CmdModificar.Enabled = False
     cmdEliminar.Enabled = False
     LIMPIA_ARTI
     frmARTI.decimales.ListIndex = 1
@@ -6141,14 +6132,13 @@ If Left(cmdAgregar.Caption, 2) = "&A" Then
     If frmARTI.art_grupo.ListCount <> 0 Then
        frmARTI.art_grupo.ListIndex = 0
     End If
-    frmARTI.txt_key = GENERA_CODI
-    frmARTI.txt_alterno.Text = frmARTI.txt_key.Text
+    frmARTI.Txt_key = GENERA_CODI
     DESBLOQUEA_TEXT txtnombre, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-    DESBLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
+    DESBLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
     DESBLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
     DESBLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-    DESBLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
-    BLOQUEA_TEXT txt_key
+    DESBLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+    BLOQUEA_TEXT Txt_key
     If LK_MONEDA = "D" Then
         frmARTI.DS.ListIndex = 1
         frmARTI.DS.Enabled = False
@@ -6206,7 +6196,7 @@ If Left(cmdAgregar.Caption, 2) = "&A" Then
     cheservi(0).Value = True
     MANOS(0).Enabled = False
     MANOS(1).Enabled = False
-    Fcomun.Refresh
+    fcomun.Refresh
     Fvarios.Refresh
 Else
     If frmARTI.DS.ListIndex = -1 Then
@@ -6219,7 +6209,7 @@ Else
        MsgBox "Definir Calidad en,  Tablas del Sistema ", 48, Pub_Titulo
        Exit Sub
     End If
-    If Trim(cmbUsu.Text) = "" Then
+    If Trim(cmbusu.Text) = "" Then
        MsgBox "Definir Usuario Responsable. (FICHA OTRAS OPCIONES)", 48, Pub_Titulo
        Exit Sub
     End If
@@ -6264,8 +6254,8 @@ Else
      CN.Execute "Begin Transaction", rdExecDirect
      pub_cadena = "SELECT * FROM CONTROLL"
      Set con_llave = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurLock)
-     frmARTI.txt_key = GENERA_CODI
-     PUB_KEY = Val(frmARTI.txt_key)
+     frmARTI.Txt_key = GENERA_CODI
+     PUB_KEY = Val(frmARTI.Txt_key)
      If Trim(Nulo_Valors(par_llave!par_art_cias)) <> "" Then
         xcuenta = 1
         For fila = 1 To 30
@@ -6280,28 +6270,28 @@ sale:
      Else
         GRABAR_ARTI
      End If
-     If cheasignarc.Value = 1 Then add_convenio Val(frmARTI.txt_key)
+     If cheasignarc.Value = 1 Then add_convenio Val(frmARTI.Txt_key)
      con_llave.Close
      CN.Execute "Commit Transaction", rdExecDirect
      On Error GoTo 0
      cmdAgregar.Caption = "&Adicionar"
-     cmdCancelar.Enabled = True
+     cmdcancelar.Enabled = True
      cmdEliminar.Enabled = True
-     cmdModificar.Enabled = True
+     CmdModificar.Enabled = True
      LIMPIA_ARTI
      BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-     BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
+     BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
      BLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
      BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-     BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+     BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
      If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
        DESBLOQUEA_TEXT txt_alterno
-       BLOQUEA_TEXT txt_key
+       BLOQUEA_TEXT Txt_key
        txt_alterno.SetFocus
      Else
-       DESBLOQUEA_TEXT txt_key
+       DESBLOQUEA_TEXT Txt_key
        BLOQUEA_TEXT txt_alterno
-       txt_key.SetFocus
+       Txt_key.SetFocus
      End If
      Screen.MousePointer = 0
      MANOS(0).Enabled = True
@@ -6320,21 +6310,21 @@ ESCAPA:
         MsgBox Err.Number & "  " & Err.Description & "  Intente Nuevamente."
     End If
     cmdAgregar.Caption = "&Adicionar"
-    cmdCancelar.Enabled = True
+    cmdcancelar.Enabled = True
     cmdEliminar.Enabled = True
-    cmdModificar.Enabled = True
+    CmdModificar.Enabled = True
     LIMPIA_ARTI
     BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
+    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
     BLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
     BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-    BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+    BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
     If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
      DESBLOQUEA_TEXT txt_alterno
      txt_alterno.SetFocus
     Else
-     DESBLOQUEA_TEXT txt_key
-     txt_key.SetFocus
+     DESBLOQUEA_TEXT Txt_key
+     Txt_key.SetFocus
     End If
     Screen.MousePointer = 0
     MANOS(0).Enabled = True
@@ -6346,7 +6336,7 @@ End Sub
 Private Sub cmdagregar_GotFocus()
 If ListView1.Visible Then
   ListView1.Visible = False
-  txt_key.Text = ""
+  Txt_key.Text = ""
 End If
 End Sub
 
@@ -6407,7 +6397,7 @@ Loop
 pb.Visible = False
 pbMin = 0
 cheapor.Value = 0
-MsgBox "Actualizaciï¿½n Terminada.", 48, Pub_Titulo
+MsgBox "Actualización Terminada.", 48, Pub_Titulo
 
 End Sub
 
@@ -6422,7 +6412,7 @@ End Sub
 Private Sub cmdCancelar_GotFocus()
 If ListView1.Visible Then
   ListView1.Visible = False
-  txt_key.Text = ""
+  Txt_key.Text = ""
 End If
 End Sub
 
@@ -6443,7 +6433,7 @@ End Sub
 Private Sub cmdCerrar_GotFocus()
 If ListView1.Visible Then
   ListView1.Visible = False
-  txt_key.Text = ""
+  Txt_key.Text = ""
 End If
 End Sub
 
@@ -6451,7 +6441,7 @@ Private Sub cmdconfirma_Click()
   If Op(1).Value Then
      pasa = 0
      frmARTI.F14.Visible = False
-     If Left(cmdModificar.Caption, 2) = "&G" Then
+     If Left(CmdModificar.Caption, 2) = "&G" Then
        CmdModificar_Click
      Else
        cmdAgregar_Click
@@ -6560,8 +6550,8 @@ Dim ws_codcia As String
 Dim WS_CODART As Currency
 Dim flag_puntos As String * 1
 On Error GoTo ESCAPA
-If Len(txt_key) = 0 Or Len(txtnombre.Text) = 0 Then
-    If Not Trim(txt_key) = "1" Then
+If Len(Txt_key) = 0 Or Len(txtnombre.Text) = 0 Then
+    If Not Trim(Txt_key) = "1" Then
        Screen.MousePointer = 0
        MENSAJE_ARTI "NO a seleccionado ningun Articulo... !"
 '       txt_key.SetFocus
@@ -6587,7 +6577,7 @@ End If
                 Else
                     LblMensaje.Visible = False
                     Screen.MousePointer = 0
-                    MsgBox "NO se Puede Eliminar ...  ARTICULO CON HISTORIA " & Chr(13) & "Compaï¿½ia : " & ws_codcia, 48, Pub_Titulo
+                    MsgBox "NO se Puede Eliminar ...  ARTICULO CON HISTORIA " & Chr(13) & "Compañia : " & ws_codcia, 48, Pub_Titulo
                     Exit Sub
                 End If
             End If
@@ -6631,12 +6621,12 @@ End If
     If LK_CODCIA <> "00" Then
       Screen.MousePointer = 0
       LblMensaje.Visible = False
-      MsgBox "No Procede la Eliminaciï¿½n.  Punto de Venta no permitido!!(solo en la Cia. central)", 48, Pub_Titulo
+      MsgBox "No Procede la Eliminación.  Punto de Venta no permitido!!(solo en la Cia. central)", 48, Pub_Titulo
       Exit Sub
     End If
   End If
   LblMensaje.Visible = False
-  pub_mensaje = " ï¿½Desea Eliminar el Articulo... ?"
+  pub_mensaje = " ¿Desea Eliminar el Articulo... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
       LblMensaje.Visible = False
@@ -6708,22 +6698,22 @@ ESCAPA:
     MsgBox Err.Number & "  " & Err.Description & "  Intente Nuevamente."
     LblMensaje.Visible = False
     DoEvents
-    cmdCancelar.Enabled = True
+    cmdcancelar.Enabled = True
     cmdEliminar.Enabled = True
-    cmdModificar.Enabled = True
+    CmdModificar.Enabled = True
     cmdAgregar.Enabled = True
     LIMPIA_ARTI
     BLOQUEA_TEXT art_linea, art_numero, art_marca, art_plancha, checambio, txtlitro, chebof, chesub
     BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, exigv, txtcospro, cmddolares, txtfechault
-    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, cmddolares, txtpeso
+    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, cmddolares, txtpeso
     BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-    BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+    BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
     If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
      DESBLOQUEA_TEXT txt_alterno
      txt_alterno.SetFocus
     Else
-     DESBLOQUEA_TEXT txt_key
-     txt_key.SetFocus
+     DESBLOQUEA_TEXT Txt_key
+     Txt_key.SetFocus
     End If
     Screen.MousePointer = 0
 
@@ -6732,7 +6722,7 @@ End Sub
 Private Sub cmdEliminar_GotFocus()
 If ListView1.Visible Then
   ListView1.Visible = False
-  txt_key.Text = ""
+  Txt_key.Text = ""
 End If
 End Sub
 
@@ -6909,15 +6899,15 @@ End Sub
 
 Private Sub CmdModificar_Click()
 'On Error GoTo ESCAPA
-If Trim(txt_key.Text) = "1" Then
+If Trim(Txt_key.Text) = "1" Then
      MENSAJE_ARTI "No Procede. .."
      Exit Sub
 End If
-If Len(txt_key) = 0 Or Trim(txtnombre.Text) = "" Then
+If Len(Txt_key) = 0 Or Trim(txtnombre.Text) = "" Then
    MENSAJE_ARTI "NO a seleccionado ningun Articulo... !"
    Exit Sub
 End If
-If Left(cmdModificar.Caption, 2) = "&M" Then
+If Left(CmdModificar.Caption, 2) = "&M" Then
     ws_flag_equiv = ""
     LK_ACCESO_REPORT = ""
     Load frmclave2
@@ -6939,26 +6929,26 @@ If Left(cmdModificar.Caption, 2) = "&M" Then
         Frame3.Enabled = True
     End If
     
-    cmdModificar.Caption = "&Grabar"
+    CmdModificar.Caption = "&Grabar"
     cmdEliminar.Enabled = False
     cmdAgregar.Enabled = False
-    cmdCancelar.Enabled = True
+    cmdcancelar.Enabled = True
     If LK_CODUSU = "SUPERVISOR" Or LK_CODUSU = "ADMIN" Or LK_CODUSU = "SUPER" Then
        DESBLOQUEA_TEXT txt_alterno
     Else
        BLOQUEA_TEXT txt_alterno
     End If
-    BLOQUEA_TEXT txt_key
+    BLOQUEA_TEXT Txt_key
     DESBLOQUEA_TEXT txtnombre, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-    DESBLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
+    DESBLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
     DESBLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
     DESBLOQUEA_TEXT txtmargen, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
-    If LK_CODUSU = "ADMIN" Then DESBLOQUEA_TEXT cmbUsu
+    If LK_CODUSU = "ADMIN" Then DESBLOQUEA_TEXT cmbusu
     If loc_cheoferta = "A" Then DESBLOQUEA_TEXT cheoferta
     If LK_EMP_PTO = "A" Then
       If LK_CODCIA <> "00" Then
         BLOQUEA_TEXT decimales, art_grupo, art_familia, art_subfam, art_codpro, txtcodigo2
-        BLOQUEA_TEXT art_situacion, DS, cheservi(0), cheservi(1), cheservi(2), txtMin, txtMax
+        BLOQUEA_TEXT art_situacion, DS, cheservi(0), cheservi(1), cheservi(2), txtMin, txtmax
       End If
     End If
     DESBLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
@@ -6972,9 +6962,9 @@ If Left(cmdModificar.Caption, 2) = "&M" Then
         frmARTI.DS.Enabled = Not False
     End If
     If loc_flag_bloq = "A" Then
-      Fcomun.Enabled = False
+      fcomun.Enabled = False
     Else
-      Fcomun.Enabled = True
+      fcomun.Enabled = True
     End If
     If wflag_bloq_desactiva = "A" Then
       art_situacion.Enabled = True
@@ -7009,11 +6999,11 @@ Else
     End If
     Screen.MousePointer = 11
     If Val(loc_orig_situ) = 1 And art_situacion.Value = 0 Then
-       If Trim(cmbUsu.Text) = "" Then
-            cmbUsu.Enabled = True
+       If Trim(cmbusu.Text) = "" Then
+            cmbusu.Enabled = True
             Screen.MousePointer = 0
             MsgBox "Definir Usuario Responsable. (FICHA OTRAS OPCIONES)", 48, Pub_Titulo
-            cmbUsu.SetFocus
+            cmbusu.SetFocus
             Exit Sub
        End If
     End If
@@ -7048,13 +7038,13 @@ Else
           pu_codcia = Mid(Trim(par_llave!par_art_cias), xcuenta, 2)
           If Trim(pu_codcia) = "" Then Exit For
             SQ_OPER = 1
-            PUB_CODART = Val(txt_key.Text)
+            PUB_CODART = Val(Txt_key.Text)
             pu_codcia = pu_codcia
             LEER_ARM_LLAVE
             If Not arm_llave.EOF Then
               If Val(arm_llave!arm_stock) <> 0 Then
                  Screen.MousePointer = 0
-                 MsgBox "No Procede al desactivar, Producto Tiene Stock." & Chr(13) & "Compaï¿½ia: " & pu_codcia, 48, Pub_Titulo
+                 MsgBox "No Procede al desactivar, Producto Tiene Stock." & Chr(13) & "Compañia: " & pu_codcia, 48, Pub_Titulo
                  Exit Sub
                End If
             End If
@@ -7062,7 +7052,7 @@ Else
         Next fila
      Else
         SQ_OPER = 1
-        PUB_CODART = Val(txt_key.Text)
+        PUB_CODART = Val(Txt_key.Text)
         pu_codcia = LK_CODCIA
         LEER_ARM_LLAVE
         If Not arm_llave.EOF Then
@@ -7075,7 +7065,7 @@ Else
      End If
     End If
     If pasa = 1 Then
-      If EXISTE_ART(txtnombre.Text, Trim(txt_key.Text)) Then
+      If EXISTE_ART(txtnombre.Text, Trim(Txt_key.Text)) Then
           Screen.MousePointer = 0
           MENSAJE_ARTI "Existen algunos Articulos con estos NOMBRES .."
           frmARTI.ListExiste.SetFocus
@@ -7089,7 +7079,7 @@ Else
         For fila = 1 To 30
           pu_codcia = Mid(Trim(par_llave!par_art_cias), xcuenta, 2)
           If Trim(pu_codcia) = "" Then Exit For
-             PUB_KEY = Val(frmARTI.txt_key.Text)
+             PUB_KEY = Val(frmARTI.Txt_key.Text)
              PUB_CODCIA = pu_codcia
              LOC_OPER = 1
              LEER_LOC
@@ -7100,7 +7090,7 @@ Else
     Else
       GRABAR_ARTI
     End If
-    If cheasignarc.Value = 1 Then add_convenio Val(frmARTI.txt_key)
+    If cheasignarc.Value = 1 Then add_convenio Val(frmARTI.Txt_key)
     CN.Execute "Commit Transaction", rdExecDirect
     ' Actuzliar Varios Producto amarre por Sub Familia
     If Val(Right(art_subfam.Text, 8)) <> 0 Then
@@ -7114,23 +7104,23 @@ Else
           frmPreciosArti.Show 1
         End If
     End If
-    cmdModificar.Caption = "&Modificaciï¿½n"
-    cmdCancelar.Enabled = True
+    CmdModificar.Caption = "&Modificación"
+    cmdcancelar.Enabled = True
     cmdEliminar.Enabled = True
     cmdAgregar.Enabled = True
     LIMPIA_ARTI
     BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
+    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
     BLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
     BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-    BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+    BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
     MENSAJE_ARTI "Articulo,  MODIFICADO... "
     If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
       DESBLOQUEA_TEXT txt_alterno
       txt_alterno.SetFocus
     Else
-      DESBLOQUEA_TEXT txt_key
-      txt_key.SetFocus
+      DESBLOQUEA_TEXT Txt_key
+      Txt_key.SetFocus
     End If
     MANOS(0).Enabled = True
     MANOS(1).Enabled = True
@@ -7144,23 +7134,23 @@ ESCAPA:
         MsgBox Err.Number & "  " & Err.Description & "  Intente Nuevamente."
     End If
     CN.Execute "Rollback Transaction", rdExecDirect
-    cmdModificar.Caption = "&Modificaciï¿½n"
-    cmdCancelar.Enabled = True
+    CmdModificar.Caption = "&Modificación"
+    cmdcancelar.Enabled = True
     cmdEliminar.Enabled = True
-    cmdModificar.Enabled = True
+    CmdModificar.Enabled = True
     cmdAgregar.Enabled = True
     LIMPIA_ARTI
     BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
+    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
     BLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
     BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-    BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+    BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
     If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
      DESBLOQUEA_TEXT txt_alterno
      txt_alterno.SetFocus
     Else
-     DESBLOQUEA_TEXT txt_key
-     txt_key.SetFocus
+     DESBLOQUEA_TEXT Txt_key
+     Txt_key.SetFocus
     End If
     Screen.MousePointer = 0
     MANOS(0).Enabled = True
@@ -7171,7 +7161,7 @@ End Sub
 Private Sub cmdModificar_GotFocus()
 If ListView1.Visible Then
   ListView1.Visible = False
-  txt_key.Text = ""
+  Txt_key.Text = ""
 End If
 End Sub
 
@@ -7360,7 +7350,7 @@ Return
 End Sub
 
 Private Sub cmdqc_Click()
-pub_cadena = "delete from tabconvenio where tco_codart = " & Val(txt_key.Text)
+pub_cadena = "delete from tabconvenio where tco_codart = " & Val(Txt_key.Text)
 CN.Execute pub_cadena
 MsgBox "Producto Quitado del Convenio.", 48, Pub_Titulo
 cheasignarc.Value = 1
@@ -7450,7 +7440,7 @@ Dim var_codven As Integer
 Dim var_codart  As Currency
 
 var_codven = Val(Left(cmdvend.Text, 3))
-var_codart = Val(txt_key.Text)
+var_codart = Val(Txt_key.Text)
 If var_codart = 0 Then Exit Sub
 If var_codven = 0 Then Exit Sub
 PSCOMI_VEN.rdoParameters(0) = LK_CODCIA
@@ -7560,7 +7550,7 @@ End If
 End Sub
 
 Private Sub exigv_Click()
-If Left(cmdModificar.Caption, 2) = "&M" And Left(cmdAgregar.Caption, 2) = "&A" Then Exit Sub
+If Left(CmdModificar.Caption, 2) = "&M" And Left(cmdAgregar.Caption, 2) = "&A" Then Exit Sub
   
 If exigv.Value = 0 Then
 '  txtcospro.Enabled = False
@@ -7572,7 +7562,7 @@ End If
 End Sub
 
 Private Sub Form_Activate()
-frmARTI.SSTab1.tab = 0
+frmARTI.SSTab1.Tab = 0
 End Sub
 
 Private Sub Form_DblClick()
@@ -7586,7 +7576,6 @@ Private Sub Form_DblClick()
 End Sub
 
 Private Sub Form_Load()
-CenterMe Arti
 Dim loc_flag_listas As String
 Dim psvend As rdoResultset
 
@@ -7679,18 +7668,18 @@ Set llave_sum_arti = PSLOC_WARTI.OpenResultset(rdOpenKeyset, rdConcurValues)
     frmARTI.DS.ListIndex = -1
     frmARTI.decimales.ListIndex = -1
     BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
+    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
     BLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
     BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-    BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, art_grupop, lfvta
+    BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, art_grupop, lfvta
     If LK_FLAG_ORIGINAL = "A" Then
        txt_alterno.Visible = False
        lblalterno.Visible = False
        txtnombre.Left = 2160
-       lblnomarti.Left = 2160
+       LBLNOMARTI.Left = 2160
     End If
     If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
-       BLOQUEA_TEXT txt_key
+       BLOQUEA_TEXT Txt_key
        pub_cadena = "SELECT ART_ALTERNO FROM ARTI WHERE ART_CODCIA = ? AND ART_KEY <> 0 order by art_alterno"
     Else
       BLOQUEA_TEXT txt_alterno
@@ -7703,7 +7692,7 @@ Set llave_sum_arti = PSLOC_WARTI.OpenResultset(rdOpenKeyset, rdConcurValues)
     mano_CODI.Requery
     LLENADO_GRUPOP
     Fvarios.Visible = False
-    Fcomun.Visible = True
+    fcomun.Visible = True
     Fdatos.Visible = True
     PROCESO_ARTI
     loc_tipo = "V"
@@ -7717,10 +7706,10 @@ Set llave_sum_arti = PSLOC_WARTI.OpenResultset(rdOpenKeyset, rdConcurValues)
     Fvarios.Visible = True
     Screen.MousePointer = 0
     LBLUNIDAD.Caption = ""
-    frmARTI.Fcomun.Visible = True
-    frmARTI.Fcomun.Enabled = True
+    frmARTI.fcomun.Visible = True
+    frmARTI.fcomun.Enabled = True
     grid_unid.Enabled = False
-    cmdCancelar.Enabled = True
+    cmdcancelar.Enabled = True
     SQ_OPER = 2
     PUB_TIPREG = 45
     PUB_CODCIA = LK_CODCIA
@@ -7781,20 +7770,13 @@ If LK_CODUSU = "ADMIN" Or LK_CODUSU = "SUPER" Then cmbStock.Visible = True
 
 ws_flag_equiv = ""
 FLAG_BUSCAR_MANITO = ""
-cmbUsu.Clear
+cmbusu.Clear
 pub_cadena = "SELECT  * FROM USUARIOS "
 Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
 Do Until X.EOF
-  cmbUsu.AddItem Trim(X!usu_key)
+  cmbusu.AddItem Trim(X!usu_key)
 X.MoveNext
 Loop
-Dim i As Integer
-For i = 0 To cmbUsu.ListCount - 1
-    If Trim(cmbUsu.List(i)) = Trim(LK_CODUSU) Then
-        cmbUsu.ListIndex = i
-        Exit For
-    End If
-Next i
 If LK_CODUSU = "ADMIN" Or LK_CODUSU = "OPER08" Then
   fracuotas.Enabled = True
 Else
@@ -8062,7 +8044,7 @@ If Trim(Label3(Index).Tag) = "" Then
  Exit Sub
 End If
 Dim wnombre
-wnombre = InputBox("Ingrese la Nueva Descripciï¿½n para este Campo :", Pub_Titulo, Trim(Label3(Index).Caption))
+wnombre = InputBox("Ingrese la Nueva Descripción para este Campo :", Pub_Titulo, Trim(Label3(Index).Caption))
 If wnombre = "" Then
   Screen.MousePointer = 0
   Exit Sub
@@ -8096,9 +8078,9 @@ If LK_CODUSU = "OPERCH01" Or LK_CODUSU = "ADMIN" Then
 Else
 Exit Sub
 End If
-If Val(txt_key.Text) <> 0 Then
+If Val(Txt_key.Text) <> 0 Then
   SQ_OPER = 1
-  PUB_CODART = txt_key.Text
+  PUB_CODART = Txt_key.Text
   pu_codcia = LK_CODCIA
   LEER_ARM_LLAVE
   If arm_llave.EOF Then
@@ -8150,7 +8132,7 @@ If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
  txt_alterno_KeyPress 13
 Else
  loc_key = ListView1.SelectedItem.Index
- txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
+ Txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
  txt_key_KeyPress 13
 End If
 End Sub
@@ -8171,7 +8153,7 @@ If loc_key <> 0 Then
  If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
   txt_alterno.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
  Else
-  txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
+  Txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
  End If
 End If
 
@@ -8183,9 +8165,9 @@ If KeyAscii = 27 Then
  If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" And txt_alterno.Enabled Then
   txt_alterno.Text = ""
   txt_alterno.SetFocus
- ElseIf LK_FLAG_ALTERNO <> "A" And txt_key.Enabled Then
-  txt_key.Text = ""
-  txt_key.SetFocus
+ ElseIf LK_FLAG_ALTERNO <> "A" And Txt_key.Enabled Then
+  Txt_key.Text = ""
+  Txt_key.SetFocus
  End If
  Exit Sub
 End If
@@ -8222,7 +8204,7 @@ If mano_CODI.RowCount > 0 Then
     If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
        If Trim(mano_CODI!ART_alterno) = Trim(txt_alterno.Text) Then Exit Do
     Else
-       If Val(txt_key.Text) = Val(mano_CODI!art_key) Then Exit Do
+       If Val(Txt_key.Text) = Val(mano_CODI!art_key) Then Exit Do
     End If
     mano_CODI.MoveNext
   Loop
@@ -8233,7 +8215,7 @@ If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
     GoTo SALT
     End If
 Else
-    If txt_key.Text = "" Then
+    If Txt_key.Text = "" Then
      mano_CODI.MoveFirst
      GoTo SALT
     End If
@@ -8252,7 +8234,7 @@ If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
   txt_alterno.Text = Trim(mano_CODI!ART_alterno)
   txt_alterno_KeyPress 13
 Else
- txt_key.Text = Trim(mano_CODI!art_key)
+ Txt_key.Text = Trim(mano_CODI!art_key)
  txt_key_KeyPress 13
 
 End If
@@ -8265,7 +8247,7 @@ Private Sub PARPADEA_Timer()
  LblMensaje.Visible = Not LblMensaje.Visible
  If CU > 4 Then
    CU = 0
-   Parpadea.Enabled = False
+   PARPADEA.Enabled = False
    LblMensaje.Visible = False
  End If
 
@@ -8286,8 +8268,8 @@ If ban <> 1 Then
           End If
           pu_alterno = Trim(txt_alterno.Text)
          Else
-          txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).SubItems(1))
-          PUB_KEY = Val(txt_key.Text)
+          Txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).SubItems(1))
+          PUB_KEY = Val(Txt_key.Text)
          End If
        End If
        PUB_CODCIA = LK_CODCIA
@@ -8299,7 +8281,7 @@ If ban <> 1 Then
 End If
 'LLENADO
 frmARTI.frarelacion.Enabled = True
-frmARTI.txt_key.Text = artloc_llave!art_key
+frmARTI.Txt_key.Text = artloc_llave!art_key
 frmARTI.txtnombre.Text = RTrim(Nulo_Valors(artloc_llave!art_nombre))
 ASIGNA_INT art_familia, Nulo_Valor0(artloc_llave!art_familia)
 
@@ -8343,11 +8325,11 @@ frmARTI.lblcospro.Caption = Nulo_Valor0(arm_llave!ARM_COSPRO)
 frmARTI.txtfechault.Text = Format(arm_llave!ARM_FECHA_ULT, "dd/mm/yyyy")
 frmARTI.DS.Text = Trim(Nulo_Valors(artloc_llave!ART_MONEDA))
 frmARTI.DS.Text = Trim(Nulo_Valors(artloc_llave!ART_MONEDA))
-frmARTI.cmbUsu.Text = Trim(Nulo_Valors(artloc_llave!ART_CODUSU_ORIG))
+frmARTI.cmbusu.Text = Trim(Nulo_Valors(artloc_llave!ART_CODUSU_ORIG))
 frmARTI.decimales.Text = Val(Nulo_Valor0(artloc_llave!ART_DECIMALES))
 frmARTI.txt_alterno.Text = Nulo_Valors(artloc_llave!ART_alterno)
 frmARTI.txtMin.Text = Nulo_Valors(artloc_llave!ART_STOCK_MIN)
-frmARTI.txtMax.Text = Nulo_Valors(artloc_llave!ART_STOCK_MAX)
+frmARTI.txtmax.Text = Nulo_Valors(artloc_llave!ART_STOCK_MAX)
 LLENA_CALREL Nulo_Valor0(artloc_llave!ART_CALIDAD)
 LLENA_RELACION Nulo_Valor0(artloc_llave!ART_CODART2)
 txtcodigo2.Text = Nulo_Valor0(artloc_llave!ART_CODART2)
@@ -8460,7 +8442,7 @@ If LK_EMP = "CAM" Then
   PROD_PROC
 End If
 ws_flag_equiv = ""
-frmARTI.SSTab1.tab = 0
+frmARTI.SSTab1.Tab = 0
 VAR_ACTIVAR = 0
 End Sub
 Public Sub LIMPIA_ARTI()
@@ -8472,7 +8454,7 @@ txtper.Text = ""
 cheasignarc.Value = 0
 frmARTI.txtCantMax.Text = ""
 frmARTI.txtCantMaxADD.Text = ""
-cmbUsu.ListIndex = -1
+cmbusu.ListIndex = -1
 fechahora.Caption = ""
 txtmargen.Text = ""
 flag_art_situacion = 0
@@ -8483,9 +8465,9 @@ frmARTI.Lst1.Caption = ""
 frmARTI.lblstock0.Caption = "0.000"
 frmARTI.lblstock1.Caption = "0.000"
 txtMin.Text = ""
-txtMax.Text = ""
+txtmax.Text = ""
 frmARTI.txt_alterno.Text = ""
-frmARTI.txt_key.Text = ""
+frmARTI.Txt_key.Text = ""
 frmARTI.txtnombre.Text = ""
 DS.ListIndex = -1
 LBLUNIDAD.Caption = ""
@@ -8507,7 +8489,7 @@ decimales.Text = ""
 grid_unid.Clear
 grid_unid.Cols = 1
 grid_unid.Rows = 1
-frmARTI.SSTab1.tab = 0
+frmARTI.SSTab1.Tab = 0
 cheservi(0).Value = False
 cheservi(1).Value = False
 cheservi(2).Value = False
@@ -8547,13 +8529,13 @@ frmARTI.txtnombre.Locked = False
 End Sub
 
 Private Sub SSTab1_Click(PreviousTab As Integer)
-If SSTab1.tab = 1 And txtMin.Enabled = True Then
+If SSTab1.Tab = 1 And txtMin.Enabled = True Then
  ' If LK_EMP = "HER" Then
     Azul txtpor1, txtpor1
  ' Else
  '   Azul txtMin, txtMin
  ' End If
-ElseIf SSTab1.tab = 0 And art_familia.Enabled = True Then
+ElseIf SSTab1.Tab = 0 And art_familia.Enabled = True Then
   art_familia.SetFocus
 End If
 End Sub
@@ -8562,13 +8544,13 @@ End Sub
 Private Sub SSTab1_GotFocus()
 If ListView1.Visible Then
   ListView1.Visible = False
-  txt_key.Text = ""
+  Txt_key.Text = ""
 End If
-If SSTab1.tab = 1 And txtpor1.Enabled = True Then
+If SSTab1.Tab = 1 And txtpor1.Enabled = True Then
   If LK_EMP = "HER" Then
     Azul txtpor1, txtpor1
   End If
-ElseIf SSTab1.tab = 0 And art_familia.Enabled = True Then
+ElseIf SSTab1.Tab = 0 And art_familia.Enabled = True Then
   art_familia.SetFocus
 End If
 
@@ -8603,14 +8585,14 @@ If KeyAscii = 13 Then
     If Left(cmdAgregar.Caption, 2) = "&G" Then
         cmdAgregar.SetFocus
     Else
-        cmdModificar.SetFocus
+        CmdModificar.SetFocus
     End If
 End If
 End Sub
 
 Private Sub txtMin_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
-   Azul txtMax, txtMax
+   Azul txtmax, txtmax
 End If
 End Sub
 
@@ -8625,7 +8607,7 @@ If KeyAscii = 39 Then
 End If
 If KeyAscii = 13 Then
     If loc_tipo = "V" Then
-    If frmARTI.SSTab1.tab = 1 Then
+    If frmARTI.SSTab1.Tab = 1 Then
        If LK_EMP = "HER" Then
         Azul txtpor1, txtpor1
         Exit Sub
@@ -8659,9 +8641,9 @@ Dim xcuenta As Integer
 WS_FLAG_UNIDAD = 0
 WS_IMPORTE = 0
 ws_igv = 0
-WORIGINAL = Val(frmARTI.txt_key.Text)
+WORIGINAL = Val(frmARTI.Txt_key.Text)
 If LK_FLAG_ORIGINAL = "A" Then
- walterno = frmARTI.txt_key.Text
+ walterno = frmARTI.Txt_key.Text
 Else
  walterno = Trim(frmARTI.txt_alterno.Text)
 End If
@@ -8681,7 +8663,7 @@ If VAR_NEWCAL = 1 Then
   WCODART2 = 0
   GoTo IR_GRABA1
 End If
-If Left(cmdModificar.Caption, 2) = "&G" Then
+If Left(CmdModificar.Caption, 2) = "&G" Then
     artloc_llave.Edit
      PUB_CODART = WORIGINAL
      SQ_OPER = 1
@@ -8716,7 +8698,7 @@ End If
 
 If pu_codcia = LK_CODCIA Then
    artloc_llave!ART_STOCK_MIN = Nulo_Valor0(frmARTI.txtMin.Text)
-   artloc_llave!ART_STOCK_MAX = Nulo_Valor0(frmARTI.txtMax.Text)
+   artloc_llave!ART_STOCK_MAX = Nulo_Valor0(frmARTI.txtmax.Text)
    artloc_llave!art_marca = Val(Right(art_marca.Text, 3))
    'CUO_CODCIA CUO_PERIODO CUO_CODART  CUO_CANTIDAD
    pub_cadena = "select  * from tabcuo where cuo_codcia = '" & LK_CODCIA & "' and cuo_periodo = '" & txtper.Text & "' and cuo_codart = " & artloc_llave!art_key
@@ -8737,7 +8719,7 @@ If pu_codcia = LK_CODCIA Then
    End If
    rs_regcuotas.Update
    
-   ' SOLO COMPAï¿½IA ACTUAL
+   ' SOLO COMPAÑIA ACTUAL
     pub_cadena = "DELETE FROM FVENTAS WHERE FV_CODCIA = '" & LK_CODCIA & "' AND FV_TIPO = 2 AND FV_CODIGO = " & (artloc_llave!art_key)
     CN.Execute pub_cadena
     pub_cadena = "SELECT * FROM FVENTAS WHERE FV_CODCIA = '" & LK_CODCIA & "' AND FV_TIPO = 2 AND FV_CODIGO = " & (artloc_llave!art_key)
@@ -8755,7 +8737,7 @@ If pu_codcia = LK_CODCIA Then
    
 End If
 
-If Left(cmdModificar.Caption, 2) = "&G" Then
+If Left(CmdModificar.Caption, 2) = "&G" Then
  If frmARTI.art_situacion.Value = 0 And flag_art_situacion = 1 Then
    For int_i = 0 To lstcias.ListCount - 1
      If Left(lstcias.List(int_i), 2) = pu_codcia Then
@@ -8773,7 +8755,7 @@ artloc_llave!ART_CUENTA_CONTAB_C = txtClase
 'artloc_llave!ART_CUENTA_CONTAB = 0 ' txtLab
 
 artloc_llave!art_tipo = loc_tipo
-artloc_llave!ART_CODUSU_ORIG = Trim(cmbUsu.Text)
+artloc_llave!ART_CODUSU_ORIG = Trim(cmbusu.Text)
 artloc_llave!art_familia = Val(Right(art_familia.Text, 5))
 artloc_llave!art_grupop = Val(Right(art_grupop.Text, 10))
 artloc_llave!art_subfam = Val(Right(art_subfam.Text, 5))
@@ -8842,7 +8824,7 @@ LEER_ARM_LLAVE
 
  
 ws_codcia = pu_codcia 'LK_CODCIA
-If Left(cmdModificar.Caption, 2) = "&G" Then
+If Left(CmdModificar.Caption, 2) = "&G" Then
  GoSub IR_POR_CIA
  Exit Sub
 End If
@@ -8874,7 +8856,7 @@ LEER_PRE_LLAVE
 If VAR_NEWCAL = 1 Then
  GoTo IR_GRABA2
 End If
-If Left(cmdModificar.Caption, 2) = "&G" Then
+If Left(CmdModificar.Caption, 2) = "&G" Then
     fila = 0
     Flag_Inicial = "A"
     Do Until pre_mayor.EOF
@@ -9020,7 +9002,7 @@ If Left(cmdAgregar.Caption, 2) = "&G" Then
      arm_llave!arm_saldo_n2 = 0
      arm_llave!ARM_FECHA_ULT = #1/1/1900#
      arm_llave.Update
-     MENSAJE_ARTI "Articulo Nuevo en Compaï¿½ia . . ."
+     MENSAJE_ARTI "Articulo Nuevo en Compañia . . ."
     Else
       MsgBox "Codigo Existe en tabla: Articulo verificar ...", 48, Pub_Titulo
     End If
@@ -9111,16 +9093,16 @@ If loc_tipo = "V" Then
     If Not IsNumeric(frmARTI.txtMin.Text) And Trim(txtMin.Text) <> "" Or Val(txtMin.Text) > 999999999.99 Then
         CONSIS_ARTI = False
         MsgBox "Dato Invalido Stock Minimo ", 48, Pub_Titulo
-        frmARTI.SSTab1.tab = 1
+        frmARTI.SSTab1.Tab = 1
         Azul txtMin, txtMin
         GoTo ESCAPA
     End If
     
-    If Not IsNumeric(frmARTI.txtMax.Text) And Trim(txtMax.Text) <> "" Or Val(txtMax.Text) > 999999999.99 Then
+    If Not IsNumeric(frmARTI.txtmax.Text) And Trim(txtmax.Text) <> "" Or Val(txtmax.Text) > 999999999.99 Then
         CONSIS_ARTI = False
         MsgBox "Dato Invalido Stock Maximo ", 48, Pub_Titulo
-        frmARTI.SSTab1.tab = 1
-        Azul txtMax, txtMax
+        frmARTI.SSTab1.Tab = 1
+        Azul txtmax, txtmax
         GoTo ESCAPA
     End If
     
@@ -9143,31 +9125,31 @@ If loc_tipo = "V" Then
     If Not IsNumeric(txtpor1) And Trim(txtpor1.Text) <> "" Or Val(txtpor1.Text) > 999.99 Then
         CONSIS_ARTI = False
         MsgBox "Dato Invalido % p' 1 ", 48, Pub_Titulo
-        frmARTI.SSTab1.tab = 1
+        frmARTI.SSTab1.Tab = 1
         Azul txtpor1, txtpor1
         GoTo ESCAPA
     ElseIf Not IsNumeric(txtpor2) And Trim(txtpor2.Text) <> "" Or Val(txtpor2.Text) > 999.99 Then
         CONSIS_ARTI = False
         MsgBox "Dato Invalido % p' 2 ", 48, Pub_Titulo
-        frmARTI.SSTab1.tab = 1
+        frmARTI.SSTab1.Tab = 1
         Azul txtpor2, txtpor2
         GoTo ESCAPA
     ElseIf Not IsNumeric(txtpor3) And Trim(txtpor3.Text) <> "" Or Val(txtpor3.Text) > 999.99 Then
         CONSIS_ARTI = False
         MsgBox "Dato Invalido % p' 3 ", 48, Pub_Titulo
-        frmARTI.SSTab1.tab = 1
+        frmARTI.SSTab1.Tab = 1
         Azul txtpor3, txtpor3
         GoTo ESCAPA
     ElseIf Not IsNumeric(txtpor4) And Trim(txtpor4.Text) <> "" Or Val(txtpor4.Text) > 999.99 Then
         CONSIS_ARTI = False
         MsgBox "Dato Invalido % p' 4 ", 48, Pub_Titulo
-        frmARTI.SSTab1.tab = 1
+        frmARTI.SSTab1.Tab = 1
         Azul txtpor4, txtpor4
         GoTo ESCAPA
     ElseIf Not IsNumeric(txtpor5) And Trim(txtpor5.Text) <> "" Or Val(txtpor5.Text) > 999.99 Then
         CONSIS_ARTI = False
         MsgBox "Dato Invalido % p' 5 ", 48, Pub_Titulo
-        frmARTI.SSTab1.tab = 1
+        frmARTI.SSTab1.Tab = 1
         Azul txtpor5, txtpor5
         GoTo ESCAPA
     End If
@@ -9184,7 +9166,7 @@ End Function
 
 Public Sub MENSAJE_ARTI(TEXTO As String)
   LblMensaje.Caption = TEXTO
-  Parpadea.Enabled = True
+  PARPADEA.Enabled = True
 End Sub
 Public Sub SOLO_PORCEBTAJE(Optional tecla)
 'CONVIERTE TODA A MAYUSCULAS LETRAS
@@ -9204,16 +9186,16 @@ Private Sub txt_key_GotFocus()
  If ListView1.Visible Then
   ListView1.Visible = False
  End If
- txt_key.Text = ""
+ Txt_key.Text = ""
  frmARTI.F14.Visible = False
 End Sub
 Private Sub txt_key_KeyDown(KeyCode As Integer, Shift As Integer)
 Dim strFindMe As String
-Dim itmFound As MSComctlLib.ListItem    ' Variable FoundItem.
+Dim itmFound As ListItem    ' Variable FoundItem.
 If Not ListView1.Visible Then
  Exit Sub
 End If
-If KeyCode <> 40 And KeyCode <> 38 And KeyCode <> 34 And KeyCode <> 33 And txt_key.Text = "" Then
+If KeyCode <> 40 And KeyCode <> 38 And KeyCode <> 34 And KeyCode <> 33 And Txt_key.Text = "" Then
   loc_key = 1
   Set ListView1.SelectedItem = ListView1.ListItems(loc_key)
   ListView1.ListItems.Item(loc_key).Selected = True
@@ -9245,9 +9227,9 @@ GoTo fin
 POSICION:
   ListView1.ListItems.Item(loc_key).Selected = True
   ListView1.ListItems.Item(loc_key).EnsureVisible
-  txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
+  Txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
   DoEvents
-  txt_key.SelStart = Len(txt_key.Text)
+  Txt_key.SelStart = Len(Txt_key.Text)
   DoEvents
 fin:
 
@@ -9256,22 +9238,22 @@ Private Sub txt_key_KeyPress(KeyAscii As Integer)
 Dim VALOR As String
 Dim tf As Integer
 Dim I
-Dim itmFound As MSComctlLib.ListItem
+Dim itmFound As ListItem
 
 If KeyAscii = 27 Then
- txt_key.Text = ""
+ Txt_key.Text = ""
 End If
 If KeyAscii <> 13 Then
    GoTo fin
 End If
 On Error GoTo ERROR_CODIGO
-  pu_codclie = Val(txt_key.Text)
+  pu_codclie = Val(Txt_key.Text)
 On Error GoTo 0
-If Len(txt_key.Text) = 0 Then
+If Len(Txt_key.Text) = 0 Then
    Exit Sub
 End If
 
-If pu_codclie <> 0 And IsNumeric(txt_key.Text) = True Then
+If pu_codclie <> 0 And IsNumeric(Txt_key.Text) = True Then
    LOC_OPER = 1
    PUB_CODCIA = LK_CODCIA
    On Error GoTo ERROR_CODIGO
@@ -9280,34 +9262,34 @@ If pu_codclie <> 0 And IsNumeric(txt_key.Text) = True Then
    On Error GoTo 0
    If artloc_llave.EOF Then
      MsgBox "REGISTRO NO EXISTE ...", 48, Pub_Titulo
-     Azul txt_key, txt_key
+     Azul Txt_key, Txt_key
      GoTo fin
    Else
      If pu_codclie = 1 Then
        MsgBox "REGISTRO NO EXISTE ...", 48, Pub_Titulo
-       Azul txt_key, txt_key
+       Azul Txt_key, Txt_key
        GoTo fin
      End If
      LLENA_ARTI 1
-     BLOQUEA_TEXT frmARTI.txt_key
-     frmARTI.cmdModificar.SetFocus
+     BLOQUEA_TEXT frmARTI.Txt_key
+     frmARTI.CmdModificar.SetFocus
      BLOQUEA_TEXT txtnombre
-     cmdCancelar.Enabled = True
+     cmdcancelar.Enabled = True
    End If
 Else
    If loc_key > ListView1.ListItems.count Or loc_key = 0 Then
      Exit Sub
    End If
    VALOR = UCase(ListView1.ListItems.Item(loc_key).Text)
-   If Trim(UCase(txt_key.Text)) = Left(VALOR, Len(Trim(txt_key.Text))) Then
+   If Trim(UCase(Txt_key.Text)) = Left(VALOR, Len(Trim(Txt_key.Text))) Then
    Else
       Exit Sub
    End If
    LLENA_ARTI 0
-   BLOQUEA_TEXT frmARTI.txt_key
-   frmARTI.cmdModificar.SetFocus
+   BLOQUEA_TEXT frmARTI.Txt_key
+   frmARTI.CmdModificar.SetFocus
    BLOQUEA_TEXT txtnombre
-   cmdCancelar.Enabled = True
+   cmdcancelar.Enabled = True
 End If
 dale:
 ListView1.Visible = False
@@ -9315,19 +9297,19 @@ fin:
 Exit Sub
 ERROR_CODIGO:
 MsgBox "Codigo NO Valido .... ", 48, Pub_Titulo
-Azul txt_key, txt_key
+Azul Txt_key, Txt_key
 End Sub
 
 Private Sub txt_key_KeyUp(KeyCode As Integer, Shift As Integer)
 Dim var
 Dim ws_codcia As String * 2
-If Len(txt_key.Text) = 0 Or IsNumeric(txt_key.Text) = True Then
+If Len(Txt_key.Text) = 0 Or IsNumeric(Txt_key.Text) = True Then
    ListView1.Visible = False
    Exit Sub
 End If
-If ListView1.Visible = False And KeyCode <> 13 Or Len(txt_key.Text) = 1 Then
-    If txt_key.Text = "" Then txt_key.Text = " "
-    var = Asc(txt_key.Text)
+If ListView1.Visible = False And KeyCode <> 13 Or Len(Txt_key.Text) = 1 Then
+    If Txt_key.Text = "" Then Txt_key.Text = " "
+    var = Asc(Txt_key.Text)
     var = var + 1
     If var = 33 Or var = 91 Then
        var = "ZZZZZZZZ"
@@ -9342,9 +9324,9 @@ If ListView1.Visible = False And KeyCode <> 13 Or Len(txt_key.Text) = 1 Then
     End If
     numarchi = 0
     If cheotros.Value = 1 Then
-     archi = "SELECT TOP 2000 ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, ARM_STOCK ,PRE_EQUIV, ART_SITUACION FROM ARTI, ARTICULO, PRECIOS WHERE (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND (PRE_FLAG_UNIDAD ='A') AND (ART_CODCIA = ARM_CODCIA) AND (ART_KEY = ARM_CODART) AND ART_KEY <> 0 AND ART_KEY  <> 1 and ART_CODCIA = '" & ws_codcia & "' AND ART_NOMBRE BETWEEN '" & txt_key.Text & "' AND  '" & var & "' ORDER BY ART_NOMBRE"
+     archi = "SELECT TOP 2000 ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, ARM_STOCK ,PRE_EQUIV, ART_SITUACION FROM ARTI, ARTICULO, PRECIOS WHERE (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND (PRE_FLAG_UNIDAD ='A') AND (ART_CODCIA = ARM_CODCIA) AND (ART_KEY = ARM_CODART) AND ART_KEY <> 0 AND ART_KEY  <> 1 and ART_CODCIA = '" & ws_codcia & "' AND ART_NOMBRE BETWEEN '" & Txt_key.Text & "' AND  '" & var & "' ORDER BY ART_NOMBRE"
     Else
-     archi = "SELECT TOP 2000 ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, ARM_STOCK ,PRE_EQUIV, ART_SITUACION FROM ARTI, ARTICULO, PRECIOS WHERE (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND (PRE_FLAG_UNIDAD ='A') AND (ART_CODCIA = ARM_CODCIA) AND (ART_KEY = ARM_CODART) AND ART_KEY <> 0 AND ART_SITUACION <> '1' AND ART_KEY  <> 1 and ART_CODCIA = '" & ws_codcia & "' AND ART_NOMBRE BETWEEN '" & txt_key.Text & "' AND  '" & var & "' ORDER BY ART_NOMBRE"
+     archi = "SELECT TOP 2000 ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, ARM_STOCK ,PRE_EQUIV, ART_SITUACION FROM ARTI, ARTICULO, PRECIOS WHERE (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND (PRE_FLAG_UNIDAD ='A') AND (ART_CODCIA = ARM_CODCIA) AND (ART_KEY = ARM_CODART) AND ART_KEY <> 0 AND ART_SITUACION <> '1' AND ART_KEY  <> 1 and ART_CODCIA = '" & ws_codcia & "' AND ART_NOMBRE BETWEEN '" & Txt_key.Text & "' AND  '" & var & "' ORDER BY ART_NOMBRE"
     End If
     PROC_LISVIEW ListView1, 1000
     loc_key = 0
@@ -9359,7 +9341,7 @@ If KeyCode = 40 Or KeyCode = 38 Or KeyCode = 34 Or KeyCode = 33 Then
 End If
 Dim itmFound As Object ' Variable FoundItem.
 If ListView1.Visible Then
-  Set itmFound = ListView1.FindItem(LTrim(txt_key.Text), lvwText, , lvwPartial)
+  Set itmFound = ListView1.FindItem(LTrim(Txt_key.Text), lvwText, , lvwPartial)
   If itmFound Is Nothing Then
   Else
    itmFound.EnsureVisible
@@ -10200,7 +10182,7 @@ ElGrid_DblClick grid_unid, txtvar
 End Sub
 
 Private Sub grid_UNID_EnterCell()
-Fcomun.Refresh
+fcomun.Refresh
 txtpeso.Text = Format(grid_unid.TextMatrix(grid_unid.Row, 28), "0.00")
 txtlitro.Text = Format(grid_unid.TextMatrix(grid_unid.Row, 30), "0.00")
 If Flag_Inicial = "A" Then
@@ -10233,7 +10215,7 @@ If KeyCode = 46 Then
   If wflag_bloq_descrip = "A" Then Exit Sub
   If grid_unid.Row <> 1 Then
     If Trim(grid_unid.TextMatrix(grid_unid.Row, 0)) <> "" And Val(grid_unid.TextMatrix(grid_unid.Row, 1)) <> 0 Then
-      pub_mensaje = " Eliminar la Unidad de : " & Trim(grid_unid.TextMatrix(grid_unid.Row, 0)) & " ï¿½Desea Continuar... ?"
+      pub_mensaje = " Eliminar la Unidad de : " & Trim(grid_unid.TextMatrix(grid_unid.Row, 0)) & " ¿Desea Continuar... ?"
       Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
       If Pub_Respuesta = vbNo Then
         grid_unid.SetFocus
@@ -10360,7 +10342,7 @@ End Sub
 
 Private Sub txtper_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
-    pub_cadena = "Select  * from tabcuo where cuo_codcia = '" & LK_CODCIA & "' and cuo_periodo = '" & txtper.Text & "' and cuo_codart = " & Val(txt_key.Text)
+    pub_cadena = "Select  * from tabcuo where cuo_codcia = '" & LK_CODCIA & "' and cuo_periodo = '" & txtper.Text & "' and cuo_codart = " & Val(Txt_key.Text)
     Set rs_regcuotas = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
     If Not rs_regcuotas.EOF Then
        txtper.Text = rs_regcuotas!CUO_PERIODO
@@ -10598,7 +10580,7 @@ TEXTO_LosFocus grid_unid, txtvar
 End Sub
 
 Private Sub txt_alterno_GotFocus()
-If Left(cmdAgregar.Caption, 2) = "&A" Or Left(cmdModificar.Caption, 2) = "&M" Then
+If Left(cmdAgregar.Caption, 2) = "&A" Or Left(CmdModificar.Caption, 2) = "&M" Then
  Exit Sub
 End If
  If ListView1.Visible Then
@@ -10609,7 +10591,7 @@ End If
 End Sub
 Private Sub txt_alterno_KeyDown(KeyCode As Integer, Shift As Integer)
 Dim strFindMe As String
-Dim itmFound As MSComctlLib.ListItem    ' Variable FoundItem.
+Dim itmFound As ListItem    ' Variable FoundItem.
 If Not ListView1.Visible Or Left(cmdAgregar.Caption, 2) = "&G" Then
  Exit Sub
 End If
@@ -10656,7 +10638,7 @@ Private Sub txt_alterno_KeyPress(KeyAscii As Integer)
 Dim VALOR As String
 Dim tf As Integer
 Dim I
-Dim itmFound As MSComctlLib.ListItem
+Dim itmFound As ListItem
 VALOR = Chr(KeyAscii)
 
 KeyAscii = Asc(UCase(VALOR))
@@ -10687,9 +10669,9 @@ If VAR_ACTIVAR <> 99 Then
  End If
  LLENA_ARTI 0
  BLOQUEA_TEXT txt_alterno
- frmARTI.cmdModificar.SetFocus
+ frmARTI.CmdModificar.SetFocus
  BLOQUEA_TEXT txtnombre
- cmdCancelar.Enabled = True
+ cmdcancelar.Enabled = True
  Exit Sub
 End If
 pu_alterno = Trim(txt_alterno.Text)
@@ -10706,9 +10688,9 @@ Else
 End If
 LLENA_ARTI 0
 BLOQUEA_TEXT txt_alterno
-frmARTI.cmdModificar.SetFocus
+frmARTI.CmdModificar.SetFocus
 BLOQUEA_TEXT txtnombre
-cmdCancelar.Enabled = True
+cmdcancelar.Enabled = True
 dale:
 ListView1.Visible = False
 
@@ -10779,7 +10761,7 @@ End If
 If KeyCode = 40 Or KeyCode = 38 Or KeyCode = 34 Or KeyCode = 33 Then
  Exit Sub
 End If
-Dim itmFound As MSComctlLib.ListItem    ' Variable FoundItem.
+Dim itmFound As ListItem    ' Variable FoundItem.
 If ListView1.Visible Then
   Set itmFound = ListView1.FindItem(LTrim(txt_alterno.Text), lvwText, , lvwPartial)
   If itmFound Is Nothing Then
@@ -10816,24 +10798,24 @@ Set artloc_llave = PSART_LOC.OpenResultset(rdOpenKeyset, rdConcurValues)
 End Sub
 
 Public Sub PROCESO_CANCELAR()
-    If Left(cmdAgregar.Caption, 2) = "&A" And Left(cmdModificar.Caption, 2) = "&M" Then
+    If Left(cmdAgregar.Caption, 2) = "&A" And Left(CmdModificar.Caption, 2) = "&M" Then
         frmARTI.frarelacion.Enabled = False
         LIMPIA_ARTI
-        cmdCancelar.Enabled = True
+        cmdcancelar.Enabled = True
         BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-        BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
+        BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
         BLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
         BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-        BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
-        frmARTI.SSTab1.tab = 0
+        BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+        frmARTI.SSTab1.Tab = 0
         If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
           DESBLOQUEA_TEXT txt_alterno
-          BLOQUEA_TEXT txt_key
+          BLOQUEA_TEXT Txt_key
           If frmARTI.txt_alterno.Visible Then frmARTI.txt_alterno.SetFocus
         Else
           BLOQUEA_TEXT txt_alterno
-          DESBLOQUEA_TEXT txt_key
-          If frmARTI.txt_key.Visible Then frmARTI.txt_key.SetFocus
+          DESBLOQUEA_TEXT Txt_key
+          If frmARTI.Txt_key.Visible Then frmARTI.Txt_key.SetFocus
         End If
         MANOS(0).Enabled = True
         MANOS(1).Enabled = True
@@ -10841,10 +10823,10 @@ Public Sub PROCESO_CANCELAR()
         Exit Sub
     End If
     Screen.MousePointer = 11
-    If Left(cmdModificar.Caption, 2) = "&G" Then
-       cmdModificar.Caption = "&Modificaciï¿½n"
+    If Left(CmdModificar.Caption, 2) = "&G" Then
+       CmdModificar.Caption = "&Modificación"
        LLENA_ARTI 1
-       BLOQUEA_TEXT txt_key
+       BLOQUEA_TEXT Txt_key
        BLOQUEA_TEXT txt_alterno
     Else
        frmARTI.frarelacion.Enabled = False
@@ -10852,27 +10834,27 @@ Public Sub PROCESO_CANCELAR()
        LIMPIA_ARTI
        If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
           DESBLOQUEA_TEXT txt_alterno
-          BLOQUEA_TEXT txt_key
+          BLOQUEA_TEXT Txt_key
           frmARTI.txt_alterno.SetFocus
         Else
-          DESBLOQUEA_TEXT txt_key
+          DESBLOQUEA_TEXT Txt_key
           BLOQUEA_TEXT txt_alterno
-          frmARTI.txt_key.SetFocus
+          frmARTI.Txt_key.SetFocus
         End If
     End If
     cmdAgregar.Enabled = True
     cmdEliminar.Enabled = True
-    cmdModificar.Enabled = True
+    CmdModificar.Enabled = True
     BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
+    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
     BLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
     BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-    BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+    BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
     pasa = 0
     MANOS(0).Enabled = True
     MANOS(1).Enabled = True
     MENSAJE_ARTI "Proceso Cancelado... !!!    "
-    frmARTI.SSTab1.tab = 0
+    frmARTI.SSTab1.Tab = 0
     Screen.MousePointer = 0
 End Sub
 
@@ -10960,7 +10942,7 @@ gridrel.Cols = 4
 gridrel.Rows = 1
 gridrel.TextMatrix(0, 0) = "Cod.Orig."
 gridrel.TextMatrix(0, 1) = "Cod.Alterno"
-gridrel.TextMatrix(0, 2) = "Descripciï¿½n"
+gridrel.TextMatrix(0, 2) = "Descripción"
 gridrel.TextMatrix(0, 3) = "Calidad"
 If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
 gridrel.ColWidth(1) = 1000
@@ -11034,7 +11016,7 @@ End Sub
 Public Sub llena_pre(wlista As String)
 Dim WT_ENT As Currency
 pu_codcia = LK_CODCIA
-PUB_CODART = Val(txt_key.Text)
+PUB_CODART = Val(Txt_key.Text)
 SQ_OPER = 2
 LEER_PRE_LLAVE
 If pre_mayor.EOF Then
@@ -11336,7 +11318,7 @@ Public Sub PROD_PROC()
 gridp.Clear
 gridp.Cols = 3
 gridp.Rows = 1
-gridp.TextMatrix(0, 0) = "Descripciï¿½n"
+gridp.TextMatrix(0, 0) = "Descripción"
 gridp.TextMatrix(0, 1) = "Codigo"
 gridp.TextMatrix(0, 2) = "Productos"
 
@@ -13434,7 +13416,7 @@ If dataO.Recordset.EOF Then
 End If
 Barra.Visible = True
 Barra.Min = 0
-Barra.max = dataO.Recordset.RecordCount
+Barra.Max = dataO.Recordset.RecordCount
 Barra.Value = 0
 ww_conta = 0
 flag_otro = ""
