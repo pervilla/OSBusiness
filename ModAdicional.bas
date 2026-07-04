@@ -49,7 +49,7 @@ Public Function vString(K As Integer) As Integer
 Dim sCaracter As String
 Dim cE As Integer
 sCaracter = UCase(Chr(K))
-cE = InStr(1, "áéíóúñÁÉÍÓÚÑ", sCaracter)
+cE = InStr(1, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", sCaracter)
     If ((K <= 123 And K >= 97) Or (K <= 90 And K >= 65)) Or K = 32 Or K = 8 Or cE > 0 Then
         vString = K
     Else
@@ -234,7 +234,7 @@ Else
 End If
 If wpo_estado = "E" Then
   If po_aviso = 0 Then
-     MsgBox "La Condicion de Gasto, No definida en el Presupuesto, No procede la operación ", 48, Pub_Titulo
+     MsgBox "La Condicion de Gasto, No definida en el Presupuesto, No procede la operaciï¿½n ", 48, Pub_Titulo
      Presup_Oper = False
      Exit Function
   End If
@@ -264,11 +264,11 @@ Else
 End If
 If po_aviso = 0 Then
  If wpo_presup = 0 Then
-    MsgBox "Este Tipo de Gasto No tiene Presupuesto, No procede la operación ", 48, Pub_Titulo
+    MsgBox "Este Tipo de Gasto No tiene Presupuesto, No procede la operaciï¿½n ", 48, Pub_Titulo
     Presup_Oper = False
     Exit Function
  ElseIf wpo_impacu > wpo_presup Then
-     MsgBox "Monto Supera a lo presupuestado, No procede la operación ", 48, Pub_Titulo
+     MsgBox "Monto Supera a lo presupuestado, No procede la operaciï¿½n ", 48, Pub_Titulo
      Presup_Oper = False
       Exit Function
  End If
@@ -314,7 +314,7 @@ MDIForm1.Reportes.WindowTop = 70
 MDIForm1.Reportes.WindowWidth = 435
 MDIForm1.Reportes.WindowHeight = 490
 MDIForm1.Reportes.Formulas(1) = ""
-MDIForm1.Reportes.WindowTitle = "PRECIOS"
+MDIForm1.Reportes.WindowTitle = "Lista de Precios <= Costo"
 MDIForm1.Reportes.ReportFileName = PUB_RUTA_OTRO + "IA_precios.RPT"
 pub_cadena = "{ARTI.ART_CODCIA} = '" & LK_CODCIA & "' AND {ARTICULO.ARM_CODCIA} = '" & LK_CODCIA & "' AND {PRECIOS.PRE_CODCIA} = '" & LK_CODCIA & "'"
 MDIForm1.Reportes.SelectionFormula = pub_cadena

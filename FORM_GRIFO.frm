@@ -5303,6 +5303,7 @@ Private Sub Form_Click()
 WhatsThisMode
 End Sub
 Private Sub Form_Load()
+LogInfo "FORM_GRIFO: Inicio Form_Load"
 Dim ws_indice As Integer
 Dim CONTA
 Dim ws_ancho As Integer

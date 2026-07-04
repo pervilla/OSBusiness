@@ -620,12 +620,19 @@ End If
 End Function
 Public Sub PROC_LISVIEW(LV1 As Object, Optional wmax, Optional sp_ban)
     On Error GoTo PROC_LISVIEW_ERR
-    LogTrace "PROC_LISVIEW: Inicio"
+    LogTrace "PROC_LISVIEW: Inicio numarchi=" & numarchi
 Dim wmaximo As Integer
 Dim itmX As Object '  ListItem
 Dim ws_bandera As String
 If Not IsMissing(wmax) Then wmaximo = wmax Else wmaximo = 2000
 If Not IsMissing(sp_ban) Then ws_bandera = sp_ban Else ws_bandera = ""
+
+If LV1 Is Nothing Then
+    LogError "PROC_LISVIEW: LV1 es Nothing (Error 91)"
+    Exit Sub
+End If
+
+LogTrace "PROC_LISVIEW: PrepararListView, SQL=" & Left(archi, 200)
 
 'Set PSX = CN.CreateQuery("", archi)
 'PSX.MaxRows = wmaximo
@@ -812,9 +819,10 @@ Do Until X.EOF  ' Or X.AbsolutePosition - 1 >= wmaximo
    End If
    If numarchi = 1 Then itmX.SubItems(2) = Trim(CStr(X.rdoColumns(4))) + " # " + Trim(CStr(X.rdoColumns(6))):  itmX.SubItems(3) = Trim(CStr(X!TAB_NOMLARGO))
 SIGUE_ART:
-   itmX.Tag = X.AbsolutePosition
-   X.MoveNext
+    itmX.Tag = X.AbsolutePosition
+    X.MoveNext
 Loop
+LogTrace "PROC_LISVIEW: Fin items=" & LV1.ListItems.count & "/" & X.RowCount
 LV1.ToolTipText = "Encontrados : " & itmX.Tag & "/" & X.RowCount & " Muestra un Maximo de: " & wmaximo
 LV1.Visible = True
 'DoEvents

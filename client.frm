@@ -4692,6 +4692,9 @@ PASE
 End Sub
 
 Private Sub Form_Load()
+CenterMe frmCLI
+frmCLI.Width = 12120
+frmCLI.Height = 8500
 Dim mst_vend As rdoResultset
 Dim I As Integer
 COD_ORIGINAL = 0

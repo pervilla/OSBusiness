@@ -6174,11 +6174,9 @@ If Left(cmdAgregar.Caption, 2) = "&A" Then
     LBLUNIDAD.Caption = "UNIDAD"
     DESBLOQUEA_TEXT txt_alterno
     pasa = 1
-    If txt_alterno.Visible And txt_alterno.Enabled Then
-      txt_alterno.SetFocus
-    ElseIf txtnombre.Visible And txtnombre.Enabled Then
-     txtnombre.SetFocus
-    End If
+     If txtnombre.Visible And txtnombre.Enabled Then
+      txtnombre.SetFocus
+     End If
     cheservi(0).Value = True
     MANOS(0).Enabled = False
     MANOS(1).Enabled = False
@@ -6240,7 +6238,8 @@ Else
      CN.Execute "Begin Transaction", rdExecDirect
      pub_cadena = "SELECT * FROM CONTROLL"
      Set con_llave = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurLock)
-     frmARTI.Txt_key = GENERA_CODI
+    frmARTI.Txt_key = GENERA_CODI
+    txt_alterno.Text = frmARTI.Txt_key.Text
      PUB_KEY = Val(frmARTI.Txt_key)
      If Trim(Nulo_Valors(par_llave!par_art_cias)) <> "" Then
         xcuenta = 1
@@ -7562,6 +7561,9 @@ Private Sub Form_DblClick()
 End Sub
 
 Private Sub Form_Load()
+CenterMe frmARTI
+frmARTI.Width = 8955
+frmARTI.Height = 6255
 Dim loc_flag_listas As String
 Dim psvend As rdoResultset
 
@@ -7763,6 +7765,16 @@ Do Until X.EOF
   cmbusu.AddItem Trim(X!usu_key)
 X.MoveNext
 Loop
+Dim wIdx As Integer
+wIdx = -1
+For wIdx = 0 To cmbusu.ListCount - 1
+    If cmbusu.List(wIdx) = LK_CODUSU Then Exit For
+Next
+If wIdx >= 0 And wIdx < cmbusu.ListCount Then
+    cmbusu.ListIndex = wIdx
+ElseIf cmbusu.ListCount > 0 Then
+    cmbusu.ListIndex = 0
+End If
 If LK_CODUSU = "ADMIN" Or LK_CODUSU = "OPER08" Then
   fracuotas.Enabled = True
 Else

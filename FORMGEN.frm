@@ -18567,10 +18567,32 @@ If pu_codclie <> 0 And IsNumeric(i_codcli.Text) = True Then
         SQ_OPER = 4
         pu_codcia = LK_CODCIA
         LEER_CLI_LLAVE
-        If cli_ruc.EOF Then
-           MsgBox "R.U.C. No Existe ", 48, Pub_Titulo
-           Exit Sub
-        End If
+         If cli_ruc.EOF Then
+            Pub_Respuesta = MsgBox("R.U.C. " & PUB_RUC & " no existe." & Chr(13) & "Desea crear el cliente?", vbYesNo + vbQuestion, Pub_Titulo)
+            If Pub_Respuesta = vbYes Then
+                PUB_RUC = Trim(i_codcli.Text)
+                PUB_PRE_CLI = PUB_RUC
+                Screen.MousePointer = 0
+                Load frmCLI
+                frmCLI.Txt_key.Enabled = False
+                frmCLI.Txt_key.Text = ""
+                frmCLI.txtRUCesposo.Text = PUB_RUC
+                frmCLI.CmbCGP.Text = PUB_CP
+                frmCLI.cmdAgregar_Click
+                frmCLI.Show 1
+                Screen.MousePointer = 11
+                If Val(frmCLI.Txt_key.Text) > 1 Then
+                    i_codcli.Text = frmCLI.Txt_key.Text
+                    pu_codclie = Val(i_codcli.Text)
+                    i_nomcli.Caption = Trim(frmCLI.txtnombre.Text)
+                    avanza_campo
+                End If
+                Unload frmCLI
+            Else
+                Azul i_codcli, i_codcli
+            End If
+            Exit Sub
+         End If
         If Trim(cli_ruc!cli_estado) = "D" Then
            MsgBox "RUC, Esta desactivado para: " & Trim(cli_ruc!cli_nombre) & " Intente con otro codigo.", 48, Pub_Titulo
            Exit Sub
@@ -20630,6 +20652,7 @@ End Sub
 
 
 Private Sub LV_ART_ItemClick(ByVal Item As MSComctlLib.ListItem)
+On Error GoTo LV_ART_ERR
 If loc_key <> 0 Then
  loc_key = LV_ART.SelectedItem.Index
  If LK_CODTRA <> 2401 Then GoTo SALTA2401
@@ -20710,6 +20733,10 @@ SALTA2401:
  End If
 End If
 
+Exit Sub
+LV_ART_ERR:
+ LogError "LV_ART_ItemClick: Error " & Err.Number & " - " & Err.Description
+ Resume Next
 End Sub
 
 Private Sub LV_ART_KeyPress(KeyAscii As Integer)
@@ -23629,11 +23656,12 @@ End Sub
 
 Private Sub trans_KeyUp(KeyCode As Integer, Shift As Integer)
 Dim var
-If Len(TRANS.Text) = 0 Then
-   LV_TRA.Visible = False
-   Exit Sub
-End If
-If LV_TRA.Visible = False Then
+ If Len(TRANS.Text) = 0 Then
+    LV_TRA.Visible = False
+    Exit Sub
+ End If
+ If IsNumeric(TRANS.Text) Then Exit Sub
+ If LV_TRA.Visible = False Then
     var = Asc(TRANS.Text)
     var = var + 1
     If var = 33 Or var = 91 Then

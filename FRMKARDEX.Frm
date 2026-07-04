@@ -1155,14 +1155,16 @@ Do Until FINAL = "S"
     KARDEX.GridK.TextMatrix(fila1, 12) = Format(cSalida, "#####.00")
     cSaldo = cSaldo - cSalida
     wSaldo = wSaldo - (wFAR_CODART!FAR_cantidad / ws_equiv)
-    If LK_FLAG_GRIFO <> "A" Then
-'     SQ_OPER = 1
-'     PUB_CODCIA = xCODCIA
-     PUB_CODVEN = Nulo_Valor0(wFAR_CODART!FAR_CODVEN)
-'     LEER_VEN_LLAVE
-'     If Not ven_llave.EOF Then
-          KARDEX.GridK.TextMatrix(fila1, 18) = PUB_CODVEN ' ven_llave!VEM_NOMBRE
-'     End If
+     If LK_FLAG_GRIFO <> "A" Then
+     SQ_OPER = 1
+     PUB_CODCIA = xCODCIA
+      PUB_CODVEN = Nulo_Valor0(wFAR_CODART!FAR_CODVEN)
+      LEER_VEN_LLAVE
+      If Not ven_llave.EOF Then
+           KARDEX.GridK.TextMatrix(fila1, 18) = ven_llave!VEM_NOMBRE
+      Else
+           KARDEX.GridK.TextMatrix(fila1, 18) = PUB_CODVEN
+      End If
     Else
       SQ_OPER = 1
       PUB_CODCIA = wFAR_CODART!FAR_CODCIA ' xCODCIA

@@ -2380,6 +2380,7 @@ End If
 End Sub
 
 Private Sub Form_Load()
+    LogInfo "FORM_COT: Inicio Form_Load"
     CenterMe FORM_COT
 'On Error GoTo SALE
 

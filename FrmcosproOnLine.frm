@@ -139,7 +139,7 @@ Dim wol_codcia As String
 Dim wfechE As Date
 wfechE = Format(ol_fecha.Caption, "dd/mm/yyyy")
 If LK_CODCIA = "09" Or LK_CODCIA = "30" Or LK_CODCIA = "50" Then
-   'Costeo_Chepen ' solo pàra la botica chepen
+   'Costeo_Chepen ' solo pï¿½ra la botica chepen
    wol_codcia = "('" & LK_CODCIA & "')"
 ElseIf LK_CODCIA = "01" Or LK_CODCIA = "20" Then
    wol_codcia = "('01')"
@@ -158,7 +158,7 @@ End If
 '   wol_codcia = "('01','02','03','04','07','08','10','20')"
 'End If
   'CosteoOnLine "D", "", "", "A", "(0)", 0, LK_FECHA_DIA, 20, 0, " ", 0, P1, P1, lblm, 0
- CosteoOnLine "D", " ", wol_codcia, "A", "(0)", 0, wfechE, 20, Val(FrmcosproOnLine.ol_numser.Caption), " ", Val(FrmcosproOnLine.ol_numfac.Caption), P1, P2, lblm, 0
+ CosteoOnLine "D", " ", wol_codcia, "A", "(0)", 0, CDate(wfechE), 20, Val(FrmcosproOnLine.ol_numser.Caption), " ", Val(FrmcosproOnLine.ol_numfac.Caption), P1, P2, lblm, 0
  MsgBox "Documento Costeado", 48, Pub_Titulo
  Unload Me
 End Sub

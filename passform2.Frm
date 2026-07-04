@@ -146,7 +146,7 @@ Begin VB.Form PASSFORM
       End
       Begin VB.Label Label7 
          BackStyle       =   0  'Transparent
-         Caption         =   "Compañia por Defecto :"
+         Caption         =   "Compaï¿½ia por Defecto :"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -164,7 +164,7 @@ Begin VB.Form PASSFORM
          Width           =   2295
       End
       Begin VB.Label Label1 
-         Caption         =   "Descripción: "
+         Caption         =   "Descripciï¿½n: "
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -483,10 +483,10 @@ If cal_llave!CAL_INDICE <> 1 Then
 End If
   ' VER SI LA FECHA NO ES DEL DIA
 SALTA_TODO:
-  pub_mensaje = "¡La fecha de la compañia es diferente que el computador!"
-  pub_mensaje = pub_mensaje & pb & "Fecha de la Compañia       : " & Format(fecha_proceso, "dd mmm yyyy")
+  pub_mensaje = "ï¿½La fecha de la compaï¿½ia es diferente que el computador!"
+  pub_mensaje = pub_mensaje & pb & "Fecha de la Compaï¿½ia       : " & Format(fecha_proceso, "dd mmm yyyy")
   pub_mensaje = pub_mensaje & Chr(13) & "Fecha de del Computador : " & Format(Date, "dd mmm yyyy")
-  pub_mensaje = pub_mensaje & pb & "¿Desea ingresar al sistema..?"
+  pub_mensaje = pub_mensaje & pb & "ï¿½Desea ingresar al sistema..?"
   If CDate(fecha_proceso.Text) <> Date Then
     Pub_Respuesta = MsgBox(pub_mensaje, vbOKCancel + vbInformation, Pub_Titulo)
     If Pub_Respuesta = vbCancel Then
@@ -561,6 +561,7 @@ End If
 End Sub
 
 Private Sub Form_Activate()
+LogInfo "PASSFORM: Inicio Form_Activate"
 LOC_FLAG_OJO = ""
 VECES = 0
 Screen.MousePointer = 11
@@ -631,6 +632,7 @@ fin:
 End Sub
 
 Private Sub Form_Load()
+LogInfo "PASSFORM: Inicio Form_Load"
 CenterMe PASSFORM
 LOC_FLAG_OJO = ""
 PS_GEN(0) = 0
@@ -863,7 +865,7 @@ End Sub
 
 Public Function INGRESO_PASS(TEXTO) As String
 cade = " ABCDEFGHIJKLMNOPQSRTVWXYZ0123456789"
-SIMB = "ò~!@#$%^&*¤¶§éû¬½¼©¥+ãÃÓ¦¢ƒ×Ø£øÜïëÇ"
+SIMB = "ï¿½~!@#$%^&*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½+ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½"
 TOT = Len(TEXTO)
 For I = 1 To TOT
  tem = InStr(1, cade, Mid(UCase(TEXTO), I, 1))
@@ -875,7 +877,7 @@ End Function
 
 Public Function SALIDA_PASS(TEXTO) As String
 cade = " ABCDEFGHIJKLMNOPQSRTVWXYZ0123456789"
-SIMB = "ò~!@#$%^&*¤¶§éû¬½¼©¥+ãÃÓ¦¢ƒ×Ø£øÜïëÇ"
+SIMB = "ï¿½~!@#$%^&*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½+ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½"
 TOT = Len(TEXTO)
 For I = 1 To TOT
  tem = InStr(1, SIMB, Mid(TEXTO, I, 1))
