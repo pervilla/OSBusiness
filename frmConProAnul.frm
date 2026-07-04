@@ -120,13 +120,13 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub ConfigurarGrid1()
-    Grid1.Cols = 14
+    Grid1.Cols = 15
     Grid1.Rows = 2
     Grid1.FixedRows = 1
 
     Grid1.ColWidth(0) = 1100
-    Grid1.ColWidth(1) = 1600
-    Grid1.ColWidth(2) = 1600
+    Grid1.ColWidth(1) = 2000
+    Grid1.ColWidth(2) = 2000
     Grid1.ColWidth(3) = 2000
     Grid1.ColWidth(4) = 0
     Grid1.ColWidth(5) = 0
@@ -138,9 +138,10 @@ Private Sub ConfigurarGrid1()
     Grid1.ColWidth(11) = 0
     Grid1.ColWidth(12) = 0
     Grid1.ColWidth(13) = 0
+    Grid1.ColWidth(14) = 0
 
     Grid1.TextMatrix(0, 0) = "Fecha"
-    Grid1.TextMatrix(0, 1) = "Usuario"
+    Grid1.TextMatrix(0, 1) = "Vendedor"
     Grid1.TextMatrix(0, 2) = "Cliente"
     Grid1.TextMatrix(0, 3) = "Documento"
     Grid1.TextMatrix(0, 4) = "CODCIA"
@@ -153,11 +154,16 @@ Private Sub ConfigurarGrid1()
     Grid1.TextMatrix(0, 11) = "NUMSER"
     Grid1.TextMatrix(0, 12) = "NUMFAC"
     Grid1.TextMatrix(0, 13) = "CODCLIE"
+    Grid1.TextMatrix(0, 14) = "CODVEN"
 End Sub
 
 Public Sub CargarGrid1()
     Dim X As rdoResultset
     Dim wcodclie As String
+    Dim wnombreven As String
+    Dim wfechaDesde As String
+
+    wfechaDesde = Format(DateAdd("d", -30, Date), "yyyymmdd")
 
     Grid1.Rows = 2
     Grid1.TextMatrix(1, 0) = ""
@@ -165,7 +171,7 @@ Public Sub CargarGrid1()
     Grid1.TextMatrix(1, 2) = ""
     Grid1.TextMatrix(1, 3) = ""
 
-    pub_cadena = "SELECT ALL_CODCIA, ALL_CODTRA, ALL_SECUENCIA, ALL_NUMOPER, ALL_FECHA_DIA, ALL_CODUSU, ALL_AUTOCON, ALL_CODCLIE, ALL_TIPMOV, ALL_FBG, ALL_NUMSER, ALL_NUMFAC FROM ALLOG WHERE ALL_CODCIA = ? AND ALL_FLAG_EXT = 'E' AND ALL_CODTRA NOT IN (9999, 2582, 1111) AND ALL_NUMOPER > 0 ORDER BY ALL_FECHA_DIA DESC, ALL_NUMOPER DESC"
+    pub_cadena = "SELECT ALL_CODCIA, ALL_CODTRA, ALL_SECUENCIA, ALL_NUMOPER, ALL_FECHA_DIA, ALL_CODUSU, ALL_AUTOCON, ALL_CODCLIE, ALL_TIPMOV, ALL_FBG, ALL_NUMSER, ALL_NUMFAC, ALL_CODVEN FROM ALLOG WHERE ALL_CODCIA = ? AND ALL_FLAG_EXT = 'E' AND ALL_CODTRA NOT IN (9999, 2582, 1111) AND ALL_NUMOPER > 0 AND ALL_FECHA_DIA >= '" & wfechaDesde & "' ORDER BY ALL_FECHA_DIA DESC, ALL_NUMOPER DESC"
     Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues)
 
     If X.EOF Then
@@ -177,8 +183,22 @@ Public Sub CargarGrid1()
     Do Until X.EOF
         Grid1.Rows = Grid1.Rows + 1
 
+        If Grid1.FixedRows >= Grid1.Rows Then Grid1.FixedRows = Grid1.Rows - 1
+
         Grid1.TextMatrix(Grid1.Rows - 1, 0) = Format(X!ALL_FECHA_DIA, "dd/mm/yyyy")
-        Grid1.TextMatrix(Grid1.Rows - 1, 1) = Trim(X!ALL_CODUSU & "")
+
+        wnombreven = Trim(X!ALL_CODUSU & "")
+        If Not IsNull(X!ALL_CODVEN) And Val(X!ALL_CODVEN & "") <> 0 Then
+            On Error Resume Next
+            pub_cadena = "SELECT VEM_NOMBRE FROM VEMAEST WHERE VEM_CODCIA = '" & LK_CODCIA & "' AND VEM_CODVEN = " & Val(X!ALL_CODVEN)
+            Dim Y As rdoResultset
+            Set Y = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues)
+            If Not Y.EOF Then wnombreven = Trim(Y!VEM_NOMBRE)
+            Y.Close
+            On Error GoTo 0
+        End If
+        Grid1.TextMatrix(Grid1.Rows - 1, 1) = wnombreven
+
         wcodclie = Trim(X!ALL_CODCLIE & "")
         Grid1.TextMatrix(Grid1.Rows - 1, 13) = wcodclie
         Grid1.TextMatrix(Grid1.Rows - 1, 2) = wcodclie
@@ -193,6 +213,7 @@ Public Sub CargarGrid1()
         Grid1.TextMatrix(Grid1.Rows - 1, 10) = Trim(X!ALL_FBG & "")
         Grid1.TextMatrix(Grid1.Rows - 1, 11) = Trim(X!ALL_NUMSER & "")
         Grid1.TextMatrix(Grid1.Rows - 1, 12) = Trim(X!ALL_NUMFAC & "")
+        Grid1.TextMatrix(Grid1.Rows - 1, 14) = Trim(X!ALL_CODVEN & "")
 
         X.MoveNext
     Loop

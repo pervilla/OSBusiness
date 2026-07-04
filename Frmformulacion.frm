@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frmformulacion 
-   Caption         =   "Formulación"
+   Caption         =   "Formulaciï¿½n"
    ClientHeight    =   5220
    ClientLeft      =   60
    ClientTop       =   1620
@@ -801,7 +801,9 @@ If wsTexto.Enabled = True And wsTexto.Visible = True Then
 End If
 Flag_Change = "A"
 'cade = Chr(wsKeyAscii)
+On Error Resume Next
 SendKeys cade, True
+On Error GoTo 0
 wsTexto.SelStart = Len(wsTexto)
 
 End Sub

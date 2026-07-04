@@ -644,7 +644,7 @@ Begin VB.Form KARDEX
       Width           =   1455
    End
    Begin VB.Label lblmensaje 
-      Caption         =   "Procesando Información ..."
+      Caption         =   "Procesando Informaciï¿½n ..."
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -702,7 +702,7 @@ Private Sub Command2_Click()
 ff_flag = "A"
 Dim Xx As rdoQuery
 Dim ver_xx As rdoResultset
-pub_mensaje = "Solo el Administrador del Sistema Sabe esta Opción , si no lo conoce no procesar, puede durar varios minutos ....¿ Continuar proceso ? . .."
+pub_mensaje = "Solo el Administrador del Sistema Sabe esta Opciï¿½n , si no lo conoce no procesar, puede durar varios minutos ....ï¿½ Continuar proceso ? . .."
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -994,7 +994,7 @@ FINAL = "S"
 
         If checias.Value = 0 Then GoTo go_una
         If LK_CODCIA = "09" Or LK_CODCIA = "50" Then
-           'Costeo_Chepen ' solo pàra la botica chepen
+           'Costeo_Chepen ' solo pï¿½ra la botica chepen
 go_una:
            wol_codcia = "('" & LK_CODCIA & "')"
         Else
@@ -1330,9 +1330,9 @@ pasa:
        Else
           If i_maximo.Visible Then
             If fila1 > i_maximo.Text Then
-               pub_mensaje = "Hay más registros... desea ver mas Registros ?"
+               pub_mensaje = "Hay mï¿½s registros... desea ver mas Registros ?"
                Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-               If Pub_Respuesta = vbYes Then   ' El usuario eligió
+               If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
                   i_maximo.Text = i_maximo.Text + 100
                Else
                  FINAL = "S"
@@ -1679,7 +1679,7 @@ KARDEX.GridK.Visible = False
 End Sub
 Private Sub i_codart2_KeyDown(KeyCode As Integer, Shift As Integer)
 Dim strFindMe As String
-Dim itmFound As ListItem    ' Variable FoundItem.
+Dim itmFound As MSComctlLib.ListItem    ' Variable FoundItem.
 If KeyCode = 113 Then
   If option1(0).Value Then
     option1(0).Value = False
@@ -1783,7 +1783,7 @@ Private Sub i_codart2_KeyPress(KeyAscii As Integer)
 Dim VALOR As String
 Dim tf As Integer
 Dim I, car
-Dim itmFound As ListItem
+Dim itmFound As MSComctlLib.ListItem
 Dim unid_max As Integer
 car = Chr(KeyAscii)
 KeyAscii = Asc(UCase(car))
@@ -2041,7 +2041,7 @@ End If
 If KeyCode = 40 Or KeyCode = 38 Or KeyCode = 34 Or KeyCode = 33 Then
  Exit Sub
 End If
-Dim itmFound As ListItem    ' Variable FoundItem.
+Dim itmFound As MSComctlLib.ListItem    ' Variable FoundItem.
 If ListView1.Visible Then
   Set itmFound = ListView1.FindItem(LTrim(i_codart2.Text), lvwText, , lvwPartial)
   If itmFound Is Nothing Then
@@ -2216,7 +2216,7 @@ KARDEX.GridK.TextMatrix(0, 0) = "Fec.Proc"
 KARDEX.GridK.TextMatrix(0, 1) = "Fec.Emis."
 KARDEX.GridK.TextMatrix(0, 2) = "Documento"
 KARDEX.GridK.TextMatrix(0, 3) = "Concepto"
-KARDEX.GridK.TextMatrix(0, 4) = "Descripción"
+KARDEX.GridK.TextMatrix(0, 4) = "Descripciï¿½n"
 
 KARDEX.GridK.TextMatrix(0, 5) = "Ingreso"
 KARDEX.GridK.TextMatrix(0, 6) = "Salida"
@@ -2260,4 +2260,8 @@ If KeyAscii = 13 Then
     If Frame2.Visible And i_maximo.Visible Then i_maximo.SetFocus
     If Frame1.Visible And txtCampo1.Visible Then Azul2 txtCampo1, txtCampo1
 End If
+End Sub
+
+Private Sub Form_Load()
+    CenterMe KARDEX
 End Sub

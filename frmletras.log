@@ -1,3 +1,4 @@
+Línea 34: la clase TabDlg.SSTab del control SSTab1 no era una clase de control cargada.
 Línea 478: la clase OSControlsUser.ctlMaskEdBox del control txtFechaVcto no era una clase de control cargada.
 Línea 499: la clase OSControlsUser.ctlMaskEdBox del control txtFechaEntrega no era una clase de control cargada.
 Línea 520: la clase OSControlsUser.ctlMaskEdBox del control txtFechaDevolucion no era una clase de control cargada.

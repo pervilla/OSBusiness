@@ -222,7 +222,7 @@ Begin VB.Form FORM_CONTA
          Top             =   4080
          Width           =   3855
          Begin VB.CommandButton cmdEliminar 
-            Caption         =   "&Eliminación"
+            Caption         =   "&Eliminaciï¿½n"
             Height          =   375
             Left            =   1920
             TabIndex        =   27
@@ -393,7 +393,9 @@ SUM_H = 0
 LIMPIA_DATOS
 FORM_CONTA.Lcuenta.Caption = ""
 grid_fac.SetFocus
+On Error Resume Next
 SendKeys "^{HOME}", True
+On Error GoTo 0
 'i_fecha.SetFocus
 'CABE
 End Sub
@@ -412,7 +414,7 @@ Else
     MsgBox "Seleccione , para poder Actualizar..", 48, WS_TITULO
     Exit Sub
   End If
-  'sn_mensaje = " ¿Confirma Actualizacion .. ?"
+  'sn_mensaje = " ï¿½Confirma Actualizacion .. ?"
   'ws_respuesta = MsgBox(sn_mensaje, WS_ESTILO, WS_TITULO)
   'If ws_respuesta = vbNo Then
   '  GoTo fin
@@ -497,14 +499,14 @@ cmdConsultar.Enabled = True
 cmdActualizar.Caption = "&Modificar"
 cmdActualizar.Enabled = False
 cmdEliminar.Enabled = False
-cmdEliminar.Caption = "&Eliminación"
+cmdEliminar.Caption = "&Eliminaciï¿½n"
 grabar.Enabled = False
 WPASA = False
 i_fecha.SetFocus
 End Sub
 
 Private Sub cmdEliminar_Click()
-If Left(cmdEliminar.Caption, 12) = "&Eliminación" Then
+If Left(cmdEliminar.Caption, 12) = "&Eliminaciï¿½n" Then
     WSELE = ""
     ESTADO.Caption = "Estado :   < ELIMINADO >"
     cmdEliminar.Caption = "&Eliminar Todas"
@@ -540,7 +542,7 @@ Else
   End If
   Barra.Value = 7
   'ESTADO.Caption = "Estado :   < ELIMINADO >"
-  cmdEliminar.Caption = "&Eliminación"
+  cmdEliminar.Caption = "&Eliminaciï¿½n"
   cmdActualizar.Enabled = False
   cmdEliminar.Enabled = False
   cmdConsultar_Click
@@ -743,7 +745,9 @@ FORM_CONTA.i_importe = ""
 WPASA = True
 CABE_ING
 grid_fac.SetFocus
+On Error Resume Next
 SendKeys "^{HOME}", True
+On Error GoTo 0
 cmdIngreso.SetFocus
 If exito = False Then
    Barra.Visible = False
@@ -917,7 +921,7 @@ GoTo fin
 
 Exit Sub
 Error_fatal:
-    msg = "Se ha producido un error " & "al abrir la conexión:" & Err & " - " & Error & vbCr
+    msg = "Se ha producido un error " & "al abrir la conexiï¿½n:" & Err & " - " & Error & vbCr
     For Each er In rdoErrors
         msg = msg & er.Description & ":" & er.Number & vbCr
         MsgBox msg
@@ -1272,7 +1276,7 @@ End Sub
 Private Sub i_glosa_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
     i_d_h.SetFocus
-    SendKeys "%{UP}"
+    SendKeysSeguro VK_UP, True
 End If
 
 End Sub
@@ -1314,7 +1318,7 @@ If i_importe.text = "" Then
 End If
 If i_d_h.text = "" Then
    i_d_h.SetFocus
-   SendKeys "%{UP}"
+   SendKeysSeguro VK_UP, True
    GoTo fin
 End If
 
@@ -1373,9 +1377,11 @@ salta:
    grid_fac.text = Format(SUM_H, "##,##0.00")
    If filax > 10 Then
       grid_fac.SetFocus
-      SendKeys "{HOME}", True
-      SendKeys "{DOWN}", True
-      SendKeys "{UP 6}", True
+      SendKeysSeguro VK_HOME
+      SendKeysSeguro VK_DOWN
+      On Error Resume Next
+SendKeys "{UP 6}", True
+On Error GoTo 0
   End If
  i_cuenta.SetFocus
 'If Val(I_BRUTO_D.text) = Val(I_BRUTO_H.text) Then
@@ -1564,7 +1570,7 @@ End Sub
 Public Sub LISTA_CUENTAS()
 
 grid1.TextMatrix(0, 0) = " Cuenta "
-grid1.TextMatrix(0, 1) = " Descripción "
+grid1.TextMatrix(0, 1) = " Descripciï¿½n "
 
 End Sub
 

@@ -157,7 +157,7 @@ Begin VB.Form frmprecios
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
-      Caption         =   "Presentación:"
+      Caption         =   "Presentaciï¿½n:"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   9.75
@@ -289,12 +289,12 @@ End Sub
 Private Sub cmdopcion_Click()
 If Val(Left(cmdopcion.Text, 1)) = 1 Then
   Label1(2).Caption = "Precio : "
-  Label1(3).Caption = "Observación :"
+  Label1(3).Caption = "Observaciï¿½n :"
   frmprecios.Caption = "Datos de Precios Otros."
   cmbcomp.Enabled = True
 Else
   Label1(2).Caption = "Cantidad Falt. : "
-  Label1(3).Caption = "Observación :"
+  Label1(3).Caption = "Observaciï¿½n :"
   frmprecios.Caption = "Cotiza/ No Vendido."
   unidad.ListIndex = unidad.ListCount - 1
   cmbcomp.Enabled = False
@@ -371,7 +371,7 @@ End If
 If KeyAscii = 13 Then
   If cmbcomp.Enabled Then
     cmbcomp.SetFocus
-    SendKeys "%{up}"
+    SendKeysSeguro VK_UP, True
   Else
     txtprecio.SetFocus
   End If

@@ -1,4 +1,4 @@
-Attribute VB_Name = "Módulo2"
+Attribute VB_Name = "Mï¿½dulo2"
 Public NUMERO As Integer
 Public WS_NUMDOC As Long
 Public WS_NUMSER As Integer
@@ -232,7 +232,7 @@ End If
 'End If
 
 If TypeOf FORMGEN.Controls(TABLA_TAG(indice)) Is ComboBox Then
-   SendKeys "%{DOWN}"
+   SendKeysSeguro VK_DOWN, True
 End If
 fin:
 sale:
@@ -318,7 +318,7 @@ Dim wdescto As Double
 Dim wImpto As Double
 
 Print #1, String(70, "-")
-Print #1, "Codigo"; Spc(10); "Descripción"; Spc(15); "Cantidad"; Spc(4); "Precio"; Spc(4); "Total"
+Print #1, "Codigo"; Spc(10); "Descripciï¿½n"; Spc(15); "Cantidad"; Spc(4); "Precio"; Spc(4); "Total"
 Print #1, String(70, "-")
 For count = 1 To WS_ULT_FILA
     FORMGEN.grid_fac.Row = count

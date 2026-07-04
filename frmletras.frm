@@ -637,7 +637,7 @@ Begin VB.Form frmletras
             Begin VB.Label lblCaption 
                AutoSize        =   -1  'True
                BackStyle       =   0  'Transparent
-               Caption         =   "Fecha Emisión"
+               Caption         =   "Fecha Emisiï¿½n"
                BeginProperty Font 
                   Name            =   "Tahoma"
                   Size            =   8.25
@@ -700,7 +700,7 @@ Begin VB.Form frmletras
             Begin VB.Label lblCaption 
                AutoSize        =   -1  'True
                BackStyle       =   0  'Transparent
-               Caption         =   "Situación"
+               Caption         =   "Situaciï¿½n"
                BeginProperty Font 
                   Name            =   "Tahoma"
                   Size            =   8.25
@@ -805,7 +805,7 @@ Begin VB.Form frmletras
             Begin VB.Label lblCaption 
                AutoSize        =   -1  'True
                BackStyle       =   0  'Transparent
-               Caption         =   "Fecha Devolución"
+               Caption         =   "Fecha Devoluciï¿½n"
                BeginProperty Font 
                   Name            =   "Tahoma"
                   Size            =   8.25
@@ -1073,7 +1073,7 @@ Begin VB.Form frmletras
       Begin VB.Label lblCaption 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Fec. Emisión"
+         Caption         =   "Fec. Emisiï¿½n"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -2024,7 +2024,7 @@ Private Sub cboSituacion_KeyUp(KeyCode As Integer, Shift As Integer)
     LlenadoCbo cboSituacion, 160
     LK_EMP_PTO = VARTEMP
     cboSituacion.SetFocus
-    SendKeys "%{up}"
+    SendKeysSeguro VK_UP, True
 End Sub
 
 Private Sub chkClientes_Click()

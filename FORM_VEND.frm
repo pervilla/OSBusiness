@@ -434,7 +434,7 @@ Begin VB.Form FORM_COTV
          Width           =   1455
       End
       Begin VB.CheckBox chemarg 
-         Caption         =   "Cotización con Margenes"
+         Caption         =   "Cotizaciï¿½n con Margenes"
          ForeColor       =   &H00800000&
          Height          =   435
          Left            =   6000
@@ -1034,7 +1034,7 @@ Begin VB.Form FORM_COTV
       Width           =   525
    End
    Begin VB.Label lcodart 
-      Caption         =   "Nº. Doc"
+      Caption         =   "Nï¿½. Doc"
       Height          =   255
       Index           =   0
       Left            =   8040
@@ -1366,7 +1366,7 @@ moneda.ListIndex = 0
 Exit Sub
 
 error_fatal:
-    pub_mensaje = "Se ha producido un error " & "al abrir la conexión:" & Err & " - " & Error & vbCr
+    pub_mensaje = "Se ha producido un error " & "al abrir la conexiï¿½n:" & Err & " - " & Error & vbCr
     For Each er In rdoErrors
         pub_mensaje = pub_mensaje & er.Description & ":" & er.Number & vbCr
         MsgBox pub_mensaje
@@ -1646,7 +1646,7 @@ If grid_fac.COL = 3 Then
     On Error GoTo 0
     UNIDAD.Visible = True
     UNIDAD.SetFocus
-    SendKeys "%{up}"
+    SendKeysSeguro VK_UP, True
      Exit Sub
 End If
 If grid_fac.COL = 4 Then
@@ -1726,7 +1726,7 @@ salta_precios:
     
     PRECIOS.Visible = True
     PRECIOS.SetFocus
-    SendKeys "%{up}"
+    SendKeysSeguro VK_UP, True
      Exit Sub
 End If
 If grid_fac.COL = 5 Then
@@ -2749,7 +2749,7 @@ If Not art_LLAVE.EOF Then
    If Val(art_LLAVE!ART_MARGEN) <> 0 And (wt_equiv <> Val(pre_llave!pre_equiv)) Then
       wt_mult = Val(art_LLAVE!ART_MARGEN)
       If wt_mult = 0 Then
-          MsgBox "Sin definición de partes minimas", 48, Pub_Titulo
+          MsgBox "Sin definiciï¿½n de partes minimas", 48, Pub_Titulo
           GoTo SINEQUIV
       End If
       wt_res = (Val(grid_fac.TextMatrix(grid_fac.Row, 2)) / wt_mult)
@@ -3063,7 +3063,7 @@ llave_sum_arti.Requery
 If llave_sum_arti.EOF Then
   tserie.Text = PUB_NUMSER
   txtdoc.Text = PUB_NUMFAC
-  MsgBox "No Existe Cotización.", 48, Pub_Titulo
+  MsgBox "No Existe Cotizaciï¿½n.", 48, Pub_Titulo
   Exit Sub
 End If
 txtigv.Text = llave_sum_arti!PED_IGV

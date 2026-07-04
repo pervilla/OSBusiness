@@ -421,7 +421,7 @@ Begin VB.Form FrmControl
       Width           =   435
    End
    Begin VB.Label Label1 
-      Caption         =   "Opción :"
+      Caption         =   "Opciï¿½n :"
       Height          =   225
       Left            =   60
       TabIndex        =   34
@@ -496,7 +496,7 @@ FrmDatArti.Caption = "GRUPOS  -  TAB_TIPREG = " & PUB_TIPREG
 FrmDatArti.Show 1
 LLENADOS cmbTipo, 43
 cmbTipo.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 
 
 End Sub
@@ -510,7 +510,7 @@ PRE_RELCOMP(3) = Val(d_numser.Caption)
 PRE_RELCOMP(4) = Val(d_numfac.Caption)
 relcomp_llave.Requery
 If Not relcomp_llave.EOF Then
- pub_mensaje = "Reemplazar la infomación...   ¿Desea Continuar... ?"
+ pub_mensaje = "Reemplazar la infomaciï¿½n...   ï¿½Desea Continuar... ?"
  Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
  If Pub_Respuesta = vbNo Then
     Exit Sub
@@ -1233,7 +1233,7 @@ grdidet.ColWidth(15) = 900 ' descrip de Linea
 grdidet.TextMatrix(0, 0) = "Fecha"
 grdidet.TextMatrix(0, 1) = "Tipo"
 grdidet.TextMatrix(0, 2) = "Codigo"
-grdidet.TextMatrix(0, 3) = "Descripción"
+grdidet.TextMatrix(0, 3) = "Descripciï¿½n"
 grdidet.TextMatrix(0, 4) = "Unidad"
 grdidet.TextMatrix(0, 5) = "Cantidad"
 grdidet.TextMatrix(0, 6) = "Precio"
@@ -1263,7 +1263,7 @@ GRID_MST.ColWidth(7) = 900 ' total
 
 GRID_MST.TextMatrix(0, 0) = "Tipo"
 GRID_MST.TextMatrix(0, 1) = "Codigo"
-GRID_MST.TextMatrix(0, 2) = "Descripción"
+GRID_MST.TextMatrix(0, 2) = "Descripciï¿½n"
 GRID_MST.TextMatrix(0, 3) = "Unidad"
 GRID_MST.TextMatrix(0, 4) = "Cantidad"
 GRID_MST.TextMatrix(0, 5) = "Precio"

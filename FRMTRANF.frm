@@ -114,7 +114,7 @@ Begin VB.Form FrmTranf
          Width           =   4695
       End
       Begin VB.Label lcodart 
-         Caption         =   "Nº. Doc O/P"
+         Caption         =   "Nï¿½. Doc O/P"
          Height          =   255
          Index           =   0
          Left            =   8760
@@ -542,7 +542,7 @@ txtcli.SetFocus
 Exit Sub
 
 Error_fatal:
-    pub_mensaje = "Se ha producido un error " & "al abrir la conexión:" & Err & " - " & Error & vbCr
+    pub_mensaje = "Se ha producido un error " & "al abrir la conexiï¿½n:" & Err & " - " & Error & vbCr
     For Each er In rdoErrors
         pub_mensaje = pub_mensaje & er.Description & ":" & er.Number & vbCr
         MsgBox pub_mensaje
@@ -694,7 +694,7 @@ If grid_fac.COL = 3 Then
     On Error GoTo 0
 '    UNIDAD.Visible = True
 '    UNIDAD.SetFocus
-    SendKeys "%{up}"
+    SendKeysSeguro VK_UP, True
      Exit Sub
 End If
 If grid_fac.COL = 4 Then
@@ -714,7 +714,7 @@ If grid_fac.COL = 4 Then
     
     On Error GoTo 0
     
-    SendKeys "%{up}"
+    SendKeysSeguro VK_UP, True
      Exit Sub
 End If
 If grid_fac.COL = 5 Then
@@ -1833,7 +1833,7 @@ llave_sum_arti.Requery
 If llave_sum_arti.EOF Then
   tserie.Text = PUB_NUMSER
   txtdoc.Text = PUB_NUMFAC
-  MsgBox "No Existe Cotización.", 48, Pub_Titulo
+  MsgBox "No Existe Cotizaciï¿½n.", 48, Pub_Titulo
   Exit Sub
 End If
 txtigv.Text = llave_sum_arti!PED_IGV

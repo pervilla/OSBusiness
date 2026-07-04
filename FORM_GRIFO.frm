@@ -838,7 +838,7 @@ Begin VB.Form FORM_GRIFO
       Width           =   765
    End
    Begin VB.Frame Frame3 
-      Caption         =   "Opción : "
+      Caption         =   "Opciï¿½n : "
       Height          =   1815
       Left            =   1080
       TabIndex        =   112
@@ -3521,7 +3521,7 @@ Do Until fila = gridl.Rows
 Loop
 If LK_CODTRA = 2410 Or LK_CODTRA = 2412 Or LK_CODTRA = 2418 Then grid_canje.Visible = False
 calcula_totales2
-SendKeys "{UP}"
+SendKeysSeguro VK_UP
 
 End Sub
 Public Sub procesa_celdas()
@@ -3681,7 +3681,7 @@ Private Sub pasa_cabeza_canje()
 End Sub
 
 Private Sub pasa_cabeza()
-   grid_fac.TextMatrix(0, 0) = "Descripción"
+   grid_fac.TextMatrix(0, 0) = "Descripciï¿½n"
    grid_fac.TextMatrix(0, 1) = "Codigo"
    grid_fac.TextMatrix(0, 2) = "Bultos"
    grid_fac.TextMatrix(0, 4) = "Cantidad"
@@ -4176,7 +4176,7 @@ End If
 Do Until FILAX = 999
          If LK_CODTRA = 1455 And Val(gridl.TextMatrix(FILAX, 5)) <> 0 Then
             If Val(gridl.TextMatrix(FILAX, 5)) <> Val(gridl.TextMatrix(FILAX, 25)) Then
-               MsgBox "Importe debe ser Cancelación"
+               MsgBox "Importe debe ser Cancelaciï¿½n"
                gridl.TextMatrix(FILAX, 5) = 0
             End If
          End If
@@ -4343,7 +4343,7 @@ If i_codcli.Visible = False Then i_codcli.Text = ""
   PSCONS_LLAVE.rdoParameters(1) = Val(i_codcli.Text)
   CONS_llave.Requery
   If CONS_llave.EOF Then
-    MsgBox "Cliente No Tiene Guías a Consignación.O Canje", 48, Pub_Titulo
+    MsgBox "Cliente No Tiene Guï¿½as a Consignaciï¿½n.O Canje", 48, Pub_Titulo
     If i_codcli.Visible Then Azul i_codcli, i_codcli
     Exit Sub
   End If
@@ -4825,7 +4825,7 @@ Private Sub gridC_KeyPress(KeyAscii As Integer)
 Dim WS_NUMOPER
 If KeyAscii <> 13 Then Exit Sub
 
-pub_mensaje = "¿Desea complementar un Ingreso de manera ADICIONAL  ?"
+pub_mensaje = "ï¿½Desea complementar un Ingreso de manera ADICIONAL  ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    gridC.Clear
@@ -4986,7 +4986,7 @@ Exit Sub
 elimina:
    GridD.CellBackColor = vbBlue
    
-   pub_mensaje = "¿Desea Eliminar la fila seleccionada ... ?"
+   pub_mensaje = "ï¿½Desea Eliminar la fila seleccionada ... ?"
    Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
    If Pub_Respuesta = vbNo Then
       GridD.CellBackColor = vbWhite
@@ -5068,7 +5068,7 @@ Exit Sub
 End If
 
 
-pub_mensaje = "Existe datos en este Documento : " & Trim(i_ser_lote.Text) & " - " & i_num_lote.Text & " ¿Desea Reemplazar sus datos por el actual ?"
+pub_mensaje = "Existe datos en este Documento : " & Trim(i_ser_lote.Text) & " - " & i_num_lote.Text & " ï¿½Desea Reemplazar sus datos por el actual ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -5281,7 +5281,7 @@ Private Sub Check1_Click()
 If Check1.Value = 1 Then
    grid_fac.Clear
    pasa_cabeza
-   MsgBox "Ingresar el numero de Kardex , con el que se realizó el Ingreso , Si no conoce el nombre lo puede averiguar en la Opción Herramientas-Consultas-Kardex"
+   MsgBox "Ingresar el numero de Kardex , con el que se realizï¿½ el Ingreso , Si no conoce el nombre lo puede averiguar en la Opciï¿½n Herramientas-Consultas-Kardex"
    i_numser.SetFocus
 Else
    cancela_todo
@@ -5315,7 +5315,7 @@ End If
 'DoEvents
 If LK_FECHA_DIA = #1/1/1900# Then
   Screen.MousePointer = 0
-  MsgBox "La Compañia No Tiene Definida su Fecha de Trabajo. Verificar!!!", 48, Pub_Titulo
+  MsgBox "La Compaï¿½ia No Tiene Definida su Fecha de Trabajo. Verificar!!!", 48, Pub_Titulo
   Unload FORM_GRIFO
   Exit Sub
 End If
@@ -5959,7 +5959,7 @@ filafac = 1
 WS_NUMSEC = 0
 
 If Val(GridT.TextMatrix(2, 3)) = 0 And LK_CODTRA = 2103 Then
- pub_mensaje = "Es Anulacion ¿Desea Continuar ... ?"
+ pub_mensaje = "Es Anulacion ï¿½Desea Continuar ... ?"
  Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
  If Pub_Respuesta = vbNo Then
      Exit Sub
@@ -6037,7 +6037,7 @@ SQ_OPER = 1
 PUB_CODCIA = LK_CODCIA
 LEER_PAR_LLAVE
 If par_llave!par_flag_cierre = 9 Then
-   MsgBox "!!! Compañia ... Cerró Operaciones ... Llamar al Administrador ", 48, Pub_Titulo
+   MsgBox "!!! Compaï¿½ia ... Cerrï¿½ Operaciones ... Llamar al Administrador ", 48, Pub_Titulo
    Exit Sub
 End If
 If LK_FLAG_GRIFO <> "A" Then
@@ -6049,7 +6049,7 @@ End If
 'YO AGREGO
 'If LK_CODTRA = 2409 And Right(i_cias.text, 2) = "00" Then
 '  If par_llave!par_flag_COSTOS <> 9 Then
-'    MsgBox "!!! Compañia ... debe Costear Productos antes de Enviar ", 48, Pub_Titulo
+'    MsgBox "!!! Compaï¿½ia ... debe Costear Productos antes de Enviar ", 48, Pub_Titulo
 '    Exit Sub
 '  End If
 'End If
@@ -8649,7 +8649,7 @@ Return
 REP1:
 
 'Close #1
-'*** Imprime la Transacción a un Archivo
+'*** Imprime la Transacciï¿½n a un Archivo
 'RUTA = PUB_RUTA_REPORTE & LK_CODUSU & ".txt"
 'Open RUTA For Output As #1
 'Close #1
@@ -8702,7 +8702,7 @@ GoTo fin
 
 Error_fatal:
     'MsgBox pub_mensaje
-    pub_mensaje = "Se ha producido un error " & "al abrir la conexión:" & Err & " - " & Error & vbCr
+    pub_mensaje = "Se ha producido un error " & "al abrir la conexiï¿½n:" & Err & " - " & Error & vbCr
     For Each er In rdoErrors
         pub_mensaje = pub_mensaje & er.Description & ":" & er.Number & vbCr
         MsgBox pub_mensaje, 48, Pub_Titulo
@@ -9240,7 +9240,7 @@ End If
 
 
 If KeyCode <> 46 Then Exit Sub
-   pub_mensaje = " ¿Desea Eliminar las filas seleccionadas ... ?"
+   pub_mensaje = " ï¿½Desea Eliminar las filas seleccionadas ... ?"
    Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
    If Pub_Respuesta = vbNo Then Exit Sub
    If grid_fac.Rows >= 3 Then
@@ -9681,7 +9681,7 @@ End If
 
 If KeyCode <> 46 Then Exit Sub
 
-   pub_mensaje = " ¿Desea Eliminar las filas seleccionadas ... ?"
+   pub_mensaje = " ï¿½Desea Eliminar las filas seleccionadas ... ?"
    Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
    If Pub_Respuesta = vbNo Then Exit Sub
    If GridT.Rows >= 3 Then
@@ -10484,7 +10484,7 @@ End If
 
 far_llave.MoveLast
 'If far_llave!far_estado <> "E" And LK_CODTRA <> 1401 And LK_CODTRA <> 2414 Then
-'  MsgBox "Nª. Documento: " + i_numser.Text + " - " + i_numfac.Text + "  - está  Emitido...no procede", 48, Pub_Titulo
+'  MsgBox "Nï¿½. Documento: " + i_numser.Text + " - " + i_numfac.Text + "  - estï¿½  Emitido...no procede", 48, Pub_Titulo
 '  i_numfac.Text = ""
 '  i_numfac.SetFocus
 '  i_cambio.Value = 0
@@ -10493,7 +10493,7 @@ far_llave.MoveLast
 'End If
 
 
-pub_mensaje = "Existe datos en este Documento : " & Trim(i_numser.Text) & " - " & i_numfac.Text & " ¿Desea Reemplazar sus datos por el actual ?"
+pub_mensaje = "Existe datos en este Documento : " & Trim(i_numser.Text) & " - " & i_numfac.Text & " ï¿½Desea Reemplazar sus datos por el actual ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
 '   BolFac_Click
@@ -10801,7 +10801,7 @@ PSPLAC_LLAVE(3) = wvalor ' FrmDatplac.Gridtablas.TextMatrix(Gridtablas.Row, 4)
 cliplac_llave.Requery
 If Not cliplac_llave.EOF Then
     WPLA = Trim(cliplac_llave!TAB_NOMLARGO)
-    MsgBox "Descripción Existe. Intente Nuevamente ..", 48, Pub_Titulo
+    MsgBox "Descripciï¿½n Existe. Intente Nuevamente ..", 48, Pub_Titulo
     'If Gridtablas.Visible Then Gridtablas.SetFocus
     For fila = 0 To i_placas.ListCount - 1
       i_placas.ListIndex = fila
@@ -10855,7 +10855,7 @@ PA:
   Loop
   i_placas.ListIndex = ultimo
   i_placas.SetFocus
-  'SendKeys "%{DOWN}"
+  'SendKeysSeguro VK_DOWN, True
 End If
 
 End Sub
@@ -10891,7 +10891,7 @@ End Sub
 Private Sub i_precios_GotFocus()
 If i_precios.ListCount <> 0 Then
  i_precios.ListIndex = 0
- SendKeys "%{DOWN}"
+ SendKeysSeguro VK_DOWN, True
 End If
 'textovar.Visible = False
 'i_unidades.Visible = False
@@ -11037,7 +11037,7 @@ If LK_EMP = "3AA" Then
    Exit Sub
 End If
 
-SendKeys "%{DOWN}"
+SendKeysSeguro VK_DOWN, True
 'i_unidades.ListIndex = 0
 
 'textovar.Visible = False
@@ -11221,7 +11221,7 @@ If Nulo_Valor0(SUT_LLAVE!SUT_FLAG_CC) <> 1 And PUB_TIPMOV = 10 And pub_signo_car
 End If
 End If
 If Nulo_Valor0(SUT_LLAVE!SUT_FLAG_CC) <> 1 And PUB_TIPMOV = 10 And pub_signo_car <> 0 And Nulo_Valors(cli_llave!CLI_estado) <> "A" Then
-   MsgBox "              !!! O J O !!! " + Chr(13) + "Cliente No está ACTIVO en el Sistema.", 48, Pub_Titulo
+   MsgBox "              !!! O J O !!! " + Chr(13) + "Cliente No estï¿½ ACTIVO en el Sistema.", 48, Pub_Titulo
 End If
 Exit Sub
 sigue:
@@ -11324,7 +11324,7 @@ Dim CARAC As String
 If TRANS.Text = "" Then
    GoTo fin
 End If
-'SendKeys "%{DOWN}"
+'SendKeysSeguro VK_DOWN, True
 fin:
 End Sub
 
@@ -11682,9 +11682,9 @@ End If
 
 If LK_CODTRA = 2101 Then
 If Val(i_dias.Text) > 30 Then
-   pub_mensaje = " ¿Esta seguro del numero de Dias... ?"
+   pub_mensaje = " ï¿½Esta seguro del numero de Dias... ?"
      Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbNo Then   ' El usuario eligió
+  If Pub_Respuesta = vbNo Then   ' El usuario eligiï¿½
      i_dias.SetFocus
      Exit Sub
   End If
@@ -14416,7 +14416,7 @@ Dim WS_CALIDAD As Integer
 Dim ws_codcia As String
 If KeyCode = 46 Then
    GridD.CellBackColor = vbBlue
-   pub_mensaje = "¿Desea Eliminar la fila seleccionada ... ?"
+   pub_mensaje = "ï¿½Desea Eliminar la fila seleccionada ... ?"
    Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
    If Pub_Respuesta = vbNo Then
       GridD.CellBackColor = vbWhite
@@ -14759,12 +14759,12 @@ End If
    ' PARA PLAZA GRAU
 '   If LK_CODTRA = 2728 And LK_EMP = "PLA" Then
 '      PLAZA_FLAG_MANUAL = " "
-'      plaza_tasa1 = InputBox("Ingrese (%)Tasa  Compensatorio : Días: " & WK_DIASV, "Tasa de Interes", "0")
+'      plaza_tasa1 = InputBox("Ingrese (%)Tasa  Compensatorio : Dï¿½as: " & WK_DIASV, "Tasa de Interes", "0")
 '      If plaza_tasa1 = "" Then GoTo pasa_tasa
-'      plaza_tasa2 = InputBox("Ingrese (%)Tasa  Moratoria     : Días: " & WK_DIASV, "Tasa de Interes", "0")
+'      plaza_tasa2 = InputBox("Ingrese (%)Tasa  Moratoria     : Dï¿½as: " & WK_DIASV, "Tasa de Interes", "0")
 '      If plaza_tasa2 = "" Then GoTo pasa_tasa
 '      If Val(i_tasav.Text) <> (Val(plaza_tasa1) + Val(plaza_tasa2)) Then
-'         pub_mensaje = "Importe de Tasas No son Correctas  ...   ¿Desea Continuar de todas maneras ... ?"
+'         pub_mensaje = "Importe de Tasas No son Correctas  ...   ï¿½Desea Continuar de todas maneras ... ?"
 '         Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 '         If Pub_Respuesta = vbNo Then
 '              GoTo pasa_tasa
@@ -14889,7 +14889,7 @@ If KeyAscii <> 13 Then
 End If
 If Val(TRANS.Text) = 2408 Or Val(TRANS.Text) = 2406 Or Val(TRANS.Text) = 2101 Or Val(TRANS.Text) = 2105 Or Val(TRANS.Text) = 5555 Or Val(TRANS.Text) = 2107 Or Val(TRANS.Text) = 2103 Or Val(TRANS.Text) = 2210 Or Val(TRANS.Text) = 2212 Or Val(TRANS.Text) = 2125 Or Val(TRANS.Text) = 1402 Or Val(TRANS.Text) = 2211 Then
 Else
-     MsgBox "Transacción NO corresponde a esté Módulo ", 48, Pub_Titulo
+     MsgBox "Transacciï¿½n NO corresponde a estï¿½ Mï¿½dulo ", 48, Pub_Titulo
      Azul TRANS, TRANS
      Exit Sub
 End If
@@ -15120,7 +15120,7 @@ grabar.Enabled = True
 cancelar.Enabled = True
 i_def.ListIndex = 0
 i_def.SetFocus
-SendKeys "%{UP}"
+SendKeysSeguro VK_UP, True
 If LK_EMP = "3AA" And LK_CODTRA = 2101 Then
  i_def.ListIndex = 1
  i_DEF_KeyPress 13
@@ -15395,7 +15395,7 @@ Else
 End If
 
 If TypeOf FORM_GRIFO.Controls(TABLA_TAG(indice)) Is ComboBox Then
-   SendKeys "%{DOWN}"
+   SendKeysSeguro VK_DOWN, True
 End If
 fin:
 

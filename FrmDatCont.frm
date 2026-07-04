@@ -140,7 +140,7 @@ End If
 If PUB_TIPREG = 199 Then MsgBox "Solo hasta 4 tipos de bloqueos"
 If PUB_TIPREG = 199 Then If Gridtablas.Rows >= 5 Then Exit Sub
 wBAN = 1
-Mensaje = "Ingrese la Descripción  :"
+Mensaje = "Ingrese la Descripciï¿½n  :"
 titulo = "Datos Necesario..."
 valorpred = " "
 wvalor = InputBox(Mensaje, titulo, valorpred)
@@ -162,7 +162,7 @@ If PUB_TIPREG = 123 Then
 End If
 llave_rep01.Requery
 If Not llave_rep01.EOF Then
-  MsgBox "Descripción Existe. Intente Nuevamente ..", 48, Pub_Titulo
+  MsgBox "Descripciï¿½n Existe. Intente Nuevamente ..", 48, Pub_Titulo
   wBAN = 0
   Exit Sub
 End If
@@ -425,7 +425,9 @@ If wsTexto.Enabled = True And wsTexto.Visible = True Then
    wsTexto.SelLength = Len(wsTexto)
 End If
 cade = Chr(wsKeyAscii)
+On Error Resume Next
 SendKeys cade, True
+On Error GoTo 0
 
 End Sub
 Private Sub ElGrid_LeaveCell(wsGrid As MSFlexGrid, wsTexto As TextBox)
@@ -588,7 +590,7 @@ If KeyCode = 45 Then
  Exit Sub
 End If
 If KeyCode = 46 Then
-    pub_mensaje = " Eliminar    : " & Trim(Gridtablas.TextMatrix(Gridtablas.Row, 1)) & " ¿Desea Continuar... ?"
+    pub_mensaje = " Eliminar    : " & Trim(Gridtablas.TextMatrix(Gridtablas.Row, 1)) & " ï¿½Desea Continuar... ?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
       Gridtablas.SetFocus
@@ -658,7 +660,7 @@ If KeyAscii = 13 Then
  End If
  llave_rep01.Requery
  If Not llave_rep01.EOF Then
-   MsgBox "Descripción Existe. Intente Nuevamente ..", 48, Pub_Titulo
+   MsgBox "Descripciï¿½n Existe. Intente Nuevamente ..", 48, Pub_Titulo
    Azul TEXTOVAR, TEXTOVAR
    Exit Sub
  End If
@@ -763,7 +765,7 @@ If KeyCode = 45 Then
  Exit Sub
 End If
 If KeyCode = 46 Then
-   pub_mensaje = " Eliminar    : " & Trim(grid_comi.TextMatrix(grid_comi.Row, 1)) & " ¿Desea Continuar... ?"
+   pub_mensaje = " Eliminar    : " & Trim(grid_comi.TextMatrix(grid_comi.Row, 1)) & " ï¿½Desea Continuar... ?"
    Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
    If Pub_Respuesta = vbNo Then
       grid_comi.SetFocus

@@ -346,7 +346,7 @@ Begin VB.Form FrmComaest
          Width           =   1335
       End
       Begin VB.Label Label1 
-         Caption         =   "Flag.. Afectación"
+         Caption         =   "Flag.. Afectaciï¿½n"
          Height          =   255
          Index           =   6
          Left            =   120
@@ -604,7 +604,7 @@ Begin VB.Form FrmComaest
          Width           =   615
       End
       Begin VB.Label Label1 
-         Caption         =   "Descripción :"
+         Caption         =   "Descripciï¿½n :"
          Height          =   255
          Index           =   1
          Left            =   240
@@ -843,7 +843,7 @@ If Left(cmdAgregar.Caption, 2) = "&A" Then
     'AGREGAMOS EN BLANCO
 Else
    If FrmComaest.Txtcom(2).Text = "" Or Len(FrmComaest.Txtcom(2).Text) = 0 Then
-       MsgBox "Ingrese Descripción  ..!!!", 48, Pub_Titulo
+       MsgBox "Ingrese Descripciï¿½n  ..!!!", 48, Pub_Titulo
        Azul Txtcom(2), Txtcom(2)
        Exit Sub
    End If
@@ -993,9 +993,9 @@ If Len(Txtcom(2).Text) = 0 Or Len(Txtcom(1).Text) = 0 Then
    MENSAJE_COM "NO a seleccionado NADA ... !"
    Exit Sub
 End If
-  pub_mensaje = " ¿Desea Eliminar el Registro... ?"
+  pub_mensaje = " ï¿½Desea Eliminar el Registro... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligió
+  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
     wcuenta = Trim(Txtcom(1).Text)
     cad = "SELECT * FROM COMAEST WHERE COM_CUENTA > '" & wcuenta & "' AND COM_CODCIA = '" & LK_CODCIA & "' ORDER BY COM_CUENTA"
     Set WELI = CN.OpenResultset(cad, rdOpenKeyset, rdConcurValues)
@@ -1037,7 +1037,7 @@ If Left(cmdModificar.Caption, 2) = "&M" Then
     Txtcom(2).SetFocus
     Txtcom(0).Enabled = False
     Txtcom(5).Enabled = False
-    Modo.Caption = "< Modificación >"
+    Modo.Caption = "< Modificaciï¿½n >"
     FMODO.Visible = True
 Else
     '*Grabar las modificaciones
@@ -1430,7 +1430,7 @@ Case 4
       If KeyAscii = 13 Then
         If Len(Trim(Txtcom(1).Text)) = wCOM_NIVEL(1) Then
             FrmComaest.com_tipo_cuenta.SetFocus
-            SendKeys "%{UP}"
+            SendKeysSeguro VK_UP, True
         Else
            If cmdAgregar.Enabled Then
              cmdAgregar.SetFocus
@@ -1522,7 +1522,7 @@ grid1.ColAlignment(2) = 1
 
 grid1.Text = " Cuenta "
 grid1.COL = 1
-grid1.Text = " Descripción "
+grid1.Text = " Descripciï¿½n "
 grid1.ColWidth(0) = 1300
 grid1.ColWidth(1) = 2300
 grid1.ColWidth(2) = 1

@@ -1,11 +1,11 @@
-frmARTI = 52, 52, 1315, 694, C, 0, 0, 0, 0, C
+frmARTI = 52, 52, 1315, 694, C, 52, 52, 1315, 694, C
 frmCLI = 0, 0, 0, 0, C, 0, 0, 0, 0, C
-frmDocu = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+frmDocu = 26, 26, 1289, 668, C, 0, 0, 0, 0, C
 frm_cheques = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 Splash = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 PASSFORM = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 Módulo1 = 0, 0, 0, 0, C
-Módulo2 = 0, 0, 0, 0, C
+Mï¿½dulo2 = 0, 0, 0, 0, C
 Mï¿½dulo3 = 0, 0, 0, 0, C
 frmBancos = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 frmBuscacta = 0, 0, 0, 0, C, 0, 0, 0, 0, C

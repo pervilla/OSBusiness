@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form FrmPreUnidad 
-   Caption         =   "Actualización de Precios / Stock Min.-Max."
+   Caption         =   "Actualizaciï¿½n de Precios / Stock Min.-Max."
    ClientHeight    =   6255
    ClientLeft      =   210
    ClientTop       =   885
@@ -872,11 +872,11 @@ End Sub
 
 
 Private Sub cmdcompras_Click()
-Dim Mensaje, Título, valorpred, mivalor
+Dim Mensaje, Tï¿½tulo, valorpred, mivalor
     Mensaje = "Cuantas ultimos compras desea ver : "
-    Título = "Ultmas Compras "
+    Tï¿½tulo = "Ultmas Compras "
     valorpred = "5"
-    mivalor = InputBox(Mensaje, Título, valorpred)
+    mivalor = InputBox(Mensaje, Tï¿½tulo, valorpred)
     If mivalor = "" Or Val(mivalor) = 0 Then
        Exit Sub
     End If
@@ -919,7 +919,7 @@ If Not CONSIS_UNIDAD Then
     Exit Sub
 End If
 
-pub_mensaje = " Grabar todas la modificaciones.  ¿Desea Continuar... ?"
+pub_mensaje = " Grabar todas la modificaciones.  ï¿½Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    grid_det.SetFocus
@@ -1736,7 +1736,7 @@ Dim CAM_PRECIO As rdoQuery
 Dim WS_FAMI As String
 Dim WVER1 As String
 Dim WVER2 As String
-pub_mensaje = "Procesar Cambio de Lista de Precios... ¿Desea Continuar... ?"
+pub_mensaje = "Procesar Cambio de Lista de Precios... ï¿½Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -2462,7 +2462,9 @@ If wsTexto.Enabled = True And wsTexto.Visible = True Then
 End If
 Flag_Change = "A"
 'cade = Chr(wsKeyAscii)
+On Error Resume Next
 SendKeys cade, True
+On Error GoTo 0
 wsTexto.SelStart = Len(wsTexto)
 
 'wsTexto.text = ""

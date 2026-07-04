@@ -945,7 +945,7 @@ Begin VB.Form FrmPedPro
       PrintFileLinesPerPage=   60
    End
    Begin VB.Label lblcontrol 
-      Caption         =   "Condición:"
+      Caption         =   "Condiciï¿½n:"
       Height          =   255
       Index           =   21
       Left            =   4800
@@ -1059,7 +1059,7 @@ FrmDatArti.Caption = "GRUPOS  -  TAB_TIPREG = " & PUB_TIPREG
 FrmDatArti.Show 1
 LLENADOS cmbTipo, 43
 cmbTipo.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 
 
 End Sub
@@ -1097,7 +1097,7 @@ PRE_RELCOMP(3) = 0
 PRE_RELCOMP(4) = Val(txtnumfac.Text)
 relcomp_llave.Requery
 If Not relcomp_llave.EOF Then
- pub_mensaje = "Reemplazar la infomación...   ¿Desea Continuar... ?"
+ pub_mensaje = "Reemplazar la infomaciï¿½n...   ï¿½Desea Continuar... ?"
  Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
  If Pub_Respuesta = vbNo Then
     Exit Sub
@@ -1151,7 +1151,7 @@ For fila = 1 To grdidet.Rows - 1
     relcomp_llave.Update
 Next fila
 Screen.MousePointer = 0
-pub_mensaje = "Datos Guardados correctamente!!! ...   ¿Desea Imprimir el Pedido... ?"
+pub_mensaje = "Datos Guardados correctamente!!! ...   ï¿½Desea Imprimir el Pedido... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
   cmdcancelar_Click
@@ -1600,7 +1600,7 @@ If PUB_KEY <> 0 Then
        GoTo fin
     End If
     If Val(art_LLAVE!art_numero) = 3 Then
-           MsgBox "Producto en Proceso de Liquidación ", 48, Pub_Titulo
+           MsgBox "Producto en Proceso de Liquidaciï¿½n ", 48, Pub_Titulo
      Exit Sub
     End If
     WCOD_ORIGINAL = art_LLAVE!art_key
@@ -1692,7 +1692,7 @@ IR_ALTERNO:
       LEER_ART_LLAVE
       VAR_ACTIVAR = 0
       If Val(art_LLAVE!art_numero) = 3 Then
-           MsgBox "Producto en Proceso de Liquidación ", 48, Pub_Titulo
+           MsgBox "Producto en Proceso de Liquidaciï¿½n ", 48, Pub_Titulo
      Exit Sub
        End If
     
@@ -2370,7 +2370,7 @@ grdidet.ColWidth(27) = 800  ' Codigo de empresa
 grdidet.TextMatrix(0, 0) = "Fecha"
 grdidet.TextMatrix(0, 1) = "Tipo"
 grdidet.TextMatrix(0, 2) = "Codigo"
-grdidet.TextMatrix(0, 3) = "Descripción"
+grdidet.TextMatrix(0, 3) = "Descripciï¿½n"
 grdidet.TextMatrix(0, 4) = "Unid."
 grdidet.TextMatrix(0, 5) = "Cantid."
 grdidet.TextMatrix(0, 6) = "Precio"
@@ -2411,7 +2411,7 @@ GRID_MST.ColWidth(7) = 900 ' total
 
 7 GRID_MST.TextMatrix(0, 0) = "Tipo"
 GRID_MST.TextMatrix(0, 1) = "Codigo"
-GRID_MST.TextMatrix(0, 2) = "Descripción"
+GRID_MST.TextMatrix(0, 2) = "Descripciï¿½n"
 GRID_MST.TextMatrix(0, 3) = "Unidad"
 GRID_MST.TextMatrix(0, 4) = "Cantidad"
 GRID_MST.TextMatrix(0, 5) = "Precio"

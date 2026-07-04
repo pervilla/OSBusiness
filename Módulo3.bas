@@ -329,6 +329,7 @@ Private Const KEYEVENTF_KEYUP = &H2
 Private Const VK_MENU = &H12    ' Alt key
 Private Const VK_UP = &H26      ' Up arrow
 Private Const VK_DOWN = &H28    ' Down arrow
+Private Const VK_HOME = &H24    ' Home key
 
 Public Sub SendKeysSeguro(ByVal tecla As Integer, Optional ByVal conAlt As Boolean = False)
     On Error Resume Next

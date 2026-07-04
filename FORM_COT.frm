@@ -2160,7 +2160,7 @@ grid_fac.TextMatrix(grid_fac.Rows - 1, 17) = ""
 
 If i_condi.ListCount > 0 And f1.Enabled = True Then
   i_condi.SetFocus
-  SendKeys "%{up}"
+  SendKeysSeguro VK_UP, True
 End If
 If moneda.ListCount > 0 And moneda.ListIndex = -1 And f1.Enabled = True Then moneda.ListIndex = 0
 
@@ -2321,7 +2321,7 @@ If KeyCode = 45 Then
     Loop
     If cmdtipo.ListCount > 0 Then cmdtipo.ListIndex = 0
     cmdtipo.SetFocus
-    SendKeys "%{UP}"
+    SendKeysSeguro VK_UP, True
     DoEvents
 End If
 
@@ -2367,7 +2367,7 @@ If KeyCode = 113 Then
 ElseIf KeyCode = 114 Then
  If i_condi.Enabled Then
    i_condi.SetFocus
-   SendKeys "%{up}"
+   SendKeysSeguro VK_UP, True
   End If
 ElseIf KeyCode = 115 Then
   cancelar_Click
@@ -2565,7 +2565,7 @@ If grid_fac.COL = 3 Then
     unidad_KeyPress 13
     ' UNIDAD.Visible = True
     ' UNIDAD.SetFocus
-    'SendKeys "%{up}"
+    'SendKeysSeguro VK_UP, True
      Exit Sub
 End If
 If grid_fac.COL = 4 Then
@@ -2637,7 +2637,7 @@ If grid_fac.COL = 4 Then
     
     PRECIOS.Visible = True
     PRECIOS.SetFocus
-    SendKeys "%{up}"
+    SendKeysSeguro VK_UP, True
      Exit Sub
 End If
 If grid_fac.COL = 5 Then
@@ -2730,7 +2730,7 @@ End Sub
 Private Sub i_condi_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
  moneda.SetFocus
- SendKeys "%{up}"
+ SendKeysSeguro VK_UP, True
 End If
 
 End Sub
@@ -2746,7 +2746,7 @@ End Sub
 Private Sub i_destino_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
  i_fbg.SetFocus
- SendKeys "%{up}"
+ SendKeysSeguro VK_UP, True
 End If
 
 End Sub
@@ -2756,7 +2756,7 @@ If KeyAscii = 13 Then
 If UCase(cmdIngreso.Caption) <> "&GRABAR" Then
    If i_destino.Enabled = True Then
      i_destino.SetFocus
-     SendKeys "%{up}"
+     SendKeysSeguro VK_UP, True
    End If
 End If
 End If
@@ -3946,7 +3946,7 @@ If pu_codclie <> 0 And IsNumeric(Txt_key.Text) = True Then
    PUB_CODVEN = Val(Txt_key.Text)
    WMO = PED_PENDIENTES()
    cmdtipo.SetFocus
-   SendKeys "%{up}"
+   SendKeysSeguro VK_UP, True
    Screen.MousePointer = 0
    Exit Sub
 Else
@@ -3976,7 +3976,7 @@ Else
    WMO = PED_PENDIENTES()
    ListView2.Visible = False
    cmdtipo.SetFocus
-   SendKeys "%{up}"
+   SendKeysSeguro VK_UP, True
 End If
 dale:
 mucho:

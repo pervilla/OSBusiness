@@ -14,7 +14,7 @@ Begin VB.Form FrmMotAnul
    ScaleWidth      =   11025
    StartUpPosition =   3  'Windows Default
    Begin VB.CheckBox cheerror 
-      Caption         =   "Anular por Error de Impresión y Otros de Documento"
+      Caption         =   "Anular por Error de Impresiï¿½n y Otros de Documento"
       BeginProperty Font 
          Name            =   "Tahoma"
          Size            =   8.25
@@ -257,7 +257,7 @@ FrmDatArti.Caption = "TAB_TIPREG = " & PUB_TIPREG
 FrmDatArti.Show 1
 LLENA_GRUPOS cmbmotivo, 74
 cmbmotivo.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 
 
 
@@ -277,7 +277,7 @@ For fila = 1 To gridfac.Rows - 1
   End If
 Next fila
 If Trim(wflag) = "" Then
-   MsgBox "Seleccione algún motivo por que se esta Anulando", 48, Pub_Titulo
+   MsgBox "Seleccione algï¿½n motivo por que se esta Anulando", 48, Pub_Titulo
    Exit Sub
 End If
 FrmMotAnul.Hide
@@ -291,7 +291,7 @@ End Sub
 
 Private Sub gridfac_DblClick()
 If cheerror.Value = 1 Then
-  MsgBox "Desmarcar la opción de errores de impresión", 48, Pub_Titulo
+  MsgBox "Desmarcar la opciï¿½n de errores de impresiï¿½n", 48, Pub_Titulo
   cheerror.SetFocus
   Exit Sub
 End If
@@ -300,7 +300,7 @@ If gridfac.COL = 6 Then
   ASIGNA_INT cmbmotivo, Val(Trim(Right(gridfac.Text, 10)))
   framotivos.Visible = True
   cmbmotivo.SetFocus
-  SendKeys "%{up}"
+  SendKeysSeguro VK_UP, True
 End If
 
 End Sub

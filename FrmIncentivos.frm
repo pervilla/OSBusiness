@@ -436,7 +436,7 @@ Begin VB.Form FrmIncentivos
          Width           =   855
       End
       Begin VB.Label lblcontrol 
-         Caption         =   "Descripción del Incentivo "
+         Caption         =   "Descripciï¿½n del Incentivo "
          Height          =   255
          Index           =   7
          Left            =   240
@@ -568,7 +568,7 @@ Begin VB.Form FrmIncentivos
       Width           =   435
    End
    Begin VB.Label Label1 
-      Caption         =   "Opción :"
+      Caption         =   "Opciï¿½n :"
       Height          =   225
       Left            =   4380
       TabIndex        =   40
@@ -636,7 +636,7 @@ FrmDatArti.Caption = "GRUPOS  -  TAB_TIPREG = " & PUB_TIPREG
 FrmDatArti.Show 1
 LLENADOS cmbtipo, 49
 cmbtipo.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 
 
 End Sub
@@ -648,7 +648,7 @@ PRE_RELCOMP(1) = txtfecha.Text
 relcomp_llave.Requery
 ws_numero = 0
 If Not relcomp_llave.EOF Then
- 'pub_mensaje = "Reemplazar la infomación...   ¿Desea Continuar... ?"
+ 'pub_mensaje = "Reemplazar la infomaciï¿½n...   ï¿½Desea Continuar... ?"
  'Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
  'If Pub_Respuesta = vbNo Then
  '   Exit Sub
@@ -1389,7 +1389,7 @@ grdidet.ColWidth(12) = 900 ' FLAG DE CIERRE
 grdidet.TextMatrix(0, 0) = "Fecha"
 grdidet.TextMatrix(0, 1) = "Tipo"
 grdidet.TextMatrix(0, 2) = "Codigo"
-grdidet.TextMatrix(0, 3) = "Descripción"
+grdidet.TextMatrix(0, 3) = "Descripciï¿½n"
 grdidet.TextMatrix(0, 4) = "Unidad"
 grdidet.TextMatrix(0, 5) = "Fec.Ini."
 grdidet.TextMatrix(0, 6) = "Fec.Fin."
@@ -1418,7 +1418,7 @@ GRID_MST.ColWidth(7) = 900 ' total
 
 GRID_MST.TextMatrix(0, 0) = "Tipo"
 GRID_MST.TextMatrix(0, 1) = "Codigo"
-GRID_MST.TextMatrix(0, 2) = "Descripción"
+GRID_MST.TextMatrix(0, 2) = "Descripciï¿½n"
 GRID_MST.TextMatrix(0, 3) = "Unidad"
 GRID_MST.TextMatrix(0, 4) = "Cantidad"
 GRID_MST.TextMatrix(0, 5) = "Precio"
