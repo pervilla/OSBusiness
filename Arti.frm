@@ -1168,7 +1168,7 @@ Begin VB.Form frmARTI
       Left            =   6960
       MaxLength       =   11
       TabIndex        =   80
-      Top             =   3000
+          Top             =   10000
       Visible         =   0   'False
       Width           =   495
    End

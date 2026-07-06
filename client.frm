@@ -5293,24 +5293,24 @@ Screen.MousePointer = 11
     TxtEmpresa.Text = Trim(Nulo_Valors(cliloc_llave!CLI_NOMBRE_EMPRESA))
     txtdireccion.Text = Trim(Nulo_Valors(cliloc_llave!CLI_CASA_DIREC))
     txtdireccion.MaxLength = cliloc_llave(10).Size
-    Txtnumdir.Text = Trim(Nulo_Valor0(cliloc_llave!CLI_CASA_NUM))
+    Txtnumdir.Text = Trim(Nulo_Valors(cliloc_llave!CLI_CASA_NUM))
     ASIGNA_INT TxtZona, Nulo_Valor0(cliloc_llave!CLI_CASA_ZONA)
     ASIGNA_INT TxtSubZona, Nulo_Valor0(cliloc_llave!CLI_CASA_SUBZONA)
     ASIGNA_INT txtZonaNew, Nulo_Valor0(cliloc_llave!cli_zona_new)
     'QUITADO
     txtDirTrabajo.Text = Trim(Nulo_Valors(cliloc_llave!CLI_TRAB_DIREC))
     txtDirTrabajo.MaxLength = cliloc_llave(14).Size
-    txtNumDirTrabajo.Text = Trim(Nulo_Valor0(cliloc_llave!CLI_TRAB_NUM))
+    txtNumDirTrabajo.Text = Trim(Nulo_Valors(cliloc_llave!CLI_TRAB_NUM))
     'OJOQUITADO
     ASIGNA_INT TxtZonaTrabajo, Nulo_Valor0(cliloc_llave!cli_TRAB_ZONA)
     'AGREGADO PARA SIGNAR LA PROVINCIA 06/12/2001
     ASIGNA_INT cboProvincia, Nulo_Valor0(cliloc_llave!cli_TRAB_PROV)
     
     ASIGNA_INT TxtSubZonaTrabajo, Nulo_Valor0(cliloc_llave!cli_TRAB_SUBZONA)
-    ASIGNA_INT TxtLugarCasa, Nulo_Valor0(cliloc_llave!CLI_LUGAR_CASA)
+    ASIGNA_INT TxtLugarCasa, Nulo_Valors(cliloc_llave!CLI_LUGAR_CASA)
     'OJO QUITADO
     
-    ASIGNA_INT TxtLugarTrab, Nulo_Valor0(cliloc_llave!CLI_LUGAR_TRAB)
+    ASIGNA_INT TxtLugarTrab, Nulo_Valors(cliloc_llave!CLI_LUGAR_TRAB)
     ASIGNA_INT cboDiaVisita, Nulo_Valor0(cliloc_llave!cli_dia_visita)
     
     'AGREGADO 29/11/2001

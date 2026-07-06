@@ -1963,11 +1963,9 @@ If numarchi = 9 Then
 End If
 Do Until X.EOF Or X.AbsolutePosition - 1 >= wmaximo
   If numarchi = 9 Then
-    Set itmX = LV1.ListItems.Add(, , Trim(CStr(X.rdoColumns(1))))
-    itmX.SubItems(1) = Trim(CStr(X.rdoColumns(2)))
-   ' itmX.SubItems(3) = Format(X.rdoColumns(4), "0.00")
-    itmX.SubItems(2) = Format(X.rdoColumns(0), "0.00")
-   '      itmX.SubItems(3) = Format(X.rdoColumns(3), "0.00")
+     Set itmX = LV1.ListItems.Add(, , Trim(CStr(X.rdoColumns(1))))
+     itmX.SubItems(1) = Trim(CStr(X.rdoColumns(2)))
+     itmX.SubItems(2) = Trim(CStr(X.rdoColumns(0)))
   End If
   itmX.Tag = X.AbsolutePosition
   X.MoveNext

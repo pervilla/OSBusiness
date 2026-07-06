@@ -9343,6 +9343,8 @@ End Sub
 
 Private Sub Form_Resize()
     If FORMGEN.WindowState = vbNormal Then
+        FORMGEN.Width = 12000
+        FORMGEN.Height = 8500
         CenterMe FORMGEN
     End If
 End Sub
@@ -22461,22 +22463,8 @@ If LV_ART.Visible = False And KeyCode <> 13 And Len(TEXTOVAR.Text) >= 3 Then
              '"  PRE_CANT FROM ARTI, ARTICULO as cia_actual,ARTICULO as cia_otra, ARTICULO as cia_SUBALM, ARTICULO as cia_JOLMEDO, ARTICULO as ALM_CIA5,  " & _
              '"  ARTICULO as ALM_CIA6 , ARTICULO as ALM_CIA7, PRECIOS  WHERE  (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND (PRE_FLAG_UNIDAD = 'A') AND (ART_KEY = cia_actual.ARM_CODART) AND (ART_KEY = cia_otra.ARM_CODART) AND (ART_KEY = cia_SUBALM.ARM_CODART)  AND " & _
              '"  (ART_KEY = cia_JOLMEDO.ARM_CODART) AND (ART_KEY = ALM_CIA5.ARM_CODART) AND (ART_KEY = ALM_CIA6.ARM_CODART) AND (ART_KEY = ALM_CIA7.ARM_CODART) AND ART_SITUACION <> 1 and ART_KEY <> 0 AND ART_CALIDAD = " & WS_CALIDAD & "  AND ART_CODCIA = '" & ws_codcia & "' AND (cia_actual.arm_codcia = '" & st_codcia1 & "') AND (cia_otra.arm_codcia = '" & st_codcia2 & "') AND (cia_SUBALM.arm_codcia = '" & st_codcia3 & "') AND (cia_JOLMEDO.arm_codcia = '" & st_codcia4 & "')  AND (ALM_CIA5.arm_codcia = '" & st_codcia5 & "') AND (ALM_CIA6.arm_codcia = '" & st_codcia6 & "') AND (ALM_CIA7.arm_codcia = '" & st_codcia7 & "') AND ART_NOMBRE BETWEEN '" & textovar.Text & "' AND  '" & var & "' " & SoloconStock & " ORDER BY ART_NOMBRE"
-' JLPV MODIFICACION
-             archi = "SELECT TOP 1000 ART_KEY, ART_CODCIA, LTRIM(RTRIM(ART_NOMBRE)) ART_NOMBRE, ART_ALTERNO,ART_SUBGRU," & _
-             " cia_actual.ARM_STOCK as ARM_STOCK," & _
-             " PreC.PRE_EQUIV,PreC.PRE_UNIDAD," & _
-             " PreU.PRE_PRE1,PreC.PRE_PRE1 PRE_PRE2,PreC.PRE_PRE2 PRE_PRE3,PreC.PRE_PRE3 PRE_PRE4,PreC.PRE_PRE4 PRE_PRE5,PreC.PRE_PRE5 PRE_PRE6," & _
-             " 0 as ARM_STOCK2,0 as ARM_STOCK3,0 as ARM_STOCK4,0 as ARM_STOCK5, 0 as ARM_STOCK6,0 as ARM_STOCK7," & _
-             " art_marca , ART_NUMERO, ART_ESTADO, Prec.PRE_OP1, Prec.PRE_CANT, LTRIM(RTRIM(TAB_NOMLARGO)) TAB_NOMLARGO, ART_FAMILIA" & _
-             " From arti" & _
-             " INNER JOIN ARTICULO as cia_actual ON(ART_KEY = cia_actual.ARM_CODART AND cia_actual.arm_codcia = '25')" & _
-             " INNER JOIN PRECIOS as PreU ON(ART_KEY = PreU.PRE_CODART AND ART_CODCIA = PreU.PRE_CODCIA AND PreU.PRE_SECUENCIA = 0)" & _
-             " INNER JOIN PRECIOS as PreC ON(ART_KEY = PreC.PRE_CODART AND ART_CODCIA = PreC.PRE_CODCIA AND PreC.PRE_FLAG_UNIDAD = 'A')" & _
-             " inner join TABLAS as t2 on(ART_FAMILIA=t2.TAB_NUMTAB and TAB_CODCIA=25 and TAB_TIPREG=122)" & _
-             " Where" & _
-             " ART_SITUACION <> 1 and ART_KEY <> 0" & _
-             " AND ART_CALIDAD = 1  AND ART_CODCIA = '25'" & _
-             " AND ART_NOMBRE BETWEEN '" & TEXTOVAR.Text & "' AND  '" & var & "' " & SoloconStock & " ORDER BY ART_NOMBRE"
+' JLPV MODIFICACION - usa sp_buscar_productos_venta (busqueda LIKE con COLLATE fix)
+              archi = "EXEC sp_buscar_productos_venta @busqueda=N'" & Replace(TEXTOVAR.Text, "'", "''") & "', @codcia='" & ws_codcia & "', @top=1000"
         
 'Dim cadena
 'cadena = archi
@@ -23661,6 +23649,13 @@ Dim var
     Exit Sub
  End If
  If IsNumeric(TRANS.Text) Then Exit Sub
+ If KeyCode = vbKeySpace Or Trim(TRANS.Text) = "" Then
+    TRANS.Text = ""
+    numarchi = 9
+    archi = "SELECT TRA_KEY, TRA_DESCRIPCION, TRA_SUBKEY FROM TRANSACCION WHERE TRA_FLAG_ACTIVO = 'A' AND (TRA_KEY >= 0  AND TRA_KEY < 6000) ORDER BY TRA_DESCRIPCION"
+    PROC_TRANSA LV_TRA
+    Exit Sub
+ End If
  If LV_TRA.Visible = False Then
     var = Asc(TRANS.Text)
     var = var + 1
