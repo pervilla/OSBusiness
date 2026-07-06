@@ -3444,6 +3444,9 @@ End If
 End Sub
 
 Private Sub Form_Load()
+    CenterMe frmDocu
+    frmDocu.Width = 12120
+    frmDocu.Height = 8500
 Dim SQL As String
 Unload FORMGEN
 'Unload FORM_GRIFO
@@ -6002,10 +6005,4 @@ Public Sub MUESTA_DOCUMENTO()
     LLENA_CONSULTA
     loc_flag_espera = ""
     txtnumfac.SetFocus
-End Sub
-
-Private Sub Form_Load()
-    CenterMe frmDocu
-    frmDocu.Width = 12120
-    frmDocu.Height = 8500
 End Sub

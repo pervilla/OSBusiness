@@ -696,7 +696,7 @@ Begin VB.Form frmCLI
          Begin VB.Label lblnom 
             Alignment       =   2  'Center
             AutoSize        =   -1  'True
-            Caption         =   "N° Dir."
+            Caption         =   "Nï¿½ Dir."
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -717,7 +717,7 @@ Begin VB.Form frmCLI
          End
          Begin VB.Label lblnom 
             AutoSize        =   -1  'True
-            Caption         =   "Dirección  :"
+            Caption         =   "Direcciï¿½n  :"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -1491,7 +1491,7 @@ Begin VB.Form frmCLI
          Begin VB.Label lblnom 
             Alignment       =   2  'Center
             AutoSize        =   -1  'True
-            Caption         =   "Nº. Dir."
+            Caption         =   "Nï¿½. Dir."
             DataSource      =   "3"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
@@ -1515,7 +1515,7 @@ Begin VB.Form frmCLI
          End
          Begin VB.Label lblnom 
             AutoSize        =   -1  'True
-            Caption         =   "Dirección Trabajo"
+            Caption         =   "Direcciï¿½n Trabajo"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -1816,7 +1816,7 @@ Begin VB.Form frmCLI
          End
          Begin VB.Label lblnom 
             AutoSize        =   -1  'True
-            Caption         =   "Opción"
+            Caption         =   "Opciï¿½n"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -2352,7 +2352,7 @@ Private Sub CmbCGP_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
     If CmbCGP.text = "" Then
        CmbCGP.SetFocus
-       SendKeys "%{UP}"
+       SendKeysSeguro VK_UP, True
        Exit Sub
     End If
 '    ALLVISIBLE
@@ -2386,7 +2386,7 @@ End Sub
 Private Sub cmbgrupo_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
   txtsubgrupo.SetFocus
-  SendKeys "%{up}"
+  SendKeysSeguro VK_UP, True
 End If
 
 End Sub
@@ -2405,7 +2405,7 @@ FrmDatArti.Show 1
 'DoEvents
 LLENA_GRUPOS frmCLI.cmbgrupo, 222
 cmbgrupo.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 fra1.Refresh
 
 End Sub
@@ -2525,7 +2525,7 @@ PASACONTAB:
        'pu_codcia = LK_CODCIA
        'LEER_CLILOC_LLAVE
        'If Not cliloc_llave.EOF Then
-       '   MsgBox "Proveedor Existe en Compañia ..", 48, Pub_Titulo
+       '   MsgBox "Proveedor Existe en Compaï¿½ia ..", 48, Pub_Titulo
        '   Exit Sub
        'End If
        If Trim(LOC_CTA_CLI) = "" And Trim(LOC_DES_CLI) = "" And LK_CODCIA = "03" Then
@@ -2575,7 +2575,7 @@ Exit Sub
 ESCAPA:
    If Err.Number = 40002 Then
       Screen.MousePointer = 0
-      MsgBox "El Codigo generado ya existe " & Chr(13) & "Se procede a generar el siguiente codigo y a continuación " & Chr(13) & "Intente Grabar Nuevamente...", 48, Pub_Titulo
+      MsgBox "El Codigo generado ya existe " & Chr(13) & "Se procede a generar el siguiente codigo y a continuaciï¿½n " & Chr(13) & "Intente Grabar Nuevamente...", 48, Pub_Titulo
       frmCLI.Txt_key = GENERA_CODI
       Resume Next
       Exit Sub
@@ -2742,7 +2742,7 @@ ElseIf Left(CmbCGP.text, 1) = "P" Then
   End If
 End If
 If Left(cmdcontab.Caption, 2) = "&Q" Then
-    pub_mensaje = "Confirmar la eliminación de la Cuenta : " & tcuenta.text & " , Continuar ?"
+    pub_mensaje = "Confirmar la eliminaciï¿½n de la Cuenta : " & tcuenta.text & " , Continuar ?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
        Exit Sub
@@ -2762,7 +2762,7 @@ If Left(cmdcontab.Caption, 2) = "&Q" Then
 End If
 LOC_CANCELA = 0
 If txtesposo.text = "" Then
- MsgBox "Ingrese Descripción del cliente..", 48, Pub_Titulo
+ MsgBox "Ingrese Descripciï¿½n del cliente..", 48, Pub_Titulo
  Azul txtesposo, txtesposo
  Exit Sub
 End If
@@ -2836,7 +2836,7 @@ If Left(CmbCGP.text, 1) = "C" Then
 End If
 
 If Left(cmdcontab2.Caption, 2) = "&Q" Then
-    pub_mensaje = "Confirmar la eliminación de la Cuenta : " & tcuenta2.text & " , Continuar ?"
+    pub_mensaje = "Confirmar la eliminaciï¿½n de la Cuenta : " & tcuenta2.text & " , Continuar ?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
        Exit Sub
@@ -2848,7 +2848,7 @@ If Left(cmdcontab2.Caption, 2) = "&Q" Then
 End If
 LOC_CANCELA = 0
 If txtesposo.text = "" Then
- MsgBox "Ingrese Descripción del cliente..", 48, Pub_Titulo
+ MsgBox "Ingrese Descripciï¿½n del cliente..", 48, Pub_Titulo
  Azul txtesposo, txtesposo
  Exit Sub
 End If
@@ -2929,15 +2929,15 @@ End If
   LblMensaje.Caption = ""
   If Trim(Nulo_Valors(gen!gen_cli_cias)) <> "" Then
     wcias = Trim(gen!gen_cli_cias)
-    MsgBox "O J O ...  Al Eliminar este Cliente tambien debe hacerlo con las demas Compañias relacionadas : " & wcias, 48, Pub_Titulo
+    MsgBox "O J O ...  Al Eliminar este Cliente tambien debe hacerlo con las demas Compaï¿½ias relacionadas : " & wcias, 48, Pub_Titulo
   End If
   If Trim(tcuenta.text) <> "" Then
-    pub_mensaje = " ¿Desea Eliminar el Registro, y su Relacion a Contabilidad .. ?"
+    pub_mensaje = " ï¿½Desea Eliminar el Registro, y su Relacion a Contabilidad .. ?"
   Else
-    pub_mensaje = " ¿Desea Eliminar el Registro... ?"
+    pub_mensaje = " ï¿½Desea Eliminar el Registro... ?"
   End If
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligió
+  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
     Screen.MousePointer = 11
     cliloc_llave.Delete
     frmCLI.Txt_key.text = ""
@@ -3088,9 +3088,9 @@ End If
 End Sub
 
 Private Sub CmdCero_Click()
-  pub_mensaje = " ¿Desea Generar el " & Mid(frmCLI.CmbCGP.text, 3, Len(frmCLI.CmbCGP.text)) & " con codigo 0 ..?"
+  pub_mensaje = " ï¿½Desea Generar el " & Mid(frmCLI.CmbCGP.text, 3, Len(frmCLI.CmbCGP.text)) & " con codigo 0 ..?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbNo Then   ' El usuario eligió
+  If Pub_Respuesta = vbNo Then   ' El usuario eligiï¿½
     MENSAJE_CLI "Proceso Cancelado ..."
     Exit Sub
   End If
@@ -3123,7 +3123,7 @@ Dim valor
       Exit Sub
    End If
    
-    valor = InputBox("La Compañia a donde copiar los datos : ", "COMPAÑIA", "03")
+    valor = InputBox("La Compaï¿½ia a donde copiar los datos : ", "COMPAï¿½IA", "03")
     If valor = "" Then Exit Sub
     If Trim(valor) = LK_CODCIA Then
        MsgBox "No Procede .. "
@@ -3325,7 +3325,7 @@ If Trim(lblnom(Index).Tag) = "" Then
  Exit Sub
 End If
 Dim wnombre
-wnombre = InputBox("Ingrese la Nueva Descripción para este Campo :", Pub_Titulo, Trim(lblnom(Index).Caption))
+wnombre = InputBox("Ingrese la Nueva Descripciï¿½n para este Campo :", Pub_Titulo, Trim(lblnom(Index).Caption))
 If wnombre = "" Then
   Screen.MousePointer = 0
   Exit Sub
@@ -3824,7 +3824,7 @@ End Sub
 Private Sub txtdireccion_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
     frmCLI.TxtLugarCasa.SetFocus
-    SendKeys "%{up}"
+    SendKeysSeguro VK_UP, True
 End If
 End Sub
 
@@ -3932,7 +3932,7 @@ If Trim(TOTCIAS) <> "" And Left(CmbCGP.text, 1) = "C" Then
        PSPAR_CLI(0) = Mid(TOTCIAS, xcuenta, 2)
        par_llave_cli.Requery
        If par_llave_cli.EOF Then
-       '     MsgBox "No Grabo en la Compañia : " + Mid(TOTCIAS, xcuenta, 2) + " No Existe", 48, Pub_Titulo
+       '     MsgBox "No Grabo en la Compaï¿½ia : " + Mid(TOTCIAS, xcuenta, 2) + " No Existe", 48, Pub_Titulo
        Else
            VAR_CIAS = Mid(TOTCIAS, xcuenta, 2)
            If Left(cmdModificar.Caption, 2) = "&G" Then
@@ -3943,7 +3943,7 @@ If Trim(TOTCIAS) <> "" And Left(CmbCGP.text, 1) = "C" Then
              pu_codcia = VAR_CIAS
              LEER_CLILOC_LLAVE
              If cliloc_llave.EOF Then
-'                MsgBox "No Grabo en la Compañia : " + VAR_CIAS + " No Existe cliente ", 48, Pub_Titulo
+'                MsgBox "No Grabo en la Compaï¿½ia : " + VAR_CIAS + " No Existe cliente ", 48, Pub_Titulo
              Else
                cliloc_llave.Edit
                Modo = "E"
@@ -3970,7 +3970,7 @@ PASA:
     pu_codcia = VAR_CIAS
     LEER_CLILOC_LLAVE
     If cliloc_llave.EOF Then
-      MsgBox "No Grabo en la Compañia : " + VAR_CIAS + " No Existe cliente ", 48, Pub_Titulo
+      MsgBox "No Grabo en la Compaï¿½ia : " + VAR_CIAS + " No Existe cliente ", 48, Pub_Titulo
     Else
       cliloc_llave.Edit
       cliloc_llave!cli_limcre = Val(frmCLI.txtlimite.text)
@@ -4368,7 +4368,7 @@ DoEvents
 LLENA_ZONA TxtLugarCasa, 25
 LLENA_ZONA TxtLugarTrab, 25
 TxtLugarCasa.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 
 End Sub
 
@@ -4407,7 +4407,7 @@ DoEvents
 LLENA_ZONA TxtLugarCasa, 25
 LLENA_ZONA TxtLugarTrab, 25
 TxtLugarTrab.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 
 End Sub
 
@@ -4585,13 +4585,13 @@ FrmDatArti.Show 1
 DoEvents
 LLENA_GRUPOS txtsubgrupo, 333
 txtsubgrupo.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 End Sub
 
 Private Sub TxtSubZona_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
     frmCLI.txtZonaNew.SetFocus
-    SendKeys "%{UP}"
+    SendKeysSeguro VK_UP, True
 End If
 End Sub
 
@@ -4610,7 +4610,7 @@ DoEvents
 LLENA_ZONA TxtSubZona, 30
 LLENA_ZONA TxtSubZonaTrabajo, 35
 TxtSubZona.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 
 
 End Sub
@@ -4641,7 +4641,7 @@ LLENA_ZONA TxtSubZonaTrabajo, 35
 LLENA_ZONA TxtSubZona, 30
 
 TxtSubZonaTrabajo.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 
 End Sub
 
@@ -4653,7 +4653,7 @@ Private Sub txttelefono1_KeyPress(KeyAscii As Integer)
 SOLO_ENTERO KeyAscii
 If KeyAscii = 13 Then
   frmCLI.TxtZona.SetFocus
-  SendKeys "%{up}"
+  SendKeysSeguro VK_UP, True
 End If
 End Sub
 
@@ -4684,7 +4684,7 @@ End Sub
 Private Sub TxtZona_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
     frmCLI.TxtSubZona.SetFocus
-    SendKeys "%{up}"
+    SendKeysSeguro VK_UP, True
 End If
 End Sub
 
@@ -4703,7 +4703,7 @@ DoEvents
 LLENA_ZONA TxtZona, 20
 LLENA_ZONA TxtZonaTrabajo, 20
 TxtZona.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 
 End Sub
 
@@ -4823,12 +4823,12 @@ DoEvents
 LLENA_ZONA TxtZonaTrabajo, 20
 LLENA_ZONA TxtZona, 20
 TxtZonaTrabajo.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 End Sub
 Private Sub TxtZonanew_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
     frmCLI.cmbgrupo.SetFocus
-    SendKeys "%{UP}"
+    SendKeysSeguro VK_UP, True
 End If
 End Sub
 
@@ -4845,7 +4845,7 @@ FrmDatArti.Show 1
 DoEvents
 LLENA_ZONA txtZonaNew, 35
 txtZonaNew.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 fra2.Refresh
 End Sub
 
@@ -5032,7 +5032,7 @@ If Trim(LOC_CTA_CLI) <> "" Then
     com_llave!com_cuenta_AUTO_H = ""
   com_llave.Update
   On Error GoTo 0
-  cmdcontab.Caption = "&Quitar Relación Contable"
+  cmdcontab.Caption = "&Quitar Relaciï¿½n Contable"
  End If
 End If
 
@@ -5062,7 +5062,7 @@ If Trim(LOC_CTA_CLI2) <> "" Then
     com_llave!com_cuenta_AUTO_H = ""
     com_llave.Update
     On Error GoTo 0
-    cmdcontab2.Caption = "&Quitar Relación Contable"
+    cmdcontab2.Caption = "&Quitar Relaciï¿½n Contable"
  End If
 End If
 Exit Sub

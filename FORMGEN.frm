@@ -9426,12 +9426,13 @@ End If
 
 End Sub
 
-Private Sub cmdStockLocales_Click()
+Private Sub cmdStockLocales_Click(Index As Integer)
     Dim wCodArt As String
     Dim wNombre As String
     Dim wResult As String
     Dim X As rdoResultset
-    Dim wCia As String
+    Dim wCia As Integer
+    Dim wOldTimeout As Long
     
     If loc_key = 0 Or loc_key > LV_ART.ListItems.count Then
         MsgBox "Seleccione un producto de la lista primero.", vbInformation, Pub_Titulo
@@ -9441,37 +9442,53 @@ Private Sub cmdStockLocales_Click()
     wCodArt = Trim(LV_ART.ListItems.Item(loc_key).SubItems(1))
     wNombre = Trim(LV_ART.ListItems.Item(loc_key).Text)
     
+    wOldTimeout = CN.QueryTimeout
+    CN.QueryTimeout = 1
+    
     Screen.MousePointer = 11
     lblbarraos.Caption = "Consultando stock..."
     DoEvents
     
     wResult = "Stock de: " & wNombre & " (" & wCodArt & ")" & vbCrLf & String(50, "-") & vbCrLf
     
-    On Error GoTo STOCK_ERR
-    For wCia = 1 To 7
-        If Trim(GetStockCiaName(wCia)) = "" Then GoTo NEXT_CIA
+    For wCia = 2 To 7
+        Dim wCiaName As String
+        wCiaName = Trim(GetStockCiaName(wCia))
+        If wCiaName = "" Then GoTo NEXT_CIA
         
+        If wCia = 3 Then
+            wResult = wResult & wCiaName & ": Server03 deshabilitado" & vbCrLf
+            GoTo NEXT_CIA
+        End If
+        
+        lblbarraos.Caption = wCiaName & ": consultando..."
+        DoEvents
+        
+        On Error GoTo CIA_ERR
         pub_cadena = "SELECT ARM_STOCK FROM ARTICULO WHERE ARM_CODCIA = '" & Format(wCia, "00") & "' AND ARM_CODART = " & Val(wCodArt)
         Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues)
         
         If Not X.EOF Then
-            wResult = wResult & GetStockCiaName(wCia) & ": " & Format(X!ARM_STOCK, "##,##0.00") & vbCrLf
+            wResult = wResult & wCiaName & ": " & Format(Nulo_Valor0(X!ARM_STOCK), "##,##0.00") & vbCrLf
         Else
-            wResult = wResult & GetStockCiaName(wCia) & ": (sin registro)" & vbCrLf
+            wResult = wResult & wCiaName & ": (sin registro)" & vbCrLf
         End If
         X.Close
+        On Error GoTo 0
+        GoTo NEXT_CIA
+        
+CIA_ERR:
+        wResult = wResult & wCiaName & ": OFF - " & Err.Description & vbCrLf
+        On Error GoTo 0
+        Resume NEXT_CIA
+        
 NEXT_CIA:
     Next wCia
     
+    CN.QueryTimeout = wOldTimeout
     Screen.MousePointer = 0
     lblbarraos.Caption = "Medinafarma"
     MsgBox wResult, vbInformation, "Stock en otros locales"
-    Exit Sub
-    
-STOCK_ERR:
-    Screen.MousePointer = 0
-    lblbarraos.Caption = "Medinafarma"
-    MsgBox "Error consultando stock: " & Err.Description, vbExclamation, Pub_Titulo
 End Sub
 
 Private Function GetStockCiaName(ByVal wIdx As Integer) As String
@@ -9486,7 +9503,7 @@ Private Function GetStockCiaName(ByVal wIdx As Integer) As String
     End Select
 End Function
 
-Private Sub cmdProdTransito_Click()
+Private Sub cmdProdTransito_Click(Index As Integer)
     Dim wCodArt As String
     Dim wNombre As String
     Dim wResult As String
@@ -9536,7 +9553,7 @@ End Sub
 
 Private Sub lpunidad_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
     If Button = vbRightButton Then
-        cmdStockLocales_Click
+        cmdStockLocales_Click 0
     End If
 End Sub
 

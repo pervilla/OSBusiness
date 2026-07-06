@@ -3,7 +3,7 @@ Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form FrmSub 
-   Caption         =   "Configuración de Transacciones"
+   Caption         =   "Configuraciï¿½n de Transacciones"
    ClientHeight    =   6660
    ClientLeft      =   60
    ClientTop       =   345
@@ -36,7 +36,7 @@ Begin VB.Form FrmSub
       Width           =   3375
    End
    Begin VB.Frame MSTDEF 
-      Caption         =   "Seleccione  Trnsacción :"
+      Caption         =   "Seleccione  Trnsacciï¿½n :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -149,7 +149,7 @@ Begin VB.Form FrmSub
       _ExtentY        =   7435
       _Version        =   393216
       TabHeight       =   520
-      TabCaption(0)   =   "&Definición de Transacción"
+      TabCaption(0)   =   "&Definiciï¿½n de Transacciï¿½n"
       TabPicture(0)   =   "FrmDef.frx":0442
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "Label1(37)"
@@ -255,13 +255,13 @@ Begin VB.Form FrmSub
       Tab(0).Control(50)=   "chedpres"
       Tab(0).Control(50).Enabled=   0   'False
       Tab(0).ControlCount=   51
-      TabCaption(1)   =   "&Definición Contable x Compañia "
+      TabCaption(1)   =   "&Definiciï¿½n Contable x Compaï¿½ia "
       TabPicture(1)   =   "FrmDef.frx":045E
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "fracnt"
       Tab(1).Control(1)=   "FRAOPT"
       Tab(1).ControlCount=   2
-      TabCaption(2)   =   "Definición de Series"
+      TabCaption(2)   =   "Definiciï¿½n de Series"
       TabPicture(2)   =   "FrmDef.frx":047A
       Tab(2).ControlEnabled=   0   'False
       Tab(2).Control(0)=   "TxtDef(42)"
@@ -315,7 +315,7 @@ Begin VB.Form FrmSub
          Width           =   2535
       End
       Begin VB.Frame FRAOPT 
-         Caption         =   "Sub Transacción :"
+         Caption         =   "Sub Transacciï¿½n :"
          Height          =   1215
          Left            =   -65760
          TabIndex        =   139
@@ -1905,7 +1905,7 @@ Begin VB.Form FrmSub
             Width           =   1455
          End
          Begin VB.CheckBox chetransa 
-            Caption         =   "Incluir Nueva Transación"
+            Caption         =   "Incluir Nueva Transaciï¿½n"
             Enabled         =   0   'False
             Height          =   375
             Left            =   120
@@ -2066,7 +2066,7 @@ Begin VB.Form FrmSub
          Width           =   735
       End
       Begin VB.Label Label3 
-         Caption         =   "Relación con Tipo de Descto."
+         Caption         =   "Relaciï¿½n con Tipo de Descto."
          ForeColor       =   &H00000080&
          Height          =   255
          Left            =   8475
@@ -2449,7 +2449,7 @@ Begin VB.Form FrmSub
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Desct. Facturación"
+         Caption         =   "Desct. Facturaciï¿½n"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -2616,7 +2616,7 @@ Begin VB.Form FrmSub
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Descripción "
+         Caption         =   "Descripciï¿½n "
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -2770,7 +2770,7 @@ fila = 0
 Grid1.Clear
 Grid1.TextMatrix(fila, 1) = "Tras."
 Grid1.TextMatrix(fila, 2) = "Sec"
-Grid1.TextMatrix(fila, 3) = "Descripción"
+Grid1.TextMatrix(fila, 3) = "Descripciï¿½n"
 Grid1.Rows = 2
 Grid1.Cols = 4
 Grid1.ColWidth(0) = 250
@@ -3012,7 +3012,7 @@ Consultar.SetFocus
 End Sub
 
 Private Sub cmdCopiar_Click()
-Dim Mensaje, Título, valorpred, mivalor
+Dim Mensaje, Tï¿½tulo, valorpred, mivalor
 Dim otro_llave As rdoResultset
 Dim msg, estilo, respuesta
 Dim wcodtra As Integer
@@ -3023,10 +3023,10 @@ If SUT_LLAVE.EOF Then
  Exit Sub
 End If
 If chetransa.Value = 1 Then
-    Mensaje = "Introduzca la Nueva Transacción , debe ser numerico de 4 Digitos : "
-    Título = "Definición de Transacción "
+    Mensaje = "Introduzca la Nueva Transacciï¿½n , debe ser numerico de 4 Digitos : "
+    Tï¿½tulo = "Definiciï¿½n de Transacciï¿½n "
     valorpred = " "
-    mivalor = InputBox(Mensaje, Título, valorpred)
+    mivalor = InputBox(Mensaje, Tï¿½tulo, valorpred)
     If mivalor = "" Then
        Exit Sub
     End If
@@ -3049,10 +3049,10 @@ Else
     PUB_CODTRA = Trim(TxtDef(0).text)
     msg = "Ingrese la "
 End If
- Mensaje = msg & "Secuencia para la Transacción , debe ser numerico  : "
- Título = "Copia - Definición de Transacción "
+ Mensaje = msg & "Secuencia para la Transacciï¿½n , debe ser numerico  : "
+ Tï¿½tulo = "Copia - Definiciï¿½n de Transacciï¿½n "
  valorpred = " "
- mivalor = InputBox(Mensaje, Título, valorpred)
+ mivalor = InputBox(Mensaje, Tï¿½tulo, valorpred)
  If mivalor = "" Then
     Exit Sub
  End If
@@ -3095,7 +3095,7 @@ Next
  LEER_SUT_LLAVE
  If Not SUT_LLAVE.EOF Then
     Screen.MousePointer = 0
-    MsgBox "Secuencia de Transacción ya EXISTE... Reintente la copia !!!", 48, Pub_Titulo
+    MsgBox "Secuencia de Transacciï¿½n ya EXISTE... Reintente la copia !!!", 48, Pub_Titulo
     otro_llave.CancelUpdate
     cmdcancelar_Click
     Exit Sub
@@ -3118,7 +3118,7 @@ cnt_llave.Update
 
 
 Screen.MousePointer = 0
-MsgBox "Copia Efectuada . Transacción  : " & PUB_CODTRA & "  Secuencia :" & mivalor, 48, Pub_Titulo
+MsgBox "Copia Efectuada . Transacciï¿½n  : " & PUB_CODTRA & "  Secuencia :" & mivalor, 48, Pub_Titulo
 cmdcancelar_Click
 otro_llave.Close
 Exit Sub
@@ -3129,9 +3129,9 @@ If Len(TxtDef(0).text) = 0 Or Len(TxtDef(0).text) = 0 Then
 '   MENSAJE_CLI "NO a seleccionado NADA ... !"
    Exit Sub
 End If
-  pub_mensaje = " ¿Desea Eliminar el Registro... ?"
+  pub_mensaje = " ï¿½Desea Eliminar el Registro... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligió
+  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
     Screen.MousePointer = 11
     SUT_LLAVE.Delete
     If Not cnt_llave.EOF Then cnt_llave.Delete
@@ -3239,7 +3239,7 @@ DoEvents
 PUB_CODCIA = "00"
 LLENADOS FrmSub.def_abreviado, 13
 def_abreviado.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 
 End Sub
 
@@ -3259,7 +3259,7 @@ DoEvents
 PUB_CODCIA = LK_CODCIA
 LLENADOS FrmSub.def_art_gru, 122
 def_art_gru.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 
 End Sub
 
@@ -3292,7 +3292,7 @@ PUB_CODCIA = LK_CODCIA
 LLENADOS FrmSub.def_codpro, 888
 
 def_codpro.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 End Sub
 
 Private Sub def_descto_KeyPress(KeyAscii As Integer)
@@ -3335,7 +3335,7 @@ DoEvents
 PUB_CODCIA = "00"
 LLENADOS FrmSub.def_tipdoc, 8
 def_tipdoc.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 
 End Sub
 
@@ -3355,7 +3355,7 @@ DoEvents
 PUB_CODCIA = "00"
 LLENADOS FrmSub.def_tipmov, 4
 def_tipmov.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 
 End Sub
 
@@ -3376,7 +3376,7 @@ DoEvents
 PUB_CODCIA = LK_CODCIA
 LLENADOS FrmSub.def_calidad, 2
 def_calidad.SetFocus
-SendKeys "%{up}"
+SendKeysSeguro VK_UP, True
 
 End Sub
 
@@ -3794,7 +3794,7 @@ Case 0
          Grid1.Row = 1
          Grid1.SetFocus
         Else
-         MsgBox "No existe Transacción...", 48, Pub_Titulo
+         MsgBox "No existe Transacciï¿½n...", 48, Pub_Titulo
          PUB_CODTRA = 0
          Azul TxtDef(0), TxtDef(0)
         End If
@@ -4491,7 +4491,7 @@ salta13:
 End If
 
 If opt(0).Value = True And Trim(PUB_CUENTA) = "" Then
-   pub_mensaje = "No ha Definido sus Asientos Contables...   ¿Desea Continuar... ?"
+   pub_mensaje = "No ha Definido sus Asientos Contables...   ï¿½Desea Continuar... ?"
    Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
    If Pub_Respuesta = vbYes Then
        CONSIS = True

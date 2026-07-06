@@ -1517,6 +1517,7 @@ If i_codart2.Visible Then Azul i_codart2, i_codart2
 End Sub
 
 Private Sub Form_Load()
+    CenterMe KARDEX
 Dim fech As String
 Dim wwano As Integer
 pub_cadena = "SELECT PED_FECHA,PED_NUMSER ,PED_NUMFAC, PED_CONDI,PED_CODVEN , PED_CODART , PED_CANTIDAD, PED_EQUIV , PED_CODCLIE FROM PEDIDOS " & _
@@ -2262,8 +2263,4 @@ If KeyAscii = 13 Then
     If Frame2.Visible And i_maximo.Visible Then i_maximo.SetFocus
     If Frame1.Visible And txtCampo1.Visible Then Azul2 txtCampo1, txtCampo1
 End If
-End Sub
-
-Private Sub Form_Load()
-    CenterMe KARDEX
 End Sub

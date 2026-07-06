@@ -1942,10 +1942,16 @@ End Function
 
 Public Sub PROC_TRANSA(LV1 As MSComctlLib.ListView, Optional wmax)
     On Error GoTo PROC_TRANSA_ERR
-    LogTrace "PROC_TRANSA: Inicio"
+    LogTrace "PROC_TRANSA: Inicio numarchi=" & numarchi
 Dim wmaximo As Integer
 Dim itmX As MSComctlLib.ListItem
 If Not IsMissing(wmax) Then wmaximo = wmax Else wmaximo = 1000
+
+If LV1 Is Nothing Then
+    LogError "PROC_TRANSA: LV1 es Nothing (Error 91)"
+    Exit Sub
+End If
+
 Set PSX = CN.CreateQuery("", archi)
 Set X = PSX.OpenResultset(rdOpenForwardOnly)
 X.Requery
@@ -1967,9 +1973,10 @@ Do Until X.EOF Or X.AbsolutePosition - 1 >= wmaximo
      itmX.SubItems(1) = Trim(CStr(X.rdoColumns(2)))
      itmX.SubItems(2) = Trim(CStr(X.rdoColumns(0)))
   End If
-  itmX.Tag = X.AbsolutePosition
-  X.MoveNext
+   itmX.Tag = X.AbsolutePosition
+   X.MoveNext
 Loop
+LogTrace "PROC_TRANSA: Fin items=" & LV1.ListItems.count & "/" & X.RowCount
 LV1.ToolTipText = "Encontrados : " & itmX.Tag & "/" & X.RowCount & " Muestra un Maximo de: " & wmaximo
 LV1.Visible = True
 'DoEvents
