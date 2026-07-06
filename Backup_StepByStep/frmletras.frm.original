@@ -3,6 +3,7 @@ Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
+Object = "{F6E4F630-E903-11D5-8BB9-0080AD40A177}#1.12#0"; "OSControlsUser.ocx"
 Begin VB.Form frmletras 
    Caption         =   "Consulta de Letras"
    ClientHeight    =   7695
@@ -474,7 +475,7 @@ Begin VB.Form frmletras
                Format          =   49348609
                CurrentDate     =   37977
             End
-            Begin MSMask.MaskEdBox txtFechaVcto 
+            Begin OSControlsUser.ctlMaskEdBox txtFechaVcto 
                Height          =   270
                Left            =   8115
                TabIndex        =   53
@@ -493,8 +494,9 @@ Begin VB.Form frmletras
                   Strikethrough   =   0   'False
                EndProperty
                Mask            =   "##/##/####"
+               Format          =   "ddddd"
             End
-            Begin MSMask.MaskEdBox txtFechaEntrega 
+            Begin OSControlsUser.ctlMaskEdBox txtFechaEntrega 
                Height          =   270
                Left            =   6030
                TabIndex        =   54
@@ -513,8 +515,9 @@ Begin VB.Form frmletras
                   Strikethrough   =   0   'False
                EndProperty
                Mask            =   "##/##/####"
+               Format          =   "ddddd"
             End
-            Begin MSMask.MaskEdBox txtFechaDevolucion 
+            Begin OSControlsUser.ctlMaskEdBox txtFechaDevolucion 
                Height          =   270
                Left            =   8895
                TabIndex        =   55
@@ -533,6 +536,7 @@ Begin VB.Form frmletras
                   Strikethrough   =   0   'False
                EndProperty
                Mask            =   "##/##/####"
+               Format          =   "ddddd"
             End
             Begin MSComCtl2.UpDown CountDias 
                Height          =   270
@@ -633,7 +637,7 @@ Begin VB.Form frmletras
             Begin VB.Label lblCaption 
                AutoSize        =   -1  'True
                BackStyle       =   0  'Transparent
-               Caption         =   "Fecha Emisiï¿½n"
+               Caption         =   "Fecha Emisión"
                BeginProperty Font 
                   Name            =   "Tahoma"
                   Size            =   8.25
@@ -696,7 +700,7 @@ Begin VB.Form frmletras
             Begin VB.Label lblCaption 
                AutoSize        =   -1  'True
                BackStyle       =   0  'Transparent
-               Caption         =   "Situaciï¿½n"
+               Caption         =   "Situación"
                BeginProperty Font 
                   Name            =   "Tahoma"
                   Size            =   8.25
@@ -801,7 +805,7 @@ Begin VB.Form frmletras
             Begin VB.Label lblCaption 
                AutoSize        =   -1  'True
                BackStyle       =   0  'Transparent
-               Caption         =   "Fecha Devoluciï¿½n"
+               Caption         =   "Fecha Devolución"
                BeginProperty Font 
                   Name            =   "Tahoma"
                   Size            =   8.25
@@ -1069,7 +1073,7 @@ Begin VB.Form frmletras
       Begin VB.Label lblCaption 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Fec. Emisiï¿½n"
+         Caption         =   "Fec. Emisión"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -1489,7 +1493,8 @@ Begin VB.Form frmletras
          Top             =   6660
          Width           =   1260
       End
-      Begin VB.TextBox txtCP          Height          =   300
+      Begin OSControlsUser.OSFindItem txtCP 
+         Height          =   300
          Left            =   1230
          TabIndex        =   14
          Top             =   615
@@ -2024,7 +2029,7 @@ End Sub
 
 Private Sub chkClientes_Click()
     lblCP.Caption = ""
-    txtCP.Text = ""
+    txtCP.TEXTO = ""
 End Sub
 
 Private Sub cmbCP_Click()
@@ -2554,7 +2559,7 @@ Dim Icount2 As Integer
 Dim dImporte As Double
     archi = "SELECT DISTINCT ALL_FECHA_DIA,ALL_FECHA_SUNAT,ALL_MONEDA_CLI,ALL_IMPORTE,ALL_NUMOPER2,ALL_CODCLIE,ALL_tipo_cambio, ALL_codven, ALL_NUM_RECIBO FROM ALLOG WHERE ALL_CP = '" & sCP & "' AND ALL_TIPDOC in ('LE','RE','RF','FR') AND ALL_CODTRA=1455 AND ALL_FLAG_EXT<>'E' AND ALL_CODCIA='" & LK_CODCIA & "' AND ALL_FECHA_DIA >= '" & txtfecha1.Value & "' AND ALL_FECHA_DIA <= '" & txtfecha2.Value & "' and all_signo_car=1"
     If chkClientes.Value = 0 Then
-        archi = archi & " AND ALL_CODCLIE = " & Val(txtCP.Text)
+        archi = archi & " AND ALL_CODCLIE = " & Val(txtCP.TEXTO)
     End If
     If Len(Trim(b_numfac.Text)) <> 0 Then
         archi = archi & " AND (ALL_CONCEPTO LIKE  '%" & Trim(b_numfac.Text) & "%')"
@@ -2992,7 +2997,7 @@ End Sub
 '===========================================================================
 '============Para Presentacion de Datos de  Cliente o Proveedor=============
 Private Sub txtcp_Cancel()
-    txtCP.Text = ""
+    txtCP.TEXTO = ""
     lblCP = ""
 End Sub
 Private Sub txtcp_GetRegistros(ByVal oKeyFind As Variant)

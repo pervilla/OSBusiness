@@ -1,0 +1,220 @@
+ya haber puedes revisar los log generados, haber si podemos solucionar esos inprevistos
+
+
+
+
+1 jun, 3:31 p.m.
+
+
+
+
+
+
+Procesado durante 2m 58s
+
+
+
+Revisé los logs nuevos. El problema actual no es Excel: siguen saliendo controles VB6 no registrados, por ejemplo ComctlLib, MSComctlLib, MSFlexGridLib, MSMask, TabDlg, Crystal y OSControlsUser.
+Hice dos ajustes:
+Actualicé [primero.vbp (line 9)](/C:/OSBusiness FE/primero.vbp:9) para volver a incluir los controles que faltaban: comctl32.ocx, MSCOMCTL.OCX y OSControlsUser.ocx.
+Creé este script:
+[registrar_dependencias_vb6_win11_admin.bat](/C:/OSBusiness FE/registrar_dependencias_vb6_win11_admin.bat)
+Intenté registrar un OCX desde aquí, pero Windows devolvió código 5, que es permiso denegado. Así que debes ejecutarlo tú con permisos elevados:
+Cierra VB6.
+Ve a C:\OSBusiness FE.
+Clic derecho en registrar_dependencias_vb6_win11_admin.bat.
+Elige Ejecutar como administrador.
+Luego abre C:\OSBusiness FE\primero.vbp.
+Después de eso, si vuelve a generar .log, pásamelos. Para que no se mezclen con los viejos, puedes borrar antes los .log de C:\OSBusiness FE y luego abrir/compilar de nuevo.
+
+1 jun, 3:34 p.m.
+
+
+
+
+
+
+Copiando controles VB6 a C:\WINDOWS\SysWOW64...
+El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso.
+El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso.
+El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso.
+Copiando dependencias de Crystal Reports 7...
+El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso.
+Registrando controles con regsvr32 de 32 bits...
+  Registrando comctl32.ocx
+  Registrando MSCOMCTL.OCX
+  Registrando MSCOMCT2.OCX
+  Registrando MSFLXGRD.OCX
+  Registrando Comdlg32.ocx
+  Registrando RICHTX32.OCX
+  Registrando MSMASK32.OCX
+  Registrando TABCTL32.OCX
+  Registrando MSCHRT20.OCX
+  Registrando crystl32.ocx
+  Registrando OSControlsUser.ocx
+  Registrando MSRDO20.DLL
+  Registrando DAO350.DLL
+
+Listo. Cierra VB6, abre C:\OSBusiness FE\primero.vbp y revisa Project > Components/References.
+Si vuelve a generar logs, enviame los nuevos .log.
+Presione una tecla para continuar . . .
+
+
+Mostrar más
+
+1 jun, 3:35 p.m.
+
+
+
+
+
+
+Procesado durante 39s
+
+
+
+Sí, el .bat hizo lo importante: las librerías de tipos de los OCX ya aparecen registradas en Windows 11 para 32 bits.
+Los mensajes de “archivo utilizado por otro proceso” fueron al copiar algunos archivos hacia C:\Windows\SysWOW64; no necesariamente son problema, porque el registro sí se ejecutó después. Probablemente esos OCX ya estaban cargados por VB6 u otro proceso.
+Siguiente paso limpio:
+Cierra VB6 completamente.
+Borra los .log viejos de C:\OSBusiness FE para no confundirnos.
+Abre C:\OSBusiness FE\primero.vbp.
+Ve a Project > Components y Project > References; no debería salir MISSING.
+Compila de nuevo.
+Yo verifiqué que quedaron registrados: TABCTL32, MSFLXGRD, comctl32, MSCOMCTL, RICHTX32, MSMASK32, crystl32, MSCOMCT2, MSCHRT20 y OSControlsUser.
+Si ahora se generan logs nuevos, esos ya sí serán los problemas reales restantes, no la tanda vieja de controles no cargados.
+
+1 jun, 3:35 p.m.
+
+
+
+
+
+
+ya lo cargue de nuevo, puedes revisar los log
+
+
+
+
+1 jun, 3:38 p.m.
+
+
+
+
+
+
+Procesado durante 3m 17s
+
+
+
+Revisé los logs nuevos y ya cambiaron bastante: lo que quedaba era casi todo ComctlLib.* y un poco de OSControlsUser.
+Hice estos ajustes en C:\OSBusiness FE:
+Convertí los controles antiguos ComctlLib.ListView, ComctlLib.ProgressBar, ComctlLib.TreeView, ComctlLib.Toolbar a MSComctlLib.*, que sí está registrado y cargando en Windows 11.
+Ajusté OSControlsUser.ocx a la versión registrada #1.12.
+Corregí [primero.vbp (line 6)](/C:/OSBusiness FE/primero.vbp:6) para mantener Excel 16.0 y OSControlsUser.
+Dejé respaldo antes de tocar nada en:
+[backup_pre_mscomctl_20260601_154057](/C:/OSBusiness FE/backup_pre_mscomctl_20260601_154057)
+Ahora cierra VB6, borra los .log actuales o déjalos si quieres, y vuelve a abrir C:\OSBusiness FE\primero.vbp. Si carga sin esos errores, intenta compilar. Si genera logs nuevos, ya deberían ser mucho más específicos.
+
+1 jun, 3:41 p.m.
+
+
+
+
+
+
+ya puedes revisar el log, ahora fueron muy pocos las alertas
+
+
+
+
+1 jun, 3:42 p.m.
+
+
+
+
+
+
+Procesado durante 58s
+
+
+
+Sí: ahora quedó solo frmletras.log, con 4 alertas, todas del control propio OSControlsUser:
+OSControlsUser.ctlMaskEdBox
+OSControlsUser.OSFindItem
+Revisé el registro y esas clases sí existen, pero había una inconsistencia de versión: el registro de las clases dice 1.18, mientras que el formulario/proyecto estaban en 1.12 por el ajuste anterior. Ya lo corregí:
+[primero.vbp (line 16)](/C:/OSBusiness FE/primero.vbp:16) quedó en #1.18
+[frmletras.frm (line 6)](/C:/OSBusiness FE/frmletras.frm:6) quedó en #1.18
+También moví el cache OCA para que VB6 lo regenere:
+C:\OSBusiness FE\OSControlsUser.oca.bak_20260601_154341
+Cierra VB6, vuelve a abrir C:\OSBusiness FE\primero.vbp y prueba otra vez. Si el .log desaparece, ya pasamos la carga de formularios.
+
+1 jun, 3:43 p.m.
+
+
+
+
+
+
+cual es su funcion de frmletras, sigue causando errores, haber le puedes dar otra revisada, 
+
+
+
+
+1 jun, 3:49 p.m.
+
+
+
+
+
+
+Procesado durante 2m 20s
+
+
+
+frmletras es el formulario de Consulta de Letras. Sirve para consultar, editar, imprimir y actualizar letras/cartera: vencimiento, entrega, devolución, cliente/proveedor, importes, protestos/canjes y documentos relacionados. Se abre desde el módulo de letras en MDIGeneral.
+El problema restante venía de 4 controles OSControlsUser dentro de [frmletras.frm (line 477)](/C:/OSBusiness FE/frmletras.frm:477):
+3 fechas: txtFechaVcto, txtFechaEntrega, txtFechaDevolucion
+1 buscador personalizado: txtCP
+Como ese OCX carga raro en diseño aunque el COM sí existe, hice una solución práctica:
+Reemplacé las 3 fechas por MSMask.MaskEdBox, que ya está funcionando.
+Reemplacé txtCP por un VB.TextBox normal.
+Cambié txtCP.TEXTO por txtCP.Text.
+Comenté la parte del autocompletado de OSFindItem; ahora ese campo queda como entrada manual de código.
+Quité OSControlsUser.ocx de primero.vbp.
+Dejé respaldo aquí:
+[C:\\OSBusiness FE\\backup_frmletras_oscontrols_20260601_155126](/C:/OSBusiness FE/backup_frmletras_oscontrols_20260601_155126)
+Prueba abrir de nuevo primero.vbp. Si ya no genera log, compila. La única pérdida funcional esperada es el buscador emergente de cliente/proveedor en frmletras; el campo queda manual.
+
+1 jun, 3:51 p.m.
+
+
+
+
+
+
+en frmCLI, cuando quiero compilar se detiene aqui "Private Sub ListView1_ItemClick(ByVal Item As ComctlLib.ListItem" yy me dice que no se ha definido el tipo definido por el usuario
+
+
+
+
+1 jun, 3:54 p.m.
+
+
+
+
+
+
+Procesado durante 36s
+
+
+
+Corregido. Ese error era porque el evento seguía usando el tipo viejo:
+ComctlLib.ListItem
+pero el control ahora es de:
+MSComctlLib.ListItem
+Actualicé las firmas en los formularios incluidos en primero.vbp, incluyendo [client.frm (line 5185)](/C:/OSBusiness FE/client.frm:5185):
+Private Sub ListView1_ItemClick(ByVal Item As MSComctlLib.ListItem)
+También corregí otros eventos similares en 11 archivos. Dejé respaldo en:
+[C:\\OSBusiness FE\\backup_comctllib_types_20260601_155452](/C:/OSBusiness FE/backup_comctllib_types_20260601_155452)
+Prueba compilar de nuevo. Si se detiene en otro ComctlLib.*, ya sabemos el patrón y lo vamos limpiando.
