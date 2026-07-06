@@ -979,25 +979,9 @@ Begin VB.Form FORMGEN
          TabIndex        =   240
          Tag             =   "0"
          Top             =   260
-          Width           =   1110
-       End
-       Begin VB.CommandButton cmdProdTransito 
-          Caption         =   "Productos en tránsito"
-          Height          =   300
-          Left            =   8400
-          TabIndex        =   238
-          Top             =   600
-          Width           =   1665
-       End
-       Begin VB.CommandButton cmdStockLocales 
-          Caption         =   "Stock otros locales"
-          Height          =   300
-          Left            =   6600
-          TabIndex        =   237
-          Top             =   600
-          Width           =   1725
-       End
-       Begin VB.Label lblp 
+           Width           =   1110
+        End
+        Begin VB.Label lblp 
          BackStyle       =   0  'Transparent
          Caption         =   "Unid."
          BeginProperty Font 
@@ -9443,13 +9427,111 @@ End If
 End Sub
 
 Private Sub cmdStockLocales_Click()
-    ' Consulta stock en otros locales
-    MsgBox "Funcionalidad pendiente: Stock otros locales", vbInformation, Pub_Titulo
+    Dim wCodArt As String
+    Dim wNombre As String
+    Dim wResult As String
+    Dim X As rdoResultset
+    Dim wCia As String
+    
+    If loc_key = 0 Or loc_key > LV_ART.ListItems.count Then
+        MsgBox "Seleccione un producto de la lista primero.", vbInformation, Pub_Titulo
+        Exit Sub
+    End If
+    
+    wCodArt = Trim(LV_ART.ListItems.Item(loc_key).SubItems(1))
+    wNombre = Trim(LV_ART.ListItems.Item(loc_key).Text)
+    
+    Screen.MousePointer = 11
+    lblbarraos.Caption = "Consultando stock..."
+    DoEvents
+    
+    wResult = "Stock de: " & wNombre & " (" & wCodArt & ")" & vbCrLf & String(50, "-") & vbCrLf
+    
+    On Error GoTo STOCK_ERR
+    For wCia = 1 To 7
+        If Trim(GetStockCiaName(wCia)) = "" Then GoTo NEXT_CIA
+        
+        pub_cadena = "SELECT ARM_STOCK FROM ARTICULO WHERE ARM_CODCIA = '" & Format(wCia, "00") & "' AND ARM_CODART = " & Val(wCodArt)
+        Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues)
+        
+        If Not X.EOF Then
+            wResult = wResult & GetStockCiaName(wCia) & ": " & Format(X!ARM_STOCK, "##,##0.00") & vbCrLf
+        Else
+            wResult = wResult & GetStockCiaName(wCia) & ": (sin registro)" & vbCrLf
+        End If
+        X.Close
+NEXT_CIA:
+    Next wCia
+    
+    Screen.MousePointer = 0
+    lblbarraos.Caption = "Medinafarma"
+    MsgBox wResult, vbInformation, "Stock en otros locales"
+    Exit Sub
+    
+STOCK_ERR:
+    Screen.MousePointer = 0
+    lblbarraos.Caption = "Medinafarma"
+    MsgBox "Error consultando stock: " & Err.Description, vbExclamation, Pub_Titulo
 End Sub
 
+Private Function GetStockCiaName(ByVal wIdx As Integer) As String
+    Select Case wIdx
+        Case 2: GetStockCiaName = Trim(StockC2)
+        Case 3: GetStockCiaName = Trim(StockC3)
+        Case 4: GetStockCiaName = Trim(StockC4)
+        Case 5: GetStockCiaName = Trim(StockC5)
+        Case 6: GetStockCiaName = Trim(StockC6)
+        Case 7: GetStockCiaName = Trim(StockC7)
+        Case Else: GetStockCiaName = ""
+    End Select
+End Function
+
 Private Sub cmdProdTransito_Click()
-    ' Consulta productos en tránsito
-    MsgBox "Funcionalidad pendiente: Productos en tránsito", vbInformation, Pub_Titulo
+    Dim wCodArt As String
+    Dim wNombre As String
+    Dim wResult As String
+    Dim X As rdoResultset
+    
+    If loc_key = 0 Or loc_key > LV_ART.ListItems.count Then
+        MsgBox "Seleccione un producto de la lista primero.", vbInformation, Pub_Titulo
+        Exit Sub
+    End If
+    
+    wCodArt = Trim(LV_ART.ListItems.Item(loc_key).SubItems(1))
+    wNombre = Trim(LV_ART.ListItems.Item(loc_key).Text)
+    
+    Screen.MousePointer = 11
+    lblbarraos.Caption = "Consultando transito..."
+    DoEvents
+    
+    On Error GoTo TRANSITO_ERR
+    pub_cadena = "SELECT FAR_CODCIA, FAR_FBG, FAR_NUMSER, FAR_NUMFAC, FAR_CANTIDAD, FAR_FECHA " & _
+                 "FROM FACART WHERE FAR_CODART = " & Val(wCodArt) & " AND FAR_TRANSITO = 'T' " & _
+                 "AND FAR_ESTADO <> 'E' ORDER BY FAR_FECHA DESC"
+    Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues)
+    
+    If X.EOF Then
+        wResult = "No hay mercaderia en transito para: " & wNombre
+    Else
+        wResult = "Transito de: " & wNombre & " (" & wCodArt & ")" & vbCrLf & String(50, "-") & vbCrLf
+        Do Until X.EOF
+            wResult = wResult & Format(X!FAR_FECHA, "dd/mm/yy") & " - " & _
+                      Trim(X!FAR_FBG & "") & " " & Trim(X!FAR_NUMSER & "") & "-" & Trim(X!FAR_NUMFAC & "") & _
+                      " (" & Format(X!FAR_CANTIDAD, "0.00") & ")  Cia:" & Trim(X!FAR_CODCIA & "") & vbCrLf
+            X.MoveNext
+        Loop
+    End If
+    X.Close
+    
+    Screen.MousePointer = 0
+    lblbarraos.Caption = "Medinafarma"
+    MsgBox wResult, vbInformation, "Productos en transito"
+    Exit Sub
+    
+TRANSITO_ERR:
+    Screen.MousePointer = 0
+    lblbarraos.Caption = "Medinafarma"
+    MsgBox "Error consultando transito: " & Err.Description, vbExclamation, Pub_Titulo
 End Sub
 
 Private Sub lpunidad_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
@@ -22356,11 +22438,12 @@ End If
 If grid_fac.COL <> 1 Then Exit Sub
 ' puede estar pruebas
 If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
- If Len(TEXTOVAR.Text) = 0 Or TEXTOVAR.Text = "" Then
-   VAR_ACTIVAR = 0
-   LV_ART.Visible = False
-   fraprecios.Visible = False
-   Exit Sub
+  If Len(TEXTOVAR.Text) = 0 Or TEXTOVAR.Text = "" Then
+    VAR_ACTIVAR = 0
+    LV_ART.Visible = False
+    fraprecios.Visible = False
+    cmdStockLocales(0).Visible = False
+    Exit Sub
  End If
  If TEXTOVAR.Text = "*" And KeyCode = 106 Then
    VAR_ACTIVAR = 99
@@ -22379,10 +22462,11 @@ If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
 
 Else
  If Len(TEXTOVAR.Text) = 0 Or IsNumeric(TEXTOVAR.Text) = True Then
-   LV_ART.Visible = False
-   fraprecios.Visible = False
-   Exit Sub
- End If
+     LV_ART.Visible = False
+     fraprecios.Visible = False
+     cmdStockLocales(0).Visible = False
+     Exit Sub
+  End If
 End If
 If LV_ART.Visible = False And KeyCode <> 13 And Len(TEXTOVAR.Text) >= 3 Then
 'If LV_ART.Visible = False And IsNumeric(textovar.text) = False Then  'JLPV MODIFICACION
@@ -22492,12 +22576,14 @@ If LV_ART.Visible = False And KeyCode <> 13 And Len(TEXTOVAR.Text) >= 3 Then
         If WS_CALIDAD <> 0 And WS_TIPO <> 0 Then archi = "SELECT ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, ARM_STOCK , PRE_EQUIV, ART_SITUACION  FROM ARTI, ARTICULO, PRECIOS  WHERE  (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND (PRE_FLAG_UNIDAD ='A') AND  (ART_CODCIA = ARM_CODCIA) AND ART_KEY = ARM_CODART) AND ART_KEY <> 0 AND  ART_FAMILIA = " & WS_TIPO & " AND ART_CALIDAD = " & WS_CALIDAD & "  AND ART_CODCIA = '" & ws_codcia & "' AND ART_NOMBRE BETWEEN '" & TEXTOVAR.Text & "' AND  '" & var & "' ORDER BY ART_NOMBRE"
       End If
      End If
-     PROC_LISVIEW LV_ART
+      PROC_LISVIEW LV_ART
 '     DoEvents
-     loc_key = 0
-     If LV_ART.Visible Then
-      loc_key = 1
-     End If
+      loc_key = 0
+      If LV_ART.Visible Then
+       loc_key = 1
+       cmdStockLocales(0).Visible = True
+       cmdStockLocales(0).Enabled = True
+      End If
     Exit Sub
 End If
 
