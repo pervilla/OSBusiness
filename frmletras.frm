@@ -1,9 +1,9 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{F6E4F630-E903-11D5-8BB9-0080AD40A177}#1.18#0"; "OSControlsUser.ocx"
+Object = "{F6E4F630-E903-11D5-8BB9-0080AD40A177}#1.12#0"; "OSControlsUser.ocx"
 Begin VB.Form frmletras 
    Caption         =   "Consulta de Letras"
    ClientHeight    =   7695
@@ -637,7 +637,7 @@ Begin VB.Form frmletras
             Begin VB.Label lblCaption 
                AutoSize        =   -1  'True
                BackStyle       =   0  'Transparent
-               Caption         =   "Fecha Emisiï¿½n"
+               Caption         =   "Fecha Emisión"
                BeginProperty Font 
                   Name            =   "Tahoma"
                   Size            =   8.25
@@ -700,7 +700,7 @@ Begin VB.Form frmletras
             Begin VB.Label lblCaption 
                AutoSize        =   -1  'True
                BackStyle       =   0  'Transparent
-               Caption         =   "Situaciï¿½n"
+               Caption         =   "Situación"
                BeginProperty Font 
                   Name            =   "Tahoma"
                   Size            =   8.25
@@ -805,7 +805,7 @@ Begin VB.Form frmletras
             Begin VB.Label lblCaption 
                AutoSize        =   -1  'True
                BackStyle       =   0  'Transparent
-               Caption         =   "Fecha Devoluciï¿½n"
+               Caption         =   "Fecha Devolución"
                BeginProperty Font 
                   Name            =   "Tahoma"
                   Size            =   8.25
@@ -1073,7 +1073,7 @@ Begin VB.Form frmletras
       Begin VB.Label lblCaption 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Fec. Emisiï¿½n"
+         Caption         =   "Fec. Emisión"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
