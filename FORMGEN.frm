@@ -6792,7 +6792,7 @@ Loop
 If LK_CODTRA = 2410 Or LK_CODTRA = 2412 Or LK_CODTRA = 2418 Then grid_canje.Visible = False
 'Print WS_MONEDA_CLI
 calcula_totales2
-SendKeysSeguro VK_UP
+SendKeysSeguro VK_UP, True
 If LK_CODTRA = 3412 Then
     Azul i_numfac_c, i_numfac_c
 End If
