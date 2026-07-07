@@ -222,7 +222,7 @@ Begin VB.Form FORM_CONTA
          Top             =   4080
          Width           =   3855
          Begin VB.CommandButton cmdEliminar 
-            Caption         =   "&Eliminaciï¿½n"
+            Caption         =   "&Eliminación"
             Height          =   375
             Left            =   1920
             TabIndex        =   27
@@ -499,14 +499,14 @@ cmdConsultar.Enabled = True
 cmdActualizar.Caption = "&Modificar"
 cmdActualizar.Enabled = False
 cmdEliminar.Enabled = False
-cmdEliminar.Caption = "&Eliminaciï¿½n"
+cmdEliminar.Caption = "&Eliminación"
 grabar.Enabled = False
 WPASA = False
 i_fecha.SetFocus
 End Sub
 
 Private Sub cmdEliminar_Click()
-If Left(cmdEliminar.Caption, 12) = "&Eliminaciï¿½n" Then
+If Left(cmdEliminar.Caption, 12) = "&Eliminación" Then
     WSELE = ""
     ESTADO.Caption = "Estado :   < ELIMINADO >"
     cmdEliminar.Caption = "&Eliminar Todas"
@@ -542,7 +542,7 @@ Else
   End If
   Barra.Value = 7
   'ESTADO.Caption = "Estado :   < ELIMINADO >"
-  cmdEliminar.Caption = "&Eliminaciï¿½n"
+  cmdEliminar.Caption = "&Eliminación"
   cmdActualizar.Enabled = False
   cmdEliminar.Enabled = False
   cmdConsultar_Click
@@ -1570,7 +1570,7 @@ End Sub
 Public Sub LISTA_CUENTAS()
 
 grid1.TextMatrix(0, 0) = " Cuenta "
-grid1.TextMatrix(0, 1) = " Descripciï¿½n "
+grid1.TextMatrix(0, 1) = " Descripción "
 
 End Sub
 

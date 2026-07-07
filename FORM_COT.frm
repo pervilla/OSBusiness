@@ -552,7 +552,7 @@ Begin VB.Form FORM_COT
          Width           =   810
       End
       Begin VB.Label lcodart 
-         Caption         =   "Condiciï¿½n Venta"
+         Caption         =   "Condición Venta"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1438,7 +1438,7 @@ Begin VB.Form FORM_COT
       Begin VB.Label Label2 
          AutoSize        =   -1  'True
          BackColor       =   &H00C0C0C0&
-         Caption         =   "Condiciï¿½n :"
+         Caption         =   "Condición :"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1730,7 +1730,7 @@ If Val(Left(LBLSIT.Caption, 2)) = 99 Then
   Exit Sub
 End If
 
-pub_mensaje = "Anular el pedidos...   ï¿½Desea Continuar... ?"
+pub_mensaje = "Anular el pedidos...   ¿Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -1873,11 +1873,11 @@ SQ_OPER = 1
 PUB_CODCIA = LK_CODCIA
 LEER_PAR_LLAVE
 If par_llave!par_flag_cierre = 9 Then
-   MsgBox "!!! Compaï¿½ia a Cerredo Operaciones ... ", 48, Pub_Titulo
+   MsgBox "!!! Compañia a Cerredo Operaciones ... ", 48, Pub_Titulo
    Exit Sub
 End If
 If par_llave!PAR_FECHA_DIA <> LK_FECHA_DIA Then
-   MsgBox "LA FECHA DE LA COMPAï¿½IA HA CAMBIADO NO COINCIDE CON LA ACTUAL , OTRO USUARIO A CERRADO EL DIA!!! SALGA Y REINICIE SU SISTEMA...", 48, Pub_Titulo
+   MsgBox "LA FECHA DE LA COMPAñIA HA CAMBIADO NO COINCIDE CON LA ACTUAL , OTRO USUARIO A CERRADO EL DIA!!! SALGA Y REINICIE SU SISTEMA...", 48, Pub_Titulo
    End
    Exit Sub
 End If
@@ -2769,7 +2769,7 @@ If KeyAscii = 13 Then
  TEXTOVAR.Visible = False
  
  If Val(Left(i_condi.Text, 2)) = 1 Then
-    pub_mensaje = "La Condicion es Contado Cash. !!! ...   ï¿½Desea Continuar... ?"
+    pub_mensaje = "La Condicion es Contado Cash. !!! ...   ¿Desea Continuar... ?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
        i_condi.SetFocus

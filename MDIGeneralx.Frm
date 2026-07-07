@@ -128,7 +128,7 @@ Begin VB.MDIForm MDIForm1
          EndProperty
          BeginProperty Button15 {0713F354-850A-101B-AFC0-4210102A8DA7} 
             Key             =   "COTI"
-            Object.ToolTipText     =   "Cotizaciï¿½n de Venta"
+            Object.ToolTipText     =   "Cotización de Venta"
             Object.Tag             =   ""
             ImageIndex      =   29
          EndProperty
@@ -251,7 +251,7 @@ Begin VB.MDIForm MDIForm1
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Compaï¿½ia Activa :"
+            Caption         =   "Compañia Activa :"
             BeginProperty Font 
                Name            =   "Arial"
                Size            =   8.25
@@ -647,7 +647,7 @@ Begin VB.MDIForm MDIForm1
          Shortcut        =   ^D
       End
       Begin VB.Menu SubmenuTit1 
-         Caption         =   "Definiciï¿½n de &Bancos"
+         Caption         =   "Definición de &Bancos"
          Enabled         =   0   'False
          Index           =   3
          Shortcut        =   ^B
@@ -682,7 +682,7 @@ Begin VB.MDIForm MDIForm1
          Visible         =   0   'False
       End
       Begin VB.Menu SubmenuTit1 
-         Caption         =   "&Definiciï¿½n de Transacciones"
+         Caption         =   "&Definición de Transacciones"
          Enabled         =   0   'False
          Index           =   9
          Visible         =   0   'False
@@ -710,7 +710,7 @@ Begin VB.MDIForm MDIForm1
          Shortcut        =   ^U
       End
       Begin VB.Menu SubmenuTit1 
-         Caption         =   "&Reiniciar Aplicaciï¿½n"
+         Caption         =   "&Reiniciar Aplicación"
          Enabled         =   0   'False
          Index           =   14
          Shortcut        =   ^R
@@ -758,7 +758,7 @@ Begin VB.MDIForm MDIForm1
          Index           =   6
       End
       Begin VB.Menu SubmenuTit2 
-         Caption         =   "&Cierre de Operaciones del Dï¿½a"
+         Caption         =   "&Cierre de Operaciones del Día"
          Enabled         =   0   'False
          Index           =   7
       End
@@ -768,7 +768,7 @@ Begin VB.MDIForm MDIForm1
       Enabled         =   0   'False
       Visible         =   0   'False
       Begin VB.Menu submenugrifo 
-         Caption         =   "&Definiciï¿½n de Turnos"
+         Caption         =   "&Definición de Turnos"
          Index           =   0
       End
       Begin VB.Menu submenugrifo 
@@ -797,7 +797,7 @@ Begin VB.MDIForm MDIForm1
       Enabled         =   0   'False
       Visible         =   0   'False
       Begin VB.Menu submenutit3 
-         Caption         =   "Definiciï¿½n de &Estructura"
+         Caption         =   "Definición de &Estructura"
          Index           =   0
       End
       Begin VB.Menu submenutit3 
@@ -961,7 +961,7 @@ Begin VB.MDIForm MDIForm1
          Index           =   1
       End
       Begin VB.Menu submenutit5 
-         Caption         =   "&Configuraciï¿½n de Reporte"
+         Caption         =   "&Configuración de Reporte"
          Enabled         =   0   'False
          Index           =   2
       End
@@ -1388,7 +1388,7 @@ End If
 usu.MoveNext
 Loop
 If Len(WUSU_CIAS) = 0 Then
-  MsgBox "Usted NO Tiene accesos a ninguna compaï¿½ia , consulte al Administrador ", 48, Pub_Titulo
+  MsgBox "Usted NO Tiene accesos a ninguna compañia , consulte al Administrador ", 48, Pub_Titulo
   GoTo fin_de_pro
 End If
 
@@ -1441,8 +1441,8 @@ Do Until cuenta = a
        MDIForm1.menuCia(cuenta - 1).Visible = True
        If LK_CODCIA = par_llave!PAR_CODCIA Then wBAN = h - 1
     Else
-       If a = 1 Then ' Cuando la unica compaï¿½ia de acceso no exite
-         MsgBox "Su Compaï¿½ia de Acceso NO Existe , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
+       If a = 1 Then ' Cuando la unica compañia de acceso no exite
+         MsgBox "Su Compañia de Acceso NO Existe , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
          GoTo fin_de_pro
        End If
        MDIForm1.menuCia(cuenta - 1).Caption = "* " & PUB_CODCIA & " , NO Procede"
@@ -1458,7 +1458,7 @@ If wBAN = -1 Then
     End If
   Next a
   If wBAN = -1 Then
-    MsgBox "Su(s) Compaï¿½ias de Acceso NO Existen , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
+    MsgBox "Su(s) Compañias de Acceso NO Existen , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
     GoTo fin_de_pro
   End If
 End If
@@ -1467,7 +1467,7 @@ For a = h To 40
   MDIForm1.menuCia(a).Visible = False
 Next a
 MDIForm1.menuCia(wBAN).Checked = True
-'asegura la compaï¿½ia por defecto
+'asegura la compañia por defecto
 ACTUALIZA_CIA Left(MDIForm1.menuCia(wBAN).Caption, 2)
 
 ProBar.Value = ProBar.Value + 1
@@ -2050,7 +2050,7 @@ Private Sub menuRepoAyuda_Click()
 Dim WL As Object
 Dim VAR As String
 'Dim ee As Words
-MsgBox "En Construcciï¿½n... " & Chr(13) & "Para mayor informaciï¿½n llamar al Telf. Celular: (044) 687304 - Trujillo - Perï¿½", vbInformation, "Asesoria y Soporte"
+MsgBox "En Construcciï¿½n... " & Chr(13) & "Para mayor informaciï¿½n llamar al Telf. Celular: (044) 687304 - Trujillo - Perú", vbInformation, "Asesoria y Soporte"
 Exit Sub
 Dim ww As Form
 Dim i

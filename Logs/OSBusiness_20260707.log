@@ -36,3 +36,23 @@ PC: DESKTOP-QIL4IGM
 08:16:42 [TRACE] [GENERAL] PROC_LISVIEW: Inicio numarchi=7
 08:16:42 [TRACE] [GENERAL] PROC_LISVIEW: PrepararListView, SQL=SELECT TOP 2000 ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, cia_actual.ARM_STOCK as ARM_STOCK , PRE_EQUIV,  PRE_UNIDAD,PRE_PRE1,PRE_PRE2,PRE_PRE3,PRE_PRE4,PRE_PRE5,PRE_PRE6,cia_otra.ARM_STOCK as ARM
 08:16:58 [TRACE] [GENERAL] MDI: Toolbar Click - Salir
+========================================
+OSBusiness - Inicio de Sesion: 07/07/2026 08:51:02
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+08:51:02 [INFO] [GENERAL] Splash: Inicio Form_Load
+08:51:02 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+08:51:03 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+08:51:03 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+08:51:03 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+08:51:03 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+08:51:03 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+08:51:03 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+08:51:03 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+08:51:03 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+08:51:03 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+08:51:03 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+08:51:03 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+08:51:13 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+08:51:17 [TRACE] [GENERAL] MDI: Toolbar Click - FORMGEN

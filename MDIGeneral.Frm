@@ -62,7 +62,7 @@ Begin VB.MDIForm MDIForm1
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Compaï¿½ia Activa :"
+            Caption         =   "Compañia Activa :"
             BeginProperty Font 
                Name            =   "Arial"
                Size            =   8.25
@@ -221,7 +221,7 @@ Begin VB.MDIForm MDIForm1
          BeginProperty Button4 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Enabled         =   0   'False
             Key             =   "PRECIOS"
-            Object.ToolTipText     =   "Actualizaciï¿½n de Precios"
+            Object.ToolTipText     =   "Actualización de Precios"
             ImageIndex      =   11
          EndProperty
          BeginProperty Button5 {66833FEA-8583-11D1-B16A-00C0F0283628} 
@@ -330,7 +330,7 @@ Begin VB.MDIForm MDIForm1
          EndProperty
          BeginProperty Button26 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Key             =   "AVISO"
-            Object.ToolTipText     =   "Parar Impresiï¿½n..."
+            Object.ToolTipText     =   "Parar Impresión..."
             ImageIndex      =   3
          EndProperty
          BeginProperty Button27 {66833FEA-8583-11D1-B16A-00C0F0283628} 
@@ -537,7 +537,7 @@ Begin VB.MDIForm MDIForm1
          Shortcut        =   ^D
       End
       Begin VB.Menu SubmenuTit1 
-         Caption         =   "Definiciï¿½n de &Bancos"
+         Caption         =   "Definición de &Bancos"
          Enabled         =   0   'False
          Index           =   3
          Shortcut        =   ^B
@@ -572,7 +572,7 @@ Begin VB.MDIForm MDIForm1
          Visible         =   0   'False
       End
       Begin VB.Menu SubmenuTit1 
-         Caption         =   "&Definiciï¿½n de Transacciones"
+         Caption         =   "&Definición de Transacciones"
          Enabled         =   0   'False
          Index           =   9
          Visible         =   0   'False
@@ -608,7 +608,7 @@ Begin VB.MDIForm MDIForm1
          Shortcut        =   ^U
       End
       Begin VB.Menu SubmenuTit1 
-         Caption         =   "&Reiniciar Aplicaciï¿½n"
+         Caption         =   "&Reiniciar Aplicación"
          Enabled         =   0   'False
          Index           =   16
          Shortcut        =   ^R
@@ -660,7 +660,7 @@ Begin VB.MDIForm MDIForm1
          Index           =   7
       End
       Begin VB.Menu SubmenuTit2 
-         Caption         =   "&Cierre de Operaciones del Dï¿½a"
+         Caption         =   "&Cierre de Operaciones del Día"
          Enabled         =   0   'False
          Index           =   8
       End
@@ -670,7 +670,7 @@ Begin VB.MDIForm MDIForm1
       Enabled         =   0   'False
       Visible         =   0   'False
       Begin VB.Menu submenugrifo 
-         Caption         =   "&Definiciï¿½n de Turnos"
+         Caption         =   "&Definición de Turnos"
          Index           =   0
       End
       Begin VB.Menu submenugrifo 
@@ -699,7 +699,7 @@ Begin VB.MDIForm MDIForm1
       Enabled         =   0   'False
       Visible         =   0   'False
       Begin VB.Menu submenutit3 
-         Caption         =   "Definiciï¿½n de &Estructura"
+         Caption         =   "Definición de &Estructura"
          Index           =   0
       End
       Begin VB.Menu submenutit3 
@@ -925,7 +925,7 @@ Begin VB.MDIForm MDIForm1
          Index           =   1
       End
       Begin VB.Menu submenutit5 
-         Caption         =   "&Configuraciï¿½n de Reporte"
+         Caption         =   "&Configuración de Reporte"
          Enabled         =   0   'False
          Index           =   2
       End
@@ -1002,7 +1002,7 @@ Begin VB.MDIForm MDIForm1
          Shortcut        =   ^P
       End
       Begin VB.Menu SubmenuTit6 
-         Caption         =   "&Actualizaciï¿½n Automatico de Stock"
+         Caption         =   "&Actualización Automatico de Stock"
          Enabled         =   0   'False
          Index           =   11
       End
@@ -1425,7 +1425,7 @@ End If
 usu.MoveNext
 Loop
 If Len(WUSU_CIAS) = 0 Then
-  MsgBox "Usted NO Tiene accesos a ninguna compaï¿½ia , consulte al Administrador ", 48, Pub_Titulo
+  MsgBox "Usted NO Tiene accesos a ninguna compañia , consulte al Administrador ", 48, Pub_Titulo
   GoTo fin_de_pro
 End If
 
@@ -1492,8 +1492,8 @@ Do Until cuenta = a
        MDIForm1.menuCia(cuenta - 1).Visible = True
        If LK_CODCIA = par_llave!par_codcia Then wBAN = h - 1
     Else
-       If a = 1 Then ' Cuando la unica compaï¿½ia de acceso no exite
-         MsgBox "Su Compaï¿½ia de Acceso NO Existe , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
+       If a = 1 Then ' Cuando la unica compañia de acceso no exite
+         MsgBox "Su Compañia de Acceso NO Existe , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
          GoTo fin_de_pro
        End If
        MDIForm1.menuCia(cuenta - 1).Caption = "* " & PUB_CODCIA & " , NO Procede"
@@ -1509,7 +1509,7 @@ If wBAN = -1 Then
     End If
   Next a
   If wBAN = -1 Then
-    MsgBox "Su(s) Compaï¿½ias de Acceso NO Existen , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
+    MsgBox "Su(s) Compañias de Acceso NO Existen , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
     GoTo fin_de_pro
   End If
 End If
@@ -1548,7 +1548,7 @@ PUB_ODBC = "ODBC;DRIVER={SQL Server};UID=" & CONST_UID & ";PWD=" & CONST_PWD & "
 ' * Permisos para los Menus *
 'Debug.Print PUB_ODBC
 
-'asegura la compaï¿½ia por defecto
+'asegura la compañia por defecto
 ACTUALIZA_CIA Left(MDIForm1.menuCia(wBAN).Caption, 2)
 
 If LK_CODUSU = "ADMIN" Or LK_CODUSU = "SUPERVISOR" Then
@@ -2356,7 +2356,7 @@ Private Sub menuRepoAyuda_Click()
 Dim WL As Object
 Dim var As String
 'Dim ee As Words
-MsgBox "En Construcciï¿½n... " & Chr(13) & "Para mayor informaciï¿½n llamar al Telf. Celular: (044) 9604779 Nextel 829*6446 - Trujillo - Perï¿½", vbInformation, "Asesoria y Soporte"
+MsgBox "En Construcciï¿½n... " & Chr(13) & "Para mayor informaciï¿½n llamar al Telf. Celular: (044) 9604779 Nextel 829*6446 - Trujillo - Perú", vbInformation, "Asesoria y Soporte"
 Exit Sub
 Dim ww As Form
 Dim I
@@ -3099,7 +3099,7 @@ Select Case Button.Key
     End If
     'PAR_SALDO_CAJA_ayer
     If UCase(opdato) = "FA" Then
-         wclave = InputBox("Cambiar el Monto Maximo para pago por Dï¿½a (Facturas y Otros Documentos):", "Monto en Nuevos Soles", par_llave!PAR_TASA_VENTA)
+         wclave = InputBox("Cambiar el Monto Maximo para pago por Día (Facturas y Otros Documentos):", "Monto en Nuevos Soles", par_llave!PAR_TASA_VENTA)
          If wclave = "" Then Exit Sub
          If LK_CODCIA = "01" Or LK_CODCIA = "03" Or LK_CODCIA = "07" Or LK_CODCIA = "10" Then
              pub_cadena = "UPDATE PARGEN SET PAR_TASA_VENTA =  " & Val(wclave) & "  WHERE PAR_CODCIA IN ('01','03','07','10')"
@@ -3111,7 +3111,7 @@ Select Case Button.Key
              par_llave.Update
         End If
    ElseIf UCase(opdato) = "LE" Then
-         wclave = InputBox("Cambiar el Monto Maximo para pago por Dï¿½a (Solo Letras y Renovadas):", "Monto en Nuevos Soles", par_llave!PAR_SALDO_CAJA_D_AYER)
+         wclave = InputBox("Cambiar el Monto Maximo para pago por Día (Solo Letras y Renovadas):", "Monto en Nuevos Soles", par_llave!PAR_SALDO_CAJA_D_AYER)
          If wclave = "" Then Exit Sub
          If LK_CODCIA = "01" Or LK_CODCIA = "03" Or LK_CODCIA = "07" Or LK_CODCIA = "10" Then
              pub_cadena = "UPDATE PARGEN SET PAR_SALDO_CAJA_D_AYER =  " & Val(wclave) & "  WHERE PAR_CODCIA IN ('01','03','07','10')"
@@ -3123,7 +3123,7 @@ Select Case Button.Key
              par_llave.Update
         End If
    ElseIf UCase(opdato) = "PR" Then
-         wclave = InputBox("Cambiar el Monto Maximo para pago por Dï¿½a (Solo Programadas):", "Monto en Nuevos Soles", par_llave!PAR_SALDO_CAJA_HOY)
+         wclave = InputBox("Cambiar el Monto Maximo para pago por Día (Solo Programadas):", "Monto en Nuevos Soles", par_llave!PAR_SALDO_CAJA_HOY)
          If wclave = "" Then Exit Sub
          If LK_CODCIA = "01" Or LK_CODCIA = "03" Or LK_CODCIA = "07" Or LK_CODCIA = "10" Then
              pub_cadena = "UPDATE PARGEN SET PAR_SALDO_CAJA_HOY =  " & Val(wclave) & "  WHERE PAR_CODCIA IN ('01','03','07','10')"
@@ -3140,7 +3140,7 @@ Select Case Button.Key
     wclave = InputBox("Tiene 2 opciones : Digitar 1 para cambiar la Fecha del Dia / Digitar 2 para Colocar Porcentaje para la Lista Precios Cientes ", "opcion", "1")
     If wclave = "" Then Exit Sub
     If wclave = 1 Then
-        wclave = InputBox("Cambiar de Fecha de Proceso :" & Chr(13) & "OJO, debe ser supervisado por el administrador del sistema." & Chr(13) & "Por Defecto Fecha del Dï¿½a.", "FECHA DE PROCESO !!!! ", Format(par_llave!PAR_FECHA_DIA, "dd/mm/yyyy"))
+        wclave = InputBox("Cambiar de Fecha de Proceso :" & Chr(13) & "OJO, debe ser supervisado por el administrador del sistema." & Chr(13) & "Por Defecto Fecha del Día.", "FECHA DE PROCESO !!!! ", Format(par_llave!PAR_FECHA_DIA, "dd/mm/yyyy"))
         If wclave = "" Then Exit Sub
         If Not IsDate(wclave) Then Exit Sub
         

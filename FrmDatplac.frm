@@ -165,7 +165,7 @@ End If
 If PUB_TIPREG = 199 Then MsgBox "Solo hasta 4 tipos de bloqueos"
 If PUB_TIPREG = 199 Then If Gridtablas.Rows >= 5 Then Exit Sub
 wBAN = 1
-Mensaje = "Ingrese la Descripciï¿½n  :"
+Mensaje = "Ingrese la Descripción  :"
 titulo = "Datos Necesario..."
 valorpred = " "
 wvalor = InputBox(Mensaje, titulo, valorpred)
@@ -188,7 +188,7 @@ PSPLAC_LLAVE(2) = pu_codclie
 PSPLAC_LLAVE(3) = wvalor ' FrmDatplac.Gridtablas.TextMatrix(Gridtablas.Row, 4)
 cliplac_llave.Requery
 If Not cliplac_llave.EOF Then
-    MsgBox "Descripciï¿½n Existe. Intente Nuevamente ..", 48, Pub_Titulo
+    MsgBox "Descripción Existe. Intente Nuevamente ..", 48, Pub_Titulo
     If Gridtablas.Visible Then Gridtablas.SetFocus
     Exit Sub
 End If
@@ -953,7 +953,7 @@ If KeyCode = 46 And PUB_TIPREG <> -55 Then
     Else
        Exit Sub
     End If
-    pub_mensaje = " Eliminar    : " & Trim(Gridtablas.TextMatrix(Gridtablas.Row, 1)) & " ï¿½Desea Continuar... ?"
+    pub_mensaje = " Eliminar    : " & Trim(Gridtablas.TextMatrix(Gridtablas.Row, 1)) & " ¿Desea Continuar... ?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
       Gridtablas.SetFocus
@@ -985,7 +985,7 @@ End If
 ElGrid_KeyDown Gridtablas, textovar, KeyCode
 Exit Sub
 borra_transportista:
-pub_mensaje = " Eliminar    : " & Trim(Gridtablas.TextMatrix(Gridtablas.Row, 1)) & " ï¿½Desea Continuar... ?"
+pub_mensaje = " Eliminar    : " & Trim(Gridtablas.TextMatrix(Gridtablas.Row, 1)) & " ¿Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
   Gridtablas.SetFocus
@@ -1061,7 +1061,7 @@ If KeyAscii = 13 Then
      PSVE2_LLAVE(1) = Val(FrmDatplac.Gridtablas.TextMatrix(Gridtablas.Row, 0))
      clive2_llave.Requery
      If clive2_llave.EOF Then
-       MsgBox "Descripciï¿½n Existe. Intente Nuevamente ..", 48, Pub_Titulo
+       MsgBox "Descripción Existe. Intente Nuevamente ..", 48, Pub_Titulo
        Azul textovar, textovar
        Exit Sub
      End If
@@ -1094,7 +1094,7 @@ If KeyAscii = 13 Then
      'cliplac_llave.Requery
      'If Not cliplac_llave.EOF Then
      '  If cliplac_llave.RowCount > 1 Then
-     '    MsgBox "Descripciï¿½n Existe. Intente Nuevamente ..", 48, Pub_Titulo
+     '    MsgBox "Descripción Existe. Intente Nuevamente ..", 48, Pub_Titulo
      '    Azul textovar, textovar
      '    Exit Sub
      '  End If
@@ -1169,7 +1169,7 @@ End If
 If KeyCode = 46 Then
    ' NO PROCEDE NINGUNA ELIMINACION
    Exit Sub
-   pub_mensaje = " Eliminar    : " & Trim(grid_comi.TextMatrix(grid_comi.Row, 1)) & " ï¿½Desea Continuar... ?"
+   pub_mensaje = " Eliminar    : " & Trim(grid_comi.TextMatrix(grid_comi.Row, 1)) & " ¿Desea Continuar... ?"
    Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
    If Pub_Respuesta = vbNo Then
       grid_comi.SetFocus

@@ -633,7 +633,7 @@ Begin VB.Form frmletras
             Begin VB.Label lblCaption 
                AutoSize        =   -1  'True
                BackStyle       =   0  'Transparent
-               Caption         =   "Fecha Emisiï¿½n"
+               Caption         =   "Fecha Emisión"
                BeginProperty Font 
                   Name            =   "Tahoma"
                   Size            =   8.25
@@ -1069,7 +1069,7 @@ Begin VB.Form frmletras
       Begin VB.Label lblCaption 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Fec. Emisiï¿½n"
+         Caption         =   "Fec. Emisión"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25

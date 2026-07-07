@@ -146,7 +146,7 @@ Begin VB.Form PASSFORM
       End
       Begin VB.Label Label7 
          BackStyle       =   0  'Transparent
-         Caption         =   "Compaï¿½ia por Defecto :"
+         Caption         =   "Compañia por Defecto :"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -164,7 +164,7 @@ Begin VB.Form PASSFORM
          Width           =   2295
       End
       Begin VB.Label Label1 
-         Caption         =   "Descripciï¿½n: "
+         Caption         =   "Descripción: "
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -483,10 +483,10 @@ If cal_llave!CAL_INDICE <> 1 Then
 End If
   ' VER SI LA FECHA NO ES DEL DIA
 SALTA_TODO:
-  pub_mensaje = "ï¿½La fecha de la compaï¿½ia es diferente que el computador!"
-  pub_mensaje = pub_mensaje & pb & "Fecha de la Compaï¿½ia       : " & Format(fecha_proceso, "dd mmm yyyy")
+  pub_mensaje = "ï¿½La fecha de la compañia es diferente que el computador!"
+  pub_mensaje = pub_mensaje & pb & "Fecha de la Compañia       : " & Format(fecha_proceso, "dd mmm yyyy")
   pub_mensaje = pub_mensaje & Chr(13) & "Fecha de del Computador : " & Format(Date, "dd mmm yyyy")
-  pub_mensaje = pub_mensaje & pb & "ï¿½Desea ingresar al sistema..?"
+  pub_mensaje = pub_mensaje & pb & "¿Desea ingresar al sistema..?"
   If CDate(fecha_proceso.Text) <> Date Then
     Pub_Respuesta = MsgBox(pub_mensaje, vbOKCancel + vbInformation, Pub_Titulo)
     If Pub_Respuesta = vbCancel Then

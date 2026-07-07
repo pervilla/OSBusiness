@@ -604,7 +604,7 @@ Begin VB.Form FrmComaest
          Width           =   615
       End
       Begin VB.Label Label1 
-         Caption         =   "Descripciï¿½n :"
+         Caption         =   "Descripción :"
          Height          =   255
          Index           =   1
          Left            =   240
@@ -843,7 +843,7 @@ If Left(cmdAgregar.Caption, 2) = "&A" Then
     'AGREGAMOS EN BLANCO
 Else
    If FrmComaest.Txtcom(2).Text = "" Or Len(FrmComaest.Txtcom(2).Text) = 0 Then
-       MsgBox "Ingrese Descripciï¿½n  ..!!!", 48, Pub_Titulo
+       MsgBox "Ingrese Descripción  ..!!!", 48, Pub_Titulo
        Azul Txtcom(2), Txtcom(2)
        Exit Sub
    End If
@@ -993,7 +993,7 @@ If Len(Txtcom(2).Text) = 0 Or Len(Txtcom(1).Text) = 0 Then
    MENSAJE_COM "NO a seleccionado NADA ... !"
    Exit Sub
 End If
-  pub_mensaje = " ï¿½Desea Eliminar el Registro... ?"
+  pub_mensaje = " ¿Desea Eliminar el Registro... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
     wcuenta = Trim(Txtcom(1).Text)
@@ -1037,7 +1037,7 @@ If Left(cmdModificar.Caption, 2) = "&M" Then
     Txtcom(2).SetFocus
     Txtcom(0).Enabled = False
     Txtcom(5).Enabled = False
-    Modo.Caption = "< Modificaciï¿½n >"
+    Modo.Caption = "< Modificación >"
     FMODO.Visible = True
 Else
     '*Grabar las modificaciones
@@ -1522,7 +1522,7 @@ grid1.ColAlignment(2) = 1
 
 grid1.Text = " Cuenta "
 grid1.COL = 1
-grid1.Text = " Descripciï¿½n "
+grid1.Text = " Descripción "
 grid1.ColWidth(0) = 1300
 grid1.ColWidth(1) = 2300
 grid1.ColWidth(2) = 1

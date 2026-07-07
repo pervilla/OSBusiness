@@ -14,7 +14,7 @@ Begin VB.Form FrmMotAnul
    ScaleWidth      =   11025
    StartUpPosition =   3  'Windows Default
    Begin VB.CheckBox cheerror 
-      Caption         =   "Anular por Error de Impresiï¿½n y Otros de Documento"
+      Caption         =   "Anular por Error de Impresión y Otros de Documento"
       BeginProperty Font 
          Name            =   "Tahoma"
          Size            =   8.25

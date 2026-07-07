@@ -1833,7 +1833,7 @@ llave_sum_arti.Requery
 If llave_sum_arti.EOF Then
   tserie.Text = PUB_NUMSER
   txtdoc.Text = PUB_NUMFAC
-  MsgBox "No Existe Cotizaciï¿½n.", 48, Pub_Titulo
+  MsgBox "No Existe Cotización.", 48, Pub_Titulo
   Exit Sub
 End If
 txtigv.Text = llave_sum_arti!PED_IGV

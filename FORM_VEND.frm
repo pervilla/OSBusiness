@@ -434,7 +434,7 @@ Begin VB.Form FORM_COTV
          Width           =   1455
       End
       Begin VB.CheckBox chemarg 
-         Caption         =   "Cotizaciï¿½n con Margenes"
+         Caption         =   "Cotización con Margenes"
          ForeColor       =   &H00800000&
          Height          =   435
          Left            =   6000
@@ -3063,7 +3063,7 @@ llave_sum_arti.Requery
 If llave_sum_arti.EOF Then
   tserie.Text = PUB_NUMSER
   txtdoc.Text = PUB_NUMFAC
-  MsgBox "No Existe Cotizaciï¿½n.", 48, Pub_Titulo
+  MsgBox "No Existe Cotización.", 48, Pub_Titulo
   Exit Sub
 End If
 txtigv.Text = llave_sum_arti!PED_IGV

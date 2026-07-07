@@ -4,7 +4,7 @@ Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "richtx32.ocx"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Begin VB.Form frmCuotas 
-   Caption         =   "Definiciï¿½n de Cuotas."
+   Caption         =   "Definición de Cuotas."
    ClientHeight    =   9255
    ClientLeft      =   60
    ClientTop       =   345
@@ -491,7 +491,7 @@ Begin VB.Form frmCuotas
          Y2              =   1200
       End
       Begin VB.Label Label1 
-         Caption         =   "Divisiï¿½n :"
+         Caption         =   "División :"
          Height          =   255
          Index           =   2
          Left            =   120
@@ -1032,11 +1032,11 @@ Private Sub cmdmostrar_Click()
 Dim PSCUO_VENDEDOR As rdoQuery
 Dim cuo_vendedor As rdoResultset
 If Not IsDate(fecha1.Caption) Then
- MsgBox "Verificar Configuraciï¿½n Regional .. no procde las Fechas Nï¿½1", 48, Pub_Titulo
+ MsgBox "Verificar Configuración Regional .. no procde las Fechas Nï¿½1", 48, Pub_Titulo
  Exit Sub
 End If
 If Not IsDate(fecha2.Caption) Then
- MsgBox "Verificar Configuraciï¿½n Regional .. no procde las Fechas Nï¿½1", 48, Pub_Titulo
+ MsgBox "Verificar Configuración Regional .. no procde las Fechas Nï¿½1", 48, Pub_Titulo
  Exit Sub
 End If
 DoEvents
@@ -1093,7 +1093,7 @@ Case 2
       GoTo fin
     End If
     If Trim(cmbdivi.Text) = "" Then
-      MsgBox "Seleccionar un Divisiï¿½n", 48, Pub_Titulo
+      MsgBox "Seleccionar un División", 48, Pub_Titulo
       cmbdivi.SetFocus
       SendKeysSeguro VK_UP, True
       GoTo fin
@@ -1252,7 +1252,7 @@ cabe
 Case 5  ' CUOTA POR ARTICULOS
     cabe
     If Trim(cmbdivi.Text) = "" Then
-      MsgBox "Seleccionar un Divisiï¿½n", 48, Pub_Titulo
+      MsgBox "Seleccionar un División", 48, Pub_Titulo
       cmbdivi.SetFocus
       SendKeysSeguro VK_UP, True
       GoTo fin
@@ -1393,7 +1393,7 @@ cadena = "select * from cuotas where cuo_fecha1='" & Format(w_fecha1, "dd/mm/yyy
 Set llave_busca = CN.OpenResultset(cadena, rdOpenKeyset, rdConcurValues)
 
 If Not (llave_busca.EOF) = True Then
-    Pub_Respuesta = MsgBox(" ï¿½Desea Remplazar Los Datos Existemtes  ... ?", Pub_Estilo, Pub_Titulo)
+    Pub_Respuesta = MsgBox(" ¿Desea Remplazar Los Datos Existemtes  ... ?", Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then Exit Sub
     cadena = "delete from cuotas where cuo_fecha1='" & Format(w_fecha1, "dd/mm/yyyy") & "' and cuo_fecha2 = '" & Format(w_fecha2, "dd/mm/yyyy") & "' and cuo_codcia='" & LK_CODCIA & "' "
     CN.Execute cadena

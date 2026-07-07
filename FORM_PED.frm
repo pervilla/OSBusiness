@@ -140,7 +140,7 @@ Begin VB.Form FORM_PED
          Width           =   975
       End
       Begin VB.OptionButton opcomo 
-         Caption         =   "x Divisiï¿½n"
+         Caption         =   "x División"
          ForeColor       =   &H00808000&
          Height          =   195
          Index           =   0
@@ -150,7 +150,7 @@ Begin VB.Form FORM_PED
          Width           =   1455
       End
       Begin VB.OptionButton opcomo 
-         Caption         =   "x Sub Divisiï¿½n"
+         Caption         =   "x Sub División"
          ForeColor       =   &H00808000&
          Height          =   195
          Index           =   1
@@ -289,7 +289,7 @@ Begin VB.Form FORM_PED
          Width           =   1695
       End
       Begin VB.Label lfami 
-         Caption         =   "Divisiï¿½n:"
+         Caption         =   "División:"
          BeginProperty Font 
             Name            =   "Small Fonts"
             Size            =   6.75
@@ -308,7 +308,7 @@ Begin VB.Form FORM_PED
          Width           =   885
       End
       Begin VB.Label lsubfami 
-         Caption         =   "Sub Divisiï¿½n:"
+         Caption         =   "Sub División:"
          BeginProperty Font 
             Name            =   "Small Fonts"
             Size            =   6.75
@@ -615,7 +615,7 @@ Begin VB.Form FORM_PED
       End
       Begin VB.Label Label7 
          BackColor       =   &H00C0C0C0&
-         Caption         =   "Compaï¿½ia:"
+         Caption         =   "Compañia:"
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   11160
@@ -1149,7 +1149,7 @@ For fila = 2 To grid_fac.Rows - 1
 End If
 Next fila
 If flag_precio = "A" Then
-  pub_mensaje = "Existen precios com valor Cero.   ï¿½Desea Continuar... ?"
+  pub_mensaje = "Existen precios com valor Cero.   ¿Desea Continuar... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
      GoTo fin
@@ -1569,7 +1569,7 @@ FLAG_MAX = ""
 For fila = 2 To gridarti.Rows - 1
    If FLAG_MAX <> "A" Then
       If grid_fac.Rows >= Val(imax.Text) + 2 Then
-        pub_mensaje = "LLego al Maximo de Item ï¿½Desea Continuar... ?"
+        pub_mensaje = "LLego al Maximo de Item ¿Desea Continuar... ?"
         Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
         If Pub_Respuesta = vbNo Then
            Exit For

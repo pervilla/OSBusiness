@@ -3997,7 +3997,7 @@ Begin VB.Form frmARTI
       End
       Begin VB.Label lblnomarti 
          AutoSize        =   -1  'True
-         Caption         =   "Descripciï¿½n del Articulo"
+         Caption         =   "Descripción del Articulo"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -4100,7 +4100,7 @@ Begin VB.Form frmARTI
       Width           =   1300
    End
    Begin VB.CommandButton cmdModificar 
-      Caption         =   "&Modificaciï¿½n"
+      Caption         =   "&Modificación"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -5228,10 +5228,10 @@ Dim ARMAD  As String
 Dim ARMAS As String
 If Val(cmbTipo.Text) = 1 Or Val(cmbTipo.Text) = -1 Then
 Else
-  MsgBox "Selecione el Tipo de Operaciï¿½n. ", 48, Pub_Titulo
+  MsgBox "Selecione el Tipo de Operación. ", 48, Pub_Titulo
   Exit Sub
 End If
-pub_mensaje = "Actualziar esta Lista ï¿½Desea Continuar... ?"
+pub_mensaje = "Actualziar esta Lista ¿Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -5369,7 +5369,7 @@ Else
   Exit Sub
 End If
 MsgBox "Usted a escogido la opcion de : " & Chr(13) & cmdptipo.Text, 48, Pub_Titulo
-pub_mensaje = "Confirmar la actualizacion de Precios...   ï¿½Desea Continuar... ?"
+pub_mensaje = "Confirmar la actualizacion de Precios...   ¿Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -5831,7 +5831,7 @@ chep9.Value = 0
 
 cmdptipo.Clear
 cmdptipo.AddItem "1 =Porcentaje Adicional al Costo Promedio C/IGV"
-cmdptipo.AddItem "2 =Porcentaje de Disminuciï¿½n al Precio C/IGV"
+cmdptipo.AddItem "2 =Porcentaje de Disminución al Precio C/IGV"
 cmdptipo.ListIndex = 0
 fraactlinea.Visible = True
 End Sub
@@ -5972,7 +5972,7 @@ llave_data.MoveNext
 Loop
 
 cmdactvend.Caption = "Actualizar"
-MsgBox "Actualizaciï¿½n Terminada "
+MsgBox "Actualización Terminada "
 cheespecial.Value = 0
 cmdactvend.Enabled = False
 
@@ -5997,14 +5997,14 @@ If Left(cmbcal.Text, 1) = "<" Then
  Exit Sub
 End If
 
-wnombre = InputBox("Ingrese la Descripciï¿½n del Articulo :", Pub_Titulo, Trim(txtnombre.Text))
+wnombre = InputBox("Ingrese la Descripción del Articulo :", Pub_Titulo, Trim(txtnombre.Text))
 If wnombre = "" Then
   Screen.MousePointer = 0
   Exit Sub
 End If
 If Trim(wnombre) = "" Then
   Screen.MousePointer = 0
-  MsgBox "Descripciï¿½n NO Validad.", 48, Pub_Titulo
+  MsgBox "Descripción NO Validad.", 48, Pub_Titulo
   Exit Sub
 End If
 LOC_NOMBRE = wnombre
@@ -6396,7 +6396,7 @@ Loop
 pb.Visible = False
 pbMin = 0
 cheapor.Value = 0
-MsgBox "Actualizaciï¿½n Terminada.", 48, Pub_Titulo
+MsgBox "Actualización Terminada.", 48, Pub_Titulo
 
 End Sub
 
@@ -6576,7 +6576,7 @@ End If
                 Else
                     LblMensaje.Visible = False
                     Screen.MousePointer = 0
-                    MsgBox "NO se Puede Eliminar ...  ARTICULO CON HISTORIA " & Chr(13) & "Compaï¿½ia : " & ws_codcia, 48, Pub_Titulo
+                    MsgBox "NO se Puede Eliminar ...  ARTICULO CON HISTORIA " & Chr(13) & "Compañia : " & ws_codcia, 48, Pub_Titulo
                     Exit Sub
                 End If
             End If
@@ -6620,12 +6620,12 @@ End If
     If LK_CODCIA <> "00" Then
       Screen.MousePointer = 0
       LblMensaje.Visible = False
-      MsgBox "No Procede la Eliminaciï¿½n.  Punto de Venta no permitido!!(solo en la Cia. central)", 48, Pub_Titulo
+      MsgBox "No Procede la Eliminación.  Punto de Venta no permitido!!(solo en la Cia. central)", 48, Pub_Titulo
       Exit Sub
     End If
   End If
   LblMensaje.Visible = False
-  pub_mensaje = " ï¿½Desea Eliminar el Articulo... ?"
+  pub_mensaje = " ¿Desea Eliminar el Articulo... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
       LblMensaje.Visible = False
@@ -7043,7 +7043,7 @@ Else
             If Not arm_llave.EOF Then
               If Val(arm_llave!arm_stock) <> 0 Then
                  Screen.MousePointer = 0
-                 MsgBox "No Procede al desactivar, Producto Tiene Stock." & Chr(13) & "Compaï¿½ia: " & pu_codcia, 48, Pub_Titulo
+                 MsgBox "No Procede al desactivar, Producto Tiene Stock." & Chr(13) & "Compañia: " & pu_codcia, 48, Pub_Titulo
                  Exit Sub
                End If
             End If
@@ -7103,7 +7103,7 @@ Else
           frmPreciosArti.Show 1
         End If
     End If
-    CmdModificar.Caption = "&Modificaciï¿½n"
+    CmdModificar.Caption = "&Modificación"
     cmdcancelar.Enabled = True
     cmdEliminar.Enabled = True
     cmdAgregar.Enabled = True
@@ -7133,7 +7133,7 @@ ESCAPA:
         MsgBox Err.Number & "  " & Err.Description & "  Intente Nuevamente."
     End If
     CN.Execute "Rollback Transaction", rdExecDirect
-    CmdModificar.Caption = "&Modificaciï¿½n"
+    CmdModificar.Caption = "&Modificación"
     cmdcancelar.Enabled = True
     cmdEliminar.Enabled = True
     CmdModificar.Enabled = True
@@ -8056,7 +8056,7 @@ If Trim(Label3(Index).Tag) = "" Then
  Exit Sub
 End If
 Dim wnombre
-wnombre = InputBox("Ingrese la Nueva Descripciï¿½n para este Campo :", Pub_Titulo, Trim(Label3(Index).Caption))
+wnombre = InputBox("Ingrese la Nueva Descripción para este Campo :", Pub_Titulo, Trim(Label3(Index).Caption))
 If wnombre = "" Then
   Screen.MousePointer = 0
   Exit Sub
@@ -8731,7 +8731,7 @@ If pu_codcia = LK_CODCIA Then
    End If
    rs_regcuotas.Update
    
-   ' SOLO COMPAï¿½IA ACTUAL
+   ' SOLO COMPAñIA ACTUAL
     pub_cadena = "DELETE FROM FVENTAS WHERE FV_CODCIA = '" & LK_CODCIA & "' AND FV_TIPO = 2 AND FV_CODIGO = " & (artloc_llave!art_key)
     CN.Execute pub_cadena
     pub_cadena = "SELECT * FROM FVENTAS WHERE FV_CODCIA = '" & LK_CODCIA & "' AND FV_TIPO = 2 AND FV_CODIGO = " & (artloc_llave!art_key)
@@ -9014,7 +9014,7 @@ If Left(cmdAgregar.Caption, 2) = "&G" Then
      arm_llave!arm_saldo_n2 = 0
      arm_llave!ARM_FECHA_ULT = #1/1/1900#
      arm_llave.Update
-     MENSAJE_ARTI "Articulo Nuevo en Compaï¿½ia . . ."
+     MENSAJE_ARTI "Articulo Nuevo en Compañia . . ."
     Else
       MsgBox "Codigo Existe en tabla: Articulo verificar ...", 48, Pub_Titulo
     End If
@@ -10229,7 +10229,7 @@ If KeyCode = 46 Then
   If wflag_bloq_descrip = "A" Then Exit Sub
   If grid_unid.Row <> 1 Then
     If Trim(grid_unid.TextMatrix(grid_unid.Row, 0)) <> "" And Val(grid_unid.TextMatrix(grid_unid.Row, 1)) <> 0 Then
-      pub_mensaje = " Eliminar la Unidad de : " & Trim(grid_unid.TextMatrix(grid_unid.Row, 0)) & " ï¿½Desea Continuar... ?"
+      pub_mensaje = " Eliminar la Unidad de : " & Trim(grid_unid.TextMatrix(grid_unid.Row, 0)) & " ¿Desea Continuar... ?"
       Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
       If Pub_Respuesta = vbNo Then
         grid_unid.SetFocus
@@ -10838,7 +10838,7 @@ Public Sub PROCESO_CANCELAR()
     End If
     Screen.MousePointer = 11
     If Left(CmdModificar.Caption, 2) = "&G" Then
-       CmdModificar.Caption = "&Modificaciï¿½n"
+       CmdModificar.Caption = "&Modificación"
        LLENA_ARTI 1
        BLOQUEA_TEXT Txt_key
        BLOQUEA_TEXT txt_alterno
@@ -10956,7 +10956,7 @@ gridrel.Cols = 4
 gridrel.Rows = 1
 gridrel.TextMatrix(0, 0) = "Cod.Orig."
 gridrel.TextMatrix(0, 1) = "Cod.Alterno"
-gridrel.TextMatrix(0, 2) = "Descripciï¿½n"
+gridrel.TextMatrix(0, 2) = "Descripción"
 gridrel.TextMatrix(0, 3) = "Calidad"
 If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
 gridrel.ColWidth(1) = 1000
@@ -11332,7 +11332,7 @@ Public Sub PROD_PROC()
 gridp.Clear
 gridp.Cols = 3
 gridp.Rows = 1
-gridp.TextMatrix(0, 0) = "Descripciï¿½n"
+gridp.TextMatrix(0, 0) = "Descripción"
 gridp.TextMatrix(0, 1) = "Codigo"
 gridp.TextMatrix(0, 2) = "Productos"
 

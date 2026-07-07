@@ -717,7 +717,7 @@ Begin VB.Form frmCLI
          End
          Begin VB.Label lblnom 
             AutoSize        =   -1  'True
-            Caption         =   "Direcciï¿½n  :"
+            Caption         =   "Dirección  :"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -1515,7 +1515,7 @@ Begin VB.Form frmCLI
          End
          Begin VB.Label lblnom 
             AutoSize        =   -1  'True
-            Caption         =   "Direcciï¿½n Trabajo"
+            Caption         =   "Dirección Trabajo"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -1816,7 +1816,7 @@ Begin VB.Form frmCLI
          End
          Begin VB.Label lblnom 
             AutoSize        =   -1  'True
-            Caption         =   "Opciï¿½n"
+            Caption         =   "Opción"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -2525,7 +2525,7 @@ PASACONTAB:
        'pu_codcia = LK_CODCIA
        'LEER_CLILOC_LLAVE
        'If Not cliloc_llave.EOF Then
-       '   MsgBox "Proveedor Existe en Compaï¿½ia ..", 48, Pub_Titulo
+       '   MsgBox "Proveedor Existe en Compañia ..", 48, Pub_Titulo
        '   Exit Sub
        'End If
        If Trim(LOC_CTA_CLI) = "" And Trim(LOC_DES_CLI) = "" And LK_CODCIA = "03" Then
@@ -2762,7 +2762,7 @@ If Left(cmdcontab.Caption, 2) = "&Q" Then
 End If
 LOC_CANCELA = 0
 If txtesposo.text = "" Then
- MsgBox "Ingrese Descripciï¿½n del cliente..", 48, Pub_Titulo
+ MsgBox "Ingrese Descripción del cliente..", 48, Pub_Titulo
  Azul txtesposo, txtesposo
  Exit Sub
 End If
@@ -2848,7 +2848,7 @@ If Left(cmdcontab2.Caption, 2) = "&Q" Then
 End If
 LOC_CANCELA = 0
 If txtesposo.text = "" Then
- MsgBox "Ingrese Descripciï¿½n del cliente..", 48, Pub_Titulo
+ MsgBox "Ingrese Descripción del cliente..", 48, Pub_Titulo
  Azul txtesposo, txtesposo
  Exit Sub
 End If
@@ -2929,12 +2929,12 @@ End If
   LblMensaje.Caption = ""
   If Trim(Nulo_Valors(gen!gen_cli_cias)) <> "" Then
     wcias = Trim(gen!gen_cli_cias)
-    MsgBox "O J O ...  Al Eliminar este Cliente tambien debe hacerlo con las demas Compaï¿½ias relacionadas : " & wcias, 48, Pub_Titulo
+    MsgBox "O J O ...  Al Eliminar este Cliente tambien debe hacerlo con las demas Compañias relacionadas : " & wcias, 48, Pub_Titulo
   End If
   If Trim(tcuenta.text) <> "" Then
-    pub_mensaje = " ï¿½Desea Eliminar el Registro, y su Relacion a Contabilidad .. ?"
+    pub_mensaje = " ¿Desea Eliminar el Registro, y su Relacion a Contabilidad .. ?"
   Else
-    pub_mensaje = " ï¿½Desea Eliminar el Registro... ?"
+    pub_mensaje = " ¿Desea Eliminar el Registro... ?"
   End If
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
@@ -3088,7 +3088,7 @@ End If
 End Sub
 
 Private Sub CmdCero_Click()
-  pub_mensaje = " ï¿½Desea Generar el " & Mid(frmCLI.CmbCGP.text, 3, Len(frmCLI.CmbCGP.text)) & " con codigo 0 ..?"
+  pub_mensaje = " ¿Desea Generar el " & Mid(frmCLI.CmbCGP.text, 3, Len(frmCLI.CmbCGP.text)) & " con codigo 0 ..?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then   ' El usuario eligiï¿½
     MENSAJE_CLI "Proceso Cancelado ..."
@@ -3123,7 +3123,7 @@ Dim valor
       Exit Sub
    End If
    
-    valor = InputBox("La Compaï¿½ia a donde copiar los datos : ", "COMPAï¿½IA", "03")
+    valor = InputBox("La Compañia a donde copiar los datos : ", "COMPAñIA", "03")
     If valor = "" Then Exit Sub
     If Trim(valor) = LK_CODCIA Then
        MsgBox "No Procede .. "
@@ -3325,7 +3325,7 @@ If Trim(lblnom(Index).Tag) = "" Then
  Exit Sub
 End If
 Dim wnombre
-wnombre = InputBox("Ingrese la Nueva Descripciï¿½n para este Campo :", Pub_Titulo, Trim(lblnom(Index).Caption))
+wnombre = InputBox("Ingrese la Nueva Descripción para este Campo :", Pub_Titulo, Trim(lblnom(Index).Caption))
 If wnombre = "" Then
   Screen.MousePointer = 0
   Exit Sub
@@ -3932,7 +3932,7 @@ If Trim(TOTCIAS) <> "" And Left(CmbCGP.text, 1) = "C" Then
        PSPAR_CLI(0) = Mid(TOTCIAS, xcuenta, 2)
        par_llave_cli.Requery
        If par_llave_cli.EOF Then
-       '     MsgBox "No Grabo en la Compaï¿½ia : " + Mid(TOTCIAS, xcuenta, 2) + " No Existe", 48, Pub_Titulo
+       '     MsgBox "No Grabo en la Compañia : " + Mid(TOTCIAS, xcuenta, 2) + " No Existe", 48, Pub_Titulo
        Else
            VAR_CIAS = Mid(TOTCIAS, xcuenta, 2)
            If Left(cmdModificar.Caption, 2) = "&G" Then
@@ -3943,7 +3943,7 @@ If Trim(TOTCIAS) <> "" And Left(CmbCGP.text, 1) = "C" Then
              pu_codcia = VAR_CIAS
              LEER_CLILOC_LLAVE
              If cliloc_llave.EOF Then
-'                MsgBox "No Grabo en la Compaï¿½ia : " + VAR_CIAS + " No Existe cliente ", 48, Pub_Titulo
+'                MsgBox "No Grabo en la Compañia : " + VAR_CIAS + " No Existe cliente ", 48, Pub_Titulo
              Else
                cliloc_llave.Edit
                Modo = "E"
@@ -3970,7 +3970,7 @@ PASA:
     pu_codcia = VAR_CIAS
     LEER_CLILOC_LLAVE
     If cliloc_llave.EOF Then
-      MsgBox "No Grabo en la Compaï¿½ia : " + VAR_CIAS + " No Existe cliente ", 48, Pub_Titulo
+      MsgBox "No Grabo en la Compañia : " + VAR_CIAS + " No Existe cliente ", 48, Pub_Titulo
     Else
       cliloc_llave.Edit
       cliloc_llave!cli_limcre = Val(frmCLI.txtlimite.text)
@@ -5032,7 +5032,7 @@ If Trim(LOC_CTA_CLI) <> "" Then
     com_llave!com_cuenta_AUTO_H = ""
   com_llave.Update
   On Error GoTo 0
-  cmdcontab.Caption = "&Quitar Relaciï¿½n Contable"
+  cmdcontab.Caption = "&Quitar Relación Contable"
  End If
 End If
 
@@ -5062,7 +5062,7 @@ If Trim(LOC_CTA_CLI2) <> "" Then
     com_llave!com_cuenta_AUTO_H = ""
     com_llave.Update
     On Error GoTo 0
-    cmdcontab2.Caption = "&Quitar Relaciï¿½n Contable"
+    cmdcontab2.Caption = "&Quitar Relación Contable"
  End If
 End If
 Exit Sub
