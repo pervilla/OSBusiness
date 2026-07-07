@@ -1,0 +1,46 @@
+Línea 1436: la clase ComctlLib.ListView del control LV_TRA no era una clase de control cargada.
+Línea 1459: la clase ComctlLib.ListView del control LV_CLI no era una clase de control cargada.
+Línea 1482: la clase ComctlLib.ListView del control LV_CCM no era una clase de control cargada.
+Línea 1505: la clase ComctlLib.ListView del control LV_VEN no era una clase de control cargada.
+Línea 2468: la clase ComctlLib.ProgressBar del control Barra no era una clase de control cargada.
+Línea 1445: el nombre de la propiedad _ExtentX de LV_TRA no es válido.
+Línea 1446: el nombre de la propiedad _ExtentY de LV_TRA no es válido.
+Línea 1447: el nombre de la propiedad View de LV_TRA no es válido.
+Línea 1448: el nombre de la propiedad Arrange de LV_TRA no es válido.
+Línea 1449: el nombre de la propiedad LabelEdit de LV_TRA no es válido.
+Línea 1450: el nombre de la propiedad LabelWrap de LV_TRA no es válido.
+Línea 1451: el nombre de la propiedad HideSelection de LV_TRA no es válido.
+Línea 1452: el nombre de la propiedad _Version de LV_TRA no es válido.
+Línea 1457: el nombre de la propiedad NumItems de LV_TRA no es válido.
+Línea 1468: el nombre de la propiedad _ExtentX de LV_CLI no es válido.
+Línea 1469: el nombre de la propiedad _ExtentY de LV_CLI no es válido.
+Línea 1470: el nombre de la propiedad View de LV_CLI no es válido.
+Línea 1471: el nombre de la propiedad Arrange de LV_CLI no es válido.
+Línea 1472: el nombre de la propiedad LabelEdit de LV_CLI no es válido.
+Línea 1473: el nombre de la propiedad LabelWrap de LV_CLI no es válido.
+Línea 1474: el nombre de la propiedad HideSelection de LV_CLI no es válido.
+Línea 1475: el nombre de la propiedad _Version de LV_CLI no es válido.
+Línea 1480: el nombre de la propiedad NumItems de LV_CLI no es válido.
+Línea 1491: el nombre de la propiedad _ExtentX de LV_CCM no es válido.
+Línea 1492: el nombre de la propiedad _ExtentY de LV_CCM no es válido.
+Línea 1493: el nombre de la propiedad View de LV_CCM no es válido.
+Línea 1494: el nombre de la propiedad Arrange de LV_CCM no es válido.
+Línea 1495: el nombre de la propiedad LabelEdit de LV_CCM no es válido.
+Línea 1496: el nombre de la propiedad LabelWrap de LV_CCM no es válido.
+Línea 1497: el nombre de la propiedad HideSelection de LV_CCM no es válido.
+Línea 1498: el nombre de la propiedad _Version de LV_CCM no es válido.
+Línea 1503: el nombre de la propiedad NumItems de LV_CCM no es válido.
+Línea 1514: el nombre de la propiedad _ExtentX de LV_VEN no es válido.
+Línea 1515: el nombre de la propiedad _ExtentY de LV_VEN no es válido.
+Línea 1516: el nombre de la propiedad View de LV_VEN no es válido.
+Línea 1517: el nombre de la propiedad Arrange de LV_VEN no es válido.
+Línea 1518: el nombre de la propiedad LabelEdit de LV_VEN no es válido.
+Línea 1519: el nombre de la propiedad LabelWrap de LV_VEN no es válido.
+Línea 1520: el nombre de la propiedad HideSelection de LV_VEN no es válido.
+Línea 1521: el nombre de la propiedad _Version de LV_VEN no es válido.
+Línea 1526: el nombre de la propiedad NumItems de LV_VEN no es válido.
+Línea 2476: el nombre de la propiedad _ExtentX de Barra no es válido.
+Línea 2477: el nombre de la propiedad _ExtentY de Barra no es válido.
+Línea 2478: el nombre de la propiedad _Version de Barra no es válido.
+Línea 2480: el nombre de la propiedad Min de Barra no es válido.
+Línea 2481: el nombre de la propiedad Max de Barra no es válido.
