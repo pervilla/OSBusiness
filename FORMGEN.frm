@@ -8307,7 +8307,8 @@ End If
 End Sub
 
 Private Sub CmdCompSin_Click(Index As Integer)
-On Error GoTo sale
+Beep
+On Error GoTo 0
 Dim ws_nomart As String
 Dim ws_artkey As Long
 Dim ws_stock As String
@@ -8325,30 +8326,75 @@ End If
 
 If Index = 0 Then  ' Stock loc.
     If ws_artkey = 0 Then
+        Beep: Beep
         MsgBox "Seleccione un articulo primero", 48, Pub_Titulo
         Exit Sub
     End If
     
     Screen.MousePointer = 11
+    ws_stock = ""
     
-    ' TEST - comentar SP y probar con MsgBox simple
-    MsgBox "Stock locales - Articulo: " & ws_artkey & " - " & ws_nomart, 64, "Prueba Stock"
+    Beep
+    MsgBox "DEBUG: Llamando SP stock", 64, "Debug"
+    
+    Set X = CN.OpenResultset("EXEC sp_stock_local " & ws_artkey & ", 'BDATOSPM'", rdOpenKeyset, rdConcurValues)
+    If Not X.EOF Then
+        ws_stock = ws_stock & "Pena Meza: " & Format(X!ARM_STOCK, "0.00")
+    End If
+    
+    Set X = CN.OpenResultset("EXEC sp_stock_local " & ws_artkey & ", 'SERVER02'", rdOpenKeyset, rdConcurValues)
+    If Not X.EOF Then
+        If ws_stock <> "" Then ws_stock = ws_stock & " | "
+        ws_stock = ws_stock & "Juanjuicillo: " & Format(X!ARM_STOCK, "0.00")
+    End If
     
     Screen.MousePointer = 0
+    
+    If ws_stock = "" Then
+        MsgBox "Sin stock en otros locales", 48, Pub_Titulo
+    Else
+        MsgBox ws_nomart & Chr(13) & ws_stock, 64, "Stock en otros locales"
+    End If
     Exit Sub
     
 ElseIf Index = 1 Then  ' Transito
     If ws_nomart = "" Then
+        Beep: Beep
         MsgBox "Seleccione un articulo primero", 48, Pub_Titulo
         Exit Sub
     End If
     
     Screen.MousePointer = 11
     
-    ' TEST - comentar SP y probar con MsgBox simple
-    MsgBox "Transito - Producto: " & ws_nomart, 64, "Prueba Transito"
+    Beep
+    MsgBox "DEBUG: Llamando SP transito", 64, "Debug"
     
+    Set X = CN.OpenResultset("EXEC sp_productos_transito '" & ws_nomart & "', 5, 3", rdOpenKeyset, rdConcurValues)
     Screen.MousePointer = 0
+    
+    If X.EOF Then
+        MsgBox "No hay productos en transito para: " & ws_nomart, 48, Pub_Titulo
+    Else
+        gridl.Visible = True
+        gridl.Clear
+        gridl.Rows = 2
+        gridl.TextMatrix(0, 0) = "Producto"
+        gridl.TextMatrix(0, 1) = "Cant."
+        gridl.TextMatrix(0, 2) = "Precio"
+        gridl.TextMatrix(0, 3) = "Nro.Factura"
+        gridl.TextMatrix(0, 4) = "Fecha"
+        gridl.TextMatrix(0, 5) = "Proveedor"
+        Do Until X.EOF
+            gridl.Rows = gridl.Rows + 1
+            gridl.TextMatrix(gridl.Rows - 1, 0) = Nulo_Valors(X!ART_NOMBRE)
+            gridl.TextMatrix(gridl.Rows - 1, 1) = Nulo_Valor0(X!CANTIDAD)
+            gridl.TextMatrix(gridl.Rows - 1, 2) = Nulo_Valor0(X!PRECIO)
+            gridl.TextMatrix(gridl.Rows - 1, 3) = Nulo_Valors(X!NRO_FACTURA)
+            gridl.TextMatrix(gridl.Rows - 1, 4) = Nulo_Valors(X!FECHA_DOC)
+            gridl.TextMatrix(gridl.Rows - 1, 5) = Nulo_Valors(X!PROVEEDOR)
+            X.MoveNext
+        Loop
+    End If
     Exit Sub
     
 ElseIf Index = 2 Then  ' Indicaciones/Otros (oculto)
