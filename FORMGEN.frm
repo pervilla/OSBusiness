@@ -8326,16 +8326,12 @@ End If
 
 If Index = 0 Then  ' Stock loc.
     If ws_artkey = 0 Then
-        Beep: Beep
         MsgBox "Seleccione un articulo primero", 48, Pub_Titulo
         Exit Sub
     End If
     
     Screen.MousePointer = 11
     ws_stock = ""
-    
-    Beep
-    MsgBox "DEBUG: Llamando SP stock", 64, "Debug"
     
     Set X = CN.OpenResultset("EXEC sp_stock_local " & ws_artkey & ", 'BDATOSPM'", rdOpenKeyset, rdConcurValues)
     If Not X.EOF Then
@@ -8359,15 +8355,11 @@ If Index = 0 Then  ' Stock loc.
     
 ElseIf Index = 1 Then  ' Transito
     If ws_nomart = "" Then
-        Beep: Beep
         MsgBox "Seleccione un articulo primero", 48, Pub_Titulo
         Exit Sub
     End If
     
     Screen.MousePointer = 11
-    
-    Beep
-    MsgBox "DEBUG: Llamando SP transito", 64, "Debug"
     
     Set X = CN.OpenResultset("EXEC sp_productos_transito '" & ws_nomart & "', 5, 3", rdOpenKeyset, rdConcurValues)
     Screen.MousePointer = 0
