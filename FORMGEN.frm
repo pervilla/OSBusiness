@@ -8330,28 +8330,11 @@ If Index = 0 Then  ' Stock loc.
     End If
     
     Screen.MousePointer = 11
-    ws_stock = ""
     
-    ' Consultar BDATOSPM (Pena Meza)
-    Set X = CN.OpenResultset("EXEC sp_stock_local " & ws_artkey & ", 'BDATOSPM'", rdOpenKeyset, rdConcurValues)
-    If Not X.EOF Then
-        ws_stock = ws_stock & "Pena Meza: " & Format(X!ARM_STOCK, "0.00")
-    End If
-    
-    ' Consultar SERVER02 (Juanjuicillo)
-    Set X = CN.OpenResultset("EXEC sp_stock_local " & ws_artkey & ", 'SERVER02'", rdOpenKeyset, rdConcurValues)
-    If Not X.EOF Then
-        If ws_stock <> "" Then ws_stock = ws_stock & " | "
-        ws_stock = ws_stock & "Juanjuicillo: " & Format(X!ARM_STOCK, "0.00")
-    End If
+    ' TEST - comentar SP y probar con MsgBox simple
+    MsgBox "Stock locales - Articulo: " & ws_artkey & " - " & ws_nomart, 64, "Prueba Stock"
     
     Screen.MousePointer = 0
-    
-    If ws_stock = "" Then
-        MsgBox "Sin stock en otros locales", 48, Pub_Titulo
-    Else
-        MsgBox ws_nomart & Chr(13) & ws_stock, 64, "Stock en otros locales"
-    End If
     Exit Sub
     
 ElseIf Index = 1 Then  ' Transito
@@ -8361,33 +8344,11 @@ ElseIf Index = 1 Then  ' Transito
     End If
     
     Screen.MousePointer = 11
-    Set X = CN.OpenResultset("EXEC sp_productos_transito '" & ws_nomart & "', 5, 3", rdOpenKeyset, rdConcurValues)
-    Screen.MousePointer = 0
     
-    If X.EOF Then
-        MsgBox "No hay productos en transito para: " & ws_nomart, 48, Pub_Titulo
-    Else
-        ' Mostrar en gridl
-        gridl.Visible = True
-        gridl.Clear
-        gridl.Rows = 2
-        gridl.TextMatrix(0, 0) = "Producto"
-        gridl.TextMatrix(0, 1) = "Cant."
-        gridl.TextMatrix(0, 2) = "Precio"
-        gridl.TextMatrix(0, 3) = "Nro.Factura"
-        gridl.TextMatrix(0, 4) = "Fecha"
-        gridl.TextMatrix(0, 5) = "Proveedor"
-        Do Until X.EOF
-            gridl.Rows = gridl.Rows + 1
-            gridl.TextMatrix(gridl.Rows - 1, 0) = Nulo_Valors(X!ART_NOMBRE)
-            gridl.TextMatrix(gridl.Rows - 1, 1) = Nulo_Valor0(X!CANTIDAD)
-            gridl.TextMatrix(gridl.Rows - 1, 2) = Nulo_Valor0(X!PRECIO)
-            gridl.TextMatrix(gridl.Rows - 1, 3) = Nulo_Valors(X!NRO_FACTURA)
-            gridl.TextMatrix(gridl.Rows - 1, 4) = Nulo_Valors(X!FECHA_DOC)
-            gridl.TextMatrix(gridl.Rows - 1, 5) = Nulo_Valors(X!PROVEEDOR)
-            X.MoveNext
-        Loop
-    End If
+    ' TEST - comentar SP y probar con MsgBox simple
+    MsgBox "Transito - Producto: " & ws_nomart, 64, "Prueba Transito"
+    
+    Screen.MousePointer = 0
     Exit Sub
     
 ElseIf Index = 2 Then  ' Indicaciones/Otros (oculto)
@@ -9377,7 +9338,7 @@ End If
 '  CmdCompSin_Click 1
 '  Exit Sub
 '  End If
-End If
+'End If
 If KeyCode = 120 Then ' F9
 If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
       MDIForm1.Toolbar1.Buttons.Item(12).ToolTipText = "Busqueda nombre de articulo."
