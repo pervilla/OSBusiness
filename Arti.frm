@@ -2,6 +2,7 @@ VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmARTI 
    Caption         =   "Maestro de Articulos"
    ClientHeight    =   12255
@@ -23,27 +24,26 @@ Begin VB.Form frmARTI
       Top             =   3888
       Width           =   1335
    End
-   Begin VB.PictureBox ListView1 
-      BackColor       =   &H00FFFFFF&
-      BeginProperty Font 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H00000080&
-      Height          =   540
-      Left            =   10320
-      ScaleHeight     =   480
-      ScaleWidth      =   1545
-      TabIndex        =   254
-      Top             =   7200
-      Visible         =   0   'False
-      Width           =   1605
-   End
+    Begin MSComctlLib.ListView ListView1 
+       Height          =   540
+       Left            =   10320
+       TabIndex        =   254
+       Top             =   7200
+       Visible         =   0   'False
+       Width           =   1605
+       _ExtentX        =   2831
+       _ExtentY        =   953
+       View            =   3
+       Arrange         =   1
+       LabelEdit       =   1
+       LabelWrap       =   -1  'True
+       HideSelection   =   0   'False
+       _Version        =   393217
+       ForeColor       =   128
+       BackColor       =   16777215
+       Appearance      =   1
+       NumItems        =   0
+    End
    Begin VB.Frame fraact6 
       Caption         =   "Afecta a la Lista de Precios :"
       Height          =   1095
@@ -1125,7 +1125,7 @@ Begin VB.Form frmARTI
          Width           =   1335
       End
       Begin VB.CommandButton cmdconfirma 
-         Caption         =   "Con&firmar Grabaciï¿½n"
+         Caption         =   "Con&firmar Grabación"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1211,7 +1211,7 @@ Begin VB.Form frmARTI
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      TabCaption(0)   =   "&Definiciï¿½n de Estructura"
+      TabCaption(0)   =   "&Definición de Estructura"
       TabPicture(0)   =   "Arti.frx":0A97
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "Fvarios"
@@ -1621,7 +1621,7 @@ Begin VB.Form frmARTI
             Width           =   2385
          End
          Begin VB.CheckBox exigv 
-            Caption         =   "Exoneraciï¿½n IGV"
+            Caption         =   "Exoneración IGV"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   9.75
@@ -1766,7 +1766,7 @@ Begin VB.Form frmARTI
             Width           =   855
          End
          Begin VB.CommandButton cmdquitar 
-            Caption         =   "&Quitar Relaciï¿½n"
+            Caption         =   "&Quitar Relación"
             Height          =   600
             Left            =   5640
             Picture         =   "Arti.frx":136F
@@ -1797,7 +1797,7 @@ Begin VB.Form frmARTI
          End
          Begin VB.Label lblLabels 
             AutoSize        =   -1  'True
-            Caption         =   "Codigo de Relaciï¿½n"
+            Caption         =   "Codigo de Relación"
             ForeColor       =   &H00000000&
             Height          =   195
             Index           =   5
@@ -1818,7 +1818,7 @@ Begin VB.Form frmARTI
          End
       End
       Begin VB.Frame frmpro 
-         Caption         =   "Relaciï¿½n de Procesos"
+         Caption         =   "Relación de Procesos"
          Height          =   375
          Left            =   -74640
          TabIndex        =   81
@@ -1841,7 +1841,7 @@ Begin VB.Form frmARTI
             Width           =   1140
          End
          Begin VB.CommandButton cmdp 
-            Caption         =   "Activar Relaciï¿½n"
+            Caption         =   "Activar Relación"
             Height          =   735
             Left            =   0
             TabIndex        =   83
@@ -2432,7 +2432,7 @@ Begin VB.Form frmARTI
          End
          Begin VB.Label lblart 
             AutoSize        =   -1  'True
-            Caption         =   "Divisiï¿½n:"
+            Caption         =   "División:"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -2487,7 +2487,7 @@ Begin VB.Form frmARTI
             Width           =   1455
          End
          Begin VB.CheckBox cheespecial 
-            Caption         =   "Actualizaciï¿½n en Bloque"
+            Caption         =   "Actualización en Bloque"
             ForeColor       =   &H00808000&
             Height          =   495
             Left            =   3720
@@ -3455,7 +3455,7 @@ Begin VB.Form frmARTI
          Width           =   900
       End
       Begin VB.Label Label2 
-         Caption         =   "    Relaciï¿½n      Cia  -  Cuenta"
+         Caption         =   "    Relación      Cia  -  Cuenta"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -4015,7 +4015,7 @@ Begin VB.Form frmARTI
       End
       Begin VB.Label lblnomarti 
          AutoSize        =   -1  'True
-         Caption         =   "Descripciï¿½n del Articulo"
+         Caption         =   "Descripción del Articulo"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -4118,7 +4118,7 @@ Begin VB.Form frmARTI
       Width           =   1300
    End
    Begin VB.CommandButton cmdModificar 
-      Caption         =   "&Modificaciï¿½n"
+      Caption         =   "&Modificación"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -5246,10 +5246,10 @@ Dim ARMAD  As String
 Dim ARMAS As String
 If Val(cmbTipo.Text) = 1 Or Val(cmbTipo.Text) = -1 Then
 Else
-  MsgBox "Selecione el Tipo de Operaciï¿½n. ", 48, Pub_Titulo
+  MsgBox "Selecione el Tipo de Operación. ", 48, Pub_Titulo
   Exit Sub
 End If
-pub_mensaje = "Actualziar esta Lista ï¿½Desea Continuar... ?"
+pub_mensaje = "Actualziar esta Lista ¿Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -5387,7 +5387,7 @@ Else
   Exit Sub
 End If
 MsgBox "Usted a escogido la opcion de : " & Chr(13) & cmdptipo.Text, 48, Pub_Titulo
-pub_mensaje = "Confirmar la actualizacion de Precios...   ï¿½Desea Continuar... ?"
+pub_mensaje = "Confirmar la actualizacion de Precios...   ¿Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -5849,7 +5849,7 @@ chep9.Value = 0
 
 cmdptipo.Clear
 cmdptipo.AddItem "1 =Porcentaje Adicional al Costo Promedio C/IGV"
-cmdptipo.AddItem "2 =Porcentaje de Disminuciï¿½n al Precio C/IGV"
+cmdptipo.AddItem "2 =Porcentaje de Disminución al Precio C/IGV"
 cmdptipo.ListIndex = 0
 fraactlinea.Visible = True
 End Sub
@@ -5990,7 +5990,7 @@ llave_data.MoveNext
 Loop
 
 cmdactvend.Caption = "Actualizar"
-MsgBox "Actualizaciï¿½n Terminada "
+MsgBox "Actualización Terminada "
 cheespecial.Value = 0
 cmdactvend.Enabled = False
 
@@ -6015,14 +6015,14 @@ If Left(cmbcal.Text, 1) = "<" Then
  Exit Sub
 End If
 
-wnombre = InputBox("Ingrese la Descripciï¿½n del Articulo :", Pub_Titulo, Trim(txtnombre.Text))
+wnombre = InputBox("Ingrese la Descripción del Articulo :", Pub_Titulo, Trim(txtnombre.Text))
 If wnombre = "" Then
   Screen.MousePointer = 0
   Exit Sub
 End If
 If Trim(wnombre) = "" Then
   Screen.MousePointer = 0
-  MsgBox "Descripciï¿½n NO Validad.", 48, Pub_Titulo
+  MsgBox "Descripción NO Validad.", 48, Pub_Titulo
   Exit Sub
 End If
 LOC_NOMBRE = wnombre
@@ -6414,7 +6414,7 @@ Loop
 pb.Visible = False
 pbMin = 0
 cheapor.Value = 0
-MsgBox "Actualizaciï¿½n Terminada.", 48, Pub_Titulo
+MsgBox "Actualización Terminada.", 48, Pub_Titulo
 
 End Sub
 
@@ -6605,7 +6605,7 @@ End If
                 Else
                     LblMensaje.Visible = False
                     Screen.MousePointer = 0
-                    MsgBox "NO se Puede Eliminar ...  ARTICULO CON HISTORIA " & Chr(13) & "Compaï¿½ia : " & ws_codcia, 48, Pub_Titulo
+                    MsgBox "NO se Puede Eliminar ...  ARTICULO CON HISTORIA " & Chr(13) & "Compañia : " & ws_codcia, 48, Pub_Titulo
                     Exit Sub
                 End If
             End If
@@ -6649,12 +6649,12 @@ End If
     If LK_CODCIA <> "00" Then
       Screen.MousePointer = 0
       LblMensaje.Visible = False
-      MsgBox "No Procede la Eliminaciï¿½n.  Punto de Venta no permitido!!(solo en la Cia. central)", 48, Pub_Titulo
+      MsgBox "No Procede la Eliminación.  Punto de Venta no permitido!!(solo en la Cia. central)", 48, Pub_Titulo
       Exit Sub
     End If
   End If
   LblMensaje.Visible = False
-  pub_mensaje = " ï¿½Desea Eliminar el Articulo... ?"
+  pub_mensaje = " ¿Desea Eliminar el Articulo... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
       LblMensaje.Visible = False
@@ -7072,7 +7072,7 @@ Else
             If Not arm_llave.EOF Then
               If Val(arm_llave!arm_stock) <> 0 Then
                  Screen.MousePointer = 0
-                 MsgBox "No Procede al desactivar, Producto Tiene Stock." & Chr(13) & "Compaï¿½ia: " & pu_codcia, 48, Pub_Titulo
+                 MsgBox "No Procede al desactivar, Producto Tiene Stock." & Chr(13) & "Compañia: " & pu_codcia, 48, Pub_Titulo
                  Exit Sub
                End If
             End If
@@ -7132,7 +7132,7 @@ Else
           frmPreciosArti.Show 1
         End If
     End If
-    CmdModificar.Caption = "&Modificaciï¿½n"
+    CmdModificar.Caption = "&Modificación"
     cmdcancelar.Enabled = True
     cmdEliminar.Enabled = True
     cmdAgregar.Enabled = True
@@ -7162,7 +7162,7 @@ ESCAPA:
         MsgBox Err.Number & "  " & Err.Description & "  Intente Nuevamente."
     End If
     CN.Execute "Rollback Transaction", rdExecDirect
-    CmdModificar.Caption = "&Modificaciï¿½n"
+    CmdModificar.Caption = "&Modificación"
     cmdcancelar.Enabled = True
     cmdEliminar.Enabled = True
     CmdModificar.Enabled = True
@@ -8085,7 +8085,7 @@ If Trim(Label3(Index).Tag) = "" Then
  Exit Sub
 End If
 Dim wnombre
-wnombre = InputBox("Ingrese la Nueva Descripciï¿½n para este Campo :", Pub_Titulo, Trim(Label3(Index).Caption))
+wnombre = InputBox("Ingrese la Nueva Descripción para este Campo :", Pub_Titulo, Trim(Label3(Index).Caption))
 If wnombre = "" Then
   Screen.MousePointer = 0
   Exit Sub
@@ -8771,7 +8771,7 @@ If pu_codcia = LK_CODCIA Then
    End If
    rs_regcuotas.Update
    
-   ' SOLO COMPAï¿½IA ACTUAL
+   ' SOLO COMPAñIA ACTUAL
     pub_cadena = "DELETE FROM FVENTAS WHERE FV_CODCIA = '" & LK_CODCIA & "' AND FV_TIPO = 2 AND FV_CODIGO = " & (artloc_llave!art_key)
     CN.Execute pub_cadena
     pub_cadena = "SELECT * FROM FVENTAS WHERE FV_CODCIA = '" & LK_CODCIA & "' AND FV_TIPO = 2 AND FV_CODIGO = " & (artloc_llave!art_key)
@@ -9054,7 +9054,7 @@ If Left(cmdAgregar.Caption, 2) = "&G" Then
      arm_llave!arm_saldo_n2 = 0
      arm_llave!ARM_FECHA_ULT = #1/1/1900#
      arm_llave.Update
-     MENSAJE_ARTI "Articulo Nuevo en Compaï¿½ia . . ."
+     MENSAJE_ARTI "Articulo Nuevo en Compañia . . ."
     Else
       MsgBox "Codigo Existe en tabla: Articulo verificar ...", 48, Pub_Titulo
     End If
@@ -10269,7 +10269,7 @@ If KeyCode = 46 Then
   If wflag_bloq_descrip = "A" Then Exit Sub
   If grid_unid.Row <> 1 Then
     If Trim(grid_unid.TextMatrix(grid_unid.Row, 0)) <> "" And Val(grid_unid.TextMatrix(grid_unid.Row, 1)) <> 0 Then
-      pub_mensaje = " Eliminar la Unidad de : " & Trim(grid_unid.TextMatrix(grid_unid.Row, 0)) & " ï¿½Desea Continuar... ?"
+      pub_mensaje = " Eliminar la Unidad de : " & Trim(grid_unid.TextMatrix(grid_unid.Row, 0)) & " ¿Desea Continuar... ?"
       Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
       If Pub_Respuesta = vbNo Then
         grid_unid.SetFocus
@@ -10878,7 +10878,7 @@ Public Sub PROCESO_CANCELAR()
     End If
     Screen.MousePointer = 11
     If Left(CmdModificar.Caption, 2) = "&G" Then
-       CmdModificar.Caption = "&Modificaciï¿½n"
+       CmdModificar.Caption = "&Modificación"
        LLENA_ARTI 1
        BLOQUEA_TEXT Txt_key
        BLOQUEA_TEXT txt_alterno
@@ -10996,7 +10996,7 @@ gridrel.Cols = 4
 gridrel.Rows = 1
 gridrel.TextMatrix(0, 0) = "Cod.Orig."
 gridrel.TextMatrix(0, 1) = "Cod.Alterno"
-gridrel.TextMatrix(0, 2) = "Descripciï¿½n"
+gridrel.TextMatrix(0, 2) = "Descripción"
 gridrel.TextMatrix(0, 3) = "Calidad"
 If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
 gridrel.ColWidth(1) = 1000
@@ -11372,7 +11372,7 @@ Public Sub PROD_PROC()
 gridp.Clear
 gridp.Cols = 3
 gridp.Rows = 1
-gridp.TextMatrix(0, 0) = "Descripciï¿½n"
+gridp.TextMatrix(0, 0) = "Descripción"
 gridp.TextMatrix(0, 1) = "Codigo"
 gridp.TextMatrix(0, 2) = "Productos"
 
