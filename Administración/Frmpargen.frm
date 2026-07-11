@@ -1040,7 +1040,7 @@ Begin VB.Form FrmParGen
                Width           =   975
             End
             Begin VB.Label Label1 
-               Caption         =   "N� N/C. Inicial"
+               Caption         =   "Nro N/C. Inicial"
                Height          =   255
                Index           =   14
                Left            =   240
@@ -1049,7 +1049,7 @@ Begin VB.Form FrmParGen
                Width           =   1095
             End
             Begin VB.Label Label1 
-               Caption         =   "N� N/C  Final"
+               Caption         =   "Nro N/C  Final"
                Height          =   255
                Index           =   15
                Left            =   240
@@ -1058,7 +1058,7 @@ Begin VB.Form FrmParGen
                Width           =   975
             End
             Begin VB.Label Label1 
-               Caption         =   "N� N/D  Final"
+               Caption         =   "Nro N/D  Final"
                Height          =   255
                Index           =   16
                Left            =   1560
@@ -1067,7 +1067,7 @@ Begin VB.Form FrmParGen
                Width           =   1095
             End
             Begin VB.Label Label1 
-               Caption         =   "N� N/ D Inicial"
+               Caption         =   "Nro N/ D Inicial"
                Height          =   255
                Index           =   17
                Left            =   1560

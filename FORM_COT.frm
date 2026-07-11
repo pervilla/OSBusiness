@@ -1070,7 +1070,7 @@ Begin VB.Form FORM_COT
       End
       Begin VB.Label lcodart 
          BackColor       =   &H80000001&
-         Caption         =   "N� de Pedido:"
+         Caption         =   "Nro de Pedido:"
          ForeColor       =   &H00E0E0E0&
          Height          =   255
          Index           =   5
@@ -1595,7 +1595,7 @@ Begin VB.Form FORM_COT
       Width           =   525
    End
    Begin VB.Label lcodart 
-      Caption         =   "N�. Doc"
+      Caption         =   "Nro. Doc"
       Height          =   255
       Index           =   0
       Left            =   8040

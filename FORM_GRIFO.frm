@@ -10485,7 +10485,7 @@ End If
 
 far_llave.MoveLast
 'If far_llave!far_estado <> "E" And LK_CODTRA <> 1401 And LK_CODTRA <> 2414 Then
-'  MsgBox "Nï¿½. Documento: " + i_numser.Text + " - " + i_numfac.Text + "  - está  Emitido...no procede", 48, Pub_Titulo
+'  MsgBox "Nro. Documento: " + i_numser.Text + " - " + i_numfac.Text + "  - está  Emitido...no procede", 48, Pub_Titulo
 '  i_numfac.Text = ""
 '  i_numfac.SetFocus
 '  i_cambio.Value = 0

@@ -1745,7 +1745,7 @@ Begin VB.Form FrmImp2
       End
    End
    Begin VB.CheckBox chestands 
-      Caption         =   "Multiplicar Monto por N� de Stands"
+      Caption         =   "Multiplicar Monto por Nro de Stands"
       ForeColor       =   &H00808000&
       Height          =   255
       Left            =   3240

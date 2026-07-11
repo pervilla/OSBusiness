@@ -386,11 +386,11 @@ Private Sub cmdmostrar_Click()
 Dim PSCUO_VENDEDOR As rdoQuery
 Dim cuo_vendedor As rdoResultset
 If Not IsDate(fecha1.Caption) Then
- MsgBox "Verificar Configuración Regional .. no procde las Fechas Nï¿½1", 48, Pub_Titulo
+ MsgBox "Verificar Configuración Regional .. no procde las Fechas Nro1", 48, Pub_Titulo
  Exit Sub
 End If
 If Not IsDate(fecha2.Caption) Then
- MsgBox "Verificar Configuración Regional .. no procde las Fechas Nï¿½1", 48, Pub_Titulo
+ MsgBox "Verificar Configuración Regional .. no procde las Fechas Nro1", 48, Pub_Titulo
  Exit Sub
 End If
 DoEvents

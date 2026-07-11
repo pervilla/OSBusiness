@@ -133,7 +133,7 @@ Begin VB.Form frmARTI
          Width           =   1215
       End
       Begin VB.Label Label10 
-         Caption         =   "N� Lista a Usar :"
+         Caption         =   "Nro Lista a Usar :"
          Height          =   255
          Index           =   0
          Left            =   1920
@@ -3198,7 +3198,7 @@ Begin VB.Form frmARTI
       End
       Begin VB.Label LblDatos 
          AutoSize        =   -1  'True
-         Caption         =   "N�. Dir."
+         Caption         =   "Nro. Dir."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25

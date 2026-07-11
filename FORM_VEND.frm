@@ -1034,7 +1034,7 @@ Begin VB.Form FORM_COTV
       Width           =   525
    End
    Begin VB.Label lcodart 
-      Caption         =   "N�. Doc"
+      Caption         =   "Nro. Doc"
       Height          =   255
       Index           =   0
       Left            =   8040

@@ -695,7 +695,7 @@ Begin VB.Form FORM_PED
          Width           =   1215
       End
       Begin VB.Label lcodart 
-         Caption         =   "N�. Doc"
+         Caption         =   "Nro. Doc"
          ForeColor       =   &H00808000&
          Height          =   255
          Index           =   0

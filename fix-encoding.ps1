@@ -129,7 +129,13 @@ $corrections = @(
     @("52 65 6C 61 63 69 EF BF BD 6E", "52 65 6C 61 63 69 F3 6E"), # Relación
     @("52 61 7A EF BF BD 6E", "52 61 7A F3 6E"), # Razón
     
-    @("52 65 73 EF BF BD 6D 65 6E", "52 65 73 FA 6D 65 6E")
+    @("52 65 73 EF BF BD 6D 65 6E", "52 65 73 FA 6D 65 6E"),
+    
+    # "N° Lista a Usar :" -> "Nro Lista a Usar :"
+    @("4E EF BF BD 20 4C 69 73 74 61 20 61 20 55 73 61 72 20 3A", "4E 72 6F 20 4C 69 73 74 61 20 61 20 55 73 61 72 20 3A"),
+    
+    # General: N° -> Nro (aplica a todos los N° corrompidos)
+    @("4E EF BF BD", "4E 72 6F")
 )
 
 # Apply all corrections

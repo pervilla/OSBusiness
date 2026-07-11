@@ -696,7 +696,7 @@ Begin VB.Form frmCLI
          Begin VB.Label lblnom 
             Alignment       =   2  'Center
             AutoSize        =   -1  'True
-            Caption         =   "N� Dir."
+            Caption         =   "Nro Dir."
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -1491,7 +1491,7 @@ Begin VB.Form frmCLI
          Begin VB.Label lblnom 
             Alignment       =   2  'Center
             AutoSize        =   -1  'True
-            Caption         =   "N�. Dir."
+            Caption         =   "Nro. Dir."
             DataSource      =   "3"
             BeginProperty Font 
                Name            =   "MS Sans Serif"

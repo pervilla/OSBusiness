@@ -186,7 +186,7 @@ Begin VB.Form frmDocu
          Y2              =   1080
       End
       Begin VB.Label lcruze 
-         Caption         =   "Doc. N� 2:"
+         Caption         =   "Doc. Nro 2:"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -205,7 +205,7 @@ Begin VB.Form frmDocu
          Width           =   855
       End
       Begin VB.Label lcruze 
-         Caption         =   "Doc. N� 1:"
+         Caption         =   "Doc. Nro 1:"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -1804,7 +1804,7 @@ Begin VB.Form frmDocu
       End
       Begin VB.Label lblNumfac 
          BackStyle       =   0  'Transparent
-         Caption         =   "N� de Documento"
+         Caption         =   "Nro de Documento"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
