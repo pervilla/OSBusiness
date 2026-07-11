@@ -163,7 +163,7 @@ Begin VB.Form frmOpcion
          Width           =   1695
       End
       Begin VB.Label Label3 
-         Caption         =   "Año"
+         Caption         =   "Aï¿½o"
          Height          =   375
          Left            =   3240
          TabIndex        =   7
@@ -180,7 +180,7 @@ Begin VB.Form frmOpcion
          Width           =   855
       End
       Begin VB.Label Label1 
-         Caption         =   "Bloqueo por Meses (Ninguna modificación que afecten el costo)"
+         Caption         =   "Bloqueo por Meses (Ninguna modificaciï¿½n que afecten el costo)"
          Height          =   735
          Left            =   120
          TabIndex        =   2
@@ -318,4 +318,16 @@ cmdano.AddItem "2004"
 cmdano.AddItem "2005"
 cmdano.AddItem "2006"
 
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub

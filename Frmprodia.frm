@@ -23,7 +23,7 @@ Begin VB.Form PRODIA
    ScaleHeight     =   5895
    ScaleWidth      =   3885
    Begin VB.Frame Frame3 
-      Caption         =   "Situaciï¿½n de Operaciones de la Compañia: "
+      Caption         =   "Situaciï¿½n de Operaciones de la Compaï¿½ia: "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -102,7 +102,7 @@ Begin VB.Form PRODIA
    End
    Begin VB.CommandButton Command1 
       BackColor       =   &H00C0C0C0&
-      Caption         =   "Cerrar Operaciones del Día."
+      Caption         =   "Cerrar Operaciones del Dï¿½a."
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   8.25
@@ -178,7 +178,7 @@ Begin VB.Form PRODIA
          Width           =   3375
       End
       Begin VB.Label Label1 
-         Caption         =   "Cierre de Compañia(s) :"
+         Caption         =   "Cierre de Compaï¿½ia(s) :"
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   8.25
@@ -222,7 +222,7 @@ Begin VB.Form PRODIA
       Width           =   3975
    End
    Begin VB.Label Label2 
-      Caption         =   "Día:"
+      Caption         =   "Dï¿½a:"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -410,16 +410,16 @@ ww_dias = 0
 wcodven = 0
 ws_saldo_caa = 0
 If GEN!gen_cierre_todas = 0 Then
-    pub_mensaje = "CIERRE DEL DIA DE LA EMPRESA : " & Trim(par_llave!par_nombre) & " ¿Desea Continuar... ?"
+    pub_mensaje = "CIERRE DEL DIA DE LA EMPRESA : " & Trim(par_llave!par_nombre) & " ï¿½Desea Continuar... ?"
 Else
-    pub_mensaje = "CIERRE DEL DIA DE EMPRESA(S) !!! ...   ¿Desea Continuar... ?"
+    pub_mensaje = "CIERRE DEL DIA DE EMPRESA(S) !!! ...   ï¿½Desea Continuar... ?"
 End If
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
 End If
 If par_llave!PAR_FECHA_DIA <> LK_FECHA_DIA Then
-   MsgBox "!La Fecha del Sistema ha cambiado, ya se cerro el día de la compañia ..!, el sietma se cerrarï¿½ ", 48, Pub_Titulo
+   MsgBox "!La Fecha del Sistema ha cambiado, ya se cerro el dï¿½a de la compaï¿½ia ..!, el sietma se cerrarï¿½ ", 48, Pub_Titulo
    End
 End If
 
@@ -611,7 +611,7 @@ solo_cierre:
    cal_llave.Edit
    cal_llave!CAL_INDICE = 1
    cal_llave.Update
-   'agfkn ï¿½asghdíahgï¿½khagfdsï¿½kafdsga sgfda sdfgasfd
+   'agfkn ï¿½asghdï¿½ahgï¿½khagfdsï¿½kafdsga sgfda sdfgasfd
    GoSub manda_numero
    If Trim(par_llave!par_ruta_imp) <> "" Then
       If LK_CODCIA <> "01" And LK_CODCIA <> "07" And LK_CODCIA <> "10" And LK_CODCIA <> "05" And LK_CODCIA <> "09" And LK_CODCIA <> "50" And LK_CODCIA <> "11" And LK_CODCIA <> "25" And LK_CODCIA <> "26" And LK_CODCIA <> "27" And LK_CODCIA <> "28" And LK_CODCIA <> "29" Then GoTo salta_grifo
@@ -918,7 +918,7 @@ Dim ws_codcia As Integer
 If LK_EMP_PTO = "A" Then
    If LK_CODCIA <> "00" Then
      Screen.MousePointer = 0
-     MsgBox "Se Encuentra en punto de Venta. El Cierre del día se ejecuta en la Compañia Central ", 48, Pub_Titulo
+     MsgBox "Se Encuentra en punto de Venta. El Cierre del dï¿½a se ejecuta en la Compaï¿½ia Central ", 48, Pub_Titulo
      Unload PRODIA
      Exit Sub
    End If
@@ -1006,13 +1006,13 @@ Set FAR_TRANS = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdC
 If Not FAR_TRANS.EOF Then
     Screen.MousePointer = 0
     If Trim(LK_CODUSU) = "ADMIN" Or Trim(LK_CODUSU) = "SUPER" Then
-       MsgBox "Existe Mercaderia en Transito, Verificar con las Operaciónes de Recepciï¿½n de Mercaderia, Tiene el acceso!!!!"
+       MsgBox "Existe Mercaderia en Transito, Verificar con las Operaciï¿½nes de Recepciï¿½n de Mercaderia, Tiene el acceso!!!!"
     Else
-       MsgBox "Existe Mercaderia en Transito, Verificar con las Operaciónes de Recepciï¿½n de Mercaderia, No Procede,"
+       MsgBox "Existe Mercaderia en Transito, Verificar con las Operaciï¿½nes de Recepciï¿½n de Mercaderia, No Procede,"
        Unload PRODIA
        Exit Sub
     End If
-    'pub_mensaje = "¿Desea Continuar de Todas Maneras ... ?"
+    'pub_mensaje = "ï¿½Desea Continuar de Todas Maneras ... ?"
     'Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     'If Pub_Respuesta = vbNo Then
     '   Unload PRODIA
@@ -1026,9 +1026,9 @@ Set FAR_TRANS = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdC
 If Not FAR_TRANS.EOF Then
     Screen.MousePointer = 0
     'If Trim(LK_CODUSU) = "ADMIN" Or Trim(LK_CODUSU) = "SUPER" Then
-    '   MsgBox "Existe Mercaderia en Transito, Verificar con las Operaciónes de Recepciï¿½n de Mercaderia, Tiene el acceso!!!!"
+    '   MsgBox "Existe Mercaderia en Transito, Verificar con las Operaciï¿½nes de Recepciï¿½n de Mercaderia, Tiene el acceso!!!!"
     'Else
-       MsgBox "Existe Efectivo Transito, Verificar con las Operaciónes de Recepciï¿½n de Efectivo Operación: 5375, No Procede,"
+       MsgBox "Existe Efectivo Transito, Verificar con las Operaciï¿½nes de Recepciï¿½n de Efectivo Operaciï¿½n: 5375, No Procede,"
        Unload PRODIA
        Exit Sub
     'End If
@@ -1082,7 +1082,7 @@ PS_REP01(1) = LK_FECHA_DIA
 Set llave_rep01 = PS_REP01.OpenResultset(rdOpenKeyset, rdConcurValues)
 If llave_rep01.EOF Then
    MsgBox "OJO !!! El Dia esta sin Operaciones de Venta ", 48, Pub_Titulo
-   pub_mensaje = "El dia esta sin operaciones de Venta !!! ...   ¿Desea Continuar... ?"
+   pub_mensaje = "El dia esta sin operaciones de Venta !!! ...   ï¿½Desea Continuar... ?"
    Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
    If Pub_Respuesta = vbNo Then
      Screen.MousePointer = 0
@@ -1126,7 +1126,7 @@ If option1(0).Visible = False Then GoTo fin
 For fila = 0 To EMP.ListCount - 1
    EMP.ListIndex = fila
    If Trim(Left(EMP.Text, 2)) = "" Then
-     MsgBox "Seleccione de la lista una Compañia.", 48, Pub_Titulo
+     MsgBox "Seleccione de la lista una Compaï¿½ia.", 48, Pub_Titulo
      EMP.SetFocus
      Exit Sub
    End If
@@ -1172,4 +1172,16 @@ End Sub
 
 Private Sub Timer1_Timer()
 lblcierre.Visible = Not lblcierre.Visible
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub

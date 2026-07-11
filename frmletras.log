@@ -1,4 +1,2 @@
-Línea 478: la clase OSControlsUser.ctlMaskEdBox del control txtFechaVcto no era una clase de control cargada.
-Línea 499: la clase OSControlsUser.ctlMaskEdBox del control txtFechaEntrega no era una clase de control cargada.
-Línea 520: la clase OSControlsUser.ctlMaskEdBox del control txtFechaDevolucion no era una clase de control cargada.
-Línea 1496: la clase OSControlsUser.OSFindItem del control txtCP no era una clase de control cargada.
+Línea 1497: el nombre de la propiedad _ExtentX de txtCP no es válido.
+Línea 1498: el nombre de la propiedad _ExtentY de txtCP no es válido.

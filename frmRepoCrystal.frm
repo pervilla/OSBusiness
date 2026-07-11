@@ -623,7 +623,7 @@ Begin VB.Form RCRYSTAL
       End
    End
    Begin VB.Frame Frame3 
-      Caption         =   "Consolidar Compañias :"
+      Caption         =   "Consolidar Compaï¿½ias :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -680,7 +680,7 @@ Begin VB.Form RCRYSTAL
       End
    End
    Begin VB.Frame fra1 
-      Caption         =   "Descripción del Reporte :"
+      Caption         =   "Descripciï¿½n del Reporte :"
       ForeColor       =   &H00808000&
       Height          =   1095
       Left            =   0
@@ -895,7 +895,7 @@ Begin VB.Form RCRYSTAL
          PromptChar      =   "_"
       End
       Begin VB.OptionButton opfechas 
-         Caption         =   "F. Emisión"
+         Caption         =   "F. Emisiï¿½n"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -1193,7 +1193,7 @@ Begin VB.Form RCRYSTAL
       End
       Begin VB.Label lblpasa 
          BackColor       =   &H00808000&
-         Caption         =   "Pasar la Información al Periodo Contable"
+         Caption         =   "Pasar la Informaciï¿½n al Periodo Contable"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -2056,7 +2056,7 @@ Begin VB.Form RCRYSTAL
          Width           =   3015
       End
       Begin VB.Label lblarti 
-         Caption         =   "Sub-División de Articulos :"
+         Caption         =   "Sub-Divisiï¿½n de Articulos :"
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   8.25
@@ -2321,10 +2321,10 @@ Dim ps_caracurel As rdoResultset
 Dim wfecha1 As String
 Dim wfecha2 As String
 If Val(Left(cmblistpv.Text, 2)) = 0 Then
-   MsgBox "NO Procede la Eliminación , Verificar ", 48, Pub_Titulo
+   MsgBox "NO Procede la Eliminaciï¿½n , Verificar ", 48, Pub_Titulo
    Exit Sub
 End If
-pub_mensaje = "Eliminar el Periodo Seleccionado!!! ...   ¿Desea Continuar... ?"
+pub_mensaje = "Eliminar el Periodo Seleccionado!!! ...   ï¿½Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -2627,7 +2627,7 @@ Resume Next
 End Sub
 
 Private Sub Form_Activate()
-lblarti(0).Caption = "División"
+lblarti(0).Caption = "Divisiï¿½n"
 lblarti(1).Caption = "Familia"
 lblarti(2).Caption = "Linea"
 lblarti(3).Caption = "Sub Linea"
@@ -2658,7 +2658,7 @@ For fila = 1 To lk_OTROS_Count
 Next fila
 
 
-lblarti(0).Caption = "División"
+lblarti(0).Caption = "Divisiï¿½n"
 lblarti(1).Caption = "Familia"
 lblarti(2).Caption = "Linea"
 lblarti(3).Caption = "Sub Linea"
@@ -7115,7 +7115,7 @@ If CDate(wsFECHA1) > CDate(wsFECHA2) Then
  GoTo CANCELA
 End If
 If chepasa.Value = 1 Then
-  pub_mensaje = "<Advertencia> El pase de la informaciï¿½n es por cada Compañia. Continuar...?"
+  pub_mensaje = "<Advertencia> El pase de la informaciï¿½n es por cada Compaï¿½ia. Continuar...?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
       Azul2 txtCampo1, txtCampo1
@@ -7129,12 +7129,12 @@ If chepasa.Value = 1 Then
   End If
   If (cop_llave!cop_fecha_proceso = CDate(wsFECHA1)) And (cop_llave!cop_fecha_proceso2 = CDate(wsFECHA2)) Then
   Else
-      MsgBox "Usted. a marcado la opciï¿½n: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
+      MsgBox "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
       Azul2 txtCampo1, txtCampo1
       GoTo CANCELA
   End If
-  If qver_onlyCont = 9 Then ' hay Información en OnlyCont. Confirmar.
-      pub_mensaje = "Usted. a marcado la opciï¿½n: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< Desea adicionar este Nuevo Asiento de Voucher de todas Maneras >...?"
+  If qver_onlyCont = 9 Then ' hay Informaciï¿½n en OnlyCont. Confirmar.
+      pub_mensaje = "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< Desea adicionar este Nuevo Asiento de Voucher de todas Maneras >...?"
       Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
       If Pub_Respuesta = vbNo Then
         Azul2 txtCampo1, txtCampo1
@@ -7833,7 +7833,7 @@ If CDate(wsFECHA1) > CDate(wsFECHA2) Then
  GoTo CANCELA
 End If
 If chepasa.Value = 1 Then
-  pub_mensaje = "<Advertencia> El pase de la informaciï¿½n es por cada Compañia. Continuar...?"
+  pub_mensaje = "<Advertencia> El pase de la informaciï¿½n es por cada Compaï¿½ia. Continuar...?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
       Azul2 txtCampo1, txtCampo1
@@ -7847,12 +7847,12 @@ If chepasa.Value = 1 Then
   End If
   If (cop_llave!cop_fecha_proceso = CDate(wsFECHA1)) And (cop_llave!cop_fecha_proceso2 = CDate(wsFECHA2)) Then
   Else
-    MsgBox "Usted. a marcado la opciï¿½n: Pasar la Información al Periodo Contable. " & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable . Verificar...", 48, Pub_Titulo
+    MsgBox "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable . Verificar...", 48, Pub_Titulo
     Azul2 txtCampo1, txtCampo1
     GoTo CANCELA
   End If
-  If qver_onlyCont = 9 Then ' hay Información en OnlyCont. Confirmar.
-    pub_mensaje = "Usted. a marcado la opciï¿½n: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Información en este Periodo Contable , el Sistema Reemplazazï¿½ la Información.  " & Chr(13) & Chr(13) & "<Desea Continuar de todas maneras>...?"
+  If qver_onlyCont = 9 Then ' hay Informaciï¿½n en OnlyCont. Confirmar.
+    pub_mensaje = "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Informaciï¿½n en este Periodo Contable , el Sistema Reemplazazï¿½ la Informaciï¿½n.  " & Chr(13) & Chr(13) & "<Desea Continuar de todas maneras>...?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
       Azul2 txtCampo1, txtCampo1
@@ -7991,7 +7991,7 @@ If llave_rep01.EOF Then
   
 End If
 
-RCRYSTAL.lblProceso.Caption = "Procesando Información. . . "
+RCRYSTAL.lblProceso.Caption = "Procesando Informaciï¿½n. . . "
 DoEvents
 RCRYSTAL.ProgBar.Visible = True
 DoEvents
@@ -8439,7 +8439,7 @@ imp_cargo = 0
 imp_abono = 0
 tot_cargo = 0
 tot_abono = 0
-RCRYSTAL.lblProceso.Caption = "Ordenando Información. . . "
+RCRYSTAL.lblProceso.Caption = "Ordenando Informaciï¿½n. . . "
 DoEvents
 Lini = 6
 For f1 = 1 To fin_filas
@@ -9876,7 +9876,7 @@ If CDate(wsFECHA1) > CDate(wsFECHA2) Then
  GoTo CANCELA
 End If
 If chepasa.Value = 1 Then
-  pub_mensaje = "<Advertencia> El pase de la informaciï¿½n es por cada Compañia. Continuar...?"
+  pub_mensaje = "<Advertencia> El pase de la informaciï¿½n es por cada Compaï¿½ia. Continuar...?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
       Azul2 txtCampo1, txtCampo1
@@ -9890,12 +9890,12 @@ If chepasa.Value = 1 Then
   End If
   If (cop_llave!cop_fecha_proceso = CDate(wsFECHA1)) And (cop_llave!cop_fecha_proceso2 = CDate(wsFECHA2)) Then
   Else
-      MsgBox "Usted. a marcado la opciï¿½n: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
+      MsgBox "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
       Azul2 txtCampo1, txtCampo1
       GoTo CANCELA
   End If
-  If qver_onlyCont = 9 Then ' hay Información en OnlyCont. Confirmar.
-      pub_mensaje = "Usted. a marcado la opciï¿½n: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< Desea adicionar este Nuevo Asiento de Voucher de todas Maneras >...?"
+  If qver_onlyCont = 9 Then ' hay Informaciï¿½n en OnlyCont. Confirmar.
+      pub_mensaje = "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< Desea adicionar este Nuevo Asiento de Voucher de todas Maneras >...?"
       Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
       If Pub_Respuesta = vbNo Then
         Azul2 txtCampo1, txtCampo1
@@ -10942,7 +10942,7 @@ RCRYSTAL.ProgBar.Max = llave_rep02.RowCount
 RCRYSTAL.ProgBar.Visible = True
 DoEvents
 RCRYSTAL.lblProceso.Visible = True
-RCRYSTAL.lblProceso.Caption = "Procesando Información. . . "
+RCRYSTAL.lblProceso.Caption = "Procesando Informaciï¿½n. . . "
 DoEvents
 wcheque = Val(llave_rep02!all_chenum)
 f1 = 7
@@ -11216,5 +11216,17 @@ FINTODO:
  Screen.MousePointer = 0
 Exit Sub
 
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub
 

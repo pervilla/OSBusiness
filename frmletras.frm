@@ -1,8 +1,9 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Begin VB.Form frmletras 
    Caption         =   "Consulta de Letras"
    ClientHeight    =   7695
@@ -256,14 +257,14 @@ Begin VB.Form frmletras
                TabIndex        =   77
                Top             =   3870
                Visible         =   0   'False
-               Width           =   2595
-               _ExtentX        =   4577
+               Width           =   2490
+               _ExtentX        =   4392
                _ExtentY        =   4180
                _Version        =   393216
                ForeColor       =   -2147483630
                BackColor       =   -2147483633
                Appearance      =   1
-               StartOfWeek     =   49348609
+               StartOfWeek     =   137232385
                CurrentDate     =   37978
             End
             Begin MSComCtl2.MonthView txtFechaDevolucion1 
@@ -272,14 +273,14 @@ Begin VB.Form frmletras
                TabIndex        =   80
                Top             =   3765
                Visible         =   0   'False
-               Width           =   2595
-               _ExtentX        =   4577
+               Width           =   2490
+               _ExtentX        =   4392
                _ExtentY        =   4180
                _Version        =   393216
                ForeColor       =   -2147483630
                BackColor       =   -2147483633
                Appearance      =   1
-               StartOfWeek     =   49348609
+               StartOfWeek     =   137232385
                CurrentDate     =   37978
             End
             Begin VB.TextBox txtCodUniBko 
@@ -471,7 +472,7 @@ Begin VB.Form frmletras
                _ExtentX        =   2381
                _ExtentY        =   556
                _Version        =   393216
-               Format          =   49348609
+               Format          =   137232385
                CurrentDate     =   37977
             End
             Begin MSMask.MaskEdBox txtFechaVcto 
@@ -482,7 +483,7 @@ Begin VB.Form frmletras
                Width           =   1035
                _ExtentX        =   1826
                _ExtentY        =   476
-               Enabled         =   -1  'True
+               _Version        =   393216
                BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                   Name            =   "MS Sans Serif"
                   Size            =   8.25
@@ -493,6 +494,7 @@ Begin VB.Form frmletras
                   Strikethrough   =   0   'False
                EndProperty
                Mask            =   "##/##/####"
+               PromptChar      =   "_"
             End
             Begin MSMask.MaskEdBox txtFechaEntrega 
                Height          =   270
@@ -502,7 +504,7 @@ Begin VB.Form frmletras
                Width           =   1035
                _ExtentX        =   1826
                _ExtentY        =   476
-               Enabled         =   -1  'True
+               _Version        =   393216
                BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                   Name            =   "MS Sans Serif"
                   Size            =   8.25
@@ -513,6 +515,7 @@ Begin VB.Form frmletras
                   Strikethrough   =   0   'False
                EndProperty
                Mask            =   "##/##/####"
+               PromptChar      =   "_"
             End
             Begin MSMask.MaskEdBox txtFechaDevolucion 
                Height          =   270
@@ -522,7 +525,7 @@ Begin VB.Form frmletras
                Width           =   1035
                _ExtentX        =   1826
                _ExtentY        =   476
-               Enabled         =   -1  'True
+               _Version        =   393216
                BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                   Name            =   "MS Sans Serif"
                   Size            =   8.25
@@ -533,6 +536,7 @@ Begin VB.Form frmletras
                   Strikethrough   =   0   'False
                EndProperty
                Mask            =   "##/##/####"
+               PromptChar      =   "_"
             End
             Begin MSComCtl2.UpDown CountDias 
                Height          =   270
@@ -540,7 +544,7 @@ Begin VB.Form frmletras
                TabIndex        =   56
                Top             =   450
                Width           =   240
-               _ExtentX        =   423
+               _ExtentX        =   450
                _ExtentY        =   476
                _Version        =   393216
                Value           =   1
@@ -633,7 +637,7 @@ Begin VB.Form frmletras
             Begin VB.Label lblCaption 
                AutoSize        =   -1  'True
                BackStyle       =   0  'Transparent
-               Caption         =   "Fecha Emisión"
+               Caption         =   "Fecha Emisiï¿½n"
                BeginProperty Font 
                   Name            =   "Tahoma"
                   Size            =   8.25
@@ -1000,7 +1004,7 @@ Begin VB.Form frmletras
          _ExtentX        =   2275
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   49348609
+         Format          =   137232385
          CurrentDate     =   37977
       End
       Begin VB.Label lblCaption 
@@ -1069,7 +1073,7 @@ Begin VB.Form frmletras
       Begin VB.Label lblCaption 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Fec. Emisión"
+         Caption         =   "Fec. Emisiï¿½n"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -1428,7 +1432,7 @@ Begin VB.Form frmletras
          _ExtentX        =   2275
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   49348609
+         Format          =   137232385
          CurrentDate     =   37977
       End
       Begin VB.CheckBox chkClientes 
@@ -1489,14 +1493,12 @@ Begin VB.Form frmletras
          Top             =   6660
          Width           =   1260
       End
-      Begin VB.TextBox txtCP          Height          =   300
+      Begin VB.TextBox txtCP 
+         Height          =   300
          Left            =   1230
          TabIndex        =   14
          Top             =   615
          Width           =   1155
-         _ExtentX        =   2037
-         _ExtentY        =   529
-         Locked          =   0   'False
       End
       Begin MSComctlLib.ListView lvwDocumentos 
          Height          =   2310
@@ -1538,7 +1540,7 @@ Begin VB.Form frmletras
          _ExtentX        =   2275
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   49348609
+         Format          =   137232385
          CurrentDate     =   37977
       End
       Begin MSComctlLib.ListView lvwLetras 
@@ -2036,7 +2038,7 @@ Private Sub cmbCP_Click()
     sCP = Trim(Right(cmbCP.Text, 3))
 End Sub
 
-Private Sub CmdCancelar_Click()
+Private Sub cmdcancelar_Click()
     If Val(txtSubTotal.Text) <> Val(sTotalDocumento) Then
  '       MsgBox "Error en el Importe no Coinciden", vbCritical, Pub_Titulo
 '        Exit Sub
@@ -2057,7 +2059,7 @@ Private Sub CmdCancelar_Click()
     txtFechaEntrega.Text = "__/__/____"
     txtFechaDevolucion.Text = "__/__/____"
     lblSaldo.Caption = "0.00"
-    lblTotal.Caption = "0.00"
+    lbltotal.Caption = "0.00"
     txtFechaEntrega1.Visible = False
     txtFechaDevolucion1.Visible = False
     FlagMoney = 0
@@ -2594,18 +2596,18 @@ Dim dImporte As Double
         pu_codcia = LK_CODCIA
         LEER_CLI_LLAVE
         If Not cli_llave.EOF Then
-            loListItem.ListSubItems.Add Key:="Cliente", Text:=Trim(cli_llave("CLI_NOMBRE"))
+            loListItem.ListSubItems.Add key:="Cliente", Text:=Trim(cli_llave("CLI_NOMBRE"))
         Else
-            loListItem.ListSubItems.Add Key:="Cliente", Text:=""
+            loListItem.ListSubItems.Add key:="Cliente", Text:=""
         End If
-        loListItem.ListSubItems.Add Key:="Moneda", Text:=X("ALL_MONEDA_CLI")
-        loListItem.ListSubItems.Add Key:="------", Text:=0 'Format(X("ALL_IMPORTE"), "0.00")
-        loListItem.ListSubItems.Add Key:="NumDoc", Text:="0" 'X("ALL_NUMDOC")
-        loListItem.ListSubItems.Add Key:="NumOper", Text:=X("ALL_NUMOPER2")
-        loListItem.ListSubItems.Add Key:="CodClie", Text:=X("ALL_CODCLIE")
-        loListItem.ListSubItems.Add Key:="TCambio", Text:=X("ALL_tipo_cambio")
-        loListItem.ListSubItems.Add Key:="CodVen", Text:=X("ALL_codven")
-        loListItem.ListSubItems.Add Key:="FechaDia", Text:=X("ALL_FECHA_DIA")
+        loListItem.ListSubItems.Add key:="Moneda", Text:=X("ALL_MONEDA_CLI")
+        loListItem.ListSubItems.Add key:="------", Text:=0 'Format(X("ALL_IMPORTE"), "0.00")
+        loListItem.ListSubItems.Add key:="NumDoc", Text:="0" 'X("ALL_NUMDOC")
+        loListItem.ListSubItems.Add key:="NumOper", Text:=X("ALL_NUMOPER2")
+        loListItem.ListSubItems.Add key:="CodClie", Text:=X("ALL_CODCLIE")
+        loListItem.ListSubItems.Add key:="TCambio", Text:=X("ALL_tipo_cambio")
+        loListItem.ListSubItems.Add key:="CodVen", Text:=X("ALL_codven")
+        loListItem.ListSubItems.Add key:="FechaDia", Text:=X("ALL_FECHA_DIA")
         tNumOper2 = X("ALL_NUMOPER2")
 OTRO:
         X.MoveNext
@@ -2660,14 +2662,14 @@ Dim sMoneda As String
         End If
         Set loListItem = lvwDocumentos.ListItems.Add(, "n" & X("all_NUMOPER") & X("all_FECHA_dia"), sFBG & " / " & sNumSer & " - " & sNumFac & " /Int " & car_llave!car_NUMSER & "-" & car_llave!car_NUMFAC)
         sDocumentos = sDocumentos & sFBG & " / " & sNumSer & " - " & sNumFac & "  "
-        loListItem.ListSubItems.Add Key:="Fecha", Text:=car_llave("car_FECHA_SUNAT")  ' X("all_FECHA_sunat")
-        loListItem.ListSubItems.Add Key:="TipDoc", Text:=X("all_TIPDOC")
-        loListItem.ListSubItems.Add Key:="Moneda", Text:=sMoneda
-        loListItem.ListSubItems.Add Key:="Importe", Text:=Format(X("all_IMPORTE_amort"), "0.00")
-        loListItem.ListSubItems.Add Key:="ImporteIni", Text:=Format(sImporte, "0.00")
-        loListItem.ListSubItems.Add Key:="CodClie", Text:=X("all_CODCLIE")
-        loListItem.ListSubItems.Add Key:="NumDoc", Text:=X("all_NUMDOC")
-        loListItem.ListSubItems.Add Key:="NumOper", Text:=X("all_NUMOper")
+        loListItem.ListSubItems.Add key:="Fecha", Text:=car_llave("car_FECHA_SUNAT")  ' X("all_FECHA_sunat")
+        loListItem.ListSubItems.Add key:="TipDoc", Text:=X("all_TIPDOC")
+        loListItem.ListSubItems.Add key:="Moneda", Text:=sMoneda
+        loListItem.ListSubItems.Add key:="Importe", Text:=Format(X("all_IMPORTE_amort"), "0.00")
+        loListItem.ListSubItems.Add key:="ImporteIni", Text:=Format(sImporte, "0.00")
+        loListItem.ListSubItems.Add key:="CodClie", Text:=X("all_CODCLIE")
+        loListItem.ListSubItems.Add key:="NumDoc", Text:=X("all_NUMDOC")
+        loListItem.ListSubItems.Add key:="NumOper", Text:=X("all_NUMOper")
         X.MoveNext
     Loop
     lbltotcanje.Caption = Format(sw_totcanje, "##,##0.00")
@@ -2703,15 +2705,15 @@ Dim sw_salcanje As Currency
             Set loListItem1 = lvwLetras(1).ListItems.Add(, "n" & caa_histo("caa_NUMDOC"), caa_histo("caa_TIPDOC") & " " & caa_histo("caa_NUM_CHEQUE") & "        . ")
             Set loListItem2 = lvwLetras(2).ListItems.Add(, "n" & caa_histo("caa_NUMDOC"), caa_histo("caa_TIPDOC") & " " & caa_histo("caa_NUM_CHEQUE") & "        .")
             
-            loListItem1.ListSubItems.Add Key:="Fecha", Text:=caa_histo("CAA_FECHA_COBRO")
-            loListItem1.ListSubItems.Add Key:="Dias", Text:=DateDiff("d", caa_histo("CAA_FECHA_COBRO"), caa_histo("caa_fecha_VCTO"))
+            loListItem1.ListSubItems.Add key:="Fecha", Text:=caa_histo("CAA_FECHA_COBRO")
+            loListItem1.ListSubItems.Add key:="Dias", Text:=DateDiff("d", caa_histo("CAA_FECHA_COBRO"), caa_histo("caa_fecha_VCTO"))
             
             PUB_SERDOC = caa_histo("CAA_SERDOC")
             PUB_NUMDOC = caa_histo("CAA_NUMDOC")
             LEER_CAR_LLAVE
-            loListItem.ListSubItems.Add Key:="Fecha", Text:=car_llave("CAR_FECHA_VCTO_ORIG")
-            loListItem1.ListSubItems.Add Key:="FechaVcto", Text:=car_llave("CAR_FECHA_VCTO_ORIG")
-            loListItem2.ListSubItems.Add Key:="Fecha", Text:=car_llave("CAR_FECHA_VCTO_ORIG")
+            loListItem.ListSubItems.Add key:="Fecha", Text:=car_llave("CAR_FECHA_VCTO_ORIG")
+            loListItem1.ListSubItems.Add key:="FechaVcto", Text:=car_llave("CAR_FECHA_VCTO_ORIG")
+            loListItem2.ListSubItems.Add key:="Fecha", Text:=car_llave("CAR_FECHA_VCTO_ORIG")
             If CDate(car_llave("CAR_FECHA_VCTO_ORIG")) < CDate(LK_FECHA_DIA) And car_llave("CAR_IMPORTE") <> 0 Then
                 'LETRAS VENCIDAS QUE NO SE TERMINA DE AMORTIZAR
                 lvwLetras(0).ListItems(iRow).ForeColor = QBColor(12)
@@ -2734,9 +2736,9 @@ Dim sw_salcanje As Currency
             
             
             If Not car_llave.EOF Then
-                loListItem.ListSubItems.Add Key:="Moneda", Text:=car_llave("CAR_MONEDA")
-                loListItem1.ListSubItems.Add Key:="Moneda", Text:=car_llave("CAR_MONEDA")
-                loListItem2.ListSubItems.Add Key:="Moneda", Text:=car_llave("CAR_MONEDA")
+                loListItem.ListSubItems.Add key:="Moneda", Text:=car_llave("CAR_MONEDA")
+                loListItem1.ListSubItems.Add key:="Moneda", Text:=car_llave("CAR_MONEDA")
+                loListItem2.ListSubItems.Add key:="Moneda", Text:=car_llave("CAR_MONEDA")
                 sSaldoDocumento = sSaldoDocumento + car_llave("CAR_IMPORTE")
                 sw_salcanje = sw_salcanje + Val(car_llave("CAR_IMPORTE"))
                 sSaldoLetra = car_llave("CAR_IMPORTE")
@@ -2745,13 +2747,13 @@ Dim sw_salcanje As Currency
                 PUB_CODBAN = car_llave("CAR_CODBAN")
                 LEER_CCM_LLAVE
                 If ccm_llave.EOF Then
-                loListItem.ListSubItems.Add Key:="Banco", Text:=""
-                loListItem1.ListSubItems.Add Key:="Banco", Text:=""
-                loListItem2.ListSubItems.Add Key:="Banco", Text:=""
+                loListItem.ListSubItems.Add key:="Banco", Text:=""
+                loListItem1.ListSubItems.Add key:="Banco", Text:=""
+                loListItem2.ListSubItems.Add key:="Banco", Text:=""
                 Else
-                loListItem.ListSubItems.Add Key:="Banco", Text:=ccm_llave("CCM_NOMBRE")
-                loListItem1.ListSubItems.Add Key:="Banco", Text:=ccm_llave("CCM_NOMBRE")
-                loListItem2.ListSubItems.Add Key:="Banco", Text:=ccm_llave("CCM_NOMBRE")
+                loListItem.ListSubItems.Add key:="Banco", Text:=ccm_llave("CCM_NOMBRE")
+                loListItem1.ListSubItems.Add key:="Banco", Text:=ccm_llave("CCM_NOMBRE")
+                loListItem2.ListSubItems.Add key:="Banco", Text:=ccm_llave("CCM_NOMBRE")
                 End If
                 SQ_OPER = 1
                 PUB_TIPREG = 160
@@ -2759,37 +2761,37 @@ Dim sw_salcanje As Currency
                 PUB_CODCIA = "00"
                 LEER_TAB_LLAVE
                 If Not tab_llave.EOF Then
-                loListItem.ListSubItems.Add Key:="Situacion", Text:=Trim(tab_llave("TAB_NOMLARGO"))
-                loListItem1.ListSubItems.Add Key:="Situacion", Text:=Trim(tab_llave("TAB_NOMLARGO"))
-                loListItem2.ListSubItems.Add Key:="Situacion", Text:=Trim(tab_llave("TAB_NOMLARGO"))
+                loListItem.ListSubItems.Add key:="Situacion", Text:=Trim(tab_llave("TAB_NOMLARGO"))
+                loListItem1.ListSubItems.Add key:="Situacion", Text:=Trim(tab_llave("TAB_NOMLARGO"))
+                loListItem2.ListSubItems.Add key:="Situacion", Text:=Trim(tab_llave("TAB_NOMLARGO"))
                 Else
-                loListItem.ListSubItems.Add Key:="Situacion", Text:=""
-                loListItem1.ListSubItems.Add Key:="Situacion", Text:=""
-                loListItem2.ListSubItems.Add Key:="Situacion", Text:=""
+                loListItem.ListSubItems.Add key:="Situacion", Text:=""
+                loListItem1.ListSubItems.Add key:="Situacion", Text:=""
+                loListItem2.ListSubItems.Add key:="Situacion", Text:=""
                 End If
             End If
-            loListItem.ListSubItems.Add Key:="Importe", Text:=caa_histo("caa_IMPORTE")
-            loListItem1.ListSubItems.Add Key:="Importe", Text:=caa_histo("caa_IMPORTE")
-            loListItem1.ListSubItems.Add Key:="ImporteIni", Text:=Format(sSaldoLetra, "#0.00")
-            loListItem2.ListSubItems.Add Key:="Importe", Text:=caa_histo("caa_IMPORTE")
-            loListItem.ListSubItems.Add Key:="NumDoc", Text:=caa_histo("caa_numdoc")
-            loListItem1.ListSubItems.Add Key:="NumDoc", Text:=caa_histo("caa_numdoc")
-            loListItem2.ListSubItems.Add Key:="NumDoc", Text:=caa_histo("caa_numdoc")
-            loListItem.ListSubItems.Add Key:="NumOper", Text:=X("all_numoper")
-            loListItem1.ListSubItems.Add Key:="NumOper", Text:=X("all_numoper")
-            loListItem2.ListSubItems.Add Key:="NumOper", Text:=X("all_numoper")
-            loListItem.ListSubItems.Add Key:="FechaDia", Text:=X("all_fecha_dia")
-            loListItem1.ListSubItems.Add Key:="FechaDia", Text:=X("all_fecha_dia")
-            loListItem2.ListSubItems.Add Key:="FechaDia", Text:=X("all_fecha_dia")
-            loListItem1.ListSubItems.Add Key:="CAA_SALDO_CAR", Text:=caa_histo("caa_SALDO_CAR")
-            loListItem1.ListSubItems.Add Key:="caa_TOTAL", Text:=caa_histo("caa_TOTAL")
-            loListItem1.ListSubItems.Add Key:="CodUniBko", Text:=0 ' Nulo_Valors(car_llave("CAR_CODUNIBKO"))
-            loListItem1.ListSubItems.Add Key:="ImporteOriginal", Text:=caa_histo("caa_IMPORTE")
-            loListItem.ListSubItems.Add Key:="FechaEmi", Text:=X("all_fecha_dia")
+            loListItem.ListSubItems.Add key:="Importe", Text:=caa_histo("caa_IMPORTE")
+            loListItem1.ListSubItems.Add key:="Importe", Text:=caa_histo("caa_IMPORTE")
+            loListItem1.ListSubItems.Add key:="ImporteIni", Text:=Format(sSaldoLetra, "#0.00")
+            loListItem2.ListSubItems.Add key:="Importe", Text:=caa_histo("caa_IMPORTE")
+            loListItem.ListSubItems.Add key:="NumDoc", Text:=caa_histo("caa_numdoc")
+            loListItem1.ListSubItems.Add key:="NumDoc", Text:=caa_histo("caa_numdoc")
+            loListItem2.ListSubItems.Add key:="NumDoc", Text:=caa_histo("caa_numdoc")
+            loListItem.ListSubItems.Add key:="NumOper", Text:=X("all_numoper")
+            loListItem1.ListSubItems.Add key:="NumOper", Text:=X("all_numoper")
+            loListItem2.ListSubItems.Add key:="NumOper", Text:=X("all_numoper")
+            loListItem.ListSubItems.Add key:="FechaDia", Text:=X("all_fecha_dia")
+            loListItem1.ListSubItems.Add key:="FechaDia", Text:=X("all_fecha_dia")
+            loListItem2.ListSubItems.Add key:="FechaDia", Text:=X("all_fecha_dia")
+            loListItem1.ListSubItems.Add key:="CAA_SALDO_CAR", Text:=caa_histo("caa_SALDO_CAR")
+            loListItem1.ListSubItems.Add key:="caa_TOTAL", Text:=caa_histo("caa_TOTAL")
+            loListItem1.ListSubItems.Add key:="CodUniBko", Text:=0 ' Nulo_Valors(car_llave("CAR_CODUNIBKO"))
+            loListItem1.ListSubItems.Add key:="ImporteOriginal", Text:=caa_histo("caa_IMPORTE")
+            loListItem.ListSubItems.Add key:="FechaEmi", Text:=X("all_fecha_dia")
             'OJO
-            loListItem1.ListSubItems.Add Key:="SerDoc", Text:=X("all_serdoc")
-            loListItem2.ListSubItems.Add Key:="SerDoc", Text:=X("all_serdoc")
-            loListItem.ListSubItems.Add Key:="SerDoc", Text:=X("all_serdoc")
+            loListItem1.ListSubItems.Add key:="SerDoc", Text:=X("all_serdoc")
+            loListItem2.ListSubItems.Add key:="SerDoc", Text:=X("all_serdoc")
+            loListItem.ListSubItems.Add key:="SerDoc", Text:=X("all_serdoc")
             'CAR_IMPORTE=CAA_IMPORTE
         End If
         X.MoveNext
@@ -2892,7 +2894,7 @@ Private Sub lvwCanjes_ItemClick(ByVal Item As MSComctlLib.ListItem)
     FlagMoney = 0
     
     sTotalDocumento = Val(Item.ListSubItems(3).Text)
-    lblTotal.Caption = Format(sTotalDocumento, "#0.00")
+    lbltotal.Caption = Format(sTotalDocumento, "#0.00")
 End Sub
 
 Private Sub lvwLetras_DblClick(Index As Integer)
@@ -3126,4 +3128,16 @@ Private Sub ClearLetras()
     txtFechaEntrega.Text = "__/__/____"
     txtFechaDevolucion.Text = "__/__/____"
     txtCodUniBko.Text = ""
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub

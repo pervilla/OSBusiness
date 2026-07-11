@@ -189,7 +189,7 @@ If PUB_TIPREG = 2102 Then
  End If
   WNUMTAB = wvalor
 End If
-Mensaje = "Ingrese la Descripción  :"
+Mensaje = "Ingrese la Descripciï¿½n  :"
 titulo = "Datos Necesario..."
 valorpred = " "
 wvalor = InputBox(Mensaje, titulo, valorpred)
@@ -213,7 +213,7 @@ If PUB_TIPREG = 123 Or PUB_TIPREG = 129 _
 End If
 llave_rep01.Requery
 If Not llave_rep01.EOF Then
-  MsgBox "Descripción Existe. Intente Nuevamente ..", 48, Pub_Titulo
+  MsgBox "Descripciï¿½n Existe. Intente Nuevamente ..", 48, Pub_Titulo
   wBAN = 0
   Exit Sub
 End If
@@ -401,11 +401,11 @@ Dim strDir As String
 Dim strRef As String
 Dim fila2 As Integer
 llave_rep01.Requery
-strDir = Trim(InputBox("Ingrese la Dirección del Cliente", "Dirección"))
+strDir = Trim(InputBox("Ingrese la Direcciï¿½n del Cliente", "Direcciï¿½n"))
 
 strRef = Trim(InputBox("Ingrese la Referencia del Cliente", "Referencia"))
 If strDir = "" Then
- MsgBox "Dato ingresado no valido, Intentelo nuevamente", vbInformation, "Dirección"
+ MsgBox "Dato ingresado no valido, Intentelo nuevamente", vbInformation, "Direcciï¿½n"
  Exit Sub
 End If
  CN.Execute "insert into dircli (codcia,codcli,cp,direc,ref) values('" & LK_CODCIA & "','" & Val(frmCLI.txt_key) & "','C','" & strDir & "','" & strRef & "')"
@@ -651,9 +651,9 @@ FrmDatArti.Gridtablas.ColWidth(4) = 1500
 FrmDatArti.Gridtablas.ColWidth(5) = 1
 FrmDatArti.Gridtablas.TextMatrix(0, 0) = "Item."
 FrmDatArti.Gridtablas.TextMatrix(0, 1) = "Ctas.Contable."
-FrmDatArti.Gridtablas.TextMatrix(0, 2) = "Descripción"
+FrmDatArti.Gridtablas.TextMatrix(0, 2) = "Descripciï¿½n"
 FrmDatArti.Gridtablas.TextMatrix(0, 3) = "Ctas.Cierre"
-FrmDatArti.Gridtablas.TextMatrix(0, 4) = "Descripción"
+FrmDatArti.Gridtablas.TextMatrix(0, 4) = "Descripciï¿½n"
 pub_cadena = "SELECT COM_CUENTA,COM_DESCRIPCION, COM_CUENTA_CIERRE  FROM COMAEST WHERE COM_CODCIA = ? AND COM_NIVEL = ? and (COM_TIPO_CTA < 1 or  COM_TIPO_CTA > 5)  ORDER BY COM_CUENTA"
 Set PS_REP01 = CN.CreateQuery("", pub_cadena)
 PS_REP01.rdoParameters(0) = " "
@@ -709,13 +709,13 @@ FrmDatArti.Gridtablas.ColWidth(8) = 1000
 FrmDatArti.Gridtablas.ColWidth(9) = 1000
 
 FrmDatArti.Gridtablas.TextMatrix(0, 0) = "Item"
-FrmDatArti.Gridtablas.TextMatrix(0, 1) = "Nombre /Razón social"
+FrmDatArti.Gridtablas.TextMatrix(0, 1) = "Nombre /Razï¿½n social"
 FrmDatArti.Gridtablas.TextMatrix(0, 2) = "Domicilio "
 FrmDatArti.Gridtablas.TextMatrix(0, 3) = "R.U.C."
 FrmDatArti.Gridtablas.TextMatrix(0, 4) = "D.N.I."
 FrmDatArti.Gridtablas.TextMatrix(0, 5) = "Placa"
 FrmDatArti.Gridtablas.TextMatrix(0, 6) = "Nombre Chofer"
-FrmDatArti.Gridtablas.TextMatrix(0, 7) = "Dirección Chofer"
+FrmDatArti.Gridtablas.TextMatrix(0, 7) = "Direcciï¿½n Chofer"
 FrmDatArti.Gridtablas.TextMatrix(0, 8) = "Nro. Brevete"
 FrmDatArti.Gridtablas.TextMatrix(0, 9) = "D.N.I. "
 
@@ -1070,7 +1070,7 @@ If KeyCode = 46 And PUB_TIPREG <> -55 Then
     Else
        Exit Sub
     End If
-    pub_mensaje = " Eliminar    : " & Trim(Gridtablas.TextMatrix(Gridtablas.Row, 1)) & " ¿Desea Continuar... ?"
+    pub_mensaje = " Eliminar    : " & Trim(Gridtablas.TextMatrix(Gridtablas.Row, 1)) & " ï¿½Desea Continuar... ?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
       Gridtablas.SetFocus
@@ -1097,7 +1097,7 @@ ElGrid_KeyDown Gridtablas, TEXTOVAR, KeyCode
 Exit Sub
 
 borra_transportista:
-pub_mensaje = " Eliminar    : " & Trim(Gridtablas.TextMatrix(Gridtablas.Row, 1)) & " ¿Desea Continuar... ?"
+pub_mensaje = " Eliminar    : " & Trim(Gridtablas.TextMatrix(Gridtablas.Row, 1)) & " ï¿½Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
   Gridtablas.SetFocus
@@ -1237,7 +1237,7 @@ If KeyAscii = 13 Then
  End If
  llave_rep01.Requery
  If Not llave_rep01.EOF Then
-   MsgBox "Descripción Existe. Intente Nuevamente ..", 48, Pub_Titulo
+   MsgBox "Descripciï¿½n Existe. Intente Nuevamente ..", 48, Pub_Titulo
    Azul TEXTOVAR, TEXTOVAR
    Exit Sub
  End If
@@ -1428,7 +1428,7 @@ End If
 If KeyCode = 46 Then
    ' NO PROCEDE NINGUNA ELIMINACION
    Exit Sub
-   pub_mensaje = " Eliminar    : " & Trim(grid_comi.TextMatrix(grid_comi.Row, 1)) & " ¿Desea Continuar... ?"
+   pub_mensaje = " Eliminar    : " & Trim(grid_comi.TextMatrix(grid_comi.Row, 1)) & " ï¿½Desea Continuar... ?"
    Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
    If Pub_Respuesta = vbNo Then
       grid_comi.SetFocus
@@ -1523,5 +1523,17 @@ Private Sub Consistencias(wsGrid As MSFlexGrid, wsTexto As TextBox, wsKeyAscii A
       End If
   End If
 
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub
 

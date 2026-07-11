@@ -1039,7 +1039,7 @@ Begin VB.Form FrmImp2
       Width           =   2010
    End
    Begin VB.Frame fradescto 
-      Caption         =   "Condición  Descto.                                  Tipo de Descto:                  "
+      Caption         =   "Condiciï¿½n  Descto.                                  Tipo de Descto:                  "
       Height          =   2055
       Left            =   4800
       TabIndex        =   86
@@ -1301,7 +1301,7 @@ Begin VB.Form FrmImp2
          Width           =   855
       End
       Begin VB.Label lblcontab 
-         Caption         =   "Seleccione los Niveles para impresión"
+         Caption         =   "Seleccione los Niveles para impresiï¿½n"
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   120
@@ -1392,7 +1392,7 @@ Begin VB.Form FrmImp2
       End
    End
    Begin VB.Frame Frame3 
-      Caption         =   "Consilidar Compañias :"
+      Caption         =   "Consilidar Compaï¿½ias :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -1543,7 +1543,7 @@ Begin VB.Form FrmImp2
       End
       Begin VB.Label lblpasa 
          BackColor       =   &H00808000&
-         Caption         =   "Pasar la Información al Periodo Contable"
+         Caption         =   "Pasar la Informaciï¿½n al Periodo Contable"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1745,7 +1745,7 @@ Begin VB.Form FrmImp2
       End
    End
    Begin VB.CheckBox chestands 
-      Caption         =   "Multiplicar Monto por Nº de Stands"
+      Caption         =   "Multiplicar Monto por Nï¿½ de Stands"
       ForeColor       =   &H00808000&
       Height          =   255
       Left            =   3240
@@ -1990,7 +1990,7 @@ Begin VB.Form FrmImp2
       PromptChar      =   "_"
    End
    Begin VB.CommandButton cmdultima 
-      Caption         =   "Ultima Edicíon."
+      Caption         =   "Ultima Edicï¿½on."
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -2335,7 +2335,7 @@ If tab_llave.EOF Then
   Exit Sub
 End If
 If Val(tab_llave!tab_codart) = 3 Then
-        pub_mensaje = "Periodo Cerrado ¿Desea Abrirlo... ?"
+        pub_mensaje = "Periodo Cerrado ï¿½Desea Abrirlo... ?"
         Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
         If Pub_Respuesta = vbNo Then
            Exit Sub
@@ -2516,7 +2516,7 @@ Set xl = Nothing
 lblproceso.Visible = False
 Exit Sub
 no_existe:
-If Err.Number = 1004 Then MsgBox "Planilla no emitida ó ya Procesada.", 48, Pub_Titulo
+If Err.Number = 1004 Then MsgBox "Planilla no emitida ï¿½ ya Procesada.", 48, Pub_Titulo
 Set xl = Nothing
 lblproceso.Visible = False
 Exit Sub
@@ -3626,7 +3626,7 @@ Dim WIMPORTE_ORIG As Currency
 Dim ws_file As String
 Dim CONTADOR As Integer
 Dim wreal_cont As Integer
-pub_mensaje = "CONTINUAR PROCESO ...   ¿Desea Continuar... ?"
+pub_mensaje = "CONTINUAR PROCESO ...   ï¿½Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -3697,7 +3697,7 @@ Do Until CONTADOR = 600000
    
   ' If xl.Cells(FILAX, 1) = "F" Or xl.Cells(FILAX, 1) = "B" Then  'Or xl.Cells(FILAX, 1) = "N" Or xl.Cells(FILAX, 1) = "D" Then
    ' Else
-  ''     MsgBox "Solo Válido F,B,N,D : en Fila: " & FILAX
+  ''     MsgBox "Solo Vï¿½lido F,B,N,D : en Fila: " & FILAX
    '   wwww_flag = "A"
    'End If
    
@@ -3717,7 +3717,7 @@ mas:
   
 Loop
 If wwww_flag = "A" Then
-  MsgBox "Verificar Información....."
+  MsgBox "Verificar Informaciï¿½n....."
   GoTo CANCELA
 End If
 MsgBox "Listo para Grabar ..!!!!"
@@ -4770,7 +4770,7 @@ ElseIf Wfile = "REPO_CAJA_GEN" Then
     cmbCaja.ListIndex = 3
     DoEvents
     Call REPO_CAJA_GEN
-    MsgBox "Calculo efectuado en Cajas, puede cerrar el Día.", 48, Pub_Titulo
+    MsgBox "Calculo efectuado en Cajas, puede cerrar el Dï¿½a.", 48, Pub_Titulo
  Else
     Call REPO_CAJA_GEN
  End If
@@ -5117,7 +5117,7 @@ WEXCEL:
   xl.Cells(4, 5) = "Nro."
   xl.Cells(5, 5) = "Doc."
   xl.Cells(4, 6) = "Fecha"
-  xl.Cells(5, 6) = "Emisión"
+  xl.Cells(5, 6) = "Emisiï¿½n"
   xl.Cells(4, 7) = "Fecha"
   xl.Cells(5, 7) = "Vcto."
   xl.Cells(5, 8) = "Saldo"
@@ -6188,7 +6188,7 @@ PSVEN(0) = LK_CODCIA
 Set Vendedores = PSVEN.OpenResultset(rdOpenKeyset, rdConcurValues)
 Vendedores.Requery
 
-'canales de dstribución
+'canales de dstribuciï¿½n
 pub_cadena = "select far_turno from facart where far_codcia=? and far_codclie=? and far_numser=? and far_numfac=? and far_estado<>'E'"
 
 Set PSCANAL = CN.CreateQuery("", pub_cadena)
@@ -7003,7 +7003,7 @@ Else
 '  lblproceso.Visible = False
 '  MsgBox "Seleccionar Familia ", 48, Pub_Titulo
 '  GoTo Cancel
- ' ¡Exit Sub
+ ' ï¿½Exit Sub
 End If
 
 ProgBar.Value = ProgBar.Value + 1
@@ -7828,7 +7828,7 @@ Loop
   GoSub LETRAS
 '    xl.Application.Visible = True
  If wflag <> "A" Then
-  MsgBox " No hay Información para el filtro", 48, Pub_Titulo
+  MsgBox " No hay Informaciï¿½n para el filtro", 48, Pub_Titulo
   GoTo SALTA
  End If
   xcuenta = TOT_VEN + 4
@@ -8551,7 +8551,7 @@ Reportes.Formulas(1) = wformula2
 Reportes.Formulas(2) = wformula3
 Reportes.Formulas(3) = wformula4
 dale:
-wv = InputBox("1=Solo Creditos , 2 = Solo Contados , 3 = Credito y Contados ......... Nº:", "Filtro", 3)
+wv = InputBox("1=Solo Creditos , 2 = Solo Contados , 3 = Credito y Contados ......... Nï¿½:", "Filtro", 3)
 If Val(wv) < 1 Or Val(wv) > 3 Then GoTo dale
 If Val(wv) = 1 Then pub_cadena = pub_cadena + " AND {CARTERA.CAR_TIPDOC} IN ['FA']"
 If Val(wv) = 2 Then pub_cadena = pub_cadena + " AND {CARTERA.CAR_TIPDOC} IN ['CC']"
@@ -8736,7 +8736,7 @@ OTRO:
 Loop
   GoSub LETRAS
  If wflag <> "A" Then
-  MsgBox " No hay Información para el filtro", 48, Pub_Titulo
+  MsgBox " No hay Informaciï¿½n para el filtro", 48, Pub_Titulo
   GoTo SALTA
  End If
  If wtot <> 0 Then MsgBox "Existe " & wtot & " Cliente(s) sin Tipo de Negocio, su(s) Codigo(s) son : " & pub_cadena & " . se recomienda relacionarlo.", 48, Pub_Titulo
@@ -9079,7 +9079,7 @@ End If
   
   qver_onlyCont = 0
 
-  pub_mensaje = "<Advertencia> El pase de la información es por cada Compañia. Continuar...?"
+  pub_mensaje = "<Advertencia> El pase de la informaciï¿½n es por cada Compaï¿½ia. Continuar...?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
       Azul2 txtCampo1, txtCampo1
@@ -9095,12 +9095,12 @@ End If
   End If
   If (cop_llave!cop_fecha_proceso = CDate(tfechaini.Text)) And (cop_llave!cop_fecha_proceso2 = CDate(tfechafin.Text)) Then
   Else
-      MsgBox "Usted. a marcado la opción: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
+      MsgBox "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
       Azul2 txtCampo1, txtCampo1
       GoTo CANCELA
   End If
-  If qver_onlyCont = 9 Then ' hay Información en OnlyCont. Confirmar.
-      pub_mensaje = "Usted. a marcado la opción: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< LA INFORMACION SE REEMPLAZADA EN LIBRO >...?"
+  If qver_onlyCont = 9 Then ' hay Informaciï¿½n en OnlyCont. Confirmar.
+      pub_mensaje = "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< LA INFORMACION SE REEMPLAZADA EN LIBRO >...?"
       Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
       If Pub_Respuesta = vbNo Then
         Azul2 txtCampo1, txtCampo1
@@ -9236,9 +9236,9 @@ If WFLAG_MODICAJA = "A" Then
        ElseIf Val((Left(cmbCaja.Text, 2))) = 3 Then
           WS_SALDO = sp_repocaja!ALL_GASTOS
        End If
-       wvalor = InputBox("Cambiara el Saldo Incial del Día / Caja: " & cmbCaja.Text & " = " & Format(wsFECHA1, "dd/mm/yyyy") & "  : S/. ", "Modificar Fecha del Dia", WS_SALDO)
+       wvalor = InputBox("Cambiara el Saldo Incial del Dï¿½a / Caja: " & cmbCaja.Text & " = " & Format(wsFECHA1, "dd/mm/yyyy") & "  : S/. ", "Modificar Fecha del Dia", WS_SALDO)
     Else
-      wvalor = InputBox("Cambiara el Saldo Incial del Día : " & Format(wsFECHA1, "dd/mm/yyyy") & "  : S/. ", "Modificar Fecha del Dia", WS_SALDO)
+      wvalor = InputBox("Cambiara el Saldo Incial del Dï¿½a : " & Format(wsFECHA1, "dd/mm/yyyy") & "  : S/. ", "Modificar Fecha del Dia", WS_SALDO)
     End If
     If wvalor = "" Then
        GoTo pasa_modi
@@ -9259,7 +9259,7 @@ If WFLAG_MODICAJA = "A" Then
     sp_repocaja.Update
   Else
     WS_SALDO = sp_repocaja!ALL_IMPORTE_DOLL
-    wvalor = InputBox("Cambiara el Saldo Incial del Día : " & Format(wsFECHA1, "dd/mm/yyyy") & "  : US$. ", "Modificar Fecha del Dia", WS_SALDO)
+    wvalor = InputBox("Cambiara el Saldo Incial del Dï¿½a : " & Format(wsFECHA1, "dd/mm/yyyy") & "  : US$. ", "Modificar Fecha del Dia", WS_SALDO)
     If wvalor = "" Then
        GoTo pasa_modi
     End If
@@ -9854,7 +9854,7 @@ pub_cadena = "select  * from contabilidad where cnt_codcia = '25' and cnt_codtra
 Set ps_ctacontabNC = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues)  ' rdConcurReadOnly) ', rdConcurLock)
 
 
-  pub_mensaje = "<Advertencia> El pase de la información es por cada Compañia. Continuar...?"
+  pub_mensaje = "<Advertencia> El pase de la informaciï¿½n es por cada Compaï¿½ia. Continuar...?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
       Azul2 txtCampo1, txtCampo1
@@ -9869,12 +9869,12 @@ Set ps_ctacontabNC = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) 
   End If
   If (cop_llave!cop_fecha_proceso = CDate(txtCampo1.Text)) And (cop_llave!cop_fecha_proceso2 = CDate(txtCampo2.Text)) Then
   Else
-      MsgBox "Usted. a marcado la opción: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
+      MsgBox "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
       Azul2 txtCampo1, txtCampo1
       GoTo CANCELA
   End If
-  If qver_onlyCont = 9 Then ' hay Información en OnlyCont. Confirmar.
-      pub_mensaje = "Usted. a marcado la opción: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< LA INFORMACION SE REEMPLAZADA EN LIBRO >...?"
+  If qver_onlyCont = 9 Then ' hay Informaciï¿½n en OnlyCont. Confirmar.
+      pub_mensaje = "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< LA INFORMACION SE REEMPLAZADA EN LIBRO >...?"
       Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
       If Pub_Respuesta = vbNo Then
         Azul2 txtCampo1, txtCampo1
@@ -10289,7 +10289,7 @@ Do Until llave_rep02.EOF
   If llave_rep02!FAR_MONEDA = "D" Then
     WS_TC = JALAR(llave_rep02!FAR_fecha_compra)
     If WS_TC <= 0 Then
-        MsgBox "Falta Ingresar el Tipo de Cambio del día : " & Format(llave_rep02!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
+        MsgBox "Falta Ingresar el Tipo de Cambio del dï¿½a : " & Format(llave_rep02!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
         GoTo CANCELA
     End If
     If llave_rep02!far_estado <> "E" Then
@@ -10961,7 +10961,7 @@ For nro_filas = 1 To 8
         mov_llave!MOV_NRO_MOV = nro_filas
         mov_llave!MOV_TIPMOV = WTIPMOVcaja
         mov_llave!MOV_TIPDOC = WTIPDOCcaja
-        mov_llave!MOV_GLOSA = "Cancelación Efectivo"
+        mov_llave!MOV_GLOSA = "Cancelaciï¿½n Efectivo"
         If Val(xl.Cells(f1, 11)) = 0 Then
           mov_llave!MOV_DETALLE = "*** ANULACION ***"
           mov_llave!MOV_GLOSA = "*** ANULACION ***"
@@ -10986,7 +10986,7 @@ For nro_filas = 1 To 8
         mov_llave!MOV_NRO_MOV = nro_filas
         mov_llave!MOV_TIPMOV = WTIPMOVcaja
         mov_llave!MOV_TIPDOC = WTIPDOCcaja
-        mov_llave!MOV_GLOSA = "Cancelación Efectivo"
+        mov_llave!MOV_GLOSA = "Cancelaciï¿½n Efectivo"
         If Val(xl.Cells(f1, 11)) = 0 Then
           mov_llave!MOV_DETALLE = "*** ANULACION ***"
           mov_llave!MOV_GLOSA = "*** ANULACION ***"
@@ -11003,7 +11003,7 @@ For nro_filas = 1 To 8
         mov_llave!MOV_NRO_MOV = nro_filas
         mov_llave!MOV_TIPMOV = WTIPMOV
         mov_llave!MOV_TIPDOC = WTIPDOC
-        mov_llave!MOV_GLOSA = "Facturación"
+        mov_llave!MOV_GLOSA = "Facturaciï¿½n"
         If Val(xl.Cells(f1, 11)) = 0 Then
           mov_llave!MOV_DETALLE = "*** ANULACION ***"
           mov_llave!MOV_GLOSA = "*** ANULACION ***"
@@ -11409,7 +11409,7 @@ Do Until llave_rep02.EOF
   If llave_rep02!FAR_MONEDA = "D" Then
     WS_TC = JALAR(llave_rep02!FAR_fecha_compra)
     If WS_TC <= 0 Then
-        MsgBox "Falta Ingresar el Tipo de Cambio del día : " & Format(llave_rep02!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
+        MsgBox "Falta Ingresar el Tipo de Cambio del dï¿½a : " & Format(llave_rep02!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
         GoTo CANCELA
     End If
     If llave_rep02!far_estado <> "E" Then
@@ -12000,7 +12000,7 @@ Set ps_ctacontab = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues)  '
 
 pub_cadena = "select  * from contabilidad where cnt_codcia = '25' and cnt_codtra = 2412 and cnt_secuencia = 0"
 Set ps_ctacontabNC = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues)  ' rdConcurReadOnly) ', rdConcurLock)
-  pub_mensaje = "<Advertencia> El pase de la información es por cada Compañia. Continuar...?"
+  pub_mensaje = "<Advertencia> El pase de la informaciï¿½n es por cada Compaï¿½ia. Continuar...?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
       Azul2 txtCampo1, txtCampo1
@@ -12015,12 +12015,12 @@ Set ps_ctacontabNC = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) 
   
   If (cop_llave!cop_fecha_proceso = CDate(txtCampo1.Text)) And (cop_llave!cop_fecha_proceso2 = CDate(txtCampo2.Text)) Then
   Else
-      MsgBox "Usted. a marcado la opción: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
+      MsgBox "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
       Azul2 txtCampo1, txtCampo1
       GoTo CANCELA
   End If
-  If qver_onlyCont = 9 Then ' hay Información en OnlyCont. Confirmar.
-      pub_mensaje = "Usted. a marcado la opción: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< LA INFORMACION SE REEMPLAZADA EN LIBRO >...?"
+  If qver_onlyCont = 9 Then ' hay Informaciï¿½n en OnlyCont. Confirmar.
+      pub_mensaje = "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< LA INFORMACION SE REEMPLAZADA EN LIBRO >...?"
       Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
       If Pub_Respuesta = vbNo Then
         Azul2 txtCampo1, txtCampo1
@@ -13282,7 +13282,7 @@ WS_ANO = DatePart("yyyy", wq_fecha)
 If llave_rep01!FAR_MONEDA = "D" Then
    WR_TC = JALAR(llave_rep01!FAR_fecha_compra)
    If WR_TC <= 0 Then
-      MsgBox "Falta Llenar Tipo de Cambio del día :" & Format(llave_rep01!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
+      MsgBox "Falta Llenar Tipo de Cambio del dï¿½a :" & Format(llave_rep01!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
       GoTo CANCELA
    End If
    WW_VENTA = WW_VENTA + ((Val(llave_rep01!far_bruto) + Val(llave_rep01!far_impto) - Val(llave_rep01!FAR_TOT_DESCTO)) * WR_TC)
@@ -13304,7 +13304,7 @@ Do Until llave_rep01.EOF
     If llave_rep01!FAR_MONEDA = "D" Then
        WR_TC = JALAR(llave_rep01!FAR_fecha_compra)
        If WR_TC <= 0 Then
-             MsgBox "Falta Llenar Tipo de Cambio del día :" & Format(llave_rep01!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
+             MsgBox "Falta Llenar Tipo de Cambio del dï¿½a :" & Format(llave_rep01!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
              GoTo CANCELA
        End If
        WW_VENTA = WW_VENTA + ((Val(llave_rep01!far_bruto) + Val(llave_rep01!far_impto) - Val(llave_rep01!FAR_TOT_DESCTO)) * WR_TC)
@@ -13337,7 +13337,7 @@ Do Until llave_rep02.EOF
       If llave_rep02!CAR_MONEDA = "D" Then
         WR_TC = JALAR(llave_rep02!car_fecha_sunat)
         If WR_TC <= 0 Then
-            MsgBox "Falta Llenar Tipo de Cambio del día :" & Format(llave_rep01!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
+            MsgBox "Falta Llenar Tipo de Cambio del dï¿½a :" & Format(llave_rep01!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
             GoTo CANCELA
         End If
         WW_VENTA_ANT = (Val(llave_rep02!car_importe) * WR_TC) + WW_VENTA_ANT
@@ -14729,7 +14729,7 @@ FrmImp2.lblproceso.Caption = "Abriendo Microsoft Excel . . . "
 DoEvents
 GoSub WEXCEL
 f1 = 5
-pub_mensaje = "Imprimir según su Usuario...?"
+pub_mensaje = "Imprimir segï¿½n su Usuario...?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbYes Then
   wusu = "A"
@@ -15003,10 +15003,10 @@ ElseIf ww_fbg = "G" Then
 Else
  xl.Cells(f1, 1) = "PENDIENTES"
 End If
-xl.Cells(f1, 2) = "Nº "
+xl.Cells(f1, 2) = "Nï¿½ "
 xl.Cells(f1, 3) = ww_serini
 xl.Cells(f1, 4) = ww_numini
-xl.Cells(f1, 5) = "'al Nº"
+xl.Cells(f1, 5) = "'al Nï¿½"
 xl.Cells(f1, 6) = ww_numfin
 xl.Cells(f1, 7) = "'S/."
 xl.Cells(f1, 8) = Format(WMONTO_SOLES, "0.00")
@@ -15329,7 +15329,7 @@ End If
 If CDate(wsFECHA1) <> cop_llave!cop_fecha_proceso Then cheasiento.Value = 0
 If CDate(wsFECHA2) <> cop_llave!cop_fecha_proceso2 Then cheasiento.Value = 0
 If chepasa.Value = 1 Then
-  pub_mensaje = "<Advertencia> El pase de la información es por cada Compañia. Continuar...?"
+  pub_mensaje = "<Advertencia> El pase de la informaciï¿½n es por cada Compaï¿½ia. Continuar...?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
       Azul2 txtCampo1, txtCampo1
@@ -15343,12 +15343,12 @@ If chepasa.Value = 1 Then
   End If
   If (cop_llave!cop_fecha_proceso = CDate(wsFECHA1)) And (cop_llave!cop_fecha_proceso2 = CDate(wsFECHA2)) Then
   Else
-      MsgBox "Usted. a marcado la opción: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
+      MsgBox "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
       Azul2 txtCampo1, txtCampo1
       GoTo CANCELA
   End If
-  If qver_onlyCont = 9 Then ' hay Información en OnlyCont. Confirmar.
-      pub_mensaje = "Usted. a marcado la opción: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< Desea adicionar este Nuevo Asiento de Voucher de todas Maneras >...?"
+  If qver_onlyCont = 9 Then ' hay Informaciï¿½n en OnlyCont. Confirmar.
+      pub_mensaje = "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< Desea adicionar este Nuevo Asiento de Voucher de todas Maneras >...?"
       Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
       If Pub_Respuesta = vbNo Then
         Azul2 txtCampo1, txtCampo1
@@ -15583,7 +15583,7 @@ Do Until llave_rep02.EOF
   If llave_rep02!FAR_MONEDA = "D" Then
     WS_TC = JALAR(llave_rep02!FAR_fecha_compra)
     If WS_TC <= 0 Then
-        MsgBox "Falta Ingresar el Tipo de Cambio del día : " & Format(llave_rep02!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
+        MsgBox "Falta Ingresar el Tipo de Cambio del dï¿½a : " & Format(llave_rep02!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
         GoTo CANCELA
     End If
   End If
@@ -15669,7 +15669,7 @@ MOSTRAR:
   xl.Cells(f1, 3) = t_valor_igv
   xl.Cells(f1, 4) = t_valor_venta
 
-' Ordenando la información para asintos.
+' Ordenando la informaciï¿½n para asintos.
 '---------------------------------------
 
 If Fres = 0 Then GoTo SALTA
@@ -15957,7 +15957,7 @@ If CDate(wsFECHA1) > CDate(wsFECHA2) Then
  MsgBox "Fecha Invalidad ..", 48, Pub_Titulo
  GoTo CANCELA
 End If
-pub_mensaje = "Imprimir según su Usuario...?"
+pub_mensaje = "Imprimir segï¿½n su Usuario...?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbYes Then
  wusu = "A"
@@ -17361,7 +17361,7 @@ FrmImp2.lblproceso.Caption = "Abriendo Microsoft Excel . . . "
 DoEvents
 GoSub WEXCEL
 f1 = 5
-'pub_mensaje = "Imprimir según su Usuario...?"
+'pub_mensaje = "Imprimir segï¿½n su Usuario...?"
 'Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 'If Pub_Respuesta = vbYes Then
 '  wusu = "A"
@@ -17812,10 +17812,10 @@ ElseIf ww_fbg = "G" Then
 Else
  xl.Cells(f1, 1) = "PENDIENTES"
 End If
-xl.Cells(f1, 2) = "Nº "
+xl.Cells(f1, 2) = "Nï¿½ "
 xl.Cells(f1, 3) = "'" & Format(ww_serini, "000")
 xl.Cells(f1, 4) = ww_numini
-xl.Cells(f1, 5) = "'al Nº"
+xl.Cells(f1, 5) = "'al Nï¿½"
 xl.Cells(f1, 6) = ww_numfin
 xl.Cells(f1, 7) = "'S/."
 xl.Cells(f1, 8) = Format(WMONTO_SOLES, "0.00")
@@ -18131,7 +18131,7 @@ FrmImp2.lblproceso.Caption = "Abriendo Microsoft Excel . . . "
 DoEvents
 GoSub WEXCEL
 f1 = 5
-'pub_mensaje = "Imprimir según su Usuario...?"
+'pub_mensaje = "Imprimir segï¿½n su Usuario...?"
 'Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 'If Pub_Respuesta = vbYes Then
 '  wusu = "A"
@@ -19383,10 +19383,10 @@ ElseIf ww_fbg = "G" Then
 Else
  xl.Cells(f1, 1) = "PENDIENTES"
 End If
-xl.Cells(f1, 2) = "Nº "
+xl.Cells(f1, 2) = "Nï¿½ "
 xl.Cells(f1, 3) = ww_serini
 xl.Cells(f1, 4) = ww_numini
-xl.Cells(f1, 5) = "'al Nº"
+xl.Cells(f1, 5) = "'al Nï¿½"
 xl.Cells(f1, 6) = ww_numfin
 xl.Cells(f1, 7) = "'S/."
 xl.Cells(f1, 8) = Format(WMONTO_SOLES, "0.00")
@@ -19522,7 +19522,7 @@ DoEvents
 GoSub WEXCEL
 f1 = 5
 FINI = 5
-pub_mensaje = "Imprimir según su Usuario...?"
+pub_mensaje = "Imprimir segï¿½n su Usuario...?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbYes Then
   wusu = "A"
@@ -20152,10 +20152,10 @@ IMP_LINEA:
 'Else
 ' xl.Cells(F1, 1) = "PENDIENTES"
 'End If
-'xl.Cells(F1, 2) = "Nº "
+'xl.Cells(F1, 2) = "Nï¿½ "
 'xl.Cells(F1, 3) = ww_serini
 'xl.Cells(F1, 4) = ww_numini
-'xl.Cells(F1, 5) = "'al Nº"
+'xl.Cells(F1, 5) = "'al Nï¿½"
 'xl.Cells(F1, 6) = ww_numfin
 'xl.Cells(F1, 7) = "'S/."
 'xl.Cells(F1, 8) = Format(WMONTO_SOLES, "0.00")
@@ -20414,7 +20414,7 @@ transfer.Recordset.Update
 On Error GoTo EMES
 RR = Shell("C:\WSADMIN\WST.BAT", 1)
 
-MsgBox "PROCESO DE VENTAS TRANSFERIDO " & Chr(13) & "DEL :" & PUB_FECHA & "  AL " & PUB_FECHA_VCTO & Chr(13) & "Ubicación de Archivo :  C:\WSADMIN\WSTraf.ZIP"
+MsgBox "PROCESO DE VENTAS TRANSFERIDO " & Chr(13) & "DEL :" & PUB_FECHA & "  AL " & PUB_FECHA_VCTO & Chr(13) & "Ubicaciï¿½n de Archivo :  C:\WSADMIN\WSTraf.ZIP"
 Screen.MousePointer = 0
 Unload FrmImp2
 
@@ -20513,7 +20513,7 @@ FrmImp2.lblproceso.Caption = "Abriendo Microsoft Excel . . . "
 DoEvents
 GoSub WEXCEL
 f1 = 5
-pub_mensaje = "Imprimir según su Usuario...?"
+pub_mensaje = "Imprimir segï¿½n su Usuario...?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbYes Then
   wusu = "A"
@@ -21451,10 +21451,10 @@ ElseIf ww_fbg = "G" Then
 Else
  xl.Cells(f1, 1) = "PENDIENTES"
 End If
-xl.Cells(f1, 2) = "Nº "
+xl.Cells(f1, 2) = "Nï¿½ "
 xl.Cells(f1, 3) = ww_serini
 xl.Cells(f1, 4) = ww_numini
-xl.Cells(f1, 5) = "'al Nº"
+xl.Cells(f1, 5) = "'al Nï¿½"
 xl.Cells(f1, 6) = ww_numfin
 xl.Cells(f1, 7) = "'S/."
 xl.Cells(f1, 8) = Format(WMONTO_SOLES, "0.00")
@@ -21853,7 +21853,7 @@ Do Until llave_rep02.EOF
   If llave_rep02!FAR_MONEDA = "D" Then
     WS_TC = JALAR(llave_rep02!FAR_fecha_compra)
     If WS_TC <= 0 Then
-        MsgBox "Falta Ingresar el Tipo de Cambio del día : " & Format(llave_rep02!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
+        MsgBox "Falta Ingresar el Tipo de Cambio del dï¿½a : " & Format(llave_rep02!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
         GoTo CANCELA
     End If
   End If
@@ -21907,7 +21907,7 @@ MOSTRAR:
   xl.Cells(f1, 10) = Format(SS_VALOR_VENTA, "0.00")
 
 
-' Ordenando la información para asintos.
+' Ordenando la informaciï¿½n para asintos.
 '---------------------------------------
 
   FrmImp2.lblproceso.Caption = "Mostrando Hoja de Calculo  . . . "
@@ -21976,10 +21976,10 @@ ElseIf ww_fbg = "N" Then
 ElseIf ww_fbg = "D/." Then
  xl.Cells(f1, 2) = "'08"
 End If
-xl.Cells(f1, 3) = "Nº "
+xl.Cells(f1, 3) = "Nï¿½ "
 xl.Cells(f1, 4) = ww_serini
 xl.Cells(f1, 5) = ww_numini
-xl.Cells(f1, 6) = "'al Nº"
+xl.Cells(f1, 6) = "'al Nï¿½"
 xl.Cells(f1, 7) = ww_numfin
 xl.Cells(f1, 8) = Format(S_VALOR_PRECIO, "0.00")
 xl.Cells(f1, 9) = Format(s_valor_igv, "0.00")
@@ -24468,7 +24468,7 @@ oWs.Cells(2, 1) = "'AVANCE DE CUOTA POR PRODUCTO DEL " & Format(wsFECHA1, "dd/mm
 ' oWs.Cells(5, 5) = "Sin/I.G.V."
 'End If
 pasa_otro_im:
-wvalor = InputBox("Porcentaje de Variación :", "Porcentaje", 3)
+wvalor = InputBox("Porcentaje de Variaciï¿½n :", "Porcentaje", 3)
 
 If Val(wvalor) = 0 Then GoTo pasa_otro_im
 
@@ -25075,7 +25075,7 @@ Do While Not llave_rep01.EOF
            .Cells(I, 7).Value = "'" & Format(llave_rep02!FAR_fecha_compra, "dd/mm/yy")
            .Cells(I + 1, 5).Value = Format(llave_rep02!FAR_COSPRO * Equivalencia, "#########.00")
            .Cells(I + 1, 6).Value = Format(Val(.Cells(I, 6).Value) * Val(.Cells(I + 1, 5).Value), "######,###.00")
-           .Cells(I + 1, 7).Value = "'" & Format(LK_FECHA_DIA - llave_rep02!FAR_fecha_compra, "0") & "dia(s). NºInt: " & Format(llave_rep02!far_numser, "0") & "-" & Format(llave_rep02!far_numfac, "0")
+           .Cells(I + 1, 7).Value = "'" & Format(LK_FECHA_DIA - llave_rep02!FAR_fecha_compra, "0") & "dia(s). Nï¿½Int: " & Format(llave_rep02!far_numser, "0") & "-" & Format(llave_rep02!far_numfac, "0")
            '-------------------------------------------------------------
            llave_rep02.MoveNext
            If llave_rep02.EOF Then GoTo AVANZA_PRO
@@ -25096,7 +25096,7 @@ Do While Not llave_rep01.EOF
            .Cells(I, 10).Value = "'" & Format(llave_rep02!FAR_fecha_compra, "dd/mm/yy")
            .Cells(I + 1, 8).Value = Format(llave_rep02!FAR_COSPRO * Equivalencia, "#########.00")
            .Cells(I + 1, 9).Value = Format(Val(.Cells(I, 9).Value) * Val(.Cells(I + 1, 8).Value), "######,###.00")
-           .Cells(I + 1, 10).Value = "'" & Format(LK_FECHA_DIA - llave_rep02!FAR_fecha_compra, "0") & "dia(s). NºInt: " & Format(llave_rep02!far_numser, "0") & "-" & Format(llave_rep02!far_numfac, "0")
+           .Cells(I + 1, 10).Value = "'" & Format(LK_FECHA_DIA - llave_rep02!FAR_fecha_compra, "0") & "dia(s). Nï¿½Int: " & Format(llave_rep02!far_numser, "0") & "-" & Format(llave_rep02!far_numfac, "0")
            '----------------------------------------------------------------
            llave_rep02.MoveNext
            If llave_rep02.EOF Then GoTo AVANZA_PRO
@@ -25118,7 +25118,7 @@ Do While Not llave_rep01.EOF
            .Cells(I, 13).Value = "'" & Format(llave_rep02!FAR_fecha_compra, "dd/mm/yy")
            .Cells(I + 1, 11).Value = Format(llave_rep02!FAR_COSPRO * Equivalencia, "#########.00")
            .Cells(I + 1, 12).Value = Format(Val(.Cells(I, 12).Value) * Val(.Cells(I + 1, 11).Value), "######,###.00")
-           .Cells(I + 1, 13).Value = "'" & Format(LK_FECHA_DIA - llave_rep02!FAR_fecha_compra, "0") & "dia(s). NºInt: " & Format(llave_rep02!far_numser, "0") & "-" & Format(llave_rep02!far_numfac, "0")
+           .Cells(I + 1, 13).Value = "'" & Format(LK_FECHA_DIA - llave_rep02!FAR_fecha_compra, "0") & "dia(s). Nï¿½Int: " & Format(llave_rep02!far_numser, "0") & "-" & Format(llave_rep02!far_numfac, "0")
            
            '----------------------------------------------------------------
            llave_rep02.MoveNext
@@ -25142,7 +25142,7 @@ Do While Not llave_rep01.EOF
            .Cells(I, 16).Value = "'" & Format(llave_rep02!FAR_fecha_compra, "dd/mm/yy")
            .Cells(I + 1, 14).Value = Format(llave_rep02!FAR_COSPRO * Equivalencia, "#########.00")
            .Cells(I + 1, 15).Value = Format(Val(.Cells(I, 15).Value) * Val(.Cells(I + 1, 14).Value), "######,###.00")
-           .Cells(I + 1, 16).Value = "'" & Format(LK_FECHA_DIA - llave_rep02!FAR_fecha_compra, "0") & "dia(s). NºInt: " & Format(llave_rep02!far_numser, "0") & "-" & Format(llave_rep02!far_numfac, "0")
+           .Cells(I + 1, 16).Value = "'" & Format(LK_FECHA_DIA - llave_rep02!FAR_fecha_compra, "0") & "dia(s). Nï¿½Int: " & Format(llave_rep02!far_numser, "0") & "-" & Format(llave_rep02!far_numfac, "0")
            '----------------------------------------------------------------
            llave_rep02.MoveNext
            If llave_rep02.EOF Then GoTo AVANZA_PRO
@@ -25164,7 +25164,7 @@ Do While Not llave_rep01.EOF
            .Cells(I, 19).Value = "'" & Format(llave_rep02!FAR_fecha_compra, "dd/mm/yy")
            .Cells(I + 1, 17).Value = Format(llave_rep02!FAR_COSPRO * Equivalencia, "#########.00")
            .Cells(I + 1, 18).Value = Format(Val(.Cells(I, 18).Value) * Val(.Cells(I + 1, 17).Value), "######,###.00")
-           .Cells(I + 1, 19).Value = "'" & Format(LK_FECHA_DIA - llave_rep02!FAR_fecha_compra, "000") & "dia(s). NºInt: " & Format(llave_rep02!far_numser, "0") & "-" & Format(llave_rep02!far_numfac, "0")
+           .Cells(I + 1, 19).Value = "'" & Format(LK_FECHA_DIA - llave_rep02!FAR_fecha_compra, "000") & "dia(s). Nï¿½Int: " & Format(llave_rep02!far_numser, "0") & "-" & Format(llave_rep02!far_numfac, "0")
            'Print .Cells(i + 1, 7).Value
            If checomprime.Value = 1 Then .Cells(I + 1, 7).Value = "'" & wdias_mayor & "dia(s)."
            '----------------------------------------------------------------
@@ -31559,7 +31559,7 @@ If CUENTA_FILAS >= Val(max.Text) Then
     CUENTA_FILAS = 0
     f1 = f1 + 1
     iPag = iPag + 1
-    xl.Cells(f1, 3) = "Total Pagina Nº " & iPag
+    xl.Cells(f1, 3) = "Total Pagina Nï¿½ " & iPag
     xl.Cells(f1, 10) = acu_wreg_baseex ' BASE IMP
     xl.Cells(f1, 11) = acu_wreg_base ' BASE IMP GRAB
     xl.Cells(f1, 12) = acu_wreg_isc ' ISC
@@ -31728,7 +31728,7 @@ Do Until llave_rep01.EOF
         CUENTA_FILAS = 0
         f1 = f1 + 1
         iPag = iPag + 1
-        xl.Cells(f1, 3) = "Total Pagina Nº " & iPag
+        xl.Cells(f1, 3) = "Total Pagina Nï¿½ " & iPag
         xl.Cells(f1, 10) = acu_wreg_baseex ' BASE IMP
         xl.Cells(f1, 11) = acu_wreg_base ' BASE IMP GRAB
         xl.Cells(f1, 12) = acu_wreg_isc ' ISC
@@ -31865,7 +31865,7 @@ Do Until llave_rep01.EOF
         CUENTA_FILAS = 0
         f1 = f1 + 1
         iPag = iPag + 1
-        xl.Cells(f1, 3) = "Total Pagina Nº " & iPag
+        xl.Cells(f1, 3) = "Total Pagina Nï¿½ " & iPag
         xl.Cells(f1, 10) = acu_wreg_baseex ' BASE IMP
         xl.Cells(f1, 11) = acu_wreg_base ' BASE IMP GRAB
         xl.Cells(f1, 12) = acu_wreg_isc ' ISC
@@ -31972,7 +31972,7 @@ End If
   
   xl.Cells(1, 1) = Mid(MDIForm1.TXTCIA.Caption, 4, Len(MDIForm1.TXTCIA.Caption))
   xl.Cells(2, 1) = Trim(par_llave!PAR_DIR_EMP)
-  xl.Cells(3, 1) = "R.U.C. Nº " & Trim(par_llave!par_ruc_emp)
+  xl.Cells(3, 1) = "R.U.C. Nï¿½ " & Trim(par_llave!par_ruc_emp)
   xl.Cells(3, 8) = "'R E G I S T R O   D E   V E N T A  " & UCase(Format(wsFECHA1, "mmmm")) & " " & Format(wsFECHA2, "yyyy")
   xl.DisplayAlerts = False
   'xl.Worksheets(1).Protect
@@ -34314,13 +34314,13 @@ Dim wcapp_fin As Integer
 Dim wcol_tot As Integer
 wcod_tiporepo = 0
 If opest(0).Value Then
- wtiporepo = "Información en Linea"
+ wtiporepo = "Informaciï¿½n en Linea"
  wcod_tiporepo = 1
 ElseIf opest(1).Value Then
- wtiporepo = "Información de Cierre"
+ wtiporepo = "Informaciï¿½n de Cierre"
  wcod_tiporepo = 2
 ElseIf opest(2).Value Then
- wtiporepo = "Consulta de información"
+ wtiporepo = "Consulta de informaciï¿½n"
  wcod_tiporepo = 3
 End If
 'On Error GoTo FINTODO
@@ -35476,6 +35476,18 @@ Else
 End If
 Return
 
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub
 
 

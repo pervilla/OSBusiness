@@ -89,7 +89,7 @@ Begin VB.Form FrmVen
             Width           =   615
          End
          Begin VB.Label Label9 
-            Caption         =   "Días Max:"
+            Caption         =   "Dï¿½as Max:"
             Height          =   255
             Left            =   1440
             TabIndex        =   95
@@ -300,7 +300,7 @@ Begin VB.Form FrmVen
          Width           =   1215
       End
       Begin VB.Label Label1 
-         Caption         =   "Dirección :"
+         Caption         =   "Direcciï¿½n :"
          Height          =   255
          Index           =   11
          Left            =   240
@@ -309,7 +309,7 @@ Begin VB.Form FrmVen
          Width           =   975
       End
       Begin VB.Label Label1 
-         Caption         =   "Descripción : "
+         Caption         =   "Descripciï¿½n : "
          Height          =   255
          Index           =   1
          Left            =   240
@@ -338,13 +338,13 @@ Begin VB.Form FrmVen
       _Version        =   393216
       Tabs            =   2
       TabHeight       =   520
-      TabCaption(0)   =   "Definición de Serie"
+      TabCaption(0)   =   "Definiciï¿½n de Serie"
       TabPicture(0)   =   "FrmVend.frx":0446
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "F2"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
-      TabCaption(1)   =   "Archivos de Impresión"
+      TabCaption(1)   =   "Archivos de Impresiï¿½n"
       TabPicture(1)   =   "FrmVend.frx":0462
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "txtnd"
@@ -852,7 +852,7 @@ Begin VB.Form FrmVen
             WordWrap        =   -1  'True
          End
          Begin VB.Label Label1 
-            Caption         =   "Serie de Guia de Remisión :"
+            Caption         =   "Serie de Guia de Remisiï¿½n :"
             Height          =   375
             Index           =   18
             Left            =   120
@@ -934,7 +934,7 @@ Begin VB.Form FrmVen
          Width           =   975
       End
       Begin VB.Label Label5 
-         Caption         =   "G. Remisión :"
+         Caption         =   "G. Remisiï¿½n :"
          Height          =   255
          Index           =   2
          Left            =   -74760
@@ -969,7 +969,7 @@ Begin VB.Form FrmVen
          Width           =   975
       End
       Begin VB.Label Label4 
-         Caption         =   "Archivos de Impresión:"
+         Caption         =   "Archivos de Impresiï¿½n:"
          Height          =   255
          Left            =   -74760
          TabIndex        =   69
@@ -1111,7 +1111,7 @@ Begin VB.Form FrmVen
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
-      Caption         =   "! Talonarios esta Definido por Compañia !"
+      Caption         =   "! Talonarios esta Definido por Compaï¿½ia !"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   11.25
@@ -1597,9 +1597,9 @@ End If
      Exit Sub
   End If
   
-  pub_mensaje = " ¿Desea Eliminar el Registro... ?"
+  pub_mensaje = " ï¿½Desea Eliminar el Registro... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligió
+  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
     Screen.MousePointer = 11
     ven_llave.Delete
     Txt_key.Text = ""
@@ -2167,5 +2167,17 @@ For fila = 0 To WCONTROL.ListCount - 1
         Exit Sub
     End If
 Next fila
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub
 

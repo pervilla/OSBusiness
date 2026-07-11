@@ -1,0 +1,1 @@
+﻿Get-Content 'C:\OSBusiness FE\ctrl_begins.txt' | ForEach-Object { if ( -match 'Begin\s+\S+\s+(\S+)') { [1] } } | Sort-Object -Unique

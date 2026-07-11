@@ -1,20 +1,20 @@
 VERSION 5.00
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Begin VB.Form frmDocu 
    Caption         =   "Consulta de Operaciones"
-   ClientHeight    =   5250
+   ClientHeight    =   7080
    ClientLeft      =   60
    ClientTop       =   345
-   ClientWidth     =   9930
+   ClientWidth     =   11970
    ControlBox      =   0   'False
    ForeColor       =   &H00404000&
    LinkTopic       =   "Form2"
    MDIChild        =   -1  'True
-   ScaleHeight     =   5250
-   ScaleWidth      =   9930
+   ScaleHeight     =   7080
+   ScaleWidth      =   11970
    WindowState     =   2  'Maximized
    Begin VB.Frame Fracruze 
       Caption         =   "Cruze de Documento(Solo Ventas):"
@@ -249,8 +249,8 @@ Begin VB.Form frmDocu
       Height          =   495
       Left            =   10560
       TabIndex        =   109
-      Top             =   4200
-      Width           =   975
+      Top             =   3120
+      Width           =   1215
    End
    Begin VB.CommandButton DOCANEXO 
       Height          =   555
@@ -451,17 +451,17 @@ Begin VB.Form frmDocu
       Height          =   435
       Left            =   10560
       TabIndex        =   79
-      Top             =   2640
+      Top             =   3720
       Width           =   1215
    End
    Begin VB.CommandButton cmdCerrar 
       Caption         =   "Ce&rrar"
-      Height          =   625
+      Height          =   750
       Left            =   10560
       Picture         =   "FrmDocu.frx":04DF
       Style           =   1  'Graphical
       TabIndex        =   78
-      Top             =   5280
+      Top             =   5160
       Width           =   1215
    End
    Begin VB.CommandButton cmdImp 
@@ -480,7 +480,7 @@ Begin VB.Form frmDocu
       Picture         =   "FrmDocu.frx":0629
       Style           =   1  'Graphical
       TabIndex        =   77
-      Top             =   3240
+      Top             =   4320
       Width           =   1215
    End
    Begin VB.Frame Frame1 
@@ -905,7 +905,7 @@ Begin VB.Form frmDocu
          Width           =   2895
          _ExtentX        =   5106
          _ExtentY        =   291
-         _Version        =   327682
+         _Version        =   393216
          Appearance      =   0
       End
       Begin VB.Label lblmotivo 
@@ -1040,7 +1040,7 @@ Begin VB.Form frmDocu
       End
       Begin VB.Label d_nomven 
          Appearance      =   0  'Flat
-         BackColor       =   &H00C0C0C0&
+         BackColor       =   &H80000004&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -1313,7 +1313,7 @@ Begin VB.Form frmDocu
       Begin VB.Label d_domicilio 
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
-         BackColor       =   &H00C0C0C0&
+         BackColor       =   &H80000004&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1432,7 +1432,7 @@ Begin VB.Form frmDocu
       Begin VB.Label d_ruc 
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
-         BackColor       =   &H00C0C0C0&
+         BackColor       =   &H80000004&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -1557,7 +1557,7 @@ Begin VB.Form frmDocu
       End
       Begin VB.Label d_nomclie 
          Appearance      =   0  'Flat
-         BackColor       =   &H00C0C0C0&
+         BackColor       =   &H80000004&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -1928,7 +1928,7 @@ Begin VB.Form frmDocu
       Height          =   255
       Left            =   10440
       TabIndex        =   75
-      Top             =   6480
+      Top             =   6120
       Width           =   1335
    End
    Begin VB.Label Label3 
@@ -2473,7 +2473,7 @@ Dim LETRAS(24) As String * 1
 Dim xl As Object
 On Error GoTo FINTODO
 Screen.MousePointer = 11
-pb.Visible = True
+PB.Visible = True
 pbMax = 6
 pbMin = 0
 pbValue = 0
@@ -2517,7 +2517,7 @@ xl.DisplayAlerts = False
 xl.Worksheets(1).Protect PUB_CLAVE
 xl.Application.Visible = True
 Set xl = Nothing
-pb.Visible = False
+PB.Visible = False
 Screen.MousePointer = 0
 Exit Sub
 
@@ -3448,9 +3448,9 @@ End If
 End Sub
 
 Private Sub Form_Load()
-    CenterMe frmDocu
-    frmDocu.Width = 12120
-    frmDocu.Height = 8500
+    CenterMe frmdocu
+    frmdocu.Width = 12120
+    frmdocu.Height = 8500
 Dim SQL As String
 Unload FORMGEN
 'Unload FORM_GRIFO
@@ -3706,7 +3706,7 @@ tempo_serie = Trim(txtserie.Text)
 pbValue = 0
 pbMin = 0
 pbMax = far_r.RowCount + 3
-pb.Visible = True
+PB.Visible = True
 'DoEvents
 LIMPIA_DOCU
 'MsgBox far_r!far_NUMOPER
@@ -4357,7 +4357,7 @@ End If
    CmdAnterior.Enabled = True
    cmdSiguiente.Enabled = True
    cmdImp.Enabled = True
-   pb.Visible = False
+   PB.Visible = False
    If cherela.Visible And LK_EMP <> "HER" Then cherela_Click
    LOC_NUMFAC_FIN = Val(txtnumfac.Text)
    If LK_CODUSU = "ADMIN" And (LOC_TIPMOV = 6 Or LOC_TIPMOV = 5) Then
@@ -4905,7 +4905,7 @@ wven = 0
 f1 = 0
 WS_BRUTO = 0
 grid_fac2.Rows = 1
-pb.Visible = True
+PB.Visible = True
 pbMax = llave_rep01.RowCount
 pbMin = 0
 pbValue = 0
@@ -4975,7 +4975,7 @@ lblcheque.Visible = True
 lblEfectivo.Visible = True
 CmdAnterior.Enabled = True
 cmdSiguiente.Enabled = True
-pb.Visible = False
+PB.Visible = False
 TRANS.Visible = False
 
 CANCELA:
@@ -5018,7 +5018,7 @@ wven = 0
 f1 = 0
 WS_BRUTO = 0
 grid_fac2.Rows = 1
-pb.Visible = True
+PB.Visible = True
 pbMax = llave_rep01.RowCount
 pbMin = 0
 pbValue = 0
@@ -5094,7 +5094,7 @@ Loop
    d_neto.Caption = Format(WS_BRUTO + WS_IMPTO - WS_DESCTO + WS_GASTOS, "0.00")
    CmdAnterior.Enabled = True
    cmdSiguiente.Enabled = True
-   pb.Visible = False
+   PB.Visible = False
 Exit Sub
 
 Return
@@ -6020,4 +6020,16 @@ Public Sub MUESTA_DOCUMENTO()
     LLENA_CONSULTA
     loc_flag_espera = ""
     txtnumfac.SetFocus
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub

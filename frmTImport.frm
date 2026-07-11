@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Begin VB.Form frmTImport 
-   Caption         =   "Transfer. Export. (Envio de Información)"
+   Caption         =   "Transfer. Export. (Envio de Informaciï¿½n)"
    ClientHeight    =   6180
    ClientLeft      =   555
    ClientTop       =   1845
@@ -108,7 +108,7 @@ Begin VB.Form frmTImport
       Width           =   1455
    End
    Begin VB.Frame frainfo 
-      Caption         =   "Imformación :"
+      Caption         =   "Imformaciï¿½n :"
       ForeColor       =   &H000000C0&
       Height          =   3855
       Left            =   120
@@ -189,7 +189,7 @@ Begin VB.Form frmTImport
          Width           =   4215
       End
       Begin VB.Label lblpro 
-         Caption         =   "Procesando Información ..."
+         Caption         =   "Procesando Informaciï¿½n ..."
          ForeColor       =   &H00000080&
          Height          =   255
          Left            =   240
@@ -292,7 +292,7 @@ Dim REP_FECHA1  As String
 Dim REP_FECHA2  As String
 GEN.Requery
 If Trim(Nulo_Valors(GEN!GEN_CIAEXP)) = "" Then
- MsgBox "Codigo de Compañia de Recepción de informacion no validad...", 48, Pub_Titulo
+ MsgBox "Codigo de Compaï¿½ia de Recepciï¿½n de informacion no validad...", 48, Pub_Titulo
  Exit Sub
 End If
 
@@ -518,7 +518,7 @@ On Error GoTo EMES
 'RR = Shell("C:\WSADMIN\WST.BAT", 1)
 GoSub Disable_controles
 Screen.MousePointer = 0
-MsgBox "Proceso de Terminado Satisfactoriamente " & Chr(13) & "Total de Registros : " & CONTADOR & Chr(13) & "DEL :" & txtCampo1.Text & "  AL " & txtCampo2.Text & Chr(13) & "Ubicación de Archivo :  " & Trim(transfer.DatabaseName), 48, Pub_Titulo
+MsgBox "Proceso de Terminado Satisfactoriamente " & Chr(13) & "Total de Registros : " & CONTADOR & Chr(13) & "DEL :" & txtCampo1.Text & "  AL " & txtCampo2.Text & Chr(13) & "Ubicaciï¿½n de Archivo :  " & Trim(transfer.DatabaseName), 48, Pub_Titulo
 
 
 
@@ -605,4 +605,16 @@ Private Sub txtCampo2_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
   If ENVIO.Enabled Then ENVIO.SetFocus
 End If
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub

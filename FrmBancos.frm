@@ -129,7 +129,7 @@ Begin VB.Form frmBancos
       Width           =   1300
    End
    Begin VB.CommandButton CmdModificar 
-      Caption         =   "&Modificación"
+      Caption         =   "&Modificaciï¿½n"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -561,7 +561,7 @@ Begin VB.Form frmBancos
          Width           =   6495
       End
       Begin VB.Label Label1 
-         Caption         =   "Descripción :"
+         Caption         =   "Descripciï¿½n :"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -770,7 +770,7 @@ grid1.ColWidth(1) = 3000
 grid1.ColWidth(2) = 1
 grid1.Row = 0
 grid1.COL = 1
-grid1.Text = " Descripción "
+grid1.Text = " Descripciï¿½n "
 grid1.ColAlignment(1) = 2
 End Sub
 
@@ -1030,7 +1030,7 @@ If Left(cmdAgregar.Caption, 2) = "&A" Then
     'AGREGAMOS EN BLANCO
 Else
    If frmBancos.TXTBAN(2).Text = "" Or Len(frmBancos.TXTBAN(2).Text) = 0 Then
-       MsgBox "Ingrese Descripción de Banco ..!!!", 48, Pub_Titulo
+       MsgBox "Ingrese Descripciï¿½n de Banco ..!!!", 48, Pub_Titulo
        Azul TXTBAN(2), TXTBAN(2)
        Exit Sub
    End If
@@ -1148,7 +1148,7 @@ LK_TABLA = "BANCO"
 wgrupo = "10"
 archi = "SELECT * FROM COMAEST WHERE COM_CODCIA = ? AND COM_CUENTA >= '" & wgrupo & "' AND COM_CUENTA < '" & Trim(Str(Val(wgrupo) + 1)) & "'  ORDER BY COM_CUENTA"
 If Left(cmdcontab.Caption, 2) = "&Q" Then
-    pub_mensaje = "Confirmar la eliminación de la Cuenta : " & Trim(TXTBAN(4).Text) & " , Continuar ?"
+    pub_mensaje = "Confirmar la eliminaciï¿½n de la Cuenta : " & Trim(TXTBAN(4).Text) & " , Continuar ?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
        Exit Sub
@@ -1225,9 +1225,9 @@ End If
      Exit Sub
   End If
   Screen.MousePointer = 0
-  pub_mensaje = " ¿Desea Eliminar el Registro... ?"
+  pub_mensaje = " ï¿½Desea Eliminar el Registro... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligió
+  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
     Screen.MousePointer = 11
     ccm_llave.Delete
     frmBancos.Txt_key.Text = ""
@@ -1391,9 +1391,9 @@ End Sub
 
 Private Sub ListExiste_KeyPress(KeyAscii As Integer)
 If KeyAscii = 27 Then
-  pub_mensaje = " ¿Desea aun Grabar estos datos de  Bancos ... ? "
+  pub_mensaje = " ï¿½Desea aun Grabar estos datos de  Bancos ... ? "
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligió
+  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
      pasa = True
      frmBancos.ListExiste.Visible = False
      cmdAgregar_Click
@@ -1413,9 +1413,9 @@ Private Sub ListExiste_LostFocus()
 If frmBancos.ListExiste.Visible = False Then
      Exit Sub
 End If
-  pub_mensaje = " ¿Desea aun Grabar estos datos de  Bancos ... ? "
+  pub_mensaje = " ï¿½Desea aun Grabar estos datos de  Bancos ... ? "
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligió
+  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
      pasa = True
      cmdAgregar_Click
      KeyAscii = 0
@@ -1761,7 +1761,7 @@ If Trim(frmBancos.TXTBAN(4).Text) <> "" Then
       'LEER_COM_LLAVE
       'If Not com_llave.EOF Then
        '' If Trim(com_llave!com_descripcion) <> Trim(TXTBAN(2).text) Then
-       '    pub_mensaje = "Desea tambien la Descripción de la Cta. Contable. ?"
+       '    pub_mensaje = "Desea tambien la Descripciï¿½n de la Cta. Contable. ?"
        '    Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
        '    If Pub_Respuesta = vbYes Then
        '         com_llave.Edit
@@ -1823,4 +1823,16 @@ ccm_llave!CCM_SAL_ANTERIOR = 0
 ccm_llave.Update
 
 
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub

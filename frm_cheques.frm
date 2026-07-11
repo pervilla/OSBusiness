@@ -787,7 +787,7 @@ Else
  WCODCIA1 = LK_CODCIA
 End If
 PU_NUMFAC = Val((txtnro.Text))
-Reportes.WindowTitle = "KARDEX Nº :" & Format(PU_NUMSER, "000") & " - " & Format(PU_NUMFAC, "0000000")
+Reportes.WindowTitle = "KARDEX Nï¿½ :" & Format(PU_NUMSER, "000") & " - " & Format(PU_NUMFAC, "0000000")
 Reportes.ReportFileName = PUB_RUTA_OTRO + "VOCCM.RPT"
 pub_cadena = "({ALLOG.ALL_CODCIA} = '" & WCODCIA1 & "' OR {ALLOG.ALL_CODCIA} = '" & WCODCIA2 & "' ) AND {ALLOG.ALL_CODBAN}= " & Trim(i_codban.Text) & "  AND {ALLOG.ALL_CHENUM} = " & PU_NUMFAC & "  AND {ALLOG.ALL_SIGNO_CCM} =" & ws_signo_ssm & " AND {CCMAEST.CCM_CODCIA} = '" & par_llave!PAR_CIACCM & "'"
 Reportes.SelectionFormula = pub_cadena
@@ -886,7 +886,7 @@ If grid_che.COL = 2 Then
        MsgBox "Intente Nuevamnete...", 48, Pub_Titulo
        Exit Sub
     End If
-    wfecha = InputBox("Cambiar Fecha Emisión : " & grid_che.TextMatrix(grid_che.Row, 2), "Cambiar", grid_che.TextMatrix(grid_che.Row, 2))
+    wfecha = InputBox("Cambiar Fecha Emisiï¿½n : " & grid_che.TextMatrix(grid_che.Row, 2), "Cambiar", grid_che.TextMatrix(grid_che.Row, 2))
     If Not IsDate(wfecha) Then Exit Sub
     cheest_llave.Edit
     cheest_llave!CHE_FECHA_EMISION = wfecha
@@ -914,9 +914,9 @@ If grid_che.TextMatrix(grid_che.Row, 13) = "T" Or grid_che.TextMatrix(grid_che.R
        Exit Sub
     End If
     If grid_che.TextMatrix(grid_che.Row, 13) = "T" Then
-      pub_mensaje = "Cobrar el Importe !!! ...   ¿Desea Continuar... ?"
+      pub_mensaje = "Cobrar el Importe !!! ...   ï¿½Desea Continuar... ?"
     Else
-      pub_mensaje = "Retornar a Importe Defirido!!! ...   ¿Desea Continuar... ?"
+      pub_mensaje = "Retornar a Importe Defirido!!! ...   ï¿½Desea Continuar... ?"
     End If
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
@@ -952,7 +952,7 @@ If grid_che.COL = 9 Then
        MsgBox "Intente Nuevamnete...", 48, Pub_Titulo
        Exit Sub
     End If
-    'wfecha = InputBox("Cambiar Fecha Emisión : " & grid_che.TextMatrix(grid_che.Row, 2), "Cambiar")
+    'wfecha = InputBox("Cambiar Fecha Emisiï¿½n : " & grid_che.TextMatrix(grid_che.Row, 2), "Cambiar")
     'If Not IsDate(wfecha) Then Exit Sub
     WVARMAS = Val(grid_che.TextMatrix(grid_che.Row - 1, 15))
     If grid_che.Row <> 1 Then WVARMENOS = Val(grid_che.TextMatrix(grid_che.Row + 1, 15))
@@ -1598,7 +1598,7 @@ frm_cheques.grdr.Clear
 frm_cheques.grdr.Cols = 13
 frm_cheques.grdr.Rows = 1
 frm_cheques.grdr.TextMatrix(0, 0) = "Fec.Giro"
-frm_cheques.grdr.TextMatrix(0, 1) = "Descripción"
+frm_cheques.grdr.TextMatrix(0, 1) = "Descripciï¿½n"
 frm_cheques.grdr.TextMatrix(0, 2) = "Documento"
 frm_cheques.grdr.TextMatrix(0, 3) = "Cuenta"
 frm_cheques.grdr.TextMatrix(0, 4) = "Imp.US$"
@@ -1625,4 +1625,16 @@ frm_cheques.grdr.ColWidth(10) = 700
 frm_cheques.grdr.ColWidth(11) = 800
 txt_monto.Text = ""
 
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub

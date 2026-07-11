@@ -19,7 +19,7 @@ Begin VB.Form FrmCaa
    ScaleWidth      =   8970
    WindowState     =   2  'Maximized
    Begin VB.CommandButton cmdprog 
-      Caption         =   "Programación"
+      Caption         =   "Programaciï¿½n"
       Height          =   615
       Left            =   10440
       TabIndex        =   42
@@ -589,7 +589,7 @@ Begin VB.Form FrmCaa
    End
    Begin VB.Label momento 
       Alignment       =   2  'Center
-      Caption         =   "Procesando Información. un momento..."
+      Caption         =   "Procesando Informaciï¿½n. un momento..."
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -978,16 +978,16 @@ End Sub
 Private Sub cmdlimcre_Click(Index As Integer)
 Dim PSLIM As rdoQuery
 Dim ps_limcre As rdoResultset
-Dim Mensaje, Título, valorpred, mifecha
+Dim Mensaje, Tï¿½tulo, valorpred, mifecha
 If Val(i_codcli.Text) = 0 Then i_codcli.SetFocus: Exit Sub
 If Index = 1 Then
-Título = "Movimientos de activación de Bloqueo 2007"
+Tï¿½tulo = "Movimientos de activaciï¿½n de Bloqueo 2007"
 Else
-Título = "Movimientos de Limite de Credito de Clientes"
+Tï¿½tulo = "Movimientos de Limite de Credito de Clientes"
 End If
 Mensaje = "Ingrese una Fecha de Inicio para la Consulta : "
 valorpred = Format(LK_FECHA_DIA, "dd/mm/yyyy")
-mifecha = InputBox(Mensaje, Título, valorpred)
+mifecha = InputBox(Mensaje, Tï¿½tulo, valorpred)
 If mifecha = "" Then
    Exit Sub
 End If
@@ -1167,7 +1167,7 @@ Else
 Exit Sub
 End If
 If GRIDG.COL <> 15 Then Exit Sub
- wcodusu = InputBox("Fecha de Emisión", "Cambio Fecha", GRIDG.TextMatrix(GRIDG.Row, 15))
+ wcodusu = InputBox("Fecha de Emisiï¿½n", "Cambio Fecha", GRIDG.TextMatrix(GRIDG.Row, 15))
  If wcodusu = "" Then Exit Sub
  If Not IsDate(wcodusu) Then Exit Sub
  
@@ -1337,7 +1337,7 @@ If LK_CODUSU = "ADMIN" And (GridK.COL = 13 Or GridK.COL = 1) Then
        Exit Sub
     End If
    Else
-     wcodusu = InputBox("Fecha de Emisión", "Cambio Fecha", GridK.TextMatrix(GridK.Row, 1))
+     wcodusu = InputBox("Fecha de Emisiï¿½n", "Cambio Fecha", GridK.TextMatrix(GridK.Row, 1))
     If wcodusu = "" Then Exit Sub
     If Not IsDate(wcodusu) Then Exit Sub
    End If
@@ -1997,7 +1997,7 @@ Do Until wcar_mayor.EOF
      ElseIf Trim(wcar_mayor!car_fbg) = "D" Then
         vdocum = "N.Deb. " & wcar_mayor!car_NUMSER & "-" & wcar_mayor!car_NUMFAC
      ElseIf Trim(wcar_mayor!car_fbg) = "" Then
-        vdocum = "Nº:" & wcar_mayor!car_NUMSER & "-" & wcar_mayor!car_NUMFAC
+        vdocum = "Nï¿½:" & wcar_mayor!car_NUMSER & "-" & wcar_mayor!car_NUMFAC
      Else
         vdocum = " "
      End If
@@ -2058,7 +2058,7 @@ Do Until wcar_mayor.EOF
       ' If wcar_mayor!car_TIPDOC = "RC" Then
       '    vdocum = "xDoc. " & wcar_mayor!CAR_NUMSER_C & "-" & wcar_mayor!CAR_NUMFAC_C
       ' Else
-      '    vdocum = "Nº. " & wcar_mayor!car_NUM_CHEQUE
+      '    vdocum = "Nï¿½. " & wcar_mayor!car_NUM_CHEQUE
       ' End If
 
      If wcar_mayor!CAR_TIPDOC = "FA" And wcar_mayor!car_fbg <> " " Then
@@ -2844,4 +2844,16 @@ End If
 Screen.MousePointer = 0
 
 sigue:
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub

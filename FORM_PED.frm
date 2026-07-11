@@ -140,7 +140,7 @@ Begin VB.Form FORM_PED
          Width           =   975
       End
       Begin VB.OptionButton opcomo 
-         Caption         =   "x División"
+         Caption         =   "x Divisiï¿½n"
          ForeColor       =   &H00808000&
          Height          =   195
          Index           =   0
@@ -150,7 +150,7 @@ Begin VB.Form FORM_PED
          Width           =   1455
       End
       Begin VB.OptionButton opcomo 
-         Caption         =   "x Sub División"
+         Caption         =   "x Sub Divisiï¿½n"
          ForeColor       =   &H00808000&
          Height          =   195
          Index           =   1
@@ -289,7 +289,7 @@ Begin VB.Form FORM_PED
          Width           =   1695
       End
       Begin VB.Label lfami 
-         Caption         =   "División:"
+         Caption         =   "Divisiï¿½n:"
          BeginProperty Font 
             Name            =   "Small Fonts"
             Size            =   6.75
@@ -308,7 +308,7 @@ Begin VB.Form FORM_PED
          Width           =   885
       End
       Begin VB.Label lsubfami 
-         Caption         =   "Sub División:"
+         Caption         =   "Sub Divisiï¿½n:"
          BeginProperty Font 
             Name            =   "Small Fonts"
             Size            =   6.75
@@ -615,7 +615,7 @@ Begin VB.Form FORM_PED
       End
       Begin VB.Label Label7 
          BackColor       =   &H00C0C0C0&
-         Caption         =   "Compañia:"
+         Caption         =   "Compaï¿½ia:"
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   11160
@@ -1149,7 +1149,7 @@ For fila = 2 To grid_fac.Rows - 1
 End If
 Next fila
 If flag_precio = "A" Then
-  pub_mensaje = "Existen precios com valor Cero.   ¿Desea Continuar... ?"
+  pub_mensaje = "Existen precios com valor Cero.   ï¿½Desea Continuar... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
      GoTo fin
@@ -1569,7 +1569,7 @@ FLAG_MAX = ""
 For fila = 2 To gridarti.Rows - 1
    If FLAG_MAX <> "A" Then
       If grid_fac.Rows >= Val(imax.Text) + 2 Then
-        pub_mensaje = "LLego al Maximo de Item ¿Desea Continuar... ?"
+        pub_mensaje = "LLego al Maximo de Item ï¿½Desea Continuar... ?"
         Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
         If Pub_Respuesta = vbNo Then
            Exit For
@@ -3689,4 +3689,16 @@ Next I
      MsgBox "Llego al Maximo de Item.. Generar otra Orden de Compra. Maximo = " & imax.Text, 48, Pub_Titulo
  End If
 
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub

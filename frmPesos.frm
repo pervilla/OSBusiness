@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmPesos 
-   Caption         =   "Transfer. Import. (Recepción de Información)"
+   Caption         =   "Transfer. Import. (Recepciï¿½n de Informaciï¿½n)"
    ClientHeight    =   6900
    ClientLeft      =   555
    ClientTop       =   1845
@@ -31,7 +31,7 @@ Begin VB.Form frmPesos
          Width           =   2415
       End
       Begin VB.OptionButton openvio 
-         Caption         =   "Transfer Recepción de Mercaderia"
+         Caption         =   "Transfer Recepciï¿½n de Mercaderia"
          ForeColor       =   &H00808000&
          Height          =   195
          Index           =   0
@@ -210,7 +210,7 @@ Begin VB.Form frmPesos
       Width           =   1455
    End
    Begin VB.Label lblpro 
-      Caption         =   "Procesando Información ..."
+      Caption         =   "Procesando Informaciï¿½n ..."
       ForeColor       =   &H00808000&
       Height          =   255
       Left            =   240
@@ -240,7 +240,7 @@ Begin VB.Form frmPesos
       Width           =   5295
    End
    Begin VB.Label Label6 
-      Caption         =   "Descripción de Articulo en Base Transfer :"
+      Caption         =   "Descripciï¿½n de Articulo en Base Transfer :"
       ForeColor       =   &H00808000&
       Height          =   255
       Left            =   240
@@ -249,7 +249,7 @@ Begin VB.Form frmPesos
       Width           =   4695
    End
    Begin VB.Label Label5 
-      Caption         =   "Descripción de Articulo en Base del Servidor :"
+      Caption         =   "Descripciï¿½n de Articulo en Base del Servidor :"
       ForeColor       =   &H00808000&
       Height          =   255
       Left            =   240
@@ -317,7 +317,7 @@ Unload frmPesos
 End Sub
 
 Private Sub Command2_Click()
-pub_mensaje = "Anular Pase !!! ...   ¿Desea Continuar... ?"
+pub_mensaje = "Anular Pase !!! ...   ï¿½Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -326,7 +326,7 @@ Screen.MousePointer = 11
 pub_cadena = "DELETE FACART WHERE FAR_TIPMOV = " & TF_TIPMOV & " AND FAR_CODCIA = '" & LK_CODCIA & "'"
 CN.Execute pub_cadena, rdExecDirect
 Screen.MousePointer = 0
-MsgBox "Pase de la Información del Transfer. ha sido Anulado ", 48, Pub_Titulo
+MsgBox "Pase de la Informaciï¿½n del Transfer. ha sido Anulado ", 48, Pub_Titulo
 
 End Sub
 
@@ -367,17 +367,17 @@ ElseIf openvio(2).Value Then
 End If
 GEN.Requery
 If Trim(Nulo_Valors(GEN!gen_ciaimp)) = "" Then
-  MsgBox "El codigo de la Compañia de la Recepcion no Validad... Cia : " & Trim(Nulo_Valors(GEN!gen_ciaimp)), 48, Pub_Titulo
+  MsgBox "El codigo de la Compaï¿½ia de la Recepcion no Validad... Cia : " & Trim(Nulo_Valors(GEN!gen_ciaimp)), 48, Pub_Titulo
   Exit Sub
 End If
 If LK_CODCIA <> Trim(Nulo_Valors(GEN!gen_ciaimp)) Then
-   MsgBox "El Codigo de esta Compañia no es validad para el proceso... " & Chr(13) & "Compañia validad : " & Trim(Nulo_Valors(GEN!gen_ciaimp)), 48, Pub_Titulo
+   MsgBox "El Codigo de esta Compaï¿½ia no es validad para el proceso... " & Chr(13) & "Compaï¿½ia validad : " & Trim(Nulo_Valors(GEN!gen_ciaimp)), 48, Pub_Titulo
    GoTo fin
 End If
 
 VENTAS.DatabaseName = lblarchi.Caption '  Left(Trim(PUB_RUTA_OTRO), 1) & ":\ADMIN\Standar\TAjustes.mdb"
 PUB_IMPORTE = 0
-WCONFIG = InputBox("- Digitar 1 para fechas con formato ##/##/#### " & Chr(13) & "- Digitar 2 para fechas con formato ##/##/## ", "Cofiguración del TRANSFER", 2)
+WCONFIG = InputBox("- Digitar 1 para fechas con formato ##/##/#### " & Chr(13) & "- Digitar 2 para fechas con formato ##/##/## ", "Cofiguraciï¿½n del TRANSFER", 2)
 If WCONFIG = "" Then
   Exit Sub
 End If
@@ -393,13 +393,13 @@ End If
 VENTAS.Refresh
 If VENTAS.Recordset.EOF Then
   Screen.MousePointer = 0
-  MsgBox "VERIFICAR ...NO HAY DATOS EN EL ARCHIVO : " & Trim(lblarchi.Caption) & Chr(13) & "Posible Soluciones :" & Chr(13) & "El formato de fecha no es correcta  0  la fecha del dia de la compañia no es la misma del archivo transfer. O el archivo esta vacio o dañado.", 48, Pub_Titulo
+  MsgBox "VERIFICAR ...NO HAY DATOS EN EL ARCHIVO : " & Trim(lblarchi.Caption) & Chr(13) & "Posible Soluciones :" & Chr(13) & "El formato de fecha no es correcta  0  la fecha del dia de la compaï¿½ia no es la misma del archivo transfer. O el archivo esta vacio o daï¿½ado.", 48, Pub_Titulo
   VENTAS.RecordSource = "SELECT * FROM FACART "
   VENTAS.Refresh
   If Val(WCONFIG) = 1 Then
-    If Not VENTAS.Recordset.EOF Then MsgBox "Datos el Transfer son del día : " & VENTAS.Recordset!FAR_fecha & Chr(13) & "y la fecha de la compañia es del dia : " & Format(LK_FECHA_DIA, "dd/mm/yyyy"), vbInformation, Pub_Titulo
+    If Not VENTAS.Recordset.EOF Then MsgBox "Datos el Transfer son del dï¿½a : " & VENTAS.Recordset!FAR_fecha & Chr(13) & "y la fecha de la compaï¿½ia es del dia : " & Format(LK_FECHA_DIA, "dd/mm/yyyy"), vbInformation, Pub_Titulo
   Else
-    If Not VENTAS.Recordset.EOF Then MsgBox "Datos el Transfer son del día : " & VENTAS.Recordset!FAR_fecha & Chr(13) & "y la fecha de la compañia es del dia : " & Format(LK_FECHA_DIA, "dd/mm/yy"), vbInformation, Pub_Titulo
+    If Not VENTAS.Recordset.EOF Then MsgBox "Datos el Transfer son del dï¿½a : " & VENTAS.Recordset!FAR_fecha & Chr(13) & "y la fecha de la compaï¿½ia es del dia : " & Format(LK_FECHA_DIA, "dd/mm/yy"), vbInformation, Pub_Titulo
   End If
   Exit Sub
 End If
@@ -685,7 +685,7 @@ If AVISO2 = 1 And AVISO = 1 Then
 End If
 
 If AVISO = 1 Then
-   MsgBox "Ya proceso los datos del día ", 48, Pub_Titulo
+   MsgBox "Ya proceso los datos del dï¿½a ", 48, Pub_Titulo
    GoTo fin
 End If
 
@@ -988,5 +988,17 @@ ElseIf Index = 2 Then
   lblarchi.Caption = Left(Trim(PUB_RUTA_OTRO), 1) & ":\ADMIN\STANDAR\TAJUSTES.MDB"
 End If
 
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub
 

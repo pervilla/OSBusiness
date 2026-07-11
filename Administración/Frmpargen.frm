@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form FrmParGen 
-   Caption         =   "Definición de Compañia"
+   Caption         =   "Definiciï¿½n de Compaï¿½ia"
    ClientHeight    =   5310
    ClientLeft      =   60
    ClientTop       =   345
@@ -15,7 +15,7 @@ Begin VB.Form FrmParGen
    ScaleWidth      =   8325
    WindowState     =   2  'Maximized
    Begin VB.CommandButton Command2 
-      Caption         =   "&Modificación"
+      Caption         =   "&Modificaciï¿½n"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -59,7 +59,7 @@ Begin VB.Form FrmParGen
       _ExtentY        =   10398
       _Version        =   393216
       TabHeight       =   529
-      TabCaption(0)   =   "Facturación"
+      TabCaption(0)   =   "Facturaciï¿½n"
       TabPicture(0)   =   "Frmpargen.frx":058C
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "F2"
@@ -173,7 +173,7 @@ Begin VB.Form FrmParGen
          End
          Begin VB.Label ld 
             AutoSize        =   -1  'True
-            Caption         =   "Guia de Remisión :"
+            Caption         =   "Guia de Remisiï¿½n :"
             Height          =   390
             Index           =   2
             Left            =   240
@@ -326,7 +326,7 @@ Begin VB.Form FrmParGen
          Width           =   7815
       End
       Begin VB.Frame fracambio 
-         Caption         =   "Actualización de precios de productos en Dolares .:"
+         Caption         =   "Actualizaciï¿½n de precios de productos en Dolares .:"
          Height          =   3255
          Left            =   -74880
          TabIndex        =   51
@@ -353,7 +353,7 @@ Begin VB.Form FrmParGen
             Appearance      =   0
          End
          Begin VB.CommandButton Command1 
-            Caption         =   "Procesar la Actualización de Precios"
+            Caption         =   "Procesar la Actualizaciï¿½n de Precios"
             Height          =   495
             Left            =   480
             TabIndex        =   53
@@ -480,7 +480,7 @@ Begin VB.Form FrmParGen
          Width           =   1575
       End
       Begin VB.CheckBox chepuntos 
-         Caption         =   "Compañia como Punto de Ventas"
+         Caption         =   "Compaï¿½ia como Punto de Ventas"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1040,7 +1040,7 @@ Begin VB.Form FrmParGen
                Width           =   975
             End
             Begin VB.Label Label1 
-               Caption         =   "N° N/C. Inicial"
+               Caption         =   "Nï¿½ N/C. Inicial"
                Height          =   255
                Index           =   14
                Left            =   240
@@ -1049,7 +1049,7 @@ Begin VB.Form FrmParGen
                Width           =   1095
             End
             Begin VB.Label Label1 
-               Caption         =   "N° N/C  Final"
+               Caption         =   "Nï¿½ N/C  Final"
                Height          =   255
                Index           =   15
                Left            =   240
@@ -1058,7 +1058,7 @@ Begin VB.Form FrmParGen
                Width           =   975
             End
             Begin VB.Label Label1 
-               Caption         =   "N° N/D  Final"
+               Caption         =   "Nï¿½ N/D  Final"
                Height          =   255
                Index           =   16
                Left            =   1560
@@ -1067,7 +1067,7 @@ Begin VB.Form FrmParGen
                Width           =   1095
             End
             Begin VB.Label Label1 
-               Caption         =   "N° N/ D Inicial"
+               Caption         =   "Nï¿½ N/ D Inicial"
                Height          =   255
                Index           =   17
                Left            =   1560
@@ -1112,7 +1112,7 @@ Begin VB.Form FrmParGen
             Width           =   615
          End
          Begin VB.CheckBox serie_usu 
-            Caption         =   "Facturación x Usuario."
+            Caption         =   "Facturaciï¿½n x Usuario."
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -1407,7 +1407,7 @@ Begin VB.Form FrmParGen
             End
          End
          Begin VB.OptionButton flagfac 
-            Caption         =   "Facturación (Talonario) por Compañia"
+            Caption         =   "Facturaciï¿½n (Talonario) por Compaï¿½ia"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -1425,7 +1425,7 @@ Begin VB.Form FrmParGen
             Width           =   3735
          End
          Begin VB.OptionButton flagfac 
-            Caption         =   "Facturación (Talonario) por Vendedores"
+            Caption         =   "Facturaciï¿½n (Talonario) por Vendedores"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -1460,7 +1460,7 @@ Begin VB.Form FrmParGen
             Width           =   615
          End
          Begin VB.CheckBox cheigv 
-            Caption         =   "Facturacióm - I.G.V.  Incluido"
+            Caption         =   "Facturaciï¿½m - I.G.V.  Incluido"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   9.75
@@ -1558,7 +1558,7 @@ Begin VB.Form FrmParGen
          End
          Begin VB.Label Label2 
             AutoSize        =   -1  'True
-            Caption         =   "La definicón de los documentos está configurada por vendedor."
+            Caption         =   "La definicï¿½n de los documentos estï¿½ configurada por vendedor."
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   9.75
@@ -1616,7 +1616,7 @@ Begin VB.Form FrmParGen
          End
       End
       Begin VB.Label Label2 
-         Caption         =   "Compañas con la que relaciona."
+         Caption         =   "Compaï¿½as con la que relaciona."
          Height          =   255
          Index           =   1
          Left            =   -68400
@@ -1625,7 +1625,7 @@ Begin VB.Form FrmParGen
          Width           =   2355
       End
       Begin VB.Label Label2 
-         Caption         =   "(%) de Comisión y rango de Dias."
+         Caption         =   "(%) de Comisiï¿½n y rango de Dias."
          Height          =   435
          Index           =   0
          Left            =   -68520
@@ -1681,7 +1681,7 @@ Begin VB.Form FrmParGen
       Width           =   1335
    End
    Begin VB.Frame F1 
-      Caption         =   "Compañia :"
+      Caption         =   "Compaï¿½ia :"
       Height          =   615
       Left            =   0
       TabIndex        =   8
@@ -1750,7 +1750,7 @@ Begin VB.Form FrmParGen
          Width           =   1095
       End
       Begin VB.Label Label1 
-         Caption         =   "Descripción:"
+         Caption         =   "Descripciï¿½n:"
          Height          =   255
          Index           =   1
          Left            =   2040
@@ -1799,7 +1799,7 @@ Begin VB.Form FrmParGen
       Width           =   1935
    End
    Begin VB.Label Label9 
-      Caption         =   "Color de Compañia"
+      Caption         =   "Color de Compaï¿½ia"
       Height          =   255
       Index           =   0
       Left            =   360
@@ -2354,7 +2354,7 @@ Else
    PSPAR_LOC(0) = Format(Txt_key.text, "00")
    parloc_llave.Requery
    If Not parloc_llave.EOF Then
-     MsgBox "La Compañia EXISTE en el Sistema Carge El Formulario Nuevamente.", 48, Pub_Titulo
+     MsgBox "La Compaï¿½ia EXISTE en el Sistema Carge El Formulario Nuevamente.", 48, Pub_Titulo
      Unload FrmParGen
      Exit Sub
    End If
@@ -2366,7 +2366,7 @@ Else
    CmdModificar.Enabled = True
    LIMPIA_PAR
    Screen.MousePointer = 0
-   MsgBox "Se Agrego una Nueva Compañia , Debe dar derechos a los usuarios y Reiniciar el Sistema.", 48, Pub_Titulo
+   MsgBox "Se Agrego una Nueva Compaï¿½ia , Debe dar derechos a los usuarios y Reiniciar el Sistema.", 48, Pub_Titulo
    Unload FrmParGen
    Exit Sub
 End If
@@ -2463,16 +2463,16 @@ If Len(Txt_key) = 0 Or Len(txtnombre) = 0 Then
    MENSAJE_VEN "NO a seleccionado NADA ... !"
    Exit Sub
 End If
-  pub_mensaje = " ¿Desea Eliminar el Registro... ?, al Eliminar, debe quitar el Permiso al usuarios que esta usandolo"
+  pub_mensaje = " ï¿½Desea Eliminar el Registro... ?, al Eliminar, debe quitar el Permiso al usuarios que esta usandolo"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligió
+  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
     Screen.MousePointer = 11
     parloc_llave.Delete
     Txt_key.text = ""
     Txt_key.Locked = False
     LIMPIA_PAR
     MENSAJE_VEN "Registro   ELIMINADO ... "
-    MsgBox "Compañia Eliminada , se procede a salir de Sistema, vuelva a ingresar y cambie de compañia", 48, ws_titulo
+    MsgBox "Compaï¿½ia Eliminada , se procede a salir de Sistema, vuelva a ingresar y cambie de compaï¿½ia", 48, ws_titulo
     ' salir
     Screen.MousePointer = 11
     DoEvents
@@ -2543,7 +2543,7 @@ Else
      BLOQUEA_TEXT t_archi_f, t_archi_b, t_archi_g, t_archi_guia, txtcontado, chefp, txtadi
      cheigv.Enabled = False
      Screen.MousePointer = 0
-     MsgBox "Datos de la Compañia ha cambiado, se Reinicia a Cia:  " & (txtnombre.text) & ".", 48, Pub_Titulo
+     MsgBox "Datos de la Compaï¿½ia ha cambiado, se Reinicia a Cia:  " & (txtnombre.text) & ".", 48, Pub_Titulo
      ACTUALIZA_CIA LK_CODCIA
      Unload FrmParGen
      Exit Sub
@@ -2589,10 +2589,10 @@ Dim km_flag As String
     art_familia.Visible = True
     If km_flag = "A" Then
       MODO1 = Mid(MODO1, 1, Len(MODO1) - 3) & " )"
-      pub_mensaje = " ¿Desea Actualizar los Precios a las Familias seleccionadas... ?"
+      pub_mensaje = " ï¿½Desea Actualizar los Precios a las Familias seleccionadas... ?"
     Else
       MODO1 = ""
-      pub_mensaje = " ¿Desea Actualizar los Precios a todos los productos...?"
+      pub_mensaje = " ï¿½Desea Actualizar los Precios a todos los productos...?"
     End If
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
@@ -2667,7 +2667,7 @@ PSPAR_LOC(0) = LK_CODCIA
 parloc_llave.Requery
 If parloc_llave.EOF Then
   Azul Txt_key, Txt_key
-  MsgBox "Compañia NO EXSITE en PARGEN, consulte al Administrador, Procede a Salir de Sistema", 48, Pub_Titulo
+  MsgBox "Compaï¿½ia NO EXSITE en PARGEN, consulte al Administrador, Procede a Salir de Sistema", 48, Pub_Titulo
   Screen.MousePointer = 11
   DoEvents
   MDIForm1.WindowState = 1
@@ -3136,4 +3136,16 @@ Public Sub LIMPIASERIES()
     tmax.text = ""
     cheini.Value = 0
     cheflag.Value = 0
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub

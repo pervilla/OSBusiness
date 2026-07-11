@@ -940,7 +940,7 @@ End Sub
 Private Sub cmdactpre_Click()
 'If LK_CODCIA = "01" Or LK_CODCIA = "30" Then
 'Else
-'  MsgBox "No Permite Cambiar en esta Compañia", 48, Pub_Titulo
+'  MsgBox "No Permite Cambiar en esta Compaï¿½ia", 48, Pub_Titulo
 '  Exit Sub
 'End If
 LK_ACCESO_REPORT = ""
@@ -1166,7 +1166,7 @@ If WONL_INICIO = "" Then Exit Sub
 Command1_Click
 
 Exit Sub
-pub_mensaje = "Continuar con el Costeo en Serie !!! ...   ¿Desea Continuar... ?"
+pub_mensaje = "Continuar con el Costeo en Serie !!! ...   ï¿½Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -2109,7 +2109,7 @@ Dim PSPRE_CAJA As rdoQuery
 gridcabe.Cols = 24
 gridcabe.Rows = 1
 gridcabe.TextMatrix(0, 0) = "Cod.Int"
-gridcabe.TextMatrix(0, 1) = "Descripción"
+gridcabe.TextMatrix(0, 1) = "Descripciï¿½n"
 gridcabe.TextMatrix(0, 2) = "Unid."
 
 gridcabe.TextMatrix(0, 3) = "Cos.Anter."
@@ -2551,7 +2551,7 @@ If chefac.Value = 1 Then
         Exit Sub
    Else
       If Format(txtfecha, "dd/mm/yyyy") <> Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy") Then
-        MsgBox "La Fecha de Emisión del Documento no Coincide con la Fecha Inicial del Costeo " & Chr(13) & "Fecha de Emisión del Documento : " & Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
+        MsgBox "La Fecha de Emisiï¿½n del Documento no Coincide con la Fecha Inicial del Costeo " & Chr(13) & "Fecha de Emisiï¿½n del Documento : " & Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
         txtfecha.Text = Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy")
         ProgBar.Visible = False
         Command1.Enabled = True
@@ -3486,7 +3486,7 @@ If chefac.Value = 1 Then
         Exit Sub
    Else
       If Format(txtfecha, "dd/mm/yyyy") <> Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy") Then
-        MsgBox "La Fecha de Emisión del Documento no Coincide con la Fecha Inicial del Costeo " & Chr(13) & "Fecha de Emisión del Documento : " & Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
+        MsgBox "La Fecha de Emisiï¿½n del Documento no Coincide con la Fecha Inicial del Costeo " & Chr(13) & "Fecha de Emisiï¿½n del Documento : " & Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
         txtfecha.Text = Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy")
         ProgBar.Visible = False
         Command1.Enabled = True
@@ -4056,5 +4056,17 @@ POR(1).Visible = False
 POR(2).Visible = False
 Command1.Enabled = True
 
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub
 

@@ -363,7 +363,7 @@ If gridigv.Visible = False Then
   Exit Sub
 End If
 
-pub_mensaje = "Proceso de Costeo de Articulos de la Fecha : " & Chr(13) & " " & Format(txtfecha.Text, "dd/mm/yyyy") & " al " & Format(LK_FECHA_DIA, "dd/mm/yyyy") & Chr(13) & "¿ Continuar? ..."
+pub_mensaje = "Proceso de Costeo de Articulos de la Fecha : " & Chr(13) & " " & Format(txtfecha.Text, "dd/mm/yyyy") & " al " & Format(LK_FECHA_DIA, "dd/mm/yyyy") & Chr(13) & "ï¿½ Continuar? ..."
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -432,7 +432,7 @@ PSFAR_COSTO(2) = LK_FECHA_DIA
 PSFAR_COSTO(3) = LK_FECHA_DIA
 Set Far_Cost = PSFAR_COSTO.OpenResultset(rdOpenKeyset, rdConcurValues)
 
-'¡DistinctRow
+'ï¿½DistinctRow
 'DISTINCTROW
 
 pub_cadena = "SELECT Distinct FAR_CODART FROM FACART WHERE FAR_CODCIA= ? AND FAR_FECHA_COMPRA >= ?  AND FAR_FECHA_COMPRA <= ?  AND  ( FAR_COSTEO_REAL = 'A' OR FAR_COSTEO = 'A' )  AND FAR_ESTADO <> 'E'  ORDER BY FAR_CODART"
@@ -1075,7 +1075,7 @@ gridigv.ColWidth(5) = 900
 gridigv.ColWidth(6) = 900
 
 gridigv.TextMatrix(0, 0) = "Fecha"
-gridigv.TextMatrix(0, 1) = "Publicación"
+gridigv.TextMatrix(0, 1) = "Publicaciï¿½n"
 gridigv.TextMatrix(1, 0) = "-"
 gridigv.Row = 1
 gridigv.Col = 1
@@ -1226,6 +1226,18 @@ If txtfecha.Text > LK_FECHA_DIA Then
 End If
 
 
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub
 
 

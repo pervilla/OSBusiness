@@ -163,7 +163,7 @@ Begin VB.Form FrmNC
          End
       End
       Begin VB.OptionButton opnc 
-         Caption         =   "Productos de Selección"
+         Caption         =   "Productos de Selecciï¿½n"
          Height          =   195
          Index           =   3
          Left            =   120
@@ -428,7 +428,7 @@ Begin VB.Form FrmNC
       Width           =   435
    End
    Begin VB.Frame fracambio 
-      Caption         =   "Productos con mucha variación :"
+      Caption         =   "Productos con mucha variaciï¿½n :"
       Height          =   3195
       Left            =   -30
       TabIndex        =   26
@@ -1278,7 +1278,7 @@ If Not CONSIS_PERIODOS(CDate(txtfecha.Text)) Then
 End If
 
 
-pub_mensaje = "Proceso de Costeo de Articulos de la Fecha : " & Chr(13) & " " & Format(txtfecha.Text, "dd/mm/yyyy") & " al " & Format(LK_FECHA_DIA, "dd/mm/yyyy") & Chr(13) & "¿ Continuar? ..."
+pub_mensaje = "Proceso de Costeo de Articulos de la Fecha : " & Chr(13) & " " & Format(txtfecha.Text, "dd/mm/yyyy") & " al " & Format(LK_FECHA_DIA, "dd/mm/yyyy") & Chr(13) & "ï¿½ Continuar? ..."
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -1367,7 +1367,7 @@ PSFAR_COSTO(2) = LK_FECHA_DIA
 PSFAR_COSTO(3) = LK_FECHA_DIA
 Set Far_Cost = PSFAR_COSTO.OpenResultset(rdOpenKeyset, rdConcurValues)
 
-'¡DistinctRow
+'ï¿½DistinctRow
 'DISTINCTROW
 If chefac.Value = 1 Then
  pub_cadena = "SELECT Distinct FAR_CODART FROM FACART WHERE FAR_CODCIA= ? AND FAR_FECHA_COMPRA >= ?  AND FAR_FECHA_COMPRA <= ?  AND  FAR_ESTADO <> 'E' AND  FAR_ESTADO <> 'L' AND ( FAR_COSTEO_REAL = 'A' OR FAR_COSTEO = 'A' )  and far_tipmov = 20 and far_numser = " & Val(txtserie.Text) & " and far_numfac = " & txtnumero.Text & " ORDER BY FAR_CODART"
@@ -2651,7 +2651,7 @@ gridigv.ColWidth(5) = 900
 gridigv.ColWidth(6) = 900
 
 gridigv.TextMatrix(0, 0) = "Fecha"
-gridigv.TextMatrix(0, 1) = "Publicación"
+gridigv.TextMatrix(0, 1) = "Publicaciï¿½n"
 gridigv.TextMatrix(1, 0) = "-"
 gridigv.Row = 1
 gridigv.COL = 1
@@ -3012,7 +3012,7 @@ Dim PSPRE_CAJA As rdoQuery
 gridcabe.Cols = 24
 gridcabe.Rows = 1
 gridcabe.TextMatrix(0, 0) = "Cod.Int"
-gridcabe.TextMatrix(0, 1) = "Descripción"
+gridcabe.TextMatrix(0, 1) = "Descripciï¿½n"
 gridcabe.TextMatrix(0, 2) = "Unid."
 
 gridcabe.TextMatrix(0, 3) = "Cos.Anter."
@@ -3262,5 +3262,17 @@ Dim CONTA As Integer
         CONTA = CONTA + 1
         tab_mayor.MoveNext
     Loop
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub
 

@@ -1,22 +1,22 @@
 VERSION 5.00
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Begin VB.Form KARDEX 
    Caption         =   "Consulta de Kardex de Articulo"
-   ClientHeight    =   6255
+   ClientHeight    =   7095
    ClientLeft      =   210
    ClientTop       =   885
-   ClientWidth     =   8955
+   ClientWidth     =   11880
    ControlBox      =   0   'False
    ForeColor       =   &H00808000&
    Icon            =   "FRMKARDEX.frx":0000
    LinkTopic       =   "Form2"
    MDIChild        =   -1  'True
    PaletteMode     =   1  'UseZOrder
-   ScaleHeight     =   6255
-   ScaleWidth      =   8955
+   ScaleHeight     =   7095
+   ScaleWidth      =   11880
    WindowState     =   2  'Maximized
    Begin VB.CheckBox checias 
       BackColor       =   &H00808000&
@@ -49,9 +49,9 @@ Begin VB.Form KARDEX
    End
    Begin VB.TextBox NJ 
       Height          =   285
-      Left            =   10440
+      Left            =   12000
       TabIndex        =   37
-      Top             =   0
+      Top             =   6840
       Visible         =   0   'False
       Width           =   375
    End
@@ -70,7 +70,7 @@ Begin VB.Form KARDEX
       Height          =   375
       Left            =   10560
       TabIndex        =   35
-      Top             =   120
+      Top             =   240
       Visible         =   0   'False
       Width           =   1215
    End
@@ -96,7 +96,7 @@ Begin VB.Form KARDEX
       LabelEdit       =   1
       LabelWrap       =   -1  'True
       HideSelection   =   0   'False
-      _Version        =   327682
+      _Version        =   393217
       ForeColor       =   128
       BackColor       =   14737632
       BorderStyle     =   1
@@ -547,7 +547,7 @@ Begin VB.Form KARDEX
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   630
+      Height          =   750
       Left            =   10560
       Picture         =   "FRMKARDEX.frx":0475
       Style           =   1  'Graphical
@@ -566,12 +566,12 @@ Begin VB.Form KARDEX
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   625
+      Height          =   750
       Left            =   10560
       Picture         =   "FRMKARDEX.frx":077F
       Style           =   1  'Graphical
       TabIndex        =   8
-      Top             =   3360
+      Top             =   3480
       Width           =   1185
    End
    Begin VB.CommandButton SALIR 
@@ -585,12 +585,12 @@ Begin VB.Form KARDEX
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   625
+      Height          =   750
       Left            =   10560
       Picture         =   "FRMKARDEX.frx":0BC1
       Style           =   1  'Graphical
       TabIndex        =   9
-      Top             =   5640
+      Top             =   5160
       Width           =   1185
    End
    Begin MSComDlg.CommonDialog dialogo 
@@ -609,7 +609,7 @@ Begin VB.Form KARDEX
       Width           =   6120
       _ExtentX        =   10795
       _ExtentY        =   450
-      _Version        =   327682
+      _Version        =   393216
       Appearance      =   1
    End
    Begin VB.Label lblbarraos 
@@ -630,7 +630,7 @@ Begin VB.Form KARDEX
       Height          =   255
       Left            =   10440
       TabIndex        =   25
-      Top             =   6600
+      Top             =   6120
       Width           =   1335
    End
    Begin VB.Label Label3 
@@ -1044,7 +1044,7 @@ go_una:
     On Error Resume Next
     PB.Value = 0
     PB.Min = 0
-    PB.Max = far_codart.RowCount
+    PB.max = far_codart.RowCount
     LblMensaje.Visible = True
     PB.Visible = True
     On Error GoTo 0
@@ -1085,14 +1085,14 @@ ACTIVA_EQUIV = ws_equiv
 LBLUNIDAD.Caption = Trim(unidad.Text)
 
 If ws_equiv = 0 Then ws_equiv = 1
-Dim lSigno As Long, lCantidad As Long, lStock As Long
+Dim lSigno As Long, lcantidad As Long, lStock As Long
 lSigno = Nulo_Valor0(wFAR_CODART!far_signo_arm)
-lCantidad = Nulo_Valor0(wFAR_CODART!FAR_cantidad)
+lcantidad = Nulo_Valor0(wFAR_CODART!FAR_cantidad)
 lStock = Nulo_Valor0(wFAR_CODART!FAR_STOCK)
 If LK_EMP = "HER" Then
- wSaldo = lSigno * (lCantidad / ws_equiv)
+ wSaldo = lSigno * (lcantidad / ws_equiv)
 Else
- wSaldo = (lStock / ws_equiv) + (lSigno * (lCantidad / ws_equiv) * -1)
+ wSaldo = (lStock / ws_equiv) + (lSigno * (lcantidad / ws_equiv) * -1)
 End If
 
 cSaldo = wSaldo * Nulo_Valor0(arm_llave!ARM_COSPRO)
@@ -1477,7 +1477,7 @@ If Check1.Visible = True And Check1.Value = 1 And WWW_COSPRO <> 0 Then
 End If
 
 LblMensaje.Visible = False
-pb.Visible = False
+PB.Visible = False
 DoEvents
 GridK.Visible = True
 KARDEX.GridK.COL = 1
@@ -2226,68 +2226,68 @@ Private Sub GridK_DblClick()
 ' Abrir frmDocu al hacer doble clic en una fila del kardex
 Dim ws_tipmov As Integer
 Dim ws_numser As String
-Dim ws_numfac As Long
-Dim ws_fbg As String
-Dim ws_datos As String
-Dim i As Integer
+Dim WS_NUMFAC As Long
+Dim WS_FBG As String
+Dim WS_DATOS As String
+Dim I As Integer
 
 If GridK.Row < 1 Then Exit Sub
 If GridK.TextMatrix(GridK.Row, 2) = "" Then Exit Sub
 
 ' Obtener datos del grid (ya almacenados al llenar)
 ws_tipmov = Val(GridK.TextMatrix(GridK.Row, 16))  ' Columna 16 = FAR_TIPMOV
-ws_datos = GridK.TextMatrix(GridK.Row, 20)        ' Columna 20 = "FBG:SERIE-NUMFAC"
+WS_DATOS = GridK.TextMatrix(GridK.Row, 20)        ' Columna 20 = "FBG:SERIE-NUMFAC"
 
 ' Parsear FBG, serie y numero del formato "FBG:SERIE-NUMFAC"
-ws_fbg = ""
+WS_FBG = ""
 ws_numser = ""
-ws_numfac = 0
-If InStr(ws_datos, ":") > 0 And InStr(ws_datos, "-") > 0 Then
-   ws_fbg = Left(ws_datos, InStr(ws_datos, ":") - 1)
-   ws_numser = Mid(ws_datos, InStr(ws_datos, ":") + 1, InStr(ws_datos, "-") - InStr(ws_datos, ":") - 1)
-   ws_numfac = Val(Mid(ws_datos, InStr(ws_datos, "-") + 1))
+WS_NUMFAC = 0
+If InStr(WS_DATOS, ":") > 0 And InStr(WS_DATOS, "-") > 0 Then
+   WS_FBG = Left(WS_DATOS, InStr(WS_DATOS, ":") - 1)
+   ws_numser = Mid(WS_DATOS, InStr(WS_DATOS, ":") + 1, InStr(WS_DATOS, "-") - InStr(WS_DATOS, ":") - 1)
+   WS_NUMFAC = Val(Mid(WS_DATOS, InStr(WS_DATOS, "-") + 1))
 End If
 
 If ws_tipmov = 0 Then Exit Sub
 
 ' Abrir frmDocu y configurar los datos
-frmDocu.Show vbModeless
+frmdocu.Show vbModeless
 
 ' Seleccionar tipo de movimiento en combo tipmov
-For i = 0 To frmDocu.tipmov.ListCount - 1
-   If Val(Trim(Right(frmDocu.tipmov.List(i), 4))) = ws_tipmov Then
-      frmDocu.tipmov.ListIndex = i
+For I = 0 To frmdocu.tipmov.ListCount - 1
+   If Val(Trim(Right(frmdocu.tipmov.List(I), 4))) = ws_tipmov Then
+      frmdocu.tipmov.ListIndex = I
       Exit For
    End If
-Next i
+Next I
 
 ' Ejecutar evento para poblar cmbFBG segun tipmov seleccionado
-frmDocu.EVENTO_LOSFOCUS_TIPMOV
+frmdocu.EVENTO_LOSFOCUS_TIPMOV
 
 ' Seleccionar FBG en combo cmbFBG
-For i = 0 To frmDocu.cmbFBG.ListCount - 1
-   If Left(frmDocu.cmbFBG.List(i), 1) = ws_fbg Then
-      frmDocu.cmbFBG.ListIndex = i
+For I = 0 To frmdocu.cmbFBG.ListCount - 1
+   If Left(frmdocu.cmbFBG.List(I), 1) = WS_FBG Then
+      frmdocu.cmbFBG.ListIndex = I
       Exit For
    End If
-Next i
+Next I
 
 ' Si no encontro FBG, seleccionar el primero
-If frmDocu.cmbFBG.ListIndex < 0 And frmDocu.cmbFBG.ListCount > 0 Then
-   frmDocu.cmbFBG.ListIndex = 0
+If frmdocu.cmbFBG.ListIndex < 0 And frmdocu.cmbFBG.ListCount > 0 Then
+   frmdocu.cmbFBG.ListIndex = 0
 End If
 
 ' Configurar serie y numero de documento
-frmDocu.txtserie.Text = ws_numser
-frmDocu.txtnumfac.Text = ws_numfac
+frmdocu.txtserie.Text = ws_numser
+frmdocu.txtnumfac.Text = WS_NUMFAC
 
 ' Simular Enter para ejecutar la busqueda con PostMessage
-frmDocu.txtnumfac.SetFocus
+frmdocu.txtnumfac.SetFocus
 DoEvents
-PostMessage frmDocu.txtnumfac.hwnd, WM_KEYDOWN, VK_RETURN, 0
-PostMessage frmDocu.txtnumfac.hwnd, WM_KEYUP, VK_RETURN, 0
+PostMessage frmdocu.txtnumfac.hwnd, WM_KEYDOWN, VK_RETURN, 0
+PostMessage frmdocu.txtnumfac.hwnd, WM_KEYUP, VK_RETURN, 0
 
-frmDocu.ZOrder 0
+frmdocu.ZOrder 0
 End Sub
 
 Public Sub cabe()
@@ -2350,4 +2350,16 @@ If KeyAscii = 13 Then
     If Frame2.Visible And i_maximo.Visible Then i_maximo.SetFocus
     If Frame1.Visible And txtCampo1.Visible Then Azul2 txtCampo1, txtCampo1
 End If
+End Sub
+
+Private Sub lblbarraos_DblClick()
+    If Me.WindowState = vbMaximized Then
+        Me.WindowState = vbNormal
+        Me.Move (Screen.Width - (Label3(5).Left + Label3(5).Width + 240)) / 2, _
+                (Screen.Height - (Label3(5).Height + 540)) / 2, _
+                Label3(5).Left + Label3(5).Width + 240, _
+                Label3(5).Height + 540
+    Else
+        Me.WindowState = vbMaximized
+    End If
 End Sub
