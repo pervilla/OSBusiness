@@ -667,7 +667,7 @@ Begin VB.Form FORMGEN
          Alignment       =   2  'Center
          AutoSize        =   -1  'True
          BackColor       =   &H00000000&
-         Caption         =   "!! PRIORIDAD  PARA VENTA ���"
+         Caption         =   "== PRIORIDAD  PARA VENTA =="
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   9
@@ -679,12 +679,12 @@ Begin VB.Form FORMGEN
          EndProperty
          ForeColor       =   &H0000FF00&
          Height          =   210
-         Left            =   6195
+         Left            =   6075
          TabIndex        =   263
          Tag             =   "0"
          Top             =   0
          Visible         =   0   'False
-         Width           =   2595
+         Width           =   2835
       End
       Begin VB.Label lbllote 
          BackStyle       =   0  'Transparent
@@ -3026,7 +3026,6 @@ Begin VB.Form FORMGEN
       _ExtentY        =   661
       _Version        =   393217
       BackColor       =   14737632
-      Enabled         =   -1  'True
       MultiLine       =   0   'False
       TextRTF         =   $"FORMGEN.frx":1F05
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -3050,7 +3049,6 @@ Begin VB.Form FORMGEN
       _ExtentY        =   661
       _Version        =   393217
       BackColor       =   14737632
-      Enabled         =   -1  'True
       MultiLine       =   0   'False
       MousePointer    =   1
       TextRTF         =   $"FORMGEN.frx":1F82
@@ -6220,7 +6218,7 @@ End If
     End If
 
     
-If TypeOf FORMGEN.Controls(indice) Is label Then
+If TypeOf FORMGEN.Controls(indice) Is Label Then
     enlace = 1
 Else
     enlace = 0
@@ -9095,7 +9093,7 @@ End If
 
 Barra.Min = 0
 Barra.Value = 0
-Barra.max = all_llave.RowCount
+Barra.Max = all_llave.RowCount
 Barra.Visible = True
 
 FORMGEN.Grid_all.Visible = False
@@ -10344,7 +10342,7 @@ End If
 
 Barra.Visible = True
 'Barra
-Barra.max = 90
+Barra.Max = 90
 Barra.Min = 62
 
 Barra.Value = 62
@@ -27400,7 +27398,7 @@ pub_cadena = " select all_fecha_dia,all_numoper2 " & _
 "and all_codtra in (2725,2735,5360,2727,1455) and (all_codcia = caa_codcia) and (all_tipdoc = caa_tipdoc) and (all_serdoc = caa_serdoc) and (all_numdoc = caa_numdoc) and (all_cp = caa_cp) and (all_codclie = caa_codclie) and caa_codven = " & DCIA2 & "  group by all_fecha_dia,all_numoper2"
     Set ps_vercia = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
     If Not ps_vercia.EOF Then
-     Barra.max = ps_vercia.RowCount
+     Barra.Max = ps_vercia.RowCount
      Barra.Visible = True
     End If
 

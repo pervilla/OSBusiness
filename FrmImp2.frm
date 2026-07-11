@@ -1301,7 +1301,7 @@ Begin VB.Form FrmImp2
          Width           =   855
       End
       Begin VB.Label lblcontab 
-         Caption         =   "Seleccione los Niveles para impresiï¿½n"
+         Caption         =   "Seleccione los Niveles para impresión"
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   120

@@ -471,7 +471,7 @@ Begin VB.Form FORM_COT
       End
       Begin VB.Label lcodart 
          AutoSize        =   -1  'True
-         Caption         =   "F3 = Condiï¿½n"
+         Caption         =   "F3 = Condión"
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   8.25
@@ -2174,7 +2174,7 @@ cmdconsulta.Enabled = False
 Exit Sub
 
 Error_fatal:
-    pub_mensaje = "Se ha producido un error " & "al abrir la conexiï¿½n:" & Err & " - " & Error & vbCr
+    pub_mensaje = "Se ha producido un error " & "al abrir la conexión:" & Err & " - " & Error & vbCr
     For Each er In rdoErrors
         pub_mensaje = pub_mensaje & er.Description & ":" & er.Number & vbCr
         MsgBox pub_mensaje

@@ -3,16 +3,16 @@ Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form FrmParGen 
    Caption         =   "Definición de Compañia"
-   ClientHeight    =   5310
+   ClientHeight    =   7455
    ClientLeft      =   60
    ClientTop       =   345
-   ClientWidth     =   8325
+   ClientWidth     =   12525
    ControlBox      =   0   'False
    Icon            =   "Frmpargen.frx":0000
    LinkTopic       =   "Form3"
    MDIChild        =   -1  'True
-   ScaleHeight     =   5310
-   ScaleWidth      =   8325
+   ScaleHeight     =   7455
+   ScaleWidth      =   12525
    WindowState     =   2  'Maximized
    Begin VB.CommandButton Command2 
       Caption         =   "&Modificación"
@@ -70,19 +70,19 @@ Begin VB.Form FrmParGen
       TabCaption(1)   =   "Archivos/Opcionales "
       TabPicture(1)   =   "Frmpargen.frx":05A8
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label2(0)"
-      Tab(1).Control(1)=   "Label2(1)"
-      Tab(1).Control(2)=   "F3"
-      Tab(1).Control(3)=   "fCOMI"
-      Tab(1).Control(4)=   "cmdComision"
-      Tab(1).Control(5)=   "chepuntos"
+      Tab(1).Control(0)=   "Frame3"
+      Tab(1).Control(1)=   "F4"
+      Tab(1).Control(2)=   "FCAL"
+      Tab(1).Control(3)=   "fragrifos"
+      Tab(1).Control(4)=   "Frame1"
+      Tab(1).Control(5)=   "FRADEVICE"
       Tab(1).Control(6)=   "txtcias"
-      Tab(1).Control(7)=   "FRADEVICE"
-      Tab(1).Control(8)=   "Frame1"
-      Tab(1).Control(9)=   "fragrifos"
-      Tab(1).Control(10)=   "FCAL"
-      Tab(1).Control(11)=   "F4"
-      Tab(1).Control(12)=   "Frame3"
+      Tab(1).Control(7)=   "chepuntos"
+      Tab(1).Control(8)=   "cmdComision"
+      Tab(1).Control(9)=   "fCOMI"
+      Tab(1).Control(10)=   "F3"
+      Tab(1).Control(11)=   "Label2(1)"
+      Tab(1).Control(12)=   "Label2(0)"
       Tab(1).ControlCount=   13
       TabCaption(2)   =   "Actualizacion de Precios"
       TabPicture(2)   =   "Frmpargen.frx":05C4
@@ -349,7 +349,7 @@ Begin VB.Form FrmParGen
             Width           =   3015
             _ExtentX        =   5318
             _ExtentY        =   450
-            _Version        =   327682
+            _Version        =   393216
             Appearance      =   0
          End
          Begin VB.CommandButton Command1 
@@ -1460,7 +1460,7 @@ Begin VB.Form FrmParGen
             Width           =   615
          End
          Begin VB.CheckBox cheigv 
-            Caption         =   "Facturaciï¿½m - I.G.V.  Incluido"
+            Caption         =   "Facturación - I.G.V.  Incluido"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   9.75
@@ -1902,7 +1902,7 @@ parloc_llave!PAR_NOMBRE = FrmParGen.txtnombre.text
 parloc_llave!PAR_NOMBRE_CORTO = FrmParGen.txtnomcorto.text
 parloc_llave!PAR_G_SERIE = Val(FrmParGen.serie_g.text)
 parloc_llave!PAR_G_INICIAL = Val(FrmParGen.numfac_g.text)
-parloc_llave!PAR_B_SERIE = Val(FrmParGen.Serie_b.text)
+parloc_llave!PAR_B_SERIE = Val(FrmParGen.serie_b.text)
 parloc_llave!PAR_B_INICIAL = Val(FrmParGen.numfac_b.text)
 parloc_llave!PAR_F_SERIE = Val(FrmParGen.serie_f.text)
 parloc_llave!PAR_F_INICIAL = Val(FrmParGen.numfac_f.text)
@@ -1926,7 +1926,7 @@ parloc_llave!PAR_MONEDA_fac = UCase(txtmoneda_v.text)
 parloc_llave!par_moneda_con = UCase(par_moneda_con.text)
 parloc_llave!PAR_OBS = Trim(p_obs.text)
 parloc_llave!PAR_COLOR = Format(txtcolor.text, "00") & Format(txttexto.text, "00")
-parloc_llave!PAR_CIAS = UCase(txtcias.text)
+parloc_llave!PAR_CIAS = UCase(TxtCias.text)
 parloc_llave!PAR_TASA_VENTA = Val(txttasa.text)
 If chefp.Value = 1 Then
  parloc_llave!PAR_FLAG_P = "P"
@@ -2073,7 +2073,7 @@ Public Sub MENSAJE_VEN(TEXTO As String)
 End Sub
 
 Public Sub LLENA_PAR(ban As Integer)
-Dim i As Integer
+Dim I As Integer
 If ban = 0 Then
        PSPAR_LOC(0) = LK_CODCIA
        parloc_llave.Requery
@@ -2084,7 +2084,7 @@ FrmParGen.txtnombre.text = Trim(Nulo_Valors(parloc_llave!PAR_NOMBRE))
 FrmParGen.txtnomcorto.text = Trim(Nulo_Valors(parloc_llave!PAR_NOMBRE_CORTO))
 FrmParGen.serie_g.text = Trim(Nulo_Valors(parloc_llave!PAR_G_SERIE))
 FrmParGen.numfac_g.text = Trim(Nulo_Valors(parloc_llave!PAR_G_INICIAL))
-FrmParGen.Serie_b.text = Trim(Nulo_Valors(parloc_llave!PAR_B_SERIE))
+FrmParGen.serie_b.text = Trim(Nulo_Valors(parloc_llave!PAR_B_SERIE))
 FrmParGen.numfac_b.text = Trim(Nulo_Valors(parloc_llave!PAR_B_INICIAL))
 FrmParGen.serie_f.text = Trim(Nulo_Valors(parloc_llave!PAR_F_SERIE))
 FrmParGen.numfac_f.text = Trim(Nulo_Valors(parloc_llave!PAR_F_INICIAL))
@@ -2106,7 +2106,7 @@ FrmParGen.Maxncnd.text = Nulo_Valor0(parloc_llave!PAR_NOTAS_LINES)
 FrmParGen.txtmorosos.text = Nulo_Valor0(parloc_llave!PAR_DIAS_LARGE)
 FrmParGen.txtmoneda_v.text = Nulo_Valor0(parloc_llave!PAR_MONEDA_fac)
 FrmParGen.par_moneda_con.text = Nulo_Valor0(parloc_llave!par_moneda_con)
-FrmParGen.txtcias.text = Nulo_Valors(parloc_llave!PAR_CIAS)
+FrmParGen.TxtCias.text = Nulo_Valors(parloc_llave!PAR_CIAS)
 FrmParGen.txttasa.text = Nulo_Valor0(parloc_llave!PAR_TASA_VENTA)
 FrmParGen.txtserie.text = Nulo_Valor0(parloc_llave!PAR_R_SERIE)
 p_obs.text = Nulo_Valors(parloc_llave!PAR_OBS)
@@ -2233,7 +2233,7 @@ End If
 End Sub
 Public Sub LIMPIA_PAR()
 FrmParGen.txttasa.text = ""
-txtcias.text = ""
+TxtCias.text = ""
 txtmoneda_v.text = ""
 chepuntos.Value = 0
 Txt_key.text = ""
@@ -2241,7 +2241,7 @@ txtnombre.text = ""
 txtnomcorto.text = ""
 serie_g.text = ""
 numfac_g.text = ""
-Serie_b.text = ""
+serie_b.text = ""
 numfac_b.text = ""
 serie_f.text = ""
 numfac_f.text = ""
@@ -2304,8 +2304,8 @@ End If
 End Sub
 
 Private Sub cheboleta_Click()
-If Serie_b.Enabled Then
- Serie_b.SetFocus
+If serie_b.Enabled Then
+ serie_b.SetFocus
 End If
 End Sub
 
@@ -2329,11 +2329,11 @@ If Left(CmdAgregar.Caption, 2) = "&A" Then
     CmdModificar.Enabled = False
     cmdEliminar.Enabled = False
     LIMPIA_PAR
-    DESBLOQUEA_TEXT txtnombre, serie_g, numfac_g, Serie_b, numfac_b, serie_f, numfac_f, chebancos, chectaC, chectaP
+    DESBLOQUEA_TEXT txtnombre, serie_g, numfac_g, serie_b, numfac_b, serie_f, numfac_f, chebancos, chectaC, chectaP
     DESBLOQUEA_TEXT numfac_g_f, numfac_b_f, numfac_f_f, cheguia, cheboleta, chefactura, txtnomcorto, flagfac(0), flagfac(1), checaja
     DESBLOQUEA_TEXT opArti(0), opArti(1), OPcosto(0), OPcosto(1), txtmaxv, fCOMI, chencred, serie_ncred, ncred_f, ncred_f_f
     DESBLOQUEA_TEXT serie_ndeb, ndeb_f, ndeb_f_f, chendeb, chendeb, MaxBoleta, Maxfactura, txtmorosos, chepuntos, chepuntos
-    DESBLOQUEA_TEXT txtcias, txttasa, cmdimpresoras, par_moneda_con, chegrifos, Maxncnd, serie_usu, txtserie
+    DESBLOQUEA_TEXT TxtCias, txttasa, cmdimpresoras, par_moneda_con, chegrifos, Maxncnd, serie_usu, txtserie
     DESBLOQUEA_TEXT t_archi_f, t_archi_b, t_archi_g, t_archi_guia, txtcontado, chefp, txtadi
     cheigv.Enabled = True
     FrmParGen.Txt_key = GENERA_PAR
@@ -2388,22 +2388,22 @@ End If
      If Left(CmdModificar.Caption, 2) = "&G" Then
         CmdModificar.Caption = "&Modificar"
         LLENA_PAR 1
-        BLOQUEA_TEXT txtnombre, serie_g, numfac_g, Serie_b, numfac_b, serie_f, numfac_f, chebancos, chectaC, chectaP
+        BLOQUEA_TEXT txtnombre, serie_g, numfac_g, serie_b, numfac_b, serie_f, numfac_f, chebancos, chectaC, chectaP
         BLOQUEA_TEXT numfac_g_f, numfac_b_f, numfac_f_f, cheguia, cheboleta, chefactura, txtnomcorto, flagfac(0), flagfac(1), checaja
         BLOQUEA_TEXT opArti(0), opArti(1), OPcosto(0), OPcosto(1), txtmaxv, fCOMI, chencred, serie_ncred, ncred_f, ncred_f_f
         BLOQUEA_TEXT serie_ndeb, ndeb_f, ndeb_f_f, chendeb, MaxBoleta, Maxfactura, txtmorosos, chepuntos
-        BLOQUEA_TEXT txtcias, txttasa, cmdimpresoras, par_moneda_con, chegrifos, Maxncnd, serie_usu, txtserie
+        BLOQUEA_TEXT TxtCias, txttasa, cmdimpresoras, par_moneda_con, chegrifos, Maxncnd, serie_usu, txtserie
         BLOQUEA_TEXT t_archi_f, t_archi_b, t_archi_g, t_archi_guia, txtcontado, chefp, txtadi
         cheigv.Enabled = False
         Txt_key.Locked = True
      Else
         CmdAgregar.Caption = "&Agregar"
         LLENA_PAR 1
-        BLOQUEA_TEXT txtnombre, serie_g, numfac_g, Serie_b, numfac_b, serie_f, numfac_f, chebancos, chectaC, chectaP
+        BLOQUEA_TEXT txtnombre, serie_g, numfac_g, serie_b, numfac_b, serie_f, numfac_f, chebancos, chectaC, chectaP
         BLOQUEA_TEXT numfac_g_f, numfac_b_f, numfac_f_f, cheguia, cheboleta, chefactura, txtnomcorto, flagfac(0), flagfac(1), checaja
         BLOQUEA_TEXT opArti(0), opArti(1), OPcosto(0), OPcosto(1), txtmaxv, fCOMI, chencred, serie_ncred, ncred_f, ncred_f_f
         BLOQUEA_TEXT serie_ndeb, ndeb_f, ndeb_f_f, chendeb, MaxBoleta, Maxfactura, txtmorosos, chepuntos
-        BLOQUEA_TEXT txtcias, txttasa, cmdimpresoras, par_moneda_con, chegrifos, Maxncnd, serie_usu, txtserie
+        BLOQUEA_TEXT TxtCias, txttasa, cmdimpresoras, par_moneda_con, chegrifos, Maxncnd, serie_usu, txtserie
         BLOQUEA_TEXT t_archi_f, t_archi_b, t_archi_g, t_archi_guia, txtcontado, chefp, txtadi
         cheigv.Enabled = False
         Txt_key.Locked = True
@@ -2513,11 +2513,11 @@ If Left(CmdModificar.Caption, 2) = "&M" Then
     cmdEliminar.Enabled = False
     cmdCancelar.Enabled = True
     Txt_key.Locked = True
-    DESBLOQUEA_TEXT txtnombre, serie_g, numfac_g, Serie_b, numfac_b, serie_f, numfac_f, chebancos, chectaC, chectaP
+    DESBLOQUEA_TEXT txtnombre, serie_g, numfac_g, serie_b, numfac_b, serie_f, numfac_f, chebancos, chectaC, chectaP
     DESBLOQUEA_TEXT numfac_g_f, numfac_b_f, numfac_f_f, cheguia, cheboleta, chefactura, txtnomcorto, flagfac(0), flagfac(1), checaja
     DESBLOQUEA_TEXT opArti(0), opArti(1), OPcosto(0), OPcosto(1), txtmaxv, fCOMI, chencred, serie_ncred, ncred_f, ncred_f_f
     DESBLOQUEA_TEXT serie_ndeb, ndeb_f, ndeb_f_f, chendeb, MaxBoleta, Maxfactura, txtmorosos, chepuntos
-    DESBLOQUEA_TEXT txtcias, txttasa, cmdimpresoras, par_moneda_con, chegrifos, Maxncnd, serie_usu, txtserie
+    DESBLOQUEA_TEXT TxtCias, txttasa, cmdimpresoras, par_moneda_con, chegrifos, Maxncnd, serie_usu, txtserie
     DESBLOQUEA_TEXT t_archi_f, t_archi_b, t_archi_g, t_archi_guia, txtcontado, chefp, txtadi
     cheigv.Enabled = True
     txtnombre.SetFocus
@@ -2535,11 +2535,11 @@ Else
      CmdAgregar.Enabled = True
      cmdEliminar.Enabled = True
      Txt_key.Locked = True
-     BLOQUEA_TEXT txtnombre, serie_g, numfac_g, Serie_b, numfac_b, serie_f, numfac_f, chebancos, chectaC, chectaP
+     BLOQUEA_TEXT txtnombre, serie_g, numfac_g, serie_b, numfac_b, serie_f, numfac_f, chebancos, chectaC, chectaP
      BLOQUEA_TEXT numfac_g_f, numfac_b_f, numfac_f_f, cheguia, cheboleta, chefactura, txtnomcorto, flagfac(0), flagfac(1), checaja
      BLOQUEA_TEXT opArti(0), opArti(1), OPcosto(0), OPcosto(1), txtmaxv, fCOMI, chencred, serie_ncred, ncred_f, ncred_f_f
      BLOQUEA_TEXT serie_ndeb, ndeb_f, ndeb_f_f, chendeb, MaxBoleta, Maxfactura, txtmorosos, chepuntos
-     BLOQUEA_TEXT txtcias, txttasa, cmdimpresoras, par_moneda_con, chegrifos, Maxncnd, serie_usu, txtserie
+     BLOQUEA_TEXT TxtCias, txttasa, cmdimpresoras, par_moneda_con, chegrifos, Maxncnd, serie_usu, txtserie
      BLOQUEA_TEXT t_archi_f, t_archi_b, t_archi_g, t_archi_guia, txtcontado, chefp, txtadi
      cheigv.Enabled = False
      Screen.MousePointer = 0
@@ -2608,13 +2608,13 @@ Dim km_flag As String
       MsgBox "No hay Productos para Actualizar.", 48, Pub_Titulo
       GoTo PASA
     End If
-    pb.Visible = True
+    PB.Visible = True
     DoEvents
-    pb.Min = 0
-    pb.Max = pre_todo.RowCount
-    pb.Value = 0
+    PB.Min = 0
+    PB.Max = pre_todo.RowCount
+    PB.Value = 0
     Do Until pre_todo.EOF
-       pb.Value = pb.Value + 1
+       PB.Value = PB.Value + 1
        pre_todo.Edit
        pre_todo!pre_pre1 = redondea(pre_todo!pre_pre11 * Val(txttipo.text))
        pre_todo!pre_pre2 = redondea(pre_todo!pre_pre22 * Val(txttipo.text))
@@ -2630,7 +2630,7 @@ Dim km_flag As String
     parloc_llave!PAR_FECHA_PRECIOS = LK_FECHA_DIA
     parloc_llave!PAR_TASA_VENTA = txttipo.text
     parloc_llave.Update
-    pb.Visible = False
+    PB.Visible = False
     MsgBox "Proceso Terminado...", 48, Pub_Titulo
 
     Exit Sub
@@ -2680,11 +2680,11 @@ If parloc_llave.EOF Then
 End If
 cmdCancelar.Enabled = True
 cheigv.Enabled = False
-BLOQUEA_TEXT txtnombre, serie_g, numfac_g, Serie_b, numfac_b, serie_f, numfac_f, chebancos, chectaC, chectaP
+BLOQUEA_TEXT txtnombre, serie_g, numfac_g, serie_b, numfac_b, serie_f, numfac_f, chebancos, chectaC, chectaP
 BLOQUEA_TEXT numfac_g_f, numfac_b_f, numfac_f_f, cheguia, cheboleta, chefactura, txtnomcorto, flagfac(0), flagfac(1), checaja
 BLOQUEA_TEXT opArti(0), opArti(1), OPcosto(0), OPcosto(1), txtmaxv, fCOMI, chencred, serie_ncred, ncred_f, ncred_f_f
 BLOQUEA_TEXT serie_ndeb, ndeb_f, ndeb_f_f, chendeb, MaxBoleta, Maxfactura, txtmorosos, txtmorosos, chepuntos
-BLOQUEA_TEXT txtcias, txttasa, cmdimpresoras, par_moneda_con, chegrifos, Maxncnd, serie_usu, txtserie
+BLOQUEA_TEXT TxtCias, txttasa, cmdimpresoras, par_moneda_con, chegrifos, Maxncnd, serie_usu, txtserie
 BLOQUEA_TEXT t_archi_f, t_archi_b, t_archi_g, t_archi_guia, txtcontado, chefp, txtadi
 
 LLENA_PAR 0
@@ -2882,7 +2882,7 @@ End Sub
 Private Sub numfac_g_f_KeyPress(KeyAscii As Integer)
 SOLO_ENTERO KeyAscii
 If KeyAscii = 13 Then
- Serie_b.SetFocus
+ serie_b.SetFocus
 End If
 
 End Sub
@@ -2924,7 +2924,7 @@ End If
 End Sub
 
 Private Sub Serie_b_GotFocus()
-Azul Serie_b, Serie_b
+Azul serie_b, serie_b
 End Sub
 
 Private Sub Serie_b_KeyPress(KeyAscii As Integer)
@@ -3028,9 +3028,9 @@ End Sub
 
 Private Sub txtcolor_Change()
 On Error GoTo DE
-lblcia.Caption = Trim(txtnombre.text)
-lblcia.BackColor = QBColor(txtcolor.text)
-lblcia.ForeColor = QBColor(txttexto.text)
+lblCia.Caption = Trim(txtnombre.text)
+lblCia.BackColor = QBColor(txtcolor.text)
+lblCia.ForeColor = QBColor(txttexto.text)
 DE:
 End Sub
 
@@ -3089,9 +3089,9 @@ End Sub
 
 Private Sub txttexto_Change()
 On Error GoTo DE
-lblcia.Caption = Trim(txtnombre.text)
-lblcia.BackColor = QBColor(txtcolor.text)
-lblcia.ForeColor = QBColor(txttexto.text)
+lblCia.Caption = Trim(txtnombre.text)
+lblCia.BackColor = QBColor(txtcolor.text)
+lblCia.ForeColor = QBColor(txttexto.text)
 DE:
 
 End Sub

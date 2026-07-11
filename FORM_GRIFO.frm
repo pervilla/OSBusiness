@@ -8703,7 +8703,7 @@ GoTo fin
 
 Error_fatal:
     'MsgBox pub_mensaje
-    pub_mensaje = "Se ha producido un error " & "al abrir la conexiï¿½n:" & Err & " - " & Error & vbCr
+    pub_mensaje = "Se ha producido un error " & "al abrir la conexión:" & Err & " - " & Error & vbCr
     For Each er In rdoErrors
         pub_mensaje = pub_mensaje & er.Description & ":" & er.Number & vbCr
         MsgBox pub_mensaje, 48, Pub_Titulo

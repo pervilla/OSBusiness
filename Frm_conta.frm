@@ -921,7 +921,7 @@ GoTo fin
 
 Exit Sub
 Error_fatal:
-    msg = "Se ha producido un error " & "al abrir la conexiï¿½n:" & Err & " - " & Error & vbCr
+    msg = "Se ha producido un error " & "al abrir la conexión:" & Err & " - " & Error & vbCr
     For Each er In rdoErrors
         msg = msg & er.Description & ":" & er.Number & vbCr
         MsgBox msg

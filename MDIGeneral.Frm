@@ -552,7 +552,7 @@ Begin VB.MDIForm MDIForm1
          Visible         =   0   'False
       End
       Begin VB.Menu SubmenuTit1 
-         Caption         =   "C&ompaï¿½ia"
+         Caption         =   "C&ompañia"
          Enabled         =   0   'False
          Index           =   6
          Shortcut        =   ^F

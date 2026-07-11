@@ -852,7 +852,7 @@ Begin VB.Form FrmVen
             WordWrap        =   -1  'True
          End
          Begin VB.Label Label1 
-            Caption         =   "Serie de Guia de Remisiï¿½n :"
+            Caption         =   "Serie de Guia de Remisión :"
             Height          =   375
             Index           =   18
             Left            =   120
@@ -934,7 +934,7 @@ Begin VB.Form FrmVen
          Width           =   975
       End
       Begin VB.Label Label5 
-         Caption         =   "G. Remisiï¿½n :"
+         Caption         =   "G. Remisión :"
          Height          =   255
          Index           =   2
          Left            =   -74760

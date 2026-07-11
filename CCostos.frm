@@ -1,19 +1,15 @@
 VERSION 5.00
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
-Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Begin VB.Form Frmcospro 
    Caption         =   "Tipo de Cambio y Costeo de Articulos"
-   ClientHeight    =   6990
+   ClientHeight    =   7560
    ClientLeft      =   2565
    ClientTop       =   1920
-   ClientWidth     =   5580
+   ClientWidth     =   6195
    LinkTopic       =   "Form4"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   6990
-   ScaleWidth      =   5580
+   ScaleHeight     =   7560
+   ScaleWidth      =   6195
    Begin VB.CommandButton Command2 
       Caption         =   "Ce&rrar"
       BeginProperty Font 
@@ -56,21 +52,10 @@ Begin VB.Form Frmcospro
          Visible         =   0   'False
          Width           =   1335
       End
-      Begin RichTextLib.RichTextBox TEXTOVAR 
-         Height          =   375
-         Left            =   1680
-         TabIndex        =   8
-         Top             =   1200
-         Visible         =   0   'False
-         Width           =   975
-         _ExtentX        =   1720
-         _ExtentY        =   661
-         _Version        =   393217
-         BackColor       =   12632064
-         BorderStyle     =   0
-         MultiLine       =   0   'False
-         TextRTF         =   $"CCostos.frx":0000
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+      Begin VB.PictureBox TEXTOVAR 
+         BackColor       =   &H00C0C000&
+         BorderStyle     =   0  'None
+         BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
             Charset         =   0
@@ -79,32 +64,27 @@ Begin VB.Form Frmcospro
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         Height          =   375
+         Left            =   1680
+         ScaleHeight     =   375
+         ScaleWidth      =   975
+         TabIndex        =   8
+         Top             =   1200
+         Visible         =   0   'False
+         Width           =   975
       End
-      Begin MSFlexGridLib.MSFlexGrid gridigv 
+      Begin VB.PictureBox gridigv 
          Height          =   3015
          Left            =   120
+         ScaleHeight     =   2955
+         ScaleWidth      =   4995
          TabIndex        =   1
          ToolTipText     =   "[Enter] = para Editar"
          Top             =   840
          Width           =   5055
-         _ExtentX        =   8916
-         _ExtentY        =   5318
-         _Version        =   393216
-         Rows            =   3
-         FixedRows       =   2
-         BackColorBkg    =   8421376
       End
-      Begin MSMask.MaskEdBox txtfecha 
-         Height          =   285
-         Left            =   1080
-         TabIndex        =   0
-         Top             =   240
-         Visible         =   0   'False
-         Width           =   1335
-         _ExtentX        =   2355
-         _ExtentY        =   503
-         _Version        =   393216
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+      Begin VB.PictureBox txtfecha 
+         BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
             Charset         =   0
@@ -113,7 +93,14 @@ Begin VB.Form Frmcospro
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         PromptChar      =   "_"
+         Height          =   285
+         Left            =   1080
+         ScaleHeight     =   225
+         ScaleWidth      =   1275
+         TabIndex        =   0
+         Top             =   240
+         Visible         =   0   'False
+         Width           =   1335
       End
       Begin VB.Label Label6 
          Caption         =   "hasta"
@@ -195,17 +182,16 @@ Begin VB.Form Frmcospro
          Top             =   240
          Width           =   1695
       End
-      Begin MSComctlLib.ProgressBar ProgBar 
+      Begin VB.PictureBox ProgBar 
+         Appearance      =   0  'Flat
          Height          =   195
          Left            =   120
+         ScaleHeight     =   165
+         ScaleWidth      =   5025
          TabIndex        =   5
          Top             =   840
          Visible         =   0   'False
          Width           =   5055
-         _ExtentX        =   8916
-         _ExtentY        =   344
-         _Version        =   327682
-         Appearance      =   0
       End
       Begin VB.CommandButton Command1 
          Caption         =   "&Costear Articulos"
@@ -432,7 +418,7 @@ PSFAR_COSTO(2) = LK_FECHA_DIA
 PSFAR_COSTO(3) = LK_FECHA_DIA
 Set Far_Cost = PSFAR_COSTO.OpenResultset(rdOpenKeyset, rdConcurValues)
 
-'�DistinctRow
+'DistinctRow
 'DISTINCTROW
 
 pub_cadena = "SELECT Distinct FAR_CODART FROM FACART WHERE FAR_CODCIA= ? AND FAR_FECHA_COMPRA >= ?  AND FAR_FECHA_COMPRA <= ?  AND  ( FAR_COSTEO_REAL = 'A' OR FAR_COSTEO = 'A' )  AND FAR_ESTADO <> 'E'  ORDER BY FAR_CODART"
