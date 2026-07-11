@@ -1641,7 +1641,7 @@ If LK_EMP = "3AA" Then
   If LK_FECHA_DIA >= wfecha Then
   If Val(GEN!GEN_CBS) <> -9 Then
 sigue:
-    WS = InputBox("N� Serial es : " & Format(GEN!GEN_CFP, "0000000000000000") & " , Llame al proveedor y pida su nueva serie." & Chr(13) & "{S� intenta colocar una serie que no es, por quinta vez... el Proveedor no responde por la informaci�n almacena.}", "Acceso Limitado ....")
+    WS = InputBox("Nro Serial es : " & Format(GEN!GEN_CFP, "0000000000000000") & " , Llame al proveedor y pida su nueva serie." & Chr(13) & "{S� intenta colocar una serie que no es, por quinta vez... el Proveedor no responde por la informaci�n almacena.}", "Acceso Limitado ....")
     If WS = "" Then
       GoTo sigue
     End If
@@ -1651,7 +1651,7 @@ sigue:
        GEN!GEN_CBS = -9
        GEN.Update
     Else
-      MsgBox "LLame a su Proveedor de OSBusiness y pida su N� de Serie. Ingreso Incorrecto" & Chr(13) & "{No intentar si no tiene el nuevo Nro. de Serie.}", vbCritical, "Acceso limitado .... "
+      MsgBox "LLame a su Proveedor de OSBusiness y pida su Nro de Serie. Ingreso Incorrecto" & Chr(13) & "{No intentar si no tiene el nuevo Nro. de Serie.}", vbCritical, "Acceso limitado .... "
       End
     End If
   End If

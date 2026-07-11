@@ -968,7 +968,7 @@ Begin VB.Form RCRYSTAL
       Width           =   735
    End
    Begin VB.Frame FRMPLAN 
-      Caption         =   "N� DE PLANILLA"
+      Caption         =   "Nro DE PLANILLA"
       ForeColor       =   &H00808000&
       Height          =   735
       Left            =   8160
@@ -1301,7 +1301,7 @@ Begin VB.Form RCRYSTAL
       End
    End
    Begin VB.Frame Frame1 
-      Caption         =   "N� de formulas :"
+      Caption         =   "Nro de formulas :"
       Height          =   255
       Left            =   3240
       TabIndex        =   8

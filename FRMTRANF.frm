@@ -114,7 +114,7 @@ Begin VB.Form FrmTranf
          Width           =   4695
       End
       Begin VB.Label lcodart 
-         Caption         =   "N�. Doc O/P"
+         Caption         =   "Nro. Doc O/P"
          Height          =   255
          Index           =   0
          Left            =   8760
