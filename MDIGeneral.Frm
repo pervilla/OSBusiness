@@ -914,7 +914,7 @@ Begin VB.MDIForm MDIForm1
       Enabled         =   0   'False
       Visible         =   0   'False
       Begin VB.Menu submenutit5 
-         Caption         =   "&Backups������������"
+         Caption         =   "&Backup"
          Enabled         =   0   'False
          Index           =   0
       End
