@@ -644,7 +644,7 @@ Begin VB.Form KARDEX
       Width           =   1455
    End
    Begin VB.Label lblmensaje 
-      Caption         =   "Procesando Información ..."
+      Caption         =   "Procesando Informaciï¿½n ..."
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -668,6 +668,10 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
+Private Declare Function PostMessage Lib "user32" Alias "PostMessageA" (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As Long) As Long
+Private Const WM_KEYDOWN = &H100
+Private Const WM_KEYUP = &H101
+Private Const VK_RETURN = &HD
 Dim ff_flag As String * 1
 Dim VAR_ACTIVAR As Integer
 Dim X2 As rdoResultset
@@ -702,7 +706,7 @@ Private Sub Command2_Click()
 ff_flag = "A"
 Dim Xx As rdoQuery
 Dim ver_xx As rdoResultset
-pub_mensaje = "Solo el Administrador del Sistema Sabe esta Opción , si no lo conoce no procesar, puede durar varios minutos ....ï¿½ Continuar proceso ? . .."
+pub_mensaje = "Solo el Administrador del Sistema Sabe esta Opciï¿½n , si no lo conoce no procesar, puede durar varios minutos ....ï¿½ Continuar proceso ? . .."
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -837,7 +841,7 @@ FINTODO:
  MsgBox "Reintente Nuevamente ..", 48, Pub_Titulo
 End Sub
 
-Private Sub CmdProcesa_Click()
+Public Sub CmdProcesa_Click()
 Dim wol_codcia As String
 'On Error GoTo osERRsale
 '*** KARDEX   ***
@@ -1037,11 +1041,13 @@ go_una:
        far_codart.MoveLast
     End If
 
-    pbValue = 0
-    pbMin = 0
-    pbMax = far_codart.RowCount
+    On Error Resume Next
+    PB.Value = 0
+    PB.Min = 0
+    PB.Max = far_codart.RowCount
     LblMensaje.Visible = True
-    pb.Visible = True
+    PB.Visible = True
+    On Error GoTo 0
     wFAR_CODART = far_codart
     Band = "A"
   End If
@@ -1078,10 +1084,15 @@ ws_equiv = Val(Trim(Right(unidad.Text, 8)))
 ACTIVA_EQUIV = ws_equiv
 LBLUNIDAD.Caption = Trim(unidad.Text)
 
+If ws_equiv = 0 Then ws_equiv = 1
+Dim lSigno As Long, lCantidad As Long, lStock As Long
+lSigno = Nulo_Valor0(wFAR_CODART!far_signo_arm)
+lCantidad = Nulo_Valor0(wFAR_CODART!FAR_cantidad)
+lStock = Nulo_Valor0(wFAR_CODART!FAR_STOCK)
 If LK_EMP = "HER" Then
- wSaldo = (wFAR_CODART!far_signo_arm * (wFAR_CODART!FAR_cantidad / ws_equiv)) + (wFAR_CODART!far_signo_arm * (wFAR_CODART!FAR_cantidad / ws_equiv) * -1)
+ wSaldo = lSigno * (lCantidad / ws_equiv)
 Else
- wSaldo = (wFAR_CODART!FAR_STOCK / ws_equiv) + (wFAR_CODART!far_signo_arm * (wFAR_CODART!FAR_cantidad / ws_equiv) * -1)
+ wSaldo = (lStock / ws_equiv) + (lSigno * (lCantidad / ws_equiv) * -1)
 End If
 
 cSaldo = wSaldo * Nulo_Valor0(arm_llave!ARM_COSPRO)
@@ -1100,6 +1111,7 @@ Do Until FINAL = "S"
   GridK.Row = fila1
   KARDEX.GridK.TextMatrix(fila1, 0) = " | " & wFAR_CODART!FAR_CODCIA & " |   " & Format(wFAR_CODART!far_fecha, "dd/mm/yy")
   KARDEX.GridK.TextMatrix(fila1, 1) = Format(wFAR_CODART!FAR_fecha_compra, "dd/mm/yy")
+  KARDEX.GridK.TextMatrix(fila1, 16) = Nulo_Valor0(wFAR_CODART!FAR_tipmov)
   ws_nombre = wFAR_CODART!far_concepto
   KARDEX.GridK.TextMatrix(fila1, 2) = ws_nombre
   If wFAR_CODART!far_estado = "E" Then
@@ -1513,7 +1525,14 @@ Private Sub Form_Activate()
 If LK_EMP = "PIU" Or LK_EMP = "HER" Then
    cheext.Value = 0
 End If
-If i_codart2.Visible Then Azul i_codart2, i_codart2
+If i_codart2.Visible Then
+   ' Si ya hay un codigo de articulo, procesar automaticamente
+   If Len(Trim(i_codart2.Text)) > 0 Then
+      i_codart2_KeyPress 13
+   Else
+      Azul i_codart2, i_codart2
+   End If
+End If
 End Sub
 
 Private Sub Form_Load()
@@ -1578,7 +1597,7 @@ KARDEX.GridK.ColWidth(18) = 2000
 KARDEX.GridK.ColWidth(19) = 900
 KARDEX.GridK.ColWidth(21) = 2200
 
-i_maximo.ListIndex = 0
+i_maximo.ListIndex = 2
 cabe
 SW = 0
 UNICO = ""
@@ -2203,6 +2222,74 @@ Private Sub salir_Click()
  Unload KARDEX
 End Sub
 
+Private Sub GridK_DblClick()
+' Abrir frmDocu al hacer doble clic en una fila del kardex
+Dim ws_tipmov As Integer
+Dim ws_numser As String
+Dim ws_numfac As Long
+Dim ws_fbg As String
+Dim ws_datos As String
+Dim i As Integer
+
+If GridK.Row < 1 Then Exit Sub
+If GridK.TextMatrix(GridK.Row, 2) = "" Then Exit Sub
+
+' Obtener datos del grid (ya almacenados al llenar)
+ws_tipmov = Val(GridK.TextMatrix(GridK.Row, 16))  ' Columna 16 = FAR_TIPMOV
+ws_datos = GridK.TextMatrix(GridK.Row, 20)        ' Columna 20 = "FBG:SERIE-NUMFAC"
+
+' Parsear FBG, serie y numero del formato "FBG:SERIE-NUMFAC"
+ws_fbg = ""
+ws_numser = ""
+ws_numfac = 0
+If InStr(ws_datos, ":") > 0 And InStr(ws_datos, "-") > 0 Then
+   ws_fbg = Left(ws_datos, InStr(ws_datos, ":") - 1)
+   ws_numser = Mid(ws_datos, InStr(ws_datos, ":") + 1, InStr(ws_datos, "-") - InStr(ws_datos, ":") - 1)
+   ws_numfac = Val(Mid(ws_datos, InStr(ws_datos, "-") + 1))
+End If
+
+If ws_tipmov = 0 Then Exit Sub
+
+' Abrir frmDocu y configurar los datos
+frmDocu.Show vbModeless
+
+' Seleccionar tipo de movimiento en combo tipmov
+For i = 0 To frmDocu.tipmov.ListCount - 1
+   If Val(Trim(Right(frmDocu.tipmov.List(i), 4))) = ws_tipmov Then
+      frmDocu.tipmov.ListIndex = i
+      Exit For
+   End If
+Next i
+
+' Ejecutar evento para poblar cmbFBG segun tipmov seleccionado
+frmDocu.EVENTO_LOSFOCUS_TIPMOV
+
+' Seleccionar FBG en combo cmbFBG
+For i = 0 To frmDocu.cmbFBG.ListCount - 1
+   If Left(frmDocu.cmbFBG.List(i), 1) = ws_fbg Then
+      frmDocu.cmbFBG.ListIndex = i
+      Exit For
+   End If
+Next i
+
+' Si no encontro FBG, seleccionar el primero
+If frmDocu.cmbFBG.ListIndex < 0 And frmDocu.cmbFBG.ListCount > 0 Then
+   frmDocu.cmbFBG.ListIndex = 0
+End If
+
+' Configurar serie y numero de documento
+frmDocu.txtserie.Text = ws_numser
+frmDocu.txtnumfac.Text = ws_numfac
+
+' Simular Enter para ejecutar la busqueda con PostMessage
+frmDocu.txtnumfac.SetFocus
+DoEvents
+PostMessage frmDocu.txtnumfac.hwnd, WM_KEYDOWN, VK_RETURN, 0
+PostMessage frmDocu.txtnumfac.hwnd, WM_KEYUP, VK_RETURN, 0
+
+frmDocu.ZOrder 0
+End Sub
+
 Public Sub cabe()
 KARDEX.GridK.ColAlignment(2) = 0
  KARDEX.GridK.ColAlignment(3) = 0
@@ -2219,7 +2306,7 @@ KARDEX.GridK.TextMatrix(0, 0) = "Fec.Proc"
 KARDEX.GridK.TextMatrix(0, 1) = "Fec.Emis."
 KARDEX.GridK.TextMatrix(0, 2) = "Documento"
 KARDEX.GridK.TextMatrix(0, 3) = "Concepto"
-KARDEX.GridK.TextMatrix(0, 4) = "Descripción"
+KARDEX.GridK.TextMatrix(0, 4) = "Descripciï¿½n"
 
 KARDEX.GridK.TextMatrix(0, 5) = "Ingreso"
 KARDEX.GridK.TextMatrix(0, 6) = "Salida"

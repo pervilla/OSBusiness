@@ -6891,7 +6891,10 @@ ElseIf grid_fac.COL = 5 And grid_fac.TextMatrix(grid_fac.Row, 16) <> "" Then    
     i_unidades.Top = Frame4.Top + grid_fac.Top + grid_fac.CellTop
     i_unidades.Visible = True
     i_unidades.SetFocus
+    DoEvents
+    On Error Resume Next
     SendKeys "%{DOWN}"
+    On Error GoTo 0
 ElseIf grid_fac.COL = 6 And Val(Nulo_Valor0(SUT_LLAVE!SUT_PRECIO)) = 3 And grid_fac.TextMatrix(grid_fac.Row, 16) <> "" Then
     i_mortal.Visible = False
     i_is.Visible = False
@@ -8333,16 +8336,25 @@ If Index = 0 Then  ' Stock loc.
     Screen.MousePointer = 11
     ws_stock = ""
     
-    Set X = CN.OpenResultset("EXEC sp_stock_local " & ws_artkey & ", 'BDATOSPM'", rdOpenKeyset, rdConcurValues)
-    If Not X.EOF Then
+    On Error Resume Next
+    Set X = CN.OpenResultset("EXEC BDATOS.dbo.sp_stock_local " & ws_artkey & ", 'BDATOSPM'", rdOpenKeyset, rdConcurValues)
+    If Err.Number <> 0 Then
+        ws_stock = ws_stock & "Pena Meza: Error " & Err.Description
+        Err.Clear
+    ElseIf Not X.EOF Then
         ws_stock = ws_stock & "Pena Meza: " & Format(X!ARM_STOCK, "0.00")
     End If
     
-    Set X = CN.OpenResultset("EXEC sp_stock_local " & ws_artkey & ", 'SERVER02'", rdOpenKeyset, rdConcurValues)
-    If Not X.EOF Then
+    Set X = CN.OpenResultset("EXEC BDATOS.dbo.sp_stock_local " & ws_artkey & ", 'SERVER02'", rdOpenKeyset, rdConcurValues)
+    If Err.Number <> 0 Then
+        If ws_stock <> "" Then ws_stock = ws_stock & " | "
+        ws_stock = ws_stock & "Jj: Error " & Err.Description
+        Err.Clear
+    ElseIf Not X.EOF Then
         If ws_stock <> "" Then ws_stock = ws_stock & " | "
         ws_stock = ws_stock & "Juanjuicillo: " & Format(X!ARM_STOCK, "0.00")
     End If
+    On Error GoTo 0
     
     Screen.MousePointer = 0
     
@@ -8361,7 +8373,15 @@ ElseIf Index = 1 Then  ' Transito
     
     Screen.MousePointer = 11
     
-    Set X = CN.OpenResultset("EXEC sp_productos_transito '" & ws_nomart & "', 5, 3", rdOpenKeyset, rdConcurValues)
+    On Error Resume Next
+    Set X = CN.OpenResultset("EXEC BDATOS.dbo.sp_productos_transito '" & ws_nomart & "', 5, 3", rdOpenKeyset, rdConcurValues)
+    If Err.Number <> 0 Then
+        MsgBox "Error al consultar transito: " & Err.Description, 48, Pub_Titulo
+        Err.Clear
+        Screen.MousePointer = 0
+        Exit Sub
+    End If
+    On Error GoTo 0
     Screen.MousePointer = 0
     
     If X.EOF Then
@@ -8469,6 +8489,7 @@ Dim Sec_SerieBoleta As Currency
 Dim Sec_NumFactura As Currency
 Dim Sec_NumBoleta As Currency
 Dim C As Integer
+Dim fila As Integer
 
 PUB_VISITA = 0
 
@@ -9429,7 +9450,10 @@ If KeyCode = 114 Then ' F3
     'i_codcli.Text = ""
     i_def.Enabled = True
     i_def.SetFocus
+    DoEvents
+    On Error Resume Next
     SendKeys "%{DOWN}"
+    On Error GoTo 0
  End If
  Exit Sub
 End If
@@ -9440,7 +9464,10 @@ End If
 If KeyCode = 119 Then ' F8
   If fracc.Visible And i_cc.Visible And i_cc.Enabled Then
      i_cc.SetFocus
+     DoEvents
+     On Error Resume Next
      SendKeys "%{DOWN}"
+     On Error GoTo 0
   End If
  Exit Sub
 End If
@@ -13691,6 +13718,29 @@ If Bloq_columnas() = False Then Exit Sub
 If loc_pase_bloq = 1 Then Exit Sub
 Dim ww_desc As Currency
 Dim FILAX As Integer
+Dim ws_codart As Long
+
+' Abrir KARDEX al hacer doble clic en cualquier columna de la fila
+' Buscar el codigo del articulo en diferentes columnas posibles
+ws_codart = 0
+If grid_fac.Row > 0 Then
+   ' Intentar obtener el codigo del articulo de diferentes columnas
+   ws_codart = Val(grid_fac.TextMatrix(grid_fac.Row, 1))  ' Columna 1
+   If ws_codart = 0 Then ws_codart = Val(grid_fac.TextMatrix(grid_fac.Row, 16))  ' Columna 16
+   If ws_codart = 0 Then ws_codart = Val(grid_fac.TextMatrix(grid_fac.Row, 0))   ' Columna 0
+End If
+
+If ws_codart > 0 Then
+   ' Configurar Kardex para mostrar ultimos movimientos
+   KARDEX.option1(0).Value = True  ' Opcion: Ultimos movimientos
+   KARDEX.i_codart2.Text = ws_codart
+   KARDEX.Show  ' Mostrar formulario (modeless por ser MDI child)
+   KARDEX.ZOrder 0  ' Traer al frente
+   DoEvents
+   DoEvents
+   KARDEX.CmdProcesa_Click  ' Ejecutar consulta del kardex
+   Exit Sub
+End If
 If LK_CODTRA = 2401 And grid_fac.COL = 1 And loc_acc_descto = "A" Then
   pub_cadena = "SELECT  ART_LINEA FROM ARTI WHERE ART_CODCIA = '" & LK_CODCIA & "' AND ART_KEY = " & Val(grid_fac.TextMatrix(grid_fac.Row, 16)) & " AND ART_LINEA = 2 "
   Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues)
@@ -13951,6 +14001,7 @@ ACT_FAL:
      ps_verarti.Update
      End If
    End If
+   PreservarNumLock
    grid_fac.SetFocus
     
   End If
@@ -16805,6 +16856,7 @@ If grid_fac.COL = 12 Then i_is.Visible = False
 grid_fac.COL = 1
 grid_fac.Row = grid_fac.Rows - 1
 grid_fac.RowHeight(grid_fac.Row) = 315
+PreservarNumLock
 grid_fac.SetFocus
 grid_fac.Row = grid_fac.Rows - 1
 textovar.SetFocus
@@ -16854,6 +16906,7 @@ flag_salto = 1
 If grid_fac.Row = grid_fac.Rows - 1 Then
    grid_fac.Rows = grid_fac.Rows + 1
 End If
+PreservarNumLock
 grid_fac.SetFocus
 grid_fac.Row = grid_fac.Row + 1
 grid_fac.RowHeight(grid_fac.Row) = 315
@@ -17789,7 +17842,10 @@ End Sub
 Private Sub i_precios_GotFocus()
 If i_precios.ListCount <> 0 Then
  i_precios.ListIndex = 0
+ DoEvents
+ On Error Resume Next
  SendKeys "%{DOWN}"
+ On Error GoTo 0
 End If
 'textovar.Visible = False
 'i_unidades.Visible = False
@@ -17878,6 +17934,7 @@ flag_salto = 1
 If grid_fac.Row = grid_fac.Rows - 1 Then
    grid_fac.Rows = grid_fac.Rows + 1
 End If
+PreservarNumLock
 grid_fac.SetFocus
 'grid_fac.Row = grid_fac.Row + 1
 grid_fac.RowHeight(grid_fac.Row) = 315
@@ -17990,6 +18047,7 @@ flag_salto = 1
 If grid_fac.Row = grid_fac.Rows - 1 Then
    grid_fac.Rows = grid_fac.Rows + 1
 End If
+PreservarNumLock
 grid_fac.SetFocus
 If tab_derecha(grid_fac.COL) = 1 Then grid_fac.Row = grid_fac.Row + 1
 grid_fac.RowHeight(grid_fac.Row) = 315
@@ -18109,7 +18167,10 @@ If LK_EMP = "3AA" And LK_CODTRA <> 2414 Then
    Exit Sub
 End If
 'i_unidades_KeyPress 13
+ DoEvents
+ On Error Resume Next
  SendKeys "%{DOWN}"
+ On Error GoTo 0
 
 
 'i_unidades.ListIndex = 0
@@ -18535,6 +18596,7 @@ Dim wdia1 As String
 Dim wDIA2 As String
 Dim I
 Dim itmFound As ListItem    ' Variable FoundItem.
+Dim ws_dni As String
 
 wCONDI = -1
 If KeyAscii = 27 Then
@@ -18545,6 +18607,13 @@ End If
 If KeyAscii <> 13 Then
    GoTo fin
 End If
+' Busqueda por Factiliza (abre client.frm)
+If KeyAscii = 13 And Left(i_codcli.Text, 1) = "F" And Len(i_codcli.Text) = 1 Then
+   frmCLI.Show 1
+   i_codcli.Text = ""
+   Exit Sub
+End If
+' Busqueda Alta Vista (+nombre)
 If KeyAscii = 13 And Left(i_codcli.Text, 1) = "+" Then GoTo buscar
 On Error GoTo OJO
 pu_cp = PUB_CP
@@ -18554,13 +18623,63 @@ If Len(i_codcli.Text) = 0 Then
    Exit Sub
 End If
 If pu_codclie <> 0 And IsNumeric(i_codcli.Text) = True Then
-   If Len(Trim(i_codcli.Text)) = LK_DIG_RUC Then ' LONG DEL RUC
-        PUB_RUC = Trim(i_codcli.Text)
-        SQ_OPER = 4
-        pu_codcia = LK_CODCIA
-        LEER_CLI_LLAVE
+   ' Busqueda por DNI (8 digitos)
+   If Len(Trim(i_codcli.Text)) = 8 Then
+        ws_dni = Trim(i_codcli.Text)
+        ' Buscar en: CLI_CODCLIE, CLI_RUC_ESPOSO, CLI_RUC_ESPOSA con CLI_CP='C'
+        pub_cadena = "SELECT CLI_CODCLIE, CLI_NOMBRE, CLI_RUC_ESPOSO, CLI_RUC_ESPOSA, CLI_ESTADO, CLI_CP " & _
+                     "FROM CLIENTES WHERE CLI_CODCIA = '" & LK_CODCIA & "' AND CLI_CP = 'C' " & _
+                     "AND (CLI_RUC_ESPOSO = '" & ws_dni & "' OR CLI_RUC_ESPOSA = '" & ws_dni & "')"
+        Set cli_ruc = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues)
         If cli_ruc.EOF Then
-           MsgBox "R.U.C. No Existe ", 48, Pub_Titulo
+           Pub_Respuesta = MsgBox("D.N.I. No Existe: " & ws_dni & Chr(13) & Chr(13) & _
+                          "Desea buscar en Factiliza?", vbYesNo + vbQuestion, Pub_Titulo)
+           If Pub_Respuesta = vbYes Then
+              ' Proteccion contra clicks multiples
+              i_codcli.Enabled = False
+              DoEvents
+              ' Cargar y mostrar formulario
+              frmCLI.Show vbModeless
+              DoEvents
+              DoEvents
+              ' Llamar funcion de Factiliza
+              On Error Resume Next
+              frmCLI.cmdFactiliza_Click_ws ws_dni, "DNI"
+              i_codcli.Enabled = True
+              On Error GoTo 0
+           End If
+           Exit Sub
+        End If
+        If Trim(cli_ruc!CLI_ESTADO) = "D" Then
+           MsgBox "DNI Desactivado para: " & Trim(cli_ruc!CLI_NOMBRE) & " Intente con otro codigo.", 48, Pub_Titulo
+           Exit Sub
+        End If
+        i_codcli.Text = cli_ruc!CLI_CODCLIE
+   ' Busqueda por RUC (11 digitos)
+   ElseIf Len(Trim(i_codcli.Text)) = LK_DIG_RUC Then
+        PUB_RUC = Trim(i_codcli.Text)
+        ' Buscar en: CLI_CODCLIE, CLI_RUC_ESPOSO, CLI_RUC_ESPOSA con CLI_CP='C'
+        pub_cadena = "SELECT CLI_CODCLIE, CLI_NOMBRE, CLI_RUC_ESPOSO, CLI_RUC_ESPOSA, CLI_ESTADO, CLI_CP " & _
+                     "FROM CLIENTES WHERE CLI_CODCIA = '" & LK_CODCIA & "' AND CLI_CP = 'C' " & _
+                     "AND (CLI_RUC_ESPOSO = '" & PUB_RUC & "' OR CLI_RUC_ESPOSA = '" & PUB_RUC & "')"
+        Set cli_ruc = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues)
+        If cli_ruc.EOF Then
+           Pub_Respuesta = MsgBox("R.U.C. No Existe: " & PUB_RUC & Chr(13) & Chr(13) & _
+                          "Desea buscar en Factiliza?", vbYesNo + vbQuestion, Pub_Titulo)
+           If Pub_Respuesta = vbYes Then
+              ' Proteccion contra clicks multiples
+              i_codcli.Enabled = False
+              DoEvents
+              ' Cargar y mostrar formulario
+              frmCLI.Show vbModeless
+              DoEvents
+              DoEvents
+              ' Llamar funcion de Factiliza
+              On Error Resume Next
+              frmCLI.cmdFactiliza_Click_ws PUB_RUC, "RUC"
+              i_codcli.Enabled = True
+              On Error GoTo 0
+           End If
            Exit Sub
         End If
         If Trim(cli_ruc!cli_estado) = "D" Then

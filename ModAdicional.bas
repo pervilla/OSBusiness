@@ -13,6 +13,11 @@ Public PUB_CC_VENTA As String * 1
 Public PUB_CC_FUFE As String * 1
 Public pub_codvenrel As String
 
+' Variables para retorno de cliente desde Factiliza
+Public PUB_CLI_CODCLIE As Long
+Public PUB_CLI_NOMBRE As String
+Public PUB_CLI_RUC As String
+Public PUB_CLI_DNI As String
 
 
 Public Sub LlenadoCbo(ByVal cbo As ComboBox, ByVal TIPREG As Integer)

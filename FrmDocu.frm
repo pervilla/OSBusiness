@@ -1173,7 +1173,7 @@ Begin VB.Form frmDocu
       End
       Begin VB.Label l_fecha_compra 
          AutoSize        =   -1  'True
-         Caption         =   "Fec. Emisión :"
+         Caption         =   "Fec. Emisiï¿½n :"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1257,7 +1257,7 @@ Begin VB.Form frmDocu
          Width           =   1575
       End
       Begin VB.Label lbldireccion 
-         Caption         =   "Dirección Entrega:"
+         Caption         =   "Direcciï¿½n Entrega:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1499,7 +1499,7 @@ Begin VB.Form frmDocu
          Width           =   1485
       End
       Begin VB.Label lblcondicion 
-         Caption         =   "Condición:"
+         Caption         =   "Condiciï¿½n:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1831,7 +1831,7 @@ Begin VB.Form frmDocu
       End
       Begin VB.Label lbldocu 
          Alignment       =   2  'Center
-         Caption         =   "Operación"
+         Caption         =   "Operaciï¿½n"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1956,6 +1956,10 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim DOC102 As String
+Private Declare Function PostMessage Lib "user32" Alias "PostMessageA" (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As Long) As Long
+Private Const WM_KEYDOWN = &H100
+Private Const WM_KEYUP = &H101
+Private Const VK_RETURN = &HD
 Dim temp_NUMSER_C  As String
 Dim temp_NUMFAC_C  As String
 Dim loc_flag_espera As String * 1
@@ -2346,7 +2350,7 @@ If ID_SEC_DOC2 = 2 Or ID_SEC_DOC2 = 4 Then
  End If
  
 End If
-pub_mensaje = "Documentos Validados Hacer en Cruze de Documento   ¿Desea Continuar... ?"
+pub_mensaje = "Documentos Validados Hacer en Cruze de Documento   ï¿½Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    GoTo fincruze
@@ -2432,7 +2436,7 @@ If LOC_TIPMOV = 0 Or Trim(d_fecha.Caption) = "" Then
 Exit Sub
 End If
 If frmdocu.LBLEXTORNO.Visible Then
-  MsgBox "Impresión No Procede...", 48, Pub_Titulo
+  MsgBox "Impresiï¿½n No Procede...", 48, Pub_Titulo
   Exit Sub
 End If
 If LOC_TIPMOV = 30 Then
@@ -2652,7 +2656,7 @@ If cli_llave.EOF Then
    MsgBox "Codigo de Proveedor no Existe", 48, Pub_Titulo
    Exit Sub
 End If
-pub_mensaje = "Cambiar por el codigo : " & Chr(13) & cli_llave!cli_codclie & " - " & Trim(cli_llave!cli_nombre) & Chr(13) & "   ¿Desea Continuar... ?"
+pub_mensaje = "Cambiar por el codigo : " & Chr(13) & cli_llave!cli_codclie & " - " & Trim(cli_llave!cli_nombre) & Chr(13) & "   ï¿½Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -2907,7 +2911,7 @@ If LOC_TIPMOV <> 20 Then Exit Sub
      End If
   End If
 
- cap_valor = InputBox("Modificación de Descto de Mercaderia  en valor en Nuevos Soles S/.= " & Chr(13) & "el valor afecta a costo promedio mas no al documento.", " Descto(%)", d_descto.Caption)
+ cap_valor = InputBox("Modificaciï¿½n de Descto de Mercaderia  en valor en Nuevos Soles S/.= " & Chr(13) & "el valor afecta a costo promedio mas no al documento.", " Descto(%)", d_descto.Caption)
  If cap_valor = "" Then Exit Sub
  If Val(cap_valor) = 0 Then
   pub_mensaje = "Valor S/. 0.00( para el Descto... desea continuar... "
@@ -3191,7 +3195,7 @@ If LOC_TIPMOV <> 20 Then Exit Sub
   End If
 
 
- cap_valor = InputBox("Modificación de Flete en Mercaderia  S/. = ", "Fletes en S/.", d_flete.Caption)
+ cap_valor = InputBox("Modificaciï¿½n de Flete en Mercaderia  S/. = ", "Fletes en S/.", d_flete.Caption)
  If cap_valor = "" Then Exit Sub
  If Val(cap_valor) = 0 Then
   pub_mensaje = "Valor 0.00 para el Flete... desea continuar... "
@@ -3357,7 +3361,7 @@ End Sub
 Private Sub DOCANEXO_Click()
 
 If loc_acceso_descto <> "A" Then
-  MsgBox "NO tiene Acceso a esta Opción...", 48, Pub_Titulo
+  MsgBox "NO tiene Acceso a esta Opciï¿½n...", 48, Pub_Titulo
   Exit Sub
 End If
 
@@ -3764,7 +3768,7 @@ If LOC_TIPMOV = 93 Or LOC_TIPMOV = 5 Or LOC_TIPMOV = 6 Or LOC_TIPMOV = 100 Or LO
    TRANS.Visible = True
  End If
 Else
- lblDireccion.Caption = "Dirección Entrega:"
+ lblDireccion.Caption = "Direcciï¿½n Entrega:"
  lbldomicilio.Caption = "Domicilio:"
  
 End If
@@ -4197,7 +4201,7 @@ Do Until far_r.EOF
      End If
      ''If all_llave!ALL_SIGNO_CCM <> 0 Then
       grid_fac2.Rows = grid_fac2.Rows + 1
-      grid_fac2.TextMatrix(grid_fac2.Rows - 1, 0) = "Relación Conable: "
+      grid_fac2.TextMatrix(grid_fac2.Rows - 1, 0) = "Relaciï¿½n Conable: "
       grid_fac2.Rows = grid_fac2.Rows + 1
       grid_fac2.TextMatrix(grid_fac2.Rows - 1, 0) = "'" & all_llave!ALL_CTAG1 & " = " & Format(all_llave!ALL_IMPG1, "#,#00.00")
       grid_fac2.Rows = grid_fac2.Rows + 1
@@ -4205,7 +4209,7 @@ Do Until far_r.EOF
        grid_fac2.TextMatrix(grid_fac2.Rows - 1, 0) = "'" & all_llave!ALL_CTAG2 & " = " & Format(all_llave!ALL_IMPG2, "#,#00.00")
       End If
       grid_fac2.Rows = grid_fac2.Rows + 1
-      grid_fac2.TextMatrix(grid_fac2.Rows - 1, 0) = "' Fec. Cancelación: " & all_llave!ALL_FECHA_CAN
+      grid_fac2.TextMatrix(grid_fac2.Rows - 1, 0) = "' Fec. Cancelaciï¿½n: " & all_llave!ALL_FECHA_CAN
       
       grid_fac2.Rows = grid_fac2.Rows + 1
       grid_fac2.TextMatrix(grid_fac2.Rows - 1, 0) = "' Fec.Contable: " & all_llave!ALL_FECHA_PRO
@@ -4404,7 +4408,7 @@ If LOC_TIPMOV = 96 Then
 Else
    grid_fac2.Clear
    grid_fac2.Cols = 13
-   grid_fac2.TextMatrix(0, 0) = "Descripción"
+   grid_fac2.TextMatrix(0, 0) = "Descripciï¿½n"
    grid_fac2.TextMatrix(0, 1) = "Codigo"
    grid_fac2.TextMatrix(0, 2) = "Cantidad"
    grid_fac2.TextMatrix(0, 3) = "Unidad"
@@ -4437,6 +4441,17 @@ End Sub
 
 
 Private Sub grid_fac2_DblClick()
+
+' Abrir Arti.frm al hacer doble clic en el nombre del articulo (columna 0) o codigo (columna 10)
+If grid_fac2.Row > 0 And (grid_fac2.COL = 0 Or grid_fac2.COL = 10) Then
+   If Val(grid_fac2.TextMatrix(grid_fac2.Row, 10)) > 0 Then
+      frmARTI.Show vbModeless
+      DoEvents
+      frmARTI.Txt_key.Text = Trim(Str(Val(grid_fac2.TextMatrix(grid_fac2.Row, 10))))
+      ' Usuario debe presionar Enter para buscar el articulo
+      Exit Sub
+   End If
+End If
 
 If LOC_TIPMOV <> 20 Then Exit Sub
 If grid_fac2.COL = 1 Then
@@ -5217,7 +5232,7 @@ If LOC_TIPMOV = 10 Then
     PUB_CODVEN = Val(d_codven.Caption)
     LEER_PAR_LLAVE
     If pac_llave.EOF Then
-       MsgBox "No se ha definido archivos de Impresión", 48, Pub_Titulo
+       MsgBox "No se ha definido archivos de Impresiï¿½n", 48, Pub_Titulo
        Exit Function
     End If
 End If
@@ -5449,7 +5464,7 @@ End If
        Reportes.Formulas(18) = ""
        Reportes.Formulas(19) = ""
        Reportes.Formulas(20) = ""
-       pub_mensaje = "Desea Imprimir la " & Trim(frmdocu.Reportes.WindowTitle) & "   ¿Desea Continuar... ?"
+       pub_mensaje = "Desea Imprimir la " & Trim(frmdocu.Reportes.WindowTitle) & "   ï¿½Desea Continuar... ?"
        Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
        If Pub_Respuesta = vbYes Then
          frmdocu.Reportes.SelectionFormula = pub_cadena
