@@ -15433,7 +15433,7 @@ If cli_llave.EOF = False And Val(i_codcli.Text) > 0 Then
       Else
 
       End If
-      If LK_CODTRA = 2401 And i_cambio.Value <> 1 And PUB_PROCESO = 1 Then
+      If LK_CODTRA = 2401 And i_cambio.Value <> 1 Then
             Dim ws_ruc As String, ws_dni_fb As String
             ws_ruc = Trim(Nulo_Valors(cli_llave!cli_ruc_esposo))
             ws_dni_fb = Trim(Nulo_Valors(cli_llave!cli_RUC_ESPOSA))
