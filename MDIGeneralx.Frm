@@ -1641,7 +1641,7 @@ If LK_EMP = "3AA" Then
   If LK_FECHA_DIA >= wfecha Then
   If Val(GEN!GEN_CBS) <> -9 Then
 sigue:
-    WS = InputBox("Nro Serial es : " & Format(GEN!GEN_CFP, "0000000000000000") & " , Llame al proveedor y pida su nueva serie." & Chr(13) & "{Sï¿½ intenta colocar una serie que no es, por quinta vez... el Proveedor no responde por la informaciï¿½n almacena.}", "Acceso Limitado ....")
+    WS = InputBox("Nro Serial es : " & Format(GEN!GEN_CFP, "0000000000000000") & " , Llame al proveedor y pida su nueva serie." & Chr(13) & "{Sï¿½ intenta colocar una serie que no es, por quinta vez... el Proveedor no responde por la información almacena.}", "Acceso Limitado ....")
     If WS = "" Then
       GoTo sigue
     End If
@@ -2050,7 +2050,7 @@ Private Sub menuRepoAyuda_Click()
 Dim WL As Object
 Dim VAR As String
 'Dim ee As Words
-MsgBox "En Construcciï¿½n... " & Chr(13) & "Para mayor informaciï¿½n llamar al Telf. Celular: (044) 687304 - Trujillo - Perú", vbInformation, "Asesoria y Soporte"
+MsgBox "En Construcción... " & Chr(13) & "Para mayor información llamar al Telf. Celular: (044) 687304 - Trujillo - Perú", vbInformation, "Asesoria y Soporte"
 Exit Sub
 Dim ww As Form
 Dim i
@@ -2579,7 +2579,7 @@ Select Case Button.Key
       Screen.MousePointer = 0
   Case "PRECIOS"
       If LK_FLAG_SOS = "A" Then
-         MsgBox "En Contrucciï¿½n", 48, Pub_Titulo
+         MsgBox "En Contrucción", 48, Pub_Titulo
          Exit Sub
       End If
 

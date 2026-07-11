@@ -163,7 +163,7 @@ Begin VB.Form FrmNC
          End
       End
       Begin VB.OptionButton opnc 
-         Caption         =   "Productos de Selecciï¿½n"
+         Caption         =   "Productos de Selección"
          Height          =   195
          Index           =   3
          Left            =   120
@@ -428,7 +428,7 @@ Begin VB.Form FrmNC
       Width           =   435
    End
    Begin VB.Frame fracambio 
-      Caption         =   "Productos con mucha variaciï¿½n :"
+      Caption         =   "Productos con mucha variación :"
       Height          =   3195
       Left            =   -30
       TabIndex        =   26

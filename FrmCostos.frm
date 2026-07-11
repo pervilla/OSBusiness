@@ -122,7 +122,7 @@ Begin VB.Form Frmcospro
          Appearance      =   0
       End
       Begin VB.Label lblvar 
-         Caption         =   "% Variaciï¿½n"
+         Caption         =   "% Variación"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -299,7 +299,7 @@ Begin VB.Form Frmcospro
       Width           =   435
    End
    Begin VB.Frame fracambio 
-      Caption         =   "Productos con mucha variaciï¿½n :"
+      Caption         =   "Productos con mucha variación :"
       Height          =   3195
       Left            =   -30
       TabIndex        =   25

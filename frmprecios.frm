@@ -157,7 +157,7 @@ Begin VB.Form frmprecios
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
-      Caption         =   "Presentaciï¿½n:"
+      Caption         =   "Presentación:"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   9.75

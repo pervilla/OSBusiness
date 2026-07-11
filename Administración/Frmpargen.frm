@@ -173,7 +173,7 @@ Begin VB.Form FrmParGen
          End
          Begin VB.Label ld 
             AutoSize        =   -1  'True
-            Caption         =   "Guia de Remisiï¿½n :"
+            Caption         =   "Guia de Remisión :"
             Height          =   390
             Index           =   2
             Left            =   240
@@ -1625,7 +1625,7 @@ Begin VB.Form FrmParGen
          Width           =   2355
       End
       Begin VB.Label Label2 
-         Caption         =   "(%) de Comisiï¿½n y rango de Dias."
+         Caption         =   "(%) de Comisión y rango de Dias."
          Height          =   435
          Index           =   0
          Left            =   -68520
@@ -2465,7 +2465,7 @@ If Len(Txt_key) = 0 Or Len(txtnombre) = 0 Then
 End If
   pub_mensaje = " ¿Desea Eliminar el Registro... ?, al Eliminar, debe quitar el Permiso al usuarios que esta usandolo"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
+  If Pub_Respuesta = vbYes Then   ' El usuario eligió
     Screen.MousePointer = 11
     parloc_llave.Delete
     Txt_key.text = ""

@@ -2749,7 +2749,7 @@ If Not art_LLAVE.EOF Then
    If Val(art_LLAVE!ART_MARGEN) <> 0 And (wt_equiv <> Val(pre_llave!pre_equiv)) Then
       wt_mult = Val(art_LLAVE!ART_MARGEN)
       If wt_mult = 0 Then
-          MsgBox "Sin definiciï¿½n de partes minimas", 48, Pub_Titulo
+          MsgBox "Sin definición de partes minimas", 48, Pub_Titulo
           GoTo SINEQUIV
       End If
       wt_res = (Val(grid_fac.TextMatrix(grid_fac.Row, 2)) / wt_mult)

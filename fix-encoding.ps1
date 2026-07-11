@@ -135,7 +135,45 @@ $corrections = @(
     @("4E EF BF BD 20 4C 69 73 74 61 20 61 20 55 73 61 72 20 3A", "4E 72 6F 20 4C 69 73 74 61 20 61 20 55 73 61 72 20 3A"),
     
     # General: N° -> Nro (aplica a todos los N° corrompidos)
-    @("4E EF BF BD", "4E 72 6F")
+    @("4E EF BF BD", "4E 72 6F"),
+    
+    # Generico: palabras terminadas en "ción" -> ó
+    @("63 69 EF BF BD 6E", "63 69 F3 6E"),
+    
+    # Generico: cualquier palabra terminada en "ión" -> ó (impresión, edición, etc.)
+    @("69 EF BF BD 6E", "69 F3 6E"),
+    
+    # C&ompañía (con & en medio)
+    @("43 26 6F 6D 70 61 EF BF BD 69 61", "43 26 6F 6D 70 61 F1 69 61"), # C&ompañía
+    
+    # Verbos en pasado: eligió, realizó, generó
+    @("65 6C 69 67 69 EF BF BD", "65 6C 69 67 69 F3"), # eligió
+    @("72 65 61 6C 69 7A EF BF BD", "72 65 61 6C 69 7A F3"), # realizó
+    @("67 65 6E 65 72 EF BF BD", "67 65 6E 65 72 F3"), # generó
+    
+    # Words with ñ (0xF1)
+    @("41 EF BF BD 6F", "41 F1 6F"), # Año
+    @("41 EF BF BD 6F 3A", "41 F1 6F 3A"), # Año:
+    @("64 61 EF BF BD 61 64 6F", "64 61 F1 61 64 6F"), # dañado
+    
+    # Words with í (0xED)  
+    @("47 75 EF BF BD 61 73", "47 75 ED 61 73"), # Guías
+    @("67 75 EF BF BD 61 73", "67 75 ED 61 73"), # guías
+    
+    # Words with ú (0xFA)
+    @("53 65 67 EF BF BD 6E", "53 65 67 FA 6E"), # Según
+    @("73 65 67 EF BF BD 6E", "73 65 67 FA 6E"), # según
+    
+    # Inverted question marks (0xBF)
+    @("EF BF BD 45 73 74 61", "BF 45 73 74 61"), # ¿Esta
+    @("EF BF BD 43 6F 6E 66 69 72 6D 61", "BF 43 6F 6E 66 69 72 6D 61"), # ¿Confirma
+    @("EF BF BD 43 6F 6E 74 69 6E 75 61 72", "BF 43 6F 6E 74 69 6E 75 61 72"), # ¿Continuar
+    @("EF BF BD 20 43 6F 6E 74 69 6E 75 61 72", "BF 20 43 6F 6E 74 69 6E 75 61 72"), # ¿ Continuar
+    
+    # Separators: [F2] - [Enter], R.U.C. / D.N.I., Pendientes / Fac
+    @("5B 46 32 5D 20 EF BF BD 20 5B 45 6E 74 65 72 5D", "5B 46 32 5D 20 2D 20 5B 45 6E 74 65 72 5D"), # [F2] - [Enter]
+    @("52 2E 55 2E 43 2E 20 EF BF BD 20 44 2E 4E 2E 49 2E 20 3A", "52 2E 55 2E 43 2E 20 2F 20 44 2E 4E 2E 49 2E 20 3A"), # R.U.C. / D.N.I. :
+    @("50 65 6E 64 69 65 6E 74 65 73 20 EF BF BD 20 46 61 63", "50 65 6E 64 69 65 6E 74 65 73 20 2F 20 46 61 63") # Pendientes / Fac
 )
 
 # Apply all corrections
@@ -188,12 +226,38 @@ function Fix-FileEncoding {
     }
     else {
         # Check if file has ANY EF BF BD sequences
+        $encoding = [System.Text.Encoding]::Default
         $remaining = 0
         for ($i = 0; $i -lt $bytes.Length - 2; $i++) {
-            if ($bytes[$i] -eq 0xEF -and $bytes[$i+1] -eq 0xBF -and $bytes[$i+2] -eq 0xBD) { $remaining++ }
+            if ($bytes[$i] -eq 0xEF -and $bytes[$i+1] -eq 0xBF -and $bytes[$i+2] -eq 0xBD) {
+                if ($remaining -lt 10) {
+                    $start = [Math]::Max(0, $i - 30)
+                    $end = [Math]::Min($bytes.Length, $i + 33)
+                    # Context before (decoded as ANSI)
+                    $prevBytes = $bytes[$start..($i-1)]
+                    $prevChars = @()
+                    foreach ($b in $prevBytes) {
+                        if ($b -ge 0x20 -and $b -le 0x7E) { $prevChars += [char]$b }
+                        else { $prevChars += '.' }
+                    }
+                    $prevText = -join $prevChars
+                    # Context after
+                    $nextBytes = $bytes[($i+3)..($end-1)]
+                    $nextChars = @()
+                    foreach ($b in $nextBytes) {
+                        if ($b -ge 0x20 -and $b -le 0x7E) { $nextChars += [char]$b }
+                        else { $nextChars += '.' }
+                    }
+                    $nextText = -join $nextChars
+                    $hexContext = ($bytes[$start..($end-1)] | ForEach-Object { $_.ToString("X2") }) -join " "
+                    Write-Host "  [$remaining] ...$prevText[EFBFBD]$nextText..." -ForegroundColor Yellow
+                    Write-Host "         Hex: ...$hexContext..." -ForegroundColor DarkYellow
+                }
+                $remaining++
+            }
         }
         if ($remaining -gt 0) {
-            Write-Host "  -> No known patterns matched, $remaining unresolved" -ForegroundColor Yellow
+            Write-Host "  -> $remaining unresolved (mostrando hasta 10)" -ForegroundColor Yellow
         } else {
             Write-Host "  -> No corrupted chars found" -ForegroundColor Gray
         }

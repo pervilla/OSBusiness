@@ -414,7 +414,7 @@ Else
     MsgBox "Seleccione , para poder Actualizar..", 48, WS_TITULO
     Exit Sub
   End If
-  'sn_mensaje = " ï¿½Confirma Actualizacion .. ?"
+  'sn_mensaje = " ¿Confirma Actualizacion .. ?"
   'ws_respuesta = MsgBox(sn_mensaje, WS_ESTILO, WS_TITULO)
   'If ws_respuesta = vbNo Then
   '  GoTo fin

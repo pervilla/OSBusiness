@@ -1599,7 +1599,7 @@ End If
   
   pub_mensaje = " ¿Desea Eliminar el Registro... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
+  If Pub_Respuesta = vbYes Then   ' El usuario eligió
     Screen.MousePointer = 11
     ven_llave.Delete
     Txt_key.Text = ""

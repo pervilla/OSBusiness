@@ -363,7 +363,7 @@ If gridigv.Visible = False Then
   Exit Sub
 End If
 
-pub_mensaje = "Proceso de Costeo de Articulos de la Fecha : " & Chr(13) & " " & Format(txtfecha.Text, "dd/mm/yyyy") & " al " & Format(LK_FECHA_DIA, "dd/mm/yyyy") & Chr(13) & "ï¿½ Continuar? ..."
+pub_mensaje = "Proceso de Costeo de Articulos de la Fecha : " & Chr(13) & " " & Format(txtfecha.Text, "dd/mm/yyyy") & " al " & Format(LK_FECHA_DIA, "dd/mm/yyyy") & Chr(13) & "¿ Continuar? ..."
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -1075,7 +1075,7 @@ gridigv.ColWidth(5) = 900
 gridigv.ColWidth(6) = 900
 
 gridigv.TextMatrix(0, 0) = "Fecha"
-gridigv.TextMatrix(0, 1) = "Publicaciï¿½n"
+gridigv.TextMatrix(0, 1) = "Publicación"
 gridigv.TextMatrix(1, 0) = "-"
 gridigv.Row = 1
 gridigv.Col = 1

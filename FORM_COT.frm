@@ -67,7 +67,7 @@ Begin VB.Form FORM_COT
       Visible         =   0   'False
       Width           =   9375
       Begin VB.CheckBox cheped 
-         Caption         =   "Solo Pendientes � Fac\Bol Anulados"
+         Caption         =   "Solo Pendientes / Fac\Bol Anulados"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -672,7 +672,7 @@ Begin VB.Form FORM_COT
          Width           =   735
       End
       Begin VB.Label lcodart 
-         Caption         =   "R.U.C. � D.N.I. :"
+         Caption         =   "R.U.C. / D.N.I. :"
          BeginProperty Font 
             Name            =   "MS Serif"
             Size            =   6.75

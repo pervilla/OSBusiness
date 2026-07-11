@@ -4343,7 +4343,7 @@ If i_codcli.Visible = False Then i_codcli.Text = ""
   PSCONS_LLAVE.rdoParameters(1) = Val(i_codcli.Text)
   CONS_llave.Requery
   If CONS_llave.EOF Then
-    MsgBox "Cliente No Tiene Guï¿½as a Consignación.O Canje", 48, Pub_Titulo
+    MsgBox "Cliente No Tiene Guías a Consignación.O Canje", 48, Pub_Titulo
     If i_codcli.Visible Then Azul i_codcli, i_codcli
     Exit Sub
   End If
@@ -5281,7 +5281,7 @@ Private Sub Check1_Click()
 If Check1.Value = 1 Then
    grid_fac.Clear
    pasa_cabeza
-   MsgBox "Ingresar el numero de Kardex , con el que se realizï¿½ el Ingreso , Si no conoce el nombre lo puede averiguar en la Opción Herramientas-Consultas-Kardex"
+   MsgBox "Ingresar el numero de Kardex , con el que se realizó el Ingreso , Si no conoce el nombre lo puede averiguar en la Opción Herramientas-Consultas-Kardex"
    i_numser.SetFocus
 Else
    cancela_todo
@@ -11683,9 +11683,9 @@ End If
 
 If LK_CODTRA = 2101 Then
 If Val(i_dias.Text) > 30 Then
-   pub_mensaje = " ï¿½Esta seguro del numero de Dias... ?"
+   pub_mensaje = " ¿Esta seguro del numero de Dias... ?"
      Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbNo Then   ' El usuario eligiï¿½
+  If Pub_Respuesta = vbNo Then   ' El usuario eligió
      i_dias.SetFocus
      Exit Sub
   End If

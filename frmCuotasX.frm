@@ -84,7 +84,7 @@ Begin VB.Form frmCuotas
       End
       Begin VB.Label Label5 
          Alignment       =   2  'Center
-         Caption         =   "Aï¿½o:"
+         Caption         =   "Año:"
          ForeColor       =   &H00C00000&
          Height          =   195
          Left            =   8040

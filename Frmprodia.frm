@@ -23,7 +23,7 @@ Begin VB.Form PRODIA
    ScaleHeight     =   5895
    ScaleWidth      =   3885
    Begin VB.Frame Frame3 
-      Caption         =   "Situaciï¿½n de Operaciones de la Compañia: "
+      Caption         =   "Situación de Operaciones de la Compañia: "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25

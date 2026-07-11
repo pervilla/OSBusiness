@@ -409,7 +409,7 @@ For fila = 1 To Gridtablas.Rows - 1
    llave_rep01.MoveNext
 Next fila
 Screen.MousePointer = 0
-lblmensa.Caption = "[F2] � [Enter] = Modificar  "
+lblmensa.Caption = "[F2] - [Enter] = Modificar  "
 If wvalor = "A" Then
  MsgBox "Tabla de Cuentas de Cierre Actualizados.", 48, Pub_Titulo
 End If

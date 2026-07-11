@@ -36,7 +36,7 @@ Begin VB.Form FrmSub
       Width           =   3375
    End
    Begin VB.Frame MSTDEF 
-      Caption         =   "Seleccione  Trnsacciï¿½n :"
+      Caption         =   "Seleccione  Trnsacción :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -1905,7 +1905,7 @@ Begin VB.Form FrmSub
             Width           =   1455
          End
          Begin VB.CheckBox chetransa 
-            Caption         =   "Incluir Nueva Transaciï¿½n"
+            Caption         =   "Incluir Nueva Transación"
             Enabled         =   0   'False
             Height          =   375
             Left            =   120
@@ -3131,7 +3131,7 @@ If Len(TxtDef(0).text) = 0 Or Len(TxtDef(0).text) = 0 Then
 End If
   pub_mensaje = " ¿Desea Eliminar el Registro... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
+  If Pub_Respuesta = vbYes Then   ' El usuario eligió
     Screen.MousePointer = 11
     SUT_LLAVE.Delete
     If Not cnt_llave.EOF Then cnt_llave.Delete

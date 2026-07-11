@@ -1107,7 +1107,7 @@ Begin VB.Form frmARTI
          Width           =   1335
       End
       Begin VB.CommandButton cmdconfirma 
-         Caption         =   "Con&firmar Grabaciï¿½n"
+         Caption         =   "Con&firmar Grabación"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1603,7 +1603,7 @@ Begin VB.Form frmARTI
             Width           =   2385
          End
          Begin VB.CheckBox exigv 
-            Caption         =   "Exoneraciï¿½n IGV"
+            Caption         =   "Exoneración IGV"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   9.75

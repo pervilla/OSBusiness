@@ -163,7 +163,7 @@ Begin VB.Form frmOpcion
          Width           =   1695
       End
       Begin VB.Label Label3 
-         Caption         =   "Aï¿½o"
+         Caption         =   "Año"
          Height          =   375
          Left            =   3240
          TabIndex        =   7
@@ -180,7 +180,7 @@ Begin VB.Form frmOpcion
          Width           =   855
       End
       Begin VB.Label Label1 
-         Caption         =   "Bloqueo por Meses (Ninguna modificaciï¿½n que afecten el costo)"
+         Caption         =   "Bloqueo por Meses (Ninguna modificación que afecten el costo)"
          Height          =   735
          Left            =   120
          TabIndex        =   2

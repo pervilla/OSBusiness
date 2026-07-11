@@ -346,7 +346,7 @@ Begin VB.Form FrmComaest
          Width           =   1335
       End
       Begin VB.Label Label1 
-         Caption         =   "Flag.. Afectaciï¿½n"
+         Caption         =   "Flag.. Afectación"
          Height          =   255
          Index           =   6
          Left            =   120
@@ -995,7 +995,7 @@ If Len(Txtcom(2).Text) = 0 Or Len(Txtcom(1).Text) = 0 Then
 End If
   pub_mensaje = " ¿Desea Eliminar el Registro... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
+  If Pub_Respuesta = vbYes Then   ' El usuario eligió
     wcuenta = Trim(Txtcom(1).Text)
     cad = "SELECT * FROM COMAEST WHERE COM_CUENTA > '" & wcuenta & "' AND COM_CODCIA = '" & LK_CODCIA & "' ORDER BY COM_CUENTA"
     Set WELI = CN.OpenResultset(cad, rdOpenKeyset, rdConcurValues)

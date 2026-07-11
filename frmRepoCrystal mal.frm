@@ -2043,7 +2043,7 @@ Begin VB.Form RCRYSTAL
       Width           =   1335
    End
    Begin VB.Label LBLTIPDOC 
-      Caption         =   "Tipo de Documentos y Situaciï¿½n"
+      Caption         =   "Tipo de Documentos y Situación"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -3051,7 +3051,7 @@ If Left(Wfile, 10) = "CTA_CONSOL" Then
   checloseper.Visible = False
   End If
   fraperiodoPV.Visible = True
-  cmblistpv.AddItem "Mostrar Segï¿½n Fechas de Reporte..."
+  cmblistpv.AddItem "Mostrar Según Fechas de Reporte..."
   cmbtipdoc.AddItem " "
   cmbtipdoc.AddItem "COMPRAS / VENTAS" & String(80, " ") & 1
   cmbtipdoc.AddItem "EFECTIVO" & String(80, " ") & 2
@@ -4328,7 +4328,7 @@ SINCIA:
     MES1 = Month(REP_FECHA2)
     ANO1 = Year(REP_FECHA2)
     If retra_llave!tra_act9 = 1 And cmduser.Visible = False Then   ' x FECHAS X FACART
-      pub_mensaje = "Imprimir segï¿½n Usuario... ?"
+      pub_mensaje = "Imprimir según Usuario... ?"
       Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
       If Pub_Respuesta = vbYes Then
          CADENITA = "{FACART.FAR_CODUSU}= '" & LK_CODUSU & "' AND {FACART.FAR_FECHA} >= Date ( " & ano & "," & mes & "," & DIA & ") AND {FACART.FAR_FECHA} <= Date ( " & ANO1 & "," & MES1 & "," & DIA1 & ") AND {FACART.FAR_ESTADO2} <> 'L' "
@@ -5454,7 +5454,7 @@ sale:
  ElseIf Err.Number = 20510 Then
    MsgBox "Falta Crear alguna Formula en Informe Verificar ", 48, Pub_Titulo
  ElseIf Err.Number = 20515 Then
-   MsgBox "Selecciï¿½n de informaciï¿½n No procede. Verificar ", 48, Pub_Titulo
+   MsgBox "Selección de información No procede. Verificar ", 48, Pub_Titulo
  Else
    MsgBox Err.Description & " .Verificar", 48, Pub_Titulo
  End If
@@ -6960,7 +6960,7 @@ If CDate(wsFECHA1) > CDate(wsFECHA2) Then
  GoTo CANCELA
 End If
 If chepasa.Value = 1 Then
-  pub_mensaje = "<Advertencia> El pase de la informaciï¿½n es por cada Compañia. Continuar...?"
+  pub_mensaje = "<Advertencia> El pase de la información es por cada Compañia. Continuar...?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
       Azul2 txtCampo1, txtCampo1
@@ -6974,12 +6974,12 @@ If chepasa.Value = 1 Then
   End If
   If (cop_llave!cop_fecha_proceso = CDate(wsFECHA1)) And (cop_llave!cop_fecha_proceso2 = CDate(wsFECHA2)) Then
   Else
-      MsgBox "Usted. a marcado la opciï¿½n: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
+      MsgBox "Usted. a marcado la opción: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
       Azul2 txtCampo1, txtCampo1
       GoTo CANCELA
   End If
   If qver_onlyCont = 9 Then ' hay Información en OnlyCont. Confirmar.
-      pub_mensaje = "Usted. a marcado la opciï¿½n: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< Desea adicionar este Nuevo Asiento de Voucher de todas Maneras >...?"
+      pub_mensaje = "Usted. a marcado la opción: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< Desea adicionar este Nuevo Asiento de Voucher de todas Maneras >...?"
       Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
       If Pub_Respuesta = vbNo Then
         Azul2 txtCampo1, txtCampo1
@@ -7678,7 +7678,7 @@ If CDate(wsFECHA1) > CDate(wsFECHA2) Then
  GoTo CANCELA
 End If
 If chepasa.Value = 1 Then
-  pub_mensaje = "<Advertencia> El pase de la informaciï¿½n es por cada Compañia. Continuar...?"
+  pub_mensaje = "<Advertencia> El pase de la información es por cada Compañia. Continuar...?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
       Azul2 txtCampo1, txtCampo1
@@ -7692,12 +7692,12 @@ If chepasa.Value = 1 Then
   End If
   If (cop_llave!cop_fecha_proceso = CDate(wsFECHA1)) And (cop_llave!cop_fecha_proceso2 = CDate(wsFECHA2)) Then
   Else
-    MsgBox "Usted. a marcado la opciï¿½n: Pasar la Información al Periodo Contable. " & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable . Verificar...", 48, Pub_Titulo
+    MsgBox "Usted. a marcado la opción: Pasar la Información al Periodo Contable. " & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable . Verificar...", 48, Pub_Titulo
     Azul2 txtCampo1, txtCampo1
     GoTo CANCELA
   End If
   If qver_onlyCont = 9 Then ' hay Información en OnlyCont. Confirmar.
-    pub_mensaje = "Usted. a marcado la opciï¿½n: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Información en este Periodo Contable , el Sistema Reemplazazï¿½ la Información.  " & Chr(13) & Chr(13) & "<Desea Continuar de todas maneras>...?"
+    pub_mensaje = "Usted. a marcado la opción: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Información en este Periodo Contable , el Sistema Reemplazazï¿½ la Información.  " & Chr(13) & Chr(13) & "<Desea Continuar de todas maneras>...?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
       Azul2 txtCampo1, txtCampo1
@@ -9910,7 +9910,7 @@ cmblistpv.Tag = ""
 pub_cadena = "SELECT * FROM PARVEN WHERE PVE_CODCIA = '" & LK_CODCIA & "' and PVE_CODVEN = " & ICODVEN & " ORDER BY PVE_FECHA_FIN "
 Set ps_pve = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
 cmblistpv.Clear
-cmblistpv.AddItem "00 - Mostrar Segï¿½n Fechas de Reporte..."
+cmblistpv.AddItem "00 - Mostrar Según Fechas de Reporte..."
 If ps_pve.EOF Then
   wult_fecha = LK_FECHA_DIA
 End If

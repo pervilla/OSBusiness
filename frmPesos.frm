@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmPesos 
-   Caption         =   "Transfer. Import. (Recepciï¿½n de Información)"
+   Caption         =   "Transfer. Import. (Recepción de Información)"
    ClientHeight    =   6900
    ClientLeft      =   555
    ClientTop       =   1845
@@ -31,7 +31,7 @@ Begin VB.Form frmPesos
          Width           =   2415
       End
       Begin VB.OptionButton openvio 
-         Caption         =   "Transfer Recepciï¿½n de Mercaderia"
+         Caption         =   "Transfer Recepción de Mercaderia"
          ForeColor       =   &H00808000&
          Height          =   195
          Index           =   0
@@ -377,7 +377,7 @@ End If
 
 VENTAS.DatabaseName = lblarchi.Caption '  Left(Trim(PUB_RUTA_OTRO), 1) & ":\ADMIN\Standar\TAjustes.mdb"
 PUB_IMPORTE = 0
-WCONFIG = InputBox("- Digitar 1 para fechas con formato ##/##/#### " & Chr(13) & "- Digitar 2 para fechas con formato ##/##/## ", "Cofiguraciï¿½n del TRANSFER", 2)
+WCONFIG = InputBox("- Digitar 1 para fechas con formato ##/##/#### " & Chr(13) & "- Digitar 2 para fechas con formato ##/##/## ", "Cofiguración del TRANSFER", 2)
 If WCONFIG = "" Then
   Exit Sub
 End If
@@ -393,7 +393,7 @@ End If
 VENTAS.Refresh
 If VENTAS.Recordset.EOF Then
   Screen.MousePointer = 0
-  MsgBox "VERIFICAR ...NO HAY DATOS EN EL ARCHIVO : " & Trim(lblarchi.Caption) & Chr(13) & "Posible Soluciones :" & Chr(13) & "El formato de fecha no es correcta  0  la fecha del dia de la compañia no es la misma del archivo transfer. O el archivo esta vacio o daï¿½ado.", 48, Pub_Titulo
+  MsgBox "VERIFICAR ...NO HAY DATOS EN EL ARCHIVO : " & Trim(lblarchi.Caption) & Chr(13) & "Posible Soluciones :" & Chr(13) & "El formato de fecha no es correcta  0  la fecha del dia de la compañia no es la misma del archivo transfer. O el archivo esta vacio o dañado.", 48, Pub_Titulo
   VENTAS.RecordSource = "SELECT * FROM FACART "
   VENTAS.Refresh
   If Val(WCONFIG) = 1 Then

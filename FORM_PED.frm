@@ -263,7 +263,7 @@ Begin VB.Form FORM_PED
          EndProperty
       End
       Begin VB.Label Label8 
-         Caption         =   "Un Momento... procesando informaciï¿½n."
+         Caption         =   "Un Momento... procesando información."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -1166,7 +1166,7 @@ temp_llave.Requery
 If Not temp_llave.EOF Then
    txtdoc.Text = Format(Val(txtdoc.Text) + 1, "0")
    con_llave.Close
-   MsgBox "Existe Nro. de Docuemnto, el sistema generï¿½ el correlativo,  intente grabar nuevamente...", 48, Pub_Titulo
+   MsgBox "Existe Nro. de Docuemnto, el sistema generó el correlativo,  intente grabar nuevamente...", 48, Pub_Titulo
    Exit Sub
 End If
 End If

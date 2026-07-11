@@ -19,7 +19,7 @@ Begin VB.Form FrmCaa
    ScaleWidth      =   8970
    WindowState     =   2  'Maximized
    Begin VB.CommandButton cmdprog 
-      Caption         =   "Programaciï¿½n"
+      Caption         =   "Programación"
       Height          =   615
       Left            =   10440
       TabIndex        =   42

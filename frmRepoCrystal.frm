@@ -2136,7 +2136,7 @@ Begin VB.Form RCRYSTAL
       Width           =   1335
    End
    Begin VB.Label LBLTIPDOC 
-      Caption         =   "Tipo de Documentos y Situaciï¿½n"
+      Caption         =   "Tipo de Documentos y Situación"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25

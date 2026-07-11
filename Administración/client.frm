@@ -2575,7 +2575,7 @@ Exit Sub
 ESCAPA:
    If Err.Number = 40002 Then
       Screen.MousePointer = 0
-      MsgBox "El Codigo generado ya existe " & Chr(13) & "Se procede a generar el siguiente codigo y a continuaciï¿½n " & Chr(13) & "Intente Grabar Nuevamente...", 48, Pub_Titulo
+      MsgBox "El Codigo generado ya existe " & Chr(13) & "Se procede a generar el siguiente codigo y a continuación " & Chr(13) & "Intente Grabar Nuevamente...", 48, Pub_Titulo
       frmCLI.Txt_key = GENERA_CODI
       Resume Next
       Exit Sub
@@ -2742,7 +2742,7 @@ ElseIf Left(CmbCGP.text, 1) = "P" Then
   End If
 End If
 If Left(cmdcontab.Caption, 2) = "&Q" Then
-    pub_mensaje = "Confirmar la eliminaciï¿½n de la Cuenta : " & tcuenta.text & " , Continuar ?"
+    pub_mensaje = "Confirmar la eliminación de la Cuenta : " & tcuenta.text & " , Continuar ?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
        Exit Sub
@@ -2836,7 +2836,7 @@ If Left(CmbCGP.text, 1) = "C" Then
 End If
 
 If Left(cmdcontab2.Caption, 2) = "&Q" Then
-    pub_mensaje = "Confirmar la eliminaciï¿½n de la Cuenta : " & tcuenta2.text & " , Continuar ?"
+    pub_mensaje = "Confirmar la eliminación de la Cuenta : " & tcuenta2.text & " , Continuar ?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
        Exit Sub
@@ -2937,7 +2937,7 @@ End If
     pub_mensaje = " ¿Desea Eliminar el Registro... ?"
   End If
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
+  If Pub_Respuesta = vbYes Then   ' El usuario eligió
     Screen.MousePointer = 11
     cliloc_llave.Delete
     frmCLI.Txt_key.text = ""
@@ -3090,7 +3090,7 @@ End Sub
 Private Sub CmdCero_Click()
   pub_mensaje = " ¿Desea Generar el " & Mid(frmCLI.CmbCGP.text, 3, Len(frmCLI.CmbCGP.text)) & " con codigo 0 ..?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbNo Then   ' El usuario eligiï¿½
+  If Pub_Respuesta = vbNo Then   ' El usuario eligió
     MENSAJE_CLI "Proceso Cancelado ..."
     Exit Sub
   End If

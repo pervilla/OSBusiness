@@ -108,7 +108,7 @@ Begin VB.Form frmTImport
       Width           =   1455
    End
    Begin VB.Frame frainfo 
-      Caption         =   "Imformaciï¿½n :"
+      Caption         =   "Imformación :"
       ForeColor       =   &H000000C0&
       Height          =   3855
       Left            =   120
@@ -292,7 +292,7 @@ Dim REP_FECHA1  As String
 Dim REP_FECHA2  As String
 GEN.Requery
 If Trim(Nulo_Valors(GEN!GEN_CIAEXP)) = "" Then
- MsgBox "Codigo de Compañia de Recepciï¿½n de informacion no validad...", 48, Pub_Titulo
+ MsgBox "Codigo de Compañia de Recepción de informacion no validad...", 48, Pub_Titulo
  Exit Sub
 End If
 
@@ -518,7 +518,7 @@ On Error GoTo EMES
 'RR = Shell("C:\WSADMIN\WST.BAT", 1)
 GoSub Disable_controles
 Screen.MousePointer = 0
-MsgBox "Proceso de Terminado Satisfactoriamente " & Chr(13) & "Total de Registros : " & CONTADOR & Chr(13) & "DEL :" & txtCampo1.Text & "  AL " & txtCampo2.Text & Chr(13) & "Ubicaciï¿½n de Archivo :  " & Trim(transfer.DatabaseName), 48, Pub_Titulo
+MsgBox "Proceso de Terminado Satisfactoriamente " & Chr(13) & "Total de Registros : " & CONTADOR & Chr(13) & "DEL :" & txtCampo1.Text & "  AL " & txtCampo2.Text & Chr(13) & "Ubicación de Archivo :  " & Trim(transfer.DatabaseName), 48, Pub_Titulo
 
 
 
