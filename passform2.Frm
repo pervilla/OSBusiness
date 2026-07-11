@@ -434,10 +434,10 @@ Private Sub cmdIngresar_Click()
 Dim WRES
 Dim mensa As String
 Dim pub_mensajeText
-Dim pb
+Dim PB
 Dim wfecha_bloq As Date
 Dim wserie As Currency
-pb = Chr(10) & Chr(13) & Chr(10) & Chr(13)
+PB = Chr(10) & Chr(13) & Chr(10) & Chr(13)
 On Error GoTo sale
 If IsDate(fecha_proceso.Text) = False Then
    MsgBox "Fecha Invalida ...", 48, Pub_Titulo
@@ -483,10 +483,10 @@ If cal_llave!CAL_INDICE <> 1 Then
 End If
   ' VER SI LA FECHA NO ES DEL DIA
 SALTA_TODO:
-  pub_mensaje = "ï¿½La fecha de la compañia es diferente que el computador!"
-  pub_mensaje = pub_mensaje & pb & "Fecha de la Compañia       : " & Format(fecha_proceso, "dd mmm yyyy")
+  pub_mensaje = "ro La fecha de la compañia es diferente que el computador!"
+  pub_mensaje = pub_mensaje & PB & "Fecha de la Compañia       : " & Format(fecha_proceso, "dd mmm yyyy")
   pub_mensaje = pub_mensaje & Chr(13) & "Fecha de del Computador : " & Format(Date, "dd mmm yyyy")
-  pub_mensaje = pub_mensaje & pb & "¿Desea ingresar al sistema..?"
+  pub_mensaje = pub_mensaje & PB & "¿Desea ingresar al sistema..?"
   If CDate(fecha_proceso.Text) <> Date Then
     Pub_Respuesta = MsgBox(pub_mensaje, vbOKCancel + vbInformation, Pub_Titulo)
     If Pub_Respuesta = vbCancel Then
@@ -865,7 +865,7 @@ End Sub
 
 Public Function INGRESO_PASS(TEXTO) As String
 cade = " ABCDEFGHIJKLMNOPQSRTVWXYZ0123456789"
-SIMB = "ï¿½~!@#$%^&*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½+ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½"
+SIMB = "ro ~!@#$%^&*ro ro ro ro ro ro ro ro ro ro +ro ro Ó¦ro ro ro Ø£ro ro ro ro ro "
 TOT = Len(TEXTO)
 For I = 1 To TOT
  tem = InStr(1, cade, Mid(UCase(TEXTO), I, 1))
@@ -877,7 +877,7 @@ End Function
 
 Public Function SALIDA_PASS(TEXTO) As String
 cade = " ABCDEFGHIJKLMNOPQSRTVWXYZ0123456789"
-SIMB = "ï¿½~!@#$%^&*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½+ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½"
+SIMB = "ro ~!@#$%^&*ro ro ro ro ro ro ro ro ro ro +ro ro Ó¦ro ro ro Ø£ro ro ro ro ro "
 TOT = Len(TEXTO)
 For I = 1 To TOT
  tem = InStr(1, SIMB, Mid(TEXTO, I, 1))

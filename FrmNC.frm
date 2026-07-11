@@ -1,8 +1,8 @@
 VERSION 5.00
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "richtx32.ocx"
-Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
+Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Begin VB.Form FrmNC 
    Caption         =   "Establecer Descuentos por Nota de Creditos"
    ClientHeight    =   6735
@@ -99,7 +99,7 @@ Begin VB.Form FrmNC
       LabelEdit       =   1
       LabelWrap       =   -1  'True
       HideSelection   =   0   'False
-      _Version        =   327682
+      _Version        =   393217
       ForeColor       =   128
       BackColor       =   14737632
       BorderStyle     =   1
@@ -447,7 +447,6 @@ Begin VB.Form FrmNC
          _Version        =   393217
          BackColor       =   12632064
          BorderStyle     =   0
-         Enabled         =   -1  'True
          MultiLine       =   0   'False
          TextRTF         =   $"FrmNC.frx":09CE
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -538,7 +537,6 @@ Begin VB.Form FrmNC
          _Version        =   393217
          BackColor       =   12632064
          BorderStyle     =   0
-         Enabled         =   -1  'True
          MultiLine       =   0   'False
          TextRTF         =   $"FrmNC.frx":0A5C
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -774,7 +772,7 @@ Begin VB.Form FrmNC
          Width           =   4515
          _ExtentX        =   7964
          _ExtentY        =   344
-         _Version        =   327682
+         _Version        =   393216
          Appearance      =   0
       End
       Begin VB.CommandButton Command1 
@@ -1122,7 +1120,7 @@ If rslistcambio.EOF Then
   Screen.MousePointer = 0
   MsgBox "Nos Existe Datos "
 Else
- pb.Visible = True
+ PB.Visible = True
  pbMin = 0
  pbMax = 1 'rslistcambio.RowCount
  pbValue = 0
@@ -1178,7 +1176,7 @@ rslistcambio.MoveNext
 Loop
 Calcula_NC
 Screen.MousePointer = 0
-pb.Visible = False
+PB.Visible = False
 fracambio.Visible = True
 DoEvents
 
@@ -1224,7 +1222,7 @@ Dim ws_cospro As Currency
 Dim ws_valor_ant As Currency
 Dim ws_compra As Currency
 Dim ws_ajuste, ws_perdida, WS_AJUSTE2 As Currency
-Dim WS_NOMART As String * 22
+Dim ws_nomart As String * 22
 Dim WR_IMPORTE1 As String * 12
 Dim WR_IMPORTE2 As String * 12
 Dim WR_IMPORTE3 As String * 12
@@ -1278,7 +1276,7 @@ If Not CONSIS_PERIODOS(CDate(txtfecha.Text)) Then
 End If
 
 
-pub_mensaje = "Proceso de Costeo de Articulos de la Fecha : " & Chr(13) & " " & Format(txtfecha.Text, "dd/mm/yyyy") & " al " & Format(LK_FECHA_DIA, "dd/mm/yyyy") & Chr(13) & "ï¿½ Continuar? ..."
+pub_mensaje = "Proceso de Costeo de Articulos de la Fecha : " & Chr(13) & " " & Format(txtfecha.Text, "dd/mm/yyyy") & " al " & Format(LK_FECHA_DIA, "dd/mm/yyyy") & Chr(13) & "ro  Continuar? ..."
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -1367,7 +1365,7 @@ PSFAR_COSTO(2) = LK_FECHA_DIA
 PSFAR_COSTO(3) = LK_FECHA_DIA
 Set Far_Cost = PSFAR_COSTO.OpenResultset(rdOpenKeyset, rdConcurValues)
 
-'ï¿½DistinctRow
+'ro DistinctRow
 'DISTINCTROW
 If chefac.Value = 1 Then
  pub_cadena = "SELECT Distinct FAR_CODART FROM FACART WHERE FAR_CODCIA= ? AND FAR_FECHA_COMPRA >= ?  AND FAR_FECHA_COMPRA <= ?  AND  FAR_ESTADO <> 'E' AND  FAR_ESTADO <> 'L' AND ( FAR_COSTEO_REAL = 'A' OR FAR_COSTEO = 'A' )  and far_tipmov = 20 and far_numser = " & Val(txtserie.Text) & " and far_numfac = " & txtnumero.Text & " ORDER BY FAR_CODART"
@@ -1471,7 +1469,7 @@ Do Until Far_Compr.EOF
       End
    End If
 
-   WS_NOMART = art_LLAVE!art_nombre
+   ws_nomart = art_LLAVE!art_nombre
    ultimo_costo = arm_llave!ARM_COSTO_ULT
    WPASA_COSPRO_ANT = Nulo_Valor0(Far_Cost!FAR_COSPRO_ANT)
    
@@ -2651,7 +2649,7 @@ gridigv.ColWidth(5) = 900
 gridigv.ColWidth(6) = 900
 
 gridigv.TextMatrix(0, 0) = "Fecha"
-gridigv.TextMatrix(0, 1) = "Publicaciï¿½n"
+gridigv.TextMatrix(0, 1) = "Publicaciro n"
 gridigv.TextMatrix(1, 0) = "-"
 gridigv.Row = 1
 gridigv.COL = 1
@@ -3012,7 +3010,7 @@ Dim PSPRE_CAJA As rdoQuery
 gridcabe.Cols = 24
 gridcabe.Rows = 1
 gridcabe.TextMatrix(0, 0) = "Cod.Int"
-gridcabe.TextMatrix(0, 1) = "Descripciï¿½n"
+gridcabe.TextMatrix(0, 1) = "Descripción"
 gridcabe.TextMatrix(0, 2) = "Unid."
 
 gridcabe.TextMatrix(0, 3) = "Cos.Anter."

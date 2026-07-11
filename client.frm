@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Begin VB.Form frmCLI 
    Caption         =   "Clientes / Proveedores"
    ClientHeight    =   7410
@@ -165,7 +165,7 @@ Begin VB.Form frmCLI
       LabelEdit       =   1
       LabelWrap       =   -1  'True
       HideSelection   =   0   'False
-      _Version        =   327682
+      _Version        =   393217
       ForeColor       =   128
       BackColor       =   14737632
       Appearance      =   1
@@ -242,52 +242,52 @@ Begin VB.Form frmCLI
       TabCaption(1)   =   "Direccion Almacen"
       TabPicture(1)   =   "client.frx":045E
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame1"
-      Tab(1).Control(1)=   "cboProvincia"
-      Tab(1).Control(2)=   "cboDireccion"
-      Tab(1).Control(3)=   "txtNumDirTrabajo"
-      Tab(1).Control(4)=   "TxtLugarTrab"
-      Tab(1).Control(5)=   "txtpropiedad2"
-      Tab(1).Control(6)=   "TxtSubZonaTrabajo"
-      Tab(1).Control(7)=   "TxtZonaTrabajo"
-      Tab(1).Control(8)=   "txtDirTrabajo"
-      Tab(1).Control(9)=   "label(36)"
-      Tab(1).Control(10)=   "lblnom(15)"
-      Tab(1).Control(11)=   "lblnom(32)"
-      Tab(1).Control(12)=   "lblnom(21)"
-      Tab(1).Control(13)=   "lblnom(17)"
-      Tab(1).Control(14)=   "lblnom(18)"
-      Tab(1).Control(15)=   "lblnom(14)"
+      Tab(1).Control(0)=   "lblnom(14)"
+      Tab(1).Control(1)=   "lblnom(18)"
+      Tab(1).Control(2)=   "lblnom(17)"
+      Tab(1).Control(3)=   "lblnom(21)"
+      Tab(1).Control(4)=   "lblnom(32)"
+      Tab(1).Control(5)=   "lblnom(15)"
+      Tab(1).Control(6)=   "label(36)"
+      Tab(1).Control(7)=   "txtDirTrabajo"
+      Tab(1).Control(8)=   "TxtZonaTrabajo"
+      Tab(1).Control(9)=   "TxtSubZonaTrabajo"
+      Tab(1).Control(10)=   "txtpropiedad2"
+      Tab(1).Control(11)=   "TxtLugarTrab"
+      Tab(1).Control(12)=   "txtNumDirTrabajo"
+      Tab(1).Control(13)=   "cboDireccion"
+      Tab(1).Control(14)=   "cboProvincia"
+      Tab(1).Control(15)=   "Frame1"
       Tab(1).ControlCount=   16
       TabCaption(2)   =   "Otras Opciones"
       TabPicture(2)   =   "client.frx":047A
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "lblnom(29)"
-      Tab(2).Control(1)=   "lblnom(33)"
-      Tab(2).Control(2)=   "lblnom(35)"
-      Tab(2).Control(3)=   "g_fechafac"
-      Tab(2).Control(4)=   "lblnom(23)"
-      Tab(2).Control(5)=   "lblnom(24)"
-      Tab(2).Control(6)=   "lblnom(34)"
-      Tab(2).Control(7)=   "lblnom(25)"
-      Tab(2).Control(8)=   "lblnom(20)"
-      Tab(2).Control(9)=   "g_diasfac"
-      Tab(2).Control(10)=   "LblDatos(20)"
-      Tab(2).Control(11)=   "Label9"
-      Tab(2).Control(12)=   "lblnom(19)"
-      Tab(2).Control(13)=   "txtNucleo"
-      Tab(2).Control(14)=   "txtDTX"
-      Tab(2).Control(15)=   "txtpordes"
-      Tab(2).Control(16)=   "t_diascred"
-      Tab(2).Control(17)=   "t_diasfac"
-      Tab(2).Control(18)=   "t_fechafac"
-      Tab(2).Control(19)=   "txtprog"
-      Tab(2).Control(20)=   "txtautovaluo"
-      Tab(2).Control(21)=   "txtregpublico1"
-      Tab(2).Control(22)=   "copia"
-      Tab(2).Control(23)=   "ListBloqueos"
-      Tab(2).Control(24)=   "lisdescto"
-      Tab(2).Control(25)=   "txtpropiedad1"
+      Tab(2).Control(0)=   "txtpropiedad1"
+      Tab(2).Control(1)=   "lisdescto"
+      Tab(2).Control(2)=   "ListBloqueos"
+      Tab(2).Control(3)=   "copia"
+      Tab(2).Control(4)=   "txtregpublico1"
+      Tab(2).Control(5)=   "txtautovaluo"
+      Tab(2).Control(6)=   "txtprog"
+      Tab(2).Control(7)=   "t_fechafac"
+      Tab(2).Control(8)=   "t_diasfac"
+      Tab(2).Control(9)=   "t_diascred"
+      Tab(2).Control(10)=   "txtpordes"
+      Tab(2).Control(11)=   "txtDTX"
+      Tab(2).Control(12)=   "txtNucleo"
+      Tab(2).Control(13)=   "lblnom(19)"
+      Tab(2).Control(14)=   "Label9"
+      Tab(2).Control(15)=   "LblDatos(20)"
+      Tab(2).Control(16)=   "g_diasfac"
+      Tab(2).Control(17)=   "lblnom(20)"
+      Tab(2).Control(18)=   "lblnom(25)"
+      Tab(2).Control(19)=   "lblnom(34)"
+      Tab(2).Control(20)=   "lblnom(24)"
+      Tab(2).Control(21)=   "lblnom(23)"
+      Tab(2).Control(22)=   "g_fechafac"
+      Tab(2).Control(23)=   "lblnom(35)"
+      Tab(2).Control(24)=   "lblnom(33)"
+      Tab(2).Control(25)=   "lblnom(29)"
       Tab(2).ControlCount=   26
       Begin VB.TextBox txtciarela 
          BeginProperty Font 
@@ -679,7 +679,7 @@ Begin VB.Form frmCLI
          WhatsThisHelpID =   19
          Width           =   495
       End
-      Begin VB.TextBox t_fechafac
+      Begin VB.TextBox t_fechafac 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -698,7 +698,7 @@ Begin VB.Form frmCLI
          WhatsThisHelpID =   4
          Width           =   1215
       End
-      Begin VB.TextBox t_diasfac
+      Begin VB.TextBox t_diasfac 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -717,8 +717,8 @@ Begin VB.Form frmCLI
          WhatsThisHelpID =   4
          Width           =   1215
       End
-      Begin VB.TextBox t_diascred
-         BeginProperty Font
+      Begin VB.TextBox t_diascred 
+         BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
             Charset         =   0
@@ -904,7 +904,7 @@ Begin VB.Form frmCLI
          Width           =   3135
       End
       Begin VB.Label Label11 
-         Caption         =   "Compaï¿½ia de Relaciï¿½n:"
+         Caption         =   "Compañia de Relación:"
          ForeColor       =   &H00800000&
          Height          =   255
          Left            =   7560
@@ -913,7 +913,7 @@ Begin VB.Form frmCLI
          Width           =   1695
       End
       Begin VB.Label lbldocr 
-         Caption         =   "Documentaciï¿½n  en Regla"
+         Caption         =   "Documentación  en Regla"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -1232,7 +1232,7 @@ Begin VB.Form frmCLI
       End
       Begin VB.Label lblnom 
          AutoSize        =   -1  'True
-         Caption         =   "Direcciï¿½n Almacen :"
+         Caption         =   "Dirección Almacen :"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1520,7 +1520,7 @@ Begin VB.Form frmCLI
       End
       Begin VB.Label lblnom 
          AutoSize        =   -1  'True
-         Caption         =   "Direcciï¿½n  :"
+         Caption         =   "Dirección  :"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1612,7 +1612,7 @@ Begin VB.Form frmCLI
          Top             =   4035
          Width           =   1575
       End
-      Begin VB.TextBox txttelefono2
+      Begin VB.TextBox txttelefono2 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1773,7 +1773,7 @@ Begin VB.Form frmCLI
          Width           =   3375
       End
       Begin VB.OptionButton OptNombre 
-         Caption         =   "Por la Razon Razï¿½n Social."
+         Caption         =   "Por la Razon Razón Social."
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   6.75
@@ -2086,7 +2086,7 @@ Begin VB.Form frmCLI
       End
       Begin VB.Label lblnom 
          AutoSize        =   -1  'True
-         Caption         =   "Divisiï¿½n"
+         Caption         =   "División"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -2105,7 +2105,7 @@ Begin VB.Form frmCLI
          Top             =   3840
          Width           =   690
       End
-      Begin VB.Label lblnom
+      Begin VB.Label lblnom 
          Alignment       =   2  'Center
          AutoSize        =   -1  'True
          Caption         =   "Fax."
@@ -2464,7 +2464,7 @@ Begin VB.Form frmCLI
       End
       Begin VB.Label Label4 
          AutoSize        =   -1  'True
-         Caption         =   "Condiciï¿½n"
+         Caption         =   "Condición"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -2690,9 +2690,9 @@ Begin VB.Form frmCLI
       Top             =   3000
       Width           =   1300
    End
-   Begin VB.CommandButton cmdAgregar
+   Begin VB.CommandButton cmdAgregar 
       Caption         =   "&Agregar"
-      BeginProperty Font
+      BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
          Charset         =   0
@@ -2709,9 +2709,9 @@ Begin VB.Form frmCLI
       Top             =   1920
       Width           =   1300
    End
-   Begin VB.CommandButton cmdFactiliza
+   Begin VB.CommandButton cmdFactiliza 
       Caption         =   "Factiliza"
-      BeginProperty Font
+      BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
          Charset         =   0
@@ -2722,7 +2722,7 @@ Begin VB.Form frmCLI
       EndProperty
       Height          =   625
       Left            =   10440
-      TabIndex        =   130
+      TabIndex        =   150
       Top             =   2640
       Width           =   1300
    End
@@ -2735,7 +2735,7 @@ Begin VB.Form frmCLI
       Width           =   1575
       _ExtentX        =   2778
       _ExtentY        =   238
-      _Version        =   327682
+      _Version        =   393216
       Appearance      =   0
    End
    Begin MSComctlLib.ProgressBar PB 
@@ -2747,7 +2747,7 @@ Begin VB.Form frmCLI
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   344
-      _Version        =   327682
+      _Version        =   393216
       Appearance      =   0
    End
    Begin VB.Label fechahora 
@@ -3531,7 +3531,7 @@ PASACONTAB:
       pu_codcia = LK_CODCIA
       LEER_CLILOC_LLAVE
       If Not cliloc_llave.EOF Then
-         MsgBox "Cliente Existe en Compaï¿½ia ..", 48, Pub_Titulo
+         MsgBox "Cliente Existe en Compañia ..", 48, Pub_Titulo
          Azul Txt_key, Txt_key
          Exit Sub
       End If
@@ -3591,7 +3591,7 @@ PASACONTAB:
        'pu_codcia = LK_CODCIA
        'LEER_CLILOC_LLAVE
        'If Not cliloc_llave.EOF Then
-       '   MsgBox "Proveedor Existe en Compaï¿½ia ..", 48, Pub_Titulo
+       '   MsgBox "Proveedor Existe en Compañia ..", 48, Pub_Titulo
        '   Exit Sub
        'End If
        If Trim(LOC_CTA_CLI) = "" And Trim(LOC_DES_CLI) = "" And LK_CODCIA = "03" Then
@@ -3641,7 +3641,7 @@ Exit Sub
 ESCAPA:
    If Err.Number = 40002 Then
       Screen.MousePointer = 0
-      MsgBox "El Codigo generado ya existe " & Chr(13) & "Se procede a generar el siguiente codigo y a continuaciï¿½n " & Chr(13) & "Intente Grabar Nuevamente...", 48, Pub_Titulo
+      MsgBox "El Codigo generado ya existe " & Chr(13) & "Se procede a generar el siguiente codigo y a continuaciro n " & Chr(13) & "Intente Grabar Nuevamente...", 48, Pub_Titulo
       frmCLI.Txt_key = CStr(CLng(GENERA_CODI))
       Resume Next
       Exit Sub
@@ -3725,7 +3725,7 @@ Exit Sub
 ErrorHandle:
  Select Case Err.Number
   Case Is = 381
-   MsgBox "Posiblemente no ha seleccionado ï¿½ no existe ninguna direciï¿½n,", vbInformation, "Direcciones"
+   MsgBox "Posiblemente no ha seleccionado ro  no existe ninguna direciro n,", vbInformation, "Direcciones"
   Exit Sub
  End Select
 
@@ -3834,7 +3834,7 @@ Dim ws_response As String
 Dim http As Object
 Dim ws_nombre As String
 Dim ws_direccion As String
-Dim ws_estado As String
+Dim WS_ESTADO As String
 Dim ws_token As String
 Dim ws_num_tipo As String
 
@@ -3864,8 +3864,8 @@ pub_cadena = "SELECT CLI_CODCLIE, CLI_NOMBRE, CLI_CP FROM CLIENTES WHERE (CLI_RU
 Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues)
 If Not X.EOF Then
    MsgBox "Ya existe en el sistema:" & Chr(13) & _
-          "Codigo: " & X!CLI_CODCLIE & Chr(13) & _
-          "Nombre: " & Trim(X!CLI_NOMBRE) & Chr(13) & _
+          "Codigo: " & X!cli_codclie & Chr(13) & _
+          "Nombre: " & Trim(X!cli_nombre) & Chr(13) & _
           "Tipo: " & IIf(X!CLI_CP = "C", "Cliente", "Proveedor"), 48, Pub_Titulo
    Exit Sub
 End If
@@ -3904,7 +3904,7 @@ If pos1 > 0 Then
 End If
 End Function
 
-Public Sub cmdFactiliza_Click_ws(ws_ruc_dni As String, ws_tipo As String)
+Public Sub cmdFactiliza_Click_ws(ws_ruc_dni As String, WS_TIPO As String)
 ' Buscar cliente en Factiliza con precarga
 ' ws_ruc_dni: RUC (11 digitos) o DNI (8 digitos)
 ' ws_tipo: "RUC" o "DNI"
@@ -3913,7 +3913,7 @@ Dim ws_response As String
 Dim http As Object
 Dim ws_nombre As String
 Dim ws_direccion As String
-Dim ws_estado As String
+Dim WS_ESTADO As String
 Dim ws_token As String
 
 If Len(ws_ruc_dni) = 0 Then Exit Sub
@@ -3954,7 +3954,7 @@ On Error GoTo ErrorHTTP
 Set http = CreateObject("Microsoft.XMLHTTP")
 
 ' Segun tipo, usar endpoint correspondiente
-If ws_tipo = "DNI" Then
+If WS_TIPO = "DNI" Then
    ' Endpoint DNI: https://api.factiliza.com/v1/dni/info/{dni}
    ws_url = "https://api.factiliza.com/v1/dni/info/" & ws_ruc_dni
 Else
@@ -3974,7 +3974,7 @@ If http.Status = 200 Then
    ws_response = http.responseText
 
    ' Parsear respuesta JSON segun tipo
-   If ws_tipo = "DNI" Then
+   If WS_TIPO = "DNI" Then
       ' Respuesta DNI: data.nombre_completo, data.direccion_completa
       ws_nombre = ExtraerJSONNested(ws_response, "nombre_completo")
       ws_direccion = ExtraerJSONNested(ws_response, "direccion_completa")
@@ -3982,22 +3982,22 @@ If http.Status = 200 Then
       ' Respuesta RUC: data.nombre_o_razon_social, data.direccion_completa, data.estado
       ws_nombre = ExtraerJSONNested(ws_response, "nombre_o_razon_social")
       ws_direccion = ExtraerJSONNested(ws_response, "direccion_completa")
-      ws_estado = ExtraerJSONNested(ws_response, "estado")
+      WS_ESTADO = ExtraerJSONNested(ws_response, "estado")
    End If
 
    If ws_nombre = "" Then
       LblMensaje.Caption = ""
       LblMensaje.Visible = False
-      MsgBox "No se encontro informacion para el " & ws_tipo & ": " & ws_ruc_dni, 48, Pub_Titulo
+      MsgBox "No se encontro informacion para el " & WS_TIPO & ": " & ws_ruc_dni, 48, Pub_Titulo
       GoTo Limpiar
    End If
 
    ' Verificar estado (solo para RUC)
-   If ws_tipo = "RUC" And ws_estado <> "" Then
-      If UCase(ws_estado) <> "ACTIVO" And UCase(ws_estado) <> "HABIDO" Then
+   If WS_TIPO = "RUC" And WS_ESTADO <> "" Then
+      If UCase(WS_ESTADO) <> "ACTIVO" And UCase(WS_ESTADO) <> "HABIDO" Then
          LblMensaje.Caption = ""
          LblMensaje.Visible = False
-         MsgBox "El " & ws_tipo & " " & ws_ruc_dni & " esta en estado: " & ws_estado & Chr(13) & _
+         MsgBox "El " & WS_TIPO & " " & ws_ruc_dni & " esta en estado: " & WS_ESTADO & Chr(13) & _
                 "Verifique la informacion antes de continuar.", 48, Pub_Titulo
       End If
    End If
@@ -4028,8 +4028,8 @@ If http.Status = 200 Then
    txtesposo.Text = ws_nombre
    txtdireccion.Text = Left(ws_direccion, 120)
    txtDirTrabajo.Text = Left(ws_direccion, 30)
-   txtRUCesposo.Text = IIf(ws_tipo = "RUC", ws_ruc_dni, "")
-   txtRUCesposa.Text = IIf(ws_tipo = "DNI", ws_ruc_dni, "")
+   txtRUCesposo.Text = IIf(WS_TIPO = "RUC", ws_ruc_dni, "")
+   txtRUCesposa.Text = IIf(WS_TIPO = "DNI", ws_ruc_dni, "")
    txttelefono1.Text = ""
 
    ' Valores por defecto (como en PHP)
@@ -4079,8 +4079,8 @@ If http.Status = 200 Then
    LblMensaje.Caption = ""
    LblMensaje.Visible = False
 
-   MsgBox ws_tipo & " importado desde Factiliza:" & Chr(13) & _
-          ws_tipo & ": " & ws_ruc_dni & Chr(13) & _
+   MsgBox WS_TIPO & " importado desde Factiliza:" & Chr(13) & _
+          WS_TIPO & ": " & ws_ruc_dni & Chr(13) & _
           "Nombre: " & ws_nombre & Chr(13) & _
           "Direccion: " & ws_direccion & Chr(13) & Chr(13) & _
           "Complete los demas campos y presione Grabar.", 64, Pub_Titulo
@@ -4255,7 +4255,7 @@ ElseIf Left(CmbCGP.Text, 1) = "P" Then
   End If
 End If
 If Left(cmdcontab.Caption, 2) = "&Q" Then
-    pub_mensaje = "Confirmar la eliminaciï¿½n de la Cuenta : " & tcuenta.Text & " , Continuar ?"
+    pub_mensaje = "Confirmar la eliminaciro n de la Cuenta : " & tcuenta.Text & " , Continuar ?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
        Exit Sub
@@ -4275,7 +4275,7 @@ If Left(cmdcontab.Caption, 2) = "&Q" Then
 End If
 LOC_CANCELA = 0
 If txtesposo.Text = "" Then
- MsgBox "Ingrese Descripciï¿½n del cliente..", 48, Pub_Titulo
+ MsgBox "Ingrese Descripción del cliente..", 48, Pub_Titulo
  Azul txtesposo, txtesposo
  Exit Sub
 End If
@@ -4288,11 +4288,11 @@ Else
 End If
 LOC_CTA_CLI = ""
 LOC_DES_CLI = ""
-pb.Visible = True
+PB.Visible = True
 DoEvents
 Load frmBuscacta
 frmBuscacta.lbltabla.Caption = LK_TABLA
-pb.Visible = False
+PB.Visible = False
 frmBuscacta.Show 1
 LOC_CTA_CLI = Trim(frmBuscacta.tcuenta)
 LOC_DES_CLI = Trim(frmBuscacta.tnombre.Text)
@@ -4349,7 +4349,7 @@ If Left(CmbCGP.Text, 1) = "C" Then
 End If
 
 If Left(cmdcontab2.Caption, 2) = "&Q" Then
-    pub_mensaje = "Confirmar la eliminaciï¿½n de la Cuenta : " & tcuenta2.Text & " , Continuar ?"
+    pub_mensaje = "Confirmar la eliminaciro n de la Cuenta : " & tcuenta2.Text & " , Continuar ?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
        Exit Sub
@@ -4361,7 +4361,7 @@ If Left(cmdcontab2.Caption, 2) = "&Q" Then
 End If
 LOC_CANCELA = 0
 If txtesposo.Text = "" Then
- MsgBox "Ingrese Descripciï¿½n del cliente..", 48, Pub_Titulo
+ MsgBox "Ingrese Descripción del cliente..", 48, Pub_Titulo
  Azul txtesposo, txtesposo
  Exit Sub
 End If
@@ -4379,7 +4379,7 @@ PB2.Visible = True
 DoEvents
 Load frmBuscacta
 frmBuscacta.lbltabla.Caption = LK_TABLA
-pb.Visible = False
+PB.Visible = False
 frmBuscacta.Show 1
 LOC_CTA_CLI2 = Trim(frmBuscacta.tcuenta)
 LOC_DES_CLI2 = Trim(frmBuscacta.tnombre.Text)
@@ -4422,7 +4422,7 @@ Private Sub cmdDelete_Click()
         "CODCLI='" & Val(frmCLI.Txt_key) & "' AND CP= '" & Left(CmbCGP.Text, 1) & "'"
   End With
   
-  If MsgBox("Esta seguro de Eliminar esta direcciï¿½n", vbYesNo, "Eliminar Direcciï¿½n") = vbYes Then
+  If MsgBox("Esta seguro de Eliminar esta direcciro n", vbYesNo, "Eliminar Dirección") = vbYes Then
   
   CN.Execute SQL
   LLENA_DIRECCIONES
@@ -4436,7 +4436,7 @@ Exit Sub
 ErrorDelete:
  Select Case Err.Number
   Case Is = 381
-  MsgBox "Posiblemente no ha seleccionado ï¿½ no existe ninguna direciï¿½n,", vbInformation, "Direcciones"
+  MsgBox "Posiblemente no ha seleccionado ro  no existe ninguna direciro n,", vbInformation, "Direcciones"
   Exit Sub
  End Select
 End Sub
@@ -4481,7 +4481,7 @@ If cmdDireccion.Caption = "Grabar" Then
     dir = dir + ", Dt. " + Trim(Left$(TxtZonaTrabajo, 30))
     dir = dir + ", Pr. " + Trim(Left$(cboProvincia, 30))
     If strDir = "" Then
-     MsgBox "Dato ingresado no valido, Intentelo nuevamente", vbInformation, "Direcciï¿½n"
+     MsgBox "Dato ingresado no valido, Intentelo nuevamente", vbInformation, "Dirección"
      Exit Sub
     End If
      SQL = "insert into dircli " & _
@@ -4569,15 +4569,15 @@ End If
   LblMensaje.Caption = ""
   If Trim(Nulo_Valors(GEN!gen_cli_cias)) <> "" Then
     wcias = Trim(GEN!gen_cli_cias)
-    MsgBox "O J O ...  Al Eliminar este Cliente tambien debe hacerlo con las demas Compaï¿½ias relacionadas : " & wcias, 48, Pub_Titulo
+    MsgBox "O J O ...  Al Eliminar este Cliente tambien debe hacerlo con las demas Compañias relacionadas : " & wcias, 48, Pub_Titulo
   End If
 '  If Trim(tcuenta.Text) <> "" And LK_EMP <> "CAM" Then
-  '  pub_mensaje = " ï¿½Desea Eliminar el Registro, y su Relacion a Contabilidad .. ?"
+  '  pub_mensaje = " ¿Desea Eliminar el Registro, y su Relacion a Contabilidad .. ?"
 '  Else
-    pub_mensaje = " ï¿½Desea Eliminar el Registro... ?"
+    pub_mensaje = " ¿Desea Eliminar el Registro... ?"
 '  End If
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
+  If Pub_Respuesta = vbYes Then   ' El usuario eligiro
     Screen.MousePointer = 11
     cliloc_llave.Delete
     pub_cadena = "Delete dircli where CODCIA = '" & LK_CODCIA & "' and  CODCLI = " & Trim(Txt_key.Text) & "  and   CP  = '" & Trim(Left(CmbCGP.Text, 1)) & "' "
@@ -4733,7 +4733,7 @@ If Left(CmdModificar.Caption, 2) = "&M" Then
 PASACONTAB:
    
     If Trim(tempo_ruc) <> Trim(txtRUCesposo.Text) Then
-        pub_mensaje = "El Nro. R.U.C. ha cambiado, el sistema actualizarï¿½ la informaciï¿½n.  ï¿½Desea Continuar... ?"
+        pub_mensaje = "El Nro. R.U.C. ha cambiado, el sistema actualizarro  la informaciro n.  ¿Desea Continuar... ?"
         Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
         If Pub_Respuesta = vbNo Then
            Exit Sub
@@ -4859,7 +4859,7 @@ End If
       Exit Sub
    End If
    
-    VALOR = InputBox("La Compaï¿½ia a donde copiar los datos : ", "COMPAï¿½IA", "03")
+    VALOR = InputBox("La Compañia a donde copiar los datos : ", "COMPAñIA", "03")
     If VALOR = "" Then Exit Sub
     If Trim(VALOR) = LK_CODCIA Then
        MsgBox "No Procede .. "
@@ -5491,7 +5491,7 @@ If Trim(lblnom(Index).Tag) = "" Then
  Exit Sub
 End If
 Dim wnombre
-wnombre = InputBox("Ingrese la Nueva Descripciï¿½n para este Campo :", Pub_Titulo, Trim(lblnom(Index).Caption))
+wnombre = InputBox("Ingrese la Nueva Descripción para este Campo :", Pub_Titulo, Trim(lblnom(Index).Caption))
 If wnombre = "" Then
   Screen.MousePointer = 0
   Exit Sub
@@ -6329,7 +6329,7 @@ If Trim(TOTCIAS) <> "" And Left(CmbCGP.Text, 1) = "C" Then
        PSPAR_CLI(0) = Mid(TOTCIAS, xcuenta, 2)
        par_llave_cli.Requery
        If par_llave_cli.EOF Then
-       '     MsgBox "No Grabo en la Compaï¿½ia : " + Mid(TOTCIAS, xcuenta, 2) + " No Existe", 48, Pub_Titulo
+       '     MsgBox "No Grabo en la Compañia : " + Mid(TOTCIAS, xcuenta, 2) + " No Existe", 48, Pub_Titulo
        Else
            VAR_CIAS = Mid(TOTCIAS, xcuenta, 2)
            If Left(CmdModificar.Caption, 2) = "&G" Then
@@ -6340,7 +6340,7 @@ If Trim(TOTCIAS) <> "" And Left(CmbCGP.Text, 1) = "C" Then
              pu_codcia = VAR_CIAS
              LEER_CLILOC_LLAVE
              If cliloc_llave.EOF Then
-'                MsgBox "No Grabo en la Compaï¿½ia : " + VAR_CIAS + " No Existe cliente ", 48, Pub_Titulo
+'                MsgBox "No Grabo en la Compañia : " + VAR_CIAS + " No Existe cliente ", 48, Pub_Titulo
              Else
                cliloc_llave.Edit
                Modo = "E"
@@ -6367,7 +6367,7 @@ pasa:
     pu_codcia = VAR_CIAS
     LEER_CLILOC_LLAVE
     If cliloc_llave.EOF Then
-      MsgBox "No Grabo en la Compaï¿½ia : " + VAR_CIAS + " No Existe cliente ", 48, Pub_Titulo
+      MsgBox "No Grabo en la Compañia : " + VAR_CIAS + " No Existe cliente ", 48, Pub_Titulo
     Else
       cliloc_llave.Edit
       cliloc_llave!CLI_LIMCRE = Val(frmCLI.txtlimite.Text)
@@ -6474,7 +6474,7 @@ grabar:
       dir = dir + ", Dt. " + Trim(Left$(TxtZonaTrabajo, 30))
       dir = dir + ", Pr. " + Trim(Left$(cboProvincia, 30))
       If strDir = "" Then
-'       MsgBox "Dato ingresado no valido, Intentelo nuevamente", vbInformation, "Direcciï¿½n"
+'       MsgBox "Dato ingresado no valido, Intentelo nuevamente", vbInformation, "Dirección"
        'GoTo SALTAdire
        strDir = "-"
       End If
@@ -7670,7 +7670,7 @@ LETRAS:
     GoTo LETRAS
   End If
   On Error GoTo 0
-  cmdcontab.Caption = "&Quitar Relaciï¿½n Contable"
+  cmdcontab.Caption = "&Quitar Relación Contable"
  End If
 End If
 
@@ -7710,7 +7710,7 @@ If Trim(LOC_CTA_CLI2) <> "" Then
     com_llave!COM_CENTRO_COSTOS = " "
     com_llave.Update
     On Error GoTo 0
-    cmdcontab2.Caption = "&Quitar Relaciï¿½n Contable"
+    cmdcontab2.Caption = "&Quitar Relación Contable"
  End If
 End If
 Exit Sub

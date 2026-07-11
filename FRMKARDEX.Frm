@@ -644,7 +644,7 @@ Begin VB.Form KARDEX
       Width           =   1455
    End
    Begin VB.Label lblmensaje 
-      Caption         =   "Procesando Informaciï¿½n ..."
+      Caption         =   "Procesando Información ..."
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -706,7 +706,7 @@ Private Sub Command2_Click()
 ff_flag = "A"
 Dim Xx As rdoQuery
 Dim ver_xx As rdoResultset
-pub_mensaje = "Solo el Administrador del Sistema Sabe esta Opciï¿½n , si no lo conoce no procesar, puede durar varios minutos ....ï¿½ Continuar proceso ? . .."
+pub_mensaje = "Solo el Administrador del Sistema Sabe esta Opción , si no lo conoce no procesar, puede durar varios minutos ....ro  Continuar proceso ? . .."
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -998,7 +998,7 @@ FINAL = "S"
 
         If checias.Value = 0 Then GoTo go_una
         If LK_CODCIA = "09" Or LK_CODCIA = "50" Then
-           'Costeo_Chepen ' solo pï¿½ra la botica chepen
+           'Costeo_Chepen ' solo pro ra la botica chepen
 go_una:
            wol_codcia = "('" & LK_CODCIA & "')"
         Else
@@ -1344,9 +1344,9 @@ pasa:
        Else
           If i_maximo.Visible Then
             If fila1 > i_maximo.Text Then
-               pub_mensaje = "Hay mï¿½s registros... desea ver mas Registros ?"
+               pub_mensaje = "Hay mro s registros... desea ver mas Registros ?"
                Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-               If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
+               If Pub_Respuesta = vbYes Then   ' El usuario eligiro
                   i_maximo.Text = i_maximo.Text + 100
                Else
                  FINAL = "S"
@@ -2306,7 +2306,7 @@ KARDEX.GridK.TextMatrix(0, 0) = "Fec.Proc"
 KARDEX.GridK.TextMatrix(0, 1) = "Fec.Emis."
 KARDEX.GridK.TextMatrix(0, 2) = "Documento"
 KARDEX.GridK.TextMatrix(0, 3) = "Concepto"
-KARDEX.GridK.TextMatrix(0, 4) = "Descripciï¿½n"
+KARDEX.GridK.TextMatrix(0, 4) = "Descripción"
 
 KARDEX.GridK.TextMatrix(0, 5) = "Ingreso"
 KARDEX.GridK.TextMatrix(0, 6) = "Salida"

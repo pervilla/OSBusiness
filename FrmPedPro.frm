@@ -28,7 +28,7 @@ Begin VB.Form FrmPedPro
       LabelEdit       =   1
       LabelWrap       =   -1  'True
       HideSelection   =   0   'False
-      _Version        =   327682
+      _Version        =   393217
       ForeColor       =   128
       BackColor       =   14737632
       BorderStyle     =   1
@@ -49,7 +49,7 @@ Begin VB.Form FrmPedPro
       LabelEdit       =   1
       LabelWrap       =   -1  'True
       HideSelection   =   0   'False
-      _Version        =   327682
+      _Version        =   393217
       ForeColor       =   128
       BackColor       =   14737632
       BorderStyle     =   1
@@ -1097,7 +1097,7 @@ PRE_RELCOMP(3) = 0
 PRE_RELCOMP(4) = Val(txtnumfac.Text)
 relcomp_llave.Requery
 If Not relcomp_llave.EOF Then
- pub_mensaje = "Reemplazar la infomaciï¿½n...   ¿Desea Continuar... ?"
+ pub_mensaje = "Reemplazar la infomaciro n...   ¿Desea Continuar... ?"
  Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
  If Pub_Respuesta = vbNo Then
     Exit Sub

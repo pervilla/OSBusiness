@@ -1,8 +1,8 @@
 VERSION 5.00
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "richtx32.ocx"
-Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
+Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Begin VB.Form Frmcospro 
    Caption         =   "Tipo de Cambio y Costeo de Articulos"
    ClientHeight    =   7455
@@ -318,6 +318,7 @@ Begin VB.Form Frmcospro
          _Version        =   393217
          BackColor       =   12632064
          BorderStyle     =   0
+         Enabled         =   -1  'True
          MultiLine       =   0   'False
          TextRTF         =   $"FrmCostos.frx":1694
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -398,6 +399,7 @@ Begin VB.Form Frmcospro
          _Version        =   393217
          BackColor       =   12632064
          BorderStyle     =   0
+         Enabled         =   -1  'True
          MultiLine       =   0   'False
          TextRTF         =   $"FrmCostos.frx":1722
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -658,7 +660,7 @@ Begin VB.Form Frmcospro
          Width           =   795
          _ExtentX        =   1402
          _ExtentY        =   344
-         _Version        =   327682
+         _Version        =   393216
          Appearance      =   0
       End
       Begin VB.CommandButton Command1 
@@ -689,7 +691,7 @@ Begin VB.Form Frmcospro
          Width           =   3975
          _ExtentX        =   7011
          _ExtentY        =   344
-         _Version        =   327682
+         _Version        =   393216
          Appearance      =   1
       End
       Begin MSComctlLib.ProgressBar P2 
@@ -701,7 +703,7 @@ Begin VB.Form Frmcospro
          Width           =   3975
          _ExtentX        =   7011
          _ExtentY        =   344
-         _Version        =   327682
+         _Version        =   393216
          Appearance      =   1
       End
       Begin VB.Label lblm 
@@ -940,7 +942,7 @@ End Sub
 Private Sub cmdactpre_Click()
 'If LK_CODCIA = "01" Or LK_CODCIA = "30" Then
 'Else
-'  MsgBox "No Permite Cambiar en esta Compaï¿½ia", 48, Pub_Titulo
+'  MsgBox "No Permite Cambiar en esta Compañia", 48, Pub_Titulo
 '  Exit Sub
 'End If
 LK_ACCESO_REPORT = ""
@@ -959,7 +961,7 @@ End If
 
 If gridcabe.Rows <= 1 Then Exit Sub
 
-pub_mensaje = "Esta seguro que desea Actalizar las Lista de Precios ï¿½ Continuar? ..."
+pub_mensaje = "Esta seguro que desea Actalizar las Lista de Precios ro  Continuar? ..."
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -968,7 +970,7 @@ If gridcabe.Rows <> 1 Then
 pbMin = 0
 pbMax = gridcabe.Rows - 1
 pbValue = 0
-pb.Visible = True
+PB.Visible = True
 DoEvents
 End If
 
@@ -985,7 +987,7 @@ For fila = 1 To gridcabe.Rows - 1
     End If
   End If
 Next fila
-pb.Visible = False
+PB.Visible = False
 DoEvents
 MsgBox "Lista de Precios a sido cambiado con exito.", 48, Pub_Titulo
 
@@ -1061,9 +1063,9 @@ PUB_TIPREG = 37
 PUB_NUMTAB = 0
 LEER_TAB_LLAVE
 If tab_llave.EOF Then
-lblvar.Caption = "0% Variaciï¿½n(B)"
+lblvar.Caption = "0% Variaciro n(B)"
 Else
-lblvar.Caption = Trim(tab_llave!TAB_NOMLARGO) & "% Variaciï¿½n(B)"
+lblvar.Caption = Trim(tab_llave!TAB_NOMLARGO) & "% Variaciro n(B)"
 End If
 
 fradoccompra.Visible = True
@@ -1144,9 +1146,9 @@ PUB_TIPREG = 37
 PUB_NUMTAB = 0
 LEER_TAB_LLAVE
 If tab_llave.EOF Then
-lblvar.Caption = "0% Variaciï¿½n(B)"
+lblvar.Caption = "0% Variaciro n(B)"
 Else
-lblvar.Caption = Trim(tab_llave!TAB_NOMLARGO) & "% Variaciï¿½n(B)"
+lblvar.Caption = Trim(tab_llave!TAB_NOMLARGO) & "% Variaciro n(B)"
 End If
 
 fradoccompra.Visible = True
@@ -1161,12 +1163,12 @@ End Sub
 Private Sub cmdsec_Click()
 Dim I As Integer
 Dim Y As Integer
-WONL_INICIO = InputBox("Iniciar con Numero de Orden Nï¿½ ", "Inicializar", 0)
+WONL_INICIO = InputBox("Iniciar con Numero de Orden Nro  ", "Inicializar", 0)
 If WONL_INICIO = "" Then Exit Sub
 Command1_Click
 
 Exit Sub
-pub_mensaje = "Continuar con el Costeo en Serie !!! ...   ï¿½Desea Continuar... ?"
+pub_mensaje = "Continuar con el Costeo en Serie !!! ...   ¿Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -1202,7 +1204,7 @@ Else
 wFLAG_ADDPRE = ""
 End If
 If LK_CODCIA = "09" Or LK_CODCIA = "30" Or LK_CODCIA = "50" Then
-   'Costeo_Chepen ' solo pï¿½ra la botica chepen
+   'Costeo_Chepen ' solo pro ra la botica chepen
    wol_codcia = "('" & LK_CODCIA & "')"
 ElseIf LK_CODCIA = "01" Or LK_CODCIA = "20" Then
    wol_codcia = "('01','02','04','08','20')"
@@ -1464,7 +1466,7 @@ wvalor = 0
 Else
 wvalor = Val(Trim(tab_llave!TAB_NOMLARGO))
 End If
-wvalor = InputBox("Cambiar Estado B para El Porcentaje de Variaciï¿½n del Costo : %", "Cambiar Porcentaje", wvalor)
+wvalor = InputBox("Cambiar Estado B para El Porcentaje de Variaciro n del Costo : %", "Cambiar Porcentaje", wvalor)
 If wvalor = "" Then Exit Sub
 
 If tab_llave.EOF Then
@@ -1755,7 +1757,7 @@ gridigv.ColWidth(5) = 900
 gridigv.ColWidth(6) = 900
 
 gridigv.TextMatrix(0, 0) = "Fecha"
-gridigv.TextMatrix(0, 1) = "Publicaciï¿½n"
+gridigv.TextMatrix(0, 1) = "Publicaciro n"
 gridigv.TextMatrix(1, 0) = "-"
 gridigv.Row = 1
 gridigv.COL = 1
@@ -2109,7 +2111,7 @@ Dim PSPRE_CAJA As rdoQuery
 gridcabe.Cols = 24
 gridcabe.Rows = 1
 gridcabe.TextMatrix(0, 0) = "Cod.Int"
-gridcabe.TextMatrix(0, 1) = "Descripciï¿½n"
+gridcabe.TextMatrix(0, 1) = "Descripción"
 gridcabe.TextMatrix(0, 2) = "Unid."
 
 gridcabe.TextMatrix(0, 3) = "Cos.Anter."
@@ -2362,7 +2364,7 @@ Dim ws_cospro As Currency
 Dim ws_valor_ant As Currency
 Dim ws_compra As Currency
 Dim ws_ajuste, ws_perdida, WS_AJUSTE2 As Currency
-Dim WS_NOMART As String * 22
+Dim ws_nomart As String * 22
 Dim WR_IMPORTE1 As String * 12
 Dim WR_IMPORTE2 As String * 12
 Dim WR_IMPORTE3 As String * 12
@@ -2417,7 +2419,7 @@ End If
 
 If flag_costeo = "A" Or flag_costo_directo = "A" Then
 Else
-    pub_mensaje = "Proceso de Costeo de Articulos de la Fecha : " & Chr(13) & " " & Format(txtfecha.Text, "dd/mm/yyyy") & " al " & Format(LK_FECHA_DIA, "dd/mm/yyyy") & Chr(13) & "ï¿½ Continuar? ..."
+    pub_mensaje = "Proceso de Costeo de Articulos de la Fecha : " & Chr(13) & " " & Format(txtfecha.Text, "dd/mm/yyyy") & " al " & Format(LK_FECHA_DIA, "dd/mm/yyyy") & Chr(13) & "ro  Continuar? ..."
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
        Exit Sub
@@ -2535,7 +2537,7 @@ PSFAR_COSTO(4) = 0
 PSFAR_COSTO(5) = LK_FECHA_DIA
 Set Far_Cost = PSFAR_COSTO.OpenResultset(rdOpenKeyset, rdConcurValues)
 
-'ï¿½DistinctRow
+'ro DistinctRow
 'DISTINCTROW
 If chefac.Value = 1 Then
    PSFAR_LLAVE(0) = Val(Left(tipmov.Text, 3))
@@ -2551,7 +2553,7 @@ If chefac.Value = 1 Then
         Exit Sub
    Else
       If Format(txtfecha, "dd/mm/yyyy") <> Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy") Then
-        MsgBox "La Fecha de Emisiï¿½n del Documento no Coincide con la Fecha Inicial del Costeo " & Chr(13) & "Fecha de Emisiï¿½n del Documento : " & Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
+        MsgBox "La Fecha de Emisión del Documento no Coincide con la Fecha Inicial del Costeo " & Chr(13) & "Fecha de Emisión del Documento : " & Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
         txtfecha.Text = Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy")
         ProgBar.Visible = False
         Command1.Enabled = True
@@ -2673,7 +2675,7 @@ Do Until Far_Compr.EOF
       End
    End If
 
-   WS_NOMART = art_LLAVE!art_nombre
+   ws_nomart = art_LLAVE!art_nombre
    ultimo_costo = arm_llave!ARM_COSTO_ULT
    WPASA_COSPRO_ANT = Nulo_Valor0(Far_Cost!FAR_COSPRO_ANT)
    
@@ -3313,7 +3315,7 @@ Dim ws_cospro As Currency
 Dim ws_valor_ant As Currency
 Dim ws_compra As Currency
 Dim ws_ajuste, ws_perdida, WS_AJUSTE2 As Currency
-Dim WS_NOMART As String * 22
+Dim ws_nomart As String * 22
 Dim WR_IMPORTE1 As String * 12
 Dim WR_IMPORTE2 As String * 12
 Dim WR_IMPORTE3 As String * 12
@@ -3368,7 +3370,7 @@ End If
 
 If flag_costeo = "A" Then
 Else
-    pub_mensaje = "Proceso de Costeo de Articulos de la Fecha : " & Chr(13) & " " & Format(txtfecha.Text, "dd/mm/yyyy") & " al " & Format(LK_FECHA_DIA, "dd/mm/yyyy") & Chr(13) & "ï¿½ Continuar? ..."
+    pub_mensaje = "Proceso de Costeo de Articulos de la Fecha : " & Chr(13) & " " & Format(txtfecha.Text, "dd/mm/yyyy") & " al " & Format(LK_FECHA_DIA, "dd/mm/yyyy") & Chr(13) & "ro  Continuar? ..."
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
        Exit Sub
@@ -3470,7 +3472,7 @@ PSFAR_COSTO(3) = LK_FECHA_DIA
 PSFAR_COSTO(4) = LK_FECHA_DIA
 Set Far_Cost = PSFAR_COSTO.OpenResultset(rdOpenKeyset, rdConcurValues)
 
-'ï¿½DistinctRow
+'ro DistinctRow
 'DISTINCTROW
 If chefac.Value = 1 Then
    PSFAR_LLAVE(0) = Val(Left(tipmov.Text, 3))
@@ -3486,7 +3488,7 @@ If chefac.Value = 1 Then
         Exit Sub
    Else
       If Format(txtfecha, "dd/mm/yyyy") <> Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy") Then
-        MsgBox "La Fecha de Emisiï¿½n del Documento no Coincide con la Fecha Inicial del Costeo " & Chr(13) & "Fecha de Emisiï¿½n del Documento : " & Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
+        MsgBox "La Fecha de Emisión del Documento no Coincide con la Fecha Inicial del Costeo " & Chr(13) & "Fecha de Emisión del Documento : " & Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy"), 48, Pub_Titulo
         txtfecha.Text = Format(far_llave!FAR_fecha_compra, "dd/mm/yyyy")
         ProgBar.Visible = False
         Command1.Enabled = True
@@ -3592,7 +3594,7 @@ Do Until Far_Compr.EOF
       End
    End If
 
-   WS_NOMART = art_LLAVE!art_nombre
+   ws_nomart = art_LLAVE!art_nombre
    ultimo_costo = arm_llave!ARM_COSTO_ULT
    WPASA_COSPRO_ANT = Nulo_Valor0(Far_Cost!FAR_COSPRO_ANT)
    

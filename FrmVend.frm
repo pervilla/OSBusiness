@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Begin VB.Form FrmVen 
    Caption         =   "Maestro de Vendedores"
    ClientHeight    =   5310
@@ -29,7 +29,7 @@ Begin VB.Form FrmVen
       LabelEdit       =   1
       LabelWrap       =   -1  'True
       HideSelection   =   0   'False
-      _Version        =   327682
+      _Version        =   393217
       ForeColor       =   128
       BackColor       =   14737632
       Appearance      =   1
@@ -133,7 +133,7 @@ Begin VB.Form FrmVen
             Width           =   615
          End
          Begin VB.Label Label9 
-            Caption         =   "Dï¿½as Max:"
+            Caption         =   "Días Max:"
             Height          =   375
             Left            =   1440
             TabIndex        =   95
@@ -364,7 +364,7 @@ Begin VB.Form FrmVen
          Width           =   1215
       End
       Begin VB.Label Label1 
-         Caption         =   "Direcciï¿½n :"
+         Caption         =   "Dirección :"
          Height          =   255
          Index           =   11
          Left            =   240
@@ -373,7 +373,7 @@ Begin VB.Form FrmVen
          Width           =   975
       End
       Begin VB.Label Label1 
-         Caption         =   "Descripciï¿½n : "
+         Caption         =   "Descripción : "
          Height          =   255
          Index           =   1
          Left            =   240
@@ -402,41 +402,41 @@ Begin VB.Form FrmVen
       _Version        =   393216
       Tabs            =   2
       TabHeight       =   520
-      TabCaption(0)   =   "Definiciï¿½n de Serie"
+      TabCaption(0)   =   "Definición de Serie"
       TabPicture(0)   =   "FrmVend.frx":0446
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "F2"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
-      TabCaption(1)   =   "Archivos de Impresiï¿½n"
+      TabCaption(1)   =   "Archivos de Impresión"
       TabPicture(1)   =   "FrmVend.frx":0462
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "txtserfacel"
-      Tab(1).Control(1)=   "txtserbolel"
-      Tab(1).Control(2)=   "txtserncel"
-      Tab(1).Control(3)=   "txtserndel"
-      Tab(1).Control(4)=   "txtserndbel"
-      Tab(1).Control(5)=   "txtserncbel"
-      Tab(1).Control(6)=   "txtnd"
-      Tab(1).Control(7)=   "txtnc"
-      Tab(1).Control(8)=   "txtgr"
-      Tab(1).Control(9)=   "txtguia"
-      Tab(1).Control(10)=   "txtbol"
-      Tab(1).Control(11)=   "txtfac"
-      Tab(1).Control(12)=   "Shape1"
-      Tab(1).Control(13)=   "Label19"
-      Tab(1).Control(14)=   "Label20"
-      Tab(1).Control(15)=   "Label21"
-      Tab(1).Control(16)=   "Label22"
-      Tab(1).Control(17)=   "Label23"
-      Tab(1).Control(18)=   "Label24"
-      Tab(1).Control(19)=   "Label5(4)"
-      Tab(1).Control(20)=   "Label5(3)"
-      Tab(1).Control(21)=   "Label5(2)"
-      Tab(1).Control(22)=   "Label5(1)"
-      Tab(1).Control(23)=   "Label6"
-      Tab(1).Control(24)=   "Label5(0)"
-      Tab(1).Control(25)=   "Label4"
+      Tab(1).Control(0)=   "Label4"
+      Tab(1).Control(1)=   "Label5(0)"
+      Tab(1).Control(2)=   "Label6"
+      Tab(1).Control(3)=   "Label5(1)"
+      Tab(1).Control(4)=   "Label5(2)"
+      Tab(1).Control(5)=   "Label5(3)"
+      Tab(1).Control(6)=   "Label5(4)"
+      Tab(1).Control(7)=   "Label24"
+      Tab(1).Control(8)=   "Label23"
+      Tab(1).Control(9)=   "Label22"
+      Tab(1).Control(10)=   "Label21"
+      Tab(1).Control(11)=   "Label20"
+      Tab(1).Control(12)=   "Label19"
+      Tab(1).Control(13)=   "Shape1"
+      Tab(1).Control(14)=   "txtfac"
+      Tab(1).Control(15)=   "txtbol"
+      Tab(1).Control(16)=   "txtguia"
+      Tab(1).Control(17)=   "txtgr"
+      Tab(1).Control(18)=   "txtnc"
+      Tab(1).Control(19)=   "txtnd"
+      Tab(1).Control(20)=   "txtserncbel"
+      Tab(1).Control(21)=   "txtserndbel"
+      Tab(1).Control(22)=   "txtserndel"
+      Tab(1).Control(23)=   "txtserncel"
+      Tab(1).Control(24)=   "txtserbolel"
+      Tab(1).Control(25)=   "txtserfacel"
       Tab(1).ControlCount=   26
       Begin VB.TextBox txtserfacel 
          Height          =   285
@@ -1142,7 +1142,7 @@ Begin VB.Form FrmVen
          Width           =   975
       End
       Begin VB.Label Label4 
-         Caption         =   "Archivos de Impresiï¿½n:"
+         Caption         =   "Archivos de Impresión:"
          Height          =   255
          Left            =   -74760
          TabIndex        =   69
@@ -1284,7 +1284,7 @@ Begin VB.Form FrmVen
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
-      Caption         =   "! Talonarios esta Definido por Compaï¿½ia !"
+      Caption         =   "! Talonarios esta Definido por Compañia !"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   11.25
@@ -1431,7 +1431,7 @@ ven_llave!VEM_POR = Val(txtcomis.Text)
 ven_llave!VEM_DIASMAX = Val(txtdiasmax.Text)
 ven_llave!VEM_PORMAX = Val(txtporc.Text)
 ven_llave!VEM_ALTERNO = Val(talterno.Text)
-' SOLO COMPAï¿½IA ACTUAL
+' SOLO COMPAñIA ACTUAL
  pub_cadena = "DELETE FROM FVENTAS WHERE FV_CODCIA = '" & LK_CODCIA & "' AND FV_TIPO = 1 AND FV_CODIGO = " & (ven_llave!VEM_CODVEN)
  CN.Execute pub_cadena
  pub_cadena = "SELECT * FROM FVENTAS WHERE FV_CODCIA = '" & LK_CODCIA & "' AND FV_TIPO = 1 AND FV_CODIGO = " & (ven_llave!VEM_CODVEN)
@@ -1830,9 +1830,9 @@ End If
      Exit Sub
   End If
   
-  pub_mensaje = " ï¿½Desea Eliminar el Registro... ?"
+  pub_mensaje = " ¿Desea Eliminar el Registro... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
+  If Pub_Respuesta = vbYes Then   ' El usuario eligiro
     Screen.MousePointer = 11
     ven_llave.Delete
     Txt_key.Text = ""

@@ -54,7 +54,7 @@ Public Function vString(K As Integer) As Integer
 Dim sCaracter As String
 Dim cE As Integer
 sCaracter = UCase(Chr(K))
-cE = InStr(1, "������������", sCaracter)
+cE = InStr(1, "ro ro ro ro ro ro ro ro ro ro ro ro ", sCaracter)
     If ((K <= 123 And K >= 97) Or (K <= 90 And K >= 65)) Or K = 32 Or K = 8 Or cE > 0 Then
         vString = K
     Else
@@ -239,7 +239,7 @@ Else
 End If
 If wpo_estado = "E" Then
   If po_aviso = 0 Then
-     MsgBox "La Condicion de Gasto, No definida en el Presupuesto, No procede la operaci�n ", 48, Pub_Titulo
+     MsgBox "La Condicion de Gasto, No definida en el Presupuesto, No procede la operaciro n ", 48, Pub_Titulo
      Presup_Oper = False
      Exit Function
   End If
@@ -269,11 +269,11 @@ Else
 End If
 If po_aviso = 0 Then
  If wpo_presup = 0 Then
-    MsgBox "Este Tipo de Gasto No tiene Presupuesto, No procede la operaci�n ", 48, Pub_Titulo
+    MsgBox "Este Tipo de Gasto No tiene Presupuesto, No procede la operaciro n ", 48, Pub_Titulo
     Presup_Oper = False
     Exit Function
  ElseIf wpo_impacu > wpo_presup Then
-     MsgBox "Monto Supera a lo presupuestado, No procede la operaci�n ", 48, Pub_Titulo
+     MsgBox "Monto Supera a lo presupuestado, No procede la operaciro n ", 48, Pub_Titulo
      Presup_Oper = False
       Exit Function
  End If

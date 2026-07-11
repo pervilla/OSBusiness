@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
-Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Begin VB.Form RCRYSTAL 
    Caption         =   "Listado en Crystal Report"
    ClientHeight    =   9450
@@ -623,7 +623,7 @@ Begin VB.Form RCRYSTAL
       End
    End
    Begin VB.Frame Frame3 
-      Caption         =   "Consolidar Compaï¿½ias :"
+      Caption         =   "Consolidar Compañias :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -680,7 +680,7 @@ Begin VB.Form RCRYSTAL
       End
    End
    Begin VB.Frame fra1 
-      Caption         =   "Descripciï¿½n del Reporte :"
+      Caption         =   "Descripción del Reporte :"
       ForeColor       =   &H00808000&
       Height          =   1095
       Left            =   0
@@ -895,7 +895,7 @@ Begin VB.Form RCRYSTAL
          PromptChar      =   "_"
       End
       Begin VB.OptionButton opfechas 
-         Caption         =   "F. Emisiï¿½n"
+         Caption         =   "F. Emisión"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -1046,7 +1046,7 @@ Begin VB.Form RCRYSTAL
       LabelEdit       =   1
       LabelWrap       =   -1  'True
       HideSelection   =   0   'False
-      _Version        =   327682
+      _Version        =   393217
       ForeColor       =   128
       BackColor       =   14737632
       BorderStyle     =   1
@@ -1067,7 +1067,7 @@ Begin VB.Form RCRYSTAL
       LabelEdit       =   1
       LabelWrap       =   -1  'True
       HideSelection   =   0   'False
-      _Version        =   327682
+      _Version        =   393217
       ForeColor       =   128
       BackColor       =   14737632
       Appearance      =   1
@@ -1087,7 +1087,7 @@ Begin VB.Form RCRYSTAL
       LabelEdit       =   1
       LabelWrap       =   -1  'True
       HideSelection   =   0   'False
-      _Version        =   327682
+      _Version        =   393217
       ForeColor       =   128
       BackColor       =   14737632
       Appearance      =   1
@@ -1113,18 +1113,18 @@ Begin VB.Form RCRYSTAL
          Width           =   2655
       End
    End
-    Begin MSComctlLib.ProgressBar ProgBar 
-       Height          =   210
-       Left            =   0
-       TabIndex        =   97
-       Top             =   6840
-       Width           =   10215
-       _ExtentX        =   18018
-       _ExtentY        =   370
-       _Version        =   393216
-       Appearance      =   0
-       Scrolling       =   1
-    End
+   Begin MSComctlLib.ProgressBar ProgBar 
+      Height          =   210
+      Left            =   0
+      TabIndex        =   97
+      Top             =   6840
+      Width           =   10215
+      _ExtentX        =   18018
+      _ExtentY        =   370
+      _Version        =   393216
+      Appearance      =   0
+      Scrolling       =   1
+   End
    Begin VB.Frame frapasa 
       BackColor       =   &H00808000&
       Caption         =   "OnlyCont "
@@ -1193,7 +1193,7 @@ Begin VB.Form RCRYSTAL
       End
       Begin VB.Label lblpasa 
          BackColor       =   &H00808000&
-         Caption         =   "Pasar la Informaciï¿½n al Periodo Contable"
+         Caption         =   "Pasar la Información al Periodo Contable"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -2056,7 +2056,7 @@ Begin VB.Form RCRYSTAL
          Width           =   3015
       End
       Begin VB.Label lblarti 
-         Caption         =   "Sub-Divisiï¿½n de Articulos :"
+         Caption         =   "Sub-División de Articulos :"
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   8.25
@@ -2304,7 +2304,7 @@ End Sub
 
 Private Sub CMBVEND_Click()
 If CMBVEND.Text = "" Then Exit Sub
-If pantalla.Enabled = True Then
+If Pantalla.Enabled = True Then
 If fraperiodoPV.Visible = True Then
    Mst_porVendedor Left(CMBVEND.Text, 3)
 End If
@@ -2321,10 +2321,10 @@ Dim ps_caracurel As rdoResultset
 Dim wfecha1 As String
 Dim wfecha2 As String
 If Val(Left(cmblistpv.Text, 2)) = 0 Then
-   MsgBox "NO Procede la Eliminaciï¿½n , Verificar ", 48, Pub_Titulo
+   MsgBox "NO Procede la Eliminación , Verificar ", 48, Pub_Titulo
    Exit Sub
 End If
-pub_mensaje = "Eliminar el Periodo Seleccionado!!! ...   ï¿½Desea Continuar... ?"
+pub_mensaje = "Eliminar el Periodo Seleccionado!!! ...   ¿Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -2402,7 +2402,7 @@ ws_cadena = ""
 If Not rs_vercar.EOF Then
  ProgBar.Value = 0
  ProgBar.Min = 0
- ProgBar.Max = rs_vercar.RowCount
+ ProgBar.max = rs_vercar.RowCount
 End If
 Do Until rs_vercar.EOF
   ProgBar.Value = ProgBar.Value + 1
@@ -2427,7 +2427,7 @@ ws_cadena = ""
 If Not rs_vercar.EOF Then
  ProgBar.Value = 0
  ProgBar.Min = 0
- ProgBar.Max = rs_vercar.RowCount
+ ProgBar.max = rs_vercar.RowCount
 End If
 Do Until rs_vercar.EOF
   ProgBar.Value = ProgBar.Value + 1
@@ -2580,7 +2580,7 @@ If Trim(cta3.Text) = "" Then Exit Sub
       Exit Sub
     End If
     ncta3.Caption = Trim(com_llave!com_descripcion)
-    If pantalla.Enabled Then pantalla.SetFocus
+    If Pantalla.Enabled Then Pantalla.SetFocus
 
 End Sub
 
@@ -2627,7 +2627,7 @@ Resume Next
 End Sub
 
 Private Sub Form_Activate()
-lblarti(0).Caption = "Divisiï¿½n"
+lblarti(0).Caption = "División"
 lblarti(1).Caption = "Familia"
 lblarti(2).Caption = "Linea"
 lblarti(3).Caption = "Sub Linea"
@@ -2658,7 +2658,7 @@ For fila = 1 To lk_OTROS_Count
 Next fila
 
 
-lblarti(0).Caption = "Divisiï¿½n"
+lblarti(0).Caption = "División"
 lblarti(1).Caption = "Familia"
 lblarti(2).Caption = "Linea"
 lblarti(3).Caption = "Sub Linea"
@@ -2860,7 +2860,7 @@ If retra_llave!TRA_CON4 = 1 Then
   fracodclie.Visible = True
   txt_cli.Visible = True
   txt_cli.TabIndex = 0
-  lblcliente.Visible = True
+  lblCliente.Visible = True
   loc_cp = "C"
 End If
 If retra_llave!TRA_CON5 = 1 Then
@@ -2868,7 +2868,7 @@ If retra_llave!TRA_CON5 = 1 Then
   fracodclie.Caption = "Proveedor "
   fracodclie.Visible = True
   txt_cli.Visible = True
-  lblcliente.Visible = True
+  lblCliente.Visible = True
   loc_cp = "P"
 End If
 If retra_llave!TRA_CON11 = 1 Then
@@ -2983,17 +2983,17 @@ If retra_llave!TRA_ACT4 = 1 Then
  LBLTIPDOC.Visible = True
  SITUACION.Visible = True
  fratipdoc.Visible = True
- tipdoc.Visible = True
+ TIPDOC.Visible = True
  PUB_CODCIA = "00"
  LLENADOS_LISTAS SITUACION, 133
- LLENADOS_LISTAS tipdoc, 8
+ LLENADOS_LISTAS TIPDOC, 8
 End If
 
 lblreporte.Caption = Trim(retra_llave(1))
 If Wfile = "SALINI.RPT" Then
   txtCampo1.Enabled = False
   txtCampo2.Enabled = False
-  pantalla.TabIndex = 0
+  Pantalla.TabIndex = 0
 End If
 If Wfile = "COBRANZA.RPT" Then
    FRMPLAN.Visible = True
@@ -3132,7 +3132,7 @@ If retra_llave!tra_GRU9 = 1 Then
    SQ_OPER = 1
    PUB_CODCIA = LK_CODCIA
    LEER_PAR_LLAVE
-   fracias.Visible = True
+   FRACIAS.Visible = True
 End If
 If UCase(Wfile) = "STOCKPROM.RPT" Or UCase(Wfile) = "MAXPEDGEN11.RPT" Or UCase(Wfile) = "MAXPEDGEN33.RPT" Or UCase(Wfile) = "COMP999.RPT" Then
     fravalor.Visible = True
@@ -3150,7 +3150,7 @@ If Left(Wfile, 10) = "CTA_CONSOL" Then
   checloseper.Visible = False
   End If
   fraperiodoPV.Visible = True
-  cmblistpv.AddItem "Mostrar Segï¿½n Fechas de Reporte..."
+  cmblistpv.AddItem "Mostrar Segro n Fechas de Reporte..."
   cmbtipdoc.AddItem " "
   cmbtipdoc.AddItem "COMPRAS / VENTAS" & String(80, " ") & 1
   cmbtipdoc.AddItem "EFECTIVO" & String(80, " ") & 2
@@ -3322,7 +3322,7 @@ IR_ALTERNO:
      'i_codart2.text = Trim(art_llave_alt!ART_NOMBRE)
      i_nomarti.Caption = Trim(art_llave_alt!art_nombre)
      ListView1.Visible = False
-     If pantalla.Enabled Then pantalla.SetFocus
+     If Pantalla.Enabled Then Pantalla.SetFocus
      Exit Sub
   Else
     If loc_key > ListView1.ListItems.count Or loc_key = 0 Then
@@ -3640,7 +3640,7 @@ cta2.Text = ""
 cta3.Text = ""
 'checompras.Visible = True
 'checompras.Value = 0
-If pantalla.Enabled Then pantalla.SetFocus
+If Pantalla.Enabled Then Pantalla.SetFocus
 End If
 If Index = 1 Then   ' Proveedor
 'checompras.Visible = False
@@ -3916,15 +3916,15 @@ wf8 = ""
 wf9 = ""
 wf10 = ""
 wsalmacenes = ""
-pantalla.Enabled = False
+Pantalla.Enabled = False
 cmdCerrar.Enabled = False
 
 Screen.MousePointer = 11
 ProgBar.Min = 0
-ProgBar.Max = 10
+ProgBar.max = 10
 ProgBar.Value = 0
 ProgBar.Visible = True
-lblProceso.Visible = True
+lblproceso.Visible = True
 DoEvents
 If Len(Wfile) = 0 Then
  MsgBox " Cheque los datos de Reportes , Intente nuevamente.", 48, Pub_Titulo
@@ -3963,11 +3963,11 @@ End If
   ProgBar.Value = 6
   pub_cadena = ""
   wmensa = ""
-  If retra_llave!TRA_CON2 = 1 And Val(txt_key.Text) <> 0 Then
+  If retra_llave!TRA_CON2 = 1 And Val(Txt_key.Text) <> 0 Then
     If pub_cadena = "" Then
-       pub_cadena = "{CCMAEST.CCM_CODBAN} = " & Trim(txt_key.Text)
+       pub_cadena = "{CCMAEST.CCM_CODBAN} = " & Trim(Txt_key.Text)
     Else
-        pub_cadena = pub_cadena + " AND " + "{CCMAEST.CCM_CODBAN} = " & Trim(txt_key.Text)
+        pub_cadena = pub_cadena + " AND " + "{CCMAEST.CCM_CODBAN} = " & Trim(Txt_key.Text)
     End If
     If retra_llave!TRA_S9 <> 1 Then
       If pub_cadena = "" Then
@@ -4462,7 +4462,7 @@ SINCIA:
     MES1 = Month(REP_FECHA2)
     ANO1 = Year(REP_FECHA2)
     If retra_llave!tra_act9 = 1 And cmduser.Visible = False Then   ' x FECHAS X FACART
-      pub_mensaje = "Imprimir segï¿½n Usuario... ?"
+      pub_mensaje = "Imprimir segro n Usuario... ?"
       Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
       If Pub_Respuesta = vbYes Then
          CADENITA = "{FACART.FAR_CODUSU}= '" & LK_CODUSU & "' AND {FACART.FAR_FECHA} >= Date ( " & ano & "," & mes & "," & DIA & ") AND {FACART.FAR_FECHA} <= Date ( " & ANO1 & "," & MES1 & "," & DIA1 & ") AND {FACART.FAR_ESTADO2} <> 'L' "
@@ -5216,8 +5216,8 @@ pasa_prostock:
   ProgBar.Value = 10
   Screen.MousePointer = 0
   ProgBar.Visible = False
-  lblProceso.Visible = False
-  pantalla.Enabled = True
+  lblproceso.Visible = False
+  Pantalla.Enabled = True
   cmdCerrar.Enabled = True
 
 Exit Sub
@@ -5499,11 +5499,11 @@ ARMA_TIPDOC:
 CADENITA = ""
 wfiltra = ""
 Modo1 = "{CARTERA.CAR_TIPDOC} in ["
-For fila = 0 To tipdoc.ListCount - 1
-  tipdoc.ListIndex = fila
-  If tipdoc.Selected(fila) Then
-    wfiltra = wfiltra + Left(tipdoc.Text, 2) + ","
-    Modo1 = Modo1 + "'" + Left(tipdoc.Text, 2) + "' ,"
+For fila = 0 To TIPDOC.ListCount - 1
+  TIPDOC.ListIndex = fila
+  If TIPDOC.Selected(fila) Then
+    wfiltra = wfiltra + Left(TIPDOC.Text, 2) + ","
+    Modo1 = Modo1 + "'" + Left(TIPDOC.Text, 2) + "' ,"
   End If
 Next fila
 If wfiltra <> "" Then
@@ -5609,19 +5609,19 @@ Return
 sale:
  Screen.MousePointer = 0
  ProgBar.Visible = False
- lblProceso.Visible = False
+ lblproceso.Visible = False
  If Err.Number = 20504 Then
    MsgBox "el Informe no se encontro Verificar :" & Reportes.ReportFileName, 48, Pub_Titulo
  ElseIf Err.Number = 20510 Then
    MsgBox "Falta Crear alguna Formula en Informe Verificar ", 48, Pub_Titulo
  ElseIf Err.Number = 20515 Then
-   MsgBox "Selecciï¿½n de informaciï¿½n No procede. Verificar ", 48, Pub_Titulo
+   MsgBox "Selecciro n de informaciro n No procede. Verificar ", 48, Pub_Titulo
  Else
    MsgBox Err.Description & " .Verificar", 48, Pub_Titulo
  End If
   Debug.Print pub_cadena
 ' Resume Next
- pantalla.Enabled = True
+ Pantalla.Enabled = True
  cmdCerrar.Enabled = True
 Exit Sub
 ActuTransito:
@@ -5652,7 +5652,7 @@ End Sub
 
 Private Sub txt_cli_GotFocus()
 Azul txt_cli, txt_cli
-lblcliente.Caption = ""
+lblCliente.Caption = ""
 End Sub
 Private Sub txt_cli_KeyDown(KeyCode As Integer, Shift As Integer)
 Dim strFindMe As String
@@ -5728,17 +5728,17 @@ If pu_codclie <> 0 And IsNumeric(txt_cli.Text) = True Then
    pu_codcia = LK_CODCIA
    LEER_CLI_LLAVE
    If cli_llave.EOF Then
-     lblcliente.Caption = ""
+     lblCliente.Caption = ""
      MsgBox "REGISTRO NO EXISTE ...", 48, Pub_Titulo
      Azul txt_cli, txt_cli
      GoTo fin
    Else
-     lblcliente.Caption = Trim(cli_llave!cli_nombre)
+     lblCliente.Caption = Trim(cli_llave!cli_nombre)
      LOC_RUC = Trim(cli_llave!cli_ruc_esposo)
      GoTo bien_cli
    End If
-   If pantalla.Visible And pantalla.Enabled Then
-     pantalla.SetFocus
+   If Pantalla.Visible And Pantalla.Enabled Then
+     Pantalla.SetFocus
    End If
 Else
    If loc_key > ListView2.ListItems.count Or loc_key = 0 Then
@@ -5756,13 +5756,13 @@ Else
    pu_codcia = LK_CODCIA
    LEER_CLI_LLAVE
    If Not cli_llave.EOF Then
-    lblcliente.Caption = Trim(ListView2.ListItems.Item(loc_key).Text)
+    lblCliente.Caption = Trim(ListView2.ListItems.Item(loc_key).Text)
     LOC_RUC = Trim(cli_llave!cli_ruc_esposo)
     GoTo bien_cli
    End If
    
-   If pantalla.Visible And pantalla.Enabled Then
-     pantalla.SetFocus
+   If Pantalla.Visible And Pantalla.Enabled Then
+     Pantalla.SetFocus
    End If
 End If
 
@@ -5850,7 +5850,7 @@ End If
 End Sub
 
 Private Sub Txt_key_Change()
-If Trim(txt_key.Text) = "" Then lblbanco.Caption = ""
+If Trim(Txt_key.Text) = "" Then lblbanco.Caption = ""
 End Sub
 
 Private Sub txtCampo1_KeyPress(KeyAscii As Integer)
@@ -5901,7 +5901,7 @@ Dim q_sum_calse As Currency
 Dim q_sum_total As Currency
 Dim q_stock As Currency
 wsfile = ""
-pantalla.Enabled = False
+Pantalla.Enabled = False
 DoEvents
 'FrmImp2.lblproceso.Caption = "Activando Reporte... un Momento ."
 DoEvents
@@ -6007,11 +6007,11 @@ llave_rep02.Requery
 If llave_rep02.RowCount <> 0 Then
  RCRYSTAL.ProgBar.Min = 0
  RCRYSTAL.ProgBar.Value = 0
- RCRYSTAL.ProgBar.Max = llave_rep02.RowCount
+ RCRYSTAL.ProgBar.max = llave_rep02.RowCount
 End If
 
-RCRYSTAL.lblProceso.Visible = True
-RCRYSTAL.lblProceso.Caption = "Abriendo Microsoft Excel . . . "
+RCRYSTAL.lblproceso.Visible = True
+RCRYSTAL.lblproceso.Caption = "Abriendo Microsoft Excel . . . "
 CHE_KARDEX = 0
 DoEvents
 wtotal = 0
@@ -6257,22 +6257,22 @@ Loop
    xl.Cells(f1, 9) = Format(TOTAL_CLASE, "#,##0.00")
    xl.Cells(f1, 11) = Format(TOTAL_CLASE_VAL, "#,##0.00")
 
-  RCRYSTAL.lblProceso.Caption = "Procesando . . .  un Momento ."
+  RCRYSTAL.lblproceso.Caption = "Procesando . . .  un Momento ."
   'xl.Application.Worksheets("HOJA DE COMISIONES x VENDEDOR").Range(wran1).Sort Key1:=xl.Application.Worksheets("HOJA DE COMISIONES x VENDEDOR").Range("O7")
-  RCRYSTAL.lblProceso.Caption = "Mostrando Hoja de Calculo  . . . "
+  RCRYSTAL.lblproceso.Caption = "Mostrando Hoja de Calculo  . . . "
  ' xl.Cells(2, 2) = "INFORME DE COMISIONES x VENDEDOR"
   DoEvents
   xl.DisplayAlerts = False
   xl.Worksheets(1).Protect PUB_CLAVE
   xl.Application.Visible = True
   DoEvents
-  RCRYSTAL.lblProceso.Visible = False
+  RCRYSTAL.lblproceso.Visible = False
   RCRYSTAL.ProgBar.Visible = False
   Set xl = Nothing
     Screen.MousePointer = 0
   ProgBar.Visible = False
-  lblProceso.Visible = False
-  pantalla.Enabled = True
+  lblproceso.Visible = False
+  Pantalla.Enabled = True
   cmdCerrar.Enabled = True
   ''Unload RCRYSTAL
 Exit Sub
@@ -6312,7 +6312,7 @@ WEXCEL:
   If xl Is Nothing Then
     Set xl = CreateObject("Excel.Application")
   End If
-  lblProceso.Caption = "Abriendo , Archivo Comisiones.xls . . . "
+  lblproceso.Caption = "Abriendo , Archivo Comisiones.xls . . . "
   DoEvents
   xl.Workbooks.Open Left(Trim(PUB_RUTA_OTRO), 1) & ":\ADMIN\STANDAR\KARDEX_CLASES.xls", 0, True, 4
 
@@ -6322,11 +6322,11 @@ Return
 
 Exit Sub
 CANCELA:
-  RCRYSTAL.pantalla.Enabled = True
-  RCRYSTAL.pantalla.Caption = "Por &Pantalla"
-  RCRYSTAL.lblProceso.Visible = False
+  RCRYSTAL.Pantalla.Enabled = True
+  RCRYSTAL.Pantalla.Caption = "Por &Pantalla"
+  RCRYSTAL.lblproceso.Visible = False
   RCRYSTAL.ProgBar.Visible = False
-  pantalla.Enabled = True
+  Pantalla.Enabled = True
   If xl Is Nothing Then
   Else
    xl.Application.Visible = True
@@ -6404,7 +6404,7 @@ Dim CAMBIOS As Currency
 
 walterno = ""
 wsfile = ""
-pantalla.Enabled = False
+Pantalla.Enabled = False
 DoEvents
 'FrmImp2.lblproceso.Caption = "Activando Reporte... un Momento ."
 DoEvents
@@ -6537,11 +6537,11 @@ llave_rep02.Requery
 If llave_rep02.RowCount <> 0 Then
  RCRYSTAL.ProgBar.Min = 0
  RCRYSTAL.ProgBar.Value = 0
- RCRYSTAL.ProgBar.Max = llave_rep02.RowCount
+ RCRYSTAL.ProgBar.max = llave_rep02.RowCount
 End If
 
-RCRYSTAL.lblProceso.Visible = True
-RCRYSTAL.lblProceso.Caption = "Abriendo Microsoft Excel . . . "
+RCRYSTAL.lblproceso.Visible = True
+RCRYSTAL.lblproceso.Caption = "Abriendo Microsoft Excel . . . "
 DoEvents
 wtotal = 0
 WD_COSPRO = 0
@@ -6711,22 +6711,22 @@ Loop
    xl.Cells(f1, 11) = Format(TOTAL_CLASE, "#,##0.00")
    
 
-  RCRYSTAL.lblProceso.Caption = "Procesando . . .  un Momento ."
+  RCRYSTAL.lblproceso.Caption = "Procesando . . .  un Momento ."
   'xl.Application.Worksheets("HOJA DE COMISIONES x VENDEDOR").Range(wran1).Sort Key1:=xl.Application.Worksheets("HOJA DE COMISIONES x VENDEDOR").Range("O7")
-  RCRYSTAL.lblProceso.Caption = "Mostrando Hoja de Calculo  . . . "
+  RCRYSTAL.lblproceso.Caption = "Mostrando Hoja de Calculo  . . . "
  ' xl.Cells(2, 2) = "INFORME DE COMISIONES x VENDEDOR"
   DoEvents
   xl.DisplayAlerts = False
   xl.Worksheets(1).Protect ws_clave
   xl.Application.Visible = True
   DoEvents
-  RCRYSTAL.lblProceso.Visible = False
+  RCRYSTAL.lblproceso.Visible = False
   RCRYSTAL.ProgBar.Visible = False
   Set xl = Nothing
    Screen.MousePointer = 0
   ProgBar.Visible = False
-  lblProceso.Visible = False
-  pantalla.Enabled = True
+  lblproceso.Visible = False
+  Pantalla.Enabled = True
   cmdCerrar.Enabled = True
   ''Unload RCRYSTAL
 Exit Sub
@@ -6766,7 +6766,7 @@ WEXCEL:
   If xl Is Nothing Then
     Set xl = CreateObject("Excel.Application")
   End If
-  lblProceso.Caption = "Abriendo , Archivo Comisiones.xls . . . "
+  lblproceso.Caption = "Abriendo , Archivo Comisiones.xls . . . "
   DoEvents
   xl.Workbooks.Open Left(Trim(PUB_RUTA_OTRO), 1) & ":\ADMIN\STANDAR\KARDEX_RESU.xls", 0, True, 4
 
@@ -6776,11 +6776,11 @@ Return
 
 Exit Sub
 CANCELA:
-  RCRYSTAL.pantalla.Enabled = True
-  RCRYSTAL.pantalla.Caption = "Por &Pantalla"
-  RCRYSTAL.lblProceso.Visible = False
+  RCRYSTAL.Pantalla.Enabled = True
+  RCRYSTAL.Pantalla.Caption = "Por &Pantalla"
+  RCRYSTAL.lblproceso.Visible = False
   RCRYSTAL.ProgBar.Visible = False
-  pantalla.Enabled = True
+  Pantalla.Enabled = True
   If xl Is Nothing Then
   Else
    xl.Application.Visible = True
@@ -6828,12 +6828,12 @@ End Sub
 
 Private Sub txtCampo2_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
-  If pantalla.Enabled Then pantalla.SetFocus
+  If Pantalla.Enabled Then Pantalla.SetFocus
 End If
 End Sub
 
 Private Sub txt_key_GotFocus()
- Azul txt_key, txt_key
+ Azul Txt_key, Txt_key
 End Sub
 Private Sub txt_key_KeyDown(KeyCode As Integer, Shift As Integer)
 Dim strFindMe As String
@@ -6841,7 +6841,7 @@ Dim itmFound As MSComctlLib.ListItem    ' Variable FoundItem.
 If Not ListView3.Visible Then
  Exit Sub
 End If
-If KeyCode <> 40 And KeyCode <> 38 And KeyCode <> 34 And KeyCode <> 33 And txt_key.Text = "" Then
+If KeyCode <> 40 And KeyCode <> 38 And KeyCode <> 34 And KeyCode <> 33 And Txt_key.Text = "" Then
   loc_key = 1
   Set ListView3.SelectedItem = ListView3.ListItems(loc_key)
   ListView3.ListItems.Item(loc_key).Selected = True
@@ -6873,8 +6873,8 @@ GoTo fin
 POSICION:
   ListView3.ListItems.Item(loc_key).Selected = True
   ListView3.ListItems.Item(loc_key).EnsureVisible
-  txt_key.Text = Trim(ListView3.ListItems.Item(loc_key).Text) & " "
-  txt_key.SelStart = Len(txt_key.Text)
+  Txt_key.Text = Trim(ListView3.ListItems.Item(loc_key).Text) & " "
+  Txt_key.SelStart = Len(Txt_key.Text)
 fin:
 
 End Sub
@@ -6885,30 +6885,30 @@ Dim I
 Dim itmFound As MSComctlLib.ListItem
 'On Error GoTo SALCODI
 If KeyAscii = 27 Then
- txt_key.Text = ""
+ Txt_key.Text = ""
 End If
 If KeyAscii <> 13 Then Exit Sub
-pu_codclie = Val(txt_key.Text)
-If Len(txt_key.Text) = 0 Then
+pu_codclie = Val(Txt_key.Text)
+If Len(Txt_key.Text) = 0 Then
    Exit Sub
 End If
 'fra2.Refresh
-If pu_codclie <> 0 And IsNumeric(txt_key.Text) = True Then
+If pu_codclie <> 0 And IsNumeric(Txt_key.Text) = True Then
     SQ_OPER = 1
     On Error GoTo mucho
-    PUB_CODBAN = Val(txt_key.Text)
+    PUB_CODBAN = Val(Txt_key.Text)
     On Error GoTo 0
     pu_codcia = LK_CODCIA
     LEER_CCM_LLAVE
     If ccm_llave.EOF Then
             MsgBox "Registro ,   NO EXISTE ... "
-            Azul txt_key, txt_key
+            Azul Txt_key, Txt_key
             GoTo fin
     End If
     lblbanco.Caption = Trim(ccm_llave!CCM_NOMBRE)
-    txt_key.Text = Trim(ccm_llave!CCM_CODBAN)
-    If pantalla.Visible And pantalla.Enabled Then
-      pantalla.SetFocus
+    Txt_key.Text = Trim(ccm_llave!CCM_CODBAN)
+    If Pantalla.Visible And Pantalla.Enabled Then
+      Pantalla.SetFocus
     End If
     ListView3.Visible = False
 
@@ -6918,14 +6918,14 @@ Else
      Exit Sub
    End If
    VALOR = UCase(ListView3.ListItems.Item(loc_key).Text)
-   If Trim(UCase(txt_key.Text)) = Left(VALOR, Len(Trim(txt_key.Text))) Then
+   If Trim(UCase(Txt_key.Text)) = Left(VALOR, Len(Trim(Txt_key.Text))) Then
    Else
       Exit Sub
    End If
    lblbanco.Caption = Trim(ListView3.ListItems.Item(loc_key).Text)
-   txt_key.Text = Trim(ListView3.ListItems.Item(loc_key).SubItems(1))
-   If pantalla.Visible And pantalla.Enabled Then
-     pantalla.SetFocus
+   Txt_key.Text = Trim(ListView3.ListItems.Item(loc_key).SubItems(1))
+   If Pantalla.Visible And Pantalla.Enabled Then
+     Pantalla.SetFocus
    End If
 
    ListView3.Visible = False
@@ -6945,13 +6945,13 @@ End Sub
 Private Sub txt_key_KeyUp(KeyCode As Integer, Shift As Integer)
 Dim NADA
 Dim var
-If Len(txt_key.Text) = 0 Or IsNumeric(txt_key.Text) = True Then
+If Len(Txt_key.Text) = 0 Or IsNumeric(Txt_key.Text) = True Then
    ListView3.Visible = False
    Exit Sub
 End If
-If ListView3.Visible = False And KeyCode <> 13 Or Len(txt_key.Text) = 1 Then
-    If txt_key.Text = "" Then txt_key.Text = " "
-    var = Asc(txt_key.Text)
+If ListView3.Visible = False And KeyCode <> 13 Or Len(Txt_key.Text) = 1 Then
+    If Txt_key.Text = "" Then Txt_key.Text = " "
+    var = Asc(Txt_key.Text)
     var = var + 1
     NADA = var
     If var = 33 Or var = 91 Then
@@ -6960,14 +6960,14 @@ If ListView3.Visible = False And KeyCode <> 13 Or Len(txt_key.Text) = 1 Then
        var = Chr(var)
     End If
     numarchi = 9
-    archi = "SELECT * FROM CCMAEST WHERE  CCM_CODCIA = '" & par_llave!PAR_CIACCM & "' AND CCM_NOMBRE BETWEEN '" & txt_key.Text & "' AND  '" & var & "' ORDER BY CCM_NOMBRE"
+    archi = "SELECT * FROM CCMAEST WHERE  CCM_CODCIA = '" & par_llave!PAR_CIACCM & "' AND CCM_NOMBRE BETWEEN '" & Txt_key.Text & "' AND  '" & var & "' ORDER BY CCM_NOMBRE"
     PROC_LISVIEW ListView3
     loc_key = 1
     If NADA = 33 Or NADA = 91 Then
       If ListView3.Visible = False Then
         loc_key = 0
         MsgBox "No existe Datos ...", 48, Pub_Titulo
-        txt_key.Text = ""
+        Txt_key.Text = ""
       End If
     End If
     Exit Sub
@@ -6981,7 +6981,7 @@ If KeyCode = 40 Or KeyCode = 38 Or KeyCode = 34 Or KeyCode = 33 Then
 End If
 Dim itmFound As MSComctlLib.ListItem    ' Variable FoundItem.
 If ListView3.Visible Then
-  Set itmFound = ListView3.FindItem(LTrim(txt_key.Text), lvwText, , lvwPartial)
+  Set itmFound = ListView3.FindItem(LTrim(Txt_key.Text), lvwText, , lvwPartial)
   If itmFound Is Nothing Then
   Else
    itmFound.EnsureVisible
@@ -6999,7 +6999,7 @@ End Sub
 
 Private Sub ListView3_DblClick()
  loc_key = ListView3.SelectedItem.Index
- txt_key.Text = Trim(ListView3.ListItems.Item(loc_key).Text) & " "
+ Txt_key.Text = Trim(ListView3.ListItems.Item(loc_key).Text) & " "
  txt_key_KeyPress 13
 End Sub
 
@@ -7015,7 +7015,7 @@ End Sub
 Private Sub ListView3_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
  loc_key = ListView3.SelectedItem.Index
- txt_key.Text = Trim(ListView3.ListItems.Item(loc_key).Text) & " "
+ Txt_key.Text = Trim(ListView3.ListItems.Item(loc_key).Text) & " "
 End If
 
 End Sub
@@ -7023,8 +7023,8 @@ End Sub
 Private Sub ListView3_KeyPress(KeyAscii As Integer)
 If KeyAscii = 27 Then
  ListView3.Visible = False
- txt_key.Text = ""
- txt_key.SetFocus
+ Txt_key.Text = ""
+ Txt_key.SetFocus
  Exit Sub
 End If
 If KeyAscii <> 13 Then
@@ -7090,7 +7090,7 @@ Dim wsFECHA2
 Dim wcta1 As String
 Dim wIMPORTE1 As Currency
 Dim IMP_MONEDA As String * 1
-pantalla.Enabled = False
+Pantalla.Enabled = False
 cmdCerrar.Enabled = False
 If Right(txtCampo1.Text, 2) = "__" Then
      wsFECHA1 = Left(txtCampo1.Text, 8)
@@ -7115,7 +7115,7 @@ If CDate(wsFECHA1) > CDate(wsFECHA2) Then
  GoTo CANCELA
 End If
 If chepasa.Value = 1 Then
-  pub_mensaje = "<Advertencia> El pase de la informaciï¿½n es por cada Compaï¿½ia. Continuar...?"
+  pub_mensaje = "<Advertencia> El pase de la informaciro n es por cada Compañia. Continuar...?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
       Azul2 txtCampo1, txtCampo1
@@ -7129,12 +7129,12 @@ If chepasa.Value = 1 Then
   End If
   If (cop_llave!cop_fecha_proceso = CDate(wsFECHA1)) And (cop_llave!cop_fecha_proceso2 = CDate(wsFECHA2)) Then
   Else
-      MsgBox "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
+      MsgBox "Usted. a marcado la opciro n: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
       Azul2 txtCampo1, txtCampo1
       GoTo CANCELA
   End If
-  If qver_onlyCont = 9 Then ' hay Informaciï¿½n en OnlyCont. Confirmar.
-      pub_mensaje = "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< Desea adicionar este Nuevo Asiento de Voucher de todas Maneras >...?"
+  If qver_onlyCont = 9 Then ' hay Información en OnlyCont. Confirmar.
+      pub_mensaje = "Usted. a marcado la opciro n: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< Desea adicionar este Nuevo Asiento de Voucher de todas Maneras >...?"
       Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
       If Pub_Respuesta = vbNo Then
         Azul2 txtCampo1, txtCampo1
@@ -7148,10 +7148,10 @@ pub_cadena = ""
 'xl.Application.Visible = True
 xcuenta = 0
 
-pantalla.Enabled = False
+Pantalla.Enabled = False
 cmdCerrar.Enabled = False
 DoEvents
-RCRYSTAL.lblProceso.Caption = "Activando Reporte... un Momento ."
+RCRYSTAL.lblproceso.Caption = "Activando Reporte... un Momento ."
 DoEvents
 If opcompra(0).Value Then
   'pub_cadena = "SELECT * FROM ALLOG WHERE (ALL_CODCIA = ? OR ALL_CODCIA = ? OR ALL_CODCIA = ? ) AND (ALL_TIPMOV = ? OR ALL_TIPMOV = ? OR  ALL_TIPMOV = ? ) AND ALL_FECHA_PRO >= ? AND ALL_FECHA_PRO <= ? AND ALL_FLAG_EXT <> 'E' AND ALL_CP = 'P'  "
@@ -7253,9 +7253,9 @@ Else
   WEMPRESA = Trim(GEN!GEN_NOMBRE) & " " & WEMPRESA
 End If
 DoEvents
-RCRYSTAL.lblProceso.Visible = True
+RCRYSTAL.lblproceso.Visible = True
 RCRYSTAL.ProgBar.Visible = True
-RCRYSTAL.lblProceso.Caption = "Abriendo Microsoft Excel . . . "
+RCRYSTAL.lblproceso.Caption = "Abriendo Microsoft Excel . . . "
 DoEvents
 llave_rep01.Requery
 If llave_rep01.EOF Then
@@ -7267,13 +7267,13 @@ End If
 FILTRO_CTA(1) = "730001"
 FILTRO_CTA(2) = "609001"
 
-RCRYSTAL.lblProceso.Caption = "Procesando . . . "
+RCRYSTAL.lblproceso.Caption = "Procesando . . . "
 DoEvents
 RCRYSTAL.ProgBar.Visible = True
 DoEvents
 RCRYSTAL.ProgBar.Min = 0
 RCRYSTAL.ProgBar.Value = 0
-RCRYSTAL.ProgBar.Max = llave_rep01.RowCount
+RCRYSTAL.ProgBar.max = llave_rep01.RowCount
 IMP_MONEDA = ""
 f1 = 5
 Lini = 6
@@ -7471,7 +7471,7 @@ Lfin = f1
   wranF = "M" & f1
   xl.Range(wranF).Formula = "=SUM(" & wran1 & ":" & wran2 & ")"
   
-  RCRYSTAL.lblProceso.Caption = "Mostrando Hoja de Calculo  . . . "
+  RCRYSTAL.lblproceso.Caption = "Mostrando Hoja de Calculo  . . . "
   xl.Cells(5, 11) = "401001"
   xl.Cells(5, 12) = "601001"
   xl.Cells(5, 13) = FILTRO_CTA(1)
@@ -7495,14 +7495,14 @@ Lfin = f1
   xl.Worksheets(1).Protect ""
   xl.Application.Visible = True
   DoEvents
-  RCRYSTAL.lblProceso.Visible = False
+  RCRYSTAL.lblproceso.Visible = False
   RCRYSTAL.ProgBar.Visible = False
   Set xl = Nothing
   Screen.MousePointer = 0
-  RCRYSTAL.pantalla.Enabled = True
-  RCRYSTAL.pantalla.Caption = "Por &Pantalla"
-  RCRYSTAL.lblProceso.Visible = False
-  pantalla.Enabled = True
+  RCRYSTAL.Pantalla.Enabled = True
+  RCRYSTAL.Pantalla.Caption = "Por &Pantalla"
+  RCRYSTAL.lblproceso.Visible = False
+  Pantalla.Enabled = True
   cmdCerrar.Enabled = True
 
 Exit Sub
@@ -7510,11 +7510,11 @@ Exit Sub
 
 
 CANCELA:
-  RCRYSTAL.pantalla.Enabled = True
-  RCRYSTAL.pantalla.Caption = "Por &Pantalla"
-  RCRYSTAL.lblProceso.Visible = False
+  RCRYSTAL.Pantalla.Enabled = True
+  RCRYSTAL.Pantalla.Caption = "Por &Pantalla"
+  RCRYSTAL.lblproceso.Visible = False
   RCRYSTAL.ProgBar.Visible = False
-  pantalla.Enabled = True
+  Pantalla.Enabled = True
   cmdCerrar.Enabled = True
   If xl Is Nothing Then
   Else
@@ -7527,7 +7527,7 @@ Exit Sub
 WEXCEL:
   Dim dd As Excel.Application
   Dim wsfile1
-  lblProceso.Caption = "Abriendo , Archivo REGVENTA.xls . . . "
+  lblproceso.Caption = "Abriendo , Archivo REGVENTA.xls . . . "
   If xl Is Nothing Then
      Set xl = CreateObject("Excel.Application")
   End If
@@ -7547,10 +7547,10 @@ PASAR_CONT:
 Dim ts_codcta As String
 Dim ts_suma As Currency
 DoEvents
-lblProceso.Caption = "Generando Resumen de Asiento Contable... "
+lblproceso.Caption = "Generando Resumen de Asiento Contable... "
 DoEvents
 RCRYSTAL.ProgBar.Min = 0
-RCRYSTAL.ProgBar.Max = 5
+RCRYSTAL.ProgBar.max = 5
 RCRYSTAL.ProgBar.Value = 0
 '---------------------------------------------
 '*** Orden para toda la 42 o 46.. al Haber***
@@ -7726,7 +7726,7 @@ Else
   KeyAscii = 0
   Exit Sub
 End If
-If pantalla.Enabled Then pantalla.SetFocus
+If Pantalla.Enabled Then Pantalla.SetFocus
 
 End Sub
 
@@ -7807,7 +7807,7 @@ Dim tot_abono As Currency
 
 
 
-pantalla.Enabled = False
+Pantalla.Enabled = False
 cmdCerrar.Enabled = False
 If Right(txtCampo1.Text, 2) = "__" Then
      wsFECHA1 = Left(txtCampo1.Text, 8)
@@ -7833,7 +7833,7 @@ If CDate(wsFECHA1) > CDate(wsFECHA2) Then
  GoTo CANCELA
 End If
 If chepasa.Value = 1 Then
-  pub_mensaje = "<Advertencia> El pase de la informaciï¿½n es por cada Compaï¿½ia. Continuar...?"
+  pub_mensaje = "<Advertencia> El pase de la informaciro n es por cada Compañia. Continuar...?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
       Azul2 txtCampo1, txtCampo1
@@ -7847,12 +7847,12 @@ If chepasa.Value = 1 Then
   End If
   If (cop_llave!cop_fecha_proceso = CDate(wsFECHA1)) And (cop_llave!cop_fecha_proceso2 = CDate(wsFECHA2)) Then
   Else
-    MsgBox "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable . Verificar...", 48, Pub_Titulo
+    MsgBox "Usted. a marcado la opciro n: Pasar la Información al Periodo Contable. " & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable . Verificar...", 48, Pub_Titulo
     Azul2 txtCampo1, txtCampo1
     GoTo CANCELA
   End If
-  If qver_onlyCont = 9 Then ' hay Informaciï¿½n en OnlyCont. Confirmar.
-    pub_mensaje = "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Informaciï¿½n en este Periodo Contable , el Sistema Reemplazazï¿½ la Informaciï¿½n.  " & Chr(13) & Chr(13) & "<Desea Continuar de todas maneras>...?"
+  If qver_onlyCont = 9 Then ' hay Información en OnlyCont. Confirmar.
+    pub_mensaje = "Usted. a marcado la opciro n: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Información en este Periodo Contable , el Sistema Reemplazazro  la Información.  " & Chr(13) & Chr(13) & "<Desea Continuar de todas maneras>...?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
       Azul2 txtCampo1, txtCampo1
@@ -7888,10 +7888,10 @@ Else
 End If
 
 
-pantalla.Enabled = False
+Pantalla.Enabled = False
 cmdCerrar.Enabled = False
 DoEvents
-RCRYSTAL.lblProceso.Caption = "Activando Reporte... un Momento ."
+RCRYSTAL.lblproceso.Caption = "Activando Reporte... un Momento ."
 DoEvents
 pub_cadena = ""
 wpasa_rep = 0
@@ -7918,14 +7918,14 @@ Set llave_rep03 = PS_REP03.OpenResultset(rdOpenKeyset, rdConcurReadOnly)
 OTRO_PASE:
 wpasa_rep = wpasa_rep + 1
 If wpasa_rep = 1 Then
-    If Val(txt_key.Text) <> 0 Then
-      pub_cadena = "SELECT ALL_SECUENCIA, ALL_TIPDOC, ALL_FBG, ALL_NUMGUIA, ALL_TIPO_CAMBIO, ALL_CTAG1, ALL_MONEDA_CCM, ALL_FECHA_CAN, ALL_SIGNO_CCM, ALL_CODBAN, ALL_CODTRA, all_signo_ccm , all_concepto, ALL_CHENUM, CLI_CUENTA_CONTAB,CLI_NOMBRE, ALL_IMPORTE_DOLL,ALL_MONEDA_CLI, ALL_NUMSER, ALL_NUMFAC, ALL_GASTOS, ALL_CODSUNAT, ALL_CODCLIE, ALL_FECHA_DIA, ALL_FECHA_SUNAT, ALL_IMPORTE_AMORT , ALL_IMPORTE ,ALL_BRUTO,ALL_IMPTO, ALL_NUMSER_C, ALL_NUMFAC_C, ALL_CODCIA FROM ALLOG, CLIENTES WHERE (ALL_RUC = CLI_RUC_ESPOSO) AND (ALL_CODCIA = CLI_CODCIA) AND (ALL_CP = CLI_CP) AND (ALL_CODCIA = ? OR ALL_CODCIA = ? OR ALL_CODCIA = ? ) AND (ALL_CODTRA = 2748 OR ALL_CODTRA = 2735 OR ALL_CODTRA = 5714 OR ALL_CODTRA = 2738 ) AND (ALL_FECHA_CAN >= ? AND ALL_FECHA_CAN <= ?) AND (ALL_SIGNO_CCM <> 0 AND ALL_FLAG_EXT <> 'E' AND ALL_CODBAN = " & Trim(txt_key.Text) & ") ORDER BY CLI_CUENTA_CONTAB, ALL_CTAG1 "
+    If Val(Txt_key.Text) <> 0 Then
+      pub_cadena = "SELECT ALL_SECUENCIA, ALL_TIPDOC, ALL_FBG, ALL_NUMGUIA, ALL_TIPO_CAMBIO, ALL_CTAG1, ALL_MONEDA_CCM, ALL_FECHA_CAN, ALL_SIGNO_CCM, ALL_CODBAN, ALL_CODTRA, all_signo_ccm , all_concepto, ALL_CHENUM, CLI_CUENTA_CONTAB,CLI_NOMBRE, ALL_IMPORTE_DOLL,ALL_MONEDA_CLI, ALL_NUMSER, ALL_NUMFAC, ALL_GASTOS, ALL_CODSUNAT, ALL_CODCLIE, ALL_FECHA_DIA, ALL_FECHA_SUNAT, ALL_IMPORTE_AMORT , ALL_IMPORTE ,ALL_BRUTO,ALL_IMPTO, ALL_NUMSER_C, ALL_NUMFAC_C, ALL_CODCIA FROM ALLOG, CLIENTES WHERE (ALL_RUC = CLI_RUC_ESPOSO) AND (ALL_CODCIA = CLI_CODCIA) AND (ALL_CP = CLI_CP) AND (ALL_CODCIA = ? OR ALL_CODCIA = ? OR ALL_CODCIA = ? ) AND (ALL_CODTRA = 2748 OR ALL_CODTRA = 2735 OR ALL_CODTRA = 5714 OR ALL_CODTRA = 2738 ) AND (ALL_FECHA_CAN >= ? AND ALL_FECHA_CAN <= ?) AND (ALL_SIGNO_CCM <> 0 AND ALL_FLAG_EXT <> 'E' AND ALL_CODBAN = " & Trim(Txt_key.Text) & ") ORDER BY CLI_CUENTA_CONTAB, ALL_CTAG1 "
     Else
       pub_cadena = "SELECT ALL_SECUENCIA, ALL_TIPDOC, ALL_FBG, ALL_NUMGUIA, ALL_TIPO_CAMBIO, ALL_CTAG1, ALL_MONEDA_CCM, ALL_FECHA_CAN, ALL_SIGNO_CCM, ALL_CODBAN, ALL_CODTRA, all_signo_ccm , all_concepto, ALL_CHENUM, CLI_CUENTA_CONTAB,CLI_NOMBRE, ALL_IMPORTE_DOLL,ALL_MONEDA_CLI, ALL_NUMSER, ALL_NUMFAC, ALL_GASTOS, ALL_CODSUNAT, ALL_CODCLIE, ALL_FECHA_DIA, ALL_FECHA_SUNAT, ALL_IMPORTE_AMORT , ALL_IMPORTE ,ALL_BRUTO,ALL_IMPTO, ALL_NUMSER_C, ALL_NUMFAC_C, ALL_CODCIA FROM ALLOG, CLIENTES WHERE (ALL_RUC = CLI_RUC_ESPOSO) AND (ALL_CODCIA = CLI_CODCIA) AND (ALL_CP = CLI_CP) AND (ALL_CODCIA = ? OR ALL_CODCIA = ? OR ALL_CODCIA = ?) AND (ALL_FECHA_CAN >= ? AND ALL_FECHA_CAN <= ?) AND (ALL_CODTRA = 2748 OR ALL_CODTRA = 2735 OR ALL_CODTRA = 5714 OR ALL_CODTRA = 2738 ) AND ALL_SIGNO_CCM <> 0 AND ALL_FLAG_EXT <> 'E'  ORDER BY CLI_CUENTA_CONTAB, ALL_CTAG1 "
     End If
 Else
-    If Val(txt_key.Text) <> 0 Then
-      pub_cadena = "SELECT ALL_SECUENCIA, ALL_TIPDOC, ALL_FBG, ALL_NUMGUIA, ALL_TIPO_CAMBIO, ALL_CTAG1, ALL_MONEDA_CCM, ALL_FECHA_CAN, ALL_SIGNO_CCM, ALL_CODBAN, ALL_CODTRA, all_signo_ccm , all_concepto, ALL_CHENUM, CLI_CUENTA_CONTAB,CLI_NOMBRE, ALL_IMPORTE_DOLL,ALL_MONEDA_CLI, ALL_NUMSER, ALL_NUMFAC, ALL_GASTOS, ALL_CODSUNAT, ALL_CODCLIE, ALL_FECHA_DIA, ALL_FECHA_SUNAT, ALL_IMPORTE_AMORT , ALL_IMPORTE ,ALL_BRUTO,ALL_IMPTO, ALL_NUMSER_C, ALL_NUMFAC_C, ALL_CODCIA FROM ALLOG, CLIENTES WHERE (ALL_RUC = CLI_RUC_ESPOSO) AND (ALL_CODCIA = CLI_CODCIA) AND (ALL_CP = CLI_CP) AND (ALL_CODCIA = ? OR ALL_CODCIA = ? OR ALL_CODCIA = ? ) AND (ALL_CODTRA = 2720 OR ALL_CODTRA = 5318) AND (ALL_FECHA_CAN >= ? AND ALL_FECHA_CAN <= ?) AND (ALL_SIGNO_CCM <> 0 AND ALL_FLAG_EXT <> 'E' AND ALL_CODBAN = " & Trim(txt_key.Text) & ") ORDER BY CLI_CUENTA_CONTAB, ALL_CTAG1 "
+    If Val(Txt_key.Text) <> 0 Then
+      pub_cadena = "SELECT ALL_SECUENCIA, ALL_TIPDOC, ALL_FBG, ALL_NUMGUIA, ALL_TIPO_CAMBIO, ALL_CTAG1, ALL_MONEDA_CCM, ALL_FECHA_CAN, ALL_SIGNO_CCM, ALL_CODBAN, ALL_CODTRA, all_signo_ccm , all_concepto, ALL_CHENUM, CLI_CUENTA_CONTAB,CLI_NOMBRE, ALL_IMPORTE_DOLL,ALL_MONEDA_CLI, ALL_NUMSER, ALL_NUMFAC, ALL_GASTOS, ALL_CODSUNAT, ALL_CODCLIE, ALL_FECHA_DIA, ALL_FECHA_SUNAT, ALL_IMPORTE_AMORT , ALL_IMPORTE ,ALL_BRUTO,ALL_IMPTO, ALL_NUMSER_C, ALL_NUMFAC_C, ALL_CODCIA FROM ALLOG, CLIENTES WHERE (ALL_RUC = CLI_RUC_ESPOSO) AND (ALL_CODCIA = CLI_CODCIA) AND (ALL_CP = CLI_CP) AND (ALL_CODCIA = ? OR ALL_CODCIA = ? OR ALL_CODCIA = ? ) AND (ALL_CODTRA = 2720 OR ALL_CODTRA = 5318) AND (ALL_FECHA_CAN >= ? AND ALL_FECHA_CAN <= ?) AND (ALL_SIGNO_CCM <> 0 AND ALL_FLAG_EXT <> 'E' AND ALL_CODBAN = " & Trim(Txt_key.Text) & ") ORDER BY CLI_CUENTA_CONTAB, ALL_CTAG1 "
     Else
       pub_cadena = "SELECT ALL_SECUENCIA, ALL_TIPDOC, ALL_FBG, ALL_NUMGUIA, ALL_TIPO_CAMBIO, ALL_CTAG1, ALL_MONEDA_CCM, ALL_FECHA_CAN, ALL_SIGNO_CCM, ALL_CODBAN, ALL_CODTRA, all_signo_ccm , all_concepto, ALL_CHENUM, CLI_CUENTA_CONTAB,CLI_NOMBRE, ALL_IMPORTE_DOLL,ALL_MONEDA_CLI, ALL_NUMSER, ALL_NUMFAC, ALL_GASTOS, ALL_CODSUNAT, ALL_CODCLIE, ALL_FECHA_DIA, ALL_FECHA_SUNAT, ALL_IMPORTE_AMORT , ALL_IMPORTE ,ALL_BRUTO,ALL_IMPTO, ALL_NUMSER_C, ALL_NUMFAC_C, ALL_CODCIA FROM ALLOG, CLIENTES WHERE (ALL_RUC = CLI_RUC_ESPOSO) AND (ALL_CODCIA = CLI_CODCIA) AND (ALL_CP = CLI_CP) AND (ALL_CODCIA = ? OR ALL_CODCIA = ? OR ALL_CODCIA = ?) AND (ALL_FECHA_CAN >= ? AND ALL_FECHA_CAN <= ?) AND (ALL_CODTRA = 2720 OR ALL_CODTRA = 5318) AND ALL_SIGNO_CCM <> 0 AND ALL_FLAG_EXT <> 'E'  ORDER BY CLI_CUENTA_CONTAB, ALL_CTAG1 "
     End If
@@ -7968,9 +7968,9 @@ End If
 sigue:
 
 DoEvents
-RCRYSTAL.lblProceso.Visible = True
+RCRYSTAL.lblproceso.Visible = True
 RCRYSTAL.ProgBar.Visible = True
-RCRYSTAL.lblProceso.Caption = "Abriendo Microsoft Excel . . . "
+RCRYSTAL.lblproceso.Caption = "Abriendo Microsoft Excel . . . "
 DoEvents
 llave_rep01.Requery
 If llave_rep01.EOF Then
@@ -7991,13 +7991,13 @@ If llave_rep01.EOF Then
   
 End If
 
-RCRYSTAL.lblProceso.Caption = "Procesando Informaciï¿½n. . . "
+RCRYSTAL.lblproceso.Caption = "Procesando Información. . . "
 DoEvents
 RCRYSTAL.ProgBar.Visible = True
 DoEvents
 RCRYSTAL.ProgBar.Min = 0
 RCRYSTAL.ProgBar.Value = 0
-If Not llave_rep01.EOF Then RCRYSTAL.ProgBar.Max = llave_rep01.RowCount
+If Not llave_rep01.EOF Then RCRYSTAL.ProgBar.max = llave_rep01.RowCount
 IMP_MONEDA = ""
 
 wsigno = 1
@@ -8433,13 +8433,13 @@ RCRYSTAL.ProgBar.Value = 0
 RCRYSTAL.ProgBar.Min = 0
 If fin_filas - 1 = 0 Then
 Else
-RCRYSTAL.ProgBar.Max = fin_filas - 1
+RCRYSTAL.ProgBar.max = fin_filas - 1
 End If
 imp_cargo = 0
 imp_abono = 0
 tot_cargo = 0
 tot_abono = 0
-RCRYSTAL.lblProceso.Caption = "Ordenando Informaciï¿½n. . . "
+RCRYSTAL.lblproceso.Caption = "Ordenando Información. . . "
 DoEvents
 Lini = 6
 For f1 = 1 To fin_filas
@@ -8484,7 +8484,7 @@ For f1 = 1 To fin_filas
   imp_cargo = imp_cargo + Val(xlR.Cells(f1, 10))
   
 Next f1
-RCRYSTAL.lblProceso.Caption = "Mostrnado. . . "
+RCRYSTAL.lblproceso.Caption = "Mostrnado. . . "
 DoEvents
 fila = fila + 1
 xl.Cells(fila, 9) = imp_abono
@@ -8502,7 +8502,7 @@ Lfin = fila
 DoEvents
 RCRYSTAL.ProgBar.Min = 0
 RCRYSTAL.ProgBar.Value = 0
-RCRYSTAL.ProgBar.Max = 10
+RCRYSTAL.ProgBar.max = 10
 
 pub_mensaje = "Desea mostrar el Resumen de asiento Contable... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
@@ -8773,7 +8773,7 @@ End If
 
   
 xl.Application.Visible = True
-RCRYSTAL.lblProceso.Caption = "Mostrando Hoja de Calculo  . . . "
+RCRYSTAL.lblproceso.Caption = "Mostrando Hoja de Calculo  . . . "
 'xlR.Application.Worksheets(1).Range(wranF).Sort Key1:=xl.Application.Worksheets(1).Range("E1"), Key2:=xl.Application.Worksheets("Hoja1").Range("F1"), Key3:=xl.Application.Worksheets("Hoja1").Range("G1")
 xlR.DisplayAlerts = False
 xlR.Worksheets(1).Protect PUB_CLAVE
@@ -8781,15 +8781,15 @@ xlR.Workbooks(1).Close
 xl.DisplayAlerts = False
 xl.Worksheets(1).Protect ""
 DoEvents
-RCRYSTAL.lblProceso.Visible = False
+RCRYSTAL.lblproceso.Visible = False
 RCRYSTAL.ProgBar.Visible = False
 Set xl = Nothing
 Set xlR = Nothing
 Screen.MousePointer = 0
-RCRYSTAL.pantalla.Enabled = True
-RCRYSTAL.pantalla.Caption = "Por &Pantalla"
-RCRYSTAL.lblProceso.Visible = False
-pantalla.Enabled = True
+RCRYSTAL.Pantalla.Enabled = True
+RCRYSTAL.Pantalla.Caption = "Por &Pantalla"
+RCRYSTAL.lblproceso.Visible = False
+Pantalla.Enabled = True
 cmdCerrar.Enabled = True
 
 Exit Sub
@@ -8797,11 +8797,11 @@ Exit Sub
 
 
 CANCELA:
-  RCRYSTAL.pantalla.Enabled = True
-  RCRYSTAL.pantalla.Caption = "Por &Pantalla"
-  RCRYSTAL.lblProceso.Visible = False
+  RCRYSTAL.Pantalla.Enabled = True
+  RCRYSTAL.Pantalla.Caption = "Por &Pantalla"
+  RCRYSTAL.lblproceso.Visible = False
   RCRYSTAL.ProgBar.Visible = False
-  pantalla.Enabled = True
+  Pantalla.Enabled = True
   cmdCerrar.Enabled = True
   If xl Is Nothing Then
   Else
@@ -8819,7 +8819,7 @@ Exit Sub
 WEXCEL:
   Dim dd As Excel.Application
   Dim wsfile1
-  lblProceso.Caption = "Abriendo , Archivo REGVENTA.xls . . . "
+  lblproceso.Caption = "Abriendo , Archivo REGVENTA.xls . . . "
   If xl Is Nothing Then
      Set xl = CreateObject("Excel.Application")
   End If
@@ -8907,7 +8907,7 @@ Dim q_sum_calse As Currency
 Dim q_sum_total As Currency
 Dim q_stock As Currency
 wsfile = ""
-pantalla.Enabled = False
+Pantalla.Enabled = False
 DoEvents
 'FrmImp2.lblproceso.Caption = "Activando Reporte... un Momento ."
 DoEvents
@@ -8929,8 +8929,8 @@ xl.Cells(4, 3) = "kardex del : " & txtCampo1.Text & "  Al   " & txtCampo2.Text
 f1 = 5  'Fila Inicial
 PS_REP01(0) = LK_CODCIA
 
-RCRYSTAL.lblProceso.Visible = True
-RCRYSTAL.lblProceso.Caption = "Abriendo Microsoft Excel . . . "
+RCRYSTAL.lblproceso.Visible = True
+RCRYSTAL.lblproceso.Caption = "Abriendo Microsoft Excel . . . "
 CHE_KARDEX = 0
 DoEvents
 wtotal = 0
@@ -8959,22 +8959,22 @@ Do Until llave_rep01.EOF
 
 llave_rep01.MoveNext
 Loop
-  RCRYSTAL.lblProceso.Caption = "Procesando . . .  un Momento ."
+  RCRYSTAL.lblproceso.Caption = "Procesando . . .  un Momento ."
   'xl.Application.Worksheets("HOJA DE COMISIONES x VENDEDOR").Range(wran1).Sort Key1:=xl.Application.Worksheets("HOJA DE COMISIONES x VENDEDOR").Range("O7")
-  RCRYSTAL.lblProceso.Caption = "Mostrando Hoja de Calculo  . . . "
+  RCRYSTAL.lblproceso.Caption = "Mostrando Hoja de Calculo  . . . "
  ' xl.Cells(2, 2) = "INFORME DE COMISIONES x VENDEDOR"
   DoEvents
   xl.DisplayAlerts = False
   xl.Worksheets(1).Protect PUB_CLAVE
   xl.Application.Visible = True
   DoEvents
-  RCRYSTAL.lblProceso.Visible = False
+  RCRYSTAL.lblproceso.Visible = False
   RCRYSTAL.ProgBar.Visible = False
   Set xl = Nothing
     Screen.MousePointer = 0
   ProgBar.Visible = False
-  lblProceso.Visible = False
-  pantalla.Enabled = True
+  lblproceso.Visible = False
+  Pantalla.Enabled = True
   cmdCerrar.Enabled = True
   ''Unload RCRYSTAL
 Exit Sub
@@ -9014,7 +9014,7 @@ WEXCEL:
   If xl Is Nothing Then
     Set xl = CreateObject("Excel.Application")
   End If
-  lblProceso.Caption = "Abriendo , Archivo Comisiones.xls . . . "
+  lblproceso.Caption = "Abriendo , Archivo Comisiones.xls . . . "
   DoEvents
   xl.Workbooks.Open Left(Trim(PUB_RUTA_OTRO), 1) & ":\ADMIN\STANDAR\KARDEX_CLASES.xls", 0, True, 4
 
@@ -9024,11 +9024,11 @@ Return
 
 Exit Sub
 CANCELA:
-  RCRYSTAL.pantalla.Enabled = True
-  RCRYSTAL.pantalla.Caption = "Por &Pantalla"
-  RCRYSTAL.lblProceso.Visible = False
+  RCRYSTAL.Pantalla.Enabled = True
+  RCRYSTAL.Pantalla.Caption = "Por &Pantalla"
+  RCRYSTAL.lblproceso.Visible = False
   RCRYSTAL.ProgBar.Visible = False
-  pantalla.Enabled = True
+  Pantalla.Enabled = True
   If xl Is Nothing Then
   Else
    xl.Application.Visible = True
@@ -9138,7 +9138,7 @@ f1 = 6
 If Not llave_rep01.EOF Then
 RCRYSTAL.ProgBar.Value = 0
 RCRYSTAL.ProgBar.Min = 0
-RCRYSTAL.ProgBar.Max = llave_rep01.RowCount
+RCRYSTAL.ProgBar.max = llave_rep01.RowCount
 RCRYSTAL.ProgBar.Visible = True
 End If
 pu_importe_ini = 0
@@ -9359,7 +9359,7 @@ saleexcel:
 
 
 DoEvents
-RCRYSTAL.lblProceso.Caption = "Mostrando Hoja de Calculo  . . . "
+RCRYSTAL.lblproceso.Caption = "Mostrando Hoja de Calculo  . . . "
 DoEvents
 
 SQ_OPER = 1
@@ -9376,13 +9376,13 @@ xl.Worksheets("Hoja1").Range("A1:X51").Locked = True
 xl.Worksheets("Hoja1").Protect PUB_CLAVE
 xl.Application.Visible = True
 DoEvents
-RCRYSTAL.lblProceso.Visible = False
+RCRYSTAL.lblproceso.Visible = False
 RCRYSTAL.ProgBar.Visible = False
 Set xl = Nothing
 Screen.MousePointer = 0
-RCRYSTAL.pantalla.Enabled = True
-RCRYSTAL.pantalla.Caption = "Por &Pantalla"
-RCRYSTAL.lblProceso.Visible = False
+RCRYSTAL.Pantalla.Enabled = True
+RCRYSTAL.Pantalla.Caption = "Por &Pantalla"
+RCRYSTAL.lblproceso.Visible = False
 
 Exit Sub
 
@@ -9392,7 +9392,7 @@ WEXCEL:
     Set xl = CreateObject("Excel.Application")
   End If
   DoEvents
-  RCRYSTAL.lblProceso.Caption = "Abriendo , Archivo CTACONSOL.xls . . . "
+  RCRYSTAL.lblproceso.Caption = "Abriendo , Archivo CTACONSOL.xls . . . "
   DoEvents
    
   xl.Workbooks.Open PUB_RUTA_OTRO & "CTACONSOL.xls", 0, True, 4, PUB_CLAVE, PUB_CLAVE
@@ -9410,9 +9410,9 @@ Exit Sub
 
 Exit Sub
 CANCELA:
-  RCRYSTAL.pantalla.Enabled = True
-  RCRYSTAL.pantalla.Caption = "Por &Pantalla"
-  RCRYSTAL.lblProceso.Visible = False
+  RCRYSTAL.Pantalla.Enabled = True
+  RCRYSTAL.Pantalla.Caption = "Por &Pantalla"
+  RCRYSTAL.lblproceso.Visible = False
   Set xl = Nothing
   Screen.MousePointer = 0
 Exit Sub
@@ -9426,7 +9426,7 @@ Exit Sub
 
 End Sub
 Public Sub CTA_CONSOLIDADO_RESU()
-pantalla.Enabled = False
+Pantalla.Enabled = False
 Dim ps_rescta As rdoResultset
 Dim wProv_Cargo  As Currency ' PROV. CARGO
 Dim wLiq_Cargo  As Currency ' LIQ. CARGO
@@ -9486,7 +9486,7 @@ f1 = 6
 If Not llave_rep01.EOF Then
     RCRYSTAL.ProgBar.Value = 0
     RCRYSTAL.ProgBar.Min = 0
-    RCRYSTAL.ProgBar.Max = llave_rep01.RowCount
+    RCRYSTAL.ProgBar.max = llave_rep01.RowCount
     RCRYSTAL.ProgBar.Visible = True
 End If
 pub_cadena = "TRUNCATE TABLE RESCTA"
@@ -9552,7 +9552,7 @@ llave_rep01.MoveNext
 Loop
 
 DoEvents
-RCRYSTAL.lblProceso.Caption = "Mostrando Hoja de Calculo  . . . "
+RCRYSTAL.lblproceso.Caption = "Mostrando Hoja de Calculo  . . . "
 DoEvents
 RCRYSTAL.Reportes.Connect = PUB_ODBC
 RCRYSTAL.Reportes.Destination = crptToWindow  '= crptToPrinter
@@ -9580,14 +9580,14 @@ RCRYSTAL.Reportes.Action = 1
 
 
 DoEvents
-RCRYSTAL.lblProceso.Visible = False
+RCRYSTAL.lblproceso.Visible = False
 RCRYSTAL.ProgBar.Visible = False
 
 Screen.MousePointer = 0
-RCRYSTAL.pantalla.Enabled = True
-RCRYSTAL.pantalla.Caption = "Por &Pantalla"
-RCRYSTAL.lblProceso.Visible = False
-pantalla.Enabled = True
+RCRYSTAL.Pantalla.Enabled = True
+RCRYSTAL.Pantalla.Caption = "Por &Pantalla"
+RCRYSTAL.lblproceso.Visible = False
+Pantalla.Enabled = True
 
 Exit Sub
 
@@ -9597,7 +9597,7 @@ WEXCEL:
     Set xl = CreateObject("Excel.Application")
   End If
   DoEvents
-  RCRYSTAL.lblProceso.Caption = "Abriendo , Archivo CTACONSOL.xls . . . "
+  RCRYSTAL.lblproceso.Caption = "Abriendo , Archivo CTACONSOL.xls . . . "
   DoEvents
    
   xl.Workbooks.Open PUB_RUTA_OTRO & "CTACONSOL.xls", 0, True, 4, PUB_CLAVE, PUB_CLAVE
@@ -9615,10 +9615,10 @@ Exit Sub
 
 Exit Sub
 CANCELA:
-  pantalla.Enabled = True
-  RCRYSTAL.pantalla.Enabled = True
-  RCRYSTAL.pantalla.Caption = "Por &Pantalla"
-  RCRYSTAL.lblProceso.Visible = False
+  Pantalla.Enabled = True
+  RCRYSTAL.Pantalla.Enabled = True
+  RCRYSTAL.Pantalla.Caption = "Por &Pantalla"
+  RCRYSTAL.lblproceso.Visible = False
   Set xl = Nothing
   Screen.MousePointer = 0
 Exit Sub
@@ -9641,7 +9641,7 @@ cmblistpv.Tag = ""
 pub_cadena = "SELECT * FROM PARVEN WHERE PVE_CODCIA = '" & LK_CODCIA & "' and PVE_CODVEN = " & ICODVEN & " ORDER BY PVE_FECHA_FIN "
 Set ps_pve = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
 cmblistpv.Clear
-cmblistpv.AddItem "00 - Mostrar Segï¿½n Fechas de Reporte..."
+cmblistpv.AddItem "00 - Mostrar Segro n Fechas de Reporte..."
 If ps_pve.EOF Then
   wult_fecha = LK_FECHA_DIA
 End If
@@ -9851,7 +9851,7 @@ Dim wsFECHA2
 Dim wcta1 As String
 Dim wIMPORTE1 As Currency
 Dim IMP_MONEDA As String * 1
-pantalla.Enabled = False
+Pantalla.Enabled = False
 cmdCerrar.Enabled = False
 If Right(txtCampo1.Text, 2) = "__" Then
      wsFECHA1 = Left(txtCampo1.Text, 8)
@@ -9876,7 +9876,7 @@ If CDate(wsFECHA1) > CDate(wsFECHA2) Then
  GoTo CANCELA
 End If
 If chepasa.Value = 1 Then
-  pub_mensaje = "<Advertencia> El pase de la informaciï¿½n es por cada Compaï¿½ia. Continuar...?"
+  pub_mensaje = "<Advertencia> El pase de la informaciro n es por cada Compañia. Continuar...?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbNo Then
       Azul2 txtCampo1, txtCampo1
@@ -9890,12 +9890,12 @@ If chepasa.Value = 1 Then
   End If
   If (cop_llave!cop_fecha_proceso = CDate(wsFECHA1)) And (cop_llave!cop_fecha_proceso2 = CDate(wsFECHA2)) Then
   Else
-      MsgBox "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
+      MsgBox "Usted. a marcado la opciro n: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Las Fechas ingresadas son distintas a la del Periodo Contable Activo. Verificar...", 48, Pub_Titulo
       Azul2 txtCampo1, txtCampo1
       GoTo CANCELA
   End If
-  If qver_onlyCont = 9 Then ' hay Informaciï¿½n en OnlyCont. Confirmar.
-      pub_mensaje = "Usted. a marcado la opciï¿½n: Pasar la Informaciï¿½n al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< Desea adicionar este Nuevo Asiento de Voucher de todas Maneras >...?"
+  If qver_onlyCont = 9 Then ' hay Información en OnlyCont. Confirmar.
+      pub_mensaje = "Usted. a marcado la opciro n: Pasar la Información al Periodo Contable. " & Chr(13) & Chr(13) & "Existe Voucher en el Periodo Contable Activo. " & Chr(13) & Chr(13) & "< Desea adicionar este Nuevo Asiento de Voucher de todas Maneras >...?"
       Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
       If Pub_Respuesta = vbNo Then
         Azul2 txtCampo1, txtCampo1
@@ -9985,10 +9985,10 @@ End If
 
 
 
-pantalla.Enabled = False
+Pantalla.Enabled = False
 cmdCerrar.Enabled = False
 DoEvents
-RCRYSTAL.lblProceso.Caption = "Activando Reporte... un Momento ."
+RCRYSTAL.lblproceso.Caption = "Activando Reporte... un Momento ."
 DoEvents
 If opcompra(0).Value Then
   pub_cadena = "SELECT ALL_NUM_RECIBO, ALL_FECHA_ANT,ALL_DESCTO,  ALL_CC ,  ALL_IMPORTE_DOLL,ALL_NUMOPER,ALL_NUMOPER2, ALL_TIPMOV, ALL_MONEDA_CLI, ALL_NUMSER, ALL_NUMFAC, ALL_CP, ALL_IMPG2, ALL_IMPG1, ALL_CTAG2 , ALL_CTAG1, ALL_GASTOS, ALL_CODSUNAT, ALL_CODCLIE, ALL_FECHA_DIA, ALL_FECHA_SUNAT , ALL_IMPORTE_AMORT , ALL_IMPORTE ,ALL_BRUTO,ALL_IMPTO, ALL_NUMSER_C, ALL_NUMFAC_C, ALL_CODCIA, ALL_SECUENCIA FROM ALLOG, CLIENTES WHERE (ALL_RUC = CLI_RUC_ESPOSO) AND (ALL_CODCIA = CLI_CODCIA) AND (ALL_CODCIA in (?,?,?,?" & addcia & ")) AND (ALL_TIPMOV = ? OR ALL_TIPMOV = ?  OR  ALL_TIPMOV = ? OR  ALL_TIPMOV = ?) AND ALL_FECHA_PRO >= ? AND ALL_FECHA_PRO <= ? AND ALL_FLAG_EXT <> 'E' AND ALL_CP = 'P' AND CLI_CP = 'P' AND ALL_CODCLIE <> 0 "
@@ -10114,9 +10114,9 @@ Else
   WEMPRESA = Trim(GEN!GEN_NOMBRE) & " " & WEMPRESA
 End If
 DoEvents
-RCRYSTAL.lblProceso.Visible = True
+RCRYSTAL.lblproceso.Visible = True
 RCRYSTAL.ProgBar.Visible = True
-RCRYSTAL.lblProceso.Caption = "Abriendo Microsoft Excel . . . "
+RCRYSTAL.lblproceso.Caption = "Abriendo Microsoft Excel . . . "
 DoEvents
 llave_rep01.Requery
 If llave_rep01.EOF Then
@@ -10128,13 +10128,13 @@ End If
 FILTRO_CTA(1) = "730001"
 FILTRO_CTA(2) = "609001"
 
-RCRYSTAL.lblProceso.Caption = "Procesando . . . "
+RCRYSTAL.lblproceso.Caption = "Procesando . . . "
 DoEvents
 RCRYSTAL.ProgBar.Visible = True
 DoEvents
 RCRYSTAL.ProgBar.Min = 0
 RCRYSTAL.ProgBar.Value = 0
-RCRYSTAL.ProgBar.Max = llave_rep01.RowCount
+RCRYSTAL.ProgBar.max = llave_rep01.RowCount
 IMP_MONEDA = ""
 f1 = 7
 Lini = 8
@@ -10429,7 +10429,7 @@ Lfin = f1
   xl.Range(wranF).Formula = "=SUM(" & wran1 & ":" & wran2 & ")"
   
   
-  RCRYSTAL.lblProceso.Caption = "Mostrando Hoja de Calculo  . . . "
+  RCRYSTAL.lblproceso.Caption = "Mostrando Hoja de Calculo  . . . "
   'XL.Cells(5, 11) = "401001"
   'XL.Cells(5, 12) = "601001"
   'XL.Cells(5, 13) = FILTRO_CTA(1)
@@ -10454,14 +10454,14 @@ Lfin = f1
   xl.Worksheets(1).Protect ""
   xl.Application.Visible = True
   DoEvents
-  RCRYSTAL.lblProceso.Visible = False
+  RCRYSTAL.lblproceso.Visible = False
   RCRYSTAL.ProgBar.Visible = False
   Set xl = Nothing
   Screen.MousePointer = 0
-  RCRYSTAL.pantalla.Enabled = True
-  RCRYSTAL.pantalla.Caption = "Por &Pantalla"
-  RCRYSTAL.lblProceso.Visible = False
-  pantalla.Enabled = True
+  RCRYSTAL.Pantalla.Enabled = True
+  RCRYSTAL.Pantalla.Caption = "Por &Pantalla"
+  RCRYSTAL.lblproceso.Visible = False
+  Pantalla.Enabled = True
   cmdCerrar.Enabled = True
 
 Exit Sub
@@ -10469,11 +10469,11 @@ Exit Sub
 
 
 CANCELA:
-  RCRYSTAL.pantalla.Enabled = True
-  RCRYSTAL.pantalla.Caption = "Por &Pantalla"
-  RCRYSTAL.lblProceso.Visible = False
+  RCRYSTAL.Pantalla.Enabled = True
+  RCRYSTAL.Pantalla.Caption = "Por &Pantalla"
+  RCRYSTAL.lblproceso.Visible = False
   RCRYSTAL.ProgBar.Visible = False
-  pantalla.Enabled = True
+  Pantalla.Enabled = True
   cmdCerrar.Enabled = True
   If xl Is Nothing Then
   Else
@@ -10486,7 +10486,7 @@ Exit Sub
 WEXCEL:
   Dim dd As Excel.Application
   Dim wsfile1
-  lblProceso.Caption = "Abriendo , Archivo REGVENTA.xls . . . "
+  lblproceso.Caption = "Abriendo , Archivo REGVENTA.xls . . . "
   If xl Is Nothing Then
      Set xl = CreateObject("Excel.Application")
   End If
@@ -10506,10 +10506,10 @@ PASAR_CONT:
 Dim ts_codcta As String
 Dim ts_suma As Currency
 DoEvents
-lblProceso.Caption = "Generando Resumen de Asiento Contable... "
+lblproceso.Caption = "Generando Resumen de Asiento Contable... "
 DoEvents
 RCRYSTAL.ProgBar.Min = 0
-RCRYSTAL.ProgBar.Max = 5
+RCRYSTAL.ProgBar.max = 5
 RCRYSTAL.ProgBar.Value = 0
 '---------------------------------------------
 '*** Orden para toda la 42 o 46.. al Haber***
@@ -10760,21 +10760,21 @@ Dim wciu  As String
 Dim wnumfac As String
 Dim s_total_abono As Currency
 Dim s_total_cargo As Currency
-If Val(txt_key.Text) <= 0 Then
+If Val(Txt_key.Text) <= 0 Then
   MsgBox "Ingrese banco para procesar...", 48, Pub_Titulo
-  Azul txt_key, txt_key
+  Azul Txt_key, Txt_key
   Exit Sub
 End If
 SQ_OPER = 1
-PUB_CODBAN = Val(txt_key.Text)
+PUB_CODBAN = Val(Txt_key.Text)
 LEER_CCM_LLAVE
 If ccm_llave.EOF Then
   MsgBox "Banco no procede...", 48, Pub_Titulo
-  Azul txt_key, txt_key
+  Azul Txt_key, Txt_key
   Exit Sub
 End If
 
-pantalla.Enabled = False
+Pantalla.Enabled = False
 cmdCerrar.Enabled = False
 DoEvents
 'FrmImp2.lblproceso.Caption = "Activando Reporte... un Momento ."
@@ -10905,7 +10905,7 @@ PS_REP02(3) = WCIA4
 PS_REP02(4) = WCIA5
 PS_REP02(5) = WCIA6
 PS_REP02(6) = WCIA7
-PS_REP02(7) = Val(txt_key.Text)
+PS_REP02(7) = Val(Txt_key.Text)
 PS_REP02(8) = txtCampo1.Text
 PS_REP02(9) = txtCampo2.Text
 
@@ -10938,11 +10938,11 @@ If llave_rep02.EOF Then
 End If
 RCRYSTAL.ProgBar.Min = 0
 RCRYSTAL.ProgBar.Value = 0
-RCRYSTAL.ProgBar.Max = llave_rep02.RowCount
+RCRYSTAL.ProgBar.max = llave_rep02.RowCount
 RCRYSTAL.ProgBar.Visible = True
 DoEvents
-RCRYSTAL.lblProceso.Visible = True
-RCRYSTAL.lblProceso.Caption = "Procesando Informaciï¿½n. . . "
+RCRYSTAL.lblproceso.Visible = True
+RCRYSTAL.lblproceso.Caption = "Procesando Información. . . "
 DoEvents
 wcheque = Val(llave_rep02!all_chenum)
 f1 = 7
@@ -11156,20 +11156,20 @@ xl.Cells(f1, 8) = "TOTAL GENERAL = "
 xl.Cells(f1, 9) = s_total_abono
 xl.Cells(f1, 10) = s_total_cargo
 
-  RCRYSTAL.lblProceso.Caption = "Procesando . . .  un Momento ."
-  RCRYSTAL.lblProceso.Caption = "Mostrando Hoja de Calculo  . . . "
+  RCRYSTAL.lblproceso.Caption = "Procesando . . .  un Momento ."
+  RCRYSTAL.lblproceso.Caption = "Mostrando Hoja de Calculo  . . . "
   DoEvents
   xl.DisplayAlerts = False
   xl.Worksheets(1).Protect PUB_CLAVE
   xl.Application.Visible = True
   DoEvents
-  RCRYSTAL.lblProceso.Visible = False
+  RCRYSTAL.lblproceso.Visible = False
   RCRYSTAL.ProgBar.Visible = False
   Set xl = Nothing
    Screen.MousePointer = 0
   ProgBar.Visible = False
-  lblProceso.Visible = False
-  pantalla.Enabled = True
+  lblproceso.Visible = False
+  Pantalla.Enabled = True
   cmdCerrar.Enabled = True
 Exit Sub
 
@@ -11179,7 +11179,7 @@ WEXCEL:
   If xl Is Nothing Then
     Set xl = CreateObject("Excel.Application")
   End If
-  lblProceso.Caption = "Abriendo , Archivo bancos.xls . . . "
+  lblproceso.Caption = "Abriendo , Archivo bancos.xls . . . "
   DoEvents
   xl.Workbooks.Open PUB_RUTA_OTRO & "MOVI_BANCO.xls", 0, True, 4
 
@@ -11190,11 +11190,11 @@ Return
 Exit Sub
 CANCELA:
   cmdCerrar.Enabled = True
-  RCRYSTAL.pantalla.Enabled = True
-  RCRYSTAL.pantalla.Caption = "Por &Pantalla"
-  RCRYSTAL.lblProceso.Visible = False
+  RCRYSTAL.Pantalla.Enabled = True
+  RCRYSTAL.Pantalla.Caption = "Por &Pantalla"
+  RCRYSTAL.lblproceso.Visible = False
   RCRYSTAL.ProgBar.Visible = False
-  pantalla.Enabled = True
+  Pantalla.Enabled = True
   If xl Is Nothing Then
   Else
    xl.Application.Visible = True

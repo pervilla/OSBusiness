@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "richtx32.ocx"
+Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Begin VB.Form FORM_COTV 
    BackColor       =   &H00C0C0C0&
@@ -702,7 +702,7 @@ Begin VB.Form FORM_COTV
       Width           =   3480
       _ExtentX        =   6138
       _ExtentY        =   556
-      _Version        =   327682
+      _Version        =   393216
       Appearance      =   0
       Min             =   77
       Max             =   91
@@ -990,7 +990,6 @@ Begin VB.Form FORM_COTV
          _Version        =   393217
          BackColor       =   16776960
          BorderStyle     =   0
-         Enabled         =   -1  'True
          MultiLine       =   0   'False
          TextRTF         =   $"FORM_COTV.frx":0020
       End
@@ -1003,7 +1002,7 @@ Begin VB.Form FORM_COTV
          Width           =   3495
          _ExtentX        =   6165
          _ExtentY        =   450
-         _Version        =   327682
+         _Version        =   393216
          Appearance      =   0
       End
       Begin MSFlexGridLib.MSFlexGrid grid_fac 
@@ -1259,7 +1258,7 @@ WMODO = ""
 cmdIngreso.Caption = "&Ingreso"
 f1.Enabled = False
 ESTADO.Enabled = False
-pb.Visible = False
+PB.Visible = False
 fila = 0
 SUM_D = 0
 SUM_H = 0
@@ -1541,7 +1540,7 @@ moneda.ListIndex = 0
 Exit Sub
 
 error_fatal:
-    pub_mensaje = "Se ha producido un error " & "al abrir la conexi�n:" & Err & " - " & Error & vbCr
+    pub_mensaje = "Se ha producido un error " & "al abrir la conexiro n:" & Err & " - " & Error & vbCr
     For Each er In rdoErrors
         pub_mensaje = pub_mensaje & er.Description & ":" & er.Number & vbCr
         MsgBox pub_mensaje
@@ -1558,7 +1557,7 @@ Exit Sub
 sale:
 If Err.Number = 6 Then
   MsgBox "Verficar Importe.", 48, Pub_Titulo
-  If textovar.Visible Then Azul3 textovar, textovar
+  If TEXTOVAR.Visible Then Azul3 TEXTOVAR, TEXTOVAR
   FORM_COTV.Barra.Visible = False
   Screen.MousePointer = 0
   grid_fac.SetFocus
@@ -1630,7 +1629,7 @@ PUB_CODCIA = LK_CODCIA
 LEER_TAB_LLAVE
 fila = 0
 Do Until tab_mayor.EOF
-PRE_ETIQUETA(fila) = Trim(tab_mayor!tab_nomlargo)
+PRE_ETIQUETA(fila) = Trim(tab_mayor!TAB_NOMLARGO)
 fila = fila + 1
 tab_mayor.MoveNext
 Loop
@@ -1655,7 +1654,7 @@ PUB_TIPREG = 58
 PUB_NUMTAB = 1
 LEER_TAB_LLAVE
 If Not tab_llave.EOF Then
-   st_codcia1 = Mid(tab_llave!tab_nomlargo, 1, 2)
+   st_codcia1 = Mid(tab_llave!TAB_NOMLARGO, 1, 2)
    pub_cadena = "SELECT * FROM TABLAS WHERE TAB_CODCIA = '" & st_codcia1 & "' AND TAB_TIPREG = 58 AND TAB_NUMTAB = 1"
    Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
    PSPAR_MULTI(0) = st_codcia1
@@ -1667,7 +1666,7 @@ If Not tab_llave.EOF Then
    End If
    StockC1 = Trim(X!tab_nomcorto)
    
-   st_codcia2 = Mid(tab_llave!tab_nomlargo, 3, 2)
+   st_codcia2 = Mid(tab_llave!TAB_NOMLARGO, 3, 2)
    pub_cadena = "SELECT * FROM TABLAS WHERE TAB_CODCIA = '" & st_codcia2 & "' AND TAB_TIPREG = 58 AND TAB_NUMTAB = 1"
    Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
    PSPAR_MULTI(0) = st_codcia2
@@ -1679,7 +1678,7 @@ If Not tab_llave.EOF Then
    End If
    StockC2 = Trim(X!tab_nomcorto)
    
-   st_codcia3 = Mid(tab_llave!tab_nomlargo, 5, 2)
+   st_codcia3 = Mid(tab_llave!TAB_NOMLARGO, 5, 2)
    pub_cadena = "SELECT * FROM TABLAS WHERE TAB_CODCIA = '" & st_codcia3 & "' AND TAB_TIPREG = 58 AND TAB_NUMTAB = 1"
    Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
    PSPAR_MULTI(0) = st_codcia3
@@ -1691,7 +1690,7 @@ If Not tab_llave.EOF Then
    End If
    StockC3 = Trim(X!tab_nomcorto)
    
-   st_codcia4 = Mid(tab_llave!tab_nomlargo, 7, 2)
+   st_codcia4 = Mid(tab_llave!TAB_NOMLARGO, 7, 2)
    pub_cadena = "SELECT * FROM TABLAS WHERE TAB_CODCIA = '" & st_codcia4 & "' AND TAB_TIPREG = 58 AND TAB_NUMTAB = 1"
    Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
    PSPAR_MULTI(0) = st_codcia4
@@ -1703,7 +1702,7 @@ If Not tab_llave.EOF Then
    End If
    StockC4 = Trim(X!tab_nomcorto)
    
-   st_codcia5 = Mid(tab_llave!tab_nomlargo, 9, 2)
+   st_codcia5 = Mid(tab_llave!TAB_NOMLARGO, 9, 2)
    pub_cadena = "SELECT * FROM TABLAS WHERE TAB_CODCIA = '" & st_codcia5 & "' AND TAB_TIPREG = 58 AND TAB_NUMTAB = 1"
    Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
    PSPAR_MULTI(0) = st_codcia5
@@ -1712,7 +1711,7 @@ If Not tab_llave.EOF Then
    End If
    StockC5 = Trim(X!tab_nomcorto)
    
-   st_codcia6 = Mid(tab_llave!tab_nomlargo, 11, 2)
+   st_codcia6 = Mid(tab_llave!TAB_NOMLARGO, 11, 2)
    pub_cadena = "SELECT * FROM TABLAS WHERE TAB_CODCIA = '" & st_codcia6 & "' AND TAB_TIPREG = 58 AND TAB_NUMTAB = 1"
    Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
    PSPAR_MULTI(0) = st_codcia6
@@ -1722,7 +1721,7 @@ If Not tab_llave.EOF Then
    StockC6 = Trim(X!tab_nomcorto)
    
    
-   st_codcia7 = Mid(tab_llave!tab_nomlargo, 13, 2)
+   st_codcia7 = Mid(tab_llave!TAB_NOMLARGO, 13, 2)
    pub_cadena = "SELECT * FROM TABLAS WHERE TAB_CODCIA = '" & st_codcia7 & "' AND TAB_TIPREG = 58 AND TAB_NUMTAB = 1"
    Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
    PSPAR_MULTI(0) = st_codcia7
@@ -1757,16 +1756,16 @@ End If
 End Sub
 
 Private Sub grid_fac_EnterCell()
-textovar.Visible = False
-textovar.Text = Trim(grid_fac.TextMatrix(grid_fac.Row, grid_fac.COL))
-textovar.Left = grid_fac.Left + grid_fac.CellLeft
-textovar.Width = grid_fac.CellWidth
-textovar.Height = grid_fac.CellHeight
-textovar.Top = ESTADO.Top + grid_fac.Top + grid_fac.CellTop - 1560 '480
+TEXTOVAR.Visible = False
+TEXTOVAR.Text = Trim(grid_fac.TextMatrix(grid_fac.Row, grid_fac.COL))
+TEXTOVAR.Left = grid_fac.Left + grid_fac.CellLeft
+TEXTOVAR.Width = grid_fac.CellWidth
+TEXTOVAR.Height = grid_fac.CellHeight
+TEXTOVAR.Top = ESTADO.Top + grid_fac.Top + grid_fac.CellTop - 1560 '480
 If grid_fac.COL = 1 Then
  If Trim(grid_fac.TextMatrix(grid_fac.Row, 1)) = "" Then
-  textovar.Visible = True
-  textovar.SetFocus
+  TEXTOVAR.Visible = True
+  TEXTOVAR.SetFocus
  End If
 End If
 If Trim(grid_fac.TextMatrix(grid_fac.Row, 1)) <> "" Then
@@ -1820,7 +1819,7 @@ If grid_fac.COL = 3 Then
     unidad.Visible = True
     wactivo = 0
     Do Until pre_mayor.EOF
-     unidad.AddItem Trim(pre_mayor!pre_unidad) & String(30, " ") & pre_mayor!PRE_SECUENCIA
+     unidad.AddItem Trim(pre_mayor!PRE_UNIDAD) & String(30, " ") & pre_mayor!PRE_SECUENCIA
      If pre_mayor!pre_FLAG_UNIDAD = "A" Then
        wactivo = pre_mayor.AbsolutePosition - 1
      End If
@@ -1870,7 +1869,7 @@ If grid_fac.COL = 4 Then
             If Val(ven_llave!VEM_AM_LISTA) = 1 Then
              PRECIOS.AddItem Left(tab_precioss(1), 7) & "  " & Format(pre_llave!PRE_PRE1, "0.000") & String(20, " ") & "1"
             ElseIf Val(ven_llave!VEM_AM_LISTA) = 2 Then
-             PRECIOS.AddItem Left(tab_precioss(2), 7) & "  " & Format(pre_llave!pre_pre2, "0.000") & String(20, " ") & "2"
+             PRECIOS.AddItem Left(tab_precioss(2), 7) & "  " & Format(pre_llave!PRE_PRE2, "0.000") & String(20, " ") & "2"
             ElseIf Val(ven_llave!VEM_AM_LISTA) = 3 Then
              PRECIOS.AddItem Left(tab_precioss(3), 7) & "  " & Format(pre_llave!PRE_PRE3, "0.000") & String(20, " ") & "3"
             ElseIf Val(ven_llave!VEM_AM_LISTA) = 4 Then
@@ -1905,7 +1904,7 @@ If grid_fac.COL = 4 Then
      End If
           wprecios = pre_mayor!PRE_PRE1
           If Val(wprecios) <> 0 Then PRECIOS.AddItem Left(PRE_ETIQUETA(0), 8) & "= " & wprecios & String(60, " ") & "1"
-          wprecios = pre_mayor!pre_pre2
+          wprecios = pre_mayor!PRE_PRE2
           If Val(wprecios) <> 0 Then PRECIOS.AddItem Left(PRE_ETIQUETA(1), 8) & "= " & wprecios & String(60, " ") & "1"
           wprecios = pre_mayor!PRE_PRE3
           If Val(wprecios) <> 0 Then PRECIOS.AddItem Left(PRE_ETIQUETA(2), 8) & "= " & wprecios & String(60, " ") & "1"
@@ -1974,9 +1973,9 @@ End If
 '    TEXTOVAR.Top = ESTADO.Top + grid_fac.Top + grid_fac.CellTop - 1200 '480
 '    TEXTOVAR.Text = grid_fac.TextMatrix(grid_fac.Row, grid_fac.COL)
 '    wfila_act = grid_fac.Row
-    textovar.Visible = True
-    Azul3 textovar, textovar
-    textovar.SetFocus
+    TEXTOVAR.Visible = True
+    Azul3 TEXTOVAR, TEXTOVAR
+    TEXTOVAR.SetFocus
 Exit Sub
 pasa:
 Resume Next
@@ -2071,7 +2070,7 @@ For fila = 2 To grid_fac.Rows - 1
        LEER_PRE_LLAVE
        If Left(moneda.Text, 1) = "S" Then
           If Val(grid_fac.TextMatrix(fila, 14)) = 1 Then grid_fac.TextMatrix(fila, 13) = Val(pre_llave!PRE_PRE1)
-          If Val(grid_fac.TextMatrix(fila, 14)) = 2 Then grid_fac.TextMatrix(fila, 13) = Val(pre_llave!pre_pre2)
+          If Val(grid_fac.TextMatrix(fila, 14)) = 2 Then grid_fac.TextMatrix(fila, 13) = Val(pre_llave!PRE_PRE2)
           If Val(grid_fac.TextMatrix(fila, 14)) = 3 Then grid_fac.TextMatrix(fila, 13) = Val(pre_llave!PRE_PRE3)
           If Val(grid_fac.TextMatrix(fila, 14)) = 4 Then grid_fac.TextMatrix(fila, 13) = Val(pre_llave!PRE_PRE4)
           If Val(grid_fac.TextMatrix(fila, 14)) = 5 Then grid_fac.TextMatrix(fila, 13) = Val(pre_llave!PRE_PRE5)
@@ -2182,7 +2181,7 @@ grid_fac.Clear
 txtigv.Text = ""
 txtvalorv.Text = ""
 txttotal.Text = ""
-textovar.Visible = False
+TEXTOVAR.Visible = False
 stock.Caption = ""
 unid.Caption = ""
 nomarti.Caption = ""
@@ -2397,10 +2396,10 @@ Private Sub siguiente_Click()
 End Sub
 
 Private Sub textovar_Change()
-If Not textovar.Visible Then Exit Sub
+If Not TEXTOVAR.Visible Then Exit Sub
 If grid_fac.COL = 5 Then
 Exit Sub
- grid_fac.TextMatrix(grid_fac.Row, 4) = redondea(Val(grid_fac.TextMatrix(grid_fac.Row, 13)) * (100 - Val(textovar.Text)) / 100)
+ grid_fac.TextMatrix(grid_fac.Row, 4) = redondea(Val(grid_fac.TextMatrix(grid_fac.Row, 13)) * (100 - Val(TEXTOVAR.Text)) / 100)
 End If
 If grid_fac.COL = 1 Then
     grid_fac.TextMatrix(grid_fac.Row, 0) = ""
@@ -2421,16 +2420,16 @@ If grid_fac.COL = 1 Then
     grid_fac.TextMatrix(grid_fac.Row, 15) = ""
     grid_fac.TextMatrix(grid_fac.Row, 16) = ""
     grid_fac.TextMatrix(grid_fac.Row, 17) = ""
-    grid_fac.Text = textovar.Text
+    grid_fac.Text = TEXTOVAR.Text
     stock.Caption = ""
     unid.Caption = ""
     nomarti.Caption = ""
     suma_grid
 Else
  If grid_fac.COL = 2 Then
-  grid_fac.Text = textovar.Text
+  grid_fac.Text = TEXTOVAR.Text
  Else
-  grid_fac.Text = Format(textovar.Text, "0.00")
+  grid_fac.Text = Format(TEXTOVAR.Text, "0.00")
  End If
  suma_grid
  suma_subtotal
@@ -2471,7 +2470,7 @@ Dim itmFound As Object     ' Variable FoundItem.
 If Not ListView1.Visible Then
  Exit Sub
 End If
-If KeyCode <> 40 And KeyCode <> 38 And KeyCode <> 34 And KeyCode <> 33 And textovar.Text = "" Then
+If KeyCode <> 40 And KeyCode <> 38 And KeyCode <> 34 And KeyCode <> 33 And TEXTOVAR.Text = "" Then
   loc_key = 1
   Set ListView1.SelectedItem = ListView1.ListItems(loc_key)
 '  LISTVIEW1.Visible = False
@@ -2505,9 +2504,9 @@ POSICION:
 '  KeyCode = 0
   ListView1.ListItems.Item(loc_key).Selected = True
   ListView1.ListItems.Item(loc_key).EnsureVisible
-  textovar.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
+  TEXTOVAR.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
   DoEvents
-  textovar.SelStart = Len(textovar.Text)
+  TEXTOVAR.SelStart = Len(TEXTOVAR.Text)
   PUB_KEY = Val(ListView1.ListItems.Item(loc_key).SubItems(1))
   If chelima.Value = 1 Then
   TXTPRE6.Caption = Format(Val(ListView1.ListItems.Item(loc_key).SubItems(11)), "0.00")
@@ -2526,12 +2525,12 @@ End Sub
 Private Sub textovar_KeyPress(KeyAscii As Integer)
 'SOLO_DECIMAL TEXTOVAR, KeyAscii
 If KeyAscii = 27 Then
-  If textovar.Text = "" Then
-    textovar.Visible = False
+  If TEXTOVAR.Text = "" Then
+    TEXTOVAR.Visible = False
     grid_fac.SetFocus
     Exit Sub
   End If
-  textovar.Text = "" ' temporal
+  TEXTOVAR.Text = "" ' temporal
   'TEXTOVAR.Visible = False
   'grid_fac.SetFocus
   ListView1.Visible = False
@@ -2542,19 +2541,19 @@ If grid_fac.COL = 5 And KeyAscii <> 13 Then
     Exit Sub
 End If
 
-If grid_fac.COL = 2 Or grid_fac.COL = 4 Or grid_fac.COL = 5 Then Consistencias grid_fac, textovar, KeyAscii
+If grid_fac.COL = 2 Or grid_fac.COL = 4 Or grid_fac.COL = 5 Then Consistencias grid_fac, TEXTOVAR, KeyAscii
 If KeyAscii <> 13 Then Exit Sub
 If grid_fac.COL = 1 Then
   If (grid_fac.Rows - 1) = Val(txtmax.Text) + 2 Then
     MsgBox "LLego al tipo de Filas .", 48
-    textovar.SetFocus
+    TEXTOVAR.SetFocus
     Exit Sub
   End If
 End If
 
 If grid_fac.COL = 2 Then
  
- textovar.Visible = False
+ TEXTOVAR.Visible = False
  If Val(arm_llave!arm_stock) - Val(grid_fac.TextMatrix(grid_fac.Row, 2)) <= 0 Then
       MsgBox "Stock es :" & Format(arm_llave!arm_stock, "0.00") & "  /  Aplicando la cantidad : " & Format(Val(arm_llave!arm_stock) - Val(grid_fac.TextMatrix(grid_fac.Row, 2)), "0.00"), 48, Pub_Titulo
  End If
@@ -2574,7 +2573,7 @@ If grid_fac.COL = 6 Then
 ' Exit Sub
 End If
 If grid_fac.COL = 5 Then
- textovar.Visible = False
+ TEXTOVAR.Visible = False
  If Trim(grid_fac.TextMatrix(grid_fac.Rows - 1, 1)) <> "" Then
    grid_fac.Rows = grid_fac.Rows + 1
    grid_fac.RowHeight(grid_fac.Rows - 1) = 285
@@ -2585,8 +2584,8 @@ If grid_fac.COL = 5 Then
   End If
  End If
  grid_fac.COL = 1
- textovar.Visible = True
- textovar.SetFocus
+ TEXTOVAR.Visible = True
+ TEXTOVAR.SetFocus
  Exit Sub
 End If
 
@@ -2603,7 +2602,7 @@ car = Chr(KeyAscii)
 KeyAscii = Asc(UCase(car))
 If KeyAscii = 27 Then
  ListView1.Visible = False
- textovar.Text = ""
+ TEXTOVAR.Text = ""
 End If
 If KeyAscii <> 13 Then
    GoTo fin
@@ -2613,32 +2612,32 @@ If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
   PUB_KEY = 0
 Else
  On Error GoTo mucho
- PUB_KEY = Val(textovar.Text)
+ PUB_KEY = Val(TEXTOVAR.Text)
  On Error GoTo 0
- If Len(textovar.Text) = 0 Then
+ If Len(TEXTOVAR.Text) = 0 Then
     Exit Sub
  End If
- If IsNumeric(textovar.Text) = False Then
+ If IsNumeric(TEXTOVAR.Text) = False Then
    PUB_KEY = 0
  End If
 End If
 
 If PUB_KEY <> 0 Then
     SQ_OPER = 1
-    PUB_KEY = textovar.Text
+    PUB_KEY = TEXTOVAR.Text
     pu_codcia = LK_CODCIA
     LEER_ART_LLAVE
     If art_LLAVE.EOF Then
        MsgBox "Codigo NO Existe.", 48, Pub_Titulo
-       Azul3 textovar, textovar
+       Azul3 TEXTOVAR, TEXTOVAR
        GoTo fin
     End If
     If art_LLAVE!art_flag_stock <> "M" Then
        MsgBox "Producto no es Mercaderia.", 48, Pub_Titulo
-       Azul3 textovar, textovar
+       Azul3 TEXTOVAR, TEXTOVAR
        GoTo fin
     End If
-    WCOD_ORIGINAL = art_LLAVE!ART_KEY
+    WCOD_ORIGINAL = art_LLAVE!art_key
     SQ_OPER = 1
     pu_codcia = LK_CODCIA
     PUB_CODART = WCOD_ORIGINAL
@@ -2647,48 +2646,48 @@ If PUB_KEY <> 0 Then
     pu_codcia = LK_CODCIA
     PUB_SECUEN = 0
     LEER_PRE_LLAVE
-    grid_fac.TextMatrix(grid_fac.Row, 16) = pre_llave!pre_unidad
+    grid_fac.TextMatrix(grid_fac.Row, 16) = pre_llave!PRE_UNIDAD
     grid_fac.TextMatrix(grid_fac.Row, 15) = arm_llave!arm_stock
-    grid_fac.TextMatrix(grid_fac.Row, 12) = pre_llave!pre_equiv
+    grid_fac.TextMatrix(grid_fac.Row, 12) = pre_llave!PRE_EQUIV
     grid_fac.TextMatrix(grid_fac.Row, 11) = pre_llave!PRE_SECUENCIA
-    grid_fac.TextMatrix(grid_fac.Row, 0) = art_LLAVE!ART_NOMBRE
-    grid_fac.TextMatrix(grid_fac.Row, 10) = art_LLAVE!ART_KEY
+    grid_fac.TextMatrix(grid_fac.Row, 0) = art_LLAVE!art_nombre
+    grid_fac.TextMatrix(grid_fac.Row, 10) = art_LLAVE!art_key
     grid_fac.TextMatrix(grid_fac.Row, 18) = Nulo_Valor0(arm_llave!ARM_COSPRO)
     grid_fac.TextMatrix(grid_fac.Row, 21) = art_LLAVE!ART_EX_IGV
     
-    grid_fac.TextMatrix(grid_fac.Row, 19) = Jala_StockGen(art_LLAVE!ART_KEY, pre_llave!pre_equiv)
-    grid_fac.TextMatrix(grid_fac.Row, 20) = Format(Nulo_Valor0(arm_llave!ARM_COSPRO) * pre_llave!pre_equiv, "0.000")
+    grid_fac.TextMatrix(grid_fac.Row, 19) = Jala_StockGen(art_LLAVE!art_key, pre_llave!PRE_EQUIV)
+    grid_fac.TextMatrix(grid_fac.Row, 20) = Format(Nulo_Valor0(arm_llave!ARM_COSPRO) * pre_llave!PRE_EQUIV, "0.000")
     
     
     ListView1.Visible = False
-    textovar.Visible = False
+    TEXTOVAR.Visible = False
     grid_fac.COL = 2
     If Trim(grid_fac.Text) <> "" Then
       grid_fac.SetFocus
       Exit Sub
     End If
-    textovar.Visible = True
-    textovar.SetFocus
+    TEXTOVAR.Visible = True
+    TEXTOVAR.SetFocus
     Exit Sub
 Else
-  If ListView1.Visible = False And VAR_ACTIVAR <> 99 And textovar.Text <> "" And LK_FLAG_ORIGINAL <> "A" And LK_FLAG_ALTERNO = "A" Then
+  If ListView1.Visible = False And VAR_ACTIVAR <> 99 And TEXTOVAR.Text <> "" And LK_FLAG_ORIGINAL <> "A" And LK_FLAG_ALTERNO = "A" Then
 IR_ALTERNO:
      SQ_OPER = 3
-     pu_alterno = textovar.Text
+     pu_alterno = TEXTOVAR.Text
      pu_codcia = LK_CODCIA
      LEER_ART_LLAVE
      If art_llave_alt.EOF Then
        MsgBox "Codigo No Existe ...", 48, Pub_Titulo
-       Azul3 textovar, textovar
+       Azul3 TEXTOVAR, TEXTOVAR
        Exit Sub
      End If
      If art_llave_alt!art_flag_stock <> "M" Then
        MsgBox "Producto no es Mercaderia.", 48, Pub_Titulo
-       Azul3 textovar, textovar
+       Azul3 TEXTOVAR, TEXTOVAR
        GoTo fin
      End If
      ListView1.Visible = False
-     WCOD_ORIGINAL = art_llave_alt!ART_KEY
+     WCOD_ORIGINAL = art_llave_alt!art_key
      SQ_OPER = 1
      pu_codcia = LK_CODCIA
      PUB_CODART = WCOD_ORIGINAL
@@ -2697,62 +2696,62 @@ IR_ALTERNO:
      pu_codcia = LK_CODCIA
      PUB_SECUEN = 0
      LEER_PRE_LLAVE
-     grid_fac.TextMatrix(grid_fac.Row, 16) = pre_llave!pre_unidad
+     grid_fac.TextMatrix(grid_fac.Row, 16) = pre_llave!PRE_UNIDAD
      grid_fac.TextMatrix(grid_fac.Row, 15) = arm_llave!arm_stock
-     grid_fac.TextMatrix(grid_fac.Row, 12) = pre_llave!pre_equiv
+     grid_fac.TextMatrix(grid_fac.Row, 12) = pre_llave!PRE_EQUIV
      grid_fac.TextMatrix(grid_fac.Row, 11) = pre_llave!PRE_SECUENCIA
     
-     grid_fac.TextMatrix(grid_fac.Row, 0) = art_llave_alt!ART_NOMBRE
-     grid_fac.TextMatrix(grid_fac.Row, 10) = art_llave_alt!ART_KEY
+     grid_fac.TextMatrix(grid_fac.Row, 0) = art_llave_alt!art_nombre
+     grid_fac.TextMatrix(grid_fac.Row, 10) = art_llave_alt!art_key
      grid_fac.TextMatrix(grid_fac.Row, 18) = Nulo_Valor0(arm_llave!ARM_COSPRO)
-     grid_fac.TextMatrix(grid_fac.Row, 19) = Jala_StockGen(art_LLAVE!ART_KEY, pre_llave!pre_equiv)
-     grid_fac.TextMatrix(grid_fac.Row, 20) = Format(Nulo_Valor0(arm_llave!ARM_COSPRO) * pre_llave!pre_equiv, "0.000")
+     grid_fac.TextMatrix(grid_fac.Row, 19) = Jala_StockGen(art_LLAVE!art_key, pre_llave!PRE_EQUIV)
+     grid_fac.TextMatrix(grid_fac.Row, 20) = Format(Nulo_Valor0(arm_llave!ARM_COSPRO) * pre_llave!PRE_EQUIV, "0.000")
      grid_fac.TextMatrix(grid_fac.Row, 21) = art_LLAVE!ART_EX_IGV
-     textovar.Visible = False
+     TEXTOVAR.Visible = False
      ListView1.Visible = False
      grid_fac.COL = 2
      If Trim(grid_fac.Text) <> "" Then
        grid_fac.SetFocus
        Exit Sub
      End If
-     textovar.Visible = True
-     Azul3 textovar, textovar
+     TEXTOVAR.Visible = True
+     Azul3 TEXTOVAR, TEXTOVAR
      Exit Sub
   Else
     If loc_key > ListView1.ListItems.count Or loc_key = 0 Then
      Exit Sub
     End If
     VALOR = UCase(ListView1.ListItems.Item(loc_key).Text)
-    If Trim(UCase(textovar.Text)) = Left(VALOR, Len(Trim(textovar.Text))) And Len(Trim(textovar.Text)) <> 0 Then
+    If Trim(UCase(TEXTOVAR.Text)) = Left(VALOR, Len(Trim(TEXTOVAR.Text))) And Len(Trim(TEXTOVAR.Text)) <> 0 Then
       If VAR_ACTIVAR = 0 And LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
-        textovar.Text = Trim(ListView1.ListItems.Item(loc_key))
+        TEXTOVAR.Text = Trim(ListView1.ListItems.Item(loc_key))
         GoTo IR_ALTERNO
       End If
       If VAR_ACTIVAR <> 99 Then
-       textovar.Text = Trim(ListView1.ListItems.Item(loc_key).SubItems(1))
+       TEXTOVAR.Text = Trim(ListView1.ListItems.Item(loc_key).SubItems(1))
       Else
-       textovar.Text = Trim(ListView1.ListItems.Item(loc_key))
+       TEXTOVAR.Text = Trim(ListView1.ListItems.Item(loc_key))
       End If
       SQ_OPER = 1
       pu_codcia = LK_CODCIA
       If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
        PUB_KEY = Val(ListView1.ListItems.Item(loc_key).SubItems(1))
       Else
-       PUB_KEY = textovar.Text
+       PUB_KEY = TEXTOVAR.Text
       End If
       LEER_ART_LLAVE
       VAR_ACTIVAR = 0
       If art_LLAVE.EOF Then
         MsgBox "Codigo No Existe ...", 48, Pub_Titulo
-        Azul3 textovar, textovar
+        Azul3 TEXTOVAR, TEXTOVAR
         Exit Sub
       End If
       If art_LLAVE!art_flag_stock <> "M" Then
        MsgBox "Producto no es Mercaderia.", 48, Pub_Titulo
-       Azul3 textovar, textovar
+       Azul3 TEXTOVAR, TEXTOVAR
        GoTo fin
       End If
-      WCOD_ORIGINAL = art_LLAVE!ART_KEY
+      WCOD_ORIGINAL = art_LLAVE!art_key
       SQ_OPER = 1
       pu_codcia = LK_CODCIA
       PUB_CODART = WCOD_ORIGINAL
@@ -2761,24 +2760,24 @@ IR_ALTERNO:
       pu_codcia = LK_CODCIA
       PUB_SECUEN = 0
       LEER_PRE_LLAVE
-      grid_fac.TextMatrix(grid_fac.Row, 16) = pre_llave!pre_unidad
+      grid_fac.TextMatrix(grid_fac.Row, 16) = pre_llave!PRE_UNIDAD
       grid_fac.TextMatrix(grid_fac.Row, 15) = arm_llave!arm_stock
-      grid_fac.TextMatrix(grid_fac.Row, 12) = pre_llave!pre_equiv
+      grid_fac.TextMatrix(grid_fac.Row, 12) = pre_llave!PRE_EQUIV
       grid_fac.TextMatrix(grid_fac.Row, 11) = pre_llave!PRE_SECUENCIA
       ListView1.Visible = False
-      grid_fac.TextMatrix(grid_fac.Row, 0) = art_LLAVE!ART_NOMBRE
-      grid_fac.TextMatrix(grid_fac.Row, 10) = art_LLAVE!ART_KEY
+      grid_fac.TextMatrix(grid_fac.Row, 0) = art_LLAVE!art_nombre
+      grid_fac.TextMatrix(grid_fac.Row, 10) = art_LLAVE!art_key
       grid_fac.TextMatrix(grid_fac.Row, 18) = Nulo_Valor0(arm_llave!ARM_COSPRO)
-      grid_fac.TextMatrix(grid_fac.Row, 19) = Jala_StockGen(art_LLAVE!ART_KEY, pre_llave!pre_equiv)
-      grid_fac.TextMatrix(grid_fac.Row, 20) = Format(Nulo_Valor0(arm_llave!ARM_COSPRO) * pre_llave!pre_equiv, "0.000")
+      grid_fac.TextMatrix(grid_fac.Row, 19) = Jala_StockGen(art_LLAVE!art_key, pre_llave!PRE_EQUIV)
+      grid_fac.TextMatrix(grid_fac.Row, 20) = Format(Nulo_Valor0(arm_llave!ARM_COSPRO) * pre_llave!PRE_EQUIV, "0.000")
       grid_fac.TextMatrix(grid_fac.Row, 21) = art_LLAVE!ART_EX_IGV
       grid_fac.COL = 2
       If Trim(grid_fac.Text) <> "" Then
         grid_fac.SetFocus
         Exit Sub
       End If
-      textovar.Visible = True
-      textovar.SetFocus
+      TEXTOVAR.Visible = True
+      TEXTOVAR.SetFocus
      
       Exit Sub
     Else
@@ -2794,7 +2793,7 @@ mucho:
 Exit Sub
 ERROR_CODIGO:
 MsgBox "Codigo NO Valido .... ", 48, Pub_Titulo
-Azul3 textovar, textovar
+Azul3 TEXTOVAR, TEXTOVAR
   
 
 Exit Sub
@@ -2811,32 +2810,32 @@ Dim var
 SoloconStock = ""
 If KeyCode = 13 Then Exit Sub
 If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
-  If Len(textovar.Text) = 0 Or Trim(textovar.Text) = "" Then
+  If Len(TEXTOVAR.Text) = 0 Or Trim(TEXTOVAR.Text) = "" Then
     ListView1.Visible = False
     Exit Sub
   End If
-  If textovar.Text = "*" And KeyCode = 106 Then
+  If TEXTOVAR.Text = "*" And KeyCode = 106 Then
    VAR_ACTIVAR = 99
    Exit Sub
-  ElseIf textovar.Text = "" Then
+  ElseIf TEXTOVAR.Text = "" Then
    VAR_ACTIVAR = 0
    Exit Sub
   End If
   If VAR_ACTIVAR <> 99 Then
     Exit Sub
   End If
-  If Left(textovar.Text, 1) = "*" Then
-   textovar.Text = Mid(textovar.Text, 2, Len(textovar.Text))
-   textovar.SelStart = Len(textovar.Text)
+  If Left(TEXTOVAR.Text, 1) = "*" Then
+   TEXTOVAR.Text = Mid(TEXTOVAR.Text, 2, Len(TEXTOVAR.Text))
+   TEXTOVAR.SelStart = Len(TEXTOVAR.Text)
   End If
 Else
- If Len(textovar.Text) = 0 Or IsNumeric(textovar.Text) = True Then
+ If Len(TEXTOVAR.Text) = 0 Or IsNumeric(TEXTOVAR.Text) = True Then
    ListView1.Visible = False
    Exit Sub
  End If
 End If
-If ListView1.Visible = False And KeyCode <> 13 Or Len(textovar.Text) = 1 Then
-    var = Asc(textovar.Text)
+If ListView1.Visible = False And KeyCode <> 13 Or Len(TEXTOVAR.Text) = 1 Then
+    var = Asc(TEXTOVAR.Text)
     var = var + 1
     If var = 33 Or var = 91 Then
        var = "ZZZZZZZZ"
@@ -2846,7 +2845,7 @@ If ListView1.Visible = False And KeyCode <> 13 Or Len(textovar.Text) = 1 Then
     If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
       numarchi = 3
       'archi = "SELECT ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, ARM_STOCK FROM ARTI, ARTICULO WHERE (ART_CODCIA = ARM_CODCIA) AND (ART_KEY = ARM_CODART) AND  ART_CODCIA = '" & LK_CODCIA & "' AND ART_CALIDAD = 1 AND ART_FLAG_STOCK = 'M' AND ART_ALTERNO BETWEEN '" & TEXTOVAR.Text & "' AND  '" & var & "' ORDER BY ART_ALTERNO"
-      archi = "SELECT ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, ARM_STOCK ,PRE_EQUIV FROM ARTI, ARTICULO, PRECIOS WHERE (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND (PRE_FLAG_UNIDAD ='A') AND (ART_CODCIA = ARM_CODCIA) AND (ART_KEY = ARM_CODART) AND ART_KEY <> 0 AND ART_KEY  <> 1 and ART_CODCIA = '" & LK_CODCIA & "' AND ART_ALTERNO BETWEEN '" & textovar.Text & "' AND  '" & var & "' ORDER BY ART_ALTERNO"
+      archi = "SELECT ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, ARM_STOCK ,PRE_EQUIV FROM ARTI, ARTICULO, PRECIOS WHERE (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND (PRE_FLAG_UNIDAD ='A') AND (ART_CODCIA = ARM_CODCIA) AND (ART_KEY = ARM_CODART) AND ART_KEY <> 0 AND ART_KEY  <> 1 and ART_CODCIA = '" & LK_CODCIA & "' AND ART_ALTERNO BETWEEN '" & TEXTOVAR.Text & "' AND  '" & var & "' ORDER BY ART_ALTERNO"
     Else
       numarchi = 7
       ' ANTERIOR      archi = "SELECT ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, ARM_STOCK ,PRE_EQUIV, ART_SITUACION FROM ARTI, ARTICULO, PRECIOS WHERE (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND ART_SITUACION <> 1 AND ARM_STOCK <> 0 AND (PRE_FLAG_UNIDAD ='A') AND (ART_CODCIA = ARM_CODCIA) AND (ART_KEY = ARM_CODART) AND ART_KEY <> 0 AND ART_KEY  <> 1 and ART_CODCIA = '" & LK_CODCIA & "' AND ART_NOMBRE BETWEEN '" & TEXTOVAR.Text & "' AND  '" & var & "' ORDER BY ART_NOMBRE"
@@ -2858,11 +2857,11 @@ If ListView1.Visible = False And KeyCode <> 13 Or Len(textovar.Text) = 1 Then
         '   archi = "SELECT TOP 2000  ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, cia_actual.ARM_STOCK as ARM_STOCK , PRE_EQUIV,  PRE_UNIDAD,PRE_PRE1,PRE_PRE2,PRE_PRE3,PRE_PRE4,PRE_PRE5,PRE_PRE6,cia_otra.ARM_STOCK as ARM_STOCK2, cia_SUBALM.ARM_STOCK as ARM_STOCK3, cia_JOLMEDO.ARM_STOCK as ARM_STOCK4 ,ALM_CIA5.ARM_STOCK as ARM_STOCK5, art_marca, ART_NUMERO, ART_ESTADO FROM ARTI, ARTICULO as cia_actual,ARTICULO as cia_otra, ARTICULO as cia_SUBALM, ARTICULO as cia_JOLMEDO, ARTICULO as ALM_CIA5, PRECIOS  WHERE  (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND (PRE_FLAG_UNIDAD = 'A') AND (ART_KEY = cia_actual.ARM_CODART) AND (ART_KEY = cia_otra.ARM_CODART) AND (ART_KEY = cia_SUBALM.ARM_CODART)  AND ART_ORDEN = 1 AND " & _
         '"  (ART_KEY = cia_JOLMEDO.ARM_CODART) AND (ART_KEY = ALM_CIA5.ARM_CODART)  AND ART_SITUACION <> 1 and ART_KEY <> 0 AND ART_CALIDAD = 1  AND ART_CODCIA = '" & LK_CODCIA & "' AND (cia_actual.arm_codcia = '" & st_codcia1 & "') AND (cia_otra.arm_codcia = '" & st_codcia2 & "') AND (cia_SUBALM.arm_codcia = '" & st_codcia3 & "') AND (cia_JOLMEDO.arm_codcia = '" & st_codcia4 & "')  AND (ALM_CIA5.arm_codcia = '" & st_codcia5 & "')  AND ART_NOMBRE BETWEEN '" & TEXTOVAR.Text & "' AND  '" & var & "' " & SoloconStock & " ORDER BY ART_NOMBRE"
          archi = "SELECT TOP 2000 ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, cia_actual.ARM_STOCK as ARM_STOCK , PRE_EQUIV,  PRE_UNIDAD,PRE_PRE1,PRE_PRE2,PRE_PRE3,PRE_PRE4,PRE_PRE5,PRE_PRE6,cia_otra.ARM_STOCK as ARM_STOCK2, cia_SUBALM.ARM_STOCK as ARM_STOCK3, cia_JOLMEDO.ARM_STOCK as ARM_STOCK4 ,ALM_CIA5.ARM_STOCK as ARM_STOCK5,ALM_CIA6.ARM_STOCK as ARM_STOCK6 ,ALM_CIA7.ARM_STOCK as ARM_STOCK7, art_marca, ART_NUMERO, ART_ESTADO , PRE_CANT , PRE_OP1 FROM ARTI, ARTICULO as cia_actual,ARTICULO as cia_otra, ARTICULO as cia_SUBALM, ARTICULO as cia_JOLMEDO, ARTICULO as ALM_CIA5, ARTICULO as ALM_CIA6, ARTICULO as ALM_CIA7, PRECIOS  WHERE  (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND (PRE_FLAG_UNIDAD = 'A') AND (ART_KEY = cia_actual.ARM_CODART) AND (ART_KEY = cia_otra.ARM_CODART) AND (ART_KEY = cia_SUBALM.ARM_CODART)  AND ART_ORDEN = 1  AND " & _
-        "  (ART_KEY = cia_JOLMEDO.ARM_CODART) AND (ART_KEY = ALM_CIA5.ARM_CODART)  AND (ART_KEY = ALM_CIA6.ARM_CODART) AND (ART_KEY = ALM_CIA7.ARM_CODART)  AND ART_SITUACION <> 1 and ART_KEY <> 0 AND ART_CALIDAD = 1  AND ART_CODCIA = '" & LK_CODCIA & "' AND (cia_actual.arm_codcia = '" & st_codcia1 & "') AND (cia_otra.arm_codcia = '" & st_codcia2 & "') AND (cia_SUBALM.arm_codcia = '" & st_codcia3 & "') AND (cia_JOLMEDO.arm_codcia = '" & st_codcia4 & "')  AND (ALM_CIA5.arm_codcia = '" & st_codcia5 & "') AND (ALM_CIA6.arm_codcia = '" & st_codcia6 & "')  AND (ALM_CIA7.arm_codcia = '" & st_codcia7 & "')  AND ART_NOMBRE BETWEEN '" & textovar.Text & "' AND  '" & var & "' " & SoloconStock & " ORDER BY ART_NOMBRE"
+        "  (ART_KEY = cia_JOLMEDO.ARM_CODART) AND (ART_KEY = ALM_CIA5.ARM_CODART)  AND (ART_KEY = ALM_CIA6.ARM_CODART) AND (ART_KEY = ALM_CIA7.ARM_CODART)  AND ART_SITUACION <> 1 and ART_KEY <> 0 AND ART_CALIDAD = 1  AND ART_CODCIA = '" & LK_CODCIA & "' AND (cia_actual.arm_codcia = '" & st_codcia1 & "') AND (cia_otra.arm_codcia = '" & st_codcia2 & "') AND (cia_SUBALM.arm_codcia = '" & st_codcia3 & "') AND (cia_JOLMEDO.arm_codcia = '" & st_codcia4 & "')  AND (ALM_CIA5.arm_codcia = '" & st_codcia5 & "') AND (ALM_CIA6.arm_codcia = '" & st_codcia6 & "')  AND (ALM_CIA7.arm_codcia = '" & st_codcia7 & "')  AND ART_NOMBRE BETWEEN '" & TEXTOVAR.Text & "' AND  '" & var & "' " & SoloconStock & " ORDER BY ART_NOMBRE"
    Else
         SoloconStock = ""
         archi = "SELECT TOP 2000 ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, cia_actual.ARM_STOCK as ARM_STOCK , PRE_EQUIV,  PRE_UNIDAD,PRE_PRE1,PRE_PRE2,PRE_PRE3,PRE_PRE4,PRE_PRE5,PRE_PRE6,cia_otra.ARM_STOCK as ARM_STOCK2, cia_SUBALM.ARM_STOCK as ARM_STOCK3, cia_JOLMEDO.ARM_STOCK as ARM_STOCK4 ,ALM_CIA5.ARM_STOCK as ARM_STOCK5,ALM_CIA6.ARM_STOCK as ARM_STOCK6 ,ALM_CIA7.ARM_STOCK as ARM_STOCK7, art_marca, ART_NUMERO, ART_ESTADO,  PRE_CANT , PRE_OP1  FROM ARTI, ARTICULO as cia_actual,ARTICULO as cia_otra, ARTICULO as cia_SUBALM, ARTICULO as cia_JOLMEDO, ARTICULO as ALM_CIA5, ARTICULO as ALM_CIA6, ARTICULO as ALM_CIA7, PRECIOS  WHERE  (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND (PRE_FLAG_UNIDAD = 'A') AND (ART_KEY = cia_actual.ARM_CODART) AND (ART_KEY = cia_otra.ARM_CODART) AND (ART_KEY = cia_SUBALM.ARM_CODART)  AND " & _
-        "  (ART_KEY = cia_JOLMEDO.ARM_CODART) AND (ART_KEY = ALM_CIA5.ARM_CODART)  AND (ART_KEY = ALM_CIA6.ARM_CODART) AND (ART_KEY = ALM_CIA7.ARM_CODART)  AND ART_SITUACION <> 1 and ART_KEY <> 0 AND ART_CALIDAD = 1  AND ART_CODCIA = '" & LK_CODCIA & "' AND (cia_actual.arm_codcia = '" & st_codcia1 & "') AND (cia_otra.arm_codcia = '" & st_codcia2 & "') AND (cia_SUBALM.arm_codcia = '" & st_codcia3 & "') AND (cia_JOLMEDO.arm_codcia = '" & st_codcia4 & "')  AND (ALM_CIA5.arm_codcia = '" & st_codcia5 & "') AND (ALM_CIA6.arm_codcia = '" & st_codcia6 & "')  AND (ALM_CIA7.arm_codcia = '" & st_codcia7 & "')  AND ART_NOMBRE BETWEEN '" & textovar.Text & "' AND  '" & var & "' " & SoloconStock & " ORDER BY ART_NOMBRE"
+        "  (ART_KEY = cia_JOLMEDO.ARM_CODART) AND (ART_KEY = ALM_CIA5.ARM_CODART)  AND (ART_KEY = ALM_CIA6.ARM_CODART) AND (ART_KEY = ALM_CIA7.ARM_CODART)  AND ART_SITUACION <> 1 and ART_KEY <> 0 AND ART_CALIDAD = 1  AND ART_CODCIA = '" & LK_CODCIA & "' AND (cia_actual.arm_codcia = '" & st_codcia1 & "') AND (cia_otra.arm_codcia = '" & st_codcia2 & "') AND (cia_SUBALM.arm_codcia = '" & st_codcia3 & "') AND (cia_JOLMEDO.arm_codcia = '" & st_codcia4 & "')  AND (ALM_CIA5.arm_codcia = '" & st_codcia5 & "') AND (ALM_CIA6.arm_codcia = '" & st_codcia6 & "')  AND (ALM_CIA7.arm_codcia = '" & st_codcia7 & "')  AND ART_NOMBRE BETWEEN '" & TEXTOVAR.Text & "' AND  '" & var & "' " & SoloconStock & " ORDER BY ART_NOMBRE"
       End If
     End If
     PROC_LISVIEW ListView1, , "2"
@@ -2875,7 +2874,7 @@ End If
 Dim itmFound As Object     ' Variable FoundItem.
 If ListView1.Visible Then
    
-  Set itmFound = ListView1.FindItem(LTrim(textovar.Text), lvwText, , lvwPartial)
+  Set itmFound = ListView1.FindItem(LTrim(TEXTOVAR.Text), lvwText, , lvwPartial)
   If itmFound Is Nothing Then
   Else
    itmFound.EnsureVisible
@@ -2917,7 +2916,7 @@ Dim CONTA As Integer
     cont.Clear
     cont.AddItem " "
     Do Until tab_mayor.EOF
-        cont.AddItem tab_mayor!tab_nomlargo & String(60, " ") & tab_mayor!tab_numtab
+        cont.AddItem tab_mayor!TAB_NOMLARGO & String(60, " ") & tab_mayor!TAB_NUMTAB
         CONTA = CONTA + 1
         tab_mayor.MoveNext
     Loop
@@ -2936,8 +2935,8 @@ If KeyAscii = 13 Then
  grid_fac.Row = 2
  grid_fac.COL = 2
  grid_fac.COL = 1
- textovar.Visible = True
- textovar.SetFocus
+ TEXTOVAR.Visible = True
+ TEXTOVAR.SetFocus
 End If
 Exit Sub
 sale:
@@ -3031,7 +3030,7 @@ If LK_FLAG_PARTES = "A" Then
     wt_equiv = 1
     Do Until pre_mayor.EOF
      If pre_mayor!pre_FLAG_UNIDAD = "A" Then
-        wt_equiv = pre_mayor!pre_equiv
+        wt_equiv = pre_mayor!PRE_EQUIV
      End If
     pre_mayor.MoveNext
     Loop
@@ -3041,10 +3040,10 @@ PUB_KEY = PUB_CODART
 pu_codcia = LK_CODCIA
 LEER_ART_LLAVE
 If Not art_LLAVE.EOF Then
-   If Val(art_LLAVE!ART_MARGEN) <> 0 And (wt_equiv <> Val(pre_llave!pre_equiv)) Then
+   If Val(art_LLAVE!ART_MARGEN) <> 0 And (wt_equiv <> Val(pre_llave!PRE_EQUIV)) Then
       wt_mult = Val(art_LLAVE!ART_MARGEN)
       If wt_mult = 0 Then
-          MsgBox "Sin definici�n de partes minimas", 48, Pub_Titulo
+          MsgBox "Sin definiciro n de partes minimas", 48, Pub_Titulo
           GoTo SINEQUIV
       End If
       wt_res = (Val(grid_fac.TextMatrix(grid_fac.Row, 2)) / wt_mult)
@@ -3067,10 +3066,10 @@ grid_fac.TextMatrix(grid_fac.Row, 3) = Trim(Left(unidad.Text, 12))
 grid_fac.TextMatrix(grid_fac.Row, 4) = "" 'Format(Val(grid_fac.TextMatrix(grid_fac.Row, 11)) / Val(grid_fac.TextMatrix(grid_fac.Row, 17)), "0.00")
 grid_fac.TextMatrix(grid_fac.Row, 7) = redondea(Nulo_Valor0(pre_llave!pre_PESO) * Val(grid_fac.TextMatrix(grid_fac.Row, 2)))
 grid_fac.TextMatrix(grid_fac.Row, 11) = pre_llave!PRE_SECUENCIA
-grid_fac.TextMatrix(grid_fac.Row, 12) = pre_llave!pre_equiv
-grid_fac.TextMatrix(grid_fac.Row, 16) = pre_llave!pre_unidad
-grid_fac.TextMatrix(grid_fac.Row, 19) = Format(Jala_StockGen(pre_llave!PRE_codart, pre_llave!pre_equiv), "0.00")
-grid_fac.TextMatrix(grid_fac.Row, 20) = Format(Nulo_Valor0(grid_fac.TextMatrix(grid_fac.Row, 18)) * pre_llave!pre_equiv, "0.000")
+grid_fac.TextMatrix(grid_fac.Row, 12) = pre_llave!PRE_EQUIV
+grid_fac.TextMatrix(grid_fac.Row, 16) = pre_llave!PRE_UNIDAD
+grid_fac.TextMatrix(grid_fac.Row, 19) = Format(Jala_StockGen(pre_llave!PRE_CODART, pre_llave!PRE_EQUIV), "0.00")
+grid_fac.TextMatrix(grid_fac.Row, 20) = Format(Nulo_Valor0(grid_fac.TextMatrix(grid_fac.Row, 18)) * pre_llave!PRE_EQUIV, "0.000")
 stock.Caption = Format(Val(grid_fac.TextMatrix(grid_fac.Row, 15)) / Val(grid_fac.TextMatrix(grid_fac.Row, 12)), "0.00")
 unid.Caption = grid_fac.TextMatrix(grid_fac.Row, 16)
 nomarti.Caption = grid_fac.TextMatrix(grid_fac.Row, 0)
@@ -3376,7 +3375,7 @@ PSUSU_LLAVE(0) = LK_CODUSU
 usu_llave.Requery
 If Val(usu_llave!usu_codven) <> 0 Then
 If Val(Nulo_Valor0(llave_sum_arti!ped_codven)) <> Val(usu_llave!usu_codven) Then
-    MsgBox "Usted no Tiene Acceso a ver Esta Infomraci�n.", 48, Pub_Titulo
+    MsgBox "Usted no Tiene Acceso a ver Esta Infomraciro n.", 48, Pub_Titulo
     Exit Sub
 End If
 End If
@@ -3414,8 +3413,8 @@ Do Until llave_sum_arti.EOF
    LEER_ART_LLAVE
    grid_fac.Rows = grid_fac.Rows + 1
    grid_fac.RowHeight(grid_fac.Rows - 1) = 285
-   grid_fac.TextMatrix(fila, 1) = art_LLAVE!art_alterno
-   grid_fac.TextMatrix(fila, 0) = art_LLAVE!ART_NOMBRE
+   grid_fac.TextMatrix(fila, 1) = art_LLAVE!ART_alterno
+   grid_fac.TextMatrix(fila, 0) = art_LLAVE!art_nombre
    If LK_EMP = "3AA" Then
      grid_fac.TextMatrix(fila, 11) = 0
      grid_fac.TextMatrix(fila, 14) = 1
@@ -3448,9 +3447,9 @@ tserie.Enabled = False
 txtdoc.Enabled = False
 End Sub
 
-Public Function Jala_StockGen(WS_CODART As Currency, ws_equiv As Currency) As Currency
+Public Function Jala_StockGen(ws_codart As Currency, ws_equiv As Currency) As Currency
 Dim ps_stockg As rdoResultset
-pub_cadena = "SELECT SUM(ARM_STOCK) AS STOCKG FROM ARTICULO WHERE  ARM_CODART = " & WS_CODART & " AND ARM_CODCIA IN ('01','02','04','07','08')"
+pub_cadena = "SELECT SUM(ARM_STOCK) AS STOCKG FROM ARTICULO WHERE  ARM_CODART = " & ws_codart & " AND ARM_CODCIA IN ('01','02','04','07','08')"
 Set ps_stockg = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
 If ps_stockg.EOF Then
   Jala_StockGen = 0
@@ -3462,7 +3461,7 @@ Else
   End If
   SQ_OPER = 1
   pu_codcia = LK_CODCIA
-  PUB_CODART = WS_CODART
+  PUB_CODART = ws_codart
   LEER_ARM_LLAVE
   If arm_llave.EOF Then
     lblcosprog.Caption = 0

@@ -29,7 +29,7 @@ Begin VB.Form frmBancos
       LabelEdit       =   1
       LabelWrap       =   -1  'True
       HideSelection   =   0   'False
-      _Version        =   327682
+      _Version        =   393217
       ForeColor       =   128
       BackColor       =   14737632
       Appearance      =   1
@@ -129,7 +129,7 @@ Begin VB.Form frmBancos
       Width           =   1300
    End
    Begin VB.CommandButton CmdModificar 
-      Caption         =   "&Modificaciï¿½n"
+      Caption         =   "&Modificación"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -290,7 +290,7 @@ Begin VB.Form frmBancos
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   238
-         _Version        =   327682
+         _Version        =   393216
          Appearance      =   0
       End
       Begin VB.CommandButton cmdcontab 
@@ -561,7 +561,7 @@ Begin VB.Form frmBancos
          Width           =   6495
       End
       Begin VB.Label Label1 
-         Caption         =   "Descripciï¿½n :"
+         Caption         =   "Descripción :"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -770,7 +770,7 @@ grid1.ColWidth(1) = 3000
 grid1.ColWidth(2) = 1
 grid1.Row = 0
 grid1.COL = 1
-grid1.Text = " Descripciï¿½n "
+grid1.Text = " Descripción "
 grid1.ColAlignment(1) = 2
 End Sub
 
@@ -1006,7 +1006,7 @@ Private Sub cmdAgregar_Click()
 'On Error GoTo ESCAPA
 If Left(cmdAgregar.Caption, 2) = "&A" Then
     cmdAgregar.Caption = "&Grabar"
-    cmdCancelar.Enabled = True
+    cmdcancelar.Enabled = True
     CmdModificar.Enabled = False
     cmdEliminar.Enabled = False
     LIMPIA_BAN
@@ -1030,7 +1030,7 @@ If Left(cmdAgregar.Caption, 2) = "&A" Then
     'AGREGAMOS EN BLANCO
 Else
    If frmBancos.TXTBAN(2).Text = "" Or Len(frmBancos.TXTBAN(2).Text) = 0 Then
-       MsgBox "Ingrese Descripciï¿½n de Banco ..!!!", 48, Pub_Titulo
+       MsgBox "Ingrese Descripción de Banco ..!!!", 48, Pub_Titulo
        Azul TXTBAN(2), TXTBAN(2)
        Exit Sub
    End If
@@ -1093,7 +1093,7 @@ End If
 
 End Sub
 
-Private Sub CmdCancelar_Click()
+Private Sub cmdcancelar_Click()
 If Left(cmdAgregar.Caption, 2) = "&A" And Left(CmdModificar.Caption, 2) = "&M" Then
     LIMPIA_BAN
     Txt_key.Locked = False
@@ -1148,7 +1148,7 @@ LK_TABLA = "BANCO"
 wgrupo = "10"
 archi = "SELECT * FROM COMAEST WHERE COM_CODCIA = ? AND COM_CUENTA >= '" & wgrupo & "' AND COM_CUENTA < '" & Trim(Str(Val(wgrupo) + 1)) & "'  ORDER BY COM_CUENTA"
 If Left(cmdcontab.Caption, 2) = "&Q" Then
-    pub_mensaje = "Confirmar la eliminaciï¿½n de la Cuenta : " & Trim(TXTBAN(4).Text) & " , Continuar ?"
+    pub_mensaje = "Confirmar la eliminaciro n de la Cuenta : " & Trim(TXTBAN(4).Text) & " , Continuar ?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
        Exit Sub
@@ -1225,9 +1225,9 @@ End If
      Exit Sub
   End If
   Screen.MousePointer = 0
-  pub_mensaje = " ï¿½Desea Eliminar el Registro... ?"
+  pub_mensaje = " ¿Desea Eliminar el Registro... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
+  If Pub_Respuesta = vbYes Then   ' El usuario eligiro
     Screen.MousePointer = 11
     ccm_llave.Delete
     frmBancos.Txt_key.Text = ""
@@ -1241,7 +1241,7 @@ End If
 Exit Sub
 sale:
     MsgBox Err.Number & "  " & Err.Description & "  Intente Nuevamente."
-    CmdCancelar_Click
+    cmdcancelar_Click
     Screen.MousePointer = 0
 
 End Sub
@@ -1268,7 +1268,7 @@ If Left(CmdModificar.Caption, 2) = "&M" Then
     CmdModificar.Caption = "&Grabar"
     cmdAgregar.Enabled = False
     cmdEliminar.Enabled = False
-    cmdCancelar.Enabled = True
+    cmdcancelar.Enabled = True
     Txt_key.Locked = True
     TXTBAN(2).Enabled = True
     TXTBAN(4).Enabled = True
@@ -1391,9 +1391,9 @@ End Sub
 
 Private Sub ListExiste_KeyPress(KeyAscii As Integer)
 If KeyAscii = 27 Then
-  pub_mensaje = " ï¿½Desea aun Grabar estos datos de  Bancos ... ? "
+  pub_mensaje = " ¿Desea aun Grabar estos datos de  Bancos ... ? "
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
+  If Pub_Respuesta = vbYes Then   ' El usuario eligiro
      pasa = True
      frmBancos.ListExiste.Visible = False
      cmdAgregar_Click
@@ -1413,9 +1413,9 @@ Private Sub ListExiste_LostFocus()
 If frmBancos.ListExiste.Visible = False Then
      Exit Sub
 End If
-  pub_mensaje = " ï¿½Desea aun Grabar estos datos de  Bancos ... ? "
+  pub_mensaje = " ¿Desea aun Grabar estos datos de  Bancos ... ? "
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
-  If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
+  If Pub_Respuesta = vbYes Then   ' El usuario eligiro
      pasa = True
      cmdAgregar_Click
      KeyAscii = 0
@@ -1574,7 +1574,7 @@ If pu_codclie <> 0 And IsNumeric(Txt_key.Text) = True Then
     End If
     LLENA_BAN 1
     frmBancos.Txt_key.Locked = True
-    cmdCancelar.Enabled = True
+    cmdcancelar.Enabled = True
     CmdModificar.SetFocus
     If Trim(TXTBAN(4).Text) <> "" Then
      SQ_OPER = 1
@@ -1599,7 +1599,7 @@ Else
       Exit Sub
    End If
    ListView1.Visible = False
-   cmdCancelar.Enabled = True
+   cmdcancelar.Enabled = True
    LLENA_BAN 0
    If Trim(TXTBAN(4).Text) <> "" Then
      SQ_OPER = 1
@@ -1615,7 +1615,7 @@ Else
    End If
 
    frmBancos.Txt_key.Locked = True
-   cmdCancelar.Enabled = True
+   cmdcancelar.Enabled = True
    frmBancos.CmdModificar.SetFocus
 End If
 dale:
@@ -1743,7 +1743,7 @@ If KeyAscii = 13 And Index = 0 Then
         End If
         LLENA_BAN 1
         frmBancos.Txt_key.Locked = True
-        cmdCancelar.Enabled = True
+        cmdcancelar.Enabled = True
         CmdModificar.SetFocus
    End If
 End If
@@ -1761,7 +1761,7 @@ If Trim(frmBancos.TXTBAN(4).Text) <> "" Then
       'LEER_COM_LLAVE
       'If Not com_llave.EOF Then
        '' If Trim(com_llave!com_descripcion) <> Trim(TXTBAN(2).text) Then
-       '    pub_mensaje = "Desea tambien la Descripciï¿½n de la Cta. Contable. ?"
+       '    pub_mensaje = "Desea tambien la Descripción de la Cta. Contable. ?"
        '    Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
        '    If Pub_Respuesta = vbYes Then
        '         com_llave.Edit

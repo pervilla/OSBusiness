@@ -1,4 +1,4 @@
-Attribute VB_Name = "Mï¿½dulo3"
+Attribute VB_Name = "Módulo3"
 Option Explicit
 Public marca_doc_electronico  As String * 1
 Public tipdoc_ref_electronico  As String * 1
@@ -246,8 +246,8 @@ Public ws_pub_mensaje As String
 Public NL As String
 Public fila As Integer
 Public WStop As Boolean
-Declare Function SetWindowPos Lib "User32" (ByVal h&, ByVal hb&, ByVal X&, ByVal Y&, ByVal cx&, ByVal cy&, ByVal F&) As Long
-Declare Function FindWindow Lib "User32" (ByVal lpClassName As Any, ByVal lpWindowName As Any) As Long
+Declare Function SetWindowPos Lib "user32" (ByVal h&, ByVal hb&, ByVal X&, ByVal Y&, ByVal cx&, ByVal cy&, ByVal F&) As Long
+Declare Function FindWindow Lib "user32" (ByVal lpClassName As Any, ByVal lpWindowName As Any) As Long
 Declare Function PlaySound Lib "winmm.dll" Alias "PlaySoundA" (ByVal lpszName As String, ByVal hModule As Long, ByVal dwFlags As Long) As Long
 Public Const FLAGS = 1 Or 2
 Public Const HWND_TOPMOST = -1
@@ -671,25 +671,25 @@ LV1.Left = 2000
 'LV1.Visible = True
 If numarchi = 3 Then ' para codigos alternos
  LV1.ColumnHeaders.Add 1, , "Alterno", 900
- LV1.ColumnHeaders.Add 2, , "Descripciï¿½n", 4000
+ LV1.ColumnHeaders.Add 2, , "Descripción", 4000
  LV1.ColumnHeaders.Add 3, , "Original", 0
  ''If LK_EMP = "3AA" Then LV1.ColumnHeaders.Add 4, , "Stock", 1000
  LV1.ColumnHeaders.Add 4, , "Stock", 1000
 ElseIf numarchi = 1 Then
- LV1.ColumnHeaders.Add 1, , "Descripciï¿½n", 3800
+ LV1.ColumnHeaders.Add 1, , "Descripción", 3800
  LV1.Width = 11500
  LV1.Left = 300
  LV1.ColumnHeaders.Add 2, , "Cod.", 600
- LV1.ColumnHeaders.Add 3, , "Direcciï¿½n", 3800
+ LV1.ColumnHeaders.Add 3, , "Dirección", 3800
  LV1.ColumnHeaders.Add 4, , "Zona", 1500
 ElseIf numarchi = 0 Then
- LV1.ColumnHeaders.Add 1, , "Descripciï¿½n", 4200
+ LV1.ColumnHeaders.Add 1, , "Descripción", 4200
  LV1.ColumnHeaders.Add 2, , "Cod.", 0
  LV1.ColumnHeaders.Add 3, , "Stock", 1000
  LV1.ColumnHeaders.Add 4, , "Sub-Codigo", 1000
  LV1.ColumnHeaders.Add 5, , "DesAct.", 400
 ElseIf numarchi = 7 Then
- LV1.ColumnHeaders.Add 1, , "Descripciï¿½n", 4450
+ LV1.ColumnHeaders.Add 1, , "Descripción", 4450
  LV1.ColumnHeaders.Add 2, , "Cod.", 0
  LV1.ColumnHeaders.Add 3, , "Und.", 760
  LV1.ColumnHeaders.Add 4, , "Stock", 955, lvwColumnRight
@@ -755,7 +755,7 @@ ElseIf numarchi = 7 Then
  LV1.Left = 100 ' 1500
  LV1.Width = 11800 ' 10200
 Else
- LV1.ColumnHeaders.Add 1, , "Descripciï¿½n", 4200
+ LV1.ColumnHeaders.Add 1, , "Descripción", 4200
  LV1.ColumnHeaders.Add 2, , "Cod.", 1000
 End If
 Do Until X.EOF  ' Or X.AbsolutePosition - 1 >= wmaximo
@@ -860,7 +860,7 @@ SQ_OPER = 1
 PUB_CODCIA = LK_CODCIA
 LEER_PAR_LLAVE
 If par_llave.EOF Then
-  MsgBox "NO Existe Compaï¿½ia Avisar !!!! Posible Error .. Intente Nuevamente ....", 48, Pub_Titulo
+  MsgBox "NO Existe Compañia Avisar !!!! Posible Error .. Intente Nuevamente ....", 48, Pub_Titulo
   End
   Exit Sub
 End If
@@ -898,14 +898,14 @@ End If
 
 LK_EMP = Nulo_Valors(par_llave!PAR_EMPRESA)
 LK_MONEDA = Nulo_Valors(par_llave!PAR_MONEDA_FAC)
-If Trim(LK_MONEDA) = "" Then MsgBox "DEFINIR LA MONEDA DE COMPAï¿½IA", 48, Pub_Titulo
+If Trim(LK_MONEDA) = "" Then MsgBox "DEFINIR LA MONEDA DE COMPAñIA", 48, Pub_Titulo
 LK_FLAG_FACTURACION = Nulo_Valors(par_llave!PAR_FLAG_FACTURACION)
 LK_FLAG_CALCULO = Nulo_Valors(par_llave!PAR_FLAG_CALCULO)
 LK_FLAG_EXED = Nulo_Valors(par_llave!PAR_FLAG_EXED)
-LK_RUTA_DOC = Trim(Nulo_Valors(par_llave!PAR_RUTA_REPO)) '"P:\ADMIN\NORDI\DISTRI\" PEï¿½AMEZA
+LK_RUTA_DOC = Trim(Nulo_Valors(par_llave!PAR_RUTA_REPO)) '"P:\ADMIN\NORDI\DISTRI\" PEro AMEZA
 LK_FLAG_SERIES = "A"
 If IsNull(par_llave!PAR_FECHA_DIA) Then
-  MsgBox "URGENTE!!!. Esta Compaï¿½ia No Tiene Definida la Fecha de Trabajo. Verificar!!!", 48, Pub_Titulo
+  MsgBox "URGENTE!!!. Esta Compañia No Tiene Definida la Fecha de Trabajo. Verificar!!!", 48, Pub_Titulo
   MDIForm1.gfecha.Caption = " V A C I O "
   LK_FECHA_DIA = #1/1/1900#
 Else
@@ -1543,7 +1543,7 @@ PUB_CODCIA = LK_CODCIA
 PUB_CODVEN = Val(FORMGEN.i_codven.Text)
 LEER_PAR_LLAVE
 If pac_llave.EOF Then
-'   MsgBox "No se ha definido archivos de Impresiï¿½n", 48, Pub_Titulo
+'   MsgBox "No se ha definido archivos de Impresión", 48, Pub_Titulo
 '   Exit Function
 End If
 
@@ -1654,7 +1654,7 @@ pasa_todo:
       ' If LK_CODTRA = 2401 And Val(FORMGEN.i_numguia.Text) > 0 Then
        '  FORMGEN.Reportes.WindowTitle = "GUIA DE VENTA  " & FORMGEN.Reportes.WindowTitle
        '  FORMGEN.Reportes.ReportFileName = wRuta & "FACGUIA.RPT"
-       '  pub_mensaje = "Ahora Desea Imprimir la " & Trim(FORMGEN.Reportes.WindowTitle) & "   ï¿½ Continuar... ?"
+       '  pub_mensaje = "Ahora Desea Imprimir la " & Trim(FORMGEN.Reportes.WindowTitle) & "   ro  Continuar... ?"
        '  Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
        '  If Pub_Respuesta = vbYes Then
        '    FORMGEN.Reportes.SelectionFormula = pub_cadena
@@ -1671,7 +1671,7 @@ accion:
 On Error GoTo err_final
 'MsgBox Err.Number & Err.Description
  
- MsgBox "Se produjo un conflicto Nro:" & Err.Number & Chr(13) & "El Sistema Intentarï¿½ mostrar la impresiï¿½n por pantalla", vbInformation, Pub_Titulo
+ MsgBox "Se produjo un conflicto Nro:" & Err.Number & Chr(13) & "El Sistema Intentarro  mostrar la impresiro n por pantalla", vbInformation, Pub_Titulo
  'MsgBox "Intente Nuevamente, la impresion de Modo manual", 48, Pub_Titulo
  If Trim(Nulo_Valors(llave_rep01!REP_IMP)) <> "A" Then
  Else
@@ -1876,7 +1876,7 @@ LV1.Width = 6500
 LV1.Height = 3200
 LV1.Visible = True
 If numarchi = 99 Then ' para codigos alternos
- LV1.ColumnHeaders.Add 1, , "Descripciï¿½n", 4000
+ LV1.ColumnHeaders.Add 1, , "Descripción", 4000
  LV1.ColumnHeaders.Add 2, , "Cod.", 400
 End If
 Do Until X.EOF Or X.AbsolutePosition - 1 >= wmaximo
@@ -2048,7 +2048,7 @@ ElseIf par_MOV_TIPMOV = 2 Then
  par_MOV_DETALLE = "Por las Ventas del periodo"
  par_MOV_PLANTILLA = 1
 ElseIf par_MOV_TIPMOV = 3 Then
- par_MOV_DETALLE = "Resï¿½men Egresos caja "
+ par_MOV_DETALLE = "Resúmen Egresos caja "
  par_MOV_PLANTILLA = 126
 ElseIf par_MOV_TIPMOV = 4 Then
  par_MOV_DETALLE = "Por los Asientos varios "
@@ -2076,7 +2076,7 @@ Do Until FLAGX = "A"
      If UCase(Left(Trim(EE.Cells(correla, 1)), 5)) = "TOTAL" And Val(EE.Cells(correla + 1, 1)) <> 0 Then
         par_MOV_NRO_MOV = 0
         par_MOV_NRO_VOUCHER = par_MOV_NRO_VOUCHER + 1
-        par_MOV_DETALLE = "Resï¿½men Ingresos de Caja "
+        par_MOV_DETALLE = "Resúmen Ingresos de Caja "
         par_MOV_PLANTILLA = 100
         correla = correla + 1
       Else
@@ -2179,7 +2179,7 @@ Else
 End If
 PRODIA.ProgBar.Visible = True
 ' ch_llave
-If Not ch_llave.EOF Then PRODIA.ProgBar.Max = ch_llave.RowCount
+If Not ch_llave.EOF Then PRODIA.ProgBar.max = ch_llave.RowCount
 PRODIA.ProgBar.Min = 0
 PRODIA.ProgBar.Value = 0
 PRODIA.POR(2).Caption = "Liquidando Cheques Pendientes..."
@@ -2198,7 +2198,7 @@ Do Until ch_llave.EOF
       PSFA_LLAVE(5) = wFAC
       fa_llave.Requery
       If fa_llave.EOF Then
-        MsgBox "Cheque no Aplicado a ningun Documento " & Chr(13) & " OJO  - A N O T A R :" & Chr(13) & "Nï¿½.Ch/: " & ch_llave!car_num_cheque & Chr(13) & "Nï¿½ Documento : " & Trim(ch_llave!car_concepto) & Chr(13) & "Importe : " & Format(ch_llave!car_importe, "##,##0.00"), 48, Pub_Titulo
+        MsgBox "Cheque no Aplicado a ningun Documento " & Chr(13) & " OJO  - A N O T A R :" & Chr(13) & "Nro .Ch/: " & ch_llave!car_num_cheque & Chr(13) & "Nro  Documento : " & Trim(ch_llave!car_concepto) & Chr(13) & "Importe : " & Format(ch_llave!car_importe, "##,##0.00"), 48, Pub_Titulo
         GoTo bien
       End If
       PUB_SERDOC = fa_llave!car_serdoc
@@ -2367,7 +2367,7 @@ If Not IsMissing(IDFlag) Then
     pub_cadena = "SELECT SUM(CAR_IMPORTE) AS TOTAL FROM CARTERA WHERE CAR_CODCIA IN " & wsp_codcia & " AND CAR_CP = '" & wcp & "' AND CAR_FECHA_VCTO = '" & Format(wfechavcto, "dd/mm/yyyy") & "' AND CAR_IMPORTE <> 0 AND CAR_TIPDOC IN  ('LE','LR') "
     Set ps_lelr = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
     If Not ps_lelr.EOF Then
-      DeudaDia = Nulo_Valor0(ps_lelr!Total)
+      DeudaDia = Nulo_Valor0(ps_lelr!total)
     End If
 Else
     If LK_CODCIA = "25" Or LK_CODCIA = "27" Or LK_CODCIA = "28" Or LK_CODCIA = "29" Then
@@ -2379,13 +2379,13 @@ Else
     pub_cadena = "SELECT SUM(CAR_IMPORTE) AS TOTAL FROM CARTERA WHERE CAR_CODCIA IN " & wsp_codcia & " AND CAR_CP = '" & wcp & "' AND CAR_FECHA_VCTO = '" & Format(wfechavcto, "dd/mm/yyyy") & "' AND CAR_IMPORTE <> 0 AND CAR_TIPDOC IN ('LE','LR')"
     Set ps_lelr = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
     If Not ps_lelr.EOF Then
-      DeudaDia = Nulo_Valor0(ps_lelr!Total)
+      DeudaDia = Nulo_Valor0(ps_lelr!total)
     End If
     pub_cadena = "SELECT SUM(ALL_IMPORTE_AMORT) AS total FROM ALLOG WHERE ALL_CODCIA IN " & wsp_codcia & " AND ALL_FECHA_VCTO = '" & Format(wfechavcto, "dd/mm/yyyy") & "'  AND ALL_CODTRA = 2760 AND ALL_FLAG_EXT <> 'E'"
     'pub_cadena = "SELECT SUM(CAR_IMPORTE) AS TOTAL FROM CARTERA WHERE CAR_CODCIA IN " & wsp_codcia & " AND CAR_CP = '" & wcp & "' AND CAR_FECHA_VCTO = '" & Format(wfechavcto, "dd/mm/yyyy") & "' AND CAR_IMPORTE <> 0 AND CAR_TIPDOC IN ('LE','LR')"
     Set ps_lelr = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
     If Not ps_lelr.EOF Then
-      DeudaDia = DeudaDia + Nulo_Valor0(ps_lelr!Total)
+      DeudaDia = DeudaDia + Nulo_Valor0(ps_lelr!total)
     End If
     
     
@@ -2422,9 +2422,9 @@ Loop
 
 End Function
 
-Public Function StockGenAlm(WS_CODART As Currency, ws_equiv As Currency) As Currency
+Public Function StockGenAlm(ws_codart As Currency, ws_equiv As Currency) As Currency
 Dim ps_stockg As rdoResultset
-pub_cadena = "SELECT SUM(ARM_STOCK) AS STOCKG FROM ARTICULO WHERE  ARM_CODART = " & WS_CODART & " AND ARM_CODCIA IN ('01','02','04','08')"
+pub_cadena = "SELECT SUM(ARM_STOCK) AS STOCKG FROM ARTICULO WHERE  ARM_CODART = " & ws_codart & " AND ARM_CODCIA IN ('01','02','04','08')"
 Set ps_stockg = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
 If ps_stockg.EOF Then
   StockGenAlm = 0

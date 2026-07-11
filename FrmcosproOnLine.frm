@@ -36,7 +36,7 @@ Begin VB.Form FrmcosproOnLine
       Width           =   4335
       _ExtentX        =   7646
       _ExtentY        =   344
-      _Version        =   327682
+      _Version        =   393216
       Appearance      =   1
    End
    Begin MSComctlLib.ProgressBar P2 
@@ -48,7 +48,7 @@ Begin VB.Form FrmcosproOnLine
       Width           =   4335
       _ExtentX        =   7646
       _ExtentY        =   344
-      _Version        =   327682
+      _Version        =   393216
       Appearance      =   1
    End
    Begin VB.Label lblm 
@@ -139,7 +139,7 @@ Dim wol_codcia As String
 Dim wfechE As Date
 wfechE = Format(ol_fecha.Caption, "dd/mm/yyyy")
 If LK_CODCIA = "09" Or LK_CODCIA = "30" Or LK_CODCIA = "50" Then
-   'Costeo_Chepen ' solo p�ra la botica chepen
+   'Costeo_Chepen ' solo pro ra la botica chepen
    wol_codcia = "('" & LK_CODCIA & "')"
 ElseIf LK_CODCIA = "01" Or LK_CODCIA = "20" Then
    wol_codcia = "('01')"

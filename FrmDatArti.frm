@@ -174,10 +174,10 @@ If PUB_TIPREG = 199 Then MsgBox "Solo hasta 4 tipos de bloqueos"
 If PUB_TIPREG = 199 Then If Gridtablas.Rows >= 5 Then Exit Sub
 wBAN = 1
 If PUB_TIPREG = 2102 Then
- Mensaje = "Ingrese Codigo para el Turno :"
+ mensaje = "Ingrese Codigo para el Turno :"
  titulo = "Datos Necesario..."
  valorpred = " "
- wvalor = InputBox(Mensaje, titulo, valorpred)
+ wvalor = InputBox(mensaje, titulo, valorpred)
  If wvalor = "" Then
   wBAN = 0
   Exit Sub
@@ -189,10 +189,10 @@ If PUB_TIPREG = 2102 Then
  End If
   WNUMTAB = wvalor
 End If
-Mensaje = "Ingrese la Descripciï¿½n  :"
+mensaje = "Ingrese la Descripción  :"
 titulo = "Datos Necesario..."
 valorpred = " "
-wvalor = InputBox(Mensaje, titulo, valorpred)
+wvalor = InputBox(mensaje, titulo, valorpred)
 If wvalor = "" Then
  wBAN = 0
  Exit Sub
@@ -213,7 +213,7 @@ If PUB_TIPREG = 123 Or PUB_TIPREG = 129 _
 End If
 llave_rep01.Requery
 If Not llave_rep01.EOF Then
-  MsgBox "Descripciï¿½n Existe. Intente Nuevamente ..", 48, Pub_Titulo
+  MsgBox "Descripción Existe. Intente Nuevamente ..", 48, Pub_Titulo
   wBAN = 0
   Exit Sub
 End If
@@ -239,10 +239,10 @@ ultimo = ultimo + 1
 On Error GoTo sale
 If PUB_TIPREG = 50 Then
   wBAN = 1
-  Mensaje = "Ingrese su Codigo de la SUNAT   :"
+  mensaje = "Ingrese su Codigo de la SUNAT   :"
   titulo = "Datos Necesario..."
   valorpred = " "
-  WVALOR2 = InputBox(Mensaje, titulo, valorpred)
+  WVALOR2 = InputBox(mensaje, titulo, valorpred)
   If WVALOR2 = "" Then
    wBAN = 0
    Exit Sub
@@ -256,10 +256,10 @@ If PUB_TIPREG = 50 Then
 End If
 If PUB_TIPREG = 333 Then
   wBAN = 1
-  Mensaje = "Ingrese Codigo de Tipo de Negocio  :"
+  mensaje = "Ingrese Codigo de Tipo de Negocio  :"
   titulo = "Datos Necesario..."
   valorpred = " "
-  WVALOR2 = InputBox(Mensaje, titulo, valorpred)
+  WVALOR2 = InputBox(mensaje, titulo, valorpred)
   If WVALOR2 = "" Then
    wBAN = 0
    Exit Sub
@@ -363,7 +363,7 @@ For fila = 1 To Gridtablas.Rows - 1
    llave_rep01.MoveNext
 Next fila
 Screen.MousePointer = 0
-lblmensa.Caption = "[F2] ï¿½ [Enter] = Modificar  "
+lblmensa.Caption = "[F2] ro  [Enter] = Modificar  "
 If wvalor = "A" Then
  MsgBox "Tabla de Cuentas de Cierre Actualizados.", 48, Pub_Titulo
 End If
@@ -401,14 +401,14 @@ Dim strDir As String
 Dim strRef As String
 Dim fila2 As Integer
 llave_rep01.Requery
-strDir = Trim(InputBox("Ingrese la Direcciï¿½n del Cliente", "Direcciï¿½n"))
+strDir = Trim(InputBox("Ingrese la Dirección del Cliente", "Dirección"))
 
 strRef = Trim(InputBox("Ingrese la Referencia del Cliente", "Referencia"))
 If strDir = "" Then
- MsgBox "Dato ingresado no valido, Intentelo nuevamente", vbInformation, "Direcciï¿½n"
+ MsgBox "Dato ingresado no valido, Intentelo nuevamente", vbInformation, "Dirección"
  Exit Sub
 End If
- CN.Execute "insert into dircli (codcia,codcli,cp,direc,ref) values('" & LK_CODCIA & "','" & Val(frmCLI.txt_key) & "','C','" & strDir & "','" & strRef & "')"
+ CN.Execute "insert into dircli (codcia,codcli,cp,direc,ref) values('" & LK_CODCIA & "','" & Val(frmCLI.Txt_key) & "','C','" & strDir & "','" & strRef & "')"
  
  'FrmDatArti.Gridtablas.AddItem "", Gridtablas.Rows
  fila2 = FrmDatArti.Gridtablas.Rows
@@ -604,7 +604,7 @@ Exit Sub
 'agregado
 '************************
 direcciones:
-  lblmensa.Caption = "[F2] ï¿½ [Enter] = Modificar  "
+  lblmensa.Caption = "[F2] ro  [Enter] = Modificar  "
   cmdAgregar.Caption = "Gragar Dir."
   FrmDatArti.Gridtablas.Cols = 3
   FrmDatArti.Gridtablas.Clear
@@ -616,7 +616,7 @@ direcciones:
   FrmDatArti.Gridtablas.TextMatrix(0, 2) = "Referencia"
   
   PS_REP01(0) = LK_CODCIA
-  PS_REP01(1) = Val(frmCLI.txt_key)
+  PS_REP01(1) = Val(frmCLI.Txt_key)
   PS_REP01(2) = "C"
   llave_rep01.Requery
   FrmDatArti.Gridtablas.Visible = True
@@ -636,7 +636,7 @@ direcciones:
 
 Exit Sub
 pasa_cuentas:
-lblmensa.Caption = "[F2] ï¿½ [Enter] = Modificar  "
+lblmensa.Caption = "[F2] ro  [Enter] = Modificar  "
 cmdAgregar.Caption = "Gragar Cta."
 FrmDatArti.Width = FrmDatArti.Width + 1700
 FrmDatArti.Gridtablas.Width = FrmDatArti.Gridtablas.Width + 1700
@@ -651,9 +651,9 @@ FrmDatArti.Gridtablas.ColWidth(4) = 1500
 FrmDatArti.Gridtablas.ColWidth(5) = 1
 FrmDatArti.Gridtablas.TextMatrix(0, 0) = "Item."
 FrmDatArti.Gridtablas.TextMatrix(0, 1) = "Ctas.Contable."
-FrmDatArti.Gridtablas.TextMatrix(0, 2) = "Descripciï¿½n"
+FrmDatArti.Gridtablas.TextMatrix(0, 2) = "Descripción"
 FrmDatArti.Gridtablas.TextMatrix(0, 3) = "Ctas.Cierre"
-FrmDatArti.Gridtablas.TextMatrix(0, 4) = "Descripciï¿½n"
+FrmDatArti.Gridtablas.TextMatrix(0, 4) = "Descripción"
 pub_cadena = "SELECT COM_CUENTA,COM_DESCRIPCION, COM_CUENTA_CIERRE  FROM COMAEST WHERE COM_CODCIA = ? AND COM_NIVEL = ? and (COM_TIPO_CTA < 1 or  COM_TIPO_CTA > 5)  ORDER BY COM_CUENTA"
 Set PS_REP01 = CN.CreateQuery("", pub_cadena)
 PS_REP01.rdoParameters(0) = " "
@@ -709,13 +709,13 @@ FrmDatArti.Gridtablas.ColWidth(8) = 1000
 FrmDatArti.Gridtablas.ColWidth(9) = 1000
 
 FrmDatArti.Gridtablas.TextMatrix(0, 0) = "Item"
-FrmDatArti.Gridtablas.TextMatrix(0, 1) = "Nombre /Razï¿½n social"
+FrmDatArti.Gridtablas.TextMatrix(0, 1) = "Nombre /Razón social"
 FrmDatArti.Gridtablas.TextMatrix(0, 2) = "Domicilio "
 FrmDatArti.Gridtablas.TextMatrix(0, 3) = "R.U.C."
 FrmDatArti.Gridtablas.TextMatrix(0, 4) = "D.N.I."
 FrmDatArti.Gridtablas.TextMatrix(0, 5) = "Placa"
 FrmDatArti.Gridtablas.TextMatrix(0, 6) = "Nombre Chofer"
-FrmDatArti.Gridtablas.TextMatrix(0, 7) = "Direcciï¿½n Chofer"
+FrmDatArti.Gridtablas.TextMatrix(0, 7) = "Dirección Chofer"
 FrmDatArti.Gridtablas.TextMatrix(0, 8) = "Nro. Brevete"
 FrmDatArti.Gridtablas.TextMatrix(0, 9) = "D.N.I. "
 
@@ -1070,7 +1070,7 @@ If KeyCode = 46 And PUB_TIPREG <> -55 Then
     Else
        Exit Sub
     End If
-    pub_mensaje = " Eliminar    : " & Trim(Gridtablas.TextMatrix(Gridtablas.Row, 1)) & " ï¿½Desea Continuar... ?"
+    pub_mensaje = " Eliminar    : " & Trim(Gridtablas.TextMatrix(Gridtablas.Row, 1)) & " ¿Desea Continuar... ?"
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
       Gridtablas.SetFocus
@@ -1097,7 +1097,7 @@ ElGrid_KeyDown Gridtablas, TEXTOVAR, KeyCode
 Exit Sub
 
 borra_transportista:
-pub_mensaje = " Eliminar    : " & Trim(Gridtablas.TextMatrix(Gridtablas.Row, 1)) & " ï¿½Desea Continuar... ?"
+pub_mensaje = " Eliminar    : " & Trim(Gridtablas.TextMatrix(Gridtablas.Row, 1)) & " ¿Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
   Gridtablas.SetFocus
@@ -1122,7 +1122,7 @@ Delete_Direccion:
   With FrmDatArti.Gridtablas
   SQL = "DELETE FROM DIRCLI WHERE CODCIA='" & LK_CODCIA & "' " & _
         "AND DIRCLI='" & Val(.TextMatrix(.Row, 0)) & "' AND " & _
-        "CODCLI='" & Val(frmCLI.txt_key) & "' AND CP='C'"
+        "CODCLI='" & Val(frmCLI.Txt_key) & "' AND CP='C'"
   End With
   On Error GoTo ErrorDelete
   CN.Execute SQL
@@ -1181,7 +1181,7 @@ If KeyAscii = 13 Then
    If FrmDatArti.Gridtablas.COL = 1 Then
     If Not Trim(TEXTOVAR) = "" Then
      SQL = "UPDATE DIRCLI SET DIREC='" & Trim(TEXTOVAR) & "' " & _
-     "WHERE CODCIA='" & LK_CODCIA & "' AND CODCLI='" & Val(frmCLI.txt_key) & "' AND DIRCLI='" & Val(FrmDatArti.Gridtablas.TextMatrix(FrmDatArti.Gridtablas.Row, 0)) & "'"
+     "WHERE CODCIA='" & LK_CODCIA & "' AND CODCLI='" & Val(frmCLI.Txt_key) & "' AND DIRCLI='" & Val(FrmDatArti.Gridtablas.TextMatrix(FrmDatArti.Gridtablas.Row, 0)) & "'"
      CN.Execute SQL
      FrmDatArti.Gridtablas.TextMatrix(FrmDatArti.Gridtablas.Row, FrmDatArti.Gridtablas.COL) = Trim(TEXTOVAR)
      TEXTOVAR.Visible = False
@@ -1193,7 +1193,7 @@ If KeyAscii = 13 Then
    ElseIf FrmDatArti.Gridtablas.COL = 2 Then
     If Not Trim(TEXTOVAR) = "" Then
      SQL = "UPDATE DIRCLI SET REF='" & Trim(TEXTOVAR) & "' " & _
-     "WHERE CODCIA='" & LK_CODCIA & "' AND CODCLI='" & Val(frmCLI.txt_key) & "' AND DIRCLI='" & Val(FrmDatArti.Gridtablas.TextMatrix(FrmDatArti.Gridtablas.Row, 0)) & "'"
+     "WHERE CODCIA='" & LK_CODCIA & "' AND CODCLI='" & Val(frmCLI.Txt_key) & "' AND DIRCLI='" & Val(FrmDatArti.Gridtablas.TextMatrix(FrmDatArti.Gridtablas.Row, 0)) & "'"
      CN.Execute SQL
      FrmDatArti.Gridtablas.TextMatrix(FrmDatArti.Gridtablas.Row, FrmDatArti.Gridtablas.COL) = Trim(TEXTOVAR)
      TEXTOVAR.Visible = False
@@ -1237,7 +1237,7 @@ If KeyAscii = 13 Then
  End If
  llave_rep01.Requery
  If Not llave_rep01.EOF Then
-   MsgBox "Descripciï¿½n Existe. Intente Nuevamente ..", 48, Pub_Titulo
+   MsgBox "Descripción Existe. Intente Nuevamente ..", 48, Pub_Titulo
    Azul TEXTOVAR, TEXTOVAR
    Exit Sub
  End If
@@ -1428,7 +1428,7 @@ End If
 If KeyCode = 46 Then
    ' NO PROCEDE NINGUNA ELIMINACION
    Exit Sub
-   pub_mensaje = " Eliminar    : " & Trim(grid_comi.TextMatrix(grid_comi.Row, 1)) & " ï¿½Desea Continuar... ?"
+   pub_mensaje = " Eliminar    : " & Trim(grid_comi.TextMatrix(grid_comi.Row, 1)) & " ¿Desea Continuar... ?"
    Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
    If Pub_Respuesta = vbNo Then
       grid_comi.SetFocus

@@ -89,7 +89,7 @@ Begin VB.Form FrmVen
             Width           =   615
          End
          Begin VB.Label Label9 
-            Caption         =   "Dï¿½as Max:"
+            Caption         =   "Días Max:"
             Height          =   255
             Left            =   1440
             TabIndex        =   95
@@ -300,7 +300,7 @@ Begin VB.Form FrmVen
          Width           =   1215
       End
       Begin VB.Label Label1 
-         Caption         =   "Direcciï¿½n :"
+         Caption         =   "Dirección :"
          Height          =   255
          Index           =   11
          Left            =   240
@@ -309,7 +309,7 @@ Begin VB.Form FrmVen
          Width           =   975
       End
       Begin VB.Label Label1 
-         Caption         =   "Descripciï¿½n : "
+         Caption         =   "Descripción : "
          Height          =   255
          Index           =   1
          Left            =   240
@@ -338,13 +338,13 @@ Begin VB.Form FrmVen
       _Version        =   393216
       Tabs            =   2
       TabHeight       =   520
-      TabCaption(0)   =   "Definiciï¿½n de Serie"
+      TabCaption(0)   =   "Definición de Serie"
       TabPicture(0)   =   "FrmVend.frx":0446
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "F2"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
-      TabCaption(1)   =   "Archivos de Impresiï¿½n"
+      TabCaption(1)   =   "Archivos de Impresión"
       TabPicture(1)   =   "FrmVend.frx":0462
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "txtnd"
@@ -969,7 +969,7 @@ Begin VB.Form FrmVen
          Width           =   975
       End
       Begin VB.Label Label4 
-         Caption         =   "Archivos de Impresiï¿½n:"
+         Caption         =   "Archivos de Impresión:"
          Height          =   255
          Left            =   -74760
          TabIndex        =   69
@@ -1111,7 +1111,7 @@ Begin VB.Form FrmVen
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
-      Caption         =   "! Talonarios esta Definido por Compaï¿½ia !"
+      Caption         =   "! Talonarios esta Definido por Compañia !"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   11.25
@@ -1597,7 +1597,7 @@ End If
      Exit Sub
   End If
   
-  pub_mensaje = " ï¿½Desea Eliminar el Registro... ?"
+  pub_mensaje = " ¿Desea Eliminar el Registro... ?"
   Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
   If Pub_Respuesta = vbYes Then   ' El usuario eligiï¿½
     Screen.MousePointer = 11

@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "Msflxgrd.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form FrmMotAnul 
    Caption         =   "Documento :"
    ClientHeight    =   4260
@@ -181,9 +181,9 @@ pu_codclie = far_menor3!far_codclie
 pu_codcia = LK_CODCIA
 LEER_CLI_LLAVE
 If cli_llave.EOF Then
-  lblcliente.Caption = far_menor3!far_cliente
+  lblCliente.Caption = far_menor3!far_cliente
 Else
-  lblcliente.Caption = cli_llave!cli_nombre
+  lblCliente.Caption = cli_llave!cli_nombre
 End If
 
 
@@ -201,7 +201,7 @@ LEER_ART_LLAVE
 If art_LLAVE.EOF Then
  gridfac.TextMatrix(gridfac.Rows - 1, 4) = ""
 Else
- gridfac.TextMatrix(gridfac.Rows - 1, 4) = Trim(art_LLAVE!ART_NOMBRE)
+ gridfac.TextMatrix(gridfac.Rows - 1, 4) = Trim(art_LLAVE!art_nombre)
 End If
 
 gridfac.TextMatrix(gridfac.Rows - 1, 5) = Format(Val(far_menor3!far_subtotal), "0.00") ' + Val(far_menor3!far_impto), "0.00")
@@ -263,7 +263,7 @@ SendKeysSeguro VK_UP, True
 
 End Sub
 
-Private Sub cmdclose_Click()
+Private Sub cmdClose_Click()
 Dim wflag As String
 If gridfac.Rows <= 2 And gridfac.Cols >= 3 Then
 Else
@@ -277,7 +277,7 @@ For fila = 1 To gridfac.Rows - 1
   End If
 Next fila
 If Trim(wflag) = "" Then
-   MsgBox "Seleccione alg�n motivo por que se esta Anulando", 48, Pub_Titulo
+   MsgBox "Seleccione algro n motivo por que se esta Anulando", 48, Pub_Titulo
    Exit Sub
 End If
 FrmMotAnul.Hide
@@ -291,7 +291,7 @@ End Sub
 
 Private Sub gridfac_DblClick()
 If cheerror.Value = 1 Then
-  MsgBox "Desmarcar la opci�n de errores de impresi�n", 48, Pub_Titulo
+  MsgBox "Desmarcar la opciro n de errores de impresiro n", 48, Pub_Titulo
   cheerror.SetFocus
   Exit Sub
 End If
@@ -312,7 +312,7 @@ Public Sub LLENA_GRUPOS(cont As ComboBox, tip As Integer)
     cont.ToolTipText = "TAB_TIPREG = " & tip
     cont.Clear
     Do Until tab_mayor.EOF
-        cont.AddItem tab_mayor!tab_nomlargo & String(80, " ") & tab_mayor!tab_numtab
+        cont.AddItem tab_mayor!TAB_NOMLARGO & String(80, " ") & tab_mayor!TAB_NUMTAB
         tab_mayor.MoveNext
     Loop
     

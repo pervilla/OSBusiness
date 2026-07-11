@@ -76,7 +76,7 @@ Begin VB.Form FrmIncentivos
       LabelEdit       =   1
       LabelWrap       =   -1  'True
       HideSelection   =   0   'False
-      _Version        =   327682
+      _Version        =   393217
       ForeColor       =   128
       BackColor       =   14737632
       BorderStyle     =   1
@@ -628,14 +628,14 @@ Dim wpos As Integer
 If KeyCode <> 45 Then
   Exit Sub
 End If
-wpos = cmbtipo.ListIndex
-PUB_TIPREG = Mid(cmbtipo.ToolTipText, 13, Len(cmbtipo.ToolTipText))
+wpos = cmbTipo.ListIndex
+PUB_TIPREG = Mid(cmbTipo.ToolTipText, 13, Len(cmbTipo.ToolTipText))
 PUB_CODCIA = LK_CODCIA
 Load FrmDatArti
 FrmDatArti.Caption = "GRUPOS  -  TAB_TIPREG = " & PUB_TIPREG
 FrmDatArti.Show 1
-LLENADOS cmbtipo, 49
-cmbtipo.SetFocus
+LLENADOS cmbTipo, 49
+cmbTipo.SetFocus
 SendKeysSeguro VK_UP, True
 
 
@@ -648,7 +648,7 @@ PRE_RELCOMP(1) = txtfecha.Text
 relcomp_llave.Requery
 ws_numero = 0
 If Not relcomp_llave.EOF Then
- 'pub_mensaje = "Reemplazar la infomaciï¿½n...   ¿Desea Continuar... ?"
+ 'pub_mensaje = "Reemplazar la infomaciro n...   ¿Desea Continuar... ?"
  'Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
  'If Pub_Respuesta = vbNo Then
  '   Exit Sub
@@ -702,7 +702,7 @@ If relcomp_llave.EOF Then
   MsgBox "No Existe datos ", 48, Pub_Titulo
   Exit Sub
 End If
-If cmbtipo.ListCount > 0 Then cmbtipo.ListIndex = 0
+If cmbTipo.ListCount > 0 Then cmbTipo.ListIndex = 0
 If cmblinea.ListCount > 0 Then cmblinea.ListIndex = 0
 
 
@@ -715,7 +715,7 @@ Do Until relcomp_llave.EOF
     SQ_OPER = 1
     LEER_TAB_LLAVE
     If Not tab_llave.EOF Then
-       grdidet.TextMatrix(grdidet.Rows - 1, 1) = tab_llave!tab_nomlargo & String(80, " ") & tab_llave!tab_numtab
+       grdidet.TextMatrix(grdidet.Rows - 1, 1) = tab_llave!TAB_NOMLARGO & String(80, " ") & tab_llave!TAB_NUMTAB
     End If
     grdidet.TextMatrix(grdidet.Rows - 1, 2) = relcomp_llave!min_codart
     grdidet.TextMatrix(grdidet.Rows - 1, 0) = Format(relcomp_llave!min_FECHA, "dd/mm/yy")
@@ -725,7 +725,7 @@ Do Until relcomp_llave.EOF
      pu_codcia = relcomp_llave!min_codcia
      LEER_ART_LLAVE
      
-     grdidet.TextMatrix(grdidet.Rows - 1, 3) = Trim(art_LLAVE!ART_NOMBRE)
+     grdidet.TextMatrix(grdidet.Rows - 1, 3) = Trim(art_LLAVE!art_nombre)
      grdidet.TextMatrix(grdidet.Rows - 1, 4) = relcomp_llave!min_descri & String(80, " ") & relcomp_llave!min_equiv
      End If
      grdidet.TextMatrix(grdidet.Rows - 1, 5) = Format(relcomp_llave!min_fecha_ini, "dd/mm/yyyy")
@@ -779,7 +779,7 @@ Screen.MousePointer = 0
 'ElseIf Val(flag_signo.Caption) = -1 Then
 '   cmdsigno.ListIndex = 1
 'End If
-If cmbtipo.ListCount > 0 Then cmbtipo.ListIndex = 0
+If cmbTipo.ListCount > 0 Then cmbTipo.ListIndex = 0
 If cmblinea.ListCount > 0 Then cmblinea.ListIndex = 0
 
 Exit Sub
@@ -795,7 +795,7 @@ Do Until relcomp_llave.EOF
     SQ_OPER = 1
     LEER_TAB_LLAVE
     If Not tab_llave.EOF Then
-       grdidet.TextMatrix(grdidet.Rows - 1, 1) = tab_llave!tab_nomlargo & String(80, " ") & tab_llave!tab_numtab
+       grdidet.TextMatrix(grdidet.Rows - 1, 1) = tab_llave!TAB_NOMLARGO & String(80, " ") & tab_llave!TAB_NUMTAB
     End If
     grdidet.TextMatrix(grdidet.Rows - 1, 2) = relcomp_llave!rel_codart
     grdidet.TextMatrix(grdidet.Rows - 1, 0) = Format(relcomp_llave!rel_FECHA, "dd/mm/yy")
@@ -805,7 +805,7 @@ Do Until relcomp_llave.EOF
      pu_codcia = relcomp_llave!rel_codcia
      LEER_ART_LLAVE
      
-     grdidet.TextMatrix(grdidet.Rows - 1, 3) = Trim(art_LLAVE!ART_NOMBRE)
+     grdidet.TextMatrix(grdidet.Rows - 1, 3) = Trim(art_LLAVE!art_nombre)
      grdidet.TextMatrix(grdidet.Rows - 1, 4) = relcomp_llave!rel_descri & String(80, " ") & relcomp_llave!rel_equiv
      grdidet.TextMatrix(grdidet.Rows - 1, 5) = Format(relcomp_llave!rel_cantidad / relcomp_llave!rel_equiv, "0.00")
      grdidet.TextMatrix(grdidet.Rows - 1, 6) = relcomp_llave!rel_precio
@@ -849,7 +849,7 @@ Do Until relcomp_llave.EOF
     SQ_OPER = 1
     LEER_TAB_LLAVE
     If Not tab_llave.EOF Then
-       GRID_MST.TextMatrix(GRID_MST.Rows - 1, 0) = tab_llave!tab_nomlargo & String(80, " ") & tab_llave!tab_numtab
+       GRID_MST.TextMatrix(GRID_MST.Rows - 1, 0) = tab_llave!TAB_NOMLARGO & String(80, " ") & tab_llave!TAB_NUMTAB
     End If
     GRID_MST.TextMatrix(GRID_MST.Rows - 1, 1) = relcomp_llave!rel_codart
     If Val(relcomp_llave!rel_codart) <> 0 Then
@@ -857,7 +857,7 @@ Do Until relcomp_llave.EOF
      PUB_KEY = relcomp_llave!rel_codart
      pu_codcia = relcomp_llave!rel_codcia
      LEER_ART_LLAVE
-     GRID_MST.TextMatrix(GRID_MST.Rows - 1, 2) = Trim(art_LLAVE!ART_NOMBRE)
+     GRID_MST.TextMatrix(GRID_MST.Rows - 1, 2) = Trim(art_LLAVE!art_nombre)
      GRID_MST.TextMatrix(GRID_MST.Rows - 1, 3) = relcomp_llave!rel_descri & String(80, " ") & relcomp_llave!rel_equiv
      GRID_MST.TextMatrix(GRID_MST.Rows - 1, 4) = Format(relcomp_llave!rel_cantidad / relcomp_llave!rel_equiv, "0.00")
      GRID_MST.TextMatrix(GRID_MST.Rows - 1, 5) = relcomp_llave!rel_precio
@@ -878,7 +878,7 @@ CenterMe FrmIncentivos
 loc_key = 0
 cabe
 PUB_CODCIA = LK_CODCIA
-LLENADOS cmbtipo, 49
+LLENADOS cmbTipo, 49
 LLENADOS cmblinea, 122
 pub_cadena = "SELECT * FROM PRECIOS WHERE PRE_CODCIA = ? AND PRE_CODART = ?  ORDER BY PRE_CODART"
 Set PRE_UNIDADES = CN.CreateQuery("", pub_cadena)
@@ -1014,7 +1014,7 @@ POSICION:
            Exit Sub
         End If
         PUB_CODART = art_LLAVE!art_key
-        i_nomarti.Caption = art_LLAVE!ART_NOMBRE
+        i_nomarti.Caption = art_LLAVE!art_nombre
      End If
 
 fin:
@@ -1023,7 +1023,7 @@ End Sub
 Private Sub i_codart2_KeyPress(KeyAscii As Integer)
 Dim VALOR As String
 Dim tf As Integer
-Dim i, car
+Dim I, car
 Dim itmFound As MSComctlLib.ListItem
 Dim unid_max As Integer
 car = Chr(KeyAscii)
@@ -1065,7 +1065,7 @@ If PUB_KEY <> 0 Then
        GoTo fin
     End If
     WCOD_ORIGINAL = art_LLAVE!art_key
-    i_nomarti.Caption = Trim(art_LLAVE!ART_NOMBRE)
+    i_nomarti.Caption = Trim(art_LLAVE!art_nombre)
     'i_codart2.text = Trim(ListView1.ListItems.Item(loc_key).SubItems(1))
     PRE_UNIDADES(0) = LK_CODCIA
     PRE_UNIDADES(1) = art_LLAVE!art_key
@@ -1073,7 +1073,7 @@ If PUB_KEY <> 0 Then
     unidad.Clear
     unid_max = 0
     Do Until preuni_llave.EOF
-       unidad.AddItem preuni_llave!pre_unidad & String(80, " ") & preuni_llave!pre_equiv
+       unidad.AddItem preuni_llave!PRE_UNIDAD & String(80, " ") & preuni_llave!PRE_EQUIV
        If preuni_llave!pre_FLAG_UNIDAD = "A" Then
          unid_max = preuni_llave.AbsolutePosition - 1
 '         LBLUNIDAD.Caption = Trim(preuni_llave!pre_UNIDAD)
@@ -1109,7 +1109,7 @@ IR_ALTERNO:
      Else
       lblMoneda.Caption = "Moneda : S/ ."
      End If
-     i_nomarti.Caption = Trim(art_llave_alt!ART_NOMBRE)
+     i_nomarti.Caption = Trim(art_llave_alt!art_nombre)
      ListView1.Visible = False
      
      PRE_UNIDADES(0) = LK_CODCIA
@@ -1118,10 +1118,10 @@ IR_ALTERNO:
      unidad.Clear
      unid_max = 0
     Do Until preuni_llave.EOF
-       unidad.AddItem preuni_llave!pre_unidad & String(80, " ") & preuni_llave!pre_equiv
+       unidad.AddItem preuni_llave!PRE_UNIDAD & String(80, " ") & preuni_llave!PRE_EQUIV
        If preuni_llave!pre_FLAG_UNIDAD = "A" Then
           unid_max = preuni_llave.AbsolutePosition - 1
-          LBLUNIDAD.Caption = Trim(preuni_llave!pre_unidad)
+          LBLUNIDAD.Caption = Trim(preuni_llave!PRE_UNIDAD)
           Exit Do
         End If
         preuni_llave.MoveNext
@@ -1163,14 +1163,14 @@ IR_ALTERNO:
         Exit Sub
       End If
       WCOD_ORIGINAL = art_LLAVE!art_key
-      i_nomarti.Caption = Trim(art_LLAVE!ART_NOMBRE)
+      i_nomarti.Caption = Trim(art_LLAVE!art_nombre)
     PRE_UNIDADES(0) = LK_CODCIA
     PRE_UNIDADES(1) = art_LLAVE!art_key
     preuni_llave.Requery
     unidad.Clear
     unid_max = 0
     Do Until preuni_llave.EOF
-       unidad.AddItem preuni_llave!pre_unidad & String(80, " ") & preuni_llave!pre_equiv
+       unidad.AddItem preuni_llave!PRE_UNIDAD & String(80, " ") & preuni_llave!PRE_EQUIV
        If preuni_llave!pre_FLAG_UNIDAD = "A" Then
          unid_max = preuni_llave.AbsolutePosition - 1
 '         LBLUNIDAD.Caption = Trim(preuni_llave!pre_UNIDAD)
@@ -1303,10 +1303,10 @@ Public Sub LLENADOS(cont As ComboBox, tip As Integer)
     Do Until tab_mayor.EOF
        If PUB_TIPREG = 35 And LK_EMP = "PAR" Then
           If Val(tab_mayor!tab_codart) = WW_CODVEN Then
-            cont.AddItem tab_mayor!tab_nomlargo & String(60, " ") & tab_mayor!tab_numtab
+            cont.AddItem tab_mayor!TAB_NOMLARGO & String(60, " ") & tab_mayor!TAB_NUMTAB
           End If
        Else
-           cont.AddItem tab_mayor!tab_nomlargo & String(60, " ") & tab_mayor!tab_numtab
+           cont.AddItem tab_mayor!TAB_NOMLARGO & String(60, " ") & tab_mayor!TAB_NUMTAB
        End If
        tab_mayor.MoveNext
     Loop
@@ -1324,7 +1324,7 @@ End Sub
 
 Private Sub txtfecha_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
-cmbtipo.SetFocus
+cmbTipo.SetFocus
 End If
 End Sub
 
@@ -1429,16 +1429,16 @@ GRID_MST.TextMatrix(0, 7) = "Total"
 End Sub
 
 Public Sub add_registro()
-If Trim(cmbtipo.Text) = "" Then
+If Trim(cmbTipo.Text) = "" Then
   MsgBox "Seleccionar Tipo de Documento", 48, Pub_Titulo
-  cmbtipo.SetFocus
+  cmbTipo.SetFocus
   Exit Sub
 End If
 
 
 grdidet.Rows = grdidet.Rows + 1
 grdidet.TextMatrix(grdidet.Rows - 1, 0) = Format(LK_FECHA_DIA, "dd/mm/yy")
-grdidet.TextMatrix(grdidet.Rows - 1, 1) = Trim(cmbtipo.Text)
+grdidet.TextMatrix(grdidet.Rows - 1, 1) = Trim(cmbTipo.Text)
 grdidet.TextMatrix(grdidet.Rows - 1, 2) = Trim(i_codart2.Text)
 grdidet.TextMatrix(grdidet.Rows - 1, 3) = Trim(i_nomarti.Caption)
 grdidet.TextMatrix(grdidet.Rows - 1, 4) = Trim(unidad.Text)
@@ -1462,7 +1462,7 @@ txtcantidad.Text = ""
 txtprecio.Text = ""
 txtglosa.Text = ""
 txttotal.Text = ""
-cmbtipo.SetFocus
+cmbTipo.SetFocus
 End Sub
 
 Public Sub cal()

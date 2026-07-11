@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "richtx32.ocx"
+Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Begin VB.Form frmCuotas 
    Caption         =   "Definición de Cuotas."
@@ -119,7 +119,7 @@ Begin VB.Form frmCuotas
          LabelEdit       =   1
          LabelWrap       =   -1  'True
          HideSelection   =   0   'False
-         _Version        =   327682
+         _Version        =   393217
          ForeColor       =   128
          BackColor       =   14737632
          Appearance      =   1
@@ -340,7 +340,6 @@ Begin VB.Form frmCuotas
          _Version        =   393217
          BackColor       =   12632064
          BorderStyle     =   0
-         Enabled         =   -1  'True
          MultiLine       =   0   'False
          TextRTF         =   $"frmCuotas.frx":0000
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -776,7 +775,7 @@ If Not llave_ven.EOF Then
 
 pro.Min = 0
 pro.Value = 0
-pro.Max = llave_ven.RowCount
+pro.max = llave_ven.RowCount
 
 
 
@@ -1032,11 +1031,11 @@ Private Sub cmdmostrar_Click()
 Dim PSCUO_VENDEDOR As rdoQuery
 Dim cuo_vendedor As rdoResultset
 If Not IsDate(fecha1.Caption) Then
- MsgBox "Verificar Configuración Regional .. no procde las Fechas Nï¿½1", 48, Pub_Titulo
+ MsgBox "Verificar Configuración Regional .. no procde las Fechas Nro 1", 48, Pub_Titulo
  Exit Sub
 End If
 If Not IsDate(fecha2.Caption) Then
- MsgBox "Verificar Configuración Regional .. no procde las Fechas Nï¿½1", 48, Pub_Titulo
+ MsgBox "Verificar Configuración Regional .. no procde las Fechas Nro 1", 48, Pub_Titulo
  Exit Sub
 End If
 DoEvents
@@ -1061,7 +1060,7 @@ Case 1
     Set cuo_rep01 = PSCUO_LLAVE.OpenResultset(rdOpenKeyset, rdConcurValues)
     If Not cuo_vendedor.EOF Then
       pro.Min = 0
-      pro.Max = cuo_vendedor.RowCount
+      pro.max = cuo_vendedor.RowCount
       pro.Value = 0
     End If
     Do Until cuo_vendedor.EOF
@@ -1118,7 +1117,7 @@ Case 2
     Set cuo_rep01 = PSCUO_LLAVE.OpenResultset(rdOpenKeyset, rdConcurValues)
     If Not cuo_vendedor.EOF Then
       pro.Min = 0
-      pro.Max = cuo_vendedor.RowCount
+      pro.max = cuo_vendedor.RowCount
       pro.Value = 0
     End If
     Do Until cuo_vendedor.EOF
@@ -1177,7 +1176,7 @@ cabe
      
     If Not cuo_vendedor.EOF Then
       pro.Min = 0
-      pro.Max = cuo_vendedor.RowCount
+      pro.max = cuo_vendedor.RowCount
       pro.Value = 0
     End If
     Do Until cuo_vendedor.EOF
@@ -1224,7 +1223,7 @@ cabe
      
     If Not cuo_vendedor.EOF Then
       pro.Min = 0
-      pro.Max = cuo_vendedor.RowCount
+      pro.max = cuo_vendedor.RowCount
       pro.Value = 0
     End If
     Do Until cuo_vendedor.EOF
@@ -1279,7 +1278,7 @@ Case 5  ' CUOTA POR ARTICULOS
      
     If Not cuo_vendedor.EOF Then
        pro.Min = 0
-       pro.Max = cuo_vendedor.RowCount
+       pro.max = cuo_vendedor.RowCount
        pro.Value = 0
      End If
      Do Until cuo_vendedor.EOF
@@ -1322,7 +1321,7 @@ Case 6 ' CUOTA POR EMPRESA
     Set cuo_rep01 = PSCUO_LLAVE.OpenResultset(rdOpenKeyset, rdConcurValues)
     If Not cuo_vendedor.EOF Then
       pro.Min = 0
-      pro.Max = cuo_vendedor.RowCount
+      pro.max = cuo_vendedor.RowCount
       pro.Value = 0
     End If
     Do Until cuo_vendedor.EOF

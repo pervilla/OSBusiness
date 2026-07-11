@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Begin VB.Form frmTImport 
-   Caption         =   "Transfer. Export. (Envio de Informaciï¿½n)"
+   Caption         =   "Transfer. Export. (Envio de Información)"
    ClientHeight    =   6180
    ClientLeft      =   555
    ClientTop       =   1845
@@ -189,7 +189,7 @@ Begin VB.Form frmTImport
          Width           =   4215
       End
       Begin VB.Label lblpro 
-         Caption         =   "Procesando Informaciï¿½n ..."
+         Caption         =   "Procesando Información ..."
          ForeColor       =   &H00000080&
          Height          =   255
          Left            =   240
@@ -292,7 +292,7 @@ Dim REP_FECHA1  As String
 Dim REP_FECHA2  As String
 GEN.Requery
 If Trim(Nulo_Valors(GEN!GEN_CIAEXP)) = "" Then
- MsgBox "Codigo de Compaï¿½ia de Recepciï¿½n de informacion no validad...", 48, Pub_Titulo
+ MsgBox "Codigo de Compañia de Recepciï¿½n de informacion no validad...", 48, Pub_Titulo
  Exit Sub
 End If
 

@@ -1,9 +1,9 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Begin VB.Form frm_cheques 
    Caption         =   "Consulta de Bancos"
    ClientHeight    =   6450
@@ -32,7 +32,7 @@ Begin VB.Form frm_cheques
       LabelEdit       =   1
       LabelWrap       =   -1  'True
       HideSelection   =   0   'False
-      _Version        =   327682
+      _Version        =   393217
       ForeColor       =   -2147483640
       BackColor       =   -2147483643
       BorderStyle     =   1
@@ -83,21 +83,21 @@ Begin VB.Form frm_cheques
       TabCaption(0)   =   "Resumen "
       TabPicture(0)   =   "frm_cheques.frx":058C
       Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "Lche(0)"
-      Tab(0).Control(1)=   "Lche(1)"
-      Tab(0).Control(2)=   "LMONEDA"
-      Tab(0).Control(3)=   "Label4"
-      Tab(0).Control(4)=   "tipdoc"
-      Tab(0).Control(5)=   "txtnro"
-      Tab(0).Control(6)=   "grdr"
+      Tab(0).Control(0)=   "OPBANCO(2)"
+      Tab(0).Control(1)=   "Command1"
+      Tab(0).Control(2)=   "resumen"
+      Tab(0).Control(3)=   "OPBANCO(1)"
+      Tab(0).Control(4)=   "OPBANCO(0)"
+      Tab(0).Control(5)=   "txtant"
+      Tab(0).Control(6)=   "txtsig"
       Tab(0).Control(7)=   "txt_monto"
-      Tab(0).Control(8)=   "txtsig"
-      Tab(0).Control(9)=   "txtant"
-      Tab(0).Control(10)=   "OPBANCO(0)"
-      Tab(0).Control(11)=   "OPBANCO(1)"
-      Tab(0).Control(12)=   "resumen"
-      Tab(0).Control(13)=   "Command1"
-      Tab(0).Control(14)=   "OPBANCO(2)"
+      Tab(0).Control(8)=   "grdr"
+      Tab(0).Control(9)=   "txtnro"
+      Tab(0).Control(10)=   "tipdoc"
+      Tab(0).Control(11)=   "Label4"
+      Tab(0).Control(12)=   "LMONEDA"
+      Tab(0).Control(13)=   "Lche(1)"
+      Tab(0).Control(14)=   "Lche(0)"
       Tab(0).ControlCount=   15
       TabCaption(1)   =   "Kardex "
       TabPicture(1)   =   "frm_cheques.frx":05A8
@@ -564,7 +564,7 @@ Begin VB.Form frm_cheques
       Width           =   4095
       _ExtentX        =   7223
       _ExtentY        =   450
-      _Version        =   327682
+      _Version        =   393216
       Appearance      =   0
    End
    Begin VB.Label lblbarraos 
@@ -787,7 +787,7 @@ Else
  WCODCIA1 = LK_CODCIA
 End If
 PU_NUMFAC = Val((txtnro.Text))
-Reportes.WindowTitle = "KARDEX Nï¿½ :" & Format(PU_NUMSER, "000") & " - " & Format(PU_NUMFAC, "0000000")
+Reportes.WindowTitle = "KARDEX Nro  :" & Format(PU_NUMSER, "000") & " - " & Format(PU_NUMFAC, "0000000")
 Reportes.ReportFileName = PUB_RUTA_OTRO + "VOCCM.RPT"
 pub_cadena = "({ALLOG.ALL_CODCIA} = '" & WCODCIA1 & "' OR {ALLOG.ALL_CODCIA} = '" & WCODCIA2 & "' ) AND {ALLOG.ALL_CODBAN}= " & Trim(i_codban.Text) & "  AND {ALLOG.ALL_CHENUM} = " & PU_NUMFAC & "  AND {ALLOG.ALL_SIGNO_CCM} =" & ws_signo_ssm & " AND {CCMAEST.CCM_CODCIA} = '" & par_llave!PAR_CIACCM & "'"
 Reportes.SelectionFormula = pub_cadena
@@ -886,7 +886,7 @@ If grid_che.COL = 2 Then
        MsgBox "Intente Nuevamnete...", 48, Pub_Titulo
        Exit Sub
     End If
-    wfecha = InputBox("Cambiar Fecha Emisiï¿½n : " & grid_che.TextMatrix(grid_che.Row, 2), "Cambiar", grid_che.TextMatrix(grid_che.Row, 2))
+    wfecha = InputBox("Cambiar Fecha Emisión : " & grid_che.TextMatrix(grid_che.Row, 2), "Cambiar", grid_che.TextMatrix(grid_che.Row, 2))
     If Not IsDate(wfecha) Then Exit Sub
     cheest_llave.Edit
     cheest_llave!CHE_FECHA_EMISION = wfecha
@@ -914,9 +914,9 @@ If grid_che.TextMatrix(grid_che.Row, 13) = "T" Or grid_che.TextMatrix(grid_che.R
        Exit Sub
     End If
     If grid_che.TextMatrix(grid_che.Row, 13) = "T" Then
-      pub_mensaje = "Cobrar el Importe !!! ...   ï¿½Desea Continuar... ?"
+      pub_mensaje = "Cobrar el Importe !!! ...   ¿Desea Continuar... ?"
     Else
-      pub_mensaje = "Retornar a Importe Defirido!!! ...   ï¿½Desea Continuar... ?"
+      pub_mensaje = "Retornar a Importe Defirido!!! ...   ¿Desea Continuar... ?"
     End If
     Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
     If Pub_Respuesta = vbNo Then
@@ -952,7 +952,7 @@ If grid_che.COL = 9 Then
        MsgBox "Intente Nuevamnete...", 48, Pub_Titulo
        Exit Sub
     End If
-    'wfecha = InputBox("Cambiar Fecha Emisiï¿½n : " & grid_che.TextMatrix(grid_che.Row, 2), "Cambiar")
+    'wfecha = InputBox("Cambiar Fecha Emisión : " & grid_che.TextMatrix(grid_che.Row, 2), "Cambiar")
     'If Not IsDate(wfecha) Then Exit Sub
     WVARMAS = Val(grid_che.TextMatrix(grid_che.Row - 1, 15))
     If grid_che.Row <> 1 Then WVARMENOS = Val(grid_che.TextMatrix(grid_che.Row + 1, 15))
@@ -1252,7 +1252,7 @@ LblMensaje.Visible = True
 pbMin = 0
 pbMax = res_cheque.RowCount
 pbValue = 0
-pb.Visible = True
+PB.Visible = True
 fila = 0
 grdr.Visible = False
 wmonto = 0
@@ -1319,7 +1319,7 @@ Else
 Lmoneda.Caption = "S/"
 End If
 grdr.Visible = True
-pb.Visible = False
+PB.Visible = False
 LblMensaje.Visible = False
 If grdr.Rows > 1 Then
 grdr.COL = 1
@@ -1417,7 +1417,7 @@ End If
 LblMensaje.Visible = True
 pbMin = 0
 pbMax = che_repo.RowCount
-pb.Visible = True
+PB.Visible = True
 DoEvents
 Screen.MousePointer = 11
 che_repo.MoveLast
@@ -1578,7 +1578,7 @@ End If
 Saldocon.Text = Format(Saldocon.Text, "##,####,##0.00")
 SaldoLiq.Text = Format(SaldoLiq.Text, "##,####,##0.00")
 LblMensaje.Visible = False
-pb.Visible = False
+PB.Visible = False
 DoEvents
 Screen.MousePointer = 0
 grid_che.Visible = True
@@ -1598,7 +1598,7 @@ frm_cheques.grdr.Clear
 frm_cheques.grdr.Cols = 13
 frm_cheques.grdr.Rows = 1
 frm_cheques.grdr.TextMatrix(0, 0) = "Fec.Giro"
-frm_cheques.grdr.TextMatrix(0, 1) = "Descripciï¿½n"
+frm_cheques.grdr.TextMatrix(0, 1) = "Descripción"
 frm_cheques.grdr.TextMatrix(0, 2) = "Documento"
 frm_cheques.grdr.TextMatrix(0, 3) = "Cuenta"
 frm_cheques.grdr.TextMatrix(0, 4) = "Imp.US$"

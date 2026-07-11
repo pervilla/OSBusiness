@@ -1,7 +1,6 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Begin VB.MDIForm MDIForm1 
    BackColor       =   &H00E0E0E0&
    Caption         =   "MEDINAFARMA"
@@ -24,7 +23,7 @@ Begin VB.MDIForm MDIForm1
       _ExtentX        =   31618
       _ExtentY        =   741
       Appearance      =   1
-      _Version        =   327682
+      _Version        =   393216
       Begin VB.CommandButton TXTCIA 
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
@@ -1774,7 +1773,7 @@ If LK_EMP = "HERuu" Then
   If LK_FECHA_DIA >= wfecha Then
   If Val(GEN!GEN_CBS) <> -9 Then
 sigue:
-  '  WS = InputBox("Nï¿½ Serial es : " & Format(GEN!GEN_CFP, "0000000000000000") & " , Llame al proveedor y pida su nueva serie." & Chr(13) & "{Sï¿½ intenta colocar una serie que no es, por quinta vez... el Proveedor no responde por la informaciï¿½n almacena.}", "Acceso Limitado ....")
+  '  WS = InputBox("Nro  Serial es : " & Format(GEN!GEN_CFP, "0000000000000000") & " , Llame al proveedor y pida su nueva serie." & Chr(13) & "{Sro  intenta colocar una serie que no es, por quinta vez... el Proveedor no responde por la informaciro n almacena.}", "Acceso Limitado ....")
   '  If WS = "" Then
       GoTo sigue
   '  End If
@@ -1784,7 +1783,7 @@ sigue:
        GEN!GEN_CBS = -9
        GEN.Update
     Else
-      MsgBox "LLame a su Proveedor de OSBussines y pida su Nï¿½ de Serie. Ingreso Incorrecto" & Chr(13) & "{No intentar si no tiene el nuevo Nro. de Serie.}", vbCritical, "Acceso limitado .... "
+      MsgBox "LLame a su Proveedor de OSBussines y pida su Nro  de Serie. Ingreso Incorrecto" & Chr(13) & "{No intentar si no tiene el nuevo Nro. de Serie.}", vbCritical, "Acceso limitado .... "
       End
     End If
   End If
@@ -2356,7 +2355,7 @@ Private Sub menuRepoAyuda_Click()
 Dim WL As Object
 Dim var As String
 'Dim ee As Words
-MsgBox "En Construcciï¿½n... " & Chr(13) & "Para mayor informaciï¿½n llamar al Telf. Celular: (044) 9604779 Nextel 829*6446 - Trujillo - Perú", vbInformation, "Asesoria y Soporte"
+MsgBox "En Construcciro n... " & Chr(13) & "Para mayor informaciro n llamar al Telf. Celular: (044) 9604779 Nextel 829*6446 - Trujillo - Perú", vbInformation, "Asesoria y Soporte"
 Exit Sub
 Dim ww As Form
 Dim I
@@ -2920,8 +2919,8 @@ Dim wclave As String
 On Error GoTo sal
 Dim iFormCount As Integer
 Dim WCAMBIA
-LogTrace "MDI: Toolbar Click - " & Button.Key
-Select Case Button.Key
+LogTrace "MDI: Toolbar Click - " & Button.key
+Select Case Button.key
   Case "FORMGEN"
       Screen.MousePointer = 11
       Load FORMGEN
@@ -2939,7 +2938,7 @@ Select Case Button.Key
       Screen.MousePointer = 0
   Case "PRECIOS"
       If LK_FLAG_SOS = "A" Then
-         MsgBox "En Contrucciï¿½n", 48, Pub_Titulo
+         MsgBox "En Contrucciro n", 48, Pub_Titulo
          Exit Sub
       End If
 

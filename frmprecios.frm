@@ -289,12 +289,12 @@ End Sub
 Private Sub cmdopcion_Click()
 If Val(Left(cmdopcion.Text, 1)) = 1 Then
   Label1(2).Caption = "Precio : "
-  Label1(3).Caption = "Observaci�n :"
+  Label1(3).Caption = "Observaciro n :"
   frmprecios.Caption = "Datos de Precios Otros."
   cmbcomp.Enabled = True
 Else
   Label1(2).Caption = "Cantidad Falt. : "
-  Label1(3).Caption = "Observaci�n :"
+  Label1(3).Caption = "Observaciro n :"
   frmprecios.Caption = "Cotiza/ No Vendido."
   unidad.ListIndex = unidad.ListCount - 1
   cmbcomp.Enabled = False
@@ -387,14 +387,14 @@ Public Sub LLENADOS(cont As ComboBox, tip As Integer)
     codast.Caption = ""
     Do Until tab_mayor.EOF
      If LK_CODUSU = "BOT-OPER20" Or LK_CODUSU = "OPER20" Or LK_CODUSU = "ADMIN" Or LK_CODUSU = "SUPERVISOR" Or Val(lblcantidad.Caption) = 0 Then
-       cont.AddItem tab_mayor!tab_nomlargo & String(60, " ") & tab_mayor!tab_numtab
-       If Left(tab_mayor!tab_nomlargo, 1) = "*" Then
-            codast.Caption = tab_mayor!tab_numtab
+       cont.AddItem tab_mayor!TAB_NOMLARGO & String(60, " ") & tab_mayor!TAB_NUMTAB
+       If Left(tab_mayor!TAB_NOMLARGO, 1) = "*" Then
+            codast.Caption = tab_mayor!TAB_NUMTAB
        End If
      Else
-       If Left(tab_mayor!tab_nomlargo, 1) = "*" Then
-          cont.AddItem tab_mayor!tab_nomlargo & String(60, " ") & tab_mayor!tab_numtab
-          codast.Caption = tab_mayor!tab_numtab
+       If Left(tab_mayor!TAB_NOMLARGO, 1) = "*" Then
+          cont.AddItem tab_mayor!TAB_NOMLARGO & String(60, " ") & tab_mayor!TAB_NUMTAB
+          codast.Caption = tab_mayor!TAB_NUMTAB
        End If
      End If
      tab_mayor.MoveNext

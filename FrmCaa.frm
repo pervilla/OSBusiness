@@ -42,7 +42,7 @@ Begin VB.Form FrmCaa
       LabelEdit       =   1
       LabelWrap       =   -1  'True
       HideSelection   =   0   'False
-      _Version        =   327682
+      _Version        =   393217
       ForeColor       =   -2147483640
       BackColor       =   -2147483643
       BorderStyle     =   1
@@ -327,6 +327,7 @@ Begin VB.Form FrmCaa
       _ExtentX        =   1296
       _ExtentY        =   450
       _Version        =   393217
+      Enabled         =   -1  'True
       TextRTF         =   $"FrmCaa.frx":0896
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
@@ -348,6 +349,7 @@ Begin VB.Form FrmCaa
       _ExtentX        =   1296
       _ExtentY        =   450
       _Version        =   393217
+      Enabled         =   -1  'True
       TextRTF         =   $"FrmCaa.frx":090C
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
@@ -589,7 +591,7 @@ Begin VB.Form FrmCaa
    End
    Begin VB.Label momento 
       Alignment       =   2  'Center
-      Caption         =   "Procesando Informaciï¿½n. un momento..."
+      Caption         =   "Procesando Información. un momento..."
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -685,7 +687,7 @@ LEER_TAB_LLAVE
 If tab_llave.EOF Then
 ws_zona = ""
 Else
-ws_zona = Trim(tab_llave!tab_nomlargo)
+ws_zona = Trim(tab_llave!TAB_NOMLARGO)
 End If
 xl.Cells(5, 1) = "LIMITE     : " & cli_llave!CLI_LIMCRE & " / Direc: " & Trim(cli_llave!CLI_CASA_DIREC) & " " & Format(cli_llave!CLI_CASA_NUM, "#######") & " " & ws_zona & "  / Telf: " & cli_llave!cli_telef1
 'xl.Cells(6, 1) = "FECHA APROB: " & cli_llave!CLI_FECHA_APROB
@@ -978,16 +980,16 @@ End Sub
 Private Sub cmdlimcre_Click(Index As Integer)
 Dim PSLIM As rdoQuery
 Dim ps_limcre As rdoResultset
-Dim Mensaje, Tï¿½tulo, valorpred, mifecha
+Dim mensaje, Tútulo, valorpred, mifecha
 If Val(i_codcli.Text) = 0 Then i_codcli.SetFocus: Exit Sub
 If Index = 1 Then
-Tï¿½tulo = "Movimientos de activaciï¿½n de Bloqueo 2007"
+Tútulo = "Movimientos de activaciro n de Bloqueo 2007"
 Else
-Tï¿½tulo = "Movimientos de Limite de Credito de Clientes"
+Tútulo = "Movimientos de Limite de Credito de Clientes"
 End If
-Mensaje = "Ingrese una Fecha de Inicio para la Consulta : "
+mensaje = "Ingrese una Fecha de Inicio para la Consulta : "
 valorpred = Format(LK_FECHA_DIA, "dd/mm/yyyy")
-mifecha = InputBox(Mensaje, Tï¿½tulo, valorpred)
+mifecha = InputBox(mensaje, Tútulo, valorpred)
 If mifecha = "" Then
    Exit Sub
 End If
@@ -1167,7 +1169,7 @@ Else
 Exit Sub
 End If
 If GRIDG.COL <> 15 Then Exit Sub
- wcodusu = InputBox("Fecha de Emisiï¿½n", "Cambio Fecha", GRIDG.TextMatrix(GRIDG.Row, 15))
+ wcodusu = InputBox("Fecha de Emisión", "Cambio Fecha", GRIDG.TextMatrix(GRIDG.Row, 15))
  If wcodusu = "" Then Exit Sub
  If Not IsDate(wcodusu) Then Exit Sub
  
@@ -1197,8 +1199,8 @@ End If
  Dim wsum As Currency
  Dim TEXTO
  TEXTO = ""
- Dim pb
- pb = Chr(10) & Chr(13)
+ Dim PB
+ PB = Chr(10) & Chr(13)
  If GRIDG.COL = 2 Then
    If LK_EMP = "PLA" Then
      SQ_OPER = 1
@@ -1220,11 +1222,11 @@ End If
        pu_codcia = LK_CODCIA
        SQ_OPER = 1
        LEER_ART_LLAVE
-       TEXTO = TEXTO + Left(art_LLAVE!ART_NOMBRE, 20) & " : " & FFF_menor!far_descri & " : " & Format((FFF_menor!FAR_cantidad / FFF_menor!FAR_equiv), "0.00") + pb
+       TEXTO = TEXTO + Left(art_LLAVE!art_nombre, 20) & " : " & FFF_menor!far_descri & " : " & Format((FFF_menor!FAR_cantidad / FFF_menor!FAR_equiv), "0.00") + PB
        wsum = wsum + FFF_menor!FAR_cantidad / FFF_menor!FAR_equiv
        FFF_menor.MoveNext
     Loop
-    MsgBox "Contenido de Celda : " + pb + TEXTO + pb + "Total =   " + Format(wsum, "0.00"), vbInformation, Pub_Titulo
+    MsgBox "Contenido de Celda : " + PB + TEXTO + PB + "Total =   " + Format(wsum, "0.00"), vbInformation, Pub_Titulo
     End If
     GRIDG.SetFocus
     Exit Sub
@@ -1236,13 +1238,13 @@ End If
     LEER_VEN_LLAVE
     If Not ven_llave.EOF Then
     TEXTO = ven_llave!VEM_NOMBRE
-    MsgBox "Contenido de Celda : " + pb + TEXTO, vbInformation, Pub_Titulo
+    MsgBox "Contenido de Celda : " + PB + TEXTO, vbInformation, Pub_Titulo
     GRIDG.SetFocus
     End If
     Exit Sub
 End If
 If GRIDG.COL = 10 Then
- MsgBox "Contenido de Celda : " + pb + Format(GRIDG.Text, "hh:mm:ss AMPM"), 48, Pub_Titulo
+ MsgBox "Contenido de Celda : " + PB + Format(GRIDG.Text, "hh:mm:ss AMPM"), 48, Pub_Titulo
  GRIDG.SetFocus
  Exit Sub
 End If
@@ -1254,7 +1256,7 @@ If GRIDG.COL = 9 Then
  End If
  Do Until usu.EOF
   If Trim(usu!usu_key) = Trim(GRIDG.Text) Then
-    MsgBox "Contenido de Celda : " + pb + Trim(usu!USU_NOMBRE), vbInformation, Pub_Titulo
+    MsgBox "Contenido de Celda : " + PB + Trim(usu!USU_NOMBRE), vbInformation, Pub_Titulo
     GRIDG.SetFocus
     Exit Sub
   End If
@@ -1264,7 +1266,7 @@ If GRIDG.COL = 9 Then
  Exit Sub
 End If
 
-MsgBox "Contenido de Celda : " + pb + GRIDG.TextMatrix(GRIDG.Row, GRIDG.COL), vbInformation, Pub_Titulo
+MsgBox "Contenido de Celda : " + PB + GRIDG.TextMatrix(GRIDG.Row, GRIDG.COL), vbInformation, Pub_Titulo
 GRIDG.SetFocus
 
 End Sub
@@ -1337,7 +1339,7 @@ If LK_CODUSU = "ADMIN" And (GridK.COL = 13 Or GridK.COL = 1) Then
        Exit Sub
     End If
    Else
-     wcodusu = InputBox("Fecha de Emisiï¿½n", "Cambio Fecha", GridK.TextMatrix(GridK.Row, 1))
+     wcodusu = InputBox("Fecha de Emisión", "Cambio Fecha", GridK.TextMatrix(GridK.Row, 1))
     If wcodusu = "" Then Exit Sub
     If Not IsDate(wcodusu) Then Exit Sub
    End If
@@ -1363,9 +1365,9 @@ If LK_CODUSU = "ADMIN" And (GridK.COL = 13 Or GridK.COL = 1) Then
 End If
  Dim pub_mensajeText
  
- Dim pb
- pb = Chr(10) & Chr(13) & Chr(10) & Chr(13)
- MsgBox "Contenido de Celda : " + pb + GridK.TextMatrix(GridK.Row, GridK.COL), vbInformation, Pub_Titulo
+ Dim PB
+ PB = Chr(10) & Chr(13) & Chr(10) & Chr(13)
+ MsgBox "Contenido de Celda : " + PB + GridK.TextMatrix(GridK.Row, GridK.COL), vbInformation, Pub_Titulo
  
 End Sub
 
@@ -1997,7 +1999,7 @@ Do Until wcar_mayor.EOF
      ElseIf Trim(wcar_mayor!car_fbg) = "D" Then
         vdocum = "N.Deb. " & wcar_mayor!car_NUMSER & "-" & wcar_mayor!car_NUMFAC
      ElseIf Trim(wcar_mayor!car_fbg) = "" Then
-        vdocum = "Nï¿½:" & wcar_mayor!car_NUMSER & "-" & wcar_mayor!car_NUMFAC
+        vdocum = "Nro :" & wcar_mayor!car_NUMSER & "-" & wcar_mayor!car_NUMFAC
      Else
         vdocum = " "
      End If
@@ -2058,7 +2060,7 @@ Do Until wcar_mayor.EOF
       ' If wcar_mayor!car_TIPDOC = "RC" Then
       '    vdocum = "xDoc. " & wcar_mayor!CAR_NUMSER_C & "-" & wcar_mayor!CAR_NUMFAC_C
       ' Else
-      '    vdocum = "Nï¿½. " & wcar_mayor!car_NUM_CHEQUE
+      '    vdocum = "Nro . " & wcar_mayor!car_NUM_CHEQUE
       ' End If
 
      If wcar_mayor!CAR_TIPDOC = "FA" And wcar_mayor!car_fbg <> " " Then
