@@ -346,6 +346,11 @@ If KeyCode = vbKeyF5 Then Tecla_F5
 End Sub
 
 Private Sub Form_Load()
+  If LK_CODUSU <> "ADMIN" Then
+      MsgBox "Solo el usuario ADMIN puede acceder a esta opcion", 48, Pub_Titulo
+      Unload FrmCal
+      Exit Sub
+  End If
   flag_actualiza = ""
   FrmCal.Left = (Screen.Width - FrmCal.Width) / 2
   FrmCal.Top = (Screen.Height - FrmCal.Height) / 2
@@ -362,21 +367,21 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub gr_Click()
-textovar.Left = gr.Left + gr.CellLeft
-textovar.Width = gr.CellWidth
-textovar.Height = gr.CellHeight
-textovar.Top = gr.Top + gr.CellTop
-textovar.Tag = gr.TextMatrix(gr.Row, gr.COL)
-textovar.Text = gr.TextMatrix(gr.Row, gr.COL)
+TEXTOVAR.Left = gr.Left + gr.CellLeft
+TEXTOVAR.Width = gr.CellWidth
+TEXTOVAR.Height = gr.CellHeight
+TEXTOVAR.Top = gr.Top + gr.CellTop
+TEXTOVAR.Tag = gr.TextMatrix(gr.Row, gr.COL)
+TEXTOVAR.Text = gr.TextMatrix(gr.Row, gr.COL)
 End Sub
 
 Private Sub gr_EnterCell()
-textovar.Left = gr.Left + gr.CellLeft
-textovar.Width = gr.CellWidth
-textovar.Height = gr.CellHeight
-textovar.Top = gr.Top + gr.CellTop
-textovar.Tag = gr.TextMatrix(gr.Row, gr.COL)
-textovar.Text = gr.TextMatrix(gr.Row, gr.COL)
+TEXTOVAR.Left = gr.Left + gr.CellLeft
+TEXTOVAR.Width = gr.CellWidth
+TEXTOVAR.Height = gr.CellHeight
+TEXTOVAR.Top = gr.Top + gr.CellTop
+TEXTOVAR.Tag = gr.TextMatrix(gr.Row, gr.COL)
+TEXTOVAR.Text = gr.TextMatrix(gr.Row, gr.COL)
 
 End Sub
 
@@ -397,17 +402,17 @@ If gr.COL = 0 Then
   'textovar.MaxLength = 1
   If KeyAscii = 45 Or KeyAscii = 43 Then
   Else
-    textovar.Visible = False
+    TEXTOVAR.Visible = False
     KeyAscii = 0
     Exit Sub
   End If
 Else
 'textovar.MaxLength = 0
 End If
-textovar.Visible = True
-If KeyAscii <> 13 Then textovar.Text = Chr(KeyAscii) 'gr.TextMatrix(gr.Row, gr.Col)
-textovar.SelStart = Len(textovar.Text)
-textovar.SetFocus
+TEXTOVAR.Visible = True
+If KeyAscii <> 13 Then TEXTOVAR.Text = Chr(KeyAscii) 'gr.TextMatrix(gr.Row, gr.Col)
+TEXTOVAR.SelStart = Len(TEXTOVAR.Text)
+TEXTOVAR.SetFocus
 If gr.COL = 0 Then
     If KeyAscii = 45 Or KeyAscii = 43 Then
      textovar_KeyPress 13
@@ -419,15 +424,15 @@ End If
 End Sub
 
 Private Sub grid_KeyDown(KeyCode As Integer, Shift As Integer)
-Dim f As Integer
+Dim F As Integer
 Dim fil_r As Integer
 
 If KeyCode <> 96 Then Exit Sub
 If grid.Row = 0 Then Exit Sub
 fil_r = grid.COL
- For f = 0 To grid.Cols - 1
+ For F = 0 To grid.Cols - 1
    grid.Row = grid.Row
-   grid.COL = f
+   grid.COL = F
    If grid.CellBackColor = QBColor(7) Then
       grid.CellBackColor = QBColor(15)
       grid.TextMatrix(grid.Row, 5) = 0
@@ -435,7 +440,7 @@ fil_r = grid.COL
       grid.TextMatrix(grid.Row, 5) = 1
       grid.CellBackColor = QBColor(7)
    End If
- Next f
+ Next F
 grid.COL = fil_r
 suma_select
 calcu
@@ -443,14 +448,14 @@ End Sub
 
 Private Sub grid_KeyPress(KeyAscii As Integer)
 Dim flag_sel As String
-Dim f As Integer
+Dim F As Integer
 If KeyAscii = 13 Then
  flag_sel = ""
- For f = 0 To grid.Rows - 1
-      If Val(grid.TextMatrix(f, 5)) = 1 Then
+ For F = 0 To grid.Rows - 1
+      If Val(grid.TextMatrix(F, 5)) = 1 Then
          flag_sel = "A"
       End If
- Next f
+ Next F
     If flag_sel <> "A" Then
         MsgBox "Seleccione uno de la lista con la tecla 0 (cero)", 48, Pub_Titulo
         Exit Sub
@@ -475,18 +480,18 @@ End If
 End Sub
 
 Private Sub textovar_Change()
-gr.TextMatrix(gr.Row, gr.COL) = textovar.Text
+gr.TextMatrix(gr.Row, gr.COL) = TEXTOVAR.Text
 calcu
 End Sub
 
 Private Sub textovar_KeyPress(KeyAscii As Integer)
 If gr.COL = 1 Then
-   SOLO_DECIMAL textovar, KeyAscii
+   SOLO_DECIMAL TEXTOVAR, KeyAscii
 End If
 If KeyAscii = 27 Then
-gr.TextMatrix(gr.Row, gr.COL) = textovar.Tag
-textovar.Text = textovar.Tag
-textovar.Visible = False
+gr.TextMatrix(gr.Row, gr.COL) = TEXTOVAR.Tag
+TEXTOVAR.Text = TEXTOVAR.Tag
+TEXTOVAR.Visible = False
 gr.SetFocus
 Exit Sub
 End If
@@ -507,7 +512,7 @@ If KeyAscii = 13 Then
    GoTo sa
  End If
 sa:
- textovar.Visible = False
+ TEXTOVAR.Visible = False
  gr.SetFocus
 End If
 
@@ -545,7 +550,7 @@ grid.TextMatrix(0, 1) = "Serie"
 grid.TextMatrix(0, 2) = "Nro."
 grid.TextMatrix(0, 3) = "Cliente"
 grid.TextMatrix(0, 4) = "Importe"
-grid.TextMatrix(0, 6) = "Situación"
+grid.TextMatrix(0, 6) = "Situaciï¿½n"
 grid.RowHeight(0) = 500
 grid.ColWidth(0) = 300
 grid.ColWidth(1) = 500
@@ -593,31 +598,31 @@ End Sub
 
 Public Sub suma_select()
 Dim sum_efectivo As Currency
-Dim f As Integer
+Dim F As Integer
 Dim fil_r As Integer
 
 fil_r = grid.COL
 sum_efectivo = 0
- For f = 0 To grid.Rows - 1
-      If Val(grid.TextMatrix(f, 5)) = 1 Then
-         sum_efectivo = sum_efectivo + Val(Format(grid.TextMatrix(f, 4), "0.00"))
+ For F = 0 To grid.Rows - 1
+      If Val(grid.TextMatrix(F, 5)) = 1 Then
+         sum_efectivo = sum_efectivo + Val(Format(grid.TextMatrix(F, 4), "0.00"))
       End If
- Next f
+ Next F
 lbldocu.Caption = "Total Seleccion de Documentos"
 t_total.Text = Format(sum_efectivo, "0.00")
 End Sub
 
 Public Sub Tecla_F8()
-Dim f As Integer
+Dim F As Integer
 
 grid.Visible = False
 DoEvents
- For f = 0 To grid.Rows - 1
-     If Val(grid.TextMatrix(f, 5)) = 1 Then
-         pub_cadena = "update facart set far_oc = 'X' where far_codcia= '" & LK_CODCIA & "' and far_fbg = '" & Trim(grid.TextMatrix(f, 0)) & "' and far_numser = '" & grid.TextMatrix(f, 1) & "' and far_numfac= " & Trim(grid.TextMatrix(f, 2))
+ For F = 0 To grid.Rows - 1
+     If Val(grid.TextMatrix(F, 5)) = 1 Then
+         pub_cadena = "update facart set far_oc = 'X' where far_codcia= '" & LK_CODCIA & "' and far_fbg = '" & Trim(grid.TextMatrix(F, 0)) & "' and far_numser = '" & grid.TextMatrix(F, 1) & "' and far_numfac= " & Trim(grid.TextMatrix(F, 2))
          CN.Execute pub_cadena, rdExecDirect
      End If
- Next f
+ Next F
  grid.Visible = True
  gr.Rows = 2
  gr.TextMatrix(1, 0) = ""

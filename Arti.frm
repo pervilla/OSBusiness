@@ -1,8 +1,8 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Begin VB.Form frmARTI 
    Caption         =   "Maestro de Articulos"
    ClientHeight    =   12255
@@ -20,35 +20,35 @@ Begin VB.Form frmARTI
       Caption         =   "Kardex"
       Height          =   750
       Left            =   10440
-      TabIndex        =   288
+      TabIndex        =   282
       Top             =   3888
       Width           =   1335
    End
-    Begin MSComctlLib.ListView ListView1 
-       Height          =   540
-       Left            =   10320
-       TabIndex        =   254
-       Top             =   7200
-       Visible         =   0   'False
-       Width           =   1605
-       _ExtentX        =   2831
-       _ExtentY        =   953
-       View            =   3
-       Arrange         =   1
-       LabelEdit       =   1
-       LabelWrap       =   -1  'True
-       HideSelection   =   0   'False
-       _Version        =   393217
-       ForeColor       =   128
-       BackColor       =   16777215
-       Appearance      =   1
-       NumItems        =   0
-    End
+   Begin MSComctlLib.ListView ListView1 
+      Height          =   540
+      Left            =   10320
+      TabIndex        =   251
+      Top             =   7200
+      Visible         =   0   'False
+      Width           =   1605
+      _ExtentX        =   2831
+      _ExtentY        =   953
+      View            =   3
+      Arrange         =   1
+      LabelEdit       =   1
+      LabelWrap       =   -1  'True
+      HideSelection   =   0   'False
+      _Version        =   393217
+      ForeColor       =   128
+      BackColor       =   16777215
+      Appearance      =   1
+      NumItems        =   0
+   End
    Begin VB.Frame fraact6 
       Caption         =   "Afecta a la Lista de Precios :"
       Height          =   1095
       Left            =   4920
-      TabIndex        =   128
+      TabIndex        =   125
       Top             =   11040
       Visible         =   0   'False
       Width           =   6375
@@ -58,7 +58,7 @@ Begin VB.Form frmARTI
          Left            =   4080
          List            =   "Arti.frx":0007
          Style           =   2  'Dropdown List
-         TabIndex        =   265
+         TabIndex        =   261
          Top             =   240
          Width           =   615
       End
@@ -68,7 +68,7 @@ Begin VB.Form frmARTI
          Left            =   120
          List            =   "Arti.frx":0038
          Style           =   2  'Dropdown List
-         TabIndex        =   150
+         TabIndex        =   147
          Top             =   480
          Width           =   1455
       End
@@ -85,7 +85,7 @@ Begin VB.Form frmARTI
          EndProperty
          Height          =   255
          Left            =   4920
-         TabIndex        =   134
+         TabIndex        =   131
          Top             =   600
          Width           =   1215
       End
@@ -93,7 +93,7 @@ Begin VB.Form frmARTI
          Height          =   285
          Left            =   3240
          MaxLength       =   2
-         TabIndex        =   131
+         TabIndex        =   128
          Text            =   "1"
          Top             =   240
          Width           =   375
@@ -101,7 +101,7 @@ Begin VB.Form frmARTI
       Begin VB.TextBox txtporlista 
          Height          =   285
          Left            =   3240
-         TabIndex        =   130
+         TabIndex        =   127
          Text            =   "0.00"
          Top             =   600
          Width           =   735
@@ -119,7 +119,7 @@ Begin VB.Form frmARTI
          EndProperty
          Height          =   255
          Left            =   4920
-         TabIndex        =   129
+         TabIndex        =   126
          Top             =   240
          Width           =   1215
       End
@@ -128,7 +128,7 @@ Begin VB.Form frmARTI
          Height          =   255
          Index           =   1
          Left            =   120
-         TabIndex        =   151
+         TabIndex        =   148
          Top             =   240
          Width           =   1215
       End
@@ -137,7 +137,7 @@ Begin VB.Form frmARTI
          Height          =   255
          Index           =   0
          Left            =   1920
-         TabIndex        =   133
+         TabIndex        =   130
          Top             =   240
          Width           =   1215
       End
@@ -145,41 +145,23 @@ Begin VB.Form frmARTI
          Caption         =   "Adicione el (%) :"
          Height          =   255
          Left            =   1920
-         TabIndex        =   132
+         TabIndex        =   129
          Top             =   600
          Width           =   1335
       End
-    End
-    Begin VB.CheckBox art_situacion 
-       Caption         =   "DesActivado"
-       BeginProperty Font 
-          Name            =   "Tahoma"
-          Size            =   9.75
-          Charset         =   0
-          Weight          =   700
-          Underline       =   0   'False
-          Italic          =   0   'False
-          Strikethrough   =   0   'False
-       EndProperty
-       ForeColor       =   &H00000080&
-       Height          =   255
-       Left            =   7200
-       TabIndex        =   263
-       Top             =   1320
-       Width           =   2175
-    End
-    Begin VB.Frame fragen
+   End
+   Begin VB.Frame fragen 
       Caption         =   "Calcular Stock Minimos y Maximos por Promedio."
       Height          =   2895
       Left            =   4920
-      TabIndex        =   136
+      TabIndex        =   133
       Top             =   8040
       Visible         =   0   'False
       Width           =   6855
       Begin VB.TextBox txtperiodo 
          Height          =   285
          Left            =   5880
-         TabIndex        =   251
+         TabIndex        =   248
          Text            =   "4"
          Top             =   960
          Width           =   615
@@ -189,7 +171,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00008000&
          Height          =   195
          Left            =   3720
-         TabIndex        =   250
+         TabIndex        =   247
          Top             =   960
          Width           =   1815
       End
@@ -197,7 +179,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00000080&
          Height          =   285
          Left            =   4800
-         TabIndex        =   202
+         TabIndex        =   199
          Top             =   1560
          Visible         =   0   'False
          Width           =   615
@@ -207,7 +189,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00000080&
          Height          =   195
          Left            =   3360
-         TabIndex        =   201
+         TabIndex        =   198
          Top             =   1200
          Width           =   2055
       End
@@ -215,7 +197,7 @@ Begin VB.Form frmARTI
          Caption         =   "Actualizar Porcentajes"
          Height          =   375
          Left            =   3360
-         TabIndex        =   200
+         TabIndex        =   197
          Top             =   2040
          Visible         =   0   'False
          Width           =   2055
@@ -225,7 +207,7 @@ Begin VB.Form frmARTI
          Left            =   120
          Sorted          =   -1  'True
          Style           =   1  'Checkbox
-         TabIndex        =   147
+         TabIndex        =   144
          Top             =   1440
          Width           =   3135
       End
@@ -235,7 +217,7 @@ Begin VB.Form frmARTI
          Left            =   240
          ScaleHeight     =   150
          ScaleWidth      =   2865
-         TabIndex        =   146
+         TabIndex        =   143
          Top             =   960
          Visible         =   0   'False
          Width           =   2895
@@ -243,7 +225,7 @@ Begin VB.Form frmARTI
       Begin VB.TextBox txtd 
          Height          =   285
          Left            =   3840
-         TabIndex        =   144
+         TabIndex        =   141
          Text            =   "000"
          Top             =   480
          Width           =   495
@@ -252,7 +234,7 @@ Begin VB.Form frmARTI
          Caption         =   "Generar Proceso"
          Height          =   615
          Left            =   4560
-         TabIndex        =   143
+         TabIndex        =   140
          Top             =   240
          Width           =   1095
       End
@@ -261,7 +243,7 @@ Begin VB.Form frmARTI
          Height          =   255
          Index           =   1
          Left            =   120
-         TabIndex        =   142
+         TabIndex        =   139
          Top             =   600
          Width           =   1095
       End
@@ -270,7 +252,7 @@ Begin VB.Form frmARTI
          Height          =   255
          Index           =   0
          Left            =   120
-         TabIndex        =   141
+         TabIndex        =   138
          Top             =   240
          Value           =   -1  'True
          Width           =   1095
@@ -278,7 +260,7 @@ Begin VB.Form frmARTI
       Begin MSMask.MaskEdBox txtCampo2 
          Height          =   285
          Left            =   2160
-         TabIndex        =   137
+         TabIndex        =   134
          Top             =   600
          Width           =   1215
          _ExtentX        =   2143
@@ -300,7 +282,7 @@ Begin VB.Form frmARTI
       Begin MSMask.MaskEdBox txtCampo1 
          Height          =   285
          Left            =   2160
-         TabIndex        =   138
+         TabIndex        =   135
          Top             =   240
          Width           =   1215
          _ExtentX        =   2143
@@ -323,7 +305,7 @@ Begin VB.Form frmARTI
          Caption         =   "Periodos Estadisticos:"
          Height          =   495
          Left            =   5760
-         TabIndex        =   252
+         TabIndex        =   249
          Top             =   480
          Width           =   975
       End
@@ -342,7 +324,7 @@ Begin VB.Form frmARTI
          Height          =   255
          Index           =   1
          Left            =   5280
-         TabIndex        =   204
+         TabIndex        =   201
          Top             =   1560
          Visible         =   0   'False
          Width           =   375
@@ -352,7 +334,7 @@ Begin VB.Form frmARTI
          Height          =   255
          Index           =   0
          Left            =   3360
-         TabIndex        =   203
+         TabIndex        =   200
          Top             =   1560
          Visible         =   0   'False
          Width           =   1575
@@ -362,7 +344,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00808000&
          Height          =   315
          Left            =   240
-         TabIndex        =   148
+         TabIndex        =   145
          Top             =   1200
          Width           =   2145
       End
@@ -371,7 +353,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00808000&
          Height          =   195
          Left            =   3600
-         TabIndex        =   145
+         TabIndex        =   142
          Top             =   240
          Width           =   825
       End
@@ -380,7 +362,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00808000&
          Height          =   195
          Left            =   1200
-         TabIndex        =   140
+         TabIndex        =   137
          Top             =   600
          Width           =   825
       End
@@ -389,7 +371,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00808000&
          Height          =   195
          Left            =   1200
-         TabIndex        =   139
+         TabIndex        =   136
          Top             =   240
          Width           =   825
       End
@@ -398,7 +380,7 @@ Begin VB.Form frmARTI
       Caption         =   "Actualizar por Lineas :"
       Height          =   5175
       Left            =   12015
-      TabIndex        =   152
+      TabIndex        =   149
       Top             =   1710
       Visible         =   0   'False
       Width           =   7695
@@ -406,7 +388,7 @@ Begin VB.Form frmARTI
          Caption         =   "Red. Especial 9"
          Height          =   195
          Left            =   5880
-         TabIndex        =   199
+         TabIndex        =   196
          Top             =   3960
          Width           =   1455
       End
@@ -414,7 +396,7 @@ Begin VB.Form frmARTI
          Caption         =   "Red. Especial 8"
          Height          =   195
          Left            =   5880
-         TabIndex        =   198
+         TabIndex        =   195
          Top             =   3600
          Width           =   1455
       End
@@ -422,7 +404,7 @@ Begin VB.Form frmARTI
          Caption         =   "Red. Especial 7"
          Height          =   195
          Left            =   5880
-         TabIndex        =   197
+         TabIndex        =   194
          Top             =   3240
          Width           =   1455
       End
@@ -430,7 +412,7 @@ Begin VB.Form frmARTI
          Caption         =   "Red. Especial 6"
          Height          =   195
          Left            =   5880
-         TabIndex        =   196
+         TabIndex        =   193
          Top             =   2880
          Width           =   1455
       End
@@ -438,7 +420,7 @@ Begin VB.Form frmARTI
          Caption         =   "Red. Especial 5"
          Height          =   195
          Left            =   5880
-         TabIndex        =   195
+         TabIndex        =   192
          Top             =   2520
          Width           =   1455
       End
@@ -446,7 +428,7 @@ Begin VB.Form frmARTI
          Caption         =   "Red. Especia 4"
          Height          =   195
          Left            =   5880
-         TabIndex        =   194
+         TabIndex        =   191
          Top             =   2160
          Width           =   1455
       End
@@ -454,7 +436,7 @@ Begin VB.Form frmARTI
          Caption         =   "Red. Especial 3"
          Height          =   195
          Left            =   5880
-         TabIndex        =   193
+         TabIndex        =   190
          Top             =   1800
          Width           =   1455
       End
@@ -462,7 +444,7 @@ Begin VB.Form frmARTI
          Caption         =   "Red. Especial 2"
          Height          =   195
          Left            =   5880
-         TabIndex        =   192
+         TabIndex        =   189
          Top             =   1440
          Width           =   1455
       End
@@ -470,7 +452,7 @@ Begin VB.Form frmARTI
          Caption         =   "Red. Especial 1"
          Height          =   195
          Left            =   5880
-         TabIndex        =   191
+         TabIndex        =   188
          Top             =   1080
          Width           =   1455
       End
@@ -489,7 +471,7 @@ Begin VB.Form frmARTI
          Left            =   4800
          List            =   "Arti.frx":00D0
          Style           =   2  'Dropdown List
-         TabIndex        =   188
+         TabIndex        =   185
          Top             =   3960
          Visible         =   0   'False
          Width           =   975
@@ -509,7 +491,7 @@ Begin VB.Form frmARTI
          Left            =   4800
          List            =   "Arti.frx":00F6
          Style           =   2  'Dropdown List
-         TabIndex        =   187
+         TabIndex        =   184
          Top             =   3600
          Visible         =   0   'False
          Width           =   975
@@ -529,7 +511,7 @@ Begin VB.Form frmARTI
          Left            =   4800
          List            =   "Arti.frx":011C
          Style           =   2  'Dropdown List
-         TabIndex        =   186
+         TabIndex        =   183
          Top             =   3240
          Visible         =   0   'False
          Width           =   975
@@ -549,7 +531,7 @@ Begin VB.Form frmARTI
          Left            =   4800
          List            =   "Arti.frx":0142
          Style           =   2  'Dropdown List
-         TabIndex        =   185
+         TabIndex        =   182
          Top             =   2880
          Visible         =   0   'False
          Width           =   975
@@ -569,7 +551,7 @@ Begin VB.Form frmARTI
          Left            =   4800
          List            =   "Arti.frx":0168
          Style           =   2  'Dropdown List
-         TabIndex        =   184
+         TabIndex        =   181
          Top             =   2520
          Visible         =   0   'False
          Width           =   975
@@ -589,7 +571,7 @@ Begin VB.Form frmARTI
          Left            =   4800
          List            =   "Arti.frx":018E
          Style           =   2  'Dropdown List
-         TabIndex        =   183
+         TabIndex        =   180
          Top             =   2160
          Visible         =   0   'False
          Width           =   975
@@ -609,7 +591,7 @@ Begin VB.Form frmARTI
          Left            =   4800
          List            =   "Arti.frx":01B4
          Style           =   2  'Dropdown List
-         TabIndex        =   182
+         TabIndex        =   179
          Top             =   1800
          Visible         =   0   'False
          Width           =   975
@@ -629,7 +611,7 @@ Begin VB.Form frmARTI
          Left            =   4800
          List            =   "Arti.frx":01DA
          Style           =   2  'Dropdown List
-         TabIndex        =   181
+         TabIndex        =   178
          Top             =   1440
          Visible         =   0   'False
          Width           =   975
@@ -649,7 +631,7 @@ Begin VB.Form frmARTI
          Left            =   4800
          List            =   "Arti.frx":0200
          Style           =   2  'Dropdown List
-         TabIndex        =   180
+         TabIndex        =   177
          Top             =   1080
          Visible         =   0   'False
          Width           =   975
@@ -658,7 +640,7 @@ Begin VB.Form frmARTI
          Height          =   315
          Left            =   360
          Style           =   2  'Dropdown List
-         TabIndex        =   178
+         TabIndex        =   175
          Top             =   360
          Width           =   4215
       End
@@ -675,7 +657,7 @@ Begin VB.Form frmARTI
          EndProperty
          Height          =   375
          Left            =   3240
-         TabIndex        =   177
+         TabIndex        =   174
          Top             =   4560
          Width           =   1215
       End
@@ -683,7 +665,7 @@ Begin VB.Form frmARTI
          Caption         =   "Actualizar Listas "
          Height          =   375
          Left            =   600
-         TabIndex        =   175
+         TabIndex        =   172
          Top             =   4560
          Width           =   2295
       End
@@ -693,7 +675,7 @@ Begin VB.Form frmARTI
          Left            =   240
          ScaleHeight     =   240
          ScaleWidth      =   4305
-         TabIndex        =   174
+         TabIndex        =   171
          Top             =   4200
          Visible         =   0   'False
          Width           =   4335
@@ -702,7 +684,7 @@ Begin VB.Form frmARTI
          Appearance      =   0  'Flat
          Height          =   285
          Left            =   4080
-         TabIndex        =   171
+         TabIndex        =   168
          Text            =   "0.00"
          Top             =   1440
          Visible         =   0   'False
@@ -712,7 +694,7 @@ Begin VB.Form frmARTI
          Appearance      =   0  'Flat
          Height          =   285
          Left            =   4080
-         TabIndex        =   170
+         TabIndex        =   167
          Text            =   "0.00"
          Top             =   1800
          Visible         =   0   'False
@@ -722,7 +704,7 @@ Begin VB.Form frmARTI
          Appearance      =   0  'Flat
          Height          =   285
          Left            =   4080
-         TabIndex        =   169
+         TabIndex        =   166
          Text            =   "0.00"
          Top             =   2160
          Visible         =   0   'False
@@ -732,7 +714,7 @@ Begin VB.Form frmARTI
          Appearance      =   0  'Flat
          Height          =   285
          Left            =   4080
-         TabIndex        =   168
+         TabIndex        =   165
          Text            =   "0.00"
          Top             =   2520
          Visible         =   0   'False
@@ -742,7 +724,7 @@ Begin VB.Form frmARTI
          Appearance      =   0  'Flat
          Height          =   285
          Left            =   4080
-         TabIndex        =   167
+         TabIndex        =   164
          Text            =   "0.00"
          Top             =   2880
          Visible         =   0   'False
@@ -752,7 +734,7 @@ Begin VB.Form frmARTI
          Appearance      =   0  'Flat
          Height          =   285
          Left            =   4080
-         TabIndex        =   166
+         TabIndex        =   163
          Text            =   "0.00"
          Top             =   3240
          Visible         =   0   'False
@@ -762,7 +744,7 @@ Begin VB.Form frmARTI
          Appearance      =   0  'Flat
          Height          =   285
          Left            =   4080
-         TabIndex        =   165
+         TabIndex        =   162
          Text            =   "0.00"
          Top             =   3600
          Visible         =   0   'False
@@ -772,7 +754,7 @@ Begin VB.Form frmARTI
          Appearance      =   0  'Flat
          Height          =   285
          Left            =   4080
-         TabIndex        =   164
+         TabIndex        =   161
          Text            =   "0.00"
          Top             =   3960
          Visible         =   0   'False
@@ -782,7 +764,7 @@ Begin VB.Form frmARTI
          Appearance      =   0  'Flat
          Height          =   285
          Left            =   4080
-         TabIndex        =   163
+         TabIndex        =   160
          Text            =   "0.00"
          Top             =   1080
          Visible         =   0   'False
@@ -792,7 +774,7 @@ Begin VB.Form frmARTI
          Caption         =   "Precio 9"
          Height          =   195
          Left            =   3120
-         TabIndex        =   162
+         TabIndex        =   159
          Top             =   3960
          Width           =   975
       End
@@ -800,7 +782,7 @@ Begin VB.Form frmARTI
          Caption         =   "Precio 3"
          Height          =   195
          Left            =   3120
-         TabIndex        =   161
+         TabIndex        =   158
          Top             =   1800
          Width           =   975
       End
@@ -808,7 +790,7 @@ Begin VB.Form frmARTI
          Caption         =   "Precio 4"
          Height          =   195
          Left            =   3120
-         TabIndex        =   160
+         TabIndex        =   157
          Top             =   2160
          Width           =   975
       End
@@ -816,7 +798,7 @@ Begin VB.Form frmARTI
          Caption         =   "Precio 2"
          Height          =   195
          Left            =   3120
-         TabIndex        =   159
+         TabIndex        =   156
          Top             =   1440
          Width           =   975
       End
@@ -824,7 +806,7 @@ Begin VB.Form frmARTI
          Caption         =   "Precio 5"
          Height          =   195
          Left            =   3120
-         TabIndex        =   158
+         TabIndex        =   155
          Top             =   2520
          Width           =   975
       End
@@ -832,7 +814,7 @@ Begin VB.Form frmARTI
          Caption         =   "Precio 6"
          Height          =   195
          Left            =   3120
-         TabIndex        =   157
+         TabIndex        =   154
          Top             =   2880
          Width           =   975
       End
@@ -840,7 +822,7 @@ Begin VB.Form frmARTI
          Caption         =   "Precio 7"
          Height          =   195
          Left            =   3120
-         TabIndex        =   156
+         TabIndex        =   153
          Top             =   3240
          Width           =   975
       End
@@ -848,7 +830,7 @@ Begin VB.Form frmARTI
          Caption         =   "Precio 8"
          Height          =   195
          Left            =   3120
-         TabIndex        =   155
+         TabIndex        =   152
          Top             =   3600
          Width           =   975
       End
@@ -856,7 +838,7 @@ Begin VB.Form frmARTI
          Caption         =   "Precio 1"
          Height          =   195
          Left            =   3120
-         TabIndex        =   154
+         TabIndex        =   151
          Top             =   1080
          Width           =   975
       End
@@ -865,7 +847,7 @@ Begin VB.Form frmARTI
          Left            =   120
          Sorted          =   -1  'True
          Style           =   1  'Checkbox
-         TabIndex        =   153
+         TabIndex        =   150
          Top             =   960
          Width           =   2655
       End
@@ -884,7 +866,7 @@ Begin VB.Form frmARTI
          Height          =   255
          Index           =   3
          Left            =   4920
-         TabIndex        =   190
+         TabIndex        =   187
          Top             =   720
          Width           =   735
       End
@@ -903,7 +885,7 @@ Begin VB.Form frmARTI
          Height          =   255
          Index           =   2
          Left            =   3120
-         TabIndex        =   189
+         TabIndex        =   186
          Top             =   720
          Width           =   735
       End
@@ -922,7 +904,7 @@ Begin VB.Form frmARTI
          Height          =   255
          Index           =   1
          Left            =   3960
-         TabIndex        =   179
+         TabIndex        =   176
          Top             =   720
          Width           =   735
       End
@@ -940,7 +922,7 @@ Begin VB.Form frmARTI
          Height          =   255
          Index           =   0
          Left            =   2040
-         TabIndex        =   173
+         TabIndex        =   170
          Top             =   120
          Width           =   2535
       End
@@ -957,7 +939,7 @@ Begin VB.Form frmARTI
          EndProperty
          Height          =   255
          Left            =   240
-         TabIndex        =   172
+         TabIndex        =   169
          Top             =   720
          Width           =   1815
       End
@@ -966,7 +948,7 @@ Begin VB.Form frmARTI
       Caption         =   "Familia para Filtro! Reportes"
       Height          =   4095
       Left            =   120
-      TabIndex        =   240
+      TabIndex        =   237
       Top             =   8040
       Visible         =   0   'False
       Width           =   3135
@@ -976,7 +958,7 @@ Begin VB.Form frmARTI
          Left            =   240
          ScaleHeight     =   105
          ScaleWidth      =   2505
-         TabIndex        =   244
+         TabIndex        =   241
          Top             =   3480
          Visible         =   0   'False
          Width           =   2535
@@ -985,7 +967,7 @@ Begin VB.Form frmARTI
          Caption         =   "Cancelar"
          Height          =   375
          Left            =   1920
-         TabIndex        =   243
+         TabIndex        =   240
          Top             =   3600
          Width           =   855
       End
@@ -993,7 +975,7 @@ Begin VB.Form frmARTI
          Caption         =   "Guardar"
          Height          =   375
          Left            =   240
-         TabIndex        =   242
+         TabIndex        =   239
          Top             =   3600
          Width           =   1215
       End
@@ -1001,7 +983,7 @@ Begin VB.Form frmARTI
          Height          =   3210
          Left            =   120
          Style           =   1  'Checkbox
-         TabIndex        =   241
+         TabIndex        =   238
          Top             =   240
          Width           =   2775
       End
@@ -1010,7 +992,7 @@ Begin VB.Form frmARTI
       Caption         =   "Seleccione Cia Aplicar"
       Height          =   2895
       Left            =   7800
-      TabIndex        =   237
+      TabIndex        =   234
       Top             =   4920
       Visible         =   0   'False
       Width           =   2055
@@ -1018,7 +1000,7 @@ Begin VB.Form frmARTI
          Caption         =   "Aplicar"
          Height          =   435
          Left            =   480
-         TabIndex        =   239
+         TabIndex        =   236
          Top             =   2280
          Width           =   1095
       End
@@ -1026,7 +1008,7 @@ Begin VB.Form frmARTI
          Height          =   1860
          Left            =   120
          Style           =   1  'Checkbox
-         TabIndex        =   238
+         TabIndex        =   235
          Top             =   240
          Width           =   1815
       End
@@ -1046,7 +1028,7 @@ Begin VB.Form frmARTI
       ForeColor       =   &H00FFFFFF&
       Height          =   525
       Left            =   10440
-      TabIndex        =   149
+      TabIndex        =   146
       Top             =   5400
       Width           =   1275
    End
@@ -1063,7 +1045,7 @@ Begin VB.Form frmARTI
       EndProperty
       Height          =   495
       Left            =   10440
-      TabIndex        =   127
+      TabIndex        =   124
       Top             =   5970
       Visible         =   0   'False
       Width           =   1215
@@ -1075,7 +1057,7 @@ Begin VB.Form frmARTI
       Left            =   10440
       Picture         =   "Arti.frx":0213
       Style           =   1  'Graphical
-      TabIndex        =   113
+      TabIndex        =   110
       Top             =   120
       Width           =   615
    End
@@ -1086,7 +1068,7 @@ Begin VB.Form frmARTI
       Left            =   11160
       Picture         =   "Arti.frx":0655
       Style           =   1  'Graphical
-      TabIndex        =   112
+      TabIndex        =   109
       Top             =   120
       Width           =   615
    End
@@ -1102,7 +1084,7 @@ Begin VB.Form frmARTI
       EndProperty
       Height          =   735
       Left            =   720
-      TabIndex        =   60
+      TabIndex        =   57
       Top             =   7200
       Visible         =   0   'False
       Width           =   7965
@@ -1111,7 +1093,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   0
          Left            =   240
-         TabIndex        =   65
+         TabIndex        =   62
          Top             =   1800
          Width           =   2535
       End
@@ -1120,7 +1102,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   1
          Left            =   240
-         TabIndex        =   64
+         TabIndex        =   61
          Top             =   2040
          Width           =   1335
       End
@@ -1137,7 +1119,7 @@ Begin VB.Form frmARTI
          EndProperty
          Height          =   375
          Left            =   4320
-         TabIndex        =   63
+         TabIndex        =   60
          Top             =   1800
          Width           =   2175
       End
@@ -1154,14 +1136,14 @@ Begin VB.Form frmARTI
          EndProperty
          Height          =   375
          Left            =   6720
-         TabIndex        =   62
+         TabIndex        =   59
          Top             =   1800
          Width           =   1095
       End
       Begin MSFlexGridLib.MSFlexGrid ListExiste 
          Height          =   1575
          Left            =   120
-         TabIndex        =   61
+         TabIndex        =   58
          Top             =   240
          Width           =   9015
          _ExtentX        =   15901
@@ -1186,29 +1168,30 @@ Begin VB.Form frmARTI
       Height          =   300
       Left            =   6960
       MaxLength       =   11
-      TabIndex        =   80
-          Top             =   10000
+      TabIndex        =   77
+      Top             =   10000
       Visible         =   0   'False
       Width           =   495
    End
    Begin TabDlg.SSTab SSTab1 
       Height          =   2895
       Left            =   0
-      TabIndex        =   37
+      TabIndex        =   34
       Top             =   840
       Width           =   10290
       _ExtentX        =   18150
       _ExtentY        =   5106
       _Version        =   393216
       TabHeight       =   520
+      BackColor       =   8421376
       ForeColor       =   8421376
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
          Size            =   8.25
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
-         Italic          =   -1  'True
+         Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       TabCaption(0)   =   "&Definición de Estructura"
@@ -1220,62 +1203,21 @@ Begin VB.Form frmARTI
       Tab(0).Control(1).Enabled=   0   'False
       Tab(0).Control(2)=   "cheasignarc"
       Tab(0).Control(2).Enabled=   0   'False
-      Tab(0).Control(3)=   "chebof"
-      Tab(0).Control(3).Enabled=   0   'False
-      Tab(0).Control(4)=   "cheoferta"
-      Tab(0).Control(4).Enabled=   0   'False
-      Tab(0).ControlCount=   5
+      Tab(0).ControlCount=   3
       TabCaption(1)   =   "&Porcentajes"
-      TabPicture(1)   =   "Arti.frx":0AB3
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "CERO"
+      Tab(1).Control(0)=   "Fcomi"
       Tab(1).Control(1)=   "Fop"
-      Tab(1).Control(2)=   "Fcomi"
+      Tab(1).Control(2)=   "CERO"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Otras Opciones"
-      TabPicture(2)   =   "Arti.frx":0ACF
+      TabPicture(2)   =   "Arti.frx":0AB3
       Tab(2).ControlEnabled=   0   'False
       Tab(2).Control(0)=   "Frame5"
       Tab(2).Control(1)=   "Frame4"
       Tab(2).Control(2)=   "frarelacion"
       Tab(2).Control(3)=   "frmpro"
       Tab(2).ControlCount=   4
-      Begin VB.CheckBox cheoferta 
-         Caption         =   "Esta en Oferta !"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   -1  'True
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H0080FFFF&
-         Height          =   240
-         Left            =   6480
-         TabIndex        =   284
-         Top             =   600
-         Width           =   2295
-      End
-      Begin VB.CheckBox chebof 
-         Caption         =   "No Incluir en Lista"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00800000&
-         Height          =   255
-         Left            =   6420
-         TabIndex        =   282
-         Top             =   1240
-         Width           =   2385
-      End
       Begin VB.CheckBox cheasignarc 
          Caption         =   "Asignar al Convenio"
          BeginProperty Font 
@@ -1290,7 +1232,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H000000C0&
          Height          =   375
          Left            =   8280
-         TabIndex        =   273
+         TabIndex        =   269
          Top             =   2280
          Width           =   1215
       End
@@ -1299,7 +1241,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00808000&
          Height          =   2415
          Left            =   -74880
-         TabIndex        =   264
+         TabIndex        =   260
          Top             =   360
          Width           =   6855
          Begin VB.ListBox lfvta 
@@ -1315,7 +1257,7 @@ Begin VB.Form frmARTI
             Height          =   1860
             Left            =   4320
             Style           =   1  'Checkbox
-            TabIndex        =   286
+            TabIndex        =   280
             Top             =   480
             Width           =   2415
          End
@@ -1323,7 +1265,7 @@ Begin VB.Form frmARTI
             Caption         =   "Verificar Prod. Unid. Activa"
             Height          =   375
             Left            =   120
-            TabIndex        =   279
+            TabIndex        =   275
             Top             =   1800
             Visible         =   0   'False
             Width           =   2175
@@ -1333,13 +1275,13 @@ Begin VB.Form frmARTI
             ForeColor       =   &H00808000&
             Height          =   1575
             Left            =   2400
-            TabIndex        =   274
+            TabIndex        =   270
             Top             =   600
             Width           =   1815
             Begin VB.TextBox txtper 
                Height          =   285
                Left            =   240
-               TabIndex        =   276
+               TabIndex        =   272
                Text            =   "042007"
                Top             =   480
                Width           =   735
@@ -1347,7 +1289,7 @@ Begin VB.Form frmARTI
             Begin VB.TextBox txtum 
                Height          =   285
                Left            =   240
-               TabIndex        =   275
+               TabIndex        =   271
                Text            =   "0"
                Top             =   1200
                Width           =   615
@@ -1359,7 +1301,7 @@ Begin VB.Form frmARTI
                Height          =   255
                Index           =   3
                Left            =   120
-               TabIndex        =   278
+               TabIndex        =   274
                Top             =   240
                Width           =   1335
             End
@@ -1370,7 +1312,7 @@ Begin VB.Form frmARTI
                Height          =   375
                Index           =   4
                Left            =   120
-               TabIndex        =   277
+               TabIndex        =   273
                Top             =   840
                Width           =   1455
             End
@@ -1378,7 +1320,7 @@ Begin VB.Form frmARTI
          Begin VB.TextBox txtCantMaxADD 
             Height          =   285
             Left            =   1560
-            TabIndex        =   271
+            TabIndex        =   267
             Text            =   "0"
             Top             =   1320
             Width           =   735
@@ -1386,7 +1328,7 @@ Begin VB.Form frmARTI
          Begin VB.TextBox txtCantMax 
             Height          =   285
             Left            =   1560
-            TabIndex        =   267
+            TabIndex        =   263
             Text            =   "0"
             Top             =   720
             Width           =   735
@@ -1403,7 +1345,7 @@ Begin VB.Form frmARTI
             EndProperty
             Height          =   315
             Left            =   1920
-            TabIndex        =   266
+            TabIndex        =   262
             Text            =   "cmbUsu"
             Top             =   240
             Width           =   1815
@@ -1414,7 +1356,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   5
             Left            =   4320
-            TabIndex        =   287
+            TabIndex        =   281
             Top             =   240
             Width           =   1815
          End
@@ -1424,7 +1366,7 @@ Begin VB.Form frmARTI
             Height          =   375
             Index           =   2
             Left            =   120
-            TabIndex        =   270
+            TabIndex        =   266
             Top             =   1200
             Width           =   1335
          End
@@ -1433,7 +1375,7 @@ Begin VB.Form frmARTI
             ForeColor       =   &H00808000&
             Height          =   375
             Left            =   2040
-            TabIndex        =   269
+            TabIndex        =   265
             Top             =   1080
             Width           =   735
          End
@@ -1443,7 +1385,7 @@ Begin VB.Form frmARTI
             Height          =   375
             Index           =   1
             Left            =   240
-            TabIndex        =   268
+            TabIndex        =   264
             Top             =   600
             Width           =   1335
          End
@@ -1453,7 +1395,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   0
             Left            =   240
-            TabIndex        =   265
+            TabIndex        =   2
             Top             =   240
             Width           =   1815
          End
@@ -1462,16 +1404,15 @@ Begin VB.Form frmARTI
          Caption         =   "Otros"
          Height          =   2415
          Left            =   -67920
-         TabIndex        =   251
+         TabIndex        =   18
          Top             =   360
          Width           =   3135
          Begin VB.CommandButton cmdofertas 
             Caption         =   "Actualizar Ofertas..."
             Height          =   480
             Left            =   360
-            Picture         =   "Arti.frx":0AEB
             Style           =   1  'Graphical
-            TabIndex        =   252
+            TabIndex        =   19
             Top             =   240
             Width           =   1935
          End
@@ -1489,7 +1430,7 @@ Begin VB.Form frmARTI
             EndProperty
             Height          =   855
             Left            =   480
-            TabIndex        =   259
+            TabIndex        =   256
             Top             =   1320
             Width           =   1695
          End
@@ -1497,9 +1438,63 @@ Begin VB.Form frmARTI
       Begin VB.Frame Frame3 
          Height          =   2535
          Left            =   6360
-         TabIndex        =   110
+         TabIndex        =   107
          Top             =   315
          Width           =   3870
+         Begin VB.CheckBox chebof 
+            Caption         =   "No Incluir en Lista"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00800000&
+            Height          =   255
+            Left            =   120
+            TabIndex        =   288
+            Top             =   939
+            Width           =   2145
+         End
+         Begin VB.CheckBox cheoferta 
+            Caption         =   "Esta en Oferta !"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000080FF&
+            Height          =   240
+            Left            =   120
+            TabIndex        =   287
+            Top             =   498
+            Width           =   1695
+         End
+         Begin VB.CheckBox art_situacion 
+            Caption         =   "DesActivado"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00000080&
+            Height          =   255
+            Left            =   120
+            TabIndex        =   286
+            Top             =   240
+            Width           =   1575
+         End
          Begin VB.TextBox txtmargen 
             BackColor       =   &H00E0E0E0&
             BeginProperty Font 
@@ -1514,7 +1509,7 @@ Begin VB.Form frmARTI
             ForeColor       =   &H00000040&
             Height          =   285
             Left            =   960
-            TabIndex        =   285
+            TabIndex        =   279
             Text            =   "0"
             Top             =   2040
             Width           =   495
@@ -1532,7 +1527,7 @@ Begin VB.Form frmARTI
             EndProperty
             Height          =   495
             Left            =   3120
-            TabIndex        =   280
+            TabIndex        =   276
             Top             =   1920
             Visible         =   0   'False
             Width           =   615
@@ -1541,7 +1536,7 @@ Begin VB.Form frmARTI
             Caption         =   "Ver Dif. Stock"
             Height          =   1095
             Left            =   3120
-            TabIndex        =   255
+            TabIndex        =   252
             Top             =   360
             Visible         =   0   'False
             Width           =   615
@@ -1549,7 +1544,7 @@ Begin VB.Form frmARTI
          Begin VB.Frame Frame1 
             Height          =   420
             Left            =   120
-            TabIndex        =   113
+            TabIndex        =   20
             Top             =   1440
             Width           =   3570
             Begin VB.OptionButton cheservi 
@@ -1557,7 +1552,7 @@ Begin VB.Form frmARTI
                Height          =   195
                Index           =   2
                Left            =   840
-               TabIndex        =   116
+               TabIndex        =   113
                Top             =   840
                Visible         =   0   'False
                Width           =   900
@@ -1578,7 +1573,7 @@ Begin VB.Form frmARTI
                Height          =   195
                Index           =   1
                Left            =   1560
-               TabIndex        =   115
+               TabIndex        =   112
                Top             =   120
                Width           =   1860
             End
@@ -1597,7 +1592,7 @@ Begin VB.Form frmARTI
                Height          =   195
                Index           =   0
                Left            =   120
-               TabIndex        =   114
+               TabIndex        =   111
                Top             =   120
                Width           =   1815
             End
@@ -1616,26 +1611,26 @@ Begin VB.Form frmARTI
             ForeColor       =   &H00008000&
             Height          =   255
             Left            =   120
-            TabIndex        =   129
+            TabIndex        =   21
             Top             =   1200
-            Width           =   2385
+            Width           =   2145
          End
          Begin VB.CheckBox exigv 
             Caption         =   "Exoneración IGV"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   8.25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
-               Italic          =   -1  'True
+               Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
             ForeColor       =   &H00808000&
             Height          =   195
             Left            =   120
-            TabIndex        =   13
-            Top             =   690
+            TabIndex        =   10
+            Top             =   741
             Value           =   1  'Checked
             Width           =   2250
          End
@@ -1654,29 +1649,20 @@ Begin VB.Form frmARTI
             Height          =   300
             Left            =   2385
             MaxLength       =   11
-            TabIndex        =   14
+            TabIndex        =   11
             Text            =   "0"
             Top             =   720
             Width           =   495
          End
          Begin VB.CheckBox checambio 
             Caption         =   "Para Cambio"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   -1  'True
-               Strikethrough   =   0   'False
-            EndProperty
             ForeColor       =   &H00808000&
             Height          =   255
-            Left            =   2130
-            TabIndex        =   12
-            Top             =   270
+            Left            =   1800
+            TabIndex        =   9
+            Top             =   240
             Visible         =   0   'False
-            Width           =   615
+            Width           =   1575
          End
          Begin VB.Label lblequivarti 
             Alignment       =   2  'Center
@@ -1693,7 +1679,7 @@ Begin VB.Form frmARTI
             EndProperty
             Height          =   255
             Left            =   1560
-            TabIndex        =   254
+            TabIndex        =   33
             Top             =   2085
             Visible         =   0   'False
             Width           =   375
@@ -1712,7 +1698,7 @@ Begin VB.Form frmARTI
             ForeColor       =   &H00808000&
             Height          =   495
             Left            =   120
-            TabIndex        =   253
+            TabIndex        =   250
             Top             =   1920
             Width           =   975
          End
@@ -1731,25 +1717,25 @@ Begin VB.Form frmARTI
             ForeColor       =   &H00808000&
             Height          =   195
             Index           =   10
-            Left            =   2520
-            TabIndex        =   111
-            Top             =   600
+            Left            =   2160
+            TabIndex        =   108
+            Top             =   480
             Visible         =   0   'False
-            Width           =   720
+            Width           =   840
          End
       End
       Begin VB.Frame frarelacion 
          Caption         =   "Articulo Relacionado con Almacen Defectuoso : "
          Height          =   615
          Left            =   -65280
-         TabIndex        =   98
+         TabIndex        =   95
          Top             =   1800
          Visible         =   0   'False
          Width           =   1815
          Begin VB.TextBox txtcodigo2 
             Height          =   285
             Left            =   4800
-            TabIndex        =   102
+            TabIndex        =   99
             Top             =   1200
             Visible         =   0   'False
             Width           =   975
@@ -1758,9 +1744,8 @@ Begin VB.Form frmARTI
             Caption         =   "Adicionar"
             Height          =   600
             Left            =   4680
-            Picture         =   "Arti.frx":0F2D
             Style           =   1  'Graphical
-            TabIndex        =   35
+            TabIndex        =   32
             Top             =   1560
             Visible         =   0   'False
             Width           =   855
@@ -1769,9 +1754,8 @@ Begin VB.Form frmARTI
             Caption         =   "&Quitar Relación"
             Height          =   600
             Left            =   5640
-            Picture         =   "Arti.frx":136F
             Style           =   1  'Graphical
-            TabIndex        =   100
+            TabIndex        =   97
             Top             =   1560
             Visible         =   0   'False
             Width           =   855
@@ -1780,14 +1764,14 @@ Begin VB.Form frmARTI
             Height          =   315
             Left            =   4800
             Style           =   2  'Dropdown List
-            TabIndex        =   99
+            TabIndex        =   96
             Top             =   600
             Width           =   2295
          End
          Begin MSFlexGridLib.MSFlexGrid gridrel 
             Height          =   1935
             Left            =   120
-            TabIndex        =   101
+            TabIndex        =   98
             Top             =   240
             Width           =   4455
             _ExtentX        =   7858
@@ -1802,7 +1786,7 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   5
             Left            =   4680
-            TabIndex        =   104
+            TabIndex        =   101
             Top             =   960
             Visible         =   0   'False
             Width           =   1485
@@ -1812,7 +1796,7 @@ Begin VB.Form frmARTI
             Caption         =   "Calidad Relacionada para Agregar"
             Height          =   375
             Left            =   4560
-            TabIndex        =   103
+            TabIndex        =   100
             Top             =   360
             Width           =   2535
          End
@@ -1821,7 +1805,7 @@ Begin VB.Form frmARTI
          Caption         =   "Relación de Procesos"
          Height          =   375
          Left            =   -74640
-         TabIndex        =   81
+         TabIndex        =   78
          Top             =   3360
          Width           =   8415
          Begin VB.Data dataO 
@@ -1844,14 +1828,14 @@ Begin VB.Form frmARTI
             Caption         =   "Activar Relación"
             Height          =   735
             Left            =   0
-            TabIndex        =   83
+            TabIndex        =   80
             Top             =   0
             Width           =   1455
          End
          Begin MSFlexGridLib.MSFlexGrid gridp 
             Height          =   2055
             Left            =   1800
-            TabIndex        =   82
+            TabIndex        =   79
             Top             =   240
             Width           =   6495
             _ExtentX        =   11456
@@ -1864,7 +1848,7 @@ Begin VB.Form frmARTI
          Caption         =   "Producto 0 (Para ADMIN)"
          Height          =   255
          Left            =   -67320
-         TabIndex        =   72
+         TabIndex        =   69
          Top             =   2400
          Width           =   2415
       End
@@ -1882,14 +1866,14 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00808000&
          Height          =   2415
          Left            =   -69480
-         TabIndex        =   63
+         TabIndex        =   51
          Top             =   360
          Width           =   4695
          Begin VB.CommandButton cmdactLista 
             Caption         =   "Actualizar por Lineas (Precios)"
             Height          =   495
             Left            =   120
-            TabIndex        =   182
+            TabIndex        =   52
             Top             =   1200
             Width           =   1815
          End
@@ -1897,7 +1881,7 @@ Begin VB.Form frmARTI
             Caption         =   "Generar Stock Maximos/Minimos"
             Height          =   495
             Left            =   120
-            TabIndex        =   141
+            TabIndex        =   53
             Top             =   1800
             Width           =   1815
          End
@@ -1913,11 +1897,11 @@ Begin VB.Form frmARTI
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "Arti.frx":17B1
+            ItemData        =   "Arti.frx":0ACF
             Left            =   3540
-            List            =   "Arti.frx":17B3
+            List            =   "Arti.frx":0AD1
             Style           =   2  'Dropdown List
-            TabIndex        =   127
+            TabIndex        =   63
             Top             =   1560
             Width           =   840
          End
@@ -1934,7 +1918,7 @@ Begin VB.Form frmARTI
             EndProperty
             Height          =   315
             Left            =   3120
-            TabIndex        =   34
+            TabIndex        =   31
             ToolTipText     =   "Decimales para la Cantidad Formulada"
             Top             =   600
             Width           =   1455
@@ -1953,7 +1937,7 @@ Begin VB.Form frmARTI
             Left            =   2040
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
-            TabIndex        =   32
+            TabIndex        =   29
             Top             =   1200
             Width           =   2295
          End
@@ -1969,7 +1953,7 @@ Begin VB.Form frmARTI
             EndProperty
             Height          =   285
             Left            =   3120
-            TabIndex        =   33
+            TabIndex        =   30
             Top             =   240
             Width           =   1455
          End
@@ -1977,7 +1961,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   360
             MaxLength       =   13
-            TabIndex        =   31
+            TabIndex        =   28
             Top             =   840
             Width           =   975
          End
@@ -1985,7 +1969,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   360
             MaxLength       =   13
-            TabIndex        =   30
+            TabIndex        =   27
             Top             =   360
             Width           =   975
          End
@@ -2005,7 +1989,7 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   18
             Left            =   2085
-            TabIndex        =   128
+            TabIndex        =   64
             Top             =   1620
             Width           =   1455
          End
@@ -2025,7 +2009,7 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   19
             Left            =   1920
-            TabIndex        =   79
+            TabIndex        =   76
             Top             =   600
             Width           =   945
          End
@@ -2044,7 +2028,7 @@ Begin VB.Form frmARTI
             ForeColor       =   &H00808000&
             Height          =   195
             Left            =   2040
-            TabIndex        =   74
+            TabIndex        =   71
             Top             =   960
             Width           =   1680
          End
@@ -2064,7 +2048,7 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   0
             Left            =   1920
-            TabIndex        =   73
+            TabIndex        =   70
             Top             =   240
             Width           =   1140
          End
@@ -2084,7 +2068,7 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   1
             Left            =   360
-            TabIndex        =   71
+            TabIndex        =   68
             Top             =   165
             Width           =   1275
          End
@@ -2104,7 +2088,7 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   2
             Left            =   240
-            TabIndex        =   70
+            TabIndex        =   67
             Top             =   680
             Width           =   1320
          End
@@ -2112,9 +2096,63 @@ Begin VB.Form frmARTI
       Begin VB.Frame Fvarios 
          Height          =   2445
          Left            =   90
-         TabIndex        =   52
+         TabIndex        =   49
          Top             =   315
          Width           =   6135
+         Begin VB.ComboBox art_numero 
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   330
+            Left            =   3240
+            Sorted          =   -1  'True
+            Style           =   2  'Dropdown List
+            TabIndex        =   285
+            Top             =   360
+            Width           =   2775
+         End
+         Begin VB.ComboBox art_linea 
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   330
+            Left            =   3240
+            Sorted          =   -1  'True
+            Style           =   2  'Dropdown List
+            TabIndex        =   284
+            Top             =   925
+            Width           =   2775
+         End
+         Begin VB.ComboBox art_marca 
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   330
+            Left            =   3240
+            Sorted          =   -1  'True
+            Style           =   2  'Dropdown List
+            TabIndex        =   283
+            Top             =   1490
+            Width           =   2775
+         End
          Begin VB.ComboBox art_grupop 
             BackColor       =   &H00E0E0E0&
             BeginProperty Font 
@@ -2148,7 +2186,7 @@ Begin VB.Form frmARTI
             Height          =   330
             Left            =   4800
             Style           =   2  'Dropdown List
-            TabIndex        =   11
+            TabIndex        =   8
             Top             =   2060
             Width           =   1215
          End
@@ -2166,63 +2204,9 @@ Begin VB.Form frmARTI
             Left            =   3240
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
-            TabIndex        =   10
-            Top             =   2040
-            Width           =   1455
-         End
-         Begin VB.ComboBox art_marca 
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   330
-            Left            =   3240
-            Sorted          =   -1  'True
-            Style           =   2  'Dropdown List
-            TabIndex        =   9
-            Top             =   1440
-            Width           =   2775
-         End
-         Begin VB.ComboBox art_linea 
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   330
-            Left            =   3240
-            Sorted          =   -1  'True
-            Style           =   2  'Dropdown List
-            TabIndex        =   8
-            Top             =   900
-            Width           =   2775
-         End
-         Begin VB.ComboBox art_numero 
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   330
-            Left            =   3240
-            Sorted          =   -1  'True
-            Style           =   2  'Dropdown List
             TabIndex        =   7
-            Top             =   300
-            Width           =   3015
+            Top             =   2060
+            Width           =   1455
          End
          Begin VB.ComboBox art_grupo 
             BeginProperty Font 
@@ -2235,11 +2219,11 @@ Begin VB.Form frmARTI
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            Left            =   120
+            Left            =   60
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   6
-            Top             =   2055
+            Top             =   2060
             Width           =   3015
          End
          Begin VB.ComboBox art_subfam 
@@ -2253,11 +2237,11 @@ Begin VB.Form frmARTI
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            Left            =   80
+            Left            =   60
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   5
-            Top             =   1455
+            Top             =   1490
             Width           =   3015
          End
          Begin VB.ComboBox art_familia 
@@ -2275,7 +2259,7 @@ Begin VB.Form frmARTI
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   4
-            Top             =   900
+            Top             =   925
             Width           =   3015
          End
          Begin VB.Label lblgrupop 
@@ -2293,7 +2277,7 @@ Begin VB.Form frmARTI
             ForeColor       =   &H00800000&
             Height          =   195
             Left            =   120
-            TabIndex        =   281
+            TabIndex        =   277
             Top             =   120
             Width           =   1275
          End
@@ -2312,8 +2296,8 @@ Begin VB.Form frmARTI
             ForeColor       =   &H00808000&
             Height          =   195
             Left            =   4800
-            TabIndex        =   109
-            Top             =   1860
+            TabIndex        =   106
+            Top             =   1875
             Width           =   645
          End
          Begin VB.Label lblart 
@@ -2331,9 +2315,9 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   6
             Left            =   3240
-            TabIndex        =   85
-            Top             =   1800
-            Width           =   1365
+            TabIndex        =   82
+            Top             =   1875
+            Width           =   1965
          End
          Begin VB.Label lblart 
             Caption         =   "Clase:"
@@ -2350,8 +2334,8 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   5
             Left            =   3240
-            TabIndex        =   80
-            Top             =   1245
+            TabIndex        =   65
+            Top             =   1290
             Width           =   1965
          End
          Begin VB.Label lblart 
@@ -2369,9 +2353,9 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   4
             Left            =   3240
-            TabIndex        =   78
-            Top             =   720
-            Width           =   3000
+            TabIndex        =   75
+            Top             =   705
+            Width           =   1965
          End
          Begin VB.Label lblart 
             Caption         =   "Sub Linea:"
@@ -2388,7 +2372,7 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   3
             Left            =   3240
-            TabIndex        =   77
+            TabIndex        =   74
             Top             =   120
             Width           =   1965
          End
@@ -2407,7 +2391,7 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   2
             Left            =   120
-            TabIndex        =   76
+            TabIndex        =   73
             Top             =   1875
             Width           =   1965
          End
@@ -2426,8 +2410,8 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   1
             Left            =   120
-            TabIndex        =   75
-            Top             =   1275
+            TabIndex        =   72
+            Top             =   1290
             Width           =   3330
          End
          Begin VB.Label lblart 
@@ -2446,8 +2430,8 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   0
             Left            =   120
-            TabIndex        =   53
-            Top             =   720
+            TabIndex        =   50
+            Top             =   705
             Width           =   750
          End
       End
@@ -2465,7 +2449,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00808000&
          Height          =   2415
          Left            =   -74880
-         TabIndex        =   57
+         TabIndex        =   54
          Top             =   360
          Visible         =   0   'False
          Width           =   5295
@@ -2473,7 +2457,7 @@ Begin VB.Form frmARTI
             Height          =   315
             Left            =   840
             Style           =   2  'Dropdown List
-            TabIndex        =   240
+            TabIndex        =   66
             Top             =   240
             Width           =   3135
          End
@@ -2482,7 +2466,7 @@ Begin VB.Form frmARTI
             Enabled         =   0   'False
             Height          =   375
             Left            =   3720
-            TabIndex        =   239
+            TabIndex        =   91
             Top             =   1800
             Width           =   1455
          End
@@ -2491,7 +2475,7 @@ Begin VB.Form frmARTI
             ForeColor       =   &H00808000&
             Height          =   495
             Left            =   3720
-            TabIndex        =   238
+            TabIndex        =   92
             Top             =   480
             Width           =   1335
          End
@@ -2500,7 +2484,7 @@ Begin VB.Form frmARTI
             Left            =   3720
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
-            TabIndex        =   237
+            TabIndex        =   93
             Top             =   1320
             Visible         =   0   'False
             Width           =   1575
@@ -2509,7 +2493,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   3120
             MaxLength       =   6
-            TabIndex        =   218
+            TabIndex        =   215
             Top             =   1995
             Width           =   495
          End
@@ -2517,7 +2501,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   2520
             MaxLength       =   6
-            TabIndex        =   217
+            TabIndex        =   214
             Top             =   1995
             Width           =   495
          End
@@ -2525,7 +2509,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   1920
             MaxLength       =   6
-            TabIndex        =   216
+            TabIndex        =   213
             Top             =   1995
             Width           =   495
          End
@@ -2533,7 +2517,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   3120
             MaxLength       =   6
-            TabIndex        =   215
+            TabIndex        =   212
             Top             =   1560
             Width           =   495
          End
@@ -2541,7 +2525,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   1200
             MaxLength       =   6
-            TabIndex        =   214
+            TabIndex        =   211
             Top             =   1995
             Width           =   495
          End
@@ -2549,7 +2533,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   600
             MaxLength       =   6
-            TabIndex        =   213
+            TabIndex        =   210
             Top             =   1995
             Width           =   495
          End
@@ -2557,7 +2541,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   0
             MaxLength       =   6
-            TabIndex        =   212
+            TabIndex        =   209
             Top             =   1995
             Width           =   495
          End
@@ -2565,7 +2549,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   1200
             MaxLength       =   6
-            TabIndex        =   211
+            TabIndex        =   208
             Top             =   1530
             Width           =   495
          End
@@ -2573,7 +2557,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   1920
             MaxLength       =   6
-            TabIndex        =   124
+            TabIndex        =   121
             Top             =   1050
             Width           =   495
          End
@@ -2581,7 +2565,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   2520
             MaxLength       =   6
-            TabIndex        =   123
+            TabIndex        =   120
             Top             =   1050
             Width           =   495
          End
@@ -2589,7 +2573,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   3120
             MaxLength       =   6
-            TabIndex        =   122
+            TabIndex        =   119
             Top             =   1050
             Width           =   495
          End
@@ -2597,7 +2581,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   1920
             MaxLength       =   6
-            TabIndex        =   121
+            TabIndex        =   118
             Top             =   1530
             Width           =   495
          End
@@ -2605,7 +2589,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   2520
             MaxLength       =   6
-            TabIndex        =   120
+            TabIndex        =   117
             Top             =   1530
             Width           =   495
          End
@@ -2613,7 +2597,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   600
             MaxLength       =   6
-            TabIndex        =   29
+            TabIndex        =   26
             Top             =   1530
             Width           =   495
          End
@@ -2621,7 +2605,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   0
             MaxLength       =   6
-            TabIndex        =   28
+            TabIndex        =   25
             Top             =   1530
             Width           =   495
          End
@@ -2629,7 +2613,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   4680
             MaxLength       =   6
-            TabIndex        =   27
+            TabIndex        =   24
             Top             =   1050
             Visible         =   0   'False
             Width           =   495
@@ -2638,7 +2622,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   600
             MaxLength       =   6
-            TabIndex        =   26
+            TabIndex        =   23
             Top             =   1050
             Width           =   1095
          End
@@ -2646,7 +2630,7 @@ Begin VB.Form frmARTI
             Height          =   285
             Left            =   0
             MaxLength       =   6
-            TabIndex        =   25
+            TabIndex        =   22
             Top             =   1050
             Width           =   495
          End
@@ -2665,7 +2649,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   21
             Left            =   3720
-            TabIndex        =   242
+            TabIndex        =   94
             Top             =   1080
             Width           =   1095
          End
@@ -2685,7 +2669,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   20
             Left            =   120
-            TabIndex        =   241
+            TabIndex        =   102
             Top             =   240
             Width           =   615
          End
@@ -2705,7 +2689,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   19
             Left            =   3240
-            TabIndex        =   236
+            TabIndex        =   233
             Top             =   1800
             Width           =   255
          End
@@ -2725,7 +2709,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   18
             Left            =   2640
-            TabIndex        =   235
+            TabIndex        =   232
             Top             =   1800
             Width           =   255
          End
@@ -2745,7 +2729,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   17
             Left            =   2040
-            TabIndex        =   234
+            TabIndex        =   231
             Top             =   1800
             Width           =   255
          End
@@ -2765,7 +2749,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   16
             Left            =   3240
-            TabIndex        =   233
+            TabIndex        =   230
             Top             =   1320
             Width           =   255
          End
@@ -2785,7 +2769,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   15
             Left            =   2640
-            TabIndex        =   232
+            TabIndex        =   229
             Top             =   1320
             Width           =   255
          End
@@ -2805,7 +2789,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   14
             Left            =   2040
-            TabIndex        =   231
+            TabIndex        =   228
             Top             =   1320
             Width           =   255
          End
@@ -2825,7 +2809,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   13
             Left            =   3240
-            TabIndex        =   230
+            TabIndex        =   227
             Top             =   840
             Width           =   255
          End
@@ -2845,7 +2829,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   12
             Left            =   2640
-            TabIndex        =   229
+            TabIndex        =   226
             Top             =   840
             Width           =   255
          End
@@ -2865,7 +2849,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   11
             Left            =   2040
-            TabIndex        =   228
+            TabIndex        =   225
             Top             =   840
             Width           =   255
          End
@@ -2885,7 +2869,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   10
             Left            =   1320
-            TabIndex        =   227
+            TabIndex        =   224
             Top             =   1800
             Width           =   255
          End
@@ -2905,7 +2889,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   9
             Left            =   720
-            TabIndex        =   226
+            TabIndex        =   223
             Top             =   1800
             Width           =   255
          End
@@ -2925,7 +2909,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   8
             Left            =   120
-            TabIndex        =   225
+            TabIndex        =   222
             Top             =   1800
             Width           =   255
          End
@@ -2945,7 +2929,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   7
             Left            =   1320
-            TabIndex        =   224
+            TabIndex        =   221
             Top             =   1320
             Width           =   255
          End
@@ -2965,7 +2949,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   6
             Left            =   720
-            TabIndex        =   223
+            TabIndex        =   220
             Top             =   1320
             Width           =   255
          End
@@ -2985,7 +2969,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   5
             Left            =   120
-            TabIndex        =   222
+            TabIndex        =   219
             Top             =   1320
             Width           =   255
          End
@@ -3005,7 +2989,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   4
             Left            =   4800
-            TabIndex        =   221
+            TabIndex        =   218
             Top             =   840
             Visible         =   0   'False
             Width           =   255
@@ -3026,7 +3010,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   3
             Left            =   720
-            TabIndex        =   220
+            TabIndex        =   217
             Top             =   840
             Width           =   855
          End
@@ -3046,7 +3030,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   2
             Left            =   120
-            TabIndex        =   219
+            TabIndex        =   216
             Top             =   840
             Width           =   255
          End
@@ -3065,7 +3049,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   1
             Left            =   1920
-            TabIndex        =   126
+            TabIndex        =   123
             Top             =   600
             Width           =   855
          End
@@ -3085,7 +3069,7 @@ Begin VB.Form frmARTI
             Height          =   255
             Index           =   0
             Left            =   240
-            TabIndex        =   125
+            TabIndex        =   122
             Top             =   600
             Width           =   615
          End
@@ -3105,7 +3089,7 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   4
             Left            =   2400
-            TabIndex        =   62
+            TabIndex        =   104
             Top             =   2160
             Visible         =   0   'False
             Width           =   1395
@@ -3126,7 +3110,7 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   3
             Left            =   240
-            TabIndex        =   61
+            TabIndex        =   105
             Top             =   2160
             Visible         =   0   'False
             Width           =   1395
@@ -3147,7 +3131,7 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   2
             Left            =   3000
-            TabIndex        =   60
+            TabIndex        =   114
             Top             =   2160
             Width           =   1395
          End
@@ -3167,7 +3151,7 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   1
             Left            =   3240
-            TabIndex        =   59
+            TabIndex        =   56
             Top             =   2160
             Visible         =   0   'False
             Width           =   1395
@@ -3188,7 +3172,7 @@ Begin VB.Form frmARTI
             Height          =   195
             Index           =   0
             Left            =   1440
-            TabIndex        =   58
+            TabIndex        =   55
             Top             =   2160
             Visible         =   0   'False
             Width           =   1395
@@ -3210,7 +3194,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   23
          Left            =   -68640
-         TabIndex        =   51
+         TabIndex        =   48
          Top             =   2520
          Width           =   615
       End
@@ -3230,7 +3214,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   6
          Left            =   -71040
-         TabIndex        =   50
+         TabIndex        =   47
          Top             =   480
          Width           =   645
       End
@@ -3250,7 +3234,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   5
          Left            =   -74760
-         TabIndex        =   49
+         TabIndex        =   46
          Top             =   480
          Width           =   1350
       End
@@ -3270,7 +3254,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   8
          Left            =   -70920
-         TabIndex        =   48
+         TabIndex        =   45
          Top             =   1080
          Width           =   1290
       End
@@ -3290,7 +3274,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   7
          Left            =   -74760
-         TabIndex        =   47
+         TabIndex        =   44
          Top             =   1080
          Width           =   1080
       End
@@ -3310,7 +3294,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   14
          Left            =   -71880
-         TabIndex        =   46
+         TabIndex        =   43
          Top             =   3480
          Width           =   825
       End
@@ -3330,7 +3314,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   12
          Left            =   -74760
-         TabIndex        =   45
+         TabIndex        =   42
          Top             =   1680
          Width           =   870
       End
@@ -3350,7 +3334,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   13
          Left            =   -74760
-         TabIndex        =   44
+         TabIndex        =   41
          Top             =   2280
          Width           =   870
       End
@@ -3370,7 +3354,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   16
          Left            =   -71760
-         TabIndex        =   43
+         TabIndex        =   40
          Top             =   1680
          Width           =   930
       End
@@ -3390,7 +3374,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   17
          Left            =   -71880
-         TabIndex        =   42
+         TabIndex        =   39
          Top             =   2280
          Width           =   930
       End
@@ -3410,7 +3394,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   18
          Left            =   -74760
-         TabIndex        =   41
+         TabIndex        =   38
          Top             =   3480
          Width           =   990
       End
@@ -3430,7 +3414,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   15
          Left            =   -74760
-         TabIndex        =   40
+         TabIndex        =   37
          Top             =   2880
          Width           =   900
       End
@@ -3450,7 +3434,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   19
          Left            =   -71760
-         TabIndex        =   39
+         TabIndex        =   36
          Top             =   2880
          Width           =   900
       End
@@ -3468,7 +3452,7 @@ Begin VB.Form frmARTI
          Height          =   375
          Index           =   2
          Left            =   -67080
-         TabIndex        =   38
+         TabIndex        =   35
          Top             =   840
          Width           =   1455
       End
@@ -3476,7 +3460,7 @@ Begin VB.Form frmARTI
    Begin VB.Frame Fcomun 
       Height          =   3255
       Left            =   0
-      TabIndex        =   82
+      TabIndex        =   115
       Top             =   3720
       Visible         =   0   'False
       Width           =   10215
@@ -3484,7 +3468,7 @@ Begin VB.Form frmARTI
          Caption         =   "+"
          Height          =   255
          Left            =   9360
-         TabIndex        =   281
+         TabIndex        =   116
          Top             =   480
          Width           =   735
       End
@@ -3492,7 +3476,7 @@ Begin VB.Form frmARTI
          Caption         =   "Precios Bloque"
          Height          =   255
          Left            =   7680
-         TabIndex        =   276
+         TabIndex        =   132
          Top             =   480
          Width           =   1575
       End
@@ -3510,7 +3494,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00800000&
          Height          =   285
          Left            =   120
-         TabIndex        =   12
+         TabIndex        =   173
          Top             =   120
          Visible         =   0   'False
          Width           =   465
@@ -3519,7 +3503,7 @@ Begin VB.Form frmARTI
          Height          =   285
          Left            =   240
          MaxLength       =   9
-         TabIndex        =   83
+         TabIndex        =   202
          Top             =   2640
          Visible         =   0   'False
          Width           =   1095
@@ -3538,7 +3522,7 @@ Begin VB.Form frmARTI
          Height          =   300
          Left            =   2280
          Style           =   1  'Graphical
-         TabIndex        =   15
+         TabIndex        =   12
          Top             =   480
          Width           =   5415
       End
@@ -3556,14 +3540,14 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00800000&
          Height          =   285
          Left            =   1440
-         TabIndex        =   11
+         TabIndex        =   203
          Top             =   120
          Width           =   855
       End
       Begin MSFlexGridLib.MSFlexGrid grid_unid 
          Height          =   2055
          Left            =   120
-         TabIndex        =   14
+         TabIndex        =   204
          ToolTipText     =   "[INSERT] Agrega, [DEL] Quitar"
          Top             =   1035
          Width           =   10095
@@ -3592,7 +3576,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00808000&
          Height          =   195
          Left            =   4680
-         TabIndex        =   256
+         TabIndex        =   253
          Top             =   120
          Width           =   1095
       End
@@ -3610,10 +3594,10 @@ Begin VB.Form frmARTI
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00800000&
-         Height          =   270
+         Height          =   285
          Left            =   5880
-         TabIndex        =   255
-         Top             =   150
+         TabIndex        =   205
+         Top             =   120
          Width           =   945
       End
       Begin VB.Label Label3 
@@ -3636,7 +3620,7 @@ Begin VB.Form frmARTI
          Height          =   240
          Index           =   6
          Left            =   9600
-         TabIndex        =   126
+         TabIndex        =   206
          Tag             =   "5"
          Top             =   800
          Width           =   420
@@ -3655,10 +3639,10 @@ Begin VB.Form frmARTI
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00800000&
-         Height          =   270
+         Height          =   285
          Left            =   3480
-         TabIndex        =   125
-         Top             =   150
+         TabIndex        =   207
+         Top             =   120
          Width           =   945
       End
       Begin VB.Label Lst0 
@@ -3675,7 +3659,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00808000&
          Height          =   195
          Left            =   2475
-         TabIndex        =   124
+         TabIndex        =   242
          Top             =   150
          Width           =   855
       End
@@ -3693,7 +3677,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   120
-         TabIndex        =   111
+         TabIndex        =   243
          Top             =   120
          Visible         =   0   'False
          Width           =   420
@@ -3713,7 +3697,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00800000&
          Height          =   285
          Left            =   9000
-         TabIndex        =   13
+         TabIndex        =   244
          Top             =   120
          Width           =   1095
       End
@@ -3731,7 +3715,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   7680
-         TabIndex        =   93
+         TabIndex        =   90
          Top             =   120
          Width           =   1335
       End
@@ -3750,7 +3734,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00808000&
          Height          =   195
          Left            =   120
-         TabIndex        =   92
+         TabIndex        =   89
          Top             =   480
          Width           =   1335
       End
@@ -3773,7 +3757,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00004080&
          Height          =   240
          Left            =   2280
-         TabIndex        =   91
+         TabIndex        =   88
          Top             =   800
          Width           =   855
       End
@@ -3797,7 +3781,7 @@ Begin VB.Form frmARTI
          Height          =   240
          Index           =   4
          Left            =   8280
-         TabIndex        =   90
+         TabIndex        =   87
          Tag             =   "5"
          Top             =   800
          Width           =   1260
@@ -3822,7 +3806,7 @@ Begin VB.Form frmARTI
          Height          =   240
          Index           =   3
          Left            =   6960
-         TabIndex        =   89
+         TabIndex        =   86
          Tag             =   "4"
          Top             =   795
          Width           =   1260
@@ -3847,7 +3831,7 @@ Begin VB.Form frmARTI
          Height          =   240
          Index           =   2
          Left            =   5640
-         TabIndex        =   88
+         TabIndex        =   85
          Tag             =   "3"
          Top             =   800
          Width           =   1260
@@ -3872,7 +3856,7 @@ Begin VB.Form frmARTI
          Height          =   240
          Index           =   1
          Left            =   4320
-         TabIndex        =   87
+         TabIndex        =   84
          Tag             =   "2"
          Top             =   800
          Width           =   1260
@@ -3897,7 +3881,7 @@ Begin VB.Form frmARTI
          Height          =   240
          Index           =   0
          Left            =   3120
-         TabIndex        =   86
+         TabIndex        =   83
          Tag             =   "1"
          Top             =   800
          Width           =   1185
@@ -3917,12 +3901,12 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00800000&
          Height          =   285
          Left            =   120
-         TabIndex        =   85
+         TabIndex        =   245
          Top             =   720
          Width           =   2055
       End
       Begin VB.Label Label5 
-         Caption         =   "P.(Kg) Un.Act.:"
+         Caption         =   "Und.Act.:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -3934,10 +3918,10 @@ Begin VB.Form frmARTI
          EndProperty
          ForeColor       =   &H00808000&
          Height          =   255
-         Left            =   120
-         TabIndex        =   84
+         Left            =   600
+         TabIndex        =   81
          Top             =   120
-         Width           =   1335
+         Width           =   855
       End
    End
    Begin VB.Frame Fdatos 
@@ -3953,7 +3937,7 @@ Begin VB.Form frmARTI
       ForeColor       =   &H00FFFFFF&
       Height          =   700
       Left            =   120
-      TabIndex        =   50
+      TabIndex        =   246
       Top             =   0
       Visible         =   0   'False
       Width           =   10095
@@ -3972,7 +3956,7 @@ Begin VB.Form frmARTI
          Height          =   330
          Left            =   2880
          MaxLength       =   60
-         TabIndex        =   286
+         TabIndex        =   254
          Top             =   300
          Width           =   6975
       End
@@ -4028,7 +4012,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00808000&
          Height          =   195
          Left            =   2880
-         TabIndex        =   287
+         TabIndex        =   255
          Top             =   120
          Width           =   2040
       End
@@ -4047,7 +4031,7 @@ Begin VB.Form frmARTI
          ForeColor       =   &H00808000&
          Height          =   195
          Left            =   1440
-         TabIndex        =   52
+         TabIndex        =   257
          Top             =   120
          Width           =   990
       End
@@ -4067,7 +4051,7 @@ Begin VB.Form frmARTI
          Height          =   195
          Index           =   20
          Left            =   120
-         TabIndex        =   51
+         TabIndex        =   258
          Top             =   120
          Width           =   1125
       End
@@ -4086,9 +4070,9 @@ Begin VB.Form frmARTI
       EndProperty
       Height          =   750
       Left            =   10440
-      Picture         =   "Arti.frx":1761
+      Picture         =   "Arti.frx":0AD3
       Style           =   1  'Graphical
-      TabIndex        =   19
+      TabIndex        =   16
       Top             =   3096
       Width           =   1300
    End
@@ -4111,9 +4095,9 @@ Begin VB.Form frmARTI
       EndProperty
       Height          =   750
       Left            =   10440
-      Picture         =   "Arti.frx":1BA3
+      Picture         =   "Arti.frx":0F15
       Style           =   1  'Graphical
-      TabIndex        =   20
+      TabIndex        =   17
       Top             =   4680
       Width           =   1300
    End
@@ -4130,9 +4114,9 @@ Begin VB.Form frmARTI
       EndProperty
       Height          =   750
       Left            =   10440
-      Picture         =   "Arti.frx":1CED
+      Picture         =   "Arti.frx":105F
       Style           =   1  'Graphical
-      TabIndex        =   16
+      TabIndex        =   13
       Top             =   720
       Width           =   1300
    End
@@ -4149,9 +4133,9 @@ Begin VB.Form frmARTI
       EndProperty
       Height          =   750
       Left            =   10440
-      Picture         =   "Arti.frx":1E37
+      Picture         =   "Arti.frx":11A9
       Style           =   1  'Graphical
-      TabIndex        =   18
+      TabIndex        =   15
       Top             =   2304
       Width           =   1300
    End
@@ -4168,9 +4152,9 @@ Begin VB.Form frmARTI
       EndProperty
       Height          =   750
       Left            =   10440
-      Picture         =   "Arti.frx":2279
+      Picture         =   "Arti.frx":15EB
       Style           =   1  'Graphical
-      TabIndex        =   17
+      TabIndex        =   14
       Top             =   1512
       Width           =   1300
    End
@@ -4191,7 +4175,7 @@ Begin VB.Form frmARTI
       ForeColor       =   &H00E0E0E0&
       Height          =   255
       Left            =   0
-      TabIndex        =   106
+      TabIndex        =   103
       Top             =   0
       Width           =   1455
    End
@@ -4212,7 +4196,7 @@ Begin VB.Form frmARTI
       ForeColor       =   &H00E0E0E0&
       Height          =   255
       Left            =   10440
-      TabIndex        =   102
+      TabIndex        =   259
       Top             =   6600
       Width           =   1335
    End
@@ -4222,7 +4206,7 @@ Begin VB.Form frmARTI
       Height          =   7095
       Index           =   5
       Left            =   10320
-      TabIndex        =   101
+      TabIndex        =   268
       Top             =   0
       Width           =   1575
    End
@@ -4230,7 +4214,7 @@ Begin VB.Form frmARTI
       AutoSize        =   -1  'True
       Height          =   195
       Left            =   4320
-      TabIndex        =   32
+      TabIndex        =   278
       Top             =   6645
       Width           =   3285
    End
@@ -4853,7 +4837,7 @@ txtnombre.Text = ARMA_NOMBRE
 End Sub
 
 Private Sub art_situacion_Click()
-If Left(CmdModificar.Caption, 2) <> "&G" Then Exit Sub
+If Left(cmdModificar.Caption, 2) <> "&G" Then Exit Sub
 If art_situacion.Value = 0 Then
   If flag_art_situacion = 1 Then
     If wflag_bloq_desactiva = "A" Then
@@ -5244,7 +5228,7 @@ Private Sub cmdact6_Click()
 Dim WVA As Currency
 Dim ARMAD  As String
 Dim ARMAS As String
-If Val(cmbTipo.Text) = 1 Or Val(cmbTipo.Text) = -1 Then
+If Val(cmbtipo.Text) = 1 Or Val(cmbtipo.Text) = -1 Then
 Else
   MsgBox "Selecione el Tipo de Operación. ", 48, Pub_Titulo
   Exit Sub
@@ -5263,7 +5247,7 @@ Else
 End If
 WVA = Val(txtporlista.Text)
 
-If Val(cmbTipo.Text) = 1 Then
+If Val(cmbtipo.Text) = 1 Then
 WVA = 1 + (WVA / 100)
 Else
 WVA = ((100 - WVA) / 100)
@@ -5867,7 +5851,7 @@ End If
 
 
 var_codven = Val(Left(cmdvend.Text, 3))
-var_codart = Val(Txt_key.Text)
+var_codart = Val(txt_key.Text)
 If var_codven = 0 Then Exit Sub
 If var_codart = 0 Then
   MsgBox "No procede, especifique un producto y un Vendedor ", 48, Pub_Titulo
@@ -6070,7 +6054,7 @@ End If
 If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
    pu_alterno = Trim(txt_alterno.Text)
 Else
-   PUB_KEY = Val(Txt_key.Text)
+   PUB_KEY = Val(txt_key.Text)
 End If
 PUB_CODCIA = LK_CODCIA
 LOC_OPER = 1
@@ -6114,13 +6098,13 @@ Private Sub AgregarUnidad_Click()
         grid_unid.Rows = grid_unid.Rows + 1
     End If
     grid_unid.Row = grid_unid.Rows - 1
-    grid_unid.Col = 0
+    grid_unid.COL = 0
     grid_unid.SetFocus
 End Sub
 
 Private Sub cmdAgregar_Click()
 Dim loc_flag As String
-If Trim(Txt_key.Text) = "1" Then
+If Trim(txt_key.Text) = "1" Then
      MENSAJE_ARTI "No Procede. .."
      Exit Sub
 End If
@@ -6139,8 +6123,8 @@ If Left(cmdAgregar.Caption, 2) = "&A" Then
     End If
     ws_flag_equiv = "A"
     cmdAgregar.Caption = "&Grabar"
-    cmdcancelar.Enabled = True
-    CmdModificar.Enabled = False
+    cmdCancelar.Enabled = True
+    cmdModificar.Enabled = False
     cmdEliminar.Enabled = False
     LIMPIA_ARTI
     frmARTI.decimales.ListIndex = 1
@@ -6150,13 +6134,13 @@ If Left(cmdAgregar.Caption, 2) = "&A" Then
     If frmARTI.art_grupo.ListCount <> 0 Then
        frmARTI.art_grupo.ListIndex = 0
     End If
-    frmARTI.Txt_key = GENERA_CODI
+    frmARTI.txt_key = GENERA_CODI
     DESBLOQUEA_TEXT txtnombre, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-    DESBLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
+    DESBLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
     DESBLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
     DESBLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-    DESBLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
-    BLOQUEA_TEXT Txt_key
+    DESBLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+    BLOQUEA_TEXT txt_key
     If LK_MONEDA = "D" Then
         frmARTI.DS.ListIndex = 1
         frmARTI.DS.Enabled = False
@@ -6212,7 +6196,7 @@ If Left(cmdAgregar.Caption, 2) = "&A" Then
     cheservi(0).Value = True
     MANOS(0).Enabled = False
     MANOS(1).Enabled = False
-    fcomun.Refresh
+    Fcomun.Refresh
     Fvarios.Refresh
 Else
     If frmARTI.DS.ListIndex = -1 Then
@@ -6225,7 +6209,7 @@ Else
        MsgBox "Definir Calidad en,  Tablas del Sistema ", 48, Pub_Titulo
        Exit Sub
     End If
-    If Trim(cmbusu.Text) = "" Then
+    If Trim(cmbUsu.Text) = "" Then
        MsgBox "Definir Usuario Responsable. (FICHA OTRAS OPCIONES)", 48, Pub_Titulo
        Exit Sub
     End If
@@ -6270,9 +6254,9 @@ Else
      CN.Execute "Begin Transaction", rdExecDirect
      pub_cadena = "SELECT * FROM CONTROLL"
      Set con_llave = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurLock)
-    frmARTI.Txt_key = GENERA_CODI
-    txt_alterno.Text = frmARTI.Txt_key.Text
-     PUB_KEY = Val(frmARTI.Txt_key)
+    frmARTI.txt_key = GENERA_CODI
+    txt_alterno.Text = frmARTI.txt_key.Text
+     PUB_KEY = Val(frmARTI.txt_key)
      If Trim(Nulo_Valors(par_llave!par_art_cias)) <> "" Then
         xcuenta = 1
         For fila = 1 To 30
@@ -6287,28 +6271,28 @@ sale:
      Else
         GRABAR_ARTI
      End If
-     If cheasignarc.Value = 1 Then add_convenio Val(frmARTI.Txt_key)
+     If cheasignarc.Value = 1 Then add_convenio Val(frmARTI.txt_key)
      con_llave.Close
      CN.Execute "Commit Transaction", rdExecDirect
      On Error GoTo 0
      cmdAgregar.Caption = "&Adicionar"
-     cmdcancelar.Enabled = True
+     cmdCancelar.Enabled = True
      cmdEliminar.Enabled = True
-     CmdModificar.Enabled = True
+     cmdModificar.Enabled = True
      LIMPIA_ARTI
      BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-     BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
+     BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
      BLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
      BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-     BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+     BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
      If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
        DESBLOQUEA_TEXT txt_alterno
-       BLOQUEA_TEXT Txt_key
+       BLOQUEA_TEXT txt_key
        txt_alterno.SetFocus
      Else
-       DESBLOQUEA_TEXT Txt_key
+       DESBLOQUEA_TEXT txt_key
        BLOQUEA_TEXT txt_alterno
-       Txt_key.SetFocus
+       txt_key.SetFocus
      End If
      Screen.MousePointer = 0
      MANOS(0).Enabled = True
@@ -6327,21 +6311,21 @@ ESCAPA:
         MsgBox Err.Number & "  " & Err.Description & "  Intente Nuevamente."
     End If
     cmdAgregar.Caption = "&Adicionar"
-    cmdcancelar.Enabled = True
+    cmdCancelar.Enabled = True
     cmdEliminar.Enabled = True
-    CmdModificar.Enabled = True
+    cmdModificar.Enabled = True
     LIMPIA_ARTI
     BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
+    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
     BLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
     BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-    BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+    BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
     If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
      DESBLOQUEA_TEXT txt_alterno
      txt_alterno.SetFocus
     Else
-     DESBLOQUEA_TEXT Txt_key
-     Txt_key.SetFocus
+     DESBLOQUEA_TEXT txt_key
+     txt_key.SetFocus
     End If
     Screen.MousePointer = 0
     MANOS(0).Enabled = True
@@ -6353,7 +6337,7 @@ End Sub
 Private Sub cmdagregar_GotFocus()
 If ListView1.Visible Then
   ListView1.Visible = False
-  Txt_key.Text = ""
+  txt_key.Text = ""
 End If
 End Sub
 
@@ -6374,7 +6358,7 @@ Private Sub cmdapor_Click()
 Dim llave_LISTARTI As rdoResultset
 Dim PSLOC_LISTAARTI As rdoQuery
   
-Dim WS_CODART As Currency
+Dim ws_codart As Currency
 Dim REP_FECHA1
 Dim REP_FECHA2
 
@@ -6429,7 +6413,7 @@ End Sub
 Private Sub cmdCancelar_GotFocus()
 If ListView1.Visible Then
   ListView1.Visible = False
-  Txt_key.Text = ""
+  txt_key.Text = ""
 End If
 End Sub
 
@@ -6450,7 +6434,7 @@ End Sub
 Private Sub cmdCerrar_GotFocus()
 If ListView1.Visible Then
   ListView1.Visible = False
-  Txt_key.Text = ""
+  txt_key.Text = ""
 End If
 End Sub
 
@@ -6458,7 +6442,7 @@ Private Sub cmdconfirma_Click()
   If Op(1).Value Then
      pasa = 0
      frmARTI.F14.Visible = False
-     If Left(CmdModificar.Caption, 2) = "&G" Then
+     If Left(cmdModificar.Caption, 2) = "&G" Then
        CmdModificar_Click
      Else
        cmdAgregar_Click
@@ -6564,22 +6548,22 @@ End Sub
 
 Private Sub btnKardex_Click()
 ' Abrir Kardex del articulo actual
-If Len(Txt_key.Text) = 0 Or Txt_key.Text = "0" Then
+If Len(txt_key.Text) = 0 Or txt_key.Text = "0" Then
    MsgBox "Seleccione un articulo primero", 48, Pub_Titulo
    Exit Sub
 End If
-FRMKARDEX.i_codart2.Text = Txt_key.Text
+FRMKARDEX.i_codart2.Text = txt_key.Text
 FRMKARDEX.i_codart2_KeyPress 13
 FRMKARDEX.Show 1
 End Sub
 
 Private Sub cmdEliminar_Click()
 Dim ws_codcia As String
-Dim WS_CODART As Currency
+Dim ws_codart As Currency
 Dim flag_puntos As String * 1
 On Error GoTo ESCAPA
-If Len(Txt_key) = 0 Or Len(txtnombre.Text) = 0 Then
-    If Not Trim(Txt_key) = "1" Then
+If Len(txt_key) = 0 Or Len(txtnombre.Text) = 0 Then
+    If Not Trim(txt_key) = "1" Then
        Screen.MousePointer = 0
        MENSAJE_ARTI "NO a seleccionado ningun Articulo... !"
 '       txt_key.SetFocus
@@ -6590,14 +6574,14 @@ End If
   Dim llave_rep01 As rdoResultset
   Dim OpenForms
   
-  WS_CODART = artloc_llave!art_key
+  ws_codart = artloc_llave!art_key
   If Trim(par_llave!par_art_cias) <> "" Then
         xcuenta = 1
         For fila = 1 To 30
             ws_codcia = Mid(Trim(par_llave!par_art_cias), xcuenta, 2)
             If Trim(ws_codcia) = "" Then Exit For
             SQ_OPER = 1
-            PUB_CODART = WS_CODART
+            PUB_CODART = ws_codart
             pu_codcia = ws_codcia
             LEER_ARM_LLAVE
             If Not arm_llave.EOF Then
@@ -6616,7 +6600,7 @@ End If
   Screen.MousePointer = 11
   LblMensaje.Visible = True
   LblMensaje.Caption = "Verificando Data.  un Momento..."
-  WS_CODART = artloc_llave!art_key
+  ws_codart = artloc_llave!art_key
   SQ_OPER = 1
   PUB_CODART = artloc_llave!art_key
   pu_codcia = LK_CODCIA
@@ -6698,22 +6682,22 @@ Exit Sub
 BORRA_ART_CIA:
 If flag_puntos = "A" Then
  SQ_OPER = 1
- PUB_KEY = WS_CODART
+ PUB_KEY = ws_codart
  pu_codcia = ws_codcia
  LEER_ART_LLAVE
  art_LLAVE.Delete
 End If
  SQ_OPER = 1
- PUB_KEY = WS_CODART
+ PUB_KEY = ws_codart
  pu_codcia = ws_codcia
  LEER_ART_LLAVE
  art_LLAVE.Delete
  SQ_OPER = 1
- PUB_CODART = WS_CODART
+ PUB_CODART = ws_codart
  pu_codcia = ws_codcia
  LEER_ARM_LLAVE
  arm_llave.Delete
- pub_cadena = "DELETE PRECIOS WHERE PRE_CODCIA = '" & ws_codcia & "' AND PRE_CODART = " & WS_CODART
+ pub_cadena = "DELETE PRECIOS WHERE PRE_CODCIA = '" & ws_codcia & "' AND PRE_CODART = " & ws_codart
  CN.Execute pub_cadena, rdExecDirect
 Return
 
@@ -6726,22 +6710,22 @@ ESCAPA:
     MsgBox Err.Number & "  " & Err.Description & "  Intente Nuevamente."
     LblMensaje.Visible = False
     DoEvents
-    cmdcancelar.Enabled = True
+    cmdCancelar.Enabled = True
     cmdEliminar.Enabled = True
-    CmdModificar.Enabled = True
+    cmdModificar.Enabled = True
     cmdAgregar.Enabled = True
     LIMPIA_ARTI
     BLOQUEA_TEXT art_linea, art_numero, art_marca, art_plancha, checambio, txtlitro, chebof, chesub
     BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, exigv, txtcospro, cmddolares, txtfechault
-    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, cmddolares, txtpeso
+    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, cmddolares, txtpeso
     BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-    BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+    BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
     If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
      DESBLOQUEA_TEXT txt_alterno
      txt_alterno.SetFocus
     Else
-     DESBLOQUEA_TEXT Txt_key
-     Txt_key.SetFocus
+     DESBLOQUEA_TEXT txt_key
+     txt_key.SetFocus
     End If
     Screen.MousePointer = 0
 
@@ -6750,7 +6734,7 @@ End Sub
 Private Sub cmdEliminar_GotFocus()
 If ListView1.Visible Then
   ListView1.Visible = False
-  Txt_key.Text = ""
+  txt_key.Text = ""
 End If
 End Sub
 
@@ -6770,7 +6754,7 @@ Private Sub cmdgen_Click()
 Dim llave_LISTARTI As rdoResultset
 Dim PSLOC_LISTAARTI As rdoQuery
   
-  Dim WS_CODART As Currency
+  Dim ws_codart As Currency
 Dim REP_FECHA1
 Dim REP_FECHA2
 If Val(txtd.Text) = 0 Then
@@ -6836,13 +6820,13 @@ If Not llave_LISTARTI.EOF Then pbMax = llave_LISTARTI.RowCount
 ' listlin
 Do Until llave_LISTARTI.EOF
    pbValue = pbValue + 1
-   WS_CODART = llave_LISTARTI!art_key
+   ws_codart = llave_LISTARTI!art_key
 '    If llave_LISTARTI!art_key = 106912 Then Stop
 '   Print llave_LISTARTI!art_nombre
    If chenueva.Value = 1 Then
      WS_CANTIDAD = Pedido_Estimado(llave_LISTARTI!art_key, txtd.Text, CDate(REP_FECHA1), CDate(REP_FECHA2))
    Else
-     WS_CANTIDAD = PROCESA_CANTIDAD(WS_CODART, Val(txtd.Text))
+     WS_CANTIDAD = PROCESA_CANTIDAD(ws_codart, Val(txtd.Text))
      WS_CANTIDAD = Val(Format(WS_CANTIDAD * Val(txtd.Text), "#"))
    End If
    
@@ -6927,15 +6911,15 @@ End Sub
 
 Private Sub CmdModificar_Click()
 'On Error GoTo ESCAPA
-If Trim(Txt_key.Text) = "1" Then
+If Trim(txt_key.Text) = "1" Then
      MENSAJE_ARTI "No Procede. .."
      Exit Sub
 End If
-If Len(Txt_key) = 0 Or Trim(txtnombre.Text) = "" Then
+If Len(txt_key) = 0 Or Trim(txtnombre.Text) = "" Then
    MENSAJE_ARTI "NO a seleccionado ningun Articulo... !"
    Exit Sub
 End If
-If Left(CmdModificar.Caption, 2) = "&M" Then
+If Left(cmdModificar.Caption, 2) = "&M" Then
     ws_flag_equiv = ""
     LK_ACCESO_REPORT = ""
     Load frmclave2
@@ -6957,26 +6941,26 @@ If Left(CmdModificar.Caption, 2) = "&M" Then
         Frame3.Enabled = True
     End If
     
-    CmdModificar.Caption = "&Grabar"
+    cmdModificar.Caption = "&Grabar"
     cmdEliminar.Enabled = False
     cmdAgregar.Enabled = False
-    cmdcancelar.Enabled = True
+    cmdCancelar.Enabled = True
     If LK_CODUSU = "SUPERVISOR" Or LK_CODUSU = "ADMIN" Or LK_CODUSU = "SUPER" Then
        DESBLOQUEA_TEXT txt_alterno
     Else
        BLOQUEA_TEXT txt_alterno
     End If
-    BLOQUEA_TEXT Txt_key
+    BLOQUEA_TEXT txt_key
     DESBLOQUEA_TEXT txtnombre, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-    DESBLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
+    DESBLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
     DESBLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
     DESBLOQUEA_TEXT txtmargen, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
-    If LK_CODUSU = "ADMIN" Then DESBLOQUEA_TEXT cmbusu
+    If LK_CODUSU = "ADMIN" Then DESBLOQUEA_TEXT cmbUsu
     If loc_cheoferta = "A" Then DESBLOQUEA_TEXT cheoferta
     If LK_EMP_PTO = "A" Then
       If LK_CODCIA <> "00" Then
         BLOQUEA_TEXT decimales, art_grupo, art_familia, art_subfam, art_codpro, txtcodigo2
-        BLOQUEA_TEXT art_situacion, DS, cheservi(0), cheservi(1), cheservi(2), txtMin, txtmax
+        BLOQUEA_TEXT art_situacion, DS, cheservi(0), cheservi(1), cheservi(2), txtMin, txtMax
       End If
     End If
     DESBLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
@@ -6990,9 +6974,9 @@ If Left(CmdModificar.Caption, 2) = "&M" Then
         frmARTI.DS.Enabled = Not False
     End If
     If loc_flag_bloq = "A" Then
-      fcomun.Enabled = False
+      Fcomun.Enabled = False
     Else
-      fcomun.Enabled = True
+      Fcomun.Enabled = True
     End If
     If wflag_bloq_desactiva = "A" Then
       art_situacion.Enabled = True
@@ -7027,11 +7011,11 @@ Else
     End If
     Screen.MousePointer = 11
     If Val(loc_orig_situ) = 1 And art_situacion.Value = 0 Then
-       If Trim(cmbusu.Text) = "" Then
-            cmbusu.Enabled = True
+       If Trim(cmbUsu.Text) = "" Then
+            cmbUsu.Enabled = True
             Screen.MousePointer = 0
             MsgBox "Definir Usuario Responsable. (FICHA OTRAS OPCIONES)", 48, Pub_Titulo
-            cmbusu.SetFocus
+            cmbUsu.SetFocus
             Exit Sub
        End If
     End If
@@ -7066,7 +7050,7 @@ Else
           pu_codcia = Mid(Trim(par_llave!par_art_cias), xcuenta, 2)
           If Trim(pu_codcia) = "" Then Exit For
             SQ_OPER = 1
-            PUB_CODART = Val(Txt_key.Text)
+            PUB_CODART = Val(txt_key.Text)
             pu_codcia = pu_codcia
             LEER_ARM_LLAVE
             If Not arm_llave.EOF Then
@@ -7080,7 +7064,7 @@ Else
         Next fila
      Else
         SQ_OPER = 1
-        PUB_CODART = Val(Txt_key.Text)
+        PUB_CODART = Val(txt_key.Text)
         pu_codcia = LK_CODCIA
         LEER_ARM_LLAVE
         If Not arm_llave.EOF Then
@@ -7093,7 +7077,7 @@ Else
      End If
     End If
     If pasa = 1 Then
-      If EXISTE_ART(txtnombre.Text, Trim(Txt_key.Text)) Then
+      If EXISTE_ART(txtnombre.Text, Trim(txt_key.Text)) Then
           Screen.MousePointer = 0
           MENSAJE_ARTI "Existen algunos Articulos con estos NOMBRES .."
           frmARTI.ListExiste.SetFocus
@@ -7107,7 +7091,7 @@ Else
         For fila = 1 To 30
           pu_codcia = Mid(Trim(par_llave!par_art_cias), xcuenta, 2)
           If Trim(pu_codcia) = "" Then Exit For
-             PUB_KEY = Val(frmARTI.Txt_key.Text)
+             PUB_KEY = Val(frmARTI.txt_key.Text)
              PUB_CODCIA = pu_codcia
              LOC_OPER = 1
              LEER_LOC
@@ -7118,7 +7102,7 @@ Else
     Else
       GRABAR_ARTI
     End If
-    If cheasignarc.Value = 1 Then add_convenio Val(frmARTI.Txt_key)
+    If cheasignarc.Value = 1 Then add_convenio Val(frmARTI.txt_key)
     CN.Execute "Commit Transaction", rdExecDirect
     ' Actuzliar Varios Producto amarre por Sub Familia
     If Val(Right(art_subfam.Text, 8)) <> 0 Then
@@ -7132,23 +7116,23 @@ Else
           frmPreciosArti.Show 1
         End If
     End If
-    CmdModificar.Caption = "&Modificación"
-    cmdcancelar.Enabled = True
+    cmdModificar.Caption = "&Modificación"
+    cmdCancelar.Enabled = True
     cmdEliminar.Enabled = True
     cmdAgregar.Enabled = True
     LIMPIA_ARTI
     BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
+    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
     BLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
     BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-    BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+    BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
     MENSAJE_ARTI "Articulo,  MODIFICADO... "
     If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
       DESBLOQUEA_TEXT txt_alterno
       txt_alterno.SetFocus
     Else
-      DESBLOQUEA_TEXT Txt_key
-      Txt_key.SetFocus
+      DESBLOQUEA_TEXT txt_key
+      txt_key.SetFocus
     End If
     MANOS(0).Enabled = True
     MANOS(1).Enabled = True
@@ -7162,23 +7146,23 @@ ESCAPA:
         MsgBox Err.Number & "  " & Err.Description & "  Intente Nuevamente."
     End If
     CN.Execute "Rollback Transaction", rdExecDirect
-    CmdModificar.Caption = "&Modificación"
-    cmdcancelar.Enabled = True
+    cmdModificar.Caption = "&Modificación"
+    cmdCancelar.Enabled = True
     cmdEliminar.Enabled = True
-    CmdModificar.Enabled = True
+    cmdModificar.Enabled = True
     cmdAgregar.Enabled = True
     LIMPIA_ARTI
     BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
+    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
     BLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
     BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-    BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+    BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
     If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
      DESBLOQUEA_TEXT txt_alterno
      txt_alterno.SetFocus
     Else
-     DESBLOQUEA_TEXT Txt_key
-     Txt_key.SetFocus
+     DESBLOQUEA_TEXT txt_key
+     txt_key.SetFocus
     End If
     Screen.MousePointer = 0
     MANOS(0).Enabled = True
@@ -7189,7 +7173,7 @@ End Sub
 Private Sub cmdModificar_GotFocus()
 If ListView1.Visible Then
   ListView1.Visible = False
-  Txt_key.Text = ""
+  txt_key.Text = ""
 End If
 End Sub
 
@@ -7378,7 +7362,7 @@ Return
 End Sub
 
 Private Sub cmdqc_Click()
-pub_cadena = "delete from tabconvenio where tco_codart = " & Val(Txt_key.Text)
+pub_cadena = "delete from tabconvenio where tco_codart = " & Val(txt_key.Text)
 CN.Execute pub_cadena
 MsgBox "Producto Quitado del Convenio.", 48, Pub_Titulo
 cheasignarc.Value = 1
@@ -7468,7 +7452,7 @@ Dim var_codven As Integer
 Dim var_codart  As Currency
 
 var_codven = Val(Left(cmdvend.Text, 3))
-var_codart = Val(Txt_key.Text)
+var_codart = Val(txt_key.Text)
 If var_codart = 0 Then Exit Sub
 If var_codven = 0 Then Exit Sub
 PSCOMI_VEN.rdoParameters(0) = LK_CODCIA
@@ -7578,7 +7562,7 @@ End If
 End Sub
 
 Private Sub exigv_Click()
-If Left(CmdModificar.Caption, 2) = "&M" And Left(cmdAgregar.Caption, 2) = "&A" Then Exit Sub
+If Left(cmdModificar.Caption, 2) = "&M" And Left(cmdAgregar.Caption, 2) = "&A" Then Exit Sub
   
 If exigv.Value = 0 Then
 '  txtcospro.Enabled = False
@@ -7590,7 +7574,7 @@ End If
 End Sub
 
 Private Sub Form_Activate()
-frmARTI.SSTab1.Tab = 0
+frmARTI.SSTab1.tab = 0
 End Sub
 
 Private Sub Form_DblClick()
@@ -7699,18 +7683,18 @@ Set llave_sum_arti = PSLOC_WARTI.OpenResultset(rdOpenKeyset, rdConcurValues)
     frmARTI.DS.ListIndex = -1
     frmARTI.decimales.ListIndex = -1
     BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
+    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
     BLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
     BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-    BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, art_grupop, lfvta
+    BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, art_grupop, lfvta
     If LK_FLAG_ORIGINAL = "A" Then
        txt_alterno.Visible = False
        lblalterno.Visible = False
        txtnombre.Left = 2160
-       LBLNOMARTI.Left = 2160
+       lblnomarti.Left = 2160
     End If
     If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
-       BLOQUEA_TEXT Txt_key
+       BLOQUEA_TEXT txt_key
        pub_cadena = "SELECT ART_ALTERNO FROM ARTI WHERE ART_CODCIA = ? AND ART_KEY <> 0 order by art_alterno"
     Else
       BLOQUEA_TEXT txt_alterno
@@ -7723,7 +7707,7 @@ Set llave_sum_arti = PSLOC_WARTI.OpenResultset(rdOpenKeyset, rdConcurValues)
     mano_CODI.Requery
     LLENADO_GRUPOP
     Fvarios.Visible = False
-    fcomun.Visible = True
+    Fcomun.Visible = True
     Fdatos.Visible = True
     PROCESO_ARTI
     loc_tipo = "V"
@@ -7737,10 +7721,10 @@ Set llave_sum_arti = PSLOC_WARTI.OpenResultset(rdOpenKeyset, rdConcurValues)
     Fvarios.Visible = True
     Screen.MousePointer = 0
     LBLUNIDAD.Caption = ""
-    frmARTI.fcomun.Visible = True
-    frmARTI.fcomun.Enabled = True
+    frmARTI.Fcomun.Visible = True
+    frmARTI.Fcomun.Enabled = True
     grid_unid.Enabled = False
-    cmdcancelar.Enabled = True
+    cmdCancelar.Enabled = True
     SQ_OPER = 2
     PUB_TIPREG = 45
     PUB_CODCIA = LK_CODCIA
@@ -7801,22 +7785,22 @@ If LK_CODUSU = "ADMIN" Or LK_CODUSU = "SUPER" Then cmbStock.Visible = True
 
 ws_flag_equiv = ""
 FLAG_BUSCAR_MANITO = ""
-cmbusu.Clear
+cmbUsu.Clear
 pub_cadena = "SELECT  * FROM USUARIOS "
 Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
 Do Until X.EOF
-  cmbusu.AddItem Trim(X!usu_key)
+  cmbUsu.AddItem Trim(X!usu_key)
 X.MoveNext
 Loop
 Dim wIdx As Integer
 wIdx = -1
-For wIdx = 0 To cmbusu.ListCount - 1
-    If cmbusu.List(wIdx) = LK_CODUSU Then Exit For
+For wIdx = 0 To cmbUsu.ListCount - 1
+    If cmbUsu.List(wIdx) = LK_CODUSU Then Exit For
 Next
-If wIdx >= 0 And wIdx < cmbusu.ListCount Then
-    cmbusu.ListIndex = wIdx
-ElseIf cmbusu.ListCount > 0 Then
-    cmbusu.ListIndex = 0
+If wIdx >= 0 And wIdx < cmbUsu.ListCount Then
+    cmbUsu.ListIndex = wIdx
+ElseIf cmbUsu.ListCount > 0 Then
+    cmbUsu.ListIndex = 0
 End If
 If LK_CODUSU = "ADMIN" Or LK_CODUSU = "OPER08" Then
   fracuotas.Enabled = True
@@ -8119,9 +8103,9 @@ If LK_CODUSU = "OPERCH01" Or LK_CODUSU = "ADMIN" Then
 Else
 Exit Sub
 End If
-If Val(Txt_key.Text) <> 0 Then
+If Val(txt_key.Text) <> 0 Then
   SQ_OPER = 1
-  PUB_CODART = Txt_key.Text
+  PUB_CODART = txt_key.Text
   pu_codcia = LK_CODCIA
   LEER_ARM_LLAVE
   If arm_llave.EOF Then
@@ -8173,7 +8157,7 @@ If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
  txt_alterno_KeyPress 13
 Else
  loc_key = ListView1.SelectedItem.Index
- Txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
+ txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
  txt_key_KeyPress 13
 End If
 End Sub
@@ -8194,7 +8178,7 @@ If loc_key <> 0 Then
  If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
   txt_alterno.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
  Else
-  Txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
+  txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
  End If
 End If
 
@@ -8206,9 +8190,9 @@ If KeyAscii = 27 Then
  If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" And txt_alterno.Enabled Then
   txt_alterno.Text = ""
   txt_alterno.SetFocus
- ElseIf LK_FLAG_ALTERNO <> "A" And Txt_key.Enabled Then
-  Txt_key.Text = ""
-  Txt_key.SetFocus
+ ElseIf LK_FLAG_ALTERNO <> "A" And txt_key.Enabled Then
+  txt_key.Text = ""
+  txt_key.SetFocus
  End If
  Exit Sub
 End If
@@ -8245,7 +8229,7 @@ If mano_CODI.RowCount > 0 Then
     If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
        If Trim(mano_CODI!ART_alterno) = Trim(txt_alterno.Text) Then Exit Do
     Else
-       If Val(Txt_key.Text) = Val(mano_CODI!art_key) Then Exit Do
+       If Val(txt_key.Text) = Val(mano_CODI!art_key) Then Exit Do
     End If
     mano_CODI.MoveNext
   Loop
@@ -8256,7 +8240,7 @@ If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
     GoTo SALT
     End If
 Else
-    If Txt_key.Text = "" Then
+    If txt_key.Text = "" Then
      mano_CODI.MoveFirst
      GoTo SALT
     End If
@@ -8275,7 +8259,7 @@ If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
   txt_alterno.Text = Trim(mano_CODI!ART_alterno)
   txt_alterno_KeyPress 13
 Else
- Txt_key.Text = Trim(mano_CODI!art_key)
+ txt_key.Text = Trim(mano_CODI!art_key)
  txt_key_KeyPress 13
 
 End If
@@ -8288,7 +8272,7 @@ Private Sub PARPADEA_Timer()
  LblMensaje.Visible = Not LblMensaje.Visible
  If CU > 4 Then
    CU = 0
-   PARPADEA.Enabled = False
+   Parpadea.Enabled = False
    LblMensaje.Visible = False
  End If
 
@@ -8309,8 +8293,8 @@ If ban <> 1 Then
           End If
           pu_alterno = Trim(txt_alterno.Text)
          Else
-          Txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).SubItems(1))
-          PUB_KEY = Val(Txt_key.Text)
+          txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).SubItems(1))
+          PUB_KEY = Val(txt_key.Text)
          End If
        End If
        PUB_CODCIA = LK_CODCIA
@@ -8322,7 +8306,7 @@ If ban <> 1 Then
 End If
 'LLENADO
 frmARTI.frarelacion.Enabled = True
-frmARTI.Txt_key.Text = artloc_llave!art_key
+frmARTI.txt_key.Text = artloc_llave!art_key
 frmARTI.txtnombre.Text = RTrim(Nulo_Valors(artloc_llave!art_nombre))
 ASIGNA_INT art_familia, Nulo_Valor0(artloc_llave!art_familia)
 
@@ -8366,11 +8350,11 @@ frmARTI.lblcospro.Caption = Nulo_Valor0(arm_llave!ARM_COSPRO)
 frmARTI.txtfechault.Text = Format(arm_llave!ARM_FECHA_ULT, "dd/mm/yyyy")
 frmARTI.DS.Text = Trim(Nulo_Valors(artloc_llave!ART_MONEDA))
 frmARTI.DS.Text = Trim(Nulo_Valors(artloc_llave!ART_MONEDA))
-frmARTI.cmbusu.Text = Trim(Nulo_Valors(artloc_llave!ART_CODUSU_ORIG))
+frmARTI.cmbUsu.Text = Trim(Nulo_Valors(artloc_llave!ART_CODUSU_ORIG))
 frmARTI.decimales.Text = Val(Nulo_Valor0(artloc_llave!ART_DECIMALES))
 frmARTI.txt_alterno.Text = Nulo_Valors(artloc_llave!ART_alterno)
 frmARTI.txtMin.Text = Nulo_Valors(artloc_llave!ART_STOCK_MIN)
-frmARTI.txtmax.Text = Nulo_Valors(artloc_llave!ART_STOCK_MAX)
+frmARTI.txtMax.Text = Nulo_Valors(artloc_llave!ART_STOCK_MAX)
 LLENA_CALREL Nulo_Valor0(artloc_llave!ART_CALIDAD)
 LLENA_RELACION Nulo_Valor0(artloc_llave!ART_CODART2)
 txtcodigo2.Text = Nulo_Valor0(artloc_llave!ART_CODART2)
@@ -8483,7 +8467,7 @@ If LK_EMP = "CAM" Then
   PROD_PROC
 End If
 ws_flag_equiv = ""
-frmARTI.SSTab1.Tab = 0
+frmARTI.SSTab1.tab = 0
 VAR_ACTIVAR = 0
 End Sub
 Public Sub LIMPIA_ARTI()
@@ -8495,7 +8479,7 @@ txtper.Text = ""
 cheasignarc.Value = 0
 frmARTI.txtCantMax.Text = ""
 frmARTI.txtCantMaxADD.Text = ""
-cmbusu.ListIndex = -1
+cmbUsu.ListIndex = -1
 fechahora.Caption = ""
 txtmargen.Text = ""
 flag_art_situacion = 0
@@ -8506,9 +8490,9 @@ frmARTI.Lst1.Caption = ""
 frmARTI.lblstock0.Caption = "0.000"
 frmARTI.lblstock1.Caption = "0.000"
 txtMin.Text = ""
-txtmax.Text = ""
+txtMax.Text = ""
 frmARTI.txt_alterno.Text = ""
-frmARTI.Txt_key.Text = ""
+frmARTI.txt_key.Text = ""
 frmARTI.txtnombre.Text = ""
 DS.ListIndex = -1
 LBLUNIDAD.Caption = ""
@@ -8530,7 +8514,7 @@ decimales.Text = ""
 grid_unid.Clear
 grid_unid.Cols = 1
 grid_unid.Rows = 1
-frmARTI.SSTab1.Tab = 0
+frmARTI.SSTab1.tab = 0
 cheservi(0).Value = False
 cheservi(1).Value = False
 cheservi(2).Value = False
@@ -8570,13 +8554,13 @@ frmARTI.txtnombre.Locked = False
 End Sub
 
 Private Sub SSTab1_Click(PreviousTab As Integer)
-If SSTab1.Tab = 1 And txtMin.Enabled = True Then
+If SSTab1.tab = 1 And txtMin.Enabled = True Then
  ' If LK_EMP = "HER" Then
     Azul txtpor1, txtpor1
  ' Else
  '   Azul txtMin, txtMin
  ' End If
-ElseIf SSTab1.Tab = 0 And art_familia.Enabled = True Then
+ElseIf SSTab1.tab = 0 And art_familia.Enabled = True Then
   art_familia.SetFocus
 End If
 End Sub
@@ -8585,13 +8569,13 @@ End Sub
 Private Sub SSTab1_GotFocus()
 If ListView1.Visible Then
   ListView1.Visible = False
-  Txt_key.Text = ""
+  txt_key.Text = ""
 End If
-If SSTab1.Tab = 1 And txtpor1.Enabled = True Then
+If SSTab1.tab = 1 And txtpor1.Enabled = True Then
   If LK_EMP = "HER" Then
     Azul txtpor1, txtpor1
   End If
-ElseIf SSTab1.Tab = 0 And art_familia.Enabled = True Then
+ElseIf SSTab1.tab = 0 And art_familia.Enabled = True Then
   art_familia.SetFocus
 End If
 
@@ -8626,14 +8610,14 @@ If KeyAscii = 13 Then
     If Left(cmdAgregar.Caption, 2) = "&G" Then
         cmdAgregar.SetFocus
     Else
-        CmdModificar.SetFocus
+        cmdModificar.SetFocus
     End If
 End If
 End Sub
 
 Private Sub txtMin_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
-   Azul txtmax, txtmax
+   Azul txtMax, txtMax
 End If
 End Sub
 
@@ -8648,13 +8632,13 @@ If KeyAscii = 39 Then
 End If
 If KeyAscii = 13 Then
     ' Si es nuevo y txt_key tiene valor, copiar a txt_alterno
-    If Left(cmdAgregar.Caption, 2) = "&G" And Len(Txt_key.Text) > 0 Then
+    If Left(cmdAgregar.Caption, 2) = "&G" And Len(txt_key.Text) > 0 Then
        If Trim(txt_alterno.Text) = "" Then
-          txt_alterno.Text = Txt_key.Text
+          txt_alterno.Text = txt_key.Text
        End If
     End If
     If loc_tipo = "V" Then
-    If frmARTI.SSTab1.Tab = 1 Then
+    If frmARTI.SSTab1.tab = 1 Then
        If LK_EMP = "HER" Then
         Azul txtpor1, txtpor1
         Exit Sub
@@ -8693,9 +8677,9 @@ Dim xcuenta As Integer
 WS_FLAG_UNIDAD = 0
 WS_IMPORTE = 0
 ws_igv = 0
-WORIGINAL = Val(frmARTI.Txt_key.Text)
+WORIGINAL = Val(frmARTI.txt_key.Text)
 If LK_FLAG_ORIGINAL = "A" Then
- walterno = frmARTI.Txt_key.Text
+ walterno = frmARTI.txt_key.Text
 Else
  walterno = Trim(frmARTI.txt_alterno.Text)
 End If
@@ -8715,7 +8699,7 @@ If VAR_NEWCAL = 1 Then
   WCODART2 = 0
   GoTo IR_GRABA1
 End If
-If Left(CmdModificar.Caption, 2) = "&G" Then
+If Left(cmdModificar.Caption, 2) = "&G" Then
     artloc_llave.Edit
      PUB_CODART = WORIGINAL
      SQ_OPER = 1
@@ -8750,7 +8734,7 @@ End If
 
 If pu_codcia = LK_CODCIA Then
    artloc_llave!ART_STOCK_MIN = Nulo_Valor0(frmARTI.txtMin.Text)
-   artloc_llave!ART_STOCK_MAX = Nulo_Valor0(frmARTI.txtmax.Text)
+   artloc_llave!ART_STOCK_MAX = Nulo_Valor0(frmARTI.txtMax.Text)
    artloc_llave!art_marca = Val(Right(art_marca.Text, 3))
    'CUO_CODCIA CUO_PERIODO CUO_CODART  CUO_CANTIDAD
    pub_cadena = "select  * from tabcuo where cuo_codcia = '" & LK_CODCIA & "' and cuo_periodo = '" & txtper.Text & "' and cuo_codart = " & artloc_llave!art_key
@@ -8789,7 +8773,7 @@ If pu_codcia = LK_CODCIA Then
    
 End If
 
-If Left(CmdModificar.Caption, 2) = "&G" Then
+If Left(cmdModificar.Caption, 2) = "&G" Then
  If frmARTI.art_situacion.Value = 0 And flag_art_situacion = 1 Then
    For int_i = 0 To lstcias.ListCount - 1
      If Left(lstcias.List(int_i), 2) = pu_codcia Then
@@ -8807,7 +8791,7 @@ artloc_llave!ART_CUENTA_CONTAB_C = txtClase
 'artloc_llave!ART_CUENTA_CONTAB = 0 ' txtLab
 
 artloc_llave!art_tipo = loc_tipo
-artloc_llave!ART_CODUSU_ORIG = Trim(cmbusu.Text)
+artloc_llave!ART_CODUSU_ORIG = Trim(cmbUsu.Text)
 artloc_llave!art_familia = Val(Right(art_familia.Text, 5))
 artloc_llave!art_grupop = Val(Right(art_grupop.Text, 10))
 artloc_llave!art_subfam = Val(Right(art_subfam.Text, 5))
@@ -8876,7 +8860,7 @@ LEER_ARM_LLAVE
 
  
 ws_codcia = pu_codcia 'LK_CODCIA
-If Left(CmdModificar.Caption, 2) = "&G" Then
+If Left(cmdModificar.Caption, 2) = "&G" Then
  GoSub IR_POR_CIA
  Exit Sub
 End If
@@ -8908,7 +8892,7 @@ LEER_PRE_LLAVE
 If VAR_NEWCAL = 1 Then
  GoTo IR_GRABA2
 End If
-If Left(CmdModificar.Caption, 2) = "&G" Then
+If Left(cmdModificar.Caption, 2) = "&G" Then
     fila = 0
     Flag_Inicial = "A"
     Do Until pre_mayor.EOF
@@ -9145,16 +9129,16 @@ If loc_tipo = "V" Then
     If Not IsNumeric(frmARTI.txtMin.Text) And Trim(txtMin.Text) <> "" Or Val(txtMin.Text) > 999999999.99 Then
         CONSIS_ARTI = False
         MsgBox "Dato Invalido Stock Minimo ", 48, Pub_Titulo
-        frmARTI.SSTab1.Tab = 1
+        frmARTI.SSTab1.tab = 1
         Azul txtMin, txtMin
         GoTo ESCAPA
     End If
     
-    If Not IsNumeric(frmARTI.txtmax.Text) And Trim(txtmax.Text) <> "" Or Val(txtmax.Text) > 999999999.99 Then
+    If Not IsNumeric(frmARTI.txtMax.Text) And Trim(txtMax.Text) <> "" Or Val(txtMax.Text) > 999999999.99 Then
         CONSIS_ARTI = False
         MsgBox "Dato Invalido Stock Maximo ", 48, Pub_Titulo
-        frmARTI.SSTab1.Tab = 1
-        Azul txtmax, txtmax
+        frmARTI.SSTab1.tab = 1
+        Azul txtMax, txtMax
         GoTo ESCAPA
     End If
     
@@ -9177,31 +9161,31 @@ If loc_tipo = "V" Then
     If Not IsNumeric(txtpor1) And Trim(txtpor1.Text) <> "" Or Val(txtpor1.Text) > 999.99 Then
         CONSIS_ARTI = False
         MsgBox "Dato Invalido % p' 1 ", 48, Pub_Titulo
-        frmARTI.SSTab1.Tab = 1
+        frmARTI.SSTab1.tab = 1
         Azul txtpor1, txtpor1
         GoTo ESCAPA
     ElseIf Not IsNumeric(txtpor2) And Trim(txtpor2.Text) <> "" Or Val(txtpor2.Text) > 999.99 Then
         CONSIS_ARTI = False
         MsgBox "Dato Invalido % p' 2 ", 48, Pub_Titulo
-        frmARTI.SSTab1.Tab = 1
+        frmARTI.SSTab1.tab = 1
         Azul txtpor2, txtpor2
         GoTo ESCAPA
     ElseIf Not IsNumeric(txtpor3) And Trim(txtpor3.Text) <> "" Or Val(txtpor3.Text) > 999.99 Then
         CONSIS_ARTI = False
         MsgBox "Dato Invalido % p' 3 ", 48, Pub_Titulo
-        frmARTI.SSTab1.Tab = 1
+        frmARTI.SSTab1.tab = 1
         Azul txtpor3, txtpor3
         GoTo ESCAPA
     ElseIf Not IsNumeric(txtpor4) And Trim(txtpor4.Text) <> "" Or Val(txtpor4.Text) > 999.99 Then
         CONSIS_ARTI = False
         MsgBox "Dato Invalido % p' 4 ", 48, Pub_Titulo
-        frmARTI.SSTab1.Tab = 1
+        frmARTI.SSTab1.tab = 1
         Azul txtpor4, txtpor4
         GoTo ESCAPA
     ElseIf Not IsNumeric(txtpor5) And Trim(txtpor5.Text) <> "" Or Val(txtpor5.Text) > 999.99 Then
         CONSIS_ARTI = False
         MsgBox "Dato Invalido % p' 5 ", 48, Pub_Titulo
-        frmARTI.SSTab1.Tab = 1
+        frmARTI.SSTab1.tab = 1
         Azul txtpor5, txtpor5
         GoTo ESCAPA
     End If
@@ -9218,7 +9202,7 @@ End Function
 
 Public Sub MENSAJE_ARTI(TEXTO As String)
   LblMensaje.Caption = TEXTO
-  PARPADEA.Enabled = True
+  Parpadea.Enabled = True
 End Sub
 Public Sub SOLO_PORCEBTAJE(Optional tecla)
 'CONVIERTE TODA A MAYUSCULAS LETRAS
@@ -9238,7 +9222,7 @@ Private Sub txt_key_GotFocus()
  If ListView1.Visible Then
   ListView1.Visible = False
  End If
- Txt_key.Text = ""
+ txt_key.Text = ""
  frmARTI.F14.Visible = False
 End Sub
 Private Sub txt_key_KeyDown(KeyCode As Integer, Shift As Integer)
@@ -9247,7 +9231,7 @@ Dim itmFound As MSComctlLib.ListItem    ' Variable FoundItem.
 If Not ListView1.Visible Then
  Exit Sub
 End If
-If KeyCode <> 40 And KeyCode <> 38 And KeyCode <> 34 And KeyCode <> 33 And Txt_key.Text = "" Then
+If KeyCode <> 40 And KeyCode <> 38 And KeyCode <> 34 And KeyCode <> 33 And txt_key.Text = "" Then
   loc_key = 1
   Set ListView1.SelectedItem = ListView1.ListItems(loc_key)
   ListView1.ListItems.Item(loc_key).Selected = True
@@ -9279,9 +9263,9 @@ GoTo fin
 POSICION:
   ListView1.ListItems.Item(loc_key).Selected = True
   ListView1.ListItems.Item(loc_key).EnsureVisible
-  Txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
+  txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
   DoEvents
-  Txt_key.SelStart = Len(Txt_key.Text)
+  txt_key.SelStart = Len(txt_key.Text)
   DoEvents
 fin:
 
@@ -9293,19 +9277,19 @@ Dim I
 Dim itmFound As MSComctlLib.ListItem
 
 If KeyAscii = 27 Then
- Txt_key.Text = ""
+ txt_key.Text = ""
 End If
 If KeyAscii <> 13 Then
    GoTo fin
 End If
 On Error GoTo ERROR_CODIGO
-  pu_codclie = Val(Txt_key.Text)
+  pu_codclie = Val(txt_key.Text)
 On Error GoTo 0
-If Len(Txt_key.Text) = 0 Then
+If Len(txt_key.Text) = 0 Then
    Exit Sub
 End If
 
-If pu_codclie <> 0 And IsNumeric(Txt_key.Text) = True Then
+If pu_codclie <> 0 And IsNumeric(txt_key.Text) = True Then
    LOC_OPER = 1
    PUB_CODCIA = LK_CODCIA
    On Error GoTo ERROR_CODIGO
@@ -9314,34 +9298,34 @@ If pu_codclie <> 0 And IsNumeric(Txt_key.Text) = True Then
    On Error GoTo 0
    If artloc_llave.EOF Then
      MsgBox "REGISTRO NO EXISTE ...", 48, Pub_Titulo
-     Azul Txt_key, Txt_key
+     Azul txt_key, txt_key
      GoTo fin
    Else
      If pu_codclie = 1 Then
        MsgBox "REGISTRO NO EXISTE ...", 48, Pub_Titulo
-       Azul Txt_key, Txt_key
+       Azul txt_key, txt_key
        GoTo fin
      End If
      LLENA_ARTI 1
-     BLOQUEA_TEXT frmARTI.Txt_key
-     frmARTI.CmdModificar.SetFocus
+     BLOQUEA_TEXT frmARTI.txt_key
+     frmARTI.cmdModificar.SetFocus
      BLOQUEA_TEXT txtnombre
-     cmdcancelar.Enabled = True
+     cmdCancelar.Enabled = True
    End If
 Else
    If loc_key > ListView1.ListItems.count Or loc_key = 0 Then
      Exit Sub
    End If
    VALOR = UCase(ListView1.ListItems.Item(loc_key).Text)
-   If Trim(UCase(Txt_key.Text)) = Left(VALOR, Len(Trim(Txt_key.Text))) Then
+   If Trim(UCase(txt_key.Text)) = Left(VALOR, Len(Trim(txt_key.Text))) Then
    Else
       Exit Sub
    End If
    LLENA_ARTI 0
-   BLOQUEA_TEXT frmARTI.Txt_key
-   frmARTI.CmdModificar.SetFocus
+   BLOQUEA_TEXT frmARTI.txt_key
+   frmARTI.cmdModificar.SetFocus
    BLOQUEA_TEXT txtnombre
-   cmdcancelar.Enabled = True
+   cmdCancelar.Enabled = True
 End If
 dale:
 ListView1.Visible = False
@@ -9349,19 +9333,19 @@ fin:
 Exit Sub
 ERROR_CODIGO:
 MsgBox "Codigo NO Valido .... ", 48, Pub_Titulo
-Azul Txt_key, Txt_key
+Azul txt_key, txt_key
 End Sub
 
 Private Sub txt_key_KeyUp(KeyCode As Integer, Shift As Integer)
 Dim var
 Dim ws_codcia As String * 2
-If Len(Txt_key.Text) = 0 Or IsNumeric(Txt_key.Text) = True Then
+If Len(txt_key.Text) = 0 Or IsNumeric(txt_key.Text) = True Then
    ListView1.Visible = False
    Exit Sub
 End If
-If ListView1.Visible = False And KeyCode <> 13 Or Len(Txt_key.Text) = 1 Then
-    If Txt_key.Text = "" Then Txt_key.Text = " "
-    var = Asc(Txt_key.Text)
+If ListView1.Visible = False And KeyCode <> 13 Or Len(txt_key.Text) = 1 Then
+    If txt_key.Text = "" Then txt_key.Text = " "
+    var = Asc(txt_key.Text)
     var = var + 1
     If var = 33 Or var = 91 Then
        var = "ZZZZZZZZ"
@@ -9376,9 +9360,9 @@ If ListView1.Visible = False And KeyCode <> 13 Or Len(Txt_key.Text) = 1 Then
     End If
     numarchi = 0
     If cheotros.Value = 1 Then
-     archi = "SELECT TOP 2000 ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, ARM_STOCK ,PRE_EQUIV, ART_SITUACION FROM ARTI, ARTICULO, PRECIOS WHERE (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND (PRE_FLAG_UNIDAD ='A') AND (ART_CODCIA = ARM_CODCIA) AND (ART_KEY = ARM_CODART) AND ART_KEY <> 0 AND ART_KEY  <> 1 and ART_CODCIA = '" & ws_codcia & "' AND ART_NOMBRE BETWEEN '" & Txt_key.Text & "' AND  '" & var & "' ORDER BY ART_NOMBRE"
+     archi = "SELECT TOP 2000 ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, ARM_STOCK ,PRE_EQUIV, ART_SITUACION FROM ARTI, ARTICULO, PRECIOS WHERE (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND (PRE_FLAG_UNIDAD ='A') AND (ART_CODCIA = ARM_CODCIA) AND (ART_KEY = ARM_CODART) AND ART_KEY <> 0 AND ART_KEY  <> 1 and ART_CODCIA = '" & ws_codcia & "' AND ART_NOMBRE BETWEEN '" & txt_key.Text & "' AND  '" & var & "' ORDER BY ART_NOMBRE"
     Else
-     archi = "SELECT TOP 2000 ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, ARM_STOCK ,PRE_EQUIV, ART_SITUACION FROM ARTI, ARTICULO, PRECIOS WHERE (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND (PRE_FLAG_UNIDAD ='A') AND (ART_CODCIA = ARM_CODCIA) AND (ART_KEY = ARM_CODART) AND ART_KEY <> 0 AND ART_SITUACION <> '1' AND ART_KEY  <> 1 and ART_CODCIA = '" & ws_codcia & "' AND ART_NOMBRE BETWEEN '" & Txt_key.Text & "' AND  '" & var & "' ORDER BY ART_NOMBRE"
+     archi = "SELECT TOP 2000 ART_KEY, ART_CODCIA, ART_NOMBRE, ART_ALTERNO, ARM_STOCK ,PRE_EQUIV, ART_SITUACION FROM ARTI, ARTICULO, PRECIOS WHERE (ART_KEY = PRE_CODART) AND (ART_CODCIA = PRE_CODCIA) AND (PRE_FLAG_UNIDAD ='A') AND (ART_CODCIA = ARM_CODCIA) AND (ART_KEY = ARM_CODART) AND ART_KEY <> 0 AND ART_SITUACION <> '1' AND ART_KEY  <> 1 and ART_CODCIA = '" & ws_codcia & "' AND ART_NOMBRE BETWEEN '" & txt_key.Text & "' AND  '" & var & "' ORDER BY ART_NOMBRE"
     End If
     PROC_LISVIEW ListView1, 1000
     loc_key = 0
@@ -9393,7 +9377,7 @@ If KeyCode = 40 Or KeyCode = 38 Or KeyCode = 34 Or KeyCode = 33 Then
 End If
 Dim itmFound As Object ' Variable FoundItem.
 If ListView1.Visible Then
-  Set itmFound = ListView1.FindItem(LTrim(Txt_key.Text), lvwText, , lvwPartial)
+  Set itmFound = ListView1.FindItem(LTrim(txt_key.Text), lvwText, , lvwPartial)
   If itmFound Is Nothing Then
   Else
    itmFound.EnsureVisible
@@ -10236,7 +10220,7 @@ ElGrid_DblClick grid_unid, txtvar
 End Sub
 
 Private Sub grid_UNID_EnterCell()
-fcomun.Refresh
+Fcomun.Refresh
 txtpeso.Text = Format(grid_unid.TextMatrix(grid_unid.Row, 28), "0.00")
 txtlitro.Text = Format(grid_unid.TextMatrix(grid_unid.Row, 30), "0.00")
 If Flag_Inicial = "A" Then
@@ -10396,7 +10380,7 @@ End Sub
 
 Private Sub txtper_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
-    pub_cadena = "Select  * from tabcuo where cuo_codcia = '" & LK_CODCIA & "' and cuo_periodo = '" & txtper.Text & "' and cuo_codart = " & Val(Txt_key.Text)
+    pub_cadena = "Select  * from tabcuo where cuo_codcia = '" & LK_CODCIA & "' and cuo_periodo = '" & txtper.Text & "' and cuo_codart = " & Val(txt_key.Text)
     Set rs_regcuotas = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
     If Not rs_regcuotas.EOF Then
        txtper.Text = rs_regcuotas!CUO_PERIODO
@@ -10634,7 +10618,7 @@ TEXTO_LosFocus grid_unid, txtvar
 End Sub
 
 Private Sub txt_alterno_GotFocus()
-If Left(cmdAgregar.Caption, 2) = "&A" Or Left(CmdModificar.Caption, 2) = "&M" Then
+If Left(cmdAgregar.Caption, 2) = "&A" Or Left(cmdModificar.Caption, 2) = "&M" Then
  Exit Sub
 End If
  If ListView1.Visible Then
@@ -10723,9 +10707,9 @@ If VAR_ACTIVAR <> 99 Then
  End If
  LLENA_ARTI 0
  BLOQUEA_TEXT txt_alterno
- frmARTI.CmdModificar.SetFocus
+ frmARTI.cmdModificar.SetFocus
  BLOQUEA_TEXT txtnombre
- cmdcancelar.Enabled = True
+ cmdCancelar.Enabled = True
  Exit Sub
 End If
 pu_alterno = Trim(txt_alterno.Text)
@@ -10742,9 +10726,9 @@ Else
 End If
 LLENA_ARTI 0
 BLOQUEA_TEXT txt_alterno
-frmARTI.CmdModificar.SetFocus
+frmARTI.cmdModificar.SetFocus
 BLOQUEA_TEXT txtnombre
-cmdcancelar.Enabled = True
+cmdCancelar.Enabled = True
 dale:
 ListView1.Visible = False
 
@@ -10852,24 +10836,24 @@ Set artloc_llave = PSART_LOC.OpenResultset(rdOpenKeyset, rdConcurValues)
 End Sub
 
 Public Sub PROCESO_CANCELAR()
-    If Left(cmdAgregar.Caption, 2) = "&A" And Left(CmdModificar.Caption, 2) = "&M" Then
+    If Left(cmdAgregar.Caption, 2) = "&A" And Left(cmdModificar.Caption, 2) = "&M" Then
         frmARTI.frarelacion.Enabled = False
         LIMPIA_ARTI
-        cmdcancelar.Enabled = True
+        cmdCancelar.Enabled = True
         BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-        BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
+        BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
         BLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
         BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-        BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
-        frmARTI.SSTab1.Tab = 0
+        BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+        frmARTI.SSTab1.tab = 0
         If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
           DESBLOQUEA_TEXT txt_alterno
-          BLOQUEA_TEXT Txt_key
+          BLOQUEA_TEXT txt_key
           If frmARTI.txt_alterno.Visible Then frmARTI.txt_alterno.SetFocus
         Else
           BLOQUEA_TEXT txt_alterno
-          DESBLOQUEA_TEXT Txt_key
-          If frmARTI.Txt_key.Visible Then frmARTI.Txt_key.SetFocus
+          DESBLOQUEA_TEXT txt_key
+          If frmARTI.txt_key.Visible Then frmARTI.txt_key.SetFocus
         End If
         MANOS(0).Enabled = True
         MANOS(1).Enabled = True
@@ -10877,10 +10861,10 @@ Public Sub PROCESO_CANCELAR()
         Exit Sub
     End If
     Screen.MousePointer = 11
-    If Left(CmdModificar.Caption, 2) = "&G" Then
-       CmdModificar.Caption = "&Modificación"
+    If Left(cmdModificar.Caption, 2) = "&G" Then
+       cmdModificar.Caption = "&Modificación"
        LLENA_ARTI 1
-       BLOQUEA_TEXT Txt_key
+       BLOQUEA_TEXT txt_key
        BLOQUEA_TEXT txt_alterno
     Else
        frmARTI.frarelacion.Enabled = False
@@ -10888,27 +10872,27 @@ Public Sub PROCESO_CANCELAR()
        LIMPIA_ARTI
        If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
           DESBLOQUEA_TEXT txt_alterno
-          BLOQUEA_TEXT Txt_key
+          BLOQUEA_TEXT txt_key
           frmARTI.txt_alterno.SetFocus
         Else
-          DESBLOQUEA_TEXT Txt_key
+          DESBLOQUEA_TEXT txt_key
           BLOQUEA_TEXT txt_alterno
-          frmARTI.Txt_key.SetFocus
+          frmARTI.txt_key.SetFocus
         End If
     End If
     cmdAgregar.Enabled = True
     cmdEliminar.Enabled = True
-    CmdModificar.Enabled = True
+    cmdModificar.Enabled = True
     BLOQUEA_TEXT txtnombre, CmbCalidad, decimales, DS, txtcospro, art_situacion, art_linea, art_numero, art_marca, art_plancha
-    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtmax, art_codpro, txtcodigo2, chebof, chesub
+    BLOQUEA_TEXT art_grupo, art_familia, art_subfam, grid_unid, txtMin, txtMax, art_codpro, txtcodigo2, chebof, chesub
     BLOQUEA_TEXT cheservi(0), cheservi(1), cheservi(2), exigv, txtcospro, cmddolares, txtpeso, txtfechault, checambio, txtlitro
     BLOQUEA_TEXT txtpor1, txtpor2, txtpor3, txtpor4, txtpor5, txtpor11, txtpor22, txtpor33, txtpor44, txtpor55
-    BLOQUEA_TEXT cheoferta, txtmargen, cmbusu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
+    BLOQUEA_TEXT cheoferta, txtmargen, cmbUsu, txtCantMax, txtCantMaxADD, cheasignarc, art_grupop, lfvta
     pasa = 0
     MANOS(0).Enabled = True
     MANOS(1).Enabled = True
     MENSAJE_ARTI "Proceso Cancelado... !!!    "
-    frmARTI.SSTab1.Tab = 0
+    frmARTI.SSTab1.tab = 0
     Screen.MousePointer = 0
 End Sub
 
@@ -11070,7 +11054,7 @@ End Sub
 Public Sub llena_pre(wlista As String)
 Dim WT_ENT As Currency
 pu_codcia = LK_CODCIA
-PUB_CODART = Val(Txt_key.Text)
+PUB_CODART = Val(txt_key.Text)
 SQ_OPER = 2
 LEER_PRE_LLAVE
 If pre_mayor.EOF Then
@@ -13470,7 +13454,7 @@ If dataO.Recordset.EOF Then
 End If
 Barra.Visible = True
 Barra.Min = 0
-Barra.Max = dataO.Recordset.RecordCount
+Barra.max = dataO.Recordset.RecordCount
 Barra.Value = 0
 ww_conta = 0
 flag_otro = ""
