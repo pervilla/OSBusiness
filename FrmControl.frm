@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
+Object = "{00025601-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Begin VB.Form FrmControl 
    Caption         =   "Documentos Anexos"
    ClientHeight    =   6975
