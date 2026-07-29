@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
-Object = "{00025601-0000-0000-C000-000000000046}#5.2#0"; "CRYSTL32.OCX"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "CRYSTL32.OCX"
 Begin VB.Form FrmImp3 
    Caption         =   "Reportes"
    ClientHeight    =   4470
@@ -172,7 +172,7 @@ Begin VB.Form FrmImp3
          Width           =   735
       End
       Begin VB.Label docuX 
-         Caption         =   "Nª Final"
+         Caption         =   "Nro Final"
          Height          =   255
          Left            =   3120
          TabIndex        =   17
@@ -180,7 +180,7 @@ Begin VB.Form FrmImp3
          Width           =   855
       End
       Begin VB.Label docu 
-         Caption         =   "Nª Inicial"
+         Caption         =   "Nro Inicial"
          Height          =   255
          Index           =   1
          Left            =   1920
@@ -1313,12 +1313,12 @@ If Val(serie.Text) <= 0 Then
    Exit Sub
 End If
 If Val(numini.Text) <= 0 Then
-   MsgBox "Ingrese N° inicial del Documento.", 48, Pub_Titulo
+   MsgBox "Ingrese Nro inicial del Documento.", 48, Pub_Titulo
    Azul numini, numini
    Exit Sub
 End If
 'If Val(numfin.Text) <= 0 Then
-'   MsgBox "Ingrese N° Final del Documento.", 48, Pub_Titulo
+'   MsgBox "Ingrese Nro Final del Documento.", 48, Pub_Titulo
 '   Azul numfin, numfin
 '   Exit Sub
 'End If
@@ -1411,7 +1411,7 @@ FrmImp3.ProgBar.Value = 0
    xl.Cells(f1, 1) = "*** LOS DOC. ESTAN CORRECTOS *** "
  End If
  f1 = f1 + 1
- xl.Cells(f1, 1) = "N° FINAL:"
+ xl.Cells(f1, 1) = "Nro FINAL:"
  xl.Cells(f1, 2) = numfin.Text
  f1 = f1 + 1
  xl.Cells(f1, 1) = "FEC.FINAL:"
@@ -3075,12 +3075,12 @@ If Val(serie.Text) <= 0 Then
    Exit Sub
 End If
 If Val(numini.Text) <= 0 Then
-   MsgBox "Ingrese N° inicial del Documento.", 48, Pub_Titulo
+   MsgBox "Ingrese Nro inicial del Documento.", 48, Pub_Titulo
    Azul numini, numini
    Exit Sub
 End If
 If Val(numfin.Text) <= 0 Then
-   MsgBox "Ingrese N° Final del Documento.", 48, Pub_Titulo
+   MsgBox "Ingrese Nro Final del Documento.", 48, Pub_Titulo
    Azul numfin, numfin
    Exit Sub
 End If
@@ -3175,7 +3175,7 @@ FrmImp3.ProgBar.Value = 0
    xl.Cells(f1, 1) = "*** LOS DOC. ESTAN CORRECTOS *** "
  End If
  f1 = f1 + 1
- xl.Cells(f1, 1) = "N° FINAL:"
+ xl.Cells(f1, 1) = "Nro FINAL:"
  xl.Cells(f1, 2) = numfin.Text
  f1 = f1 + 1
  xl.Cells(f1, 1) = "FEC.FINAL:"
@@ -3842,7 +3842,7 @@ If PUB_CP = "C" Then
   xl.Cells(2, 1) = "CUANTAS POR COBRAR AL " & Format(wsFECHA1, "dd/mm/yy")
   xl.Cells(5, 2) = "C L I E N T E S"
 Else
-  xl.Cells(2, 1) = "CUANTAS POR PÀGAR AL " & Format(wsFECHA1, "dd/mm/yy")
+  xl.Cells(2, 1) = "CUANTAS POR Pï¿½GAR AL " & Format(wsFECHA1, "dd/mm/yy")
   xl.Cells(5, 2) = "P R O V E E D O R"
 End If
 f1 = 5
@@ -3964,7 +3964,7 @@ Do Until llave_rep01.EOF
     
      If llave_rep01!CAR_TIPMOV = 0 Or llave_rep01!car_tipdoc = "CD" Then
         If Val(llave_rep01!car_num_cheque) <> 0 Then
-          vdocum = "Nº. " & llave_rep01!car_num_cheque
+          vdocum = "Nro. " & llave_rep01!car_num_cheque
          End If
         If llave_rep01!car_tipdoc = "FA" And llave_rep01!car_fbg <> " " Then
           vdocum = llave_rep01!car_fbg & " / " & llave_rep01!car_numser_c & "-" & llave_rep01!car_NUMFAC_C
@@ -4186,7 +4186,7 @@ If PUB_CP = "C" Then
   xl.Cells(2, 1) = "CUANTAS POR COBRAR AL " & Format(wsFECHA1, "dd/mm/yy")
   xl.Cells(5, 2) = "C L I E N T E S"
 Else
-  xl.Cells(2, 1) = "CUANTAS POR PÀGAR AL " & Format(wsFECHA1, "dd/mm/yy")
+  xl.Cells(2, 1) = "CUANTAS POR Pï¿½GAR AL " & Format(wsFECHA1, "dd/mm/yy")
   xl.Cells(5, 2) = "P R O V E E D O R"
 End If
 f1 = 5
@@ -4308,7 +4308,7 @@ Do Until llave_rep01.EOF
     
      If llave_rep01!CAR_TIPMOV = 0 Or llave_rep01!car_tipdoc = "CD" Then
         If Val(llave_rep01!car_num_cheque) <> 0 Then
-          vdocum = "Nº. " & llave_rep01!car_num_cheque
+          vdocum = "Nro. " & llave_rep01!car_num_cheque
          End If
         If llave_rep01!car_tipdoc = "FA" And llave_rep01!car_fbg <> " " Then
           vdocum = llave_rep01!car_fbg & " / " & llave_rep01!car_numser_c & "-" & llave_rep01!car_NUMFAC_C

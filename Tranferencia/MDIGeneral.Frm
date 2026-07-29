@@ -3,7 +3,7 @@ Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#4.6#0"; "CRYSTL32.OCX"
 Begin VB.MDIForm MDIForm1 
    BackColor       =   &H00808000&
-   Caption         =   "Transferencia -  WinSoft - Solutin Perú S.A.C."
+   Caption         =   "Transferencia -  WinSoft - Solutin Perï¿½ S.A.C."
    ClientHeight    =   6510
    ClientLeft      =   -210
    ClientTop       =   735
@@ -656,7 +656,7 @@ Begin VB.MDIForm MDIForm1
          Visible         =   0   'False
       End
       Begin VB.Menu SubmenuTit1 
-         Caption         =   "C&ompañia"
+         Caption         =   "C&ompaï¿½ia"
          Enabled         =   0   'False
          Index           =   6
          Shortcut        =   ^F
@@ -676,7 +676,7 @@ Begin VB.MDIForm MDIForm1
          Visible         =   0   'False
       End
       Begin VB.Menu SubmenuTit1 
-         Caption         =   "&Definición de Transacciones"
+         Caption         =   "&Definiciï¿½n de Transacciones"
          Enabled         =   0   'False
          Index           =   9
          Visible         =   0   'False
@@ -758,7 +758,7 @@ Begin VB.MDIForm MDIForm1
       Enabled         =   0   'False
       Visible         =   0   'False
       Begin VB.Menu submenugrifo 
-         Caption         =   "&Definición de Turnos"
+         Caption         =   "&Definiciï¿½n de Turnos"
          Index           =   0
       End
       Begin VB.Menu submenugrifo 
@@ -787,7 +787,7 @@ Begin VB.MDIForm MDIForm1
       Enabled         =   0   'False
       Visible         =   0   'False
       Begin VB.Menu submenutit3 
-         Caption         =   "Definición de &Estructura"
+         Caption         =   "Definiciï¿½n de &Estructura"
          Index           =   0
       End
       Begin VB.Menu submenutit3 
@@ -941,7 +941,7 @@ Begin VB.MDIForm MDIForm1
       Enabled         =   0   'False
       Visible         =   0   'False
       Begin VB.Menu submenutit5 
-         Caption         =   "&Backups            "
+         Caption         =   "&Backupsï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
          Enabled         =   0   'False
          Index           =   0
       End
@@ -951,7 +951,7 @@ Begin VB.MDIForm MDIForm1
          Index           =   1
       End
       Begin VB.Menu submenutit5 
-         Caption         =   "&Configuración de Reporte"
+         Caption         =   "&Configuraciï¿½n de Reporte"
          Enabled         =   0   'False
          Index           =   2
       End
@@ -1346,7 +1346,7 @@ End If
 usu.MoveNext
 Loop
 If Len(WUSU_CIAS) = 0 Then
-  MsgBox "Usted NO Tiene accesos a ninguna compañia , consulte al Administrador ", 48, Pub_Titulo
+  MsgBox "Usted NO Tiene accesos a ninguna compaï¿½ia , consulte al Administrador ", 48, Pub_Titulo
   GoTo fin_de_pro
 End If
 
@@ -1398,8 +1398,8 @@ Do Until cuenta = a
        MDIForm1.menuCia(cuenta - 1).Visible = True
        If LK_CODCIA = par_llave!PAR_CODCIA Then wBAN = h - 1
     Else
-       If a = 1 Then ' Cuando la unica compañia de acceso no exite
-         MsgBox "Su Compañia de Acceso NO Existe , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
+       If a = 1 Then ' Cuando la unica compaï¿½ia de acceso no exite
+         MsgBox "Su Compaï¿½ia de Acceso NO Existe , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
          GoTo fin_de_pro
        End If
        MDIForm1.menuCia(cuenta - 1).Caption = "* " & PUB_CODCIA & " , NO Procede"
@@ -1415,7 +1415,7 @@ If wBAN = -1 Then
     End If
   Next a
   If wBAN = -1 Then
-    MsgBox "Su(s) Compañias de Acceso NO Existen , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
+    MsgBox "Su(s) Compaï¿½ias de Acceso NO Existen , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
     GoTo fin_de_pro
   End If
 End If
@@ -1424,7 +1424,7 @@ For a = h To 40
   MDIForm1.menuCia(a).Visible = False
 Next a
 MDIForm1.menuCia(wBAN).Checked = True
-'asegura la compañia por defecto
+'asegura la compaï¿½ia por defecto
 ACTUALIZA_CIA Left(MDIForm1.menuCia(wBAN).Caption, 2)
 
 ProBar.Value = ProBar.Value + 1
@@ -1449,7 +1449,7 @@ ProBar.Value = ProBar.Value + 1
 If Len(CONST_SERVER) = 0 Or Len(CONST_UID) = 0 Then
   MsgBox "ADVERTENCIA ..!! DEBES DEFINIR EL NOMBRE DEL SERVIDOR , UID , PWD", 48, Pub_Titulo
 End If
-PUB_ODBC = "ODBC;DRIVER={SQL Server};UID=" & CONST_UID & ";PWD=" & CONST_PWD & ";APP=Data From Designer;WSID=" & CONST_SERVER & ";LANGUAGE=us_english;DATABASE=BDATOS"
+PUB_ODBC = "ODBC;DSN=OSBusinessCR;UID=" & CONST_UID & ";PWD=" & CONST_PWD & ";APP=Data From Designer;WSID=" & CONST_SERVER & ";LANGUAGE=us_english;DATABASE=BDATOS"
 
 ' * Permisos para los Menus *
 Screen.MousePointer = 11
@@ -1593,7 +1593,7 @@ If LK_EMP = "3AA" Or LK_EMP = "HER" Then
   If LK_FECHA_DIA >= wfecha Then
   If Val(GEN!GEN_CBS) <> -9 Then
 SIGUE:
-    WS = InputBox("Nº Serial es : " & Format(GEN!GEN_CFP, "0000000000000000") & " , Llame al proveedor y pida su nueva serie." & Chr(13) & "{Sí intenta colocar una serie que no es, por quinta vez... el Proveedor no responde por la información almacena.}", "Acceso Limitado ....")
+    WS = InputBox("Nï¿½ Serial es : " & Format(GEN!GEN_CFP, "0000000000000000") & " , Llame al proveedor y pida su nueva serie." & Chr(13) & "{Sï¿½ intenta colocar una serie que no es, por quinta vez... el Proveedor no responde por la informaciï¿½n almacena.}", "Acceso Limitado ....")
     If WS = "" Then
       GoTo SIGUE
     End If
@@ -1603,7 +1603,7 @@ SIGUE:
        GEN!GEN_CBS = -9
        GEN.Update
     Else
-      MsgBox "LLame a su Proveedor de WinSoft y pida su Nº de Serie. Ingreso Incorrecto" & Chr(13) & "{No intentar si no tiene el nuevo Nro. de Serie.}", vbCritical, "Acceso limitado .... "
+      MsgBox "LLame a su Proveedor de WinSoft y pida su Nï¿½ de Serie. Ingreso Incorrecto" & Chr(13) & "{No intentar si no tiene el nuevo Nro. de Serie.}", vbCritical, "Acceso limitado .... "
       End
     End If
   End If
@@ -1695,7 +1695,7 @@ End Sub
 
 
 Private Sub menuAyudaSistema_Click()
-MsgBox "Win Soft - Software para Control Administrativo Contable. " & Chr(13) & "  " & Chr(13) & "Casa de Desarrollo : " & Chr(13) & "Solutin Perú S.A.C. Trujillo - Perú " & Chr(13) & "Soluciones en Tecnología Informática del Norte", vbInformation, "Solutin - Win Soft"
+MsgBox "Win Soft - Software para Control Administrativo Contable. " & Chr(13) & "  " & Chr(13) & "Casa de Desarrollo : " & Chr(13) & "Solutin Perï¿½ S.A.C. Trujillo - Perï¿½ " & Chr(13) & "Soluciones en Tecnologï¿½a Informï¿½tica del Norte", vbInformation, "Solutin - Win Soft"
 End Sub
 
 Private Sub menuCia_Click(Index As Integer)
@@ -2318,7 +2318,7 @@ Select Case Index
         'FrmTranf.Show
         'Screen.MousePointer = 11
         If LK_FLAG_SOS = "A" Then
-         MsgBox "En Contrucción", 48, Pub_Titulo
+         MsgBox "En Contrucciï¿½n", 48, Pub_Titulo
          Exit Sub
         End If
 
@@ -2334,7 +2334,7 @@ Select Case Index
 
     Case 8
      If LK_FLAG_SOS = "A" Then
-       MsgBox "En Contrucción", 48, Pub_Titulo
+       MsgBox "En Contrucciï¿½n", 48, Pub_Titulo
        Exit Sub
      End If
        Screen.MousePointer = 11
@@ -2343,7 +2343,7 @@ Select Case Index
        Screen.MousePointer = 0
     Case 6
        If LK_FLAG_SOS = "A" Then
-           MsgBox "En Contrucción", 48, Pub_Titulo
+           MsgBox "En Contrucciï¿½n", 48, Pub_Titulo
            Exit Sub
        End If
 
@@ -2353,7 +2353,7 @@ Select Case Index
        Screen.MousePointer = 0
     Case 9
       If LK_FLAG_SOS = "A" Then
-        MsgBox "En Contrucción", 48, Pub_Titulo
+        MsgBox "En Contrucciï¿½n", 48, Pub_Titulo
         Exit Sub
       End If
 
@@ -2502,7 +2502,7 @@ Select Case Button.Key
       Screen.MousePointer = 0
   Case "PRECIOS"
       If LK_FLAG_SOS = "A" Then
-         MsgBox "En Contrucción", 48, Pub_Titulo
+         MsgBox "En Contrucciï¿½n", 48, Pub_Titulo
          Exit Sub
       End If
 

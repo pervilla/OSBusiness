@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
-Object = "{00025601-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Begin VB.Form FrmRepo 
    Caption         =   "Reportes de Inventarios"
    ClientHeight    =   5895
@@ -419,7 +419,7 @@ Begin VB.Form FrmRepo
          End
          Begin VB.Label LBL2 
             AutoSize        =   -1  'True
-            Caption         =   "Nº Inicial"
+            Caption         =   "Nro Inicial"
             BeginProperty Font 
                Name            =   "MS Serif"
                Size            =   6.75
@@ -439,7 +439,7 @@ Begin VB.Form FrmRepo
          End
          Begin VB.Label LBL2 
             AutoSize        =   -1  'True
-            Caption         =   "Nº Final"
+            Caption         =   "Nro Final"
             BeginProperty Font 
                Name            =   "MS Serif"
                Size            =   6.75
@@ -479,7 +479,7 @@ Begin VB.Form FrmRepo
          End
          Begin VB.Label LBL2 
             AutoSize        =   -1  'True
-            Caption         =   "Nº Inicial"
+            Caption         =   "Nro Inicial"
             BeginProperty Font 
                Name            =   "MS Serif"
                Size            =   6.75
@@ -499,7 +499,7 @@ Begin VB.Form FrmRepo
          End
          Begin VB.Label LBL2 
             AutoSize        =   -1  'True
-            Caption         =   "Nº Final"
+            Caption         =   "Nro Final"
             BeginProperty Font 
                Name            =   "MS Serif"
                Size            =   6.75
@@ -519,7 +519,7 @@ Begin VB.Form FrmRepo
          End
          Begin VB.Label LBL2 
             AutoSize        =   -1  'True
-            Caption         =   "Nº Final"
+            Caption         =   "Nro Final"
             BeginProperty Font 
                Name            =   "MS Serif"
                Size            =   6.75
@@ -539,7 +539,7 @@ Begin VB.Form FrmRepo
          End
          Begin VB.Label LBL2 
             AutoSize        =   -1  'True
-            Caption         =   "Nº Inicial"
+            Caption         =   "Nro Inicial"
             BeginProperty Font 
                Name            =   "MS Serif"
                Size            =   6.75
@@ -1282,7 +1282,7 @@ If chefac.Value = 1 And chebol.Value = 0 And cheguia.Value = 0 Then
     WDOCUF = WDOCUF & " - SERIE : " & Trim(fac(0).Text)
     If Trim(fac(1).Text) <> "" And Trim(fac(2).Text) <> "" Then
       cade = cade + "AND {FACART.FAR_NUMFAC} >= " & Trim(fac(1).Text) & " AND {FACART.FAR_NUMFAC} <= " & Trim(fac(2).Text) & " "
-      WDOCUF = WDOCUF & " Nº. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
+      WDOCUF = WDOCUF & " Nro. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
     End If
   End If
 End If
@@ -1295,7 +1295,7 @@ If chefac.Value = 0 And chebol.Value = 1 And cheguia.Value = 0 Then
     wdocuB = wdocuB & " - SERIE : " & Trim(bol(0).Text)
     If Trim(bol(1).Text) <> "" And Trim(bol(2).Text) <> "" Then
       cade = cade + "AND {FACART.FAR_NUMFAC} >= " & Trim(bol(1).Text) & " AND {FACART.FAR_NUMFAC} <= " & Trim(bol(2).Text) & " "
-      wdocuB = wdocuB & " Nº. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
+      wdocuB = wdocuB & " Nro. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
     End If
   End If
 End If
@@ -1305,7 +1305,7 @@ If chefac.Value = 0 And chebol.Value = 0 And cheguia.Value = 1 Then
   wdocuB = " GUIA"
   If Trim(guia(0).Text) <> "" And Trim(guia(1).Text) <> "" Then
     cade = cade + "{FACART.FAR_NUMFAC} >= " & Trim(guia(0).Text) & " AND {FACART.FAR_NUMFAC} <= " & Trim(guia(1).Text) & " "
-    wdocug = wdocug & " Nº. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
+    wdocug = wdocug & " Nro. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
   End If
 End If
 
@@ -1317,7 +1317,7 @@ If chefac.Value = 1 And chebol.Value = 1 And cheguia.Value = 0 Then
     WDOCUF = WDOCUF & " - SERIE : " & Trim(fac(0).Text)
     If Trim(fac(1).Text) <> "" And Trim(fac(2).Text) <> "" Then
       cade = cade + "AND {FACART.FAR_NUMFAC} >= " & Trim(fac(1).Text) & " AND {FACART.FAR_NUMFAC} <= " & Trim(fac(2).Text) & " "
-      WDOCUF = WDOCUF & " Nº. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
+      WDOCUF = WDOCUF & " Nro. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
     End If
   End If
   wdocug = ""
@@ -1336,7 +1336,7 @@ If chefac.Value = 1 And chebol.Value = 1 And cheguia.Value = 0 Then
       Else
         cade = cade + "AND {FACART.FAR_NUMFAC} >= " & Trim(bol(1).Text) & " AND {FACART.FAR_NUMFAC} <= " & Trim(bol(2).Text) & " "
       End If
-      WDOCUF = WDOCUF & ", Nº. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
+      WDOCUF = WDOCUF & ", Nro. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
     Else
       cade = cade + " "
     End If
@@ -1357,7 +1357,7 @@ If chefac.Value = 1 And chebol.Value = 0 And cheguia.Value = 1 Then
     WDOCUF = WDOCUF & " - SERIE : " & Trim(fac(0).Text)
     If Trim(fac(1).Text) <> "" And Trim(fac(2).Text) <> "" Then
       cade = cade + "AND {FACART.FAR_NUMFAC} >= " & Trim(fac(1).Text) & " AND {FACART.FAR_NUMFAC} <= " & Trim(fac(2).Text) & " "
-      WDOCUF = WDOCUF & " Nº. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
+      WDOCUF = WDOCUF & " Nro. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
     End If
   End If
   If Trim(guia(0).Text) <> "" And Trim(guia(1).Text) <> "" Then
@@ -1366,7 +1366,7 @@ If chefac.Value = 1 And chebol.Value = 0 And cheguia.Value = 1 Then
     Else
      cade = cade + " ({FACART.FAR_FBG} in ['G'] AND {FACART.FAR_NUMFAC} >= " & Trim(guia(0).Text) & " AND {FACART.FAR_NUMFAC} <= " & Trim(guia(1).Text) & ") "
     End If
-    WDOCUF = WDOCUF & ", Nº. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
+    WDOCUF = WDOCUF & ", Nro. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
   End If
 End If
 If chefac.Value = 0 And chebol.Value = 1 And cheguia.Value = 1 Then
@@ -1377,12 +1377,12 @@ If chefac.Value = 0 And chebol.Value = 1 And cheguia.Value = 1 Then
     WDOCUF = WDOCUF & ", - SERIE : " & Trim(bol(0).Text)
     If Trim(bol(1).Text) <> "" And Trim(bol(2).Text) <> "" Then
       cade = cade + "AND {FACART.FAR_NUMFAC} >= " & Trim(bol(1).Text) & " AND {FACART.FAR_NUMFAC} <= " & Trim(bol(2).Text) & " "
-      WDOCUF = WDOCUF & ", Nº. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
+      WDOCUF = WDOCUF & ", Nro. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
     End If
   End If
   If Trim(guia(0).Text) <> "" And Trim(guia(1).Text) <> "" Then
     cade = cade + "OR ({FACART.FAR_NUMFAC} >= " & Trim(guia(0).Text) & " AND {FACART.FAR_NUMFAC} <= " & Trim(guia(1).Text) & ") "
-    WDOCUF = WDOCUF & ", Nº. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
+    WDOCUF = WDOCUF & ", Nro. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
   End If
 End If
 pbValue = pbValue + 1
@@ -1394,7 +1394,7 @@ If chefac.Value = 1 And chebol.Value = 1 And cheguia.Value = 1 Then
     WDOCUF = WDOCUF & " - SERIE : " & Trim(fac(0).Text)
     If Trim(fac(1).Text) <> "" And Trim(fac(2).Text) <> "" Then
       cade = cade + "AND {FACART.FAR_NUMFAC} >= " & Trim(fac(1).Text) & " AND {FACART.FAR_NUMFAC} <= " & Trim(fac(2).Text) & " "
-      WDOCUF = WDOCUF & " Nº. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
+      WDOCUF = WDOCUF & " Nro. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
     End If
   End If
   If Trim(bol(0).Text) <> "" Then
@@ -1402,14 +1402,14 @@ If chefac.Value = 1 And chebol.Value = 1 And cheguia.Value = 1 Then
     WDOCUF = WDOCUF & ", - SERIE : " & Trim(bol(0).Text)
     If Trim(bol(1).Text) <> "" And Trim(bol(2).Text) <> "" Then
       cade = cade + "AND {FACART.FAR_NUMFAC} >= " & Trim(bol(1).Text) & " AND {FACART.FAR_NUMFAC} <= " & Trim(bol(2).Text) & ") "
-      WDOCUF = WDOCUF & ", Nº. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
+      WDOCUF = WDOCUF & ", Nro. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
     Else
       cade = cade + ")"
     End If
   End If
   If Trim(guia(0).Text) <> "" And Trim(guia(1).Text) <> "" Then
     cade = cade + "OR ({FACART.FAR_NUMFAC} >= " & Trim(guia(0).Text) & " AND {FACART.FAR_NUMFAC} <= " & Trim(guia(1).Text) & ") "
-    WDOCUF = WDOCUF & ", Nº. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
+    WDOCUF = WDOCUF & ", Nro. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
   End If
 End If
 If Modo1 <> "X" Then
@@ -3831,7 +3831,7 @@ If chefac.Value = 1 And chebol.Value = 0 And cheguia.Value = 0 Then
     WDOCUF = WDOCUF & " - SERIE : " & Trim(fac(0).Text)
     If Trim(fac(1).Text) <> "" And Trim(fac(2).Text) <> "" Then
       cade = cade + "AND FAR_NUMFAC >= " & Trim(fac(1).Text) & " AND FAR_NUMFAC <= " & Trim(fac(2).Text) & " "
-      WDOCUF = WDOCUF & " Nº. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
+      WDOCUF = WDOCUF & " Nro. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
     End If
   End If
 End If
@@ -3844,7 +3844,7 @@ If chefac.Value = 0 And chebol.Value = 1 And cheguia.Value = 0 Then
     wdocuB = wdocuB & " - SERIE : " & Trim(bol(0).Text)
     If Trim(bol(1).Text) <> "" And Trim(bol(2).Text) <> "" Then
       cade = cade + "AND FAR_NUMFAC >= " & Trim(bol(1).Text) & " AND FAR_NUMFAC <= " & Trim(bol(2).Text) & " "
-      wdocuB = wdocuB & " Nº. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
+      wdocuB = wdocuB & " Nro. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
     End If
   End If
 End If
@@ -3854,7 +3854,7 @@ If chefac.Value = 0 And chebol.Value = 0 And cheguia.Value = 1 Then
   wdocuB = " GUIA"
   If Trim(guia(0).Text) <> "" And Trim(guia(1).Text) <> "" Then
     cade = cade + "FAR_NUMFAC >= " & Trim(guia(0).Text) & " AND FAR_NUMFAC <= " & Trim(guia(1).Text) & " "
-    wdocug = wdocug & " Nº. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
+    wdocug = wdocug & " Nro. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
   End If
 End If
 
@@ -3866,7 +3866,7 @@ If chefac.Value = 1 And chebol.Value = 1 And cheguia.Value = 0 Then
     WDOCUF = WDOCUF & " - SERIE : " & Trim(fac(0).Text)
     If Trim(fac(1).Text) <> "" And Trim(fac(2).Text) <> "" Then
       cade = cade + "AND FAR_NUMFAC >= " & Trim(fac(1).Text) & " AND FAR_NUMFAC <= " & Trim(fac(2).Text) & " "
-      WDOCUF = WDOCUF & " Nº. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
+      WDOCUF = WDOCUF & " Nro. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
     End If
   End If
   wdocug = ""
@@ -3885,7 +3885,7 @@ If chefac.Value = 1 And chebol.Value = 1 And cheguia.Value = 0 Then
       Else
         cade = cade + "AND FAR_NUMFAC >= " & Trim(bol(1).Text) & " AND FAR_NUMFAC <= " & Trim(bol(2).Text) & " "
       End If
-      WDOCUF = WDOCUF & ", Nº. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
+      WDOCUF = WDOCUF & ", Nro. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
     Else
       cade = cade + " "
     End If
@@ -3906,7 +3906,7 @@ If chefac.Value = 1 And chebol.Value = 0 And cheguia.Value = 1 Then
     WDOCUF = WDOCUF & " - SERIE : " & Trim(fac(0).Text)
     If Trim(fac(1).Text) <> "" And Trim(fac(2).Text) <> "" Then
       cade = cade + "AND FAR_NUMFAC >= " & Trim(fac(1).Text) & " AND FAR_NUMFAC <= " & Trim(fac(2).Text) & " "
-      WDOCUF = WDOCUF & " Nº. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
+      WDOCUF = WDOCUF & " Nro. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
     End If
   End If
   If Trim(guia(0).Text) <> "" And Trim(guia(1).Text) <> "" Then
@@ -3915,7 +3915,7 @@ If chefac.Value = 1 And chebol.Value = 0 And cheguia.Value = 1 Then
     Else
      cade = cade + " (FAR_FBG in ('G') AND FAR_NUMFAC >= " & Trim(guia(0).Text) & " AND FAR_NUMFAC <= " & Trim(guia(1).Text) & ") "
     End If
-    WDOCUF = WDOCUF & ", Nº. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
+    WDOCUF = WDOCUF & ", Nro. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
   End If
 End If
 If chefac.Value = 0 And chebol.Value = 1 And cheguia.Value = 1 Then
@@ -3926,12 +3926,12 @@ If chefac.Value = 0 And chebol.Value = 1 And cheguia.Value = 1 Then
     WDOCUF = WDOCUF & ", - SERIE : " & Trim(bol(0).Text)
     If Trim(bol(1).Text) <> "" And Trim(bol(2).Text) <> "" Then
       cade = cade + "AND FAR_NUMFAC >= " & Trim(bol(1).Text) & " AND FAR_NUMFAC <= " & Trim(bol(2).Text) & " "
-      WDOCUF = WDOCUF & ", Nº. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
+      WDOCUF = WDOCUF & ", Nro. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
     End If
   End If
   If Trim(guia(0).Text) <> "" And Trim(guia(1).Text) <> "" Then
     cade = cade + "OR (FAR_NUMFAC >= " & Trim(guia(0).Text) & " AND FAR_NUMFAC <= " & Trim(guia(1).Text) & ") "
-    WDOCUF = WDOCUF & ", Nº. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
+    WDOCUF = WDOCUF & ", Nro. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
   End If
 End If
 pbValue = pbValue + 1
@@ -3943,7 +3943,7 @@ If chefac.Value = 1 And chebol.Value = 1 And cheguia.Value = 1 Then
     WDOCUF = WDOCUF & " - SERIE : " & Trim(fac(0).Text)
     If Trim(fac(1).Text) <> "" And Trim(fac(2).Text) <> "" Then
       cade = cade + "AND FAR_NUMFAC >= " & Trim(fac(1).Text) & " AND FAR_NUMFAC <= " & Trim(fac(2).Text) & " "
-      WDOCUF = WDOCUF & " Nº. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
+      WDOCUF = WDOCUF & " Nro. " & Trim(fac(1).Text) & " AL " & Trim(fac(2).Text)
     End If
   End If
   If Trim(bol(0).Text) <> "" Then
@@ -3951,14 +3951,14 @@ If chefac.Value = 1 And chebol.Value = 1 And cheguia.Value = 1 Then
     WDOCUF = WDOCUF & ", - SERIE : " & Trim(bol(0).Text)
     If Trim(bol(1).Text) <> "" And Trim(bol(2).Text) <> "" Then
       cade = cade + "AND FAR_NUMFAC >= " & Trim(bol(1).Text) & " AND FAR_NUMFAC <= " & Trim(bol(2).Text) & ") "
-      WDOCUF = WDOCUF & ", Nº. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
+      WDOCUF = WDOCUF & ", Nro. " & Trim(bol(1).Text) & " AL " & Trim(bol(2).Text)
     Else
       cade = cade + ")"
     End If
   End If
   If Trim(guia(0).Text) <> "" And Trim(guia(1).Text) <> "" Then
     cade = cade + "OR (FAR_NUMFAC >= " & Trim(guia(0).Text) & " AND FAR_NUMFAC <= " & Trim(guia(1).Text) & ") "
-    WDOCUF = WDOCUF & ", Nº. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
+    WDOCUF = WDOCUF & ", Nro. " & Trim(guia(0).Text) & " AL " & Trim(guia(1).Text)
   End If
 End If
 If Modo1 <> "X" Then

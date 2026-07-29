@@ -644,7 +644,7 @@ Begin VB.Form KARDEX
       Width           =   1455
    End
    Begin VB.Label lblmensaje 
-      Caption         =   "Procesando Información ..."
+      Caption         =   "Procesando Informaciï¿½n ..."
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -706,7 +706,7 @@ Private Sub Command2_Click()
 ff_flag = "A"
 Dim Xx As rdoQuery
 Dim ver_xx As rdoResultset
-pub_mensaje = "Solo el Administrador del Sistema Sabe esta Opción , si no lo conoce no procesar, puede durar varios minutos ....ro  Continuar proceso ? . .."
+pub_mensaje = "Solo el Administrador del Sistema Sabe esta Opciï¿½n , si no lo conoce no procesar, puede durar varios minutos ....ro  Continuar proceso ? . .."
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -1801,7 +1801,7 @@ POSICION:
 fin:
 
 End Sub
-Private Sub i_codart2_KeyPress(KeyAscii As Integer)
+Public Sub i_codart2_KeyPress(KeyAscii As Integer)
 Dim VALOR As String
 Dim tf As Integer
 Dim I, car
@@ -2306,7 +2306,7 @@ KARDEX.GridK.TextMatrix(0, 0) = "Fec.Proc"
 KARDEX.GridK.TextMatrix(0, 1) = "Fec.Emis."
 KARDEX.GridK.TextMatrix(0, 2) = "Documento"
 KARDEX.GridK.TextMatrix(0, 3) = "Concepto"
-KARDEX.GridK.TextMatrix(0, 4) = "Descripción"
+KARDEX.GridK.TextMatrix(0, 4) = "Descripciï¿½n"
 
 KARDEX.GridK.TextMatrix(0, 5) = "Ingreso"
 KARDEX.GridK.TextMatrix(0, 6) = "Salida"
