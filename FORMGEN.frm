@@ -8370,7 +8370,7 @@ ElseIf Index = 1 Then  ' Transito
     Screen.MousePointer = 11
     
     On Error Resume Next
-    Set X = CN.OpenResultset("EXEC BDATOS.dbo.sp_productos_transito '" & ws_nomart & "', 5, 3", rdOpenKeyset, rdConcurValues)
+    Set X = CN.OpenResultset("EXEC BDATOS.dbo.sp_productos_transito '" & ws_nomart & "'", rdOpenKeyset, rdConcurValues)
     If Err.Number <> 0 Then
         MsgBox "Error al consultar transito: " & Err.Description, 48, Pub_Titulo
         Err.Clear
