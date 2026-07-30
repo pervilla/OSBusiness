@@ -4,40 +4,165 @@ Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Begin VB.Form frmCLI 
    Caption         =   "Clientes / Proveedores"
-   ClientHeight    =   7410
+   ClientHeight    =   12360
    ClientLeft      =   60
    ClientTop       =   1080
-   ClientWidth     =   11880
+   ClientWidth     =   13830
    ControlBox      =   0   'False
    Icon            =   "client.frx":0000
    LinkTopic       =   "Form2"
    MDIChild        =   -1  'True
    PaletteMode     =   1  'UseZOrder
-   ScaleHeight     =   7410
-   ScaleWidth      =   11880
+   ScaleHeight     =   12360
+   ScaleWidth      =   13830
    WindowState     =   2  'Maximized
+   Begin VB.CommandButton cmdFactiliza 
+      Caption         =   "Importar Clien"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   735
+      Left            =   10440
+      Picture         =   "client.frx":0442
+      Style           =   1  'Graphical
+      TabIndex        =   150
+      Top             =   2440
+      Width           =   1335
+   End
+   Begin VB.CommandButton cmdAgregar 
+      Caption         =   "&Agregar"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   735
+      Left            =   10440
+      Picture         =   "client.frx":161F0
+      Style           =   1  'Graphical
+      TabIndex        =   149
+      Top             =   1640
+      Width           =   1335
+   End
+   Begin VB.CommandButton cmdEliminar 
+      Caption         =   "&Eliminar"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   735
+      Left            =   10440
+      Picture         =   "client.frx":1C47A
+      Style           =   1  'Graphical
+      TabIndex        =   148
+      Top             =   3240
+      Width           =   1335
+   End
+   Begin VB.CommandButton cmdModificar 
+      Caption         =   "&Modificar"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   735
+      Left            =   10440
+      Picture         =   "client.frx":30FDA
+      Style           =   1  'Graphical
+      TabIndex        =   147
+      Top             =   840
+      Width           =   1335
+   End
+   Begin VB.CommandButton cmdCerrar 
+      Caption         =   "Ce&rrar"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   735
+      Left            =   10440
+      Picture         =   "client.frx":3E19C
+      Style           =   1  'Graphical
+      TabIndex        =   146
+      Top             =   4840
+      Width           =   1335
+   End
+   Begin VB.CommandButton cmdCancelar 
+      Caption         =   "&Cancelar"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   735
+      Left            =   10440
+      Picture         =   "client.frx":86A26
+      Style           =   1  'Graphical
+      TabIndex        =   145
+      Top             =   4040
+      Width           =   1335
+   End
+   Begin VB.CommandButton cmdprocli 
+      Caption         =   "Tipo Cliente"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   735
+      Left            =   10440
+      Picture         =   "client.frx":B15B5
+      Style           =   1  'Graphical
+      TabIndex        =   144
+      Top             =   5640
+      Width           =   1335
+   End
    Begin VB.ListBox lstVen 
       Height          =   1185
       Left            =   6480
       Style           =   1  'Checkbox
-      TabIndex        =   137
+      TabIndex        =   131
       Top             =   1920
       Visible         =   0   'False
       Width           =   2655
-   End
-   Begin VB.CommandButton cmdprocli 
-      Caption         =   "Tipo Cliente"
-      Height          =   375
-      Left            =   10560
-      TabIndex        =   136
-      Top             =   6000
-      Width           =   1095
    End
    Begin VB.Frame fraplaca 
       Caption         =   "Opcion para Grifos - Descto. Especial"
       Height          =   855
       Left            =   2760
-      TabIndex        =   125
+      TabIndex        =   120
       Top             =   7200
       Visible         =   0   'False
       Width           =   4935
@@ -45,7 +170,7 @@ Begin VB.Form frmCLI
          Caption         =   "Editar &Placas"
          Height          =   420
          Left            =   3840
-         TabIndex        =   128
+         TabIndex        =   123
          Top             =   120
          Width           =   975
       End
@@ -53,14 +178,14 @@ Begin VB.Form frmCLI
          Caption         =   "&Editar Desc."
          Height          =   420
          Left            =   2280
-         TabIndex        =   126
+         TabIndex        =   121
          Top             =   240
          Width           =   975
       End
       Begin MSFlexGridLib.MSFlexGrid grid_des 
          Height          =   1095
          Left            =   120
-         TabIndex        =   127
+         TabIndex        =   122
          Top             =   240
          Width           =   2055
          _ExtentX        =   3625
@@ -82,14 +207,14 @@ Begin VB.Form frmCLI
       EndProperty
       Height          =   855
       Left            =   5160
-      TabIndex        =   35
+      TabIndex        =   30
       Top             =   7560
       Visible         =   0   'False
       Width           =   4125
       Begin MSFlexGridLib.MSFlexGrid ListExiste 
          Height          =   1455
          Left            =   120
-         TabIndex        =   36
+         TabIndex        =   31
          Top             =   240
          Width           =   9015
          _ExtentX        =   15901
@@ -111,7 +236,7 @@ Begin VB.Form frmCLI
          EndProperty
          Height          =   375
          Left            =   6720
-         TabIndex        =   40
+         TabIndex        =   35
          Top             =   1800
          Width           =   1095
       End
@@ -128,7 +253,7 @@ Begin VB.Form frmCLI
          EndProperty
          Height          =   375
          Left            =   5280
-         TabIndex        =   39
+         TabIndex        =   34
          Top             =   1800
          Width           =   1095
       End
@@ -137,7 +262,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   1
          Left            =   240
-         TabIndex        =   38
+         TabIndex        =   33
          Top             =   2040
          Width           =   1335
       End
@@ -146,7 +271,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   0
          Left            =   240
-         TabIndex        =   37
+         TabIndex        =   32
          Top             =   1800
          Width           =   2535
       End
@@ -174,7 +299,7 @@ Begin VB.Form frmCLI
    Begin TabDlg.SSTab SSTab1 
       Height          =   2655
       Left            =   0
-      TabIndex        =   41
+      TabIndex        =   36
       Tag             =   "32"
       Top             =   4425
       Width           =   10215
@@ -194,7 +319,7 @@ Begin VB.Form frmCLI
          Strikethrough   =   0   'False
       EndProperty
       TabCaption(0)   =   "Direccion Fiscal"
-      TabPicture(0)   =   "client.frx":0442
+      TabPicture(0)   =   "client.frx":C1002
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "lblnom(7)"
       Tab(0).Control(0).Enabled=   0   'False
@@ -240,54 +365,54 @@ Begin VB.Form frmCLI
       Tab(0).Control(20).Enabled=   0   'False
       Tab(0).ControlCount=   21
       TabCaption(1)   =   "Direccion Almacen"
-      TabPicture(1)   =   "client.frx":045E
+      TabPicture(1)   =   "client.frx":C101E
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "lblnom(14)"
-      Tab(1).Control(1)=   "lblnom(18)"
-      Tab(1).Control(2)=   "lblnom(17)"
-      Tab(1).Control(3)=   "lblnom(21)"
-      Tab(1).Control(4)=   "lblnom(32)"
-      Tab(1).Control(5)=   "lblnom(15)"
-      Tab(1).Control(6)=   "label(36)"
-      Tab(1).Control(7)=   "txtDirTrabajo"
-      Tab(1).Control(8)=   "TxtZonaTrabajo"
-      Tab(1).Control(9)=   "TxtSubZonaTrabajo"
-      Tab(1).Control(10)=   "txtpropiedad2"
-      Tab(1).Control(11)=   "TxtLugarTrab"
-      Tab(1).Control(12)=   "txtNumDirTrabajo"
-      Tab(1).Control(13)=   "cboDireccion"
-      Tab(1).Control(14)=   "cboProvincia"
-      Tab(1).Control(15)=   "Frame1"
+      Tab(1).Control(0)=   "Frame1"
+      Tab(1).Control(1)=   "cboProvincia"
+      Tab(1).Control(2)=   "cboDireccion"
+      Tab(1).Control(3)=   "txtNumDirTrabajo"
+      Tab(1).Control(4)=   "TxtLugarTrab"
+      Tab(1).Control(5)=   "txtpropiedad2"
+      Tab(1).Control(6)=   "TxtSubZonaTrabajo"
+      Tab(1).Control(7)=   "TxtZonaTrabajo"
+      Tab(1).Control(8)=   "txtDirTrabajo"
+      Tab(1).Control(9)=   "label(36)"
+      Tab(1).Control(10)=   "lblnom(15)"
+      Tab(1).Control(11)=   "lblnom(32)"
+      Tab(1).Control(12)=   "lblnom(21)"
+      Tab(1).Control(13)=   "lblnom(17)"
+      Tab(1).Control(14)=   "lblnom(18)"
+      Tab(1).Control(15)=   "lblnom(14)"
       Tab(1).ControlCount=   16
       TabCaption(2)   =   "Otras Opciones"
-      TabPicture(2)   =   "client.frx":047A
+      TabPicture(2)   =   "client.frx":C103A
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "txtpropiedad1"
-      Tab(2).Control(1)=   "lisdescto"
-      Tab(2).Control(2)=   "ListBloqueos"
-      Tab(2).Control(3)=   "copia"
-      Tab(2).Control(4)=   "txtregpublico1"
-      Tab(2).Control(5)=   "txtautovaluo"
-      Tab(2).Control(6)=   "txtprog"
-      Tab(2).Control(7)=   "t_fechafac"
-      Tab(2).Control(8)=   "t_diasfac"
-      Tab(2).Control(9)=   "t_diascred"
-      Tab(2).Control(10)=   "txtpordes"
-      Tab(2).Control(11)=   "txtDTX"
-      Tab(2).Control(12)=   "txtNucleo"
-      Tab(2).Control(13)=   "lblnom(19)"
-      Tab(2).Control(14)=   "Label9"
-      Tab(2).Control(15)=   "LblDatos(20)"
-      Tab(2).Control(16)=   "g_diasfac"
-      Tab(2).Control(17)=   "lblnom(20)"
-      Tab(2).Control(18)=   "lblnom(25)"
-      Tab(2).Control(19)=   "lblnom(34)"
-      Tab(2).Control(20)=   "lblnom(24)"
-      Tab(2).Control(21)=   "lblnom(23)"
-      Tab(2).Control(22)=   "g_fechafac"
-      Tab(2).Control(23)=   "lblnom(35)"
-      Tab(2).Control(24)=   "lblnom(33)"
-      Tab(2).Control(25)=   "lblnom(29)"
+      Tab(2).Control(0)=   "lblnom(29)"
+      Tab(2).Control(1)=   "lblnom(33)"
+      Tab(2).Control(2)=   "lblnom(35)"
+      Tab(2).Control(3)=   "g_fechafac"
+      Tab(2).Control(4)=   "lblnom(23)"
+      Tab(2).Control(5)=   "lblnom(24)"
+      Tab(2).Control(6)=   "lblnom(34)"
+      Tab(2).Control(7)=   "lblnom(25)"
+      Tab(2).Control(8)=   "lblnom(20)"
+      Tab(2).Control(9)=   "g_diasfac"
+      Tab(2).Control(10)=   "LblDatos(20)"
+      Tab(2).Control(11)=   "Label9"
+      Tab(2).Control(12)=   "lblnom(19)"
+      Tab(2).Control(13)=   "txtNucleo"
+      Tab(2).Control(14)=   "txtDTX"
+      Tab(2).Control(15)=   "txtpordes"
+      Tab(2).Control(16)=   "t_diascred"
+      Tab(2).Control(17)=   "t_diasfac"
+      Tab(2).Control(18)=   "t_fechafac"
+      Tab(2).Control(19)=   "txtprog"
+      Tab(2).Control(20)=   "txtautovaluo"
+      Tab(2).Control(21)=   "txtregpublico1"
+      Tab(2).Control(22)=   "copia"
+      Tab(2).Control(23)=   "ListBloqueos"
+      Tab(2).Control(24)=   "lisdescto"
+      Tab(2).Control(25)=   "txtpropiedad1"
       Tab(2).ControlCount=   26
       Begin VB.TextBox txtciarela 
          BeginProperty Font 
@@ -301,7 +426,7 @@ Begin VB.Form frmCLI
          EndProperty
          Height          =   315
          Left            =   9360
-         TabIndex        =   146
+         TabIndex        =   140
          Text            =   "00"
          Top             =   2280
          Width           =   495
@@ -319,7 +444,7 @@ Begin VB.Form frmCLI
          EndProperty
          Height          =   255
          Left            =   7800
-         TabIndex        =   143
+         TabIndex        =   137
          Top             =   1800
          Visible         =   0   'False
          WhatsThisHelpID =   7
@@ -338,7 +463,7 @@ Begin VB.Form frmCLI
          EndProperty
          Height          =   240
          Left            =   7800
-         TabIndex        =   139
+         TabIndex        =   133
          Top             =   1560
          Visible         =   0   'False
          WhatsThisHelpID =   10
@@ -359,7 +484,7 @@ Begin VB.Form frmCLI
          Height          =   285
          Left            =   -74880
          MaxLength       =   30
-         TabIndex        =   133
+         TabIndex        =   128
          Top             =   1770
          WhatsThisHelpID =   8
          Width           =   540
@@ -379,7 +504,7 @@ Begin VB.Form frmCLI
          Height          =   525
          Left            =   240
          MultiLine       =   -1  'True
-         TabIndex        =   131
+         TabIndex        =   126
          Top             =   1875
          Visible         =   0   'False
          WhatsThisHelpID =   12
@@ -390,14 +515,14 @@ Begin VB.Form frmCLI
          Left            =   -68160
          Sorted          =   -1  'True
          Style           =   1  'Checkbox
-         TabIndex        =   129
+         TabIndex        =   124
          Top             =   600
          Width           =   3135
       End
       Begin VB.Frame Frame1 
          Height          =   2055
          Left            =   -66360
-         TabIndex        =   119
+         TabIndex        =   114
          Top             =   360
          Width           =   1455
          Begin VB.CommandButton cmdDireccion 
@@ -405,7 +530,7 @@ Begin VB.Form frmCLI
             Enabled         =   0   'False
             Height          =   495
             Left            =   240
-            TabIndex        =   122
+            TabIndex        =   117
             Top             =   240
             Width           =   975
          End
@@ -414,7 +539,7 @@ Begin VB.Form frmCLI
             Enabled         =   0   'False
             Height          =   495
             Left            =   240
-            TabIndex        =   121
+            TabIndex        =   116
             Top             =   840
             Width           =   975
          End
@@ -423,7 +548,7 @@ Begin VB.Form frmCLI
             Enabled         =   0   'False
             Height          =   495
             Left            =   240
-            TabIndex        =   120
+            TabIndex        =   115
             Top             =   1440
             Width           =   975
          End
@@ -479,10 +604,10 @@ Begin VB.Form frmCLI
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         ItemData        =   "client.frx":0496
+         ItemData        =   "client.frx":C1056
          Left            =   -73560
-         List            =   "client.frx":0498
-         TabIndex        =   116
+         List            =   "client.frx":C1058
+         TabIndex        =   111
          Top             =   2160
          Visible         =   0   'False
          Width           =   1815
@@ -500,7 +625,7 @@ Begin VB.Form frmCLI
          EndProperty
          Height          =   255
          Left            =   -71520
-         TabIndex        =   114
+         TabIndex        =   109
          Top             =   2160
          Visible         =   0   'False
          Width           =   1215
@@ -519,7 +644,7 @@ Begin VB.Form frmCLI
          EndProperty
          Height          =   285
          Left            =   -74880
-         TabIndex        =   111
+         TabIndex        =   106
          Top             =   1200
          Visible         =   0   'False
          WhatsThisHelpID =   9
@@ -654,7 +779,7 @@ Begin VB.Form frmCLI
          EndProperty
          Height          =   285
          Left            =   -74880
-         TabIndex        =   100
+         TabIndex        =   95
          Top             =   600
          Visible         =   0   'False
          WhatsThisHelpID =   16
@@ -673,7 +798,7 @@ Begin VB.Form frmCLI
          Height          =   285
          Left            =   -72480
          MaxLength       =   1
-         TabIndex        =   98
+         TabIndex        =   93
          Top             =   1200
          Visible         =   0   'False
          WhatsThisHelpID =   19
@@ -692,7 +817,7 @@ Begin VB.Form frmCLI
          Height          =   285
          Left            =   -71160
          MaxLength       =   12
-         TabIndex        =   93
+         TabIndex        =   88
          Top             =   1800
          Visible         =   0   'False
          WhatsThisHelpID =   4
@@ -711,7 +836,7 @@ Begin VB.Form frmCLI
          Height          =   285
          Left            =   -71160
          MaxLength       =   12
-         TabIndex        =   92
+         TabIndex        =   87
          Top             =   1200
          Visible         =   0   'False
          WhatsThisHelpID =   4
@@ -730,7 +855,7 @@ Begin VB.Form frmCLI
          Height          =   285
          Left            =   -69720
          MaxLength       =   12
-         TabIndex        =   91
+         TabIndex        =   86
          Top             =   1200
          Visible         =   0   'False
          WhatsThisHelpID =   4
@@ -751,7 +876,7 @@ Begin VB.Form frmCLI
          Height          =   300
          Left            =   -72480
          MaxLength       =   12
-         TabIndex        =   89
+         TabIndex        =   84
          Text            =   " "
          Top             =   1760
          Width           =   1125
@@ -769,7 +894,7 @@ Begin VB.Form frmCLI
          Height          =   285
          Left            =   -71880
          MaxLength       =   1
-         TabIndex        =   86
+         TabIndex        =   81
          Top             =   600
          Visible         =   0   'False
          WhatsThisHelpID =   19
@@ -788,7 +913,7 @@ Begin VB.Form frmCLI
          Height          =   285
          Left            =   -72480
          MaxLength       =   2
-         TabIndex        =   85
+         TabIndex        =   80
          Top             =   600
          Visible         =   0   'False
          WhatsThisHelpID =   13
@@ -908,7 +1033,7 @@ Begin VB.Form frmCLI
          ForeColor       =   &H00800000&
          Height          =   255
          Left            =   7560
-         TabIndex        =   147
+         TabIndex        =   141
          Top             =   2280
          Width           =   1695
       End
@@ -926,7 +1051,7 @@ Begin VB.Form frmCLI
          ForeColor       =   &H00808000&
          Height          =   495
          Left            =   8280
-         TabIndex        =   145
+         TabIndex        =   139
          Top             =   1800
          Width           =   1695
       End
@@ -945,7 +1070,7 @@ Begin VB.Form frmCLI
          Height          =   315
          Index           =   27
          Left            =   8160
-         TabIndex        =   144
+         TabIndex        =   138
          Tag             =   "28"
          Top             =   1800
          Visible         =   0   'False
@@ -968,7 +1093,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   28
          Left            =   8280
-         TabIndex        =   140
+         TabIndex        =   134
          Tag             =   "29"
          Top             =   1560
          Visible         =   0   'False
@@ -991,7 +1116,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   19
          Left            =   -74880
-         TabIndex        =   134
+         TabIndex        =   129
          Tag             =   "20"
          Top             =   1560
          Visible         =   0   'False
@@ -1014,7 +1139,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   22
          Left            =   240
-         TabIndex        =   132
+         TabIndex        =   127
          Tag             =   "23"
          Top             =   1650
          Visible         =   0   'False
@@ -1025,7 +1150,7 @@ Begin VB.Form frmCLI
          Caption         =   "Otras Lista de Descuento."
          Height          =   255
          Left            =   -68040
-         TabIndex        =   130
+         TabIndex        =   125
          Top             =   360
          Width           =   2415
       End
@@ -1045,7 +1170,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   36
          Left            =   -74760
-         TabIndex        =   118
+         TabIndex        =   113
          Tag             =   "19"
          Top             =   1440
          WhatsThisHelpID =   6
@@ -1067,7 +1192,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   20
          Left            =   -74760
-         TabIndex        =   117
+         TabIndex        =   112
          Top             =   2160
          Visible         =   0   'False
          Width           =   915
@@ -1087,7 +1212,7 @@ Begin VB.Form frmCLI
          ForeColor       =   &H00FFFFFF&
          Height          =   195
          Left            =   -71160
-         TabIndex        =   94
+         TabIndex        =   89
          Tag             =   "25"
          Top             =   960
          Visible         =   0   'False
@@ -1110,7 +1235,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   20
          Left            =   -74880
-         TabIndex        =   112
+         TabIndex        =   107
          Tag             =   "21"
          Top             =   960
          Visible         =   0   'False
@@ -1135,7 +1260,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   15
          Left            =   -67200
-         TabIndex        =   110
+         TabIndex        =   105
          Tag             =   "16"
          Top             =   840
          WhatsThisHelpID =   3
@@ -1158,7 +1283,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   32
          Left            =   -74760
-         TabIndex        =   109
+         TabIndex        =   104
          Tag             =   "33"
          Top             =   840
          WhatsThisHelpID =   2
@@ -1180,7 +1305,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   21
          Left            =   -74760
-         TabIndex        =   108
+         TabIndex        =   103
          Tag             =   "22"
          Top             =   2040
          WhatsThisHelpID =   11
@@ -1202,7 +1327,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   17
          Left            =   -71880
-         TabIndex        =   107
+         TabIndex        =   102
          Tag             =   "18"
          Top             =   1440
          WhatsThisHelpID =   5
@@ -1224,7 +1349,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   18
          Left            =   -69000
-         TabIndex        =   106
+         TabIndex        =   101
          Tag             =   "19"
          Top             =   1440
          WhatsThisHelpID =   6
@@ -1246,7 +1371,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   14
          Left            =   -72960
-         TabIndex        =   105
+         TabIndex        =   100
          Tag             =   "15"
          Top             =   840
          WhatsThisHelpID =   1
@@ -1268,7 +1393,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   25
          Left            =   -74880
-         TabIndex        =   101
+         TabIndex        =   96
          Tag             =   "26"
          Top             =   360
          Visible         =   0   'False
@@ -1291,7 +1416,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   34
          Left            =   -72480
-         TabIndex        =   99
+         TabIndex        =   94
          Tag             =   "35"
          Top             =   960
          Visible         =   0   'False
@@ -1314,7 +1439,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   24
          Left            =   -69480
-         TabIndex        =   97
+         TabIndex        =   92
          Tag             =   "25"
          Top             =   2040
          Visible         =   0   'False
@@ -1337,7 +1462,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   23
          Left            =   -69720
-         TabIndex        =   96
+         TabIndex        =   91
          Tag             =   "24"
          Top             =   960
          Visible         =   0   'False
@@ -1359,7 +1484,7 @@ Begin VB.Form frmCLI
          ForeColor       =   &H00FFFFFF&
          Height          =   195
          Left            =   -71160
-         TabIndex        =   95
+         TabIndex        =   90
          Tag             =   "25"
          Top             =   1560
          Visible         =   0   'False
@@ -1383,7 +1508,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   35
          Left            =   -72405
-         TabIndex        =   90
+         TabIndex        =   85
          Tag             =   "9"
          Top             =   1560
          Width           =   1185
@@ -1404,7 +1529,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   33
          Left            =   -71760
-         TabIndex        =   88
+         TabIndex        =   83
          Tag             =   "34"
          Top             =   360
          Visible         =   0   'False
@@ -1427,7 +1552,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   29
          Left            =   -72480
-         TabIndex        =   87
+         TabIndex        =   82
          Tag             =   "30"
          Top             =   360
          Visible         =   0   'False
@@ -1450,7 +1575,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   31
          Left            =   240
-         TabIndex        =   84
+         TabIndex        =   79
          Tag             =   "32"
          Top             =   360
          Width           =   495
@@ -1471,7 +1596,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   11
          Left            =   240
-         TabIndex        =   83
+         TabIndex        =   78
          Tag             =   "12"
          Top             =   960
          Width           =   450
@@ -1492,7 +1617,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   10
          Left            =   6960
-         TabIndex        =   82
+         TabIndex        =   77
          Tag             =   "11"
          Top             =   960
          Width           =   810
@@ -1513,7 +1638,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   9
          Left            =   3720
-         TabIndex        =   81
+         TabIndex        =   76
          Tag             =   "10"
          Top             =   960
          Width           =   615
@@ -1534,7 +1659,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   6
          Left            =   2160
-         TabIndex        =   80
+         TabIndex        =   75
          Tag             =   "7"
          Top             =   360
          Width           =   1005
@@ -1556,7 +1681,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   7
          Left            =   8640
-         TabIndex        =   79
+         TabIndex        =   74
          Tag             =   "8"
          Top             =   360
          Width           =   615
@@ -1576,21 +1701,21 @@ Begin VB.Form frmCLI
       ForeColor       =   &H00808000&
       Height          =   4455
       Left            =   0
-      TabIndex        =   47
+      TabIndex        =   42
       Top             =   0
       Width           =   10215
       Begin VB.ComboBox cmbtipocli 
          Height          =   315
          Left            =   7290
          Style           =   2  'Dropdown List
-         TabIndex        =   148
+         TabIndex        =   142
          Top             =   4035
          Width           =   2445
       End
       Begin VB.TextBox t_ciarela 
          Height          =   285
          Left            =   3960
-         TabIndex        =   141
+         TabIndex        =   135
          Text            =   "00"
          Top             =   1680
          Width           =   975
@@ -1599,7 +1724,7 @@ Begin VB.Form frmCLI
          Height          =   315
          Left            =   3855
          Style           =   2  'Dropdown List
-         TabIndex        =   135
+         TabIndex        =   130
          Top             =   3465
          Width           =   2985
       End
@@ -1608,7 +1733,7 @@ Begin VB.Form frmCLI
          Left            =   5400
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   123
+         TabIndex        =   118
          Top             =   4035
          Width           =   1575
       End
@@ -1710,11 +1835,11 @@ Begin VB.Form frmCLI
       End
       Begin VB.ComboBox txtestado 
          Height          =   315
-         ItemData        =   "client.frx":049A
+         ItemData        =   "client.frx":C105A
          Left            =   7320
-         List            =   "client.frx":04A4
+         List            =   "client.frx":C1064
          Style           =   2  'Dropdown List
-         TabIndex        =   73
+         TabIndex        =   68
          Top             =   3460
          Width           =   2415
       End
@@ -1749,7 +1874,7 @@ Begin VB.Form frmCLI
          EndProperty
          Height          =   285
          Left            =   5400
-         TabIndex        =   70
+         TabIndex        =   65
          Top             =   2280
          Width           =   1335
       End
@@ -1787,7 +1912,7 @@ Begin VB.Form frmCLI
          Height          =   240
          Index           =   0
          Left            =   7440
-         TabIndex        =   68
+         TabIndex        =   63
          Top             =   1080
          Width           =   2175
       End
@@ -1806,7 +1931,7 @@ Begin VB.Form frmCLI
          Height          =   255
          Index           =   1
          Left            =   7440
-         TabIndex        =   67
+         TabIndex        =   62
          Top             =   1320
          Width           =   2295
       End
@@ -1825,7 +1950,7 @@ Begin VB.Form frmCLI
          Height          =   240
          Index           =   2
          Left            =   7440
-         TabIndex        =   66
+         TabIndex        =   61
          Top             =   1560
          Width           =   2295
       End
@@ -1880,11 +2005,11 @@ Begin VB.Form frmCLI
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   315
-         ItemData        =   "client.frx":04BB
+         ItemData        =   "client.frx":C107B
          Left            =   7440
-         List            =   "client.frx":04C5
+         List            =   "client.frx":C1085
          Style           =   2  'Dropdown List
-         TabIndex        =   62
+         TabIndex        =   57
          Top             =   450
          Width           =   2415
       End
@@ -1900,7 +2025,7 @@ Begin VB.Form frmCLI
          EndProperty
          Height          =   285
          Left            =   5400
-         TabIndex        =   56
+         TabIndex        =   51
          Top             =   1080
          Visible         =   0   'False
          Width           =   1335
@@ -1917,7 +2042,7 @@ Begin VB.Form frmCLI
          EndProperty
          Height          =   285
          Left            =   5400
-         TabIndex        =   55
+         TabIndex        =   50
          Top             =   1680
          Visible         =   0   'False
          Width           =   1335
@@ -1927,7 +2052,7 @@ Begin VB.Form frmCLI
          Height          =   315
          Left            =   7320
          Style           =   2  'Dropdown List
-         TabIndex        =   54
+         TabIndex        =   49
          Top             =   2280
          Width           =   2415
       End
@@ -1947,7 +2072,7 @@ Begin VB.Form frmCLI
          Left            =   7320
          Locked          =   -1  'True
          MaxLength       =   30
-         TabIndex        =   53
+         TabIndex        =   48
          Top             =   2880
          Visible         =   0   'False
          WhatsThisHelpID =   14
@@ -1968,7 +2093,7 @@ Begin VB.Form frmCLI
          Height          =   285
          Left            =   8640
          MaxLength       =   30
-         TabIndex        =   52
+         TabIndex        =   47
          Top             =   2880
          Visible         =   0   'False
          WhatsThisHelpID =   15
@@ -2062,7 +2187,7 @@ Begin VB.Form frmCLI
          ForeColor       =   &H00808000&
          Height          =   210
          Left            =   7305
-         TabIndex        =   149
+         TabIndex        =   143
          Top             =   3825
          Width           =   1845
       End
@@ -2080,7 +2205,7 @@ Begin VB.Form frmCLI
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   3960
-         TabIndex        =   142
+         TabIndex        =   136
          Top             =   1440
          Width           =   1095
       End
@@ -2100,7 +2225,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   36
          Left            =   5400
-         TabIndex        =   124
+         TabIndex        =   119
          Tag             =   "37"
          Top             =   3840
          Width           =   690
@@ -2122,7 +2247,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   16
          Left            =   2160
-         TabIndex        =   113
+         TabIndex        =   108
          Tag             =   "17"
          Top             =   2040
          Visible         =   0   'False
@@ -2146,7 +2271,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   8
          Left            =   2160
-         TabIndex        =   104
+         TabIndex        =   99
          Tag             =   "9"
          Top             =   1440
          Width           =   885
@@ -2167,7 +2292,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   13
          Left            =   2790
-         TabIndex        =   103
+         TabIndex        =   98
          Tag             =   "14"
          Top             =   3840
          Width           =   1515
@@ -2188,7 +2313,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   12
          Left            =   240
-         TabIndex        =   102
+         TabIndex        =   97
          Tag             =   "13"
          Top             =   3840
          Width           =   1425
@@ -2207,7 +2332,7 @@ Begin VB.Form frmCLI
          ForeColor       =   &H00808000&
          Height          =   375
          Left            =   7440
-         TabIndex        =   78
+         TabIndex        =   73
          Top             =   840
          Width           =   2175
       End
@@ -2225,7 +2350,7 @@ Begin VB.Form frmCLI
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   7320
-         TabIndex        =   77
+         TabIndex        =   72
          Top             =   1800
          Width           =   2415
       End
@@ -2245,7 +2370,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   26
          Left            =   4080
-         TabIndex        =   76
+         TabIndex        =   71
          Tag             =   "27"
          Top             =   3240
          Visible         =   0   'False
@@ -2266,7 +2391,7 @@ Begin VB.Form frmCLI
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   5400
-         TabIndex        =   75
+         TabIndex        =   70
          Top             =   2640
          Width           =   1455
       End
@@ -2285,7 +2410,7 @@ Begin VB.Form frmCLI
          Height          =   255
          Index           =   0
          Left            =   7320
-         TabIndex        =   74
+         TabIndex        =   69
          Top             =   3240
          Width           =   1335
       End
@@ -2306,7 +2431,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   5
          Left            =   3840
-         TabIndex        =   72
+         TabIndex        =   67
          Tag             =   "6"
          Top             =   2640
          Width           =   555
@@ -2326,7 +2451,7 @@ Begin VB.Form frmCLI
          Height          =   255
          Index           =   0
          Left            =   5400
-         TabIndex        =   71
+         TabIndex        =   66
          Top             =   2040
          Width           =   1095
       End
@@ -2346,7 +2471,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   4
          Left            =   240
-         TabIndex        =   69
+         TabIndex        =   64
          Tag             =   "5"
          Top             =   3240
          Width           =   840
@@ -2367,7 +2492,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   2
          Left            =   240
-         TabIndex        =   65
+         TabIndex        =   60
          Tag             =   "3"
          Top             =   2640
          Width           =   2565
@@ -2388,7 +2513,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   3
          Left            =   240
-         TabIndex        =   64
+         TabIndex        =   59
          Tag             =   "4"
          Top             =   2040
          Width           =   1575
@@ -2398,7 +2523,7 @@ Begin VB.Form frmCLI
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   7440
-         TabIndex        =   63
+         TabIndex        =   58
          Top             =   240
          Width           =   2175
       End
@@ -2416,7 +2541,7 @@ Begin VB.Form frmCLI
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   5400
-         TabIndex        =   61
+         TabIndex        =   56
          Top             =   840
          Visible         =   0   'False
          Width           =   1095
@@ -2435,7 +2560,7 @@ Begin VB.Form frmCLI
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   5400
-         TabIndex        =   60
+         TabIndex        =   55
          Top             =   1440
          Visible         =   0   'False
          Width           =   1095
@@ -2455,7 +2580,7 @@ Begin VB.Form frmCLI
          ForeColor       =   &H00808000&
          Height          =   195
          Left            =   7320
-         TabIndex        =   59
+         TabIndex        =   54
          Tag             =   "25"
          Top             =   2640
          Visible         =   0   'False
@@ -2477,7 +2602,7 @@ Begin VB.Form frmCLI
          ForeColor       =   &H00808000&
          Height          =   195
          Left            =   7320
-         TabIndex        =   58
+         TabIndex        =   53
          Tag             =   "25"
          Top             =   2040
          Visible         =   0   'False
@@ -2499,7 +2624,7 @@ Begin VB.Form frmCLI
          ForeColor       =   &H00808000&
          Height          =   195
          Left            =   8760
-         TabIndex        =   57
+         TabIndex        =   52
          Tag             =   "25"
          Top             =   2640
          Visible         =   0   'False
@@ -2522,7 +2647,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   1
          Left            =   240
-         TabIndex        =   51
+         TabIndex        =   46
          Tag             =   "2"
          Top             =   1440
          Width           =   1095
@@ -2543,7 +2668,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   0
          Left            =   240
-         TabIndex        =   50
+         TabIndex        =   45
          Tag             =   "1"
          Top             =   840
          Width           =   1995
@@ -2564,7 +2689,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   0
          Left            =   240
-         TabIndex        =   49
+         TabIndex        =   44
          Top             =   240
          Width           =   720
       End
@@ -2584,7 +2709,7 @@ Begin VB.Form frmCLI
          Height          =   195
          Index           =   30
          Left            =   2160
-         TabIndex        =   48
+         TabIndex        =   43
          Tag             =   "31"
          Top             =   240
          Width           =   2415
@@ -2594,7 +2719,7 @@ Begin VB.Form frmCLI
       Caption         =   "Relacionar a Contabilidad"
       Height          =   375
       Left            =   4440
-      TabIndex        =   45
+      TabIndex        =   40
       Top             =   7560
       Visible         =   0   'False
       Width           =   2655
@@ -2603,29 +2728,10 @@ Begin VB.Form frmCLI
       Caption         =   "Relacionar a Contabilidad"
       Height          =   375
       Left            =   960
-      TabIndex        =   43
+      TabIndex        =   38
       Top             =   7560
       Visible         =   0   'False
       Width           =   3135
-   End
-   Begin VB.CommandButton cmdCancelar 
-      Caption         =   "&Cancelar"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   625
-      Left            =   10440
-      Picture         =   "client.frx":04EE
-      Style           =   1  'Graphical
-      TabIndex        =   33
-      Top             =   4080
-      Width           =   1300
    End
    Begin VB.Timer Parpadea 
       Enabled         =   0   'False
@@ -2633,103 +2739,10 @@ Begin VB.Form frmCLI
       Left            =   360
       Top             =   7080
    End
-   Begin VB.CommandButton cmdCerrar 
-      Caption         =   "Ce&rrar"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   625
-      Left            =   10440
-      Picture         =   "client.frx":0930
-      Style           =   1  'Graphical
-      TabIndex        =   34
-      Top             =   5160
-      Width           =   1300
-   End
-   Begin VB.CommandButton cmdModificar 
-      Caption         =   "&Modificar"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   625
-      Left            =   10440
-      Picture         =   "client.frx":0A7A
-      Style           =   1  'Graphical
-      TabIndex        =   29
-      Top             =   840
-      Width           =   1300
-   End
-   Begin VB.CommandButton cmdEliminar 
-      Caption         =   "&Eliminar"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   625
-      Left            =   10440
-      Picture         =   "client.frx":0BC4
-      Style           =   1  'Graphical
-      TabIndex        =   32
-      Top             =   3000
-      Width           =   1300
-   End
-   Begin VB.CommandButton cmdAgregar 
-      Caption         =   "&Agregar"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   625
-      Left            =   10440
-      Picture         =   "client.frx":1006
-      Style           =   1  'Graphical
-      TabIndex        =   30
-      Top             =   1920
-      Width           =   1300
-   End
-   Begin VB.CommandButton cmdFactiliza 
-      Caption         =   "Factiliza"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   625
-      Left            =   10440
-      TabIndex        =   150
-      Top             =   2640
-      Width           =   1300
-   End
    Begin MSComctlLib.ProgressBar PB2 
       Height          =   135
       Left            =   5040
-      TabIndex        =   42
+      TabIndex        =   37
       Top             =   7680
       Visible         =   0   'False
       Width           =   1575
@@ -2741,8 +2754,8 @@ Begin VB.Form frmCLI
    Begin MSComctlLib.ProgressBar PB 
       Height          =   195
       Left            =   10440
-      TabIndex        =   44
-      Top             =   6360
+      TabIndex        =   39
+      Top             =   6480
       Visible         =   0   'False
       Width           =   1335
       _ExtentX        =   2355
@@ -2766,7 +2779,7 @@ Begin VB.Form frmCLI
       ForeColor       =   &H00FFFFFF&
       Height          =   615
       Left            =   10440
-      TabIndex        =   138
+      TabIndex        =   132
       Top             =   120
       Width           =   1335
    End
@@ -2787,8 +2800,8 @@ Begin VB.Form frmCLI
       ForeColor       =   &H00E0E0E0&
       Height          =   255
       Left            =   10320
-      TabIndex        =   46
-      Top             =   6600
+      TabIndex        =   41
+      Top             =   6720
       Width           =   1455
    End
    Begin VB.Label Label3 
@@ -2797,7 +2810,7 @@ Begin VB.Form frmCLI
       Height          =   7095
       Index           =   5
       Left            =   10320
-      TabIndex        =   115
+      TabIndex        =   110
       Top             =   0
       Width           =   1575
    End
@@ -2814,7 +2827,7 @@ Begin VB.Form frmCLI
       EndProperty
       Height          =   240
       Left            =   120
-      TabIndex        =   31
+      TabIndex        =   29
       Top             =   5160
       Width           =   75
    End
@@ -3007,7 +3020,7 @@ Public Sub BLOQUEA_TEXT()
     txtesposo.Enabled = False
     Txtesposa.Enabled = False
     TxtEmpresa.Enabled = False
-    txtdireccion.Enabled = False
+    Txtdireccion.Enabled = False
     Txtnumdir.Enabled = False
     TxtZona.Enabled = False
     TxtSubZona.Enabled = False
@@ -3068,7 +3081,7 @@ Public Sub DESBLOQUEA_TEXT()
     txtesposo.Enabled = True
     Txtesposa.Enabled = True
     TxtEmpresa.Enabled = True
-    txtdireccion.Enabled = True
+    Txtdireccion.Enabled = True
     Txtnumdir.Enabled = True
     TxtZona.Enabled = True
     TxtSubZona.Enabled = True
@@ -3165,7 +3178,7 @@ SQL = "select * FROM DIRCLI where codcia=? and DIRCLI=? AND codcli=? and cp=?"
   Set llave_Direc = PS_DIREC.OpenResultset(rdOpenKeyset, rdConcurReadOnly)
   PS_DIREC(0) = LK_CODCIA
   PS_DIREC(1) = Val(frmCLI.cboDireccion.ItemData(cboDireccion.ListIndex))
-  PS_DIREC(2) = Val(frmCLI.Txt_key)
+  PS_DIREC(2) = Val(frmCLI.txt_key)
   'OJO
   If Trim(Left$(CmbCGP.Text, 1)) = "C" Then
   PS_DIREC(3) = "C"
@@ -3249,7 +3262,7 @@ If llave1 <> "X" Then
        Exit Sub
      End If
   End If
-  Txt_key.Enabled = False
+  txt_key.Enabled = False
   If Trim(txtnombre.Text) <> "" Then
     LIMPIA_CLI
   End If
@@ -3259,7 +3272,7 @@ End Sub
 
 Private Sub CmbCGP_GotFocus()
 If ListView1.Visible Then
- frmCLI.Txt_key.Text = ""
+ frmCLI.txt_key.Text = ""
  frmCLI.ListView1.Visible = False
 End If
 End Sub
@@ -3328,9 +3341,9 @@ If KeyAscii = 13 Then
           LLENA_GRUPOS txtsubgrupo, 334
       End If
 
-    frmCLI.Txt_key.Locked = False
-    frmCLI.Txt_key.Enabled = True
-    frmCLI.Txt_key.SetFocus
+    frmCLI.txt_key.Locked = False
+    frmCLI.txt_key.Enabled = True
+    frmCLI.txt_key.SetFocus
     
 End If
 End Sub
@@ -3417,12 +3430,12 @@ If Left(cmdAgregar.Caption, 2) = "&A" And cmdAgregar.Enabled = True Then
     cmdAgregar.Caption = "&Grabar"
     Frame2.Enabled = True
     SSTab1.Enabled = True
-    cmdcancelar.Enabled = True
-    CmdModificar.Enabled = False
+    cmdCancelar.Enabled = True
+    cmdModificar.Enabled = False
     cmdEliminar.Enabled = False
     'AGREGADO
     'If Trim(Left$(CmbCGP, 1)) = "C" Then
-    cmdcancel.Enabled = True
+    cmdCancel.Enabled = True
     cmdDelete.Enabled = True
     cmdDireccion.Enabled = True
     cboDireccion.Enabled = True
@@ -3430,21 +3443,21 @@ If Left(cmdAgregar.Caption, 2) = "&A" And cmdAgregar.Enabled = True Then
     
     DESBLOQUEA_TEXT
     If LK_EMP <> "PAR" Then
-     Txt_key.Locked = True
+     txt_key.Locked = True
     End If
     LIMPIA_CLI
     If Left(CmbCGP.Text, 1) = "C" Then
         If cboDiaVisita.ListCount > 0 Then cboDiaVisita.ListIndex = 0
         frmCLI.OptNombre(0).Value = True
-        frmCLI.Txt_key = CStr(CLng(GENERA_CODI))
+        frmCLI.txt_key = CStr(CLng(GENERA_CODI))
     ElseIf Left(CmbCGP.Text, 1) = "P" Then
         frmCLI.OptNombre(0).Value = True
-        frmCLI.Txt_key = CStr(CLng(Val(GENERA_PRO)))
+        frmCLI.txt_key = CStr(CLng(Val(GENERA_PRO)))
     End If
     On Error Resume Next
     frmCLI.txtesposo.SetFocus
     On Error GoTo 0
-    Txt_key.ToolTipText = ""
+    txt_key.ToolTipText = ""
     CmbCGP.Enabled = False
     If frmCLI.cmbgrupo.ListCount <> 0 Then frmCLI.cmbgrupo.ListIndex = 0
     frmCLI.txtestado.ListIndex = 0
@@ -3524,15 +3537,15 @@ PASACONTAB:
      If Not CONSIS_CLI Then
           Exit Sub
      End If
-     If LK_EMP = "PAR" And COD_ORIGINAL <> Val(Txt_key.Text) Then
+     If LK_EMP = "PAR" And COD_ORIGINAL <> Val(txt_key.Text) Then
       SQ_OPER = 1
-      pu_codclie = Val(Txt_key.Text)
+      pu_codclie = Val(txt_key.Text)
       pu_cp = "C"
       pu_codcia = LK_CODCIA
       LEER_CLILOC_LLAVE
       If Not cliloc_llave.EOF Then
          MsgBox "Cliente Existe en Compañia ..", 48, Pub_Titulo
-         Azul Txt_key, Txt_key
+         Azul txt_key, txt_key
          Exit Sub
       End If
      End If
@@ -3541,7 +3554,7 @@ PASACONTAB:
      CN.Execute "Begin Transaction", rdExecDirect
      Set con_llave = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurLock)
      ' Generar ID y asegurar que sea entero
-     frmCLI.Txt_key = CStr(CLng(GENERA_CODI))
+     frmCLI.txt_key = CStr(CLng(GENERA_CODI))
      If wGARANTES = 1 Then
            GRABAR_CLI "G"
      ElseIf wGARANTES = 2 Then
@@ -3555,7 +3568,7 @@ PASACONTAB:
      MENSAJE_CLI "Registro,   AGREGADO ... "
      wGARANTES = 0
      ' Guardar datos del cliente para regresar a FORMGEN
-     PUB_CLI_CODCLIE = CLng(Val(Txt_key.Text))
+     PUB_CLI_CODCLIE = CLng(Val(txt_key.Text))
      PUB_CLI_NOMBRE = Trim(txtesposo.Text)
      PUB_CLI_RUC = Trim(txtRUCesposo.Text)
      PUB_CLI_DNI = Trim(txtRUCesposa.Text)
@@ -3575,7 +3588,7 @@ PASACONTAB:
   ElseIf Left(CmbCGP.Text, 1) = "P" Then
 
       If pasa = 1 Then
-         If EXISTE_CLI("P", Left(frmCLI.txtesposo.Text, 15), Trim(Txt_key.Text)) Then
+         If EXISTE_CLI("P", Left(frmCLI.txtesposo.Text, 15), Trim(txt_key.Text)) Then
             MENSAJE_CLI " Existen algunos Proveedor con estos NOMBRES .."
             frmCLI.ListExiste.SetFocus
             Exit Sub
@@ -3615,7 +3628,7 @@ PASACONTAB:
        CN.Execute "Begin Transaction", rdExecDirect
        pub_cadena = "SELECT * FROM CONTROLL"
        Set con_llave = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurLock)
-       frmCLI.Txt_key = GENERA_PRO
+       frmCLI.txt_key = GENERA_PRO
        GRABAR_CLI "P"
        con_llave.Close
        CN.Execute "Commit Transaction", rdExecDirect
@@ -3624,14 +3637,14 @@ PASACONTAB:
     End If
     cmdAgregar.Caption = "&Agregar"
     cmdEliminar.Enabled = True
-    CmdModificar.Enabled = True
+    cmdModificar.Enabled = True
 
     BLOQUEA_TEXT
-    Txt_key.Locked = False
+    txt_key.Locked = False
     CmbCGP.Enabled = True
     Screen.MousePointer = 0
     frmCLI.SSTab1.tab = 0
-    Txt_key.ToolTipText = ""
+    txt_key.ToolTipText = ""
     LIMPIA_CLI
     LOC_CTA_CLI = ""
     LOC_CTA_CLI2 = ""
@@ -3642,7 +3655,7 @@ ESCAPA:
    If Err.Number = 40002 Then
       Screen.MousePointer = 0
       MsgBox "El Codigo generado ya existe " & Chr(13) & "Se procede a generar el siguiente codigo y a continuaciro n " & Chr(13) & "Intente Grabar Nuevamente...", 48, Pub_Titulo
-      frmCLI.Txt_key = CStr(CLng(GENERA_CODI))
+      frmCLI.txt_key = CStr(CLng(GENERA_CODI))
       Resume Next
       Exit Sub
    Else
@@ -3665,15 +3678,15 @@ End Sub
 
 Private Sub cmdagregar_GotFocus()
 If ListView1.Visible Then
- frmCLI.Txt_key.Text = ""
+ frmCLI.txt_key.Text = ""
  frmCLI.ListView1.Visible = False
 End If
 End Sub
 
 Private Sub cmdAgregar_KeyPress(KeyAscii As Integer)
 If KeyAscii = 27 Then
-   If frmCLI.Txt_key.Visible Then
-      frmCLI.Txt_key.SetFocus
+   If frmCLI.txt_key.Visible Then
+      frmCLI.txt_key.SetFocus
    End If
 End If
 
@@ -3686,14 +3699,14 @@ Dim dir As String
 Dim strRef As String
 Dim strDir As String
 On Error GoTo ErrorHandle
-If cmdcancel.Caption = "Cancelar" Then
-  cmdcancel.Caption = "Modificar"
+If cmdCancel.Caption = "Cancelar" Then
+  cmdCancel.Caption = "Modificar"
   cmdDireccion.Caption = "Agregar"
   cmdDelete.Enabled = True
   cboDireccion.ListIndex = 0
   Exit Sub
-ElseIf cmdcancel.Caption = "Grabar" Then
- cmdcancel.Caption = "Modificar"
+ElseIf cmdCancel.Caption = "Grabar" Then
+ cmdCancel.Caption = "Modificar"
  cmdDireccion.Caption = "Agregar"
  cmdDelete.Enabled = True
  strDir = Trim(txtDirTrabajo)
@@ -3711,15 +3724,15 @@ ElseIf cmdcancel.Caption = "Grabar" Then
  Val(Right(frmCLI.cboProvincia, 4)) & "',cli_trab_subzona='" & _
  Val(Right(frmCLI.TxtSubZonaTrabajo, 4)) & "',Numero='" & _
  Val(txtNumDirTrabajo) & "',dircomp='" & dir & "' " & _
- "WHERE CODCIA='" & LK_CODCIA & "' AND CODCLI='" & Val(frmCLI.Txt_key) & "' AND DIRCLI='" & Val(cboDireccion.ItemData(cboDireccion.ListIndex)) & "'"
+ "WHERE CODCIA='" & LK_CODCIA & "' AND CODCLI='" & Val(frmCLI.txt_key) & "' AND DIRCLI='" & Val(cboDireccion.ItemData(cboDireccion.ListIndex)) & "'"
  CN.Execute SQL
  LLENA_DIRECCIONES
  cboDireccion.ListIndex = 0
  
-ElseIf cmdcancel.Caption = "Modificar" Then
+ElseIf cmdCancel.Caption = "Modificar" Then
  cmdDelete.Enabled = False
  cmdDireccion.Caption = "Cancelar"
- cmdcancel.Caption = "Grabar"
+ cmdCancel.Caption = "Grabar"
 End If
 Exit Sub
 ErrorHandle:
@@ -3736,21 +3749,21 @@ Private Sub cmdcancelar_Click()
 Frame2.Enabled = True
 SSTab1.Enabled = True
 cmdDelete.Enabled = False
-cmdcancel.Enabled = False
+cmdCancel.Enabled = False
 cmdDireccion.Enabled = False
 cboProvincia.Enabled = False
 cboDireccion.Enabled = False
 LOC_TIPOCLI = ""
-If Txt_key.Visible = False Then
+If txt_key.Visible = False Then
   Exit Sub
 End If
-If Left(cmdAgregar.Caption, 2) = "&A" And Left(CmdModificar.Caption, 2) = "&M" Then
+If Left(cmdAgregar.Caption, 2) = "&A" And Left(cmdModificar.Caption, 2) = "&M" Then
     LIMPIA_CLI
-    cmdcancelar.Enabled = True
-    Txt_key.Locked = False
+    cmdCancelar.Enabled = True
+    txt_key.Locked = False
     MENSAJE_CLI "Proceso Cancelado... !!!    "
-    Txt_key.Enabled = True
-    Txt_key.SetFocus
+    txt_key.Enabled = True
+    txt_key.SetFocus
     frmCLI.SSTab1.tab = 0
     Screen.MousePointer = 0
     pasa = 0
@@ -3760,27 +3773,27 @@ If Left(cmdAgregar.Caption, 2) = "&A" And Left(CmdModificar.Caption, 2) = "&M" T
     Exit Sub
 End If
      Screen.MousePointer = 11
-     If Left(CmdModificar.Caption, 2) = "&G" Then
-        CmdModificar.Caption = "&Modificar"
+     If Left(cmdModificar.Caption, 2) = "&G" Then
+        cmdModificar.Caption = "&Modificar"
         If Left(CmbCGP.Text, 1) = "C" Then
            LLENA_CLI 1, "C"
         Else
            LLENA_CLI 1, "P"
         End If
-        Txt_key.Locked = True
+        txt_key.Locked = True
      Else
         GoSub ELI_TABLAS
         cmdAgregar.Caption = "&Agregar"
         cmdcontab.Enabled = False
         LIMPIA_CLI
-        Txt_key.Locked = False
-        Txt_key.SetFocus
+        txt_key.Locked = False
+        txt_key.SetFocus
      End If
      cmdAgregar.Enabled = True
      cmdEliminar.Enabled = True
-     CmdModificar.Enabled = True
+     cmdModificar.Enabled = True
 
-     Txt_key.ToolTipText = ""
+     txt_key.ToolTipText = ""
      wGARANTES = 0
      BLOQUEA_TEXT
      MENSAJE_CLI "Proceso Cancelado... !!!    "
@@ -3795,7 +3808,7 @@ End If
 Exit Sub
 ELI_TABLAS:
 If LK_FLAG_GRIFO <> "A" Then Return
-pu_codclie = Val(Txt_key.Text)
+pu_codclie = Val(txt_key.Text)
 If pu_codclie = 0 Then Return
 PSPLAC_LLAVE(0) = LK_CODCIA
 PSPLAC_LLAVE(1) = 2101
@@ -3821,7 +3834,7 @@ End Sub
 
 Private Sub cmdCancelar_GotFocus()
 If ListView1.Visible Then
- frmCLI.Txt_key.Text = ""
+ frmCLI.txt_key.Text = ""
  frmCLI.ListView1.Visible = False
 End If
 End Sub
@@ -3937,7 +3950,7 @@ Screen.MousePointer = 11
 ' Deshabilitar controles para evitar clicks multiples
 On Error Resume Next
 cmdAgregar.Enabled = False
-CmdModificar.Enabled = False
+cmdModificar.Enabled = False
 cmdEliminar.Enabled = False
 cmdCerrar.Enabled = False
 cmdFactiliza.Enabled = False
@@ -4011,22 +4024,22 @@ If http.Status = 200 Then
 
    ' Configurar boton Agregar en modo Grabar
    cmdAgregar.Caption = "&Grabar"
-   cmdcancelar.Enabled = True
-   CmdModificar.Enabled = False
+   cmdCancelar.Enabled = True
+   cmdModificar.Enabled = False
    cmdEliminar.Enabled = False
    CmbCGP.Enabled = False
    DoEvents
 
    ' Generar nuevo ID
    If Left(CmbCGP.Text, 1) = "C" Then
-      Txt_key = CStr(CLng(GENERA_CODI))
+      txt_key = CStr(CLng(GENERA_CODI))
    Else
-      Txt_key = CStr(CLng(Val(GENERA_PRO)))
+      txt_key = CStr(CLng(Val(GENERA_PRO)))
    End If
 
    ' Llenar campos con datos de Factiliza
    txtesposo.Text = ws_nombre
-   txtdireccion.Text = Left(ws_direccion, 120)
+   Txtdireccion.Text = Left(ws_direccion, 120)
    txtDirTrabajo.Text = Left(ws_direccion, 30)
    txtRUCesposo.Text = IIf(WS_TIPO = "RUC", ws_ruc_dni, "")
    txtRUCesposa.Text = IIf(WS_TIPO = "DNI", ws_ruc_dni, "")
@@ -4098,7 +4111,7 @@ Set http = Nothing
 ' Rehabilitar controles
 On Error Resume Next
 cmdAgregar.Enabled = True
-CmdModificar.Enabled = True
+cmdModificar.Enabled = True
 cmdEliminar.Enabled = True
 cmdCerrar.Enabled = True
 cmdFactiliza.Enabled = True
@@ -4116,7 +4129,7 @@ LblMensaje.Visible = False
 ' Rehabilitar controles
 On Error Resume Next
 cmdAgregar.Enabled = True
-CmdModificar.Enabled = True
+cmdModificar.Enabled = True
 cmdEliminar.Enabled = True
 cmdCerrar.Enabled = True
 cmdFactiliza.Enabled = True
@@ -4198,20 +4211,20 @@ End Sub
 
 Private Sub cmdCerrar_GotFocus()
 If ListView1.Visible Then
- frmCLI.Txt_key.Text = ""
+ frmCLI.txt_key.Text = ""
  frmCLI.ListView1.Visible = False
 End If
 End Sub
 
 Private Sub cmdCerrar_KeyPress(KeyAscii As Integer)
 If KeyAscii = 27 Then
-    frmCLI.Txt_key.SetFocus
+    frmCLI.txt_key.SetFocus
 End If
 End Sub
 
 Private Sub cmdconfirma_Click()
   If Op(0).Value And Left(frmCLI.CmbCGP, 1) = "C" Then
-     frmCLI.Txt_key.Text = ListExiste.TextMatrix(ListExiste.Row, 1)
+     frmCLI.txt_key.Text = ListExiste.TextMatrix(ListExiste.Row, 1)
      pasa = 1
      frmCLI.F14.Visible = False
      cmdAgregar_Click
@@ -4219,18 +4232,18 @@ Private Sub cmdconfirma_Click()
   End If
   If Op(0).Value And Left(frmCLI.CmbCGP, 1) = "P" Then
     frmCLI.txtnombre.Text = ListExiste.TextMatrix(ListExiste.Row, 2)
-    frmCLI.Txt_key.Text = ListExiste.TextMatrix(ListExiste.Row, 1)
+    frmCLI.txt_key.Text = ListExiste.TextMatrix(ListExiste.Row, 1)
      pasa = 1
      frmCLI.F14.Visible = False
      If Left(cmdAgregar.Caption, 2) = "&G" And cmdAgregar.Enabled = True Then cmdAgregar_Click
-     If Left(CmdModificar.Caption, 2) = "&G" And CmdModificar.Enabled = True Then CmdModificar_Click
+     If Left(cmdModificar.Caption, 2) = "&G" And cmdModificar.Enabled = True Then CmdModificar_Click
      Exit Sub
   End If
   If Op(1).Value Then
      pasa = 0
      frmCLI.F14.Visible = False
      If Left(cmdAgregar.Caption, 2) = "&G" And cmdAgregar.Enabled = True Then cmdAgregar_Click
-     If Left(CmdModificar.Caption, 2) = "&G" And CmdModificar.Enabled = True Then CmdModificar_Click
+     If Left(cmdModificar.Caption, 2) = "&G" And cmdModificar.Enabled = True Then CmdModificar_Click
      Exit Sub
   End If
   MsgBox "Seleccione una de las dos Opciones ..", 48, Pub_Titulo
@@ -4324,7 +4337,7 @@ ElseIf Left(CmbCGP.Text, 1) = "P" Then
    End If
 End If
 
-If Left(CmdModificar.Caption, 2) = "&G" Then
+If Left(cmdModificar.Caption, 2) = "&G" Then
    CmdModificar_Click
 End If
 End Sub
@@ -4407,7 +4420,7 @@ If Left(CmbCGP.Text, 1) = "P" Then
    End If
 End If
 
-If Left(CmdModificar.Caption, 2) = "&G" Then
+If Left(cmdModificar.Caption, 2) = "&G" Then
    CmdModificar_Click
 End If
 
@@ -4419,7 +4432,7 @@ Private Sub cmdDelete_Click()
   On Error GoTo ErrorDelete
   SQL = "DELETE FROM DIRCLI WHERE CODCIA='" & LK_CODCIA & "' " & _
         "AND DIRCLI='" & Val(.ItemData(.ListIndex)) & "' AND " & _
-        "CODCLI='" & Val(frmCLI.Txt_key) & "' AND CP= '" & Left(CmbCGP.Text, 1) & "'"
+        "CODCLI='" & Val(frmCLI.txt_key) & "' AND CP= '" & Left(CmbCGP.Text, 1) & "'"
   End With
   
   If MsgBox("Esta seguro de Eliminar esta direcciro n", vbYesNo, "Eliminar Dirección") = vbYes Then
@@ -4442,7 +4455,7 @@ ErrorDelete:
 End Sub
 
 Private Sub cmddescto_Click()
-pu_codclie = Val(Txt_key.Text)
+pu_codclie = Val(txt_key.Text)
 If pu_codclie = 0 Then Exit Sub
 'PUB_TIPREG = 2301
 'PUB_CODCIA = LK_CODCIA
@@ -4487,7 +4500,7 @@ If cmdDireccion.Caption = "Grabar" Then
      SQL = "insert into dircli " & _
      "(codcia,codcli,cp,direc,ref,CLI_LUGAR_TRAB, " & _
      "CLI_TRAB_ZONA,CLI_CASA_SUBZONA,CLI_TRAB_SUBZONA,NUMERO,DIRCOMP) " & _
-     "values('" & LK_CODCIA & "','" & Val(frmCLI.Txt_key) & "', '" & Trim(Left$(CmbCGP.Text, 1)) & "','" & strDir & "','" & strRef & "','" & _
+     "values('" & LK_CODCIA & "','" & Val(frmCLI.txt_key) & "', '" & Trim(Left$(CmbCGP.Text, 1)) & "','" & strDir & "','" & strRef & "','" & _
      Val(Right(frmCLI.TxtLugarTrab, 4)) & "','" & _
      Val(Right(frmCLI.TxtZonaTrabajo.Text, 4)) & "','" & _
      Val(Right(frmCLI.cboProvincia, 4)) & "','" & _
@@ -4497,12 +4510,12 @@ If cmdDireccion.Caption = "Grabar" Then
      LLENA_DIRECCIONES
      cboDireccion.SetFocus
      cmdDireccion.Caption = "Agregar"
-     cmdcancel.Caption = "Modificar"
+     cmdCancel.Caption = "Modificar"
     cmdDelete.Enabled = True
  ElseIf cmdDireccion.Caption = "Agregar" Then
   cmdDelete.Enabled = False
   cmdDireccion.Caption = "Grabar"
-  cmdcancel.Caption = "Cancelar"
+  cmdCancel.Caption = "Cancelar"
   TxtLugarTrab.ListIndex = -1
   TxtZonaTrabajo.ListIndex = -1
   TxtSubZonaTrabajo.ListIndex = -1
@@ -4514,7 +4527,7 @@ If cmdDireccion.Caption = "Grabar" Then
  ElseIf cmdDireccion.Caption = "Cancelar" Then
  cmdDireccion.Caption = "Agregar"
  cmdDelete.Enabled = True
- cmdcancel.Caption = "Modificar"
+ cmdCancel.Caption = "Modificar"
  cboDireccion.ListIndex = 0
  End If
  'llave_rep01.Requery
@@ -4525,7 +4538,7 @@ End Sub
 Private Sub cmdEliminar_Click()
 Dim wcias As String
 On Error GoTo sale
-If Len(Txt_key) = 0 Or Len(txtnombre) = 0 Then
+If Len(txt_key) = 0 Or Len(txtnombre) = 0 Then
    MENSAJE_CLI "NO a seleccionado NADA ... !"
    Exit Sub
 End If
@@ -4580,10 +4593,10 @@ End If
   If Pub_Respuesta = vbYes Then   ' El usuario eligiro
     Screen.MousePointer = 11
     cliloc_llave.Delete
-    pub_cadena = "Delete dircli where CODCIA = '" & LK_CODCIA & "' and  CODCLI = " & Trim(Txt_key.Text) & "  and   CP  = '" & Trim(Left(CmbCGP.Text, 1)) & "' "
+    pub_cadena = "Delete dircli where CODCIA = '" & LK_CODCIA & "' and  CODCLI = " & Trim(txt_key.Text) & "  and   CP  = '" & Trim(Left(CmbCGP.Text, 1)) & "' "
     CN.Execute pub_cadena
-    frmCLI.Txt_key.Text = ""
-    frmCLI.Txt_key.Locked = False
+    frmCLI.txt_key.Text = ""
+    frmCLI.txt_key.Locked = False
     'If Trim(tcuenta.Text) <> "" And LK_EMP <> "CAM" Then
     '        SQ_OPER = 1
     '        PUB_CUENTA = Trim(tcuenta.Text)
@@ -4623,14 +4636,14 @@ End Sub
 
 Private Sub cmdEliminar_GotFocus()
 If ListView1.Visible Then
-frmCLI.Txt_key.Text = ""
+frmCLI.txt_key.Text = ""
 frmCLI.ListView1.Visible = False
 End If
 End Sub
 
 Private Sub cmdEliminar_KeyPress(KeyAscii As Integer)
 If KeyAscii = 27 Then
-    frmCLI.Txt_key.SetFocus
+    frmCLI.txt_key.SetFocus
 End If
 
 End Sub
@@ -4644,7 +4657,7 @@ Private Sub CmdEscapa_Click()
 End Sub
 
 Private Sub cmdmante_Click()
-pu_codclie = Val(Txt_key.Text)
+pu_codclie = Val(txt_key.Text)
 If pu_codclie = 0 Then Exit Sub
 'PUB_TIPREG = 2101
 'PUB_CODCIA = LK_CODCIA
@@ -4657,21 +4670,21 @@ If pu_codclie = 0 Then Exit Sub
 End Sub
 
 Private Sub CmdModificar_Click()
-If Len(Txt_key) = 0 Or Len(txtnombre) = 0 Then
+If Len(txt_key) = 0 Or Len(txtnombre) = 0 Then
    MENSAJE_CLI "NO a seleccionado NADA ... !"
    Exit Sub
 End If
-If Left(CmdModificar.Caption, 2) = "&M" Then
+If Left(cmdModificar.Caption, 2) = "&M" Then
     LOC_TIPOCLI = "A"
-    CmdModificar.Caption = "&Grabar"
+    cmdModificar.Caption = "&Grabar"
     cmdEliminar.Enabled = False
     cmdAgregar.Enabled = False
-    cmdcancelar.Enabled = True
+    cmdCancelar.Enabled = True
     CmbCGP.Enabled = False
     condi.Enabled = False
     'agregado
     'If Trim(Left$(CmbCGP, 1)) = "C" Then
-    cmdcancel.Enabled = True
+    cmdCancel.Enabled = True
     cmdDelete.Enabled = True
     cmdDireccion.Enabled = True
     cboDireccion.Enabled = True
@@ -4683,19 +4696,19 @@ If Left(CmdModificar.Caption, 2) = "&M" Then
     If LK_CODUSU = "ADMIN" Or LK_CODUSU = "SUPERVISOR" Then
        lisdescto.Enabled = True
     End If
-    Txt_key.Locked = True
+    txt_key.Locked = True
     If frmCLI.txtesposo.Enabled Then frmCLI.txtesposo.SetFocus
     pasa = 1
     LOC_CTA_CLI = ""
     LOC_CTA_CLI2 = ""
-    If Left(cmdcancel.Caption, 1) = "M" Then
+    If Left(cmdCancel.Caption, 1) = "M" Then
        cmdcancel_Click
     End If
 
  Else
    If Left(CmbCGP.Text, 1) = "C" Then
       If pasa = 1 Then
-         If EXISTE_CLI("C", Left(frmCLI.txtesposo.Text, 15), Trim(Txt_key.Text)) Then
+         If EXISTE_CLI("C", Left(frmCLI.txtesposo.Text, 15), Trim(txt_key.Text)) Then
             MENSAJE_CLI " Existen algunos clientes con estos NOMBRES .."
             frmCLI.ListExiste.SetFocus
             Exit Sub
@@ -4704,7 +4717,7 @@ If Left(CmdModificar.Caption, 2) = "&M" Then
       pasa = 0
    ElseIf Left(CmbCGP.Text, 1) = "P" Then
      If pasa = 1 Then
-      If EXISTE_CLI("P", Left(frmCLI.txtesposo.Text, 15), Trim(Txt_key.Text)) Then
+      If EXISTE_CLI("P", Left(frmCLI.txtesposo.Text, 15), Trim(txt_key.Text)) Then
          MENSAJE_CLI " Existen algunos Proveedor con estos NOMBRES .."
          frmCLI.ListExiste.SetFocus
          Exit Sub
@@ -4742,20 +4755,20 @@ PASACONTAB:
     Screen.MousePointer = 11
     GRABAR_CLI "C"
     MENSAJE_CLI "Registro , MODIFICADO... "
-    CmdModificar.Caption = "&Modificar"
+    cmdModificar.Caption = "&Modificar"
     frmCLI.SSTab1.tab = 0
     Screen.MousePointer = 0
-    cmdcancelar.Enabled = True
+    cmdCancelar.Enabled = True
     cmdEliminar.Enabled = True
     cmdAgregar.Enabled = True
-    If Left(cmdcancel.Caption, 1) = "G" Then
+    If Left(cmdCancel.Caption, 1) = "G" Then
        cmdcancel_Click
     End If
     BLOQUEA_TEXT
     
-    Txt_key.Locked = True
+    txt_key.Locked = True
     CmbCGP.Enabled = True
-    cmdcancelar.SetFocus
+    cmdCancelar.SetFocus
     Screen.MousePointer = 0
     LOC_CTA_CLI = ""
     LOC_CTA_CLI2 = ""
@@ -4765,7 +4778,7 @@ End Sub
 
 Private Sub cmdModificar_GotFocus()
 If ListView1.Visible Then
- frmCLI.Txt_key.Text = ""
+ frmCLI.txt_key.Text = ""
  frmCLI.ListView1.Visible = False
 End If
 End Sub
@@ -4854,7 +4867,7 @@ If Pub_Respuesta = vbYes Then
    Exit Sub
 End If
 
-   If Val(frmCLI.Txt_key.Text) <= 0 Then
+   If Val(frmCLI.txt_key.Text) <= 0 Then
       MsgBox " Consulte  y  despues Copiar.."
       Exit Sub
    End If
@@ -4884,7 +4897,7 @@ End If
     cliloc_llave!CLI_NOMBRE_EMPRESA = TxtEmpresa.Text
     ASIGNA_123
     cliloc_llave!cli_nombre = frmCLI.txtnombre.Text
-    cliloc_llave!CLI_CASA_DIREC = txtdireccion.Text
+    cliloc_llave!CLI_CASA_DIREC = Txtdireccion.Text
     cliloc_llave!CLI_CASA_NUM = Val(Txtnumdir.Text)
     cliloc_llave!CLI_CASA_ZONA = Val(Right(TxtZona.Text, 4))
     cliloc_llave!CLI_LUGAR_CASA = Val(Right(TxtLugarCasa.Text, 4))
@@ -5203,7 +5216,7 @@ llave1 = "X"
 CmbCGP.ListIndex = 0
 llave1 = ""
 Screen.MousePointer = 0
-Txt_key.MaxLength = 15
+txt_key.MaxLength = 15
 cmdcontab.Enabled = False
 t_diasfac.Visible = True
 
@@ -5234,7 +5247,7 @@ Loop
 txtauto2.Locked = True
 txtautovaluo.Visible = False
 txtregpublico1.Visible = False
-frmCLI.Txt_key.TabIndex = 0
+frmCLI.txt_key.TabIndex = 0
 copia.Visible = True
 ws_Prov_bloq = ""
 For fila = 1 To lk_OTROS_Count
@@ -5268,7 +5281,7 @@ SQL = "select d.DIRCLI,d.DirComp " & _
   PS_dir.rdoParameters(2) = " "
   Set llave_dir = PS_dir.OpenResultset(rdOpenKeyset, rdConcurReadOnly)
   PS_dir(0) = LK_CODCIA
-  PS_dir(1) = Val(frmCLI.Txt_key)
+  PS_dir(1) = Val(frmCLI.txt_key)
   If Trim(Left$(CmbCGP.Text, 1)) = "C" Then
   PS_dir(2) = "C"
   Else
@@ -5290,12 +5303,12 @@ SQL = "select d.DIRCLI,d.DirComp " & _
 End Sub
 Public Sub ALLINVISIBLE()
     frmCLI.lcuenta.Visible = False
-    Txt_key.Visible = False
+    txt_key.Visible = False
     txtnombre.Visible = False
     txtesposo.Visible = False
     Txtesposa.Visible = False
     TxtEmpresa.Visible = False
-    txtdireccion.Visible = False
+    Txtdireccion.Visible = False
     Txtnumdir.Visible = False
     TxtZona.Visible = False
     TxtSubZona.Visible = False
@@ -5335,12 +5348,12 @@ Public Sub ALLINVISIBLE()
 End Sub
 Public Sub ALLVISIBLE()
     frmCLI.lcuenta.Visible = True
-    Txt_key.Visible = True
+    txt_key.Visible = True
     txtnombre.Visible = True
     txtesposo.Visible = True
     Txtesposa.Visible = True
     TxtEmpresa.Visible = True
-    txtdireccion.Visible = True
+    Txtdireccion.Visible = True
     Txtnumdir.Visible = True
     TxtZona.Visible = True
     TxtSubZona.Visible = True
@@ -5553,7 +5566,7 @@ End Sub
 
 Private Sub ListView1_DblClick()
  loc_key = ListView1.SelectedItem.Index
- Txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
+ txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
  txt_key_KeyPress 13
 End Sub
 
@@ -5569,7 +5582,7 @@ End Sub
 Private Sub ListView1_ItemClick(ByVal Item As MSComctlLib.ListItem)
 If loc_key <> 0 Then
  loc_key = ListView1.SelectedItem.Index
- Txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
+ txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
 End If
 
 End Sub
@@ -5577,8 +5590,8 @@ End Sub
 Private Sub ListView1_KeyPress(KeyAscii As Integer)
 If KeyAscii = 27 Then
  ListView1.Visible = False
- Txt_key.Text = ""
- Txt_key.SetFocus
+ txt_key.Text = ""
+ txt_key.SetFocus
  Exit Sub
 End If
 If KeyAscii <> 13 Then
@@ -5625,7 +5638,7 @@ Private Sub PARPADEA_Timer()
  LblMensaje.Visible = True
  If CU > 4 Then
    CU = 0
-   PARPADEA.Enabled = False
+   Parpadea.Enabled = False
    LblMensaje.Visible = False
  End If
 End Sub
@@ -5656,16 +5669,16 @@ Screen.MousePointer = 11
         '**  BAN = 0 BUSCA DATOS NUEVAMENTE
         If loc_key > ListView1.ListItems.count Or loc_key = 0 Then
          Else
-          Txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).SubItems(1))
+          txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).SubItems(1))
         End If
         pu_cp = Left(CmbCGP.Text, 2)
-        pu_codclie = Val(Txt_key.Text)
+        pu_codclie = Val(txt_key.Text)
         SQ_OPER = 1
         pu_codcia = LK_CODCIA
         LEER_CLILOC_LLAVE
     End If
     loc_ultcod = Val(cliloc_llave!cli_codclie)
-    frmCLI.Txt_key.Text = cliloc_llave!cli_codclie
+    frmCLI.txt_key.Text = cliloc_llave!cli_codclie
     LLENA_123
     txtnombre.Text = Nulo_Valors(cliloc_llave!cli_nombre)
     txtnombre.MaxLength = cliloc_llave(3).Size
@@ -5673,8 +5686,8 @@ Screen.MousePointer = 11
     txtesposo.MaxLength = cliloc_llave(4).Size
     Txtesposa.Text = Trim(Nulo_Valors(cliloc_llave!CLI_NOMBRE_ESPOSA))
     TxtEmpresa.Text = Trim(Nulo_Valors(cliloc_llave!CLI_NOMBRE_EMPRESA))
-    txtdireccion.Text = Trim(Nulo_Valors(cliloc_llave!CLI_CASA_DIREC))
-    txtdireccion.MaxLength = cliloc_llave(10).Size
+    Txtdireccion.Text = Trim(Nulo_Valors(cliloc_llave!CLI_CASA_DIREC))
+    Txtdireccion.MaxLength = cliloc_llave(10).Size
     Txtnumdir.Text = Trim(Nulo_Valors(cliloc_llave!CLI_CASA_NUM))
     ASIGNA_INT TxtZona, Nulo_Valor0(cliloc_llave!CLI_CASA_ZONA)
     ASIGNA_INT TxtSubZona, Nulo_Valor0(cliloc_llave!CLI_CASA_SUBZONA)
@@ -5750,7 +5763,7 @@ Screen.MousePointer = 11
     t_diasfac.Text = Nulo_Valor0(cliloc_llave!cli_DIAS_FAC)
     frmCLI.t_diascred.Text = Nulo_Valor0(cliloc_llave!cli_dias_cred)
     frmCLI.fechahora.Caption = Trim(cliloc_llave!cli_fechahora)
-    pu_codclie = Val(Txt_key.Text)
+    pu_codclie = Val(txt_key.Text)
     If LK_FLAG_GRIFO = "A" Then
       LLENA_DESCTO
     End If
@@ -5792,12 +5805,12 @@ Public Sub LIMPIA_CLI()
     t_ciarela.Text = ""
     fechahora.Caption = ""
     tempo_ruc = ""
-    Txt_key.Text = ""
+    txt_key.Text = ""
     txtnombre.Text = ""
     txtesposo.Text = ""
     Txtesposa.Text = ""
     TxtEmpresa.Text = ""
-    txtdireccion.Text = ""
+    Txtdireccion.Text = ""
     Txtnumdir.Text = ""
     TxtZona.ListIndex = -1
     TxtSubZona.ListIndex = -1
@@ -5882,7 +5895,7 @@ End Sub
 
 Private Sub SSTab1_GotFocus()
 If ListView1.Visible Then
- frmCLI.Txt_key.Text = ""
+ frmCLI.txt_key.Text = ""
  frmCLI.ListView1.Visible = False
 End If
 End Sub
@@ -5890,10 +5903,10 @@ End Sub
 Private Sub t_diascred_KeyPress(KeyAscii As Integer)
 SOLO_ENTERO KeyAscii
 If KeyAscii = 13 Then
-    frmCLI.txtdireccion.SetFocus
+    frmCLI.Txtdireccion.SetFocus
     Exit Sub
-    If frmCLI.CmdModificar.Enabled Then
-          frmCLI.CmdModificar.SetFocus
+    If frmCLI.cmdModificar.Enabled Then
+          frmCLI.cmdModificar.SetFocus
     Else
            frmCLI.cmdAgregar.SetFocus
     End If
@@ -5955,7 +5968,7 @@ End If
 End Sub
 
 Private Sub txt_key_GotFocus()
- Azul Txt_key, Txt_key
+ Azul txt_key, txt_key
 End Sub
 
 Private Sub txt_key_KeyDown(KeyCode As Integer, Shift As Integer)
@@ -5972,7 +5985,7 @@ End If
 If Not ListView1.Visible Then
  Exit Sub
 End If
-If KeyCode <> 40 And KeyCode <> 38 And KeyCode <> 34 And KeyCode <> 33 And Txt_key.Text = "" Then
+If KeyCode <> 40 And KeyCode <> 38 And KeyCode <> 34 And KeyCode <> 33 And txt_key.Text = "" Then
   loc_key = 1
   Set ListView1.SelectedItem = ListView1.ListItems(loc_key)
   ListView1.ListItems.Item(loc_key).Selected = True
@@ -6004,8 +6017,8 @@ GoTo fin
 POSICION:
   ListView1.ListItems.Item(loc_key).Selected = True
   ListView1.ListItems.Item(loc_key).EnsureVisible
-  Txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
-  Txt_key.SelStart = Len(Txt_key.Text)
+  txt_key.Text = Trim(ListView1.ListItems.Item(loc_key).Text) & " "
+  txt_key.SelStart = Len(txt_key.Text)
 fin:
 Exit Sub
 sale:
@@ -6018,8 +6031,8 @@ Dim tf As Integer
 Dim I
 Dim itmFound As MSComctlLib.ListItem
 On Error GoTo SALCODI
-If KeyAscii = 13 And Val(Txt_key.Text) = 1 Then
-    Txt_key.Text = ""
+If KeyAscii = 13 And Val(txt_key.Text) = 1 Then
+    txt_key.Text = ""
     Exit Sub
 End If
 If KeyAscii = 13 Then
@@ -6028,25 +6041,25 @@ If LK_EMP = "PAR" And Left(cmdAgregar.Caption, 2) = "&G" Then
   Exit Sub
 End If
 End If
-If KeyAscii = 13 And Left(Txt_key.Text, 1) = "+" Then GoTo buscar
+If KeyAscii = 13 And Left(txt_key.Text, 1) = "+" Then GoTo buscar
 If KeyAscii = 27 And Trim(txtnombre.Text) = "" Then
- Txt_key.Text = ""
+ txt_key.Text = ""
 End If
-If KeyAscii <> 13 Or Left(cmdAgregar.Caption, 2) = "&G" Or Left(CmdModificar.Caption, 2) = "&G" Then
+If KeyAscii <> 13 Or Left(cmdAgregar.Caption, 2) = "&G" Or Left(cmdModificar.Caption, 2) = "&G" Then
    GoTo fin
 End If
    
 On Error GoTo CODI_ERR
-pu_codclie = Val(Txt_key.Text)
+pu_codclie = Val(txt_key.Text)
 On Error GoTo 0
-If Len(Txt_key.Text) = 0 Then
+If Len(txt_key.Text) = 0 Then
    Exit Sub
 End If
 'fra2.Refresh
-If pu_codclie <> 0 And IsNumeric(Txt_key.Text) = True Then
-   If Len(Trim(Txt_key.Text)) = LK_DIG_RUC Then ' LONG DEL RUC
+If pu_codclie <> 0 And IsNumeric(txt_key.Text) = True Then
+   If Len(Trim(txt_key.Text)) = LK_DIG_RUC Then ' LONG DEL RUC
         pu_cp = Left(CmbCGP.Text, 1)
-        PUB_RUC = Trim(Txt_key.Text)
+        PUB_RUC = Trim(txt_key.Text)
         SQ_OPER = 4
         pu_codcia = LK_CODCIA
         LEER_CLI_LLAVE
@@ -6054,53 +6067,53 @@ If pu_codclie <> 0 And IsNumeric(Txt_key.Text) = True Then
            MsgBox "R.U.C. No Existe ", 48, Pub_Titulo
            Exit Sub
         End If
-        Txt_key.Text = cli_ruc!cli_codclie
+        txt_key.Text = cli_ruc!cli_codclie
    End If
     SQ_OPER = 1
    On Error GoTo mucho
    pu_codcia = LK_CODCIA
    pu_cp = Left(CmbCGP.Text, 1)
-   pu_codclie = Val(Txt_key.Text)
+   pu_codclie = Val(txt_key.Text)
    LEER_CLILOC_LLAVE
    On Error GoTo 0
    If cliloc_llave.EOF Then
-     Azul Txt_key, Txt_key
+     Azul txt_key, txt_key
      MsgBox "REGISTRO NO EXISTE ...", 48, Pub_Titulo
-     Txt_key.SetFocus
+     txt_key.SetFocus
      GoTo fin
    End If
    Screen.MousePointer = 11
    ListView1.Visible = False
-   cmdcancelar.Enabled = True
+   cmdCancelar.Enabled = True
    If Left(CmbCGP.Text, 1) = "C" Then
          LLENA_CLI 1, "C"
    End If
    If Left(CmbCGP.Text, 1) = "P" Then
          LLENA_CLI 1, "P"
    End If
-   frmCLI.Txt_key.Locked = True
-   frmCLI.CmdModificar.SetFocus
+   frmCLI.txt_key.Locked = True
+   frmCLI.cmdModificar.SetFocus
    Screen.MousePointer = 0
 Else
    If loc_key > ListView1.ListItems.count Or loc_key = 0 Then
      Exit Sub
    End If
    VALOR = UCase(ListView1.ListItems.Item(loc_key).Text)
-   If Trim(UCase(Txt_key.Text)) = Left(VALOR, Len(Trim(Txt_key.Text))) Then
+   If Trim(UCase(txt_key.Text)) = Left(VALOR, Len(Trim(txt_key.Text))) Then
    Else
       Exit Sub
    End If
    ListView1.Visible = False
-   cmdcancelar.Enabled = True
+   cmdCancelar.Enabled = True
    If Left(CmbCGP.Text, 1) = "C" Then
          LLENA_CLI 0, "C"
    End If
    If Left(CmbCGP.Text, 1) = "P" Then
          LLENA_CLI 0, "P"
    End If
-   frmCLI.Txt_key.Locked = True
-   cmdcancelar.Enabled = True
-   frmCLI.CmdModificar.SetFocus
+   frmCLI.txt_key.Locked = True
+   cmdCancelar.Enabled = True
+   frmCLI.cmdModificar.SetFocus
 End If
 dale:
 ListView1.Visible = False
@@ -6110,14 +6123,14 @@ CODI_ERR:
 Exit Sub
 
 buscar:
-var = Mid(Txt_key.Text, 2, Len(Txt_key.Text))
+var = Mid(txt_key.Text, 2, Len(txt_key.Text))
 numarchi = alta_vista_nombre(ListView1, var, Left(CmbCGP.Text, 1))
 If numarchi = 0 Then
   ListView1.Visible = False
   MsgBox "Alta Vista: No Existe .. Esta descripcion..", 48, Pub_Titulo
 Else
   ListView1.Visible = True
-  Txt_key.SetFocus
+  txt_key.SetFocus
 End If
 loc_key = 1
 Exit Sub
@@ -6129,13 +6142,13 @@ End Sub
 Private Sub txt_key_KeyUp(KeyCode As Integer, Shift As Integer)
 Dim NADA
 Dim var
-If Len(Txt_key.Text) = 0 Or IsNumeric(Txt_key.Text) = True Then
+If Len(txt_key.Text) = 0 Or IsNumeric(txt_key.Text) = True Then
    ListView1.Visible = False
    Exit Sub
 End If
-If ListView1.Visible = False And KeyCode <> 13 Or Len(Txt_key.Text) = 1 Then
-    If Txt_key.Text = "" Then Txt_key.Text = " "
-    var = Asc(Txt_key.Text)
+If ListView1.Visible = False And KeyCode <> 13 Or Len(txt_key.Text) = 1 Then
+    If txt_key.Text = "" Then txt_key.Text = " "
+    var = Asc(txt_key.Text)
     var = var + 1
     NADA = var
     If var = 33 Or var = 91 Then
@@ -6145,14 +6158,14 @@ If ListView1.Visible = False And KeyCode <> 13 Or Len(Txt_key.Text) = 1 Then
     End If
     numarchi = 1
     'archi = "SELECT CLI_CODCLIE, CLI_CODCIA, CLI_CP, CLI_NOMBRE,CLI_CASA_DIREC,CLI_ZONA_NEW, CLI_CASA_NUM FROM CLIENTES WHERE  CLI_CP = '" & Left(CmbCGP.Text, 1) & "' AND CLI_CODCIA = '" & LK_CODCIA & "' AND CLI_NOMBRE BETWEEN '" & txt_key.Text & "' AND  '" & VAR & "' ORDER BY CLI_NOMBRE"
-    archi = "SELECT TOP 2000 CLI_CODCLIE , CLI_CODCIA, CLI_CP, CLI_NOMBRE, CLI_CASA_DIREC,CLI_ZONA_NEW, CLI_CASA_NUM, TAB_NOMLARGO  FROM CLIENTES,TABLAS WHERE (TAB_CODCIA = '00') AND (TAB_TIPREG = 35) AND (TAB_NUMTAB = CLI_ZONA_NEW) AND CLI_CP = '" & Left(CmbCGP.Text, 1) & "' AND CLI_CODCIA = '" & LK_CODCIA & "' AND CLI_NOMBRE BETWEEN '" & Txt_key.Text & "' AND  '" & var & "' ORDER BY CLI_NOMBRE"
+    archi = "SELECT TOP 2000 CLI_CODCLIE , CLI_CODCIA, CLI_CP, CLI_NOMBRE, CLI_CASA_DIREC,CLI_ZONA_NEW, CLI_CASA_NUM, TAB_NOMLARGO  FROM CLIENTES,TABLAS WHERE (TAB_CODCIA = '00') AND (TAB_TIPREG = 35) AND (TAB_NUMTAB = CLI_ZONA_NEW) AND CLI_CP = '" & Left(CmbCGP.Text, 1) & "' AND CLI_CODCIA = '" & LK_CODCIA & "' AND CLI_NOMBRE BETWEEN '" & txt_key.Text & "' AND  '" & var & "' ORDER BY CLI_NOMBRE"
     PROC_LISVIEW ListView1
     loc_key = 1
     If NADA = 33 Or NADA = 91 Then
       If ListView1.Visible = False Then
         loc_key = 0
         MsgBox "No existe Datos ...", 48, Pub_Titulo
-        Txt_key.Text = ""
+        txt_key.Text = ""
       End If
     End If
     Exit Sub
@@ -6166,7 +6179,7 @@ If KeyCode = 40 Or KeyCode = 38 Or KeyCode = 34 Or KeyCode = 33 Then
 End If
 Dim itmFound As MSComctlLib.ListItem    ' Variable FoundItem.
 If ListView1.Visible Then
-  Set itmFound = ListView1.FindItem(LTrim(Txt_key.Text), lvwText, , lvwPartial)
+  Set itmFound = ListView1.FindItem(LTrim(txt_key.Text), lvwText, , lvwPartial)
   If itmFound Is Nothing Then
   Else
    itmFound.EnsureVisible
@@ -6222,7 +6235,7 @@ End If
 End Sub
 
 Private Sub Txtdireccion_GotFocus()
-Azul txtdireccion, txtdireccion
+Azul Txtdireccion, Txtdireccion
 
 End Sub
 
@@ -6235,7 +6248,7 @@ End Sub
 Private Sub Txtdireccion_LostFocus()
 'If Left(CmbCGP.Text, 1) = "C" Then
 '  If Trim(txtDirTrabajo.Text) = "" Then
-    txtDirTrabajo.Text = Trim(txtdireccion.Text)
+    txtDirTrabajo.Text = Trim(Txtdireccion.Text)
 '  End If
 'End If
 End Sub
@@ -6332,11 +6345,11 @@ If Trim(TOTCIAS) <> "" And Left(CmbCGP.Text, 1) = "C" Then
        '     MsgBox "No Grabo en la Compañia : " + Mid(TOTCIAS, xcuenta, 2) + " No Existe", 48, Pub_Titulo
        Else
            VAR_CIAS = Mid(TOTCIAS, xcuenta, 2)
-           If Left(CmdModificar.Caption, 2) = "&G" Then
+           If Left(cmdModificar.Caption, 2) = "&G" Then
              If VAR_CIAS = LK_CODCIA Then GoTo pasa
              SQ_OPER = 1
              pu_cp = wCGH
-             pu_codclie = Val(frmCLI.Txt_key.Text)
+             pu_codclie = Val(frmCLI.txt_key.Text)
              pu_codcia = VAR_CIAS
              LEER_CLILOC_LLAVE
              If cliloc_llave.EOF Then
@@ -6359,11 +6372,11 @@ pasa:
     xcuenta = xcuenta + 2
   Next fila
   'ACTUALIZA POR ULTIMO LA CIA ACTUAL PARA MANTENER LA LLAVE ACTIVA
-  If Left(CmdModificar.Caption, 2) = "&G" Then
+  If Left(cmdModificar.Caption, 2) = "&G" Then
     VAR_CIAS = LK_CODCIA
     SQ_OPER = 1
     pu_cp = wCGH
-    pu_codclie = Val(frmCLI.Txt_key.Text)
+    pu_codclie = Val(frmCLI.txt_key.Text)
     pu_codcia = VAR_CIAS
     LEER_CLILOC_LLAVE
     If cliloc_llave.EOF Then
@@ -6380,7 +6393,7 @@ pasa:
 Else
 CIA_ACTUAL:
   VAR_CIAS = LK_CODCIA
-  If Left(CmdModificar.Caption, 2) = "&G" Then
+  If Left(cmdModificar.Caption, 2) = "&G" Then
     cliloc_llave.Edit
     Modo = "E"
   Else
@@ -6399,14 +6412,14 @@ Exit Sub
 grabar:
     If Modo = "A" Then
        cliloc_llave!CLI_CP = wCGH
-       cliloc_llave!cli_codclie = CLng(Val(frmCLI.Txt_key.Text))
+       cliloc_llave!cli_codclie = CLng(Val(frmCLI.txt_key.Text))
        cliloc_llave!cli_SALDO = 0
        cliloc_llave!CLI_DET_TOT = "D"
        cliloc_llave!CLI_MONEDA = "S"
        cliloc_llave!CLI_limcre2 = 0
        cliloc_llave!CLI_CUENTA_CONTAB2 = "1"
        If Left(CmbCGP.Text, 1) = "C" Then
-        loc_ultcod = CLng(Val(frmCLI.Txt_key.Text))
+        loc_ultcod = CLng(Val(frmCLI.txt_key.Text))
        End If
     Else
 '      If Trim(tempo_ruc) <> Trim(txtRUCesposo.Text) Then
@@ -6442,7 +6455,7 @@ grabar:
     cliloc_llave!CLI_NOMBRE_EMPRESA = TxtEmpresa.Text
     ASIGNA_123
     cliloc_llave!cli_nombre = frmCLI.txtnombre.Text
-    cliloc_llave!CLI_CASA_DIREC = txtdireccion.Text
+    cliloc_llave!CLI_CASA_DIREC = Txtdireccion.Text
     cliloc_llave!CLI_CASA_NUM = Val(Txtnumdir.Text)
     cliloc_llave!CLI_CASA_ZONA = Val(Right(TxtZona.Text, 4))
     cliloc_llave!CLI_LUGAR_CASA = Val(Right(TxtLugarCasa.Text, 4))
@@ -6481,7 +6494,7 @@ grabar:
        SQL = "insert into dircli " & _
        "(codcia,codcli,cp,direc,ref,CLI_LUGAR_TRAB, " & _
        "CLI_TRAB_ZONA,CLI_CASA_SUBZONA,CLI_TRAB_SUBZONA,NUMERO,DIRCOMP) " & _
-       "values('" & LK_CODCIA & "','" & Val(frmCLI.Txt_key) & "','" & Trim(Left$(CmbCGP.Text, 1)) & "','" & strDir & "','" & strRef & "','" & _
+       "values('" & LK_CODCIA & "','" & Val(frmCLI.txt_key) & "','" & Trim(Left$(CmbCGP.Text, 1)) & "','" & strDir & "','" & strRef & "','" & _
        Val(Right(frmCLI.TxtLugarTrab, 4)) & "','" & _
        Val(Right(frmCLI.TxtZonaTrabajo.Text, 4)) & "','" & _
        Val(Right(frmCLI.cboProvincia, 4)) & "','" & _
@@ -6551,7 +6564,7 @@ End Sub
 
 Public Sub MENSAJE_CLI(TEXTO As String)
   LblMensaje.Caption = TEXTO
-  PARPADEA.Enabled = True
+  Parpadea.Enabled = True
 End Sub
 Public Function GENERA_PRO() As Double
 Dim NUMCAD, FIJO As String
@@ -6620,8 +6633,8 @@ If cliloc_mayor.EOF Then
     NUMCAD = "1"
     If LK_EMP = "HER" Then
       INTpub_cadena = Val(NUMCAD)
-      If COD_ORIGINAL <> 0 And INTpub_cadena <> Val(Txt_key.Text) Then
-        INTpub_cadena = Val(Txt_key.Text)
+      If COD_ORIGINAL <> 0 And INTpub_cadena <> Val(txt_key.Text) Then
+        INTpub_cadena = Val(txt_key.Text)
         GoTo GEN
       End If
       COD_ORIGINAL = INTpub_cadena
@@ -6632,7 +6645,7 @@ Else
     NUMCAD = cliloc_mayor!cli_codclie
     If LK_EMP = "HER" Then
       INTpub_cadena = Val(NUMCAD) + 1
-      If COD_ORIGINAL <> 0 And INTpub_cadena <> Val(Txt_key.Text) Then
+      If COD_ORIGINAL <> 0 And INTpub_cadena <> Val(txt_key.Text) Then
       '  INTpub_cadena = Val(Txt_key.Text)
       '  GoTo GEN
       End If
@@ -6670,9 +6683,9 @@ GENERA_CODI = INTpub_cadena
 End Function
 Public Function CONSIS_CLI() As Boolean
 Dim wruc As Integer
-If Left(CmdModificar.Caption, 2) = "&G" Then
+If Left(cmdModificar.Caption, 2) = "&G" Then
    If Left(txtestado.Text, 1) = "D" Then
-    pub_cadena = "select  sum(car_importe) as valor from cartera where car_codcia = '" & LK_CODCIA & "' and car_cp = '" & Left(CmbCGP.Text, 1) & "' and car_codclie = " & Val(frmCLI.Txt_key.Text) & " and car_importe <> 0"
+    pub_cadena = "select  sum(car_importe) as valor from cartera where car_codcia = '" & LK_CODCIA & "' and car_cp = '" & Left(CmbCGP.Text, 1) & "' and car_codclie = " & Val(frmCLI.txt_key.Text) & " and car_importe <> 0"
     Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
     If Not X.EOF Then
         If Nulo_Valor0(X!VALOR) <> 0 Then
@@ -6788,7 +6801,7 @@ If frmCLI.txtRUCesposo.Text <> "" Then
  PS_REP01(0) = LK_CODCIA
  PS_REP01(1) = Left(frmCLI.CmbCGP, 1)
  PS_REP01(2) = frmCLI.txtRUCesposo.Text
- PS_REP01(3) = frmCLI.Txt_key.Text
+ PS_REP01(3) = frmCLI.txt_key.Text
  llave_rep01.Requery
  If Not llave_rep01.EOF Then
     MsgBox "RUC Existe en otro Cliente : " + Trim(llave_rep01!cli_nombre), 48, Pub_Titulo
@@ -6901,7 +6914,7 @@ If KeyAscii = 13 Then
  If Left(cmdAgregar.Caption, 2) = "&G" Then
    cmdAgregar.SetFocus
  Else
-   CmdModificar.SetFocus
+   cmdModificar.SetFocus
  End If
 End If
 
@@ -6909,7 +6922,7 @@ End Sub
 
 Private Sub TxtLugarCasa_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
-    frmCLI.txtdireccion.SetFocus
+    frmCLI.Txtdireccion.SetFocus
 End If
 
 End Sub
@@ -7604,8 +7617,8 @@ OTRITO:
   cuenta = cuenta + 1
  Loop
 Loop
-If frmCLI.CmdModificar.Enabled Then
-   frmCLI.CmdModificar.SetFocus
+If frmCLI.cmdModificar.Enabled Then
+   frmCLI.cmdModificar.SetFocus
 Else
    frmCLI.cmdAgregar.SetFocus
 End If

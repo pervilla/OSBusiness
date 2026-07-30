@@ -34,7 +34,7 @@ Begin VB.Form KARDEX
       Height          =   375
       Left            =   10560
       TabIndex        =   40
-      Top             =   2880
+      Top             =   2760
       Width           =   1095
    End
    Begin VB.CheckBox chedes 
@@ -42,9 +42,9 @@ Begin VB.Form KARDEX
       Caption         =   "Incluir Desactivados"
       ForeColor       =   &H00FFFFFF&
       Height          =   525
-      Left            =   10500
+      Left            =   10560
       TabIndex        =   39
-      Top             =   2280
+      Top             =   2160
       Width           =   1275
    End
    Begin VB.TextBox NJ 
@@ -67,10 +67,11 @@ Begin VB.Form KARDEX
    Begin VB.CheckBox Check1 
       BackColor       =   &H00808000&
       Caption         =   "Recalculo de Costos"
+      ForeColor       =   &H8000000E&
       Height          =   375
       Left            =   10560
       TabIndex        =   35
-      Top             =   240
+      Top             =   120
       Visible         =   0   'False
       Width           =   1215
    End
@@ -227,11 +228,11 @@ Begin VB.Form KARDEX
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Height          =   315
+            Height          =   405
             Left            =   120
             MaxLength       =   8
             TabIndex        =   3
-            Top             =   320
+            Top             =   255
             Width           =   1335
          End
          Begin VB.Label Label5 
@@ -568,7 +569,7 @@ Begin VB.Form KARDEX
       EndProperty
       Height          =   750
       Left            =   10560
-      Picture         =   "FRMKARDEX.frx":077F
+      Picture         =   "FRMKARDEX.frx":1129E
       Style           =   1  'Graphical
       TabIndex        =   8
       Top             =   3480
@@ -587,7 +588,7 @@ Begin VB.Form KARDEX
       EndProperty
       Height          =   750
       Left            =   10560
-      Picture         =   "FRMKARDEX.frx":0BC1
+      Picture         =   "FRMKARDEX.frx":2835E
       Style           =   1  'Graphical
       TabIndex        =   9
       Top             =   5160
@@ -2254,9 +2255,9 @@ If ws_tipmov = 0 Then Exit Sub
 frmdocu.Show vbModeless
 
 ' Seleccionar tipo de movimiento en combo tipmov
-For I = 0 To frmdocu.tipmov.ListCount - 1
-   If Val(Trim(Right(frmdocu.tipmov.List(I), 4))) = ws_tipmov Then
-      frmdocu.tipmov.ListIndex = I
+For I = 0 To frmdocu.TIPMOV.ListCount - 1
+   If Val(Trim(Right(frmdocu.TIPMOV.List(I), 4))) = ws_tipmov Then
+      frmdocu.TIPMOV.ListIndex = I
       Exit For
    End If
 Next I
@@ -2278,14 +2279,14 @@ If frmdocu.cmbFBG.ListIndex < 0 And frmdocu.cmbFBG.ListCount > 0 Then
 End If
 
 ' Configurar serie y numero de documento
-frmdocu.txtserie.Text = ws_numser
-frmdocu.txtnumfac.Text = WS_NUMFAC
+frmdocu.txtSerie.Text = ws_numser
+frmdocu.txtNumfac.Text = WS_NUMFAC
 
 ' Simular Enter para ejecutar la busqueda con PostMessage
-frmdocu.txtnumfac.SetFocus
+frmdocu.txtNumfac.SetFocus
 DoEvents
-PostMessage frmdocu.txtnumfac.hwnd, WM_KEYDOWN, VK_RETURN, 0
-PostMessage frmdocu.txtnumfac.hwnd, WM_KEYUP, VK_RETURN, 0
+PostMessage frmdocu.txtNumfac.hwnd, WM_KEYDOWN, VK_RETURN, 0
+PostMessage frmdocu.txtNumfac.hwnd, WM_KEYUP, VK_RETURN, 0
 
 frmdocu.ZOrder 0
 End Sub

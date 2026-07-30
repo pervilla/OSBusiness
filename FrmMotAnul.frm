@@ -2,16 +2,16 @@ VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form FrmMotAnul 
    Caption         =   "Documento :"
-   ClientHeight    =   4260
+   ClientHeight    =   5415
    ClientLeft      =   60
    ClientTop       =   345
-   ClientWidth     =   11025
+   ClientWidth     =   9720
    ControlBox      =   0   'False
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4260
-   ScaleWidth      =   11025
+   ScaleHeight     =   5415
+   ScaleWidth      =   9720
    StartUpPosition =   3  'Windows Default
    Begin VB.CheckBox cheerror 
       Caption         =   "Anular por Error de Impresión y Otros de Documento"
@@ -25,7 +25,7 @@ Begin VB.Form FrmMotAnul
          Strikethrough   =   0   'False
       EndProperty
       Height          =   255
-      Left            =   2040
+      Left            =   1080
       TabIndex        =   9
       Top             =   360
       Width           =   4335
@@ -33,9 +33,9 @@ Begin VB.Form FrmMotAnul
    Begin VB.Frame framotivos 
       Caption         =   "Motivos . "
       Height          =   615
-      Left            =   6600
+      Left            =   5160
       TabIndex        =   3
-      Top             =   960
+      Top             =   1080
       Visible         =   0   'False
       Width           =   4335
       Begin VB.ComboBox cmbmotivo 
@@ -59,27 +59,27 @@ Begin VB.Form FrmMotAnul
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   735
-      Left            =   9960
+      Height          =   975
+      Left            =   120
       Picture         =   "FrmMotAnul.frx":0000
       Style           =   1  'Graphical
       TabIndex        =   2
-      Top             =   2640
-      Width           =   945
+      Top             =   4320
+      Width           =   2385
    End
    Begin VB.Frame Frame1 
       Height          =   3615
       Left            =   120
       TabIndex        =   0
       Top             =   600
-      Width           =   9735
+      Width           =   9495
       Begin MSFlexGridLib.MSFlexGrid gridfac 
          Height          =   3255
          Left            =   120
          TabIndex        =   1
          Top             =   240
-         Width           =   9495
-         _ExtentX        =   16748
+         Width           =   9255
+         _ExtentX        =   16325
          _ExtentY        =   5741
          _Version        =   393216
          BorderStyle     =   0
@@ -91,7 +91,7 @@ Begin VB.Form FrmMotAnul
       Caption         =   "0.00"
       BeginProperty Font 
          Name            =   "Tahoma"
-         Size            =   8.25
+         Size            =   12
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -99,10 +99,10 @@ Begin VB.Form FrmMotAnul
          Strikethrough   =   0   'False
       EndProperty
       Height          =   255
-      Left            =   8280
+      Left            =   7920
       TabIndex        =   8
       Top             =   120
-      Width           =   1455
+      Width           =   1695
    End
    Begin VB.Label Label1 
       Caption         =   "Monto : "

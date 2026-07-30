@@ -5,7 +5,7 @@ Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Begin VB.Form frmDocu 
    Caption         =   "Consulta de Operaciones"
-   ClientHeight    =   7080
+   ClientHeight    =   7545
    ClientLeft      =   60
    ClientTop       =   345
    ClientWidth     =   11970
@@ -13,14 +13,14 @@ Begin VB.Form frmDocu
    ForeColor       =   &H00404000&
    LinkTopic       =   "Form2"
    MDIChild        =   -1  'True
-   ScaleHeight     =   7080
+   ScaleHeight     =   7545
    ScaleWidth      =   11970
    WindowState     =   2  'Maximized
    Begin VB.Frame Fracruze 
       Caption         =   "Cruze de Documento(Solo Ventas):"
       Height          =   2175
       Left            =   4560
-      TabIndex        =   114
+      TabIndex        =   112
       Top             =   3240
       Visible         =   0   'False
       Width           =   4695
@@ -28,7 +28,7 @@ Begin VB.Form frmDocu
          Caption         =   "Escapar"
          Height          =   330
          Left            =   1080
-         TabIndex        =   125
+         TabIndex        =   123
          Top             =   1680
          Width           =   2085
       End
@@ -38,29 +38,29 @@ Begin VB.Form frmDocu
          Left            =   3600
          Picture         =   "FrmDocu.frx":0000
          Style           =   1  'Graphical
-         TabIndex        =   124
+         TabIndex        =   122
          Top             =   360
          Width           =   975
       End
       Begin VB.ComboBox cFB2 
          ForeColor       =   &H00404000&
          Height          =   315
-         ItemData        =   "FrmDocu.frx":0442
+         ItemData        =   "FrmDocu.frx":E0BE
          Left            =   960
-         List            =   "FrmDocu.frx":044F
+         List            =   "FrmDocu.frx":E0CB
          Style           =   2  'Dropdown List
-         TabIndex        =   123
+         TabIndex        =   121
          Top             =   1320
          Width           =   510
       End
       Begin VB.ComboBox cFB1 
          ForeColor       =   &H00404000&
          Height          =   315
-         ItemData        =   "FrmDocu.frx":045C
+         ItemData        =   "FrmDocu.frx":E0D8
          Left            =   960
-         List            =   "FrmDocu.frx":0469
+         List            =   "FrmDocu.frx":E0E5
          Style           =   2  'Dropdown List
-         TabIndex        =   122
+         TabIndex        =   120
          Top             =   840
          Width           =   510
       End
@@ -68,7 +68,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00404000&
          Height          =   285
          Left            =   2160
-         TabIndex        =   121
+         TabIndex        =   119
          Text            =   "0"
          Top             =   1320
          Width           =   975
@@ -77,7 +77,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00404000&
          Height          =   285
          Left            =   2160
-         TabIndex        =   120
+         TabIndex        =   118
          Text            =   "0"
          Top             =   840
          Width           =   975
@@ -86,7 +86,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00404000&
          Height          =   285
          Left            =   1560
-         TabIndex        =   119
+         TabIndex        =   117
          Text            =   "0"
          Top             =   1320
          Width           =   495
@@ -95,7 +95,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00404000&
          Height          =   285
          Left            =   1560
-         TabIndex        =   118
+         TabIndex        =   116
          Text            =   "0"
          Top             =   840
          Width           =   495
@@ -103,7 +103,7 @@ Begin VB.Form frmDocu
       Begin MSMask.MaskEdBox tfcruze 
          Height          =   285
          Left            =   960
-         TabIndex        =   126
+         TabIndex        =   124
          Top             =   480
          Width           =   1335
          _ExtentX        =   2355
@@ -139,7 +139,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   3
          Left            =   120
-         TabIndex        =   127
+         TabIndex        =   125
          Top             =   480
          Width           =   855
       End
@@ -200,7 +200,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   2
          Left            =   120
-         TabIndex        =   117
+         TabIndex        =   115
          Top             =   1320
          Width           =   855
       End
@@ -219,7 +219,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   1
          Left            =   120
-         TabIndex        =   116
+         TabIndex        =   114
          Top             =   840
          Width           =   855
       End
@@ -238,7 +238,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   0
          Left            =   120
-         TabIndex        =   115
+         TabIndex        =   113
          Top             =   240
          Width           =   2295
       End
@@ -248,14 +248,14 @@ Begin VB.Form frmDocu
       Caption         =   "Forzar Guia R."
       Height          =   495
       Left            =   10560
-      TabIndex        =   109
+      TabIndex        =   107
       Top             =   3120
       Width           =   1215
    End
    Begin VB.CommandButton DOCANEXO 
       Height          =   555
       Left            =   10590
-      TabIndex        =   100
+      TabIndex        =   98
       Top             =   1470
       Width           =   1155
    End
@@ -273,7 +273,7 @@ Begin VB.Form frmDocu
       ForeColor       =   &H00404040&
       Height          =   1380
       Left            =   3570
-      TabIndex        =   88
+      TabIndex        =   86
       Top             =   5655
       Visible         =   0   'False
       Width           =   5745
@@ -281,7 +281,7 @@ Begin VB.Form frmDocu
          Caption         =   "Escapar"
          Height          =   330
          Left            =   4260
-         TabIndex        =   98
+         TabIndex        =   96
          Top             =   750
          Width           =   1365
       End
@@ -289,7 +289,7 @@ Begin VB.Form frmDocu
          Caption         =   "Cambiar"
          Height          =   330
          Left            =   4260
-         TabIndex        =   97
+         TabIndex        =   95
          Top             =   300
          Width           =   1350
       End
@@ -297,7 +297,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00000080&
          Height          =   300
          Left            =   3225
-         TabIndex        =   96
+         TabIndex        =   94
          Text            =   "000000"
          Top             =   780
          Width           =   840
@@ -306,7 +306,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00000080&
          Height          =   300
          Left            =   1605
-         TabIndex        =   94
+         TabIndex        =   92
          Text            =   "000000"
          Top             =   795
          Width           =   795
@@ -315,7 +315,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00000080&
          Height          =   300
          Left            =   2985
-         TabIndex        =   92
+         TabIndex        =   90
          Text            =   "000"
          Top             =   300
          Width           =   540
@@ -323,11 +323,11 @@ Begin VB.Form frmDocu
       Begin VB.ComboBox fbg 
          ForeColor       =   &H00000080&
          Height          =   315
-         ItemData        =   "FrmDocu.frx":0476
+         ItemData        =   "FrmDocu.frx":E0F2
          Left            =   1095
-         List            =   "FrmDocu.frx":048C
+         List            =   "FrmDocu.frx":E108
          Style           =   2  'Dropdown List
-         TabIndex        =   89
+         TabIndex        =   87
          Top             =   285
          Width           =   1140
       End
@@ -337,7 +337,7 @@ Begin VB.Form frmDocu
          Height          =   225
          Index           =   3
          Left            =   2415
-         TabIndex        =   95
+         TabIndex        =   93
          Top             =   825
          Width           =   945
       End
@@ -347,7 +347,7 @@ Begin VB.Form frmDocu
          Height          =   225
          Index           =   2
          Left            =   135
-         TabIndex        =   93
+         TabIndex        =   91
          Top             =   795
          Width           =   1410
       End
@@ -357,7 +357,7 @@ Begin VB.Form frmDocu
          Height          =   225
          Index           =   1
          Left            =   2400
-         TabIndex        =   91
+         TabIndex        =   89
          Top             =   315
          Width           =   540
       End
@@ -367,7 +367,7 @@ Begin VB.Form frmDocu
          Height          =   225
          Index           =   0
          Left            =   315
-         TabIndex        =   90
+         TabIndex        =   88
          Top             =   330
          Width           =   675
       End
@@ -376,7 +376,7 @@ Begin VB.Form frmDocu
       Caption         =   "Direccion de Entrega de Mercaderia :"
       Height          =   735
       Left            =   1080
-      TabIndex        =   80
+      TabIndex        =   78
       Top             =   2760
       Visible         =   0   'False
       Width           =   8055
@@ -394,7 +394,7 @@ Begin VB.Form frmDocu
          Left            =   3960
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   84
+         TabIndex        =   82
          Top             =   360
          WhatsThisHelpID =   5
          Width           =   1935
@@ -413,7 +413,7 @@ Begin VB.Form frmDocu
          Left            =   6000
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   83
+         TabIndex        =   81
          Top             =   360
          WhatsThisHelpID =   6
          Width           =   1935
@@ -422,7 +422,7 @@ Begin VB.Form frmDocu
          Height          =   285
          Left            =   3240
          MaxLength       =   4
-         TabIndex        =   82
+         TabIndex        =   80
          Top             =   360
          Width           =   615
       End
@@ -430,7 +430,7 @@ Begin VB.Form frmDocu
          Height          =   285
          Left            =   240
          MaxLength       =   30
-         TabIndex        =   81
+         TabIndex        =   79
          Top             =   360
          Width           =   3015
       End
@@ -450,7 +450,7 @@ Begin VB.Form frmDocu
       ForeColor       =   &H00FFFFFF&
       Height          =   435
       Left            =   10560
-      TabIndex        =   79
+      TabIndex        =   77
       Top             =   3720
       Width           =   1215
    End
@@ -458,9 +458,9 @@ Begin VB.Form frmDocu
       Caption         =   "Ce&rrar"
       Height          =   750
       Left            =   10560
-      Picture         =   "FrmDocu.frx":04DF
+      Picture         =   "FrmDocu.frx":E15B
       Style           =   1  'Graphical
-      TabIndex        =   78
+      TabIndex        =   76
       Top             =   5160
       Width           =   1215
    End
@@ -477,9 +477,9 @@ Begin VB.Form frmDocu
       EndProperty
       Height          =   750
       Left            =   10560
-      Picture         =   "FrmDocu.frx":0629
+      Picture         =   "FrmDocu.frx":569E5
       Style           =   1  'Graphical
-      TabIndex        =   77
+      TabIndex        =   75
       Top             =   4320
       Width           =   1215
    End
@@ -497,14 +497,14 @@ Begin VB.Form frmDocu
       ForeColor       =   &H00808000&
       Height          =   6495
       Left            =   0
-      TabIndex        =   7
-      Top             =   600
+      TabIndex        =   6
+      Top             =   840
       Width           =   10335
       Begin VB.CommandButton CmdcruZe 
          Caption         =   "Cruzar Docum."
          Height          =   495
          Left            =   9240
-         TabIndex        =   128
+         TabIndex        =   126
          Top             =   4800
          Width           =   975
       End
@@ -521,7 +521,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   315
          Left            =   6720
-         TabIndex        =   99
+         TabIndex        =   97
          Top             =   1200
          Width           =   1095
       End
@@ -529,14 +529,14 @@ Begin VB.Form frmDocu
          Caption         =   "Cambiar Orden N. Documen."
          Height          =   750
          Left            =   9225
-         TabIndex        =   87
+         TabIndex        =   85
          Top             =   5640
          Width           =   960
       End
       Begin VB.TextBox NUMERO 
          Height          =   285
          Left            =   4560
-         TabIndex        =   73
+         TabIndex        =   71
          Top             =   5760
          Visible         =   0   'False
          Width           =   495
@@ -554,14 +554,14 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   315
          Left            =   6720
-         TabIndex        =   71
+         TabIndex        =   69
          Top             =   1440
          Width           =   1215
       End
       Begin VB.TextBox FECHA_PART 
          Height          =   285
          Left            =   9120
-         TabIndex        =   69
+         TabIndex        =   67
          Top             =   4440
          Visible         =   0   'False
          Width           =   1215
@@ -572,14 +572,14 @@ Begin VB.Form frmDocu
          Height          =   315
          Left            =   120
          Style           =   2  'Dropdown List
-         TabIndex        =   68
+         TabIndex        =   66
          Top             =   5760
          Width           =   4335
       End
       Begin MSFlexGridLib.MSFlexGrid grid_fac2 
          Height          =   2535
          Left            =   150
-         TabIndex        =   6
+         TabIndex        =   5
          Top             =   2160
          Width           =   8895
          _ExtentX        =   15690
@@ -595,7 +595,7 @@ Begin VB.Form frmDocu
       Begin VB.TextBox tguia 
          Height          =   285
          Left            =   9120
-         TabIndex        =   62
+         TabIndex        =   61
          Top             =   3720
          Visible         =   0   'False
          Width           =   1215
@@ -604,7 +604,7 @@ Begin VB.Form frmDocu
          Caption         =   "Guia Rem."
          Height          =   255
          Left            =   9120
-         TabIndex        =   61
+         TabIndex        =   60
          Top             =   3465
          Visible         =   0   'False
          Width           =   1095
@@ -612,7 +612,7 @@ Begin VB.Form frmDocu
       Begin VB.Frame Frame3 
          Height          =   735
          Left            =   120
-         TabIndex        =   15
+         TabIndex        =   14
          Tag             =   "119"
          Top             =   4680
          Width           =   9015
@@ -623,7 +623,7 @@ Begin VB.Form frmDocu
             ForeColor       =   &H00C00000&
             Height          =   285
             Left            =   8160
-            TabIndex        =   113
+            TabIndex        =   111
             Top             =   360
             Width           =   735
          End
@@ -642,7 +642,7 @@ Begin VB.Form frmDocu
             Height          =   255
             Index           =   1
             Left            =   8280
-            TabIndex        =   112
+            TabIndex        =   110
             Top             =   120
             Width           =   615
          End
@@ -653,7 +653,7 @@ Begin VB.Form frmDocu
             ForeColor       =   &H00C00000&
             Height          =   285
             Left            =   6240
-            TabIndex        =   111
+            TabIndex        =   109
             Top             =   360
             Width           =   735
          End
@@ -672,7 +672,7 @@ Begin VB.Form frmDocu
             Height          =   255
             Index           =   0
             Left            =   6360
-            TabIndex        =   110
+            TabIndex        =   108
             Top             =   120
             Width           =   615
          End
@@ -682,7 +682,7 @@ Begin VB.Form frmDocu
             BorderStyle     =   1  'Fixed Single
             Height          =   285
             Left            =   5160
-            TabIndex        =   102
+            TabIndex        =   100
             Top             =   360
             Width           =   1005
          End
@@ -701,7 +701,7 @@ Begin VB.Form frmDocu
             Height          =   255
             Index           =   0
             Left            =   5160
-            TabIndex        =   103
+            TabIndex        =   101
             Tag             =   "9999"
             Top             =   120
             Width           =   1005
@@ -712,7 +712,7 @@ Begin VB.Form frmDocu
             BorderStyle     =   1  'Fixed Single
             Height          =   285
             Left            =   4080
-            TabIndex        =   35
+            TabIndex        =   34
             ToolTipText     =   "Doble Click para modificar..."
             Top             =   360
             Width           =   1005
@@ -723,7 +723,7 @@ Begin VB.Form frmDocu
             BorderStyle     =   1  'Fixed Single
             Height          =   285
             Left            =   7080
-            TabIndex        =   34
+            TabIndex        =   33
             Top             =   360
             Width           =   1005
          End
@@ -733,7 +733,7 @@ Begin VB.Form frmDocu
             BorderStyle     =   1  'Fixed Single
             Height          =   285
             Left            =   2040
-            TabIndex        =   33
+            TabIndex        =   32
             Top             =   360
             Width           =   765
          End
@@ -743,7 +743,7 @@ Begin VB.Form frmDocu
             BorderStyle     =   1  'Fixed Single
             Height          =   285
             Left            =   3000
-            TabIndex        =   32
+            TabIndex        =   31
             Top             =   360
             Width           =   1005
          End
@@ -753,7 +753,7 @@ Begin VB.Form frmDocu
             BorderStyle     =   1  'Fixed Single
             Height          =   285
             Left            =   1200
-            TabIndex        =   31
+            TabIndex        =   30
             Top             =   360
             Width           =   765
          End
@@ -763,7 +763,7 @@ Begin VB.Form frmDocu
             BorderStyle     =   1  'Fixed Single
             Height          =   285
             Left            =   120
-            TabIndex        =   30
+            TabIndex        =   29
             Top             =   360
             Width           =   1005
          End
@@ -771,7 +771,7 @@ Begin VB.Form frmDocu
             Alignment       =   2  'Center
             Height          =   255
             Left            =   4080
-            TabIndex        =   21
+            TabIndex        =   20
             Tag             =   "9999"
             Top             =   120
             Width           =   1005
@@ -791,7 +791,7 @@ Begin VB.Form frmDocu
             Height          =   255
             Index           =   2
             Left            =   7320
-            TabIndex        =   20
+            TabIndex        =   19
             Tag             =   "9999"
             Top             =   120
             Width           =   765
@@ -811,7 +811,7 @@ Begin VB.Form frmDocu
             Height          =   255
             Index           =   4
             Left            =   3120
-            TabIndex        =   19
+            TabIndex        =   18
             Tag             =   "9999"
             Top             =   120
             Width           =   525
@@ -831,7 +831,7 @@ Begin VB.Form frmDocu
             Height          =   255
             Index           =   5
             Left            =   2040
-            TabIndex        =   18
+            TabIndex        =   17
             Tag             =   "9999"
             Top             =   120
             Width           =   1005
@@ -851,7 +851,7 @@ Begin VB.Form frmDocu
             Height          =   255
             Index           =   6
             Left            =   1200
-            TabIndex        =   17
+            TabIndex        =   16
             Tag             =   "9999"
             Top             =   120
             Width           =   765
@@ -871,7 +871,7 @@ Begin VB.Form frmDocu
             Height          =   255
             Index           =   7
             Left            =   240
-            TabIndex        =   16
+            TabIndex        =   15
             Tag             =   "9999"
             Top             =   120
             Width           =   765
@@ -891,7 +891,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   120
-         TabIndex        =   63
+         TabIndex        =   62
          Top             =   5520
          Visible         =   0   'False
          Width           =   4215
@@ -899,7 +899,7 @@ Begin VB.Form frmDocu
       Begin MSComctlLib.ProgressBar PB 
          Height          =   165
          Left            =   3720
-         TabIndex        =   36
+         TabIndex        =   35
          Top             =   360
          Visible         =   0   'False
          Width           =   2895
@@ -913,7 +913,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00800000&
          Height          =   495
          Left            =   7920
-         TabIndex        =   107
+         TabIndex        =   105
          Top             =   1200
          Visible         =   0   'False
          Width           =   2175
@@ -932,7 +932,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00000080&
          Height          =   255
          Left            =   3480
-         TabIndex        =   37
+         TabIndex        =   36
          Top             =   600
          Visible         =   0   'False
          Width           =   3015
@@ -951,7 +951,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   255
          Left            =   2640
-         TabIndex        =   106
+         TabIndex        =   104
          Top             =   285
          Width           =   1140
       End
@@ -970,7 +970,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   195
          Left            =   2880
-         TabIndex        =   105
+         TabIndex        =   103
          Top             =   840
          Width           =   1080
       End
@@ -988,7 +988,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   270
          Left            =   4080
-         TabIndex        =   104
+         TabIndex        =   102
          Top             =   870
          Width           =   1185
       End
@@ -1006,7 +1006,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   6585
-         TabIndex        =   86
+         TabIndex        =   84
          Top             =   450
          Width           =   975
       End
@@ -1025,7 +1025,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   285
          Left            =   7575
-         TabIndex        =   85
+         TabIndex        =   83
          Top             =   465
          Width           =   1860
       End
@@ -1034,7 +1034,7 @@ Begin VB.Form frmDocu
          Caption         =   "Fec. Contable :"
          Height          =   255
          Left            =   120
-         TabIndex        =   74
+         TabIndex        =   72
          Top             =   840
          Width           =   2655
       End
@@ -1053,7 +1053,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H80000008&
          Height          =   315
          Left            =   7440
-         TabIndex        =   72
+         TabIndex        =   70
          Top             =   840
          Width           =   2775
       End
@@ -1062,7 +1062,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   2
          Left            =   9120
-         TabIndex        =   70
+         TabIndex        =   68
          Top             =   4200
          Width           =   1095
       End
@@ -1082,7 +1082,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H80000008&
          Height          =   285
          Left            =   9480
-         TabIndex        =   14
+         TabIndex        =   13
          Top             =   2040
          Width           =   375
       End
@@ -1102,7 +1102,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H80000008&
          Height          =   285
          Left            =   9120
-         TabIndex        =   40
+         TabIndex        =   39
          Top             =   3045
          Width           =   1125
       End
@@ -1111,7 +1111,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   3
          Left            =   9360
-         TabIndex        =   24
+         TabIndex        =   23
          Top             =   1800
          Width           =   855
       End
@@ -1130,7 +1130,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   285
          Left            =   6960
-         TabIndex        =   26
+         TabIndex        =   25
          Top             =   825
          Width           =   405
       End
@@ -1148,7 +1148,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   270
          Left            =   1440
-         TabIndex        =   64
+         TabIndex        =   63
          Top             =   555
          Width           =   1185
       End
@@ -1167,7 +1167,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   270
          Left            =   1440
-         TabIndex        =   28
+         TabIndex        =   27
          Top             =   240
          Width           =   1155
       End
@@ -1186,7 +1186,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   195
          Left            =   120
-         TabIndex        =   65
+         TabIndex        =   64
          Top             =   525
          Width           =   1215
       End
@@ -1205,7 +1205,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H80000008&
          Height          =   375
          Left            =   6600
-         TabIndex        =   49
+         TabIndex        =   48
          Top             =   5760
          Width           =   375
       End
@@ -1213,7 +1213,7 @@ Begin VB.Form frmDocu
          BorderStyle     =   1  'Fixed Single
          Height          =   315
          Left            =   5520
-         TabIndex        =   50
+         TabIndex        =   49
          Top             =   1800
          Width           =   3495
       End
@@ -1232,7 +1232,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   225
          Left            =   1080
-         TabIndex        =   42
+         TabIndex        =   41
          Top             =   1920
          Width           =   4380
          WordWrap        =   -1  'True
@@ -1252,7 +1252,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   255
          Left            =   4200
-         TabIndex        =   58
+         TabIndex        =   57
          Top             =   120
          Width           =   1575
       End
@@ -1270,7 +1270,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   120
-         TabIndex        =   44
+         TabIndex        =   43
          Top             =   1920
          Width           =   1335
       End
@@ -1288,7 +1288,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   225
          Left            =   5520
-         TabIndex        =   51
+         TabIndex        =   50
          Top             =   1560
          Width           =   1095
       End
@@ -1306,7 +1306,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   120
-         TabIndex        =   57
+         TabIndex        =   56
          Top             =   1680
          Width           =   975
       End
@@ -1326,7 +1326,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00FFFFFF&
          Height          =   195
          Left            =   1080
-         TabIndex        =   56
+         TabIndex        =   55
          Top             =   1680
          Width           =   5220
          WordWrap        =   -1  'True
@@ -1346,7 +1346,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00FF0000&
          Height          =   285
          Left            =   240
-         TabIndex        =   55
+         TabIndex        =   54
          Tag             =   "9999"
          Top             =   5640
          Visible         =   0   'False
@@ -1365,7 +1365,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   255
          Left            =   240
-         TabIndex        =   54
+         TabIndex        =   53
          Tag             =   "9999"
          Top             =   5520
          Visible         =   0   'False
@@ -1384,7 +1384,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   375
          Left            =   5160
-         TabIndex        =   38
+         TabIndex        =   37
          Tag             =   "9999"
          Top             =   5760
          Width           =   1275
@@ -1402,7 +1402,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   255
          Left            =   2280
-         TabIndex        =   53
+         TabIndex        =   52
          Tag             =   "9999"
          Top             =   5520
          Visible         =   0   'False
@@ -1423,7 +1423,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00FF0000&
          Height          =   285
          Left            =   2280
-         TabIndex        =   52
+         TabIndex        =   51
          Tag             =   "9999"
          Top             =   5640
          Visible         =   0   'False
@@ -1445,7 +1445,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00FFFFFF&
          Height          =   240
          Left            =   5640
-         TabIndex        =   46
+         TabIndex        =   45
          Top             =   1080
          Width           =   1215
          WordWrap        =   -1  'True
@@ -1463,7 +1463,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   255
          Left            =   5040
-         TabIndex        =   45
+         TabIndex        =   44
          Top             =   600
          Width           =   495
       End
@@ -1473,7 +1473,7 @@ Begin VB.Form frmDocu
          Height          =   195
          Index           =   1
          Left            =   9120
-         TabIndex        =   41
+         TabIndex        =   40
          Top             =   2805
          Width           =   900
       End
@@ -1493,7 +1493,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00FF0000&
          Height          =   330
          Left            =   7080
-         TabIndex        =   39
+         TabIndex        =   38
          Tag             =   "9999"
          Top             =   5760
          Width           =   1485
@@ -1512,7 +1512,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   6525
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   135
          Width           =   1020
       End
@@ -1532,7 +1532,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H80000008&
          Height          =   285
          Left            =   9120
-         TabIndex        =   22
+         TabIndex        =   21
          Top             =   2520
          Width           =   1125
       End
@@ -1551,7 +1551,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   285
          Left            =   7560
-         TabIndex        =   13
+         TabIndex        =   12
          Top             =   135
          Width           =   2565
       End
@@ -1570,7 +1570,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H80000008&
          Height          =   405
          Left            =   1200
-         TabIndex        =   12
+         TabIndex        =   11
          Top             =   1320
          Width           =   4575
       End
@@ -1579,7 +1579,7 @@ Begin VB.Form frmDocu
          BorderStyle     =   1  'Fixed Single
          Height          =   285
          Left            =   120
-         TabIndex        =   11
+         TabIndex        =   10
          Top             =   1320
          Width           =   1005
       End
@@ -1597,7 +1597,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   120
-         TabIndex        =   23
+         TabIndex        =   22
          Top             =   1080
          Width           =   1215
       End
@@ -1606,7 +1606,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   5
          Left            =   9120
-         TabIndex        =   25
+         TabIndex        =   24
          Top             =   2280
          Width           =   1095
       End
@@ -1625,7 +1625,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   7
          Left            =   120
-         TabIndex        =   29
+         TabIndex        =   28
          Top             =   240
          Width           =   1335
       End
@@ -1644,7 +1644,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00FFFFFF&
          Height          =   255
          Left            =   3480
-         TabIndex        =   47
+         TabIndex        =   46
          Top             =   600
          Visible         =   0   'False
          Width           =   3255
@@ -1665,43 +1665,62 @@ Begin VB.Form frmDocu
       EndProperty
       Height          =   285
       Left            =   6210
-      TabIndex        =   60
+      TabIndex        =   59
       Text            =   "S/."
       Top             =   4920
       Width           =   495
    End
    Begin VB.Frame Frame2 
-      Height          =   735
+      Height          =   975
       Left            =   0
-      TabIndex        =   8
+      TabIndex        =   7
       Top             =   -120
       Width           =   10335
+      Begin VB.TextBox txtSerie 
+         BackColor       =   &H00E0E0E0&
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00404040&
+         Height          =   405
+         Left            =   6000
+         MaxLength       =   3
+         TabIndex        =   128
+         Top             =   360
+         Width           =   735
+      End
       Begin VB.TextBox txtvend 
          BackColor       =   &H00E0E0E0&
-         Height          =   300
+         Height          =   285
          Left            =   3045
-         TabIndex        =   66
+         TabIndex        =   127
          Top             =   360
          Visible         =   0   'False
          Width           =   495
       End
       Begin VB.CommandButton cmdSiguiente 
          Caption         =   "&Sig"
-         Height          =   495
+         Height          =   735
          Left            =   9240
-         Picture         =   "FrmDocu.frx":0933
+         Picture         =   "FrmDocu.frx":6780E
          Style           =   1  'Graphical
-         TabIndex        =   5
+         TabIndex        =   4
          Top             =   200
          Width           =   735
       End
       Begin VB.CommandButton CmdAnterior 
          Caption         =   "&Ant."
-         Height          =   495
+         Height          =   735
          Left            =   8400
-         Picture         =   "FrmDocu.frx":0D75
+         Picture         =   "FrmDocu.frx":6B218
          Style           =   1  'Graphical
-         TabIndex        =   4
+         TabIndex        =   3
          Top             =   200
          Width           =   735
       End
@@ -1723,13 +1742,13 @@ Begin VB.Form frmDocu
          Style           =   2  'Dropdown List
          TabIndex        =   0
          TabStop         =   0   'False
-         Top             =   360
+         Top             =   345
          Width           =   2655
       End
       Begin VB.TextBox txtNumfac 
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
-            Name            =   "Arial"
+            Name            =   "MS Sans Serif"
             Size            =   12
             Charset         =   0
             Weight          =   700
@@ -1738,10 +1757,10 @@ Begin VB.Form frmDocu
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00404040&
-         Height          =   285
+         Height          =   405
          Left            =   6840
          MaxLength       =   9
-         TabIndex        =   3
+         TabIndex        =   2
          Top             =   360
          Width           =   1335
       End
@@ -1761,27 +1780,8 @@ Begin VB.Form frmDocu
          Left            =   3720
          Style           =   2  'Dropdown List
          TabIndex        =   1
-         Top             =   360
+         Top             =   345
          Width           =   2055
-      End
-      Begin VB.TextBox txtSerie 
-         BackColor       =   &H00E0E0E0&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00404040&
-         Height          =   285
-         Left            =   6270
-         MaxLength       =   3
-         TabIndex        =   2
-         Top             =   360
-         Width           =   495
       End
       Begin VB.Label lblvend 
          Caption         =   "Vend."
@@ -1797,7 +1797,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   3000
-         TabIndex        =   67
+         TabIndex        =   65
          Top             =   120
          Visible         =   0   'False
          Width           =   615
@@ -1814,20 +1814,20 @@ Begin VB.Form frmDocu
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H00000080&
+         ForeColor       =   &H00C0C0FF&
          Height          =   255
          Left            =   6240
-         TabIndex        =   10
+         TabIndex        =   9
          Top             =   120
          Width           =   2175
       End
       Begin VB.Label Label2 
          BackColor       =   &H00000080&
-         Height          =   375
-         Left            =   6120
-         TabIndex        =   59
-         Top             =   360
-         Width           =   2175
+         Height          =   855
+         Left            =   5880
+         TabIndex        =   58
+         Top             =   120
+         Width           =   2415
       End
       Begin VB.Label lbldocu 
          Alignment       =   2  'Center
@@ -1845,7 +1845,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   6
          Left            =   120
-         TabIndex        =   48
+         TabIndex        =   47
          Top             =   120
          Width           =   2655
       End
@@ -1865,7 +1865,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   0
          Left            =   3720
-         TabIndex        =   9
+         TabIndex        =   8
          Top             =   120
          Width           =   1935
       End
@@ -1896,7 +1896,7 @@ Begin VB.Form frmDocu
       ForeColor       =   &H00C00000&
       Height          =   255
       Left            =   10560
-      TabIndex        =   108
+      TabIndex        =   106
       Top             =   1080
       Width           =   1215
    End
@@ -1905,7 +1905,7 @@ Begin VB.Form frmDocu
       ForeColor       =   &H00FFFFFF&
       Height          =   675
       Left            =   10500
-      TabIndex        =   101
+      TabIndex        =   99
       Top             =   1410
       Visible         =   0   'False
       Width           =   1305
@@ -1927,17 +1927,17 @@ Begin VB.Form frmDocu
       ForeColor       =   &H00E0E0E0&
       Height          =   255
       Left            =   10440
-      TabIndex        =   75
+      TabIndex        =   73
       Top             =   6120
       Width           =   1335
    End
    Begin VB.Label Label3 
       BackColor       =   &H00808000&
       BorderStyle     =   1  'Fixed Single
-      Height          =   7095
+      Height          =   7335
       Index           =   5
       Left            =   10440
-      TabIndex        =   76
+      TabIndex        =   74
       Top             =   0
       Width           =   1455
    End
@@ -1945,7 +1945,7 @@ Begin VB.Form frmDocu
       Caption         =   "Cliente"
       Height          =   255
       Left            =   0
-      TabIndex        =   43
+      TabIndex        =   42
       Top             =   0
       Width           =   1335
    End
@@ -2045,8 +2045,8 @@ End If
 'End If
 If LOC_TIPMOV <> 3 Then pu_cp = " "
 If Left(cmbFBG.Text, 1) = "P" And PUB_TIPMOV <> 10 Then
- txtnumfac.Text = Nulo_Valor0(par_llave!par_planilla)
- txtnumfac.SetFocus
+ txtNumfac.Text = Nulo_Valor0(par_llave!par_planilla)
+ txtNumfac.SetFocus
  txtnumfac_KeyPress 13
  Exit Sub
 End If
@@ -2070,9 +2070,9 @@ If LOC_TIPMOV = 30 Then
     wnumfac = Nulo_Valor0(temp_mayor!PED_NUMFAC)
  End If
  pu_cp = "P"
- txtserie.Text = wser
- txtnumfac.Text = wnumfac
- txtnumfac.SetFocus
+ txtSerie.Text = wser
+ txtNumfac.Text = wnumfac
+ txtNumfac.SetFocus
  txtnumfac_KeyPress 13
  Exit Sub
 End If
@@ -2081,46 +2081,46 @@ If LK_FLAG_FACTURACION = "V" Then
    If ven_llave.EOF Then GoTo dale
    Select Case Left(cmbFBG.Text, 1)
    Case "G"
-       txtserie.Text = ven_llave!VEM_SERIE_G
+       txtSerie.Text = ven_llave!VEM_SERIE_G
    Case "B"
-       txtserie.Text = ven_llave!vem_serie_b
+       txtSerie.Text = ven_llave!vem_serie_b
    Case "F"
-       txtserie.Text = ven_llave!vem_serie_f
+       txtSerie.Text = ven_llave!vem_serie_f
    Case "P"
-       txtserie.Text = ven_llave!VEM_SERIE_P
+       txtSerie.Text = ven_llave!VEM_SERIE_P
    End Select
 dale:
 ElseIf LK_FLAG_FACTURACION = "A" And LOC_TIPMOV <> 93 Then
  If Left(cmbFBG.Text, 1) = "F" Then
-  txtserie.Text = par_llave!PAR_F_SERIE
+  txtSerie.Text = par_llave!PAR_F_SERIE
  ElseIf Left(cmbFBG.Text, 1) = "B" Then
-  txtserie.Text = par_llave!PAR_B_SERIE
+  txtSerie.Text = par_llave!PAR_B_SERIE
  ElseIf Left(cmbFBG.Text, 1) = "G" Then
-  txtserie.Text = par_llave!PAR_G_SERIE
+  txtSerie.Text = par_llave!PAR_G_SERIE
  ElseIf Left(cmbFBG.Text, 1) = "N" Then
-  txtserie.Text = par_llave!PAR_SERIE_NCRE
+  txtSerie.Text = par_llave!PAR_SERIE_NCRE
  ElseIf Left(cmbFBG.Text, 1) = "D" Then
-  txtserie.Text = par_llave!PAR_SERIE_NDEB
+  txtSerie.Text = par_llave!PAR_SERIE_NDEB
  End If
 ElseIf LK_FLAG_FACTURACION = "U" Then
    If Left(cmbFBG.Text, 1) = "F" Then
-     txtserie.Text = usu_llave!USU_SERIE_F
+     txtSerie.Text = usu_llave!USU_SERIE_F
    ElseIf Left(cmbFBG.Text, 1) = "B" Then
-     txtserie.Text = usu_llave!USU_SERIE_B
+     txtSerie.Text = usu_llave!USU_SERIE_B
    End If
 End If
 If LOC_TIPMOV = 10 Then
  pu_cp = "C"
  PU_TIPMOV = 10
- PU_NUMSER = Val(txtserie.Text)
+ PU_NUMSER = Val(txtSerie.Text)
  PU_FBG = Left(cmbFBG.Text, 1)
 ElseIf LOC_TIPMOV = 97 Or LOC_TIPMOV = 98 Then
  PU_TIPMOV = LOC_TIPMOV
- PU_NUMSER = Val(txtserie.Text)
+ PU_NUMSER = Val(txtSerie.Text)
  PU_FBG = Left(cmbFBG.Text, 1)
  pu_cp = "C"
  If Right(Trim(cmbFBG.Text), 1) = "P" Then
-   txtserie.Text = "0"
+   txtSerie.Text = "0"
    PU_NUMSER = 0
    PU_FBG = "C"
    pu_cp = "P"
@@ -2159,40 +2159,40 @@ Else
  PU_NUMSER = 0
  PU_FBG = " "
 End If
-PU_NUMSER = Val(txtserie.Text)
+PU_NUMSER = Val(txtSerie.Text)
 pu_codcia = LK_CODCIA
 Screen.MousePointer = 11
 LEER_FAR_CONSUL
 If Not far_consul.EOF Then
- txtnumfac.Text = far_consul!far_numfac
+ txtNumfac.Text = far_consul!far_numfac
 Else
- txtnumfac.Text = "0"
+ txtNumfac.Text = "0"
 End If
  Screen.MousePointer = 0
-txtnumfac.SetFocus
+txtNumfac.SetFocus
 txtnumfac_KeyPress 13
-If LK_EMP = "HER" And Val(txtserie.Text) = 0 And LOC_TIPMOV = 10 Then
-   txtserie.Locked = False
-   txtserie.Text = ""
-   txtserie.SetFocus
+If LK_EMP = "HER" And Val(txtSerie.Text) = 0 And LOC_TIPMOV = 10 Then
+   txtSerie.Locked = False
+   txtSerie.Text = ""
+   txtSerie.SetFocus
 End If
 End Sub
 
 Private Sub CmdAnterior_Click()
 Dim tempo
 If LOC_TIPMOV = 0 Then Exit Sub
-tempo = Val(txtnumfac.Text)
+tempo = Val(txtNumfac.Text)
 If LOC_TIPMOV = 10 Then
- If Trim(txtserie.Text) = "" Then
+ If Trim(txtSerie.Text) = "" Then
   Exit Sub
  End If
 End If
-If Val(txtnumfac.Text) <= 0 Then
+If Val(txtNumfac.Text) <= 0 Then
  LIMPIA_DOCU
  grid_fac2.Clear
  Exit Sub
 End If
-txtnumfac.Text = Val(txtnumfac.Text) - 1
+txtNumfac.Text = Val(txtNumfac.Text) - 1
 If LOC_TIPMOV = 96 Or LOC_TIPMOV = 30 Then ' PLANILLA
  txtnumfac_KeyPress 13
  Exit Sub
@@ -2211,8 +2211,8 @@ Else
   d_mensaje.Visible = False
   CmdAnterior.Enabled = True
 End If
-Azul txtnumfac, txtnumfac
-LOC_NUMFAC_FIN = Val(txtnumfac.Text)
+Azul txtNumfac, txtNumfac
+LOC_NUMFAC_FIN = Val(txtNumfac.Text)
 
 End Sub
 
@@ -2481,7 +2481,7 @@ pbValue = pbValue + 1
 GoSub WEXCEL
 pbValue = pbValue + 1
 pub_cadena = ""
-xl.Cells(4, 1) = "PLANILLA : " & Trim(txtserie.Text) & " - " & Trim(txtnumfac.Text)
+xl.Cells(4, 1) = "PLANILLA : " & Trim(txtSerie.Text) & " - " & Trim(txtNumfac.Text)
 xl.Cells(3, 1) = "'" & Format(LK_FECHA_DIA, "dd/mm/yyyy")
 xl.Cells(1, 1) = Trim(Mid(MDIForm1.TXTCIA.Caption, 4, Len(MDIForm1.TXTCIA.Caption)))
 xl.Cells(2, 1) = "PLANILLA DE COBRANZA"
@@ -2571,7 +2571,7 @@ wRuta = Left(PUB_RUTA_OTRO, 2) + "\ADMIN\STANDAR\"
  frmdocu.Reportes.Formulas(1) = ""
  PUB_NETO = Val(frmdocu.d_neto.Caption)
  PUB_FECHA = frmdocu.d_fecha.Caption
- PU_NUMSER = Val((frmdocu.txtserie.Text))
+ PU_NUMSER = Val((frmdocu.txtSerie.Text))
 
 If Left(d_moneda.Caption, 3) = "US$" Then
    rmoneda = "D"
@@ -2579,7 +2579,7 @@ Else
    rmoneda = "S"
 End If
 
-PU_NUMFAC = Val((frmdocu.txtnumfac.Text))
+PU_NUMFAC = Val((frmdocu.txtNumfac.Text))
 frmdocu.Reportes.Formulas(1) = "SON_EFECTIVO=  'SON: " & CONVER_LETRAS(PUB_NETO, rmoneda) & "'"
 frmdocu.Reportes.WindowTitle = "ORDEN DE COMPRA  :" & Format(PU_NUMSER, "000") & " - " & Format(PU_NUMFAC, "0000000")
 frmdocu.Reportes.ReportFileName = wRuta + "ORDEN.RPT"
@@ -2601,16 +2601,16 @@ End Sub
 Private Sub cmdSiguiente_Click()
 Dim tempo
 If LOC_TIPMOV = 0 Then Exit Sub
-tempo = Val(txtnumfac.Text)
+tempo = Val(txtNumfac.Text)
 If LOC_TIPMOV = 10 Then
- If Trim(txtserie.Text) = "" Then
+ If Trim(txtSerie.Text) = "" Then
   Exit Sub
  End If
 End If
-If Val(txtnumfac.Text) < 0 Then
+If Val(txtNumfac.Text) < 0 Then
   Exit Sub
 End If
-txtnumfac.Text = Val(txtnumfac.Text) + 1
+txtNumfac.Text = Val(txtNumfac.Text) + 1
 If LOC_TIPMOV = 96 Or LOC_TIPMOV = 30 Then ' PLANILLA
  txtnumfac_KeyPress 13
  Exit Sub
@@ -2626,8 +2626,8 @@ Else
   d_mensaje.Visible = False
   cmdSiguiente.Enabled = True
 End If
-Azul txtnumfac, txtnumfac
-LOC_NUMFAC_FIN = Val(txtnumfac.Text)
+Azul txtNumfac, txtNumfac
+LOC_NUMFAC_FIN = Val(txtNumfac.Text)
 End Sub
 
 Private Sub Command1_Click()
@@ -2693,8 +2693,8 @@ Set all_codusu = ALLUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 ALLUSU(0) = LK_CODCIA
 ALLUSU(1) = LOC_TIPMOV
 ALLUSU(2) = d_fecha.Caption
-ALLUSU(3) = txtserie.Text
-ALLUSU(4) = txtnumfac.Text
+ALLUSU(3) = txtSerie.Text
+ALLUSU(4) = txtNumfac.Text
 all_codusu.Requery
 Do Until all_codusu.EOF
  all_codusu.Edit
@@ -2715,8 +2715,8 @@ Set far_codusu = FARUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 FARUSU(0) = LK_CODCIA
 FARUSU(1) = LOC_TIPMOV
 FARUSU(2) = d_fecha.Caption
-FARUSU(3) = txtserie.Text
-FARUSU(4) = txtnumfac.Text
+FARUSU(3) = txtSerie.Text
+FARUSU(4) = txtNumfac.Text
 far_codusu.Requery
 Do Until far_codusu.EOF
  far_codusu.Edit
@@ -2732,8 +2732,8 @@ Set ALLUSU = CN.CreateQuery("", pub_cadena)
 ALLUSU(0) = LK_CODCIA
 ALLUSU(1) = LOC_TIPMOV
 ALLUSU(2) = d_fecha.Caption
-ALLUSU(3) = txtserie.Text
-ALLUSU(4) = txtnumfac.Text
+ALLUSU(3) = txtSerie.Text
+ALLUSU(4) = txtNumfac.Text
 Set all_codusu = ALLUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 Do Until all_codusu.EOF
  all_codusu.Edit
@@ -2748,8 +2748,8 @@ Set ALLUSU = CN.CreateQuery("", pub_cadena)
 ALLUSU(0) = LK_CODCIA
 ALLUSU(1) = LOC_TIPMOV
 ALLUSU(2) = d_fecha.Caption
-ALLUSU(3) = txtserie.Text
-ALLUSU(4) = txtnumfac.Text
+ALLUSU(3) = txtSerie.Text
+ALLUSU(4) = txtNumfac.Text
 Set all_codusu = ALLUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 Do Until all_codusu.EOF
  all_codusu.Edit
@@ -2809,8 +2809,8 @@ Set ALLUSU = CN.CreateQuery("", pub_cadena)
 ALLUSU(0) = LK_CODCIA
 ALLUSU(1) = LOC_TIPMOV
 ALLUSU(2) = d_fecha.Caption
-ALLUSU(3) = txtserie.Text
-ALLUSU(4) = txtnumfac.Text
+ALLUSU(3) = txtSerie.Text
+ALLUSU(4) = txtNumfac.Text
 Set all_codusu = ALLUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 
 Do Until all_codusu.EOF
@@ -2826,8 +2826,8 @@ Set FARUSU = CN.CreateQuery("", pub_cadena)
 FARUSU(0) = LK_CODCIA
 FARUSU(1) = LOC_TIPMOV
 FARUSU(2) = d_fecha.Caption
-FARUSU(3) = txtserie.Text
-FARUSU(4) = txtnumfac.Text
+FARUSU(3) = txtSerie.Text
+FARUSU(4) = txtNumfac.Text
 Set far_codusu = FARUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 
 far_codusu.Requery
@@ -2843,8 +2843,8 @@ Set ALLUSU = CN.CreateQuery("", pub_cadena)
 ALLUSU(0) = LK_CODCIA
 ALLUSU(1) = LOC_TIPMOV
 ALLUSU(2) = d_fecha.Caption
-ALLUSU(3) = txtserie.Text
-ALLUSU(4) = txtnumfac.Text
+ALLUSU(3) = txtSerie.Text
+ALLUSU(4) = txtNumfac.Text
 Set all_codusu = ALLUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 Do Until all_codusu.EOF
     all_codusu.Edit
@@ -2969,8 +2969,8 @@ Set far_codusu = FARUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 FARUSU(0) = LK_CODCIA
 FARUSU(1) = LOC_TIPMOV
 FARUSU(2) = d_fecha.Caption
-FARUSU(3) = txtserie.Text
-FARUSU(4) = txtnumfac.Text
+FARUSU(3) = txtSerie.Text
+FARUSU(4) = txtNumfac.Text
 far_codusu.Requery
 fila = 1
 SUMA_VALOR = 0
@@ -2996,8 +2996,8 @@ Set far_codusu = FARUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 FARUSU(0) = LK_CODCIA
 FARUSU(1) = LOC_TIPMOV
 FARUSU(2) = d_fecha.Caption
-FARUSU(3) = Val(txtserie.Text)
-FARUSU(4) = txtnumfac.Text
+FARUSU(3) = Val(txtSerie.Text)
+FARUSU(4) = txtNumfac.Text
 far_codusu.Requery
 Do Until far_codusu.EOF
  far_codusu.Edit
@@ -3039,8 +3039,8 @@ Set all_codusu = ALLUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 ALLUSU(0) = LK_CODCIA
 ALLUSU(1) = LOC_TIPMOV
 ALLUSU(2) = d_fecha.Caption
-ALLUSU(3) = txtserie.Text
-ALLUSU(4) = txtnumfac.Text
+ALLUSU(3) = txtSerie.Text
+ALLUSU(4) = txtNumfac.Text
 all_codusu.Requery
 Do Until all_codusu.EOF
  all_codusu.Edit
@@ -3060,8 +3060,8 @@ Set far_codusu = FARUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 FARUSU(0) = LK_CODCIA
 FARUSU(1) = LOC_TIPMOV
 FARUSU(2) = d_fecha.Caption
-FARUSU(3) = txtserie.Text
-FARUSU(4) = txtnumfac.Text
+FARUSU(3) = txtSerie.Text
+FARUSU(4) = txtNumfac.Text
 far_codusu.Requery
 Do Until far_codusu.EOF
  far_codusu.Edit
@@ -3104,8 +3104,8 @@ Set all_codusu = ALLUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 ALLUSU(0) = LK_CODCIA
 ALLUSU(1) = LOC_TIPMOV
 ALLUSU(2) = d_fecha.Caption
-ALLUSU(3) = txtserie.Text
-ALLUSU(4) = txtnumfac.Text
+ALLUSU(3) = txtSerie.Text
+ALLUSU(4) = txtNumfac.Text
 all_codusu.Requery
 Do Until all_codusu.EOF
  all_codusu.Edit
@@ -3125,8 +3125,8 @@ Set far_codusu = FARUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 FARUSU(0) = LK_CODCIA
 FARUSU(1) = LOC_TIPMOV
 FARUSU(2) = d_fecha.Caption
-FARUSU(3) = txtserie.Text
-FARUSU(4) = txtnumfac.Text
+FARUSU(3) = txtSerie.Text
+FARUSU(4) = txtNumfac.Text
 far_codusu.Requery
 Do Until far_codusu.EOF
  far_codusu.Edit
@@ -3144,8 +3144,8 @@ Set ALLUSU = CN.CreateQuery("", pub_cadena)
 ALLUSU(0) = LK_CODCIA
 ALLUSU(1) = LOC_TIPMOV
 ALLUSU(2) = d_fecha.Caption
-ALLUSU(3) = txtserie.Text
-ALLUSU(4) = txtnumfac.Text
+ALLUSU(3) = txtSerie.Text
+ALLUSU(4) = txtNumfac.Text
 Set all_codusu = ALLUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 Do Until all_codusu.EOF
 ' Print all_codusu!ALL_FECHA_DIA
@@ -3164,8 +3164,8 @@ Set ALLUSU = CN.CreateQuery("", pub_cadena)
 ALLUSU(0) = LK_CODCIA
 ALLUSU(1) = LOC_TIPMOV
 ALLUSU(2) = d_fecha.Caption
-ALLUSU(3) = txtserie.Text
-ALLUSU(4) = txtnumfac.Text
+ALLUSU(3) = txtSerie.Text
+ALLUSU(4) = txtNumfac.Text
 Set all_codusu = ALLUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 Do Until all_codusu.EOF
  all_codusu.Edit
@@ -3263,8 +3263,8 @@ Set far_codusu = FARUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 FARUSU(0) = LK_CODCIA
 FARUSU(1) = LOC_TIPMOV
 FARUSU(2) = d_fecha.Caption
-FARUSU(3) = txtserie.Text
-FARUSU(4) = txtnumfac.Text
+FARUSU(3) = txtSerie.Text
+FARUSU(4) = txtNumfac.Text
 far_codusu.Requery
 fila = 1
 Do Until far_codusu.EOF
@@ -3320,8 +3320,8 @@ Set all_codusu = ALLUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 ALLUSU(0) = LK_CODCIA
 ALLUSU(1) = LOC_TIPMOV
 ALLUSU(2) = d_fecha.Caption
-ALLUSU(3) = txtserie.Text
-ALLUSU(4) = txtnumfac.Text
+ALLUSU(3) = txtSerie.Text
+ALLUSU(4) = txtNumfac.Text
 
 all_codusu.Requery
 Do Until all_codusu.EOF
@@ -3343,8 +3343,8 @@ Set far_codusu = FARUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 FARUSU(0) = LK_CODCIA
 FARUSU(1) = LOC_TIPMOV
 FARUSU(2) = d_fecha.Caption
-FARUSU(3) = txtserie.Text
-FARUSU(4) = txtnumfac.Text
+FARUSU(3) = txtSerie.Text
+FARUSU(4) = txtNumfac.Text
 
 far_codusu.Requery
 Do Until far_codusu.EOF
@@ -3371,8 +3371,8 @@ FrmControl.d_nombre.Caption = d_nomclie.Caption
 FrmControl.d_fecha.Caption = d_fecha_compra.Caption
 FrmControl.d_serie.Caption = temp_NUMSER_C
 FrmControl.d_numero.Caption = temp_NUMFAC_C
-FrmControl.d_numser.Caption = txtserie.Text
-FrmControl.d_numfac.Caption = txtnumfac.Text
+FrmControl.d_numser.Caption = txtSerie.Text
+FrmControl.d_numfac.Caption = txtNumfac.Text
 FrmControl.d_nombre.Caption = d_nomclie.Caption
 FrmControl.flag_signo.Caption = "-1"
 
@@ -3405,8 +3405,8 @@ Set all_codusu = ALLUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 ALLUSU(0) = LK_CODCIA
 ALLUSU(1) = LOC_TIPMOV
 ALLUSU(2) = d_fecha.Caption
-ALLUSU(3) = txtserie.Text
-ALLUSU(4) = txtnumfac.Text
+ALLUSU(3) = txtSerie.Text
+ALLUSU(4) = txtNumfac.Text
 all_codusu.Requery
 Do Until all_codusu.EOF
  all_codusu.Edit
@@ -3426,8 +3426,8 @@ Set far_codusu = FARUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 FARUSU(0) = LK_CODCIA
 FARUSU(1) = LOC_TIPMOV
 FARUSU(2) = d_fecha.Caption
-FARUSU(3) = txtserie.Text
-FARUSU(4) = txtnumfac.Text
+FARUSU(3) = txtSerie.Text
+FARUSU(4) = txtNumfac.Text
 far_codusu.Requery
 Do Until far_codusu.EOF
  far_codusu.Edit
@@ -3442,8 +3442,8 @@ FCONT.Caption = "Fec. Contable : " & Format(wfecha, "dd/mm/yyyy")
 End Sub
 
 Private Sub Form_Activate()
-If Trim(tipmov.Text) = "" Then
-  tipmov.SetFocus
+If Trim(TIPMOV.Text) = "" Then
+  TIPMOV.SetFocus
 End If
 End Sub
 
@@ -3515,7 +3515,7 @@ PSCAR_CONSUL.rdoParameters(4) = 0
 PSCAR_CONSUL.rdoParameters(5) = 0
 Set car_consul = PSCAR_CONSUL.OpenResultset(rdOpenKeyset, rdConcurValues)
 PUB_CODCIA = "00"
-LLENADOS tipmov, 4
+LLENADOS TIPMOV, 4
 LOC_TIPMOV = 0
 temporal = "X"
 cmbFBG.Clear
@@ -3588,7 +3588,7 @@ If LOC_TIPMOV = 3 Then NUMERO.Text = 7
 DESC_GRIFO = 0
 WS_FLETE = 0
 ws_serie = 0
-ws_serie = Val(txtserie.Text)
+ws_serie = Val(txtSerie.Text)
 CmdAnterior.Enabled = False
 'DoEvents
 cmdSiguiente.Enabled = False
@@ -3660,12 +3660,12 @@ ElseIf LOC_TIPMOV = 20 Or LOC_TIPMOV = 99 Then
    If Left(cmbFBG.Text, 1) = "F" Then
      PSFAR.rdoParameters(0) = LOC_TIPMOV
      PSFAR.rdoParameters(1) = LK_CODCIA
-     PSFAR.rdoParameters(2) = txtserie.Text
-     PSFAR.rdoParameters(3) = Val(txtnumfac.Text)
+     PSFAR.rdoParameters(2) = txtSerie.Text
+     PSFAR.rdoParameters(3) = Val(txtNumfac.Text)
    Else
      PSFAR.rdoParameters(0) = LOC_TIPMOV
      PSFAR.rdoParameters(1) = LK_CODCIA
-     PSFAR.rdoParameters(2) = txtnumfac.Text
+     PSFAR.rdoParameters(2) = txtNumfac.Text
    End If
  Else
    PSFAR.rdoParameters(0) = LOC_TIPMOV
@@ -3684,7 +3684,7 @@ End If
 If LOC_TIPMOV = 20 And Left(cmbFBG.Text, 1) <> "K" Then
 Else
  PSFAR.rdoParameters(1) = LK_CODCIA
- PSFAR.rdoParameters(4) = Val(txtnumfac.Text)
+ PSFAR.rdoParameters(4) = Val(txtNumfac.Text)
 End If
 far_r.Requery
 If far_r.EOF Then
@@ -3702,7 +3702,7 @@ Else
     Exit Sub
   End If
 End If
-tempo_serie = Trim(txtserie.Text)
+tempo_serie = Trim(txtSerie.Text)
 pbValue = 0
 pbMin = 0
 pbMax = far_r.RowCount + 3
@@ -3756,7 +3756,7 @@ SQ_OPER = 1
 pu_codcia = LK_CODCIA
 If LOC_TIPMOV = 93 Or LOC_TIPMOV = 5 Or LOC_TIPMOV = 6 Or LOC_TIPMOV = 100 Or LOC_TIPMOV = 101 Then
  lbldomicilio.Caption = ""
- lblDireccion.Caption = "Concepto :"
+ lbldireccion.Caption = "Concepto :"
  'QUITADO 30/11/2001
  'd_dire.Caption = Trim(far_r!far_concepto)
  'd_dire.ToolTipText = Trim(d_dire.Caption)
@@ -3768,7 +3768,7 @@ If LOC_TIPMOV = 93 Or LOC_TIPMOV = 5 Or LOC_TIPMOV = 6 Or LOC_TIPMOV = 100 Or LO
    TRANS.Visible = True
  End If
 Else
- lblDireccion.Caption = "Direcci�n Entrega:"
+ lbldireccion.Caption = "Direcci�n Entrega:"
  lbldomicilio.Caption = "Domicilio:"
  
 End If
@@ -3801,7 +3801,7 @@ If LOC_TIPMOV = 102 Or OC_TIPMOV = 100 Or LOC_TIPMOV = 10 Or LOC_TIPMOV = 97 Or 
  End If
  
  
- lblSaldo.Visible = True
+ lblsaldo.Visible = True
  d_saldo.Visible = True
  d_moneda.Visible = True
 ElseIf LOC_TIPMOV = 20 Or LOC_TIPMOV = 99 Or LOC_TIPMOV = 3 Then
@@ -3809,7 +3809,7 @@ ElseIf LOC_TIPMOV = 20 Or LOC_TIPMOV = 99 Or LOC_TIPMOV = 3 Then
  d_fecha_compra.Visible = True
  d_fecha_can.Visible = True
  l_fecha_can.Visible = True
- lblSaldo.Visible = True
+ lblsaldo.Visible = True
  d_saldo.Visible = True
  
  d_moneda.Visible = True
@@ -3924,9 +3924,9 @@ d_domicilio.Caption = Trim(WLUGAR1) + " " + Trim(cli_llave!CLI_CASA_DIREC) + " #
 
 If Left(cmbFBG.Text, 1) = "F" Then
  d_ruc.Caption = Trim(Nulo_Valors(cli_llave!cli_ruc_esposo))
- lblRuc.Visible = True
+ LBLRUC.Visible = True
 Else
- lblRuc.Visible = False
+ LBLRUC.Visible = False
  d_ruc.Caption = ""
 End If
 
@@ -4044,7 +4044,7 @@ FECHA_PART.Text = Format(far_r!FAR_fecha_compra, "dd/mm/yyyy")
      d_condicion.Caption = far_r!far_subtra ' far_r!FAR_secuencia ' "COMPRA AL CREDITO"
      d_fecha_compra.Caption = Format(far_r!FAR_fecha_compra, "dd/mm/yyyy")
   Else
-     d_condicion.Caption = Left(tipmov.Text, 40)
+     d_condicion.Caption = Left(TIPMOV.Text, 40)
   End If
   d_dias.Caption = Val(far_r!FAR_DIAS)
   d_fechaV.Caption = Format(DateAdd("d", Val(far_r!FAR_DIAS), far_r!FAR_fecha_compra), "dd/mm/yyyy")
@@ -4056,7 +4056,7 @@ FECHA_PART.Text = Format(far_r!FAR_fecha_compra, "dd/mm/yyyy")
  ElseIf LOC_TIPMOV = 20 Then
    d_condicion.Caption = far_r!far_subtra ' "COMPRA AL CONTADO"
  Else
-   d_condicion.Caption = Left(tipmov.Text, 40)
+   d_condicion.Caption = Left(TIPMOV.Text, 40)
    If LOC_TIPMOV = 99 Or LOC_TIPMOV = 5 Or LOC_TIPMOV = 6 Then
     d_condicion.Caption = Nulo_Valors(far_r!far_subtra)
    End If
@@ -4132,7 +4132,7 @@ LOC_ARROZ = ""
  WS_SUM_DESCT = 0
 subtotal2 = 0
 conteo_cantidad = 0
-LBLHORA.Caption = Trim(far_r!far_hora)
+lblhora.Caption = Trim(far_r!far_hora)
 If LOC_TIPMOV = 97 Or LOC_TIPMOV = 98 Then
     SQ_OPER = 1
     PUB_TIPREG = 48
@@ -4281,7 +4281,7 @@ pasa:
    WS_FLETE = Nulo_Valor0(far_r!FAR_TOT_FLETE)
    WFECHA_COMPRA = far_r!FAR_fecha_compra
    WFECHA_COMPRA_CAN = far_r!FAR_fecha_can
-   LBLHORA.Caption = Trim(far_r!far_hora)
+   lblhora.Caption = Trim(far_r!far_hora)
    wnumfac_c = Nulo_Valor0(far_r!FAR_NUMFAC_C)
    If LK_EMP <> "HER" And Not IsNull(far_r!FAR_fecha_pro) Then
    WFECHA_CONT = far_r!FAR_fecha_pro
@@ -4331,7 +4331,7 @@ If LOC_TIPMOV = 20 Then
    lbldesc.Caption = WS_SUM_DESCT
    Dim relcompra_llave As rdoResultset
    pub_cadena = "select  * from relcompra where rel_codcia = '" & LK_CODCIA & "'  and rel_cp = 'P' " & _
-   " and rel_codpro = " & Trim(d_Codclie.Caption) & " and REL_NUMSER   = " & Val(txtserie.Text) & " and REL_NUMFAC =  " & Val(txtnumfac.Text) & " order by REL_LIQUIDO "
+   " and rel_codpro = " & Trim(d_Codclie.Caption) & " and REL_NUMSER   = " & Val(txtSerie.Text) & " and REL_NUMFAC =  " & Val(txtNumfac.Text) & " order by REL_LIQUIDO "
    Set relcompra_llave = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
    relcompra_llave.Requery
    lblfondo.Visible = False
@@ -4359,7 +4359,7 @@ End If
    cmdImp.Enabled = True
    PB.Visible = False
    If cherela.Visible And LK_EMP <> "HER" Then cherela_Click
-   LOC_NUMFAC_FIN = Val(txtnumfac.Text)
+   LOC_NUMFAC_FIN = Val(txtNumfac.Text)
    If LK_CODUSU = "ADMIN" And (LOC_TIPMOV = 6 Or LOC_TIPMOV = 5) Then
 '     MsgBox "CAntidad :  " & conteo_cantidad, 48, Pub_Titulo
    End If
@@ -4447,7 +4447,7 @@ If grid_fac2.Row > 0 And (grid_fac2.COL = 0 Or grid_fac2.COL = 10) Then
    If Val(grid_fac2.TextMatrix(grid_fac2.Row, 10)) > 0 Then
       frmARTI.Show vbModeless
       DoEvents
-      frmARTI.Txt_key.Text = Trim(Str(Val(grid_fac2.TextMatrix(grid_fac2.Row, 10))))
+      frmARTI.txt_key.Text = Trim(Str(Val(grid_fac2.TextMatrix(grid_fac2.Row, 10))))
       ' Usuario debe presionar Enter para buscar el articulo
       Exit Sub
    End If
@@ -4474,8 +4474,8 @@ If grid_fac2.COL = 1 Then
     FARUSU(0) = LK_CODCIA
     FARUSU(1) = LOC_TIPMOV
     FARUSU(2) = d_fecha.Caption
-    FARUSU(3) = txtserie.Text
-    FARUSU(4) = txtnumfac.Text
+    FARUSU(3) = txtSerie.Text
+    FARUSU(4) = txtNumfac.Text
     far_codusu.Requery
     Do Until far_codusu.EOF
         far_codusu.Edit
@@ -4532,7 +4532,7 @@ Dim wser As String
 wser = InputBox("Ingrese Abono para Ajustar La Compra de Mercaderia : ", "FACTURA DE COMPRA -Modificar", lblabono.Caption)
 If wser = "" Then Exit Sub
 
-pub_cadena = "SELECT FAR_BRUTO , FAR_IMPTO, FAR_LIMCRE_ACT FROM FACART WHERE FAR_CODCIA = " & LK_CODCIA & " AND FAR_TIPMOV = " & LOC_TIPMOV & " AND FAR_FECHA = '" & Format(d_fecha.Caption, "dd/mm/yyyy") & "' AND FAR_NUMSER = " & Val(txtserie.Text) & " AND FAR_NUMFAC = " & Val(txtnumfac.Text) & "  AND FAR_ESTADO <> 'E' AND FAR_ESTADO2 <>  'L'"
+pub_cadena = "SELECT FAR_BRUTO , FAR_IMPTO, FAR_LIMCRE_ACT FROM FACART WHERE FAR_CODCIA = " & LK_CODCIA & " AND FAR_TIPMOV = " & LOC_TIPMOV & " AND FAR_FECHA = '" & Format(d_fecha.Caption, "dd/mm/yyyy") & "' AND FAR_NUMSER = " & Val(txtSerie.Text) & " AND FAR_NUMFAC = " & Val(txtNumfac.Text) & "  AND FAR_ESTADO <> 'E' AND FAR_ESTADO2 <>  'L'"
 Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
 If X.EOF Then
   MsgBox "Registro No Existe.", 48, Pub_Titulo
@@ -4573,7 +4573,7 @@ Dim wser As String
 wser = InputBox("Ingrese Cargo para Ajustar La Compra de Mercaderia : ", "FACTURA DE COMPRA -Modificar", lblcargo.Caption)
 If wser = "" Then Exit Sub
 
-pub_cadena = "SELECT FAR_BRUTO , FAR_IMPTO, FAR_LIMCRE_ANT FROM FACART WHERE FAR_CODCIA = " & LK_CODCIA & " AND FAR_TIPMOV = " & LOC_TIPMOV & " AND FAR_FECHA = '" & Format(d_fecha.Caption, "dd/mm/yyyy") & "' AND FAR_NUMSER = " & Val(txtserie.Text) & " AND FAR_NUMFAC = " & Val(txtnumfac.Text) & "  AND FAR_ESTADO <> 'E' AND FAR_ESTADO2 <>  'L'"
+pub_cadena = "SELECT FAR_BRUTO , FAR_IMPTO, FAR_LIMCRE_ANT FROM FACART WHERE FAR_CODCIA = " & LK_CODCIA & " AND FAR_TIPMOV = " & LOC_TIPMOV & " AND FAR_FECHA = '" & Format(d_fecha.Caption, "dd/mm/yyyy") & "' AND FAR_NUMSER = " & Val(txtSerie.Text) & " AND FAR_NUMFAC = " & Val(txtNumfac.Text) & "  AND FAR_ESTADO <> 'E' AND FAR_ESTADO2 <>  'L'"
 Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
 If X.EOF Then
   MsgBox "Registro No Existe.", 48, Pub_Titulo
@@ -4606,8 +4606,8 @@ If wser = "" Then Exit Sub
 wser = Format(wser, "0")
 WNUM = InputBox("Ingrese Nro. de Documento : ", "FACTURA DE COMPRA -Modificar Anexo", Format(WNUM, "0"))
 If WNUM = "" Then Exit Sub
-txtserie.Text = wser
-txtnumfac.Text = WNUM
+txtSerie.Text = wser
+txtNumfac.Text = WNUM
 
 pub_cadena = "select  * from cartera where car_tipmov = 20 and car_codcia = '" & LK_CODCIA & "' and car_numser = " & wser & " and car_numfac = " & WNUM & " "
 Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
@@ -4697,8 +4697,8 @@ Set far_codusu = FARUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 FARUSU(0) = LK_CODCIA
 FARUSU(1) = LOC_TIPMOV
 FARUSU(2) = d_fecha.Caption
-FARUSU(3) = txtserie.Text
-FARUSU(4) = txtnumfac.Text
+FARUSU(3) = txtSerie.Text
+FARUSU(4) = txtNumfac.Text
 far_codusu.Requery
 If far_codusu.EOF Then
   MsgBox "No Existe Numero Interno", 48, Pub_Titulo
@@ -4746,8 +4746,8 @@ Set all_codusu = ALLUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 ALLUSU(0) = LK_CODCIA
 ALLUSU(1) = LOC_TIPMOV
 ALLUSU(2) = d_fecha.Caption
-ALLUSU(3) = txtserie.Text
-ALLUSU(4) = txtnumfac.Text
+ALLUSU(3) = txtSerie.Text
+ALLUSU(4) = txtNumfac.Text
 all_codusu.Requery
 Do Until all_codusu.EOF
  all_codusu.Edit
@@ -4768,8 +4768,8 @@ Set ALLUSU = CN.CreateQuery("", pub_cadena)
 ALLUSU(0) = LK_CODCIA
 ALLUSU(1) = LOC_TIPMOV
 ALLUSU(2) = d_fecha.Caption
-ALLUSU(3) = txtserie.Text
-ALLUSU(4) = txtnumfac.Text
+ALLUSU(3) = txtSerie.Text
+ALLUSU(4) = txtNumfac.Text
 Set all_codusu = ALLUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 Do Until all_codusu.EOF
   all_codusu.Edit
@@ -4786,8 +4786,8 @@ Set ALLUSU = CN.CreateQuery("", pub_cadena)
 ALLUSU(0) = LK_CODCIA
 ALLUSU(1) = LOC_TIPMOV
 ALLUSU(2) = d_fecha.Caption
-ALLUSU(3) = txtserie.Text
-ALLUSU(4) = txtnumfac.Text
+ALLUSU(3) = txtSerie.Text
+ALLUSU(4) = txtNumfac.Text
 Set all_codusu = ALLUSU.OpenResultset(rdOpenKeyset, rdConcurValues)
 Do Until all_codusu.EOF
  all_codusu.Edit
@@ -4828,7 +4828,7 @@ End If
 End Sub
 
 Private Sub txtNumfac_GotFocus()
-temporal = txtnumfac.Text
+temporal = txtNumfac.Text
 End Sub
 
 Private Sub txtnumfac_KeyPress(KeyAscii As Integer)
@@ -4836,10 +4836,10 @@ Private Sub txtnumfac_KeyPress(KeyAscii As Integer)
 Dim wven As Integer
 SOLO_ENTERO KeyAscii
 If KeyAscii = 13 Then
-  If Val(txtserie.Text) <= 0 Then
+  If Val(txtSerie.Text) <= 0 Then
    'Exit Sub
   End If
-  If Val(txtnumfac.Text) <= 0 Then
+  If Val(txtNumfac.Text) <= 0 Then
    LIMPIA_DOCU
    grid_fac2.Clear
    Exit Sub
@@ -4853,7 +4853,7 @@ If KeyAscii = 13 Then
   End If
   If Left(cmbFBG.Text, 1) = "P" And LOC_TIPMOV <> 10 Then
     'txtSerie.Locked = True
-    txtserie.Text = 0
+    txtSerie.Text = 0
     GoSub PLANILLA
     Exit Sub
   Else
@@ -4863,11 +4863,11 @@ If KeyAscii = 13 Then
     loc_flag_espera = ""
   End If
   If Trim(wflag_docu) = "" Then
-    temporal = txtnumfac.Text
+    temporal = txtNumfac.Text
   Else
-    txtserie.Text = tempo_serie
-    txtnumfac.Text = temporal
-    Azul txtnumfac, txtnumfac
+    txtSerie.Text = tempo_serie
+    txtNumfac.Text = temporal
+    Azul txtNumfac, txtNumfac
   End If
 End If
 Exit Sub
@@ -4890,7 +4890,7 @@ PS_REP01(1) = 0
 Set llave_rep01 = PS_REP01.OpenResultset(rdOpenKeyset, rdConcurValues)
 
 PS_REP01(0) = LK_CODCIA
-PS_REP01(1) = Val(txtnumfac.Text)
+PS_REP01(1) = Val(txtNumfac.Text)
 llave_rep01.Requery
 d_mensaje.Visible = False
 If llave_rep01.EOF = True Then
@@ -5001,8 +5001,8 @@ PS_REP01(2) = 0
 Set llave_rep01 = PS_REP01.OpenResultset(rdOpenKeyset, rdConcurValues)
 
 PS_REP01(0) = LK_CODCIA
-PS_REP01(1) = txtserie.Text
-PS_REP01(2) = Val(txtnumfac.Text)
+PS_REP01(1) = txtSerie.Text
+PS_REP01(2) = Val(txtNumfac.Text)
 
 llave_rep01.Requery
 d_mensaje.Visible = False
@@ -5104,7 +5104,7 @@ MsgBox Err.Description
 End Sub
 
 Public Sub LIMPIA_DOCU()
-LBLHORA.Caption = ""
+lblhora.Caption = ""
 lblmotivo.Caption = ""
 lblmotivo.Visible = False
 lblfondo.Visible = False
@@ -5185,14 +5185,14 @@ car_consul.Requery
 End Sub
 
 Private Sub txtserie_GotFocus()
-txtserie.Text = Trim(txtserie.Text)
+txtSerie.Text = Trim(txtSerie.Text)
 End Sub
 
 Private Sub txtserie_KeyPress(KeyAscii As Integer)
 SOLO_ENTERO KeyAscii
 If KeyAscii = 13 Then
- If txtnumfac.Enabled Then
-  txtnumfac.SetFocus
+ If txtNumfac.Enabled Then
+  txtNumfac.SetFocus
  End If
 End If
 End Sub
@@ -5270,8 +5270,8 @@ End If
     frmdocu.d_neto.Refresh
     PUB_NETO = Val(frmdocu.d_neto.Caption)
     PUB_FECHA = frmdocu.d_fecha.Caption
-    PU_NUMSER = Val((frmdocu.txtserie.Text))
-    PU_NUMFAC = Val((frmdocu.txtnumfac.Text))
+    PU_NUMSER = Val((frmdocu.txtSerie.Text))
+    PU_NUMFAC = Val((frmdocu.txtNumfac.Text))
     If LK_EMP = "PIU" Then
        frmdocu.Reportes.Formulas(1) = "SON=  ' " & CONVER_LETRAS(PUB_NETO, WMONEDA) & "'"
     Else
@@ -5313,7 +5313,7 @@ End If
         Else
           frmdocu.Reportes.ReportFileName = wRuta + "GUIAR3.RPT"
         End If
-        pub_cadena = "{FACART.FAR_ESTADO} <> 'E' AND {FACART.FAR_TIPMOV} = " & LOC_TIPMOV & " AND {FACART.FAR_CODCIA} = '" & LK_CODCIA & "' AND  ( {FACART.FAR_NUMFAC} >= " & PU_NUMFAC & " and {FACART.FAR_NUMFAC} <= " & LOC_NUMFAC_FIN & ") AND {FACART.FAR_NUMSER} = '" & Trim(txtserie.Text) & "'  "
+        pub_cadena = "{FACART.FAR_ESTADO} <> 'E' AND {FACART.FAR_TIPMOV} = " & LOC_TIPMOV & " AND {FACART.FAR_CODCIA} = '" & LK_CODCIA & "' AND  ( {FACART.FAR_NUMFAC} >= " & PU_NUMFAC & " and {FACART.FAR_NUMFAC} <= " & LOC_NUMFAC_FIN & ") AND {FACART.FAR_NUMSER} = '" & Trim(txtSerie.Text) & "'  "
         'Debug.Print pub_cadena
         frmdocu.Reportes.Formulas(1) = ""
         If chetrans.Value = 1 Then
@@ -5733,16 +5733,16 @@ Set far_r = PSFAR.OpenResultset(rdOpenKeyset, rdConcurValues)
 
 LIMPIA_DOCU
 grid_fac2.Rows = 2
-txtnumfac.Text = ""
-txtserie.Text = ""
+txtNumfac.Text = ""
+txtSerie.Text = ""
 'SQ_OPER = 1
 'PUB_CODCIA = LK_CODCIA
 'LEER_PAR_LLAVE
 'If par_llave.EOF Then
 '  Exit Sub
 'End If
-txtserie.Locked = False
-lblSaldo.Caption = "Saldo Actual "
+txtSerie.Locked = False
+lblsaldo.Caption = "Saldo Actual "
 lbldomicilio.Caption = "Domicilio :"
 lbldocu(1).Visible = True
 lbldocu(3).Visible = True
@@ -5756,10 +5756,10 @@ If Left(cmbFBG.Text, 1) = "P" Then
  d_cheque.Visible = True
  d_efectivo.Visible = True
  lblEfectivo.Visible = True
- lblSaldo.Caption = "Total Planilla="
+ lblsaldo.Caption = "Total Planilla="
  'txtSerie.Locked = True
  lbldomicilio.Caption = "Vendedor :"
- txtserie.Text = 0
+ txtSerie.Text = 0
  lbldocu(1).Visible = False
  lbldocu(3).Visible = False
  lbldocu(5).Visible = False
@@ -5771,42 +5771,42 @@ End If
 If LK_FLAG_FACTURACION = "V" And LOPC_TIPMOV = 10 Then
    Select Case Left(cmbFBG.Text, 1)
    Case "G"
-       txtserie.Text = ven_llave!VEM_SERIE_G
+       txtSerie.Text = ven_llave!VEM_SERIE_G
    Case "B"
-       txtserie.Text = ven_llave!vem_serie_b
+       txtSerie.Text = ven_llave!vem_serie_b
    Case "F"
-       txtserie.Text = ven_llave!vem_serie_f
+       txtSerie.Text = ven_llave!vem_serie_f
    Case "P"
-       txtserie.Text = ven_llave!VEM_SERIE_P
+       txtSerie.Text = ven_llave!VEM_SERIE_P
    End Select
 ElseIf LK_FLAG_FACTURACION = "A" Then
    If Left(cmbFBG.Text, 1) = "F" Then
-     txtserie.Text = par_llave!PAR_F_SERIE
+     txtSerie.Text = par_llave!PAR_F_SERIE
    ElseIf Left(cmbFBG.Text, 1) = "B" Then
-     txtserie.Text = par_llave!PAR_B_SERIE
+     txtSerie.Text = par_llave!PAR_B_SERIE
    ElseIf Left(cmbFBG.Text, 1) = "G" Then
-     txtserie.Text = par_llave!PAR_G_SERIE
+     txtSerie.Text = par_llave!PAR_G_SERIE
    ElseIf Left(cmbFBG.Text, 1) = "P" Then
-     txtserie.Text = par_llave!PAR_P_SERIE
+     txtSerie.Text = par_llave!PAR_P_SERIE
    End If
 ElseIf LK_FLAG_FACTURACION = "U" Then
    If Left(cmbFBG.Text, 1) = "F" Then
-     txtserie.Text = usu_llave!USU_SERIE_F
+     txtSerie.Text = usu_llave!USU_SERIE_F
    ElseIf Left(cmbFBG.Text, 1) = "B" Then
-     txtserie.Text = usu_llave!USU_SERIE_B
+     txtSerie.Text = usu_llave!USU_SERIE_B
    End If
 End If
 If Left(cmbFBG.Text, 1) = "N" Or Left(cmbFBG.Text, 1) = "D" Then
      If Left(cmbFBG.Text, 1) = "D" Then
-        txtserie.Text = par_llave!PAR_SERIE_NDEB
+        txtSerie.Text = par_llave!PAR_SERIE_NDEB
      Else
-        txtserie.Text = par_llave!PAR_SERIE_NCRE
+        txtSerie.Text = par_llave!PAR_SERIE_NCRE
      End If
     If LK_FLAG_FACTURACION = "U" Then
       If Left(cmbFBG.Text, 1) = "D" Then
-        txtserie.Text = usu_llave!USU_SERIE_ND
+        txtSerie.Text = usu_llave!USU_SERIE_ND
       Else
-        txtserie.Text = usu_llave!USU_SERIE_NC
+        txtSerie.Text = usu_llave!USU_SERIE_NC
       End If
     End If
     lbldocu(1).Visible = False
@@ -5818,26 +5818,26 @@ If Left(cmbFBG.Text, 1) = "N" Or Left(cmbFBG.Text, 1) = "D" Then
 End If
 If LOC_TIPMOV = 10 Then
  PU_TIPMOV = 10
- PU_NUMSER = Val(txtserie.Text)
+ PU_NUMSER = Val(txtSerie.Text)
  PU_FBG = Left(cmbFBG.Text, 1)
  pu_cp = "C"
 ElseIf LOC_TIPMOV = 97 Or LOC_TIPMOV = 98 Then
  PU_TIPMOV = LOC_TIPMOV
  If Left(cmbFBG.Text, 1) = "C" Then
    pu_cp = "P"
-   txtserie.Text = 5
+   txtSerie.Text = 5
  End If
  
- PU_NUMSER = Val(txtserie.Text)
+ PU_NUMSER = Val(txtSerie.Text)
  
  PU_FBG = Left(cmbFBG.Text, 1)
 ElseIf LOC_TIPMOV = 20 Or LOC_TIPMOV = 99 Then
  PU_TIPMOV = LOC_TIPMOV
  pu_cp = "P"
  If LOC_TIPMOV = 20 Then
-  txtserie.Text = Val(par_llave!PAR_SER_KARDEX)
+  txtSerie.Text = Val(par_llave!PAR_SER_KARDEX)
  End If
- PU_NUMSER = Val(txtserie.Text)
+ PU_NUMSER = Val(txtSerie.Text)
  If LOC_TIPMOV = 99 Then
    PU_FBG = "K"
  Else
@@ -5854,28 +5854,28 @@ End If
 If LOC_TIPMOV = 5 Or LOC_TIPMOV = 6 Then
    PSCNT_LLAVE.rdoParameters(0) = LK_CODCIA
    If LOC_TIPMOV = 5 Then
-     txtserie.Text = 4
+     txtSerie.Text = 4
      PSCNT_LLAVE.rdoParameters(1) = 2406
    Else
-   txtserie.Text = 1
+   txtSerie.Text = 1
      PSCNT_LLAVE.rdoParameters(1) = 2403
    End If
     PSCNT_LLAVE.rdoParameters(2) = 0
    cnt_llave.Requery
-   If Not cnt_llave.EOF Then txtserie.Text = Nulo_Valor0(cnt_llave!cnt_serie)
+   If Not cnt_llave.EOF Then txtSerie.Text = Nulo_Valor0(cnt_llave!cnt_serie)
 Else
- txtserie.Text = "0"
+ txtSerie.Text = "0"
 End If
 If LOC_TIPMOV = 3 Then pu_cp = "P"
 If LOC_TIPMOV = 102 Then pu_cp = "C"
 If LOC_TIPMOV = 100 Or LOC_TIPMOV = 101 Or LOC_TIPMOV = 93 Then
 pu_cp = " "
 If LOC_TIPMOV = 100 Then pu_cp = "C"
- txtserie.Text = "1"
+ txtSerie.Text = "1"
 End If
 
  PU_TIPMOV = LOC_TIPMOV
- PU_NUMSER = Val(txtserie.Text)
+ PU_NUMSER = Val(txtSerie.Text)
  PU_FBG = " "
 
 End If
@@ -5884,16 +5884,16 @@ If LOC_TIPMOV <> 10 Then
   pu_codcia = LK_CODCIA
   LEER_FAR_CONSUL
   If Not far_consul.EOF Then
-   txtnumfac.Text = far_consul!far_numfac
+   txtNumfac.Text = far_consul!far_numfac
   Else
-   txtnumfac.Text = ""
+   txtNumfac.Text = ""
   End If
    Screen.MousePointer = 0
-  Azul txtnumfac, txtnumfac
+  Azul txtNumfac, txtNumfac
 Else
   pu_codcia = LK_CODCIA
-  txtnumfac.Text = ""
-  Azul txtserie, txtserie
+  txtNumfac.Text = ""
+  Azul txtSerie, txtSerie
 End If
 
 If Trim(d_fecha.Caption) = "" Then txtnumfac_KeyPress 13
@@ -5906,31 +5906,31 @@ End Sub
 
 Public Sub EVENTO_LOSFOCUS_TIPMOV()
 cmbFBG.Clear
-If Trim(tipmov.Text) = "" Then
+If Trim(TIPMOV.Text) = "" Then
  LOC_TIPMOV = 0
 Else
- LOC_TIPMOV = Val(Trim(Right(tipmov.Text, 4)))
+ LOC_TIPMOV = Val(Trim(Right(TIPMOV.Text, 4)))
  cmdImp.Enabled = False
  lblpersona.Visible = True
  d_Codclie.Visible = True
- lblRuc.Visible = True
+ LBLRUC.Visible = True
  'lblven.Visible = True
  d_codven.Visible = True
  d_condicion.Visible = True
  lblcondicion.Visible = True
- lblDireccion.Visible = True
+ lbldireccion.Visible = True
  If LOC_TIPMOV = 101 Or LOC_TIPMOV = 93 Or LOC_TIPMOV = 20 Or LOC_TIPMOV = 5 Or LOC_TIPMOV = 6 Or LOC_TIPMOV = 10 Or LOC_TIPMOV = 97 Or LOC_TIPMOV = 98 Then
    cmdImp.Enabled = True
  ElseIf LOC_TIPMOV = 96 Then
    cmdImp.Enabled = True
    lblpersona.Visible = False
    d_Codclie.Visible = False
-   lblRuc.Visible = False
+   LBLRUC.Visible = False
 '   lblven.Visible = False
    d_codven.Visible = False
    d_condicion.Visible = False
    lblcondicion.Visible = False
-   lblDireccion.Visible = False
+   lbldireccion.Visible = False
  End If
  If temporal = "X" Then
   Exit Sub
@@ -5986,7 +5986,7 @@ Else
  If LOC_TIPMOV = 102 Then
  Else
   d_codven.Visible = False
-  lblRuc.Visible = False
+  LBLRUC.Visible = False
   d_Codclie.Visible = False
   lblpersona.Caption = ""
  End If
@@ -6019,7 +6019,7 @@ Public Sub MUESTA_DOCUMENTO()
     loc_flag_espera = "A"
     LLENA_CONSULTA
     loc_flag_espera = ""
-    txtnumfac.SetFocus
+    txtNumfac.SetFocus
 End Sub
 
 Private Sub lblbarraos_DblClick()

@@ -27,8 +27,8 @@ Begin VB.Form FORMGEN
    LinkTopic       =   "Form2"
    MDIChild        =   -1  'True
    PaletteMode     =   1  'UseZOrder
-   ScaleHeight     =   14880
-   ScaleWidth      =   20595
+   ScaleHeight     =   15615
+   ScaleWidth      =   28560
    Tag             =   "55"
    WindowState     =   2  'Maximized
    Begin VB.Frame fraprecios 
@@ -368,7 +368,7 @@ Begin VB.Form FORMGEN
          TabIndex        =   309
          Tag             =   "0"
          Top             =   1035
-         Width           =   675
+         Width           =   660
       End
       Begin VB.Label lbltitulostock5a 
          Alignment       =   2  'Center
@@ -412,11 +412,11 @@ Begin VB.Form FORMGEN
          ForeColor       =   &H00000080&
          Height          =   270
          Index           =   0
-         Left            =   10050
+         Left            =   10056
          TabIndex        =   306
          Tag             =   "0"
          Top             =   1035
-         Width           =   675
+         Width           =   660
       End
       Begin VB.Label lbltitulostock5a 
          Alignment       =   2  'Center
@@ -434,7 +434,7 @@ Begin VB.Form FORMGEN
          ForeColor       =   &H00FFFFFF&
          Height          =   255
          Index           =   0
-         Left            =   9978
+         Left            =   9912
          TabIndex        =   305
          Tag             =   "0"
          Top             =   780
@@ -577,11 +577,11 @@ Begin VB.Form FORMGEN
          BorderStyle     =   1  'Fixed Single
          ForeColor       =   &H00000080&
          Height          =   270
-         Left            =   9180
+         Left            =   9192
          TabIndex        =   277
          Tag             =   "0"
          Top             =   1035
-         Width           =   675
+         Width           =   660
       End
       Begin VB.Label lpstocku5 
          Alignment       =   1  'Right Justify
@@ -592,7 +592,7 @@ Begin VB.Form FORMGEN
          Left            =   9192
          TabIndex        =   276
          Tag             =   "0"
-         Top             =   1425
+         Top             =   1440
          Width           =   660
       End
       Begin VB.Label lbltitulostock4 
@@ -610,10 +610,10 @@ Begin VB.Form FORMGEN
          EndProperty
          ForeColor       =   &H00FFFFFF&
          Height          =   270
-         Left            =   9156
+         Left            =   9024
          TabIndex        =   275
          Tag             =   "0"
-         Top             =   780
+         Top             =   772
          Width           =   810
       End
       Begin VB.Label lpstock4 
@@ -623,11 +623,11 @@ Begin VB.Form FORMGEN
          Caption         =   "0.00"
          ForeColor       =   &H00000080&
          Height          =   270
-         Left            =   8310
+         Left            =   8328
          TabIndex        =   274
          Tag             =   "0"
          Top             =   1035
-         Width           =   675
+         Width           =   660
       End
       Begin VB.Label lpstocku4 
          Alignment       =   1  'Right Justify
@@ -639,7 +639,7 @@ Begin VB.Form FORMGEN
          Left            =   8328
          TabIndex        =   273
          Tag             =   "0"
-         Top             =   1425
+         Top             =   1440
          Width           =   660
       End
       Begin VB.Label lbltitulostock3 
@@ -657,10 +657,10 @@ Begin VB.Form FORMGEN
          EndProperty
          ForeColor       =   &H00FFFFFF&
          Height          =   270
-         Left            =   8334
+         Left            =   8136
          TabIndex        =   272
          Tag             =   "0"
-         Top             =   780
+         Top             =   772
          Width           =   810
       End
       Begin VB.Label lblprioridad 
@@ -720,10 +720,10 @@ Begin VB.Form FORMGEN
          EndProperty
          ForeColor       =   &H00FFFFFF&
          Height          =   270
-         Left            =   7440
+         Left            =   7248
          TabIndex        =   256
          Tag             =   "0"
-         Top             =   780
+         Top             =   772
          Width           =   810
       End
       Begin VB.Label lpstocku3 
@@ -746,11 +746,11 @@ Begin VB.Form FORMGEN
          Caption         =   "0.00"
          ForeColor       =   &H00FFFFFF&
          Height          =   270
-         Left            =   7440
+         Left            =   7464
          TabIndex        =   254
          Tag             =   "0"
          Top             =   1035
-         Width           =   675
+         Width           =   660
       End
       Begin VB.Label lbltitulostock2 
          Alignment       =   1  'Right Justify
@@ -770,7 +770,7 @@ Begin VB.Form FORMGEN
          Left            =   6360
          TabIndex        =   253
          Tag             =   "0"
-         Top             =   795
+         Top             =   772
          Width           =   810
       End
       Begin VB.Label lbltitulostock 
@@ -801,11 +801,11 @@ Begin VB.Form FORMGEN
          Caption         =   "0.00"
          ForeColor       =   &H00FF0000&
          Height          =   270
-         Left            =   6570
+         Left            =   6600
          TabIndex        =   251
          Tag             =   "0"
          Top             =   1035
-         Width           =   675
+         Width           =   660
       End
       Begin VB.Label lpstocku2 
          Alignment       =   1  'Right Justify
@@ -817,7 +817,7 @@ Begin VB.Form FORMGEN
          Left            =   6600
          TabIndex        =   250
          Tag             =   "0"
-         Top             =   1425
+         Top             =   1440
          Width           =   660
       End
       Begin VB.Label lpp6 
@@ -2497,7 +2497,7 @@ Begin VB.Form FORMGEN
       Caption         =   "Diari&o"
       Height          =   800
       Left            =   12353
-      Picture         =   "FORMGEN.frx":1566
+      Picture         =   "FORMGEN.frx":F1E2
       Style           =   1  'Graphical
       TabIndex        =   114
       Tag             =   "153"
@@ -2545,7 +2545,7 @@ Begin VB.Form FORMGEN
       BorderStyle     =   0  'None
       Height          =   480
       Left            =   5280
-      Picture         =   "FORMGEN.frx":19A8
+      Picture         =   "FORMGEN.frx":214EC
       ScaleHeight     =   480
       ScaleWidth      =   480
       TabIndex        =   161
@@ -2573,7 +2573,7 @@ Begin VB.Form FORMGEN
       FocusRect       =   2
       HighLight       =   2
       AllowUserResizing=   1
-      FormatString    =   $"FORMGEN.frx":1DEA
+      FormatString    =   $"FORMGEN.frx":2192E
    End
    Begin MSMask.MaskEdBox i_fecha_can 
       Height          =   285
@@ -2960,16 +2960,16 @@ Begin VB.Form FORMGEN
       FocusRect       =   2
       HighLight       =   2
       AllowUserResizing=   1
-      FormatString    =   $"FORMGEN.frx":1E76
+      FormatString    =   $"FORMGEN.frx":219BA
    End
    Begin VB.ComboBox i_cias 
       BackColor       =   &H00E0E0E0&
       ForeColor       =   &H00000080&
       Height          =   315
       IntegralHeight  =   0   'False
-      ItemData        =   "FORMGEN.frx":1EFD
+      ItemData        =   "FORMGEN.frx":21A41
       Left            =   3840
-      List            =   "FORMGEN.frx":1EFF
+      List            =   "FORMGEN.frx":21A43
       Sorted          =   -1  'True
       Style           =   2  'Dropdown List
       TabIndex        =   132
@@ -3004,9 +3004,9 @@ Begin VB.Form FORMGEN
       BackColor       =   &H00E0E0E0&
       ForeColor       =   &H00000080&
       Height          =   315
-      ItemData        =   "FORMGEN.frx":1F01
+      ItemData        =   "FORMGEN.frx":21A45
       Left            =   4560
-      List            =   "FORMGEN.frx":1F03
+      List            =   "FORMGEN.frx":21A47
       Style           =   2  'Dropdown List
       TabIndex        =   125
       Tag             =   "0"
@@ -3026,8 +3026,9 @@ Begin VB.Form FORMGEN
       _ExtentY        =   661
       _Version        =   393217
       BackColor       =   14737632
+      Enabled         =   -1  'True
       MultiLine       =   0   'False
-      TextRTF         =   $"FORMGEN.frx":1F05
+      TextRTF         =   $"FORMGEN.frx":21A49
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Arial"
          Size            =   9.75
@@ -3049,9 +3050,10 @@ Begin VB.Form FORMGEN
       _ExtentY        =   661
       _Version        =   393217
       BackColor       =   14737632
+      Enabled         =   -1  'True
       MultiLine       =   0   'False
       MousePointer    =   1
-      TextRTF         =   $"FORMGEN.frx":1F82
+      TextRTF         =   $"FORMGEN.frx":21AC6
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
          Size            =   9.75
@@ -3066,9 +3068,9 @@ Begin VB.Form FORMGEN
       BackColor       =   &H00E0E0E0&
       ForeColor       =   &H00000080&
       Height          =   315
-      ItemData        =   "FORMGEN.frx":2007
+      ItemData        =   "FORMGEN.frx":21B4B
       Left            =   1080
-      List            =   "FORMGEN.frx":2009
+      List            =   "FORMGEN.frx":21B4D
       Style           =   2  'Dropdown List
       TabIndex        =   49
       Tag             =   "16"
@@ -3101,9 +3103,9 @@ Begin VB.Form FORMGEN
       BackColor       =   &H00E0E0E0&
       ForeColor       =   &H00000080&
       Height          =   315
-      ItemData        =   "FORMGEN.frx":200B
+      ItemData        =   "FORMGEN.frx":21B4F
       Left            =   1080
-      List            =   "FORMGEN.frx":2015
+      List            =   "FORMGEN.frx":21B59
       Style           =   2  'Dropdown List
       TabIndex        =   122
       Tag             =   "0"
@@ -3364,9 +3366,9 @@ Begin VB.Form FORMGEN
       BackColor       =   &H00E0E0E0&
       ForeColor       =   &H00000080&
       Height          =   315
-      ItemData        =   "FORMGEN.frx":2035
+      ItemData        =   "FORMGEN.frx":21B79
       Left            =   2280
-      List            =   "FORMGEN.frx":2042
+      List            =   "FORMGEN.frx":21B86
       Style           =   2  'Dropdown List
       TabIndex        =   73
       Tag             =   "14"
@@ -3378,9 +3380,9 @@ Begin VB.Form FORMGEN
       BackColor       =   &H00E0E0E0&
       ForeColor       =   &H00000080&
       Height          =   315
-      ItemData        =   "FORMGEN.frx":204F
+      ItemData        =   "FORMGEN.frx":21B93
       Left            =   1080
-      List            =   "FORMGEN.frx":2059
+      List            =   "FORMGEN.frx":21B9D
       Style           =   2  'Dropdown List
       TabIndex        =   75
       Tag             =   "76"
@@ -3459,9 +3461,9 @@ Begin VB.Form FORMGEN
    End
    Begin VB.ComboBox i_cant_cheq 
       Height          =   315
-      ItemData        =   "FORMGEN.frx":2063
+      ItemData        =   "FORMGEN.frx":21BA7
       Left            =   6360
-      List            =   "FORMGEN.frx":2065
+      List            =   "FORMGEN.frx":21BA9
       TabIndex        =   66
       Tag             =   "65"
       Text            =   "i_cant_cheq"
@@ -3521,9 +3523,9 @@ Begin VB.Form FORMGEN
       EndProperty
       ForeColor       =   &H00000080&
       Height          =   285
-      ItemData        =   "FORMGEN.frx":2067
+      ItemData        =   "FORMGEN.frx":21BAB
       Left            =   600
-      List            =   "FORMGEN.frx":2069
+      List            =   "FORMGEN.frx":21BAD
       Sorted          =   -1  'True
       Style           =   2  'Dropdown List
       TabIndex        =   60
@@ -3545,9 +3547,9 @@ Begin VB.Form FORMGEN
       EndProperty
       ForeColor       =   &H00000080&
       Height          =   285
-      ItemData        =   "FORMGEN.frx":206B
+      ItemData        =   "FORMGEN.frx":21BAF
       Left            =   615
-      List            =   "FORMGEN.frx":206D
+      List            =   "FORMGEN.frx":21BB1
       Sorted          =   -1  'True
       Style           =   2  'Dropdown List
       TabIndex        =   59
@@ -3569,9 +3571,9 @@ Begin VB.Form FORMGEN
       EndProperty
       ForeColor       =   &H00000080&
       Height          =   285
-      ItemData        =   "FORMGEN.frx":206F
+      ItemData        =   "FORMGEN.frx":21BB3
       Left            =   600
-      List            =   "FORMGEN.frx":2071
+      List            =   "FORMGEN.frx":21BB5
       Sorted          =   -1  'True
       Style           =   2  'Dropdown List
       TabIndex        =   58
@@ -3593,9 +3595,9 @@ Begin VB.Form FORMGEN
       EndProperty
       ForeColor       =   &H00000080&
       Height          =   285
-      ItemData        =   "FORMGEN.frx":2073
+      ItemData        =   "FORMGEN.frx":21BB7
       Left            =   600
-      List            =   "FORMGEN.frx":2075
+      List            =   "FORMGEN.frx":21BB9
       Sorted          =   -1  'True
       Style           =   2  'Dropdown List
       TabIndex        =   57
@@ -3685,7 +3687,7 @@ Begin VB.Form FORMGEN
       BackColor       =   &H00E0E0E0&
       ForeColor       =   &H00000080&
       Height          =   315
-      Left            =   7440
+      Left            =   7420
       TabIndex        =   48
       Tag             =   "25"
       Text            =   "i_numser"
@@ -3711,9 +3713,9 @@ Begin VB.Form FORMGEN
       ForeColor       =   &H00000080&
       Height          =   315
       IntegralHeight  =   0   'False
-      ItemData        =   "FORMGEN.frx":2077
+      ItemData        =   "FORMGEN.frx":21BBB
       Left            =   3120
-      List            =   "FORMGEN.frx":2079
+      List            =   "FORMGEN.frx":21BBD
       Sorted          =   -1  'True
       Style           =   2  'Dropdown List
       TabIndex        =   46
@@ -3726,7 +3728,7 @@ Begin VB.Form FORMGEN
       Caption         =   "Ce&rrar"
       Height          =   800
       Left            =   12353
-      Picture         =   "FORMGEN.frx":207B
+      Picture         =   "FORMGEN.frx":21BBF
       Style           =   1  'Graphical
       TabIndex        =   113
       TabStop         =   0   'False
@@ -3739,7 +3741,7 @@ Begin VB.Form FORMGEN
       Caption         =   "&Cancelar"
       Height          =   800
       Left            =   12353
-      Picture         =   "FORMGEN.frx":21C5
+      Picture         =   "FORMGEN.frx":6A449
       Style           =   1  'Graphical
       TabIndex        =   112
       TabStop         =   0   'False
@@ -3752,7 +3754,7 @@ Begin VB.Form FORMGEN
       Caption         =   "&Grabar"
       Height          =   800
       Left            =   12353
-      Picture         =   "FORMGEN.frx":2607
+      Picture         =   "FORMGEN.frx":94FD8
       Style           =   1  'Graphical
       TabIndex        =   1
       TabStop         =   0   'False
@@ -3791,7 +3793,7 @@ Begin VB.Form FORMGEN
       MultiLine       =   -1  'True
       TabIndex        =   43
       Tag             =   "134"
-      Text            =   "FORMGEN.frx":2A49
+      Text            =   "FORMGEN.frx":AFCFC
       Top             =   4440
       Visible         =   0   'False
       Width           =   2085
@@ -3841,7 +3843,7 @@ Begin VB.Form FORMGEN
       MultiLine       =   -1  'True
       TabIndex        =   33
       Tag             =   "10"
-      Text            =   "FORMGEN.frx":2A5B
+      Text            =   "FORMGEN.frx":AFD0E
       Top             =   720
       Visible         =   0   'False
       Width           =   855
@@ -3853,7 +3855,7 @@ Begin VB.Form FORMGEN
       Left            =   0
       TabIndex        =   32
       Tag             =   "6"
-      Text            =   $"FORMGEN.frx":2A6C
+      Text            =   $"FORMGEN.frx":AFD1F
       Top             =   3360
       Visible         =   0   'False
       Width           =   975
@@ -3972,7 +3974,7 @@ Begin VB.Form FORMGEN
       MaxLength       =   14
       TabIndex        =   7
       Tag             =   "7"
-      Text            =   $"FORMGEN.frx":2A7F
+      Text            =   $"FORMGEN.frx":AFD32
       Top             =   1560
       Visible         =   0   'False
       Width           =   885
@@ -4480,7 +4482,7 @@ Begin VB.Form FORMGEN
       Caption         =   "Ingreso Docs..."
       Height          =   975
       Left            =   8880
-      Picture         =   "FORMGEN.frx":2A8E
+      Picture         =   "FORMGEN.frx":AFD41
       Style           =   1  'Graphical
       TabIndex        =   0
       Tag             =   "1"
@@ -4707,8 +4709,8 @@ Begin VB.Form FORMGEN
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00000080&
-      Height          =   285
-      Left            =   6960
+      Height          =   315
+      Left            =   6950
       TabIndex        =   115
       Tag             =   "9999"
       Top             =   11040
@@ -6218,7 +6220,7 @@ End If
     End If
 
     
-If TypeOf FORMGEN.Controls(indice) Is Label Then
+If TypeOf FORMGEN.Controls(indice) Is label Then
     enlace = 1
 Else
     enlace = 0
@@ -9093,7 +9095,7 @@ End If
 
 Barra.Min = 0
 Barra.Value = 0
-Barra.Max = all_llave.RowCount
+Barra.max = all_llave.RowCount
 Barra.Visible = True
 
 FORMGEN.Grid_all.Visible = False
@@ -9425,7 +9427,7 @@ If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
                 'FrmPreUnidad.Txt_key.Text = ""
            ElseIf UCase(Forms(iFormCount).Name) = "FRMREPO" Then
                 FrmRepo.ListView1.Visible = False
-                FrmRepo.Txt_key.Text = ""
+                FrmRepo.txt_key.Text = ""
            ElseIf UCase(Forms(iFormCount).Name) = "FORMGEN" Then
                 FORMGEN.LV_ART.Visible = False
                 FORMGEN.fraprecios.Visible = False
@@ -9905,12 +9907,12 @@ grid_unid.MergeRow(0) = True
        If Trim(grid_unid.TextMatrix(0, fil)) = "" Then grid_unid.ColWidth(fil) = 0
        ws_ancho = ws_ancho + grid_unid.ColWidth(fil)
    Next fil
-  fcomun.Top = 400
-  fcomun.Width = ws_ancho
+  Fcomun.Top = 400
+  Fcomun.Width = ws_ancho
   grid_unid.Width = ws_ancho
   grid_unid.Left = 0
-  fcomun.Left = 9500 - ws_ancho
-  fcomun.Height = 1400
+  Fcomun.Left = 9500 - ws_ancho
+  Fcomun.Height = 1400
   grid_unid.Height = 800
   If FORMGEN.i_ds.Visible And FORMGEN.i_ds.ListCount > 0 Then
     FORMGEN.i_ds.ListIndex = 0
@@ -10342,7 +10344,7 @@ End If
 
 Barra.Visible = True
 'Barra
-Barra.Max = 90
+Barra.max = 90
 Barra.Min = 62
 
 Barra.Value = 62
@@ -27391,7 +27393,7 @@ pub_cadena = " select all_fecha_dia,all_numoper2 " & _
 "and all_codtra in (2725,2735,5360,2727,1455) and (all_codcia = caa_codcia) and (all_tipdoc = caa_tipdoc) and (all_serdoc = caa_serdoc) and (all_numdoc = caa_numdoc) and (all_cp = caa_cp) and (all_codclie = caa_codclie) and caa_codven = " & DCIA2 & "  group by all_fecha_dia,all_numoper2"
     Set ps_vercia = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)
     If Not ps_vercia.EOF Then
-     Barra.Max = ps_vercia.RowCount
+     Barra.max = ps_vercia.RowCount
      Barra.Visible = True
     End If
 
