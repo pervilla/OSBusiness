@@ -27,12 +27,12 @@ Begin VB.Form FORMGEN
    LinkTopic       =   "Form2"
    MDIChild        =   -1  'True
    PaletteMode     =   1  'UseZOrder
-   ScaleHeight     =   15615
-   ScaleWidth      =   28560
+   ScaleHeight     =   14880
+   ScaleWidth      =   20595
    Tag             =   "55"
    WindowState     =   2  'Maximized
    Begin VB.Frame fraprecios 
-      BackColor       =   &H00808080&
+      BackColor       =   &H00000000&
       Caption         =   "Lista de Precios"
       ForeColor       =   &H00404040&
       Height          =   3225
@@ -271,12 +271,12 @@ Begin VB.Form FORMGEN
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00FFFFFF&
-         Height          =   255
+         Height          =   270
          Index           =   0
          Left            =   120
          TabIndex        =   314
          Tag             =   "0"
-         Top             =   240
+         Top             =   255
          Width           =   885
       End
       Begin VB.Label lblp 
@@ -774,7 +774,6 @@ Begin VB.Form FORMGEN
          Width           =   810
       End
       Begin VB.Label lbltitulostock 
-         Alignment       =   1  'Right Justify
          BackStyle       =   0  'Transparent
          Caption         =   "Stock1"
          BeginProperty Font 
@@ -788,11 +787,11 @@ Begin VB.Form FORMGEN
          EndProperty
          ForeColor       =   &H00FFFFFF&
          Height          =   270
-         Left            =   5040
+         Left            =   3120
          TabIndex        =   252
          Tag             =   "0"
-         Top             =   675
-         Width           =   690
+         Top             =   600
+         Width           =   930
       End
       Begin VB.Label lpstock2 
          Alignment       =   1  'Right Justify
@@ -826,10 +825,10 @@ Begin VB.Form FORMGEN
          Caption         =   "0.00"
          ForeColor       =   &H00000080&
          Height          =   270
-         Left            =   2640
+         Left            =   3240
          TabIndex        =   249
          Tag             =   "0"
-         Top             =   1710
+         Top             =   2070
          Width           =   765
       End
       Begin VB.Label lpstocku 
@@ -847,7 +846,7 @@ Begin VB.Form FORMGEN
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   390
-         Left            =   4995
+         Left            =   3120
          TabIndex        =   248
          Tag             =   "0"
          Top             =   1305
@@ -859,10 +858,10 @@ Begin VB.Form FORMGEN
          Caption         =   "0.00"
          ForeColor       =   &H00000080&
          Height          =   270
-         Left            =   1800
+         Left            =   2400
          TabIndex        =   247
          Tag             =   "0"
-         Top             =   1710
+         Top             =   2070
          Width           =   765
       End
       Begin VB.Label lpp4 
@@ -871,10 +870,10 @@ Begin VB.Form FORMGEN
          Caption         =   "0.00"
          ForeColor       =   &H00000080&
          Height          =   270
-         Left            =   960
+         Left            =   1560
          TabIndex        =   246
          Tag             =   "0"
-         Top             =   1710
+         Top             =   2070
          Width           =   765
       End
       Begin VB.Label lblp 
@@ -892,10 +891,10 @@ Begin VB.Form FORMGEN
          ForeColor       =   &H00FFFFFF&
          Height          =   270
          Index           =   6
-         Left            =   120
+         Left            =   720
          TabIndex        =   245
          Tag             =   "0"
-         Top             =   1515
+         Top             =   1800
          Width           =   3285
       End
       Begin VB.Label lpp3 
@@ -904,10 +903,10 @@ Begin VB.Form FORMGEN
          Caption         =   "0.00"
          ForeColor       =   &H00000080&
          Height          =   270
-         Left            =   120
+         Left            =   720
          TabIndex        =   244
          Tag             =   "0"
-         Top             =   1710
+         Top             =   2070
          Width           =   765
       End
       Begin VB.Label lpp2 
@@ -925,10 +924,10 @@ Begin VB.Form FORMGEN
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   360
-         Left            =   1770
+         Left            =   1080
          TabIndex        =   243
          Tag             =   "0"
-         Top             =   1020
+         Top             =   840
          Width           =   1680
       End
       Begin VB.Label lpp1 
@@ -946,15 +945,15 @@ Begin VB.Form FORMGEN
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   360
-         Left            =   90
+         Left            =   1080
          TabIndex        =   242
          Tag             =   "0"
-         Top             =   1020
-         Width           =   1605
+         Top             =   1320
+         Width           =   1680
       End
       Begin VB.Label lblp 
          BackStyle       =   0  'Transparent
-         Caption         =   "P.Unid. :                       Precio Pqt :"
+         Caption         =   "Precio"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -967,27 +966,26 @@ Begin VB.Form FORMGEN
          ForeColor       =   &H00FFFFFF&
          Height          =   225
          Index           =   3
-         Left            =   120
+         Left            =   1080
          TabIndex        =   241
          Tag             =   "0"
-         Top             =   840
-         Width           =   2565
+         Top             =   600
+         Width           =   1725
       End
       Begin VB.Label lpunidad 
-         Alignment       =   1  'Right Justify
          BackStyle       =   0  'Transparent
          Caption         =   "UND"
-         ForeColor       =   &H00000080&
+         ForeColor       =   &H00FF00FF&
          Height          =   270
-         Left            =   6000
+         Left            =   4080
          TabIndex        =   240
          Tag             =   "0"
-         Top             =   260
-         Width           =   1110
+         Top             =   840
+         Width           =   735
       End
       Begin VB.Label lblp 
          BackStyle       =   0  'Transparent
-         Caption         =   "Unid."
+         Caption         =   "Unidad:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -998,12 +996,12 @@ Begin VB.Form FORMGEN
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00FFFFFF&
-         Height          =   225
+         Height          =   270
          Index           =   2
-         Left            =   5430
+         Left            =   4080
          TabIndex        =   239
          Tag             =   "0"
-         Top             =   260
+         Top             =   1320
          Width           =   645
       End
       Begin VB.Label lpstock 
@@ -1021,16 +1019,16 @@ Begin VB.Form FORMGEN
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   390
-         Left            =   4995
+         Left            =   3120
          TabIndex        =   238
          Tag             =   "0"
-         Top             =   915
+         Top             =   840
          Width           =   900
       End
       Begin VB.Label lblp 
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
-         Caption         =   "Stock Cajas =                         Stock Unid ="
+         Caption         =   "Cajas/Pqt =                         Unidad ="
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1043,22 +1041,22 @@ Begin VB.Form FORMGEN
          ForeColor       =   &H00FFFFFF&
          Height          =   615
          Index           =   1
-         Left            =   3960
+         Left            =   120
          TabIndex        =   237
          Tag             =   "0"
-         Top             =   960
+         Top             =   840
          Width           =   1050
       End
       Begin VB.Label lpnombre 
          BackStyle       =   0  'Transparent
          Caption         =   "Producto :"
-         ForeColor       =   &H00000080&
+         ForeColor       =   &H00FF00FF&
          Height          =   270
-         Left            =   120
+         Left            =   960
          TabIndex        =   236
          Tag             =   "0"
-         Top             =   480
-         Width           =   5400
+         Top             =   255
+         Width           =   4800
       End
    End
    Begin VB.Frame fradocpen 
@@ -1141,6 +1139,7 @@ Begin VB.Form FORMGEN
          Rows            =   1
          Cols            =   12
          FixedCols       =   0
+         BackColorBkg    =   4210688
          AllowUserResizing=   3
       End
       Begin VB.TextBox textolote 
@@ -1200,6 +1199,7 @@ Begin VB.Form FORMGEN
          Cols            =   4
          FixedRows       =   2
          FixedCols       =   0
+         BackColorBkg    =   4210688
          AllowUserResizing=   3
          Appearance      =   0
       End
@@ -1587,6 +1587,7 @@ Begin VB.Form FORMGEN
          Rows            =   3
          FixedRows       =   2
          ForeColor       =   4194304
+         BackColorBkg    =   4210688
          BorderStyle     =   0
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1660,6 +1661,7 @@ Begin VB.Form FORMGEN
       _ExtentX        =   3731
       _ExtentY        =   1720
       _Version        =   393216
+      BackColorBkg    =   4210688
    End
    Begin VB.CommandButton CmdEsp 
       Caption         =   "Descuento Especial"
@@ -1930,6 +1932,7 @@ Begin VB.Form FORMGEN
          _Version        =   393216
          Rows            =   3
          FixedRows       =   2
+         BackColorBkg    =   4210688
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -3026,7 +3029,6 @@ Begin VB.Form FORMGEN
       _ExtentY        =   661
       _Version        =   393217
       BackColor       =   14737632
-      Enabled         =   -1  'True
       MultiLine       =   0   'False
       TextRTF         =   $"FORMGEN.frx":21A49
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -3050,7 +3052,6 @@ Begin VB.Form FORMGEN
       _ExtentY        =   661
       _Version        =   393217
       BackColor       =   14737632
-      Enabled         =   -1  'True
       MultiLine       =   0   'False
       MousePointer    =   1
       TextRTF         =   $"FORMGEN.frx":21AC6
@@ -4008,13 +4009,13 @@ Begin VB.Form FORMGEN
       BackColor       =   &H80000004&
       Caption         =   "Item de Articulos"
       ForeColor       =   &H00808000&
-      Height          =   6765
+      Height          =   6645
       Left            =   120
       TabIndex        =   21
       Tag             =   "100"
-      Top             =   3720
+      Top             =   3960
       Visible         =   0   'False
-      Width           =   11895
+      Width           =   12015
       Begin VB.TextBox i_cant 
          Alignment       =   1  'Right Justify
          BackColor       =   &H00E0E0E0&
@@ -4290,7 +4291,7 @@ Begin VB.Form FORMGEN
          Rows            =   3
          Cols            =   9
          FixedRows       =   2
-         BackColorBkg    =   8421376
+         BackColorBkg    =   4210688
          GridLines       =   3
          AllowUserResizing=   3
       End
@@ -4373,7 +4374,7 @@ Begin VB.Form FORMGEN
       BackColor       =   16777215
       BackColorFixed  =   12632256
       ForeColorFixed  =   64
-      BackColorBkg    =   8421376
+      BackColorBkg    =   4210688
       FocusRect       =   2
       HighLight       =   2
       AllowUserResizing=   1
@@ -5133,7 +5134,7 @@ Begin VB.Form FORMGEN
    End
    Begin VB.Label LBLDET 
       BorderStyle     =   1  'Fixed Single
-      Height          =   7095
+      Height          =   7155
       Left            =   0
       TabIndex        =   166
       Tag             =   "9999"
@@ -9427,7 +9428,7 @@ If LK_FLAG_ALTERNO = "A" And LK_FLAG_ORIGINAL <> "A" Then
                 'FrmPreUnidad.Txt_key.Text = ""
            ElseIf UCase(Forms(iFormCount).Name) = "FRMREPO" Then
                 FrmRepo.ListView1.Visible = False
-                FrmRepo.txt_key.Text = ""
+                FrmRepo.Txt_key.Text = ""
            ElseIf UCase(Forms(iFormCount).Name) = "FORMGEN" Then
                 FORMGEN.LV_ART.Visible = False
                 FORMGEN.fraprecios.Visible = False
@@ -9907,12 +9908,12 @@ grid_unid.MergeRow(0) = True
        If Trim(grid_unid.TextMatrix(0, fil)) = "" Then grid_unid.ColWidth(fil) = 0
        ws_ancho = ws_ancho + grid_unid.ColWidth(fil)
    Next fil
-  Fcomun.Top = 400
-  Fcomun.Width = ws_ancho
+  fcomun.Top = 400
+  fcomun.Width = ws_ancho
   grid_unid.Width = ws_ancho
   grid_unid.Left = 0
-  Fcomun.Left = 9500 - ws_ancho
-  Fcomun.Height = 1400
+  fcomun.Left = 9500 - ws_ancho
+  fcomun.Height = 1400
   grid_unid.Height = 800
   If FORMGEN.i_ds.Visible And FORMGEN.i_ds.ListCount > 0 Then
     FORMGEN.i_ds.ListIndex = 0
@@ -20815,7 +20816,7 @@ If loc_key <> 0 Then
   ElseIf Val(LV_ART.ListItems.Item(loc_key).SubItems(16)) = 1 Then
     fraprecios.BackColor = QBColor(6)
   Else
-    fraprecios.BackColor = QBColor(8)
+    fraprecios.BackColor = QBColor(0)
     LBLAGOTADO.Visible = False
   End If
   
@@ -21887,7 +21888,7 @@ POSICION:
   ElseIf Val(LV_ART.ListItems.Item(loc_key).SubItems(16)) = 1 Then
     fraprecios.BackColor = QBColor(6)
   Else
-    fraprecios.BackColor = QBColor(8)
+    fraprecios.BackColor = QBColor(0)
     LBLAGOTADO.Visible = False
   End If
   If Val(LV_ART.ListItems.Item(loc_key).SubItems(19)) = 1 Then
