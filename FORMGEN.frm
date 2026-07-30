@@ -34,7 +34,7 @@ Begin VB.Form FORMGEN
    Begin VB.Frame fraprecios 
       BackColor       =   &H00000000&
       Caption         =   "Lista de Precios"
-      ForeColor       =   &H00404040&
+      ForeColor       =   &H00C0C0C0&
       Height          =   3225
       Left            =   0
       TabIndex        =   235
@@ -787,7 +787,7 @@ Begin VB.Form FORMGEN
          EndProperty
          ForeColor       =   &H00FFFFFF&
          Height          =   270
-         Left            =   3120
+         Left            =   4200
          TabIndex        =   252
          Tag             =   "0"
          Top             =   600
@@ -825,7 +825,7 @@ Begin VB.Form FORMGEN
          Caption         =   "0.00"
          ForeColor       =   &H00000080&
          Height          =   270
-         Left            =   3240
+         Left            =   4320
          TabIndex        =   249
          Tag             =   "0"
          Top             =   2070
@@ -846,7 +846,7 @@ Begin VB.Form FORMGEN
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   390
-         Left            =   3120
+         Left            =   4200
          TabIndex        =   248
          Tag             =   "0"
          Top             =   1305
@@ -858,7 +858,7 @@ Begin VB.Form FORMGEN
          Caption         =   "0.00"
          ForeColor       =   &H00000080&
          Height          =   270
-         Left            =   2400
+         Left            =   3480
          TabIndex        =   247
          Tag             =   "0"
          Top             =   2070
@@ -870,7 +870,7 @@ Begin VB.Form FORMGEN
          Caption         =   "0.00"
          ForeColor       =   &H00000080&
          Height          =   270
-         Left            =   1560
+         Left            =   2640
          TabIndex        =   246
          Tag             =   "0"
          Top             =   2070
@@ -891,7 +891,7 @@ Begin VB.Form FORMGEN
          ForeColor       =   &H00FFFFFF&
          Height          =   270
          Index           =   6
-         Left            =   720
+         Left            =   1800
          TabIndex        =   245
          Tag             =   "0"
          Top             =   1800
@@ -903,7 +903,7 @@ Begin VB.Form FORMGEN
          Caption         =   "0.00"
          ForeColor       =   &H00000080&
          Height          =   270
-         Left            =   720
+         Left            =   1800
          TabIndex        =   244
          Tag             =   "0"
          Top             =   2070
@@ -924,7 +924,7 @@ Begin VB.Form FORMGEN
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   360
-         Left            =   1080
+         Left            =   2160
          TabIndex        =   243
          Tag             =   "0"
          Top             =   840
@@ -945,7 +945,7 @@ Begin VB.Form FORMGEN
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   360
-         Left            =   1080
+         Left            =   2160
          TabIndex        =   242
          Tag             =   "0"
          Top             =   1320
@@ -966,7 +966,7 @@ Begin VB.Form FORMGEN
          ForeColor       =   &H00FFFFFF&
          Height          =   225
          Index           =   3
-         Left            =   1080
+         Left            =   2160
          TabIndex        =   241
          Tag             =   "0"
          Top             =   600
@@ -974,35 +974,26 @@ Begin VB.Form FORMGEN
       End
       Begin VB.Label lpunidad 
          BackStyle       =   0  'Transparent
-         Caption         =   "UND"
-         ForeColor       =   &H00FF00FF&
+         Caption         =   "CAJ/PQT"
+         ForeColor       =   &H00FFFF00&
          Height          =   270
-         Left            =   4080
+         Left            =   5160
          TabIndex        =   240
          Tag             =   "0"
-         Top             =   840
-         Width           =   735
+         Top             =   960
+         Width           =   855
       End
       Begin VB.Label lblp 
          BackStyle       =   0  'Transparent
-         Caption         =   "Unidad:"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00FFFFFF&
+         Caption         =   "UNIDAD"
+         ForeColor       =   &H00FFFF00&
          Height          =   270
          Index           =   2
-         Left            =   4080
+         Left            =   5160
          TabIndex        =   239
          Tag             =   "0"
-         Top             =   1320
-         Width           =   645
+         Top             =   1440
+         Width           =   885
       End
       Begin VB.Label lpstock 
          Alignment       =   1  'Right Justify
@@ -1019,7 +1010,7 @@ Begin VB.Form FORMGEN
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   390
-         Left            =   3120
+         Left            =   4200
          TabIndex        =   238
          Tag             =   "0"
          Top             =   840
@@ -1041,22 +1032,22 @@ Begin VB.Form FORMGEN
          ForeColor       =   &H00FFFFFF&
          Height          =   615
          Index           =   1
-         Left            =   120
+         Left            =   1200
          TabIndex        =   237
          Tag             =   "0"
-         Top             =   840
+         Top             =   960
          Width           =   1050
       End
       Begin VB.Label lpnombre 
          BackStyle       =   0  'Transparent
          Caption         =   "Producto :"
          ForeColor       =   &H00FF00FF&
-         Height          =   270
+         Height          =   390
          Left            =   960
          TabIndex        =   236
          Tag             =   "0"
          Top             =   255
-         Width           =   4800
+         Width           =   6120
       End
    End
    Begin VB.Frame fradocpen 
@@ -3029,6 +3020,7 @@ Begin VB.Form FORMGEN
       _ExtentY        =   661
       _Version        =   393217
       BackColor       =   14737632
+      Enabled         =   -1  'True
       MultiLine       =   0   'False
       TextRTF         =   $"FORMGEN.frx":21A49
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -3052,6 +3044,7 @@ Begin VB.Form FORMGEN
       _ExtentY        =   661
       _Version        =   393217
       BackColor       =   14737632
+      Enabled         =   -1  'True
       MultiLine       =   0   'False
       MousePointer    =   1
       TextRTF         =   $"FORMGEN.frx":21AC6
@@ -10200,7 +10193,7 @@ Dim subtotal As Currency
 Dim WS_BRUTO2 As Currency
 Dim ws_diferencia As Currency
 Dim WS_CORRELATIVO As Double
-Dim ws_codart As Long
+Dim WS_CODART As Long
 Dim NETO As Currency
 Dim fx As Integer
 Dim FLAG As Boolean
@@ -10588,7 +10581,7 @@ End If
 GoTo fin
 
 CON1:
-  ws_codart = 0
+  WS_CODART = 0
   exito = ANEXO_CON1()
 Return
 
@@ -10904,44 +10897,13 @@ If LK_CODTRA <> 1111 Then
   Next kcuentaf
   
   
-   ' cheque las filas en la 2401 si pasa del parametro establesido
-   If LK_CODTRA = 2401 Then
-     nrolinelotes = det_lot.Rows - 1
-     descrip = ARTICULOLOTE
-     nrolinelotes = Val(Left(descrip, 3))
-     descrip = Mid(descrip, 4, Len(descrip))
-     If Trim(FORMGEN.i_fbg.Text) = "B" Then
-      If PUB_CODVEN = 10 Then
-          WS_NRO_ITEMS = Nulo_Valor0(par_llave!par_maxitem) ' TEMPORAL
-      Else
-          WS_NRO_ITEMS = Nulo_Valor0(par_llave!par_BOL_lines)
-      End If
-      If nrolinelotes <= Val(WS_NRO_ITEMS) Then
-      Else
-         CN.Execute "Rollback Transaction", rdExecDirect
-         con_llave.Close
-         
-         MsgBox "El Tamaro o del Documento no alcanza a los Item de los Articulos, pasan de lo predeterminado." & Chr(13) & "Total de Filas para Imprimir : " & Format(nrolinelotes, "00") & Chr(13) & "Tope de filas del Documento : " & Format(WS_NRO_ITEMS, "00") & Chr(13) & descrip, 48, Pub_Titulo
-         GoTo fin
-      End If
-     ElseIf Trim(FORMGEN.i_fbg.Text) = "F" Then
-      If nrolinelotes <= Val(par_llave!par_fac_lines) Then
-      Else
-         CN.Execute "Rollback Transaction", rdExecDirect
-         con_llave.Close
-         MsgBox "El Tamaro o del Documento no alcanza a los Item de los Articulos, pasan de lo predeterminado." & Chr(13) & "Total de Filas para Imprimir : " & Format(nrolinelotes, "00") & Chr(13) & "Tope de filas del Documento : " & Format(par_llave!par_fac_lines, "00") & Chr(13) & descrip, 48, Pub_Titulo
-         GoTo fin
-      End If
-     ElseIf Trim(FORMGEN.i_fbg.Text) = "G" Then
-      If nrolinelotes <= Val(par_llave!par_GUIA_lines) Then
-      Else
-         CN.Execute "Rollback Transaction", rdExecDirect
-         con_llave.Close
-         MsgBox "El Tamaro o del Documento no alcanza a los Item de los Articulos, pasan de lo predeterminado." & Chr(13) & "Total de Filas para Imprimir : " & Format(nrolinelotes, "00") & Chr(13) & "Tope de filas del Documento : " & Format(par_llave!par_fac_lines, "00") & Chr(13) & descrip, 48, Pub_Titulo
-         GoTo fin
-      End If
-     End If
-   End If
+    ' cheque las filas en la 2401 si pasa del parametro establesido
+    If LK_CODTRA = 2401 Then
+      nrolinelotes = det_lot.Rows - 1
+      descrip = ARTICULOLOTE
+      nrolinelotes = Val(Left(descrip, 3))
+      descrip = Mid(descrip, 4, Len(descrip))
+    End If
 End If
 SUB_CANT = 0
 fila = 2
@@ -13721,22 +13683,22 @@ If Bloq_columnas() = False Then Exit Sub
 If loc_pase_bloq = 1 Then Exit Sub
 Dim ww_desc As Currency
 Dim FILAX As Integer
-Dim ws_codart As Long
+Dim WS_CODART As Long
 
 ' Abrir KARDEX al hacer doble clic en cualquier columna de la fila
 ' Buscar el codigo del articulo en diferentes columnas posibles
-ws_codart = 0
+WS_CODART = 0
 If grid_fac.Row > 0 Then
    ' Intentar obtener el codigo del articulo de diferentes columnas
-   ws_codart = Val(grid_fac.TextMatrix(grid_fac.Row, 1))  ' Columna 1
-   If ws_codart = 0 Then ws_codart = Val(grid_fac.TextMatrix(grid_fac.Row, 16))  ' Columna 16
-   If ws_codart = 0 Then ws_codart = Val(grid_fac.TextMatrix(grid_fac.Row, 0))   ' Columna 0
+   WS_CODART = Val(grid_fac.TextMatrix(grid_fac.Row, 1))  ' Columna 1
+   If WS_CODART = 0 Then WS_CODART = Val(grid_fac.TextMatrix(grid_fac.Row, 16))  ' Columna 16
+   If WS_CODART = 0 Then WS_CODART = Val(grid_fac.TextMatrix(grid_fac.Row, 0))   ' Columna 0
 End If
 
-If ws_codart > 0 Then
+If WS_CODART > 0 Then
    ' Configurar Kardex para mostrar ultimos movimientos
    KARDEX.option1(0).Value = True  ' Opcion: Ultimos movimientos
-   KARDEX.i_codart2.Text = ws_codart
+   KARDEX.i_codart2.Text = WS_CODART
    KARDEX.Show  ' Mostrar formulario (modeless por ser MDI child)
    KARDEX.ZOrder 0  ' Traer al frente
    DoEvents
@@ -20792,14 +20754,24 @@ If loc_key <> 0 Then
   Else
   lblp(11).Caption = ""
   lblp(12).Caption = ""
-  End If
-  
-  lpnombre.Caption = Trim(LV_ART.ListItems.Item(loc_key))
-  lpunidad.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(2))
-  lpstock.Caption = Int(LV_ART.ListItems.Item(loc_key).SubItems(3))
-  lpstocku.Caption = Format(Val((LV_ART.ListItems.Item(loc_key).SubItems(10))) - (Val(lpstock.Caption) * Val(LV_ART.ListItems.Item(loc_key).SubItems(9))), "##,##0.000")
-  lpstock.Caption = Format(lpstock.Caption, "##,##0.00")
-  lpp1.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(4))
+   End If
+   
+   lpnombre.Caption = Trim(LV_ART.ListItems.Item(loc_key))
+   lpunidad.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(2))
+   PUB_CODART = Val(LV_ART.ListItems.Item(loc_key).SubItems(1))
+   pu_codcia = LK_CODCIA
+   SQ_OPER = 2
+   LEER_PRE_LLAVE
+   If Not pre_mayor.EOF Then
+     pre_mayor.MoveFirst
+     lblp(2).Caption = Trim(pre_mayor!PRE_UNIDAD)
+   Else
+     lblp(2).Caption = "UND"
+   End If
+   lpstock.Caption = Int(LV_ART.ListItems.Item(loc_key).SubItems(3))
+   lpstocku.Caption = Format(Val((LV_ART.ListItems.Item(loc_key).SubItems(10))) - (Val(lpstock.Caption) * Val(LV_ART.ListItems.Item(loc_key).SubItems(9))), "##,##0.00")
+   lpstock.Caption = Format(lpstock.Caption, "##,##0.00")
+   lpp1.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(4))
   lpp2.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(5))
   lpp3.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(6))
   lpp4.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(7))
@@ -21493,83 +21465,10 @@ If grid_fac.COL = 4 And Not arm_llave.EOF And pub_signo_arm = -1 Then
 End If
 End If
 
-If PUB_TIPMOV = 100 Then
-      If 23 < grid_fac.Row - 1 Then
-        If LK_EMP = "HER" Then
-          MsgBox "Tope de lineas alcanzado..."
-          grid_fac.TextMatrix(grid_fac.Row, 38) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 4) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 5) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 6) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 7) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 13) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 16) = ""
-          Exit Sub
-        End If
-      End If
-End If
-If PUB_TIPMOV = 10 Then
-    If Trim(i_fbg.Text) = "F" Then
-      If Nulo_Valor0(par_llave!par_fac_lines) < grid_fac.Row - 1 Then
-        If LK_EMP = "HER" Then
-          MsgBox "Tope de lineas alcanzado..."
-          grid_fac.TextMatrix(grid_fac.Row, 38) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 4) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 5) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 6) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 7) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 13) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 16) = ""
-          Exit Sub
-        End If
-      End If
-    ElseIf Trim(i_fbg.Text) = "B" Then
-        If PUB_CODVEN = 10 Then
-          WS_NRO_ITEMS = Nulo_Valor0(par_llave!par_maxitem) ' TEMPORAL
-        Else
-          WS_NRO_ITEMS = Nulo_Valor0(par_llave!par_BOL_lines)
-        End If
-        
-      If WS_NRO_ITEMS < grid_fac.Row - 1 Then
-        If LK_EMP = "HER" Then
-          MsgBox "Tope de lineas alcanzado..."
-          grid_fac.TextMatrix(grid_fac.Row, 4) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 5) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 6) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 7) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 13) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 16) = ""
-          Exit Sub
-        End If
-      End If
-    ElseIf Trim(i_fbg.Text) = "G" Then
-      If Nulo_Valor0(par_llave!par_GUIA_lines) < grid_fac.Row - 1 Then
-        If LK_EMP = "HER" Then
-          MsgBox "Tope de lineas alcanzado..."
-          grid_fac.TextMatrix(grid_fac.Row, 4) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 5) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 6) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 7) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 13) = ""
-          grid_fac.TextMatrix(grid_fac.Row, 16) = ""
-          Exit Sub
-        End If
-      End If
-    End If
-End If
+
 
 If PUB_TIPMOV = 97 Or PUB_TIPMOV = 98 Then
      If PUB_CP = "P" Then GoTo IRPASAR
-      If Nulo_Valor0(par_llave!par_NOTAS_lines) < grid_fac.Row - 1 Then
-         MsgBox "Tope de lineas alcanzado..."
-         grid_fac.TextMatrix(grid_fac.Row, 4) = ""
-         grid_fac.TextMatrix(grid_fac.Row, 5) = ""
-         grid_fac.TextMatrix(grid_fac.Row, 6) = ""
-         grid_fac.TextMatrix(grid_fac.Row, 7) = ""
-         grid_fac.TextMatrix(grid_fac.Row, 13) = ""
-         grid_fac.TextMatrix(grid_fac.Row, 16) = ""
-         Exit Sub
-      End If
 IRPASAR:
 End If
 
@@ -21859,20 +21758,30 @@ POSICION:
   lblp(11).Caption = Val(LV_ART.ListItems.Item(loc_key).SubItems(28))
   lblp(12).Caption = Format(Val((LV_ART.ListItems.Item(loc_key).SubItems(29))) / Val(LV_ART.ListItems.Item(loc_key).SubItems(9)), "0.00")
   Else
-  lblp(11).Caption = ""
-  lblp(12).Caption = ""
-  
-  End If
-  
-  
+   lblp(11).Caption = ""
+   lblp(12).Caption = ""
 
-  
-  lpnombre.Caption = Trim(LV_ART.ListItems.Item(loc_key))
-  lpunidad.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(2))
-  lpstock.Caption = Int(LV_ART.ListItems.Item(loc_key).SubItems(3))
-  lpstocku.Caption = Format(Val((LV_ART.ListItems.Item(loc_key).SubItems(10))) - (Val(lpstock.Caption) * Val(LV_ART.ListItems.Item(loc_key).SubItems(9))), "##,##0.000")
-  lpstock.Caption = Format(lpstock.Caption, "##,##0.00")
-  lpp1.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(4))
+   End If
+
+
+
+   
+   lpnombre.Caption = Trim(LV_ART.ListItems.Item(loc_key))
+   lpunidad.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(2))
+   PUB_CODART = Val(LV_ART.ListItems.Item(loc_key).SubItems(1))
+   pu_codcia = LK_CODCIA
+   SQ_OPER = 2
+   LEER_PRE_LLAVE
+   If Not pre_mayor.EOF Then
+     pre_mayor.MoveFirst
+     lblp(2).Caption = Trim(pre_mayor!PRE_UNIDAD)
+   Else
+     lblp(2).Caption = "UND"
+   End If
+   lpstock.Caption = Int(LV_ART.ListItems.Item(loc_key).SubItems(3))
+   lpstocku.Caption = Format(Val((LV_ART.ListItems.Item(loc_key).SubItems(10))) - (Val(lpstock.Caption) * Val(LV_ART.ListItems.Item(loc_key).SubItems(9))), "##,##0.00")
+   lpstock.Caption = Format(lpstock.Caption, "##,##0.00")
+   lpp1.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(4))
   lpp2.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(5))
   lpp3.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(6))
   lpp4.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(7))
@@ -22668,12 +22577,22 @@ If LV_ART.Visible Then
   lblp(12).Caption = Format(Val((LV_ART.ListItems.Item(loc_key).SubItems(29))) / Val(LV_ART.ListItems.Item(loc_key).SubItems(9)), "0.00")
   Else
   lblp(11).Caption = ""
-  lblp(12).Caption = ""
-  End If
-  lpnombre.Caption = Trim(LV_ART.ListItems.Item(loc_key))
-  lpunidad.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(2))
-  lpstock.Caption = Int(LV_ART.ListItems.Item(loc_key).SubItems(3))
-  lpstocku.Caption = Format(Val((LV_ART.ListItems.Item(loc_key).SubItems(10))) - (Val(lpstock.Caption) * Val(LV_ART.ListItems.Item(loc_key).SubItems(9))), "##,##0.000")
+   lblp(12).Caption = ""
+   End If
+   lpnombre.Caption = Trim(LV_ART.ListItems.Item(loc_key))
+   lpunidad.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(2))
+   PUB_CODART = Val(LV_ART.ListItems.Item(loc_key).SubItems(1))
+   pu_codcia = LK_CODCIA
+   SQ_OPER = 2
+   LEER_PRE_LLAVE
+   If Not pre_mayor.EOF Then
+     pre_mayor.MoveFirst
+     lblp(2).Caption = Trim(pre_mayor!PRE_UNIDAD)
+   Else
+     lblp(2).Caption = "UND"
+   End If
+   lpstock.Caption = Int(LV_ART.ListItems.Item(loc_key).SubItems(3))
+  lpstocku.Caption = Format(Val((LV_ART.ListItems.Item(loc_key).SubItems(10))) - (Val(lpstock.Caption) * Val(LV_ART.ListItems.Item(loc_key).SubItems(9))), "##,##0.00")
   lpstock.Caption = Format(lpstock.Caption, "##,##0.00")
   lpp1.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(4))
   lpp2.Caption = Trim(LV_ART.ListItems.Item(loc_key).SubItems(5))
@@ -22692,7 +22611,7 @@ If LV_ART.Visible Then
     fraprecios.BackColor = QBColor(6)
   Else
      LBLAGOTADO.Visible = False
-    fraprecios.BackColor = QBColor(8)
+    fraprecios.BackColor = QBColor(0)
   End If
   If Val(LV_ART.ListItems.Item(loc_key).SubItems(19)) = 1 Then
     lblprioridad.Visible = True
@@ -26761,7 +26680,6 @@ End If
 End Function
 
 Public Sub VER_LINEAS()
-Dim WS_NRO_ITEMS As Integer
 Dim h As Integer
 LK_QUEDA = ""
 For h = 2 To grid_fac.Rows - 1
@@ -26771,30 +26689,6 @@ For h = 2 To grid_fac.Rows - 1
      grid_fac.TextMatrix(h, 0) = Mid(grid_fac.TextMatrix(h, 0), 2, Len(grid_fac.TextMatrix(h, 0)))
   End If
   grid_fac.CellBackColor = QBColor(15)
-  If Trim(i_fbg.Text) = "F" Then
-     If Nulo_Valor0(par_llave!par_fac_lines) < h - 1 Then
-       grid_fac.TextMatrix(h, 38) = "1"
-       If Left(grid_fac.TextMatrix(h, 0), 1) <> "*" Then
-         grid_fac.TextMatrix(h, 0) = "*" & grid_fac.TextMatrix(h, 0)
-       End If
-       LK_QUEDA = "A"
-     End If
-  End If
-  If Trim(i_fbg.Text) = "B" Then
-      If PUB_CODVEN = 10 Then
-          WS_NRO_ITEMS = 13 ' TEMPORAL
-      Else
-          WS_NRO_ITEMS = Nulo_Valor0(par_llave!par_BOL_lines)
-      End If
-        
-      If WS_NRO_ITEMS < h - 1 Then
-         grid_fac.TextMatrix(h, 38) = "1"
-         If Left(grid_fac.TextMatrix(h, 0), 1) <> "*" Then
-            grid_fac.TextMatrix(h, 0) = "*" & grid_fac.TextMatrix(h, 0)
-         End If
-         LK_QUEDA = "A"
-      End If
-  End If
 dale:
 Next h
 End Sub

@@ -2318,11 +2318,7 @@ End Sub
 
 Private Sub txttotal_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
- If Val(txtmax.Text) <= grdidet.Rows - 1 Then
-   MsgBox "llego al maximo tope de Item.", 48, Pub_Titulo
-   Azul i_codart2, i_codart2
-   Exit Sub
- End If
+
 
 add_registro
 End If

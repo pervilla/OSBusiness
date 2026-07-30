@@ -4,7 +4,7 @@ Begin VB.Form PASSFORM
    BackColor       =   &H00C0C0C0&
    BorderStyle     =   0  'None
    Caption         =   "ADMIN - Ingresos de Usuario"
-   ClientHeight    =   6360
+   ClientHeight    =   6600
    ClientLeft      =   1005
    ClientTop       =   1995
    ClientWidth     =   4935
@@ -14,40 +14,20 @@ Begin VB.Form PASSFORM
    MousePointer    =   1  'Arrow
    PaletteMode     =   1  'UseZOrder
    Picture         =   "passform2.frx":57E2
-   ScaleHeight     =   6360
+   ScaleHeight     =   6600
    ScaleWidth      =   4935
    ShowInTaskbar   =   0   'False
    Visible         =   0   'False
-   Begin VB.CommandButton SALIR 
-      Caption         =   "&Salir del Sistema"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   615
-      Left            =   1080
-      Picture         =   "passform2.frx":12D30
-      Style           =   1  'Graphical
-      TabIndex        =   17
-      TabStop         =   0   'False
-      Top             =   5160
-      Width           =   2295
-   End
-   Begin VB.Frame F2 
-      Height          =   3855
-      Left            =   240
-      TabIndex        =   5
-      Top             =   1200
-      Visible         =   0   'False
-      Width           =   4455
-      Begin VB.CommandButton cmdIngresar 
-         Caption         =   "&Ok."
-         Enabled         =   0   'False
+   Begin VB.PictureBox F2 
+      Height          =   3135
+      Left            =   360
+      ScaleHeight     =   3075
+      ScaleWidth      =   4035
+      TabIndex        =   1
+      Top             =   2640
+      Width           =   4095
+      Begin VB.CommandButton SALIR 
+         Caption         =   "&Salir"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -57,69 +37,14 @@ Begin VB.Form PASSFORM
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   735
-         Left            =   3255
-         Picture         =   "passform2.frx":12E7A
+         Height          =   855
+         Left            =   2880
+         Picture         =   "passform2.frx":E794
          Style           =   1  'Graphical
-         TabIndex        =   4
-         Top             =   2280
+         TabIndex        =   11
+         TabStop         =   0   'False
+         Top             =   1920
          Width           =   1095
-      End
-      Begin VB.CheckBox cheguarda 
-         Caption         =   "&Guardar Password "
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00404040&
-         Height          =   255
-         Left            =   1320
-         TabIndex        =   3
-         Top             =   1440
-         Width           =   1935
-      End
-      Begin VB.TextBox Text2 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   1320
-         TabIndex        =   0
-         Top             =   240
-         Width           =   1335
-      End
-      Begin MSMask.MaskEdBox fecha_proceso 
-         Height          =   285
-         Left            =   1320
-         TabIndex        =   2
-         Top             =   2040
-         Width           =   1575
-         _ExtentX        =   2778
-         _ExtentY        =   503
-         _Version        =   393216
-         Enabled         =   0   'False
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         PromptChar      =   "_"
       End
       Begin VB.TextBox Text1 
          BackColor       =   &H00FFFFFF&
@@ -136,111 +61,15 @@ Begin VB.Form PASSFORM
          ForeColor       =   &H00000000&
          Height          =   285
          IMEMode         =   3  'DISABLE
-         Left            =   1320
+         Left            =   960
          MaxLength       =   10
          PasswordChar    =   "*"
-         TabIndex        =   1
+         TabIndex        =   6
          TabStop         =   0   'False
-         Top             =   1080
-         Width           =   1545
+         Top             =   840
+         Width           =   1575
       End
-      Begin VB.Label Label7 
-         BackStyle       =   0  'Transparent
-         Caption         =   "Compañia por Defecto :"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00404040&
-         Height          =   255
-         Left            =   120
-         TabIndex        =   18
-         Top             =   3360
-         Width           =   2295
-      End
-      Begin VB.Label Label1 
-         Caption         =   "Descripción: "
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00404040&
-         Height          =   255
-         Left            =   120
-         TabIndex        =   14
-         Top             =   600
-         Width           =   1095
-      End
-      Begin VB.Label Label4 
-         BackColor       =   &H80000004&
-         Caption         =   "Fecha del Sistema :"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00404040&
-         Height          =   435
-         Left            =   120
-         TabIndex        =   11
-         Top             =   1920
-         Width           =   1065
-      End
-      Begin VB.Label Label5 
-         BackColor       =   &H80000004&
-         Caption         =   "Usuario :"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00404040&
-         Height          =   315
-         Left            =   120
-         TabIndex        =   9
-         Top             =   240
-         Width           =   825
-      End
-      Begin VB.Label LBLPAS 
-         BackColor       =   &H80000004&
-         Caption         =   "Password :"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00404040&
-         Height          =   315
-         Left            =   120
-         TabIndex        =   8
-         Top             =   1080
-         Width           =   1185
-      End
-      Begin VB.Label Label3 
-         BackColor       =   &H00C0C0C0&
-         BorderStyle     =   1  'Fixed Single
+      Begin VB.TextBox Text2 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -251,10 +80,70 @@ Begin VB.Form PASSFORM
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   1320
-         TabIndex        =   7
-         Top             =   600
-         Width           =   3015
+         Left            =   960
+         TabIndex        =   4
+         Top             =   120
+         Width           =   1575
+      End
+      Begin VB.CheckBox cheguarda 
+         Caption         =   "&Guardar Clave"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00404040&
+         Height          =   255
+         Left            =   960
+         TabIndex        =   3
+         Top             =   1200
+         Width           =   1935
+      End
+      Begin VB.CommandButton cmdIngresar 
+         Caption         =   "&Ok."
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   975
+         Left            =   2880
+         Picture         =   "passform2.frx":5701E
+         Style           =   1  'Graphical
+         TabIndex        =   2
+         Top             =   840
+         Width           =   1095
+      End
+      Begin MSMask.MaskEdBox fecha_proceso 
+         Height          =   285
+         Left            =   960
+         TabIndex        =   5
+         Top             =   1560
+         Width           =   1575
+         _ExtentX        =   2778
+         _ExtentY        =   503
+         _Version        =   393216
+         Enabled         =   0   'False
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         PromptChar      =   "_"
       End
       Begin VB.Label Momento 
          Alignment       =   2  'Center
@@ -272,29 +161,104 @@ Begin VB.Form PASSFORM
          EndProperty
          ForeColor       =   &H00C00000&
          Height          =   240
-         Left            =   120
-         TabIndex        =   6
-         Top             =   3600
+         Left            =   0
+         TabIndex        =   13
+         Top             =   2760
          Visible         =   0   'False
          Width           =   4200
       End
-      Begin VB.Label Label6 
-         Caption         =   "Nota: Para ingresar con otro USER pulsar [Esc]"
+      Begin VB.Label Label4 
+         BackColor       =   &H80000004&
+         Caption         =   "Fecha   :"
          BeginProperty Font 
-            Name            =   "Arial"
+            Name            =   "MS Sans Serif"
             Size            =   8.25
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H00800000&
-         Height          =   855
+         ForeColor       =   &H00404040&
+         Height          =   195
          Left            =   120
-         TabIndex        =   13
-         Top             =   2520
-         Width           =   1935
+         TabIndex        =   12
+         Top             =   1560
+         Width           =   825
+      End
+      Begin VB.Label Label3 
+         BackColor       =   &H00C0C0C0&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   960
+         TabIndex        =   10
+         Top             =   480
+         Width           =   3015
+      End
+      Begin VB.Label LBLPAS 
+         BackColor       =   &H80000004&
+         Caption         =   "Clave    :"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00404040&
+         Height          =   315
+         Left            =   120
+         TabIndex        =   9
+         Top             =   840
+         Width           =   1185
+      End
+      Begin VB.Label Label5 
+         BackColor       =   &H80000004&
+         Caption         =   "Usuario :"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00404040&
+         Height          =   315
+         Left            =   120
+         TabIndex        =   8
+         Top             =   120
+         Width           =   825
+      End
+      Begin VB.Label Label1 
+         Caption         =   "Nombre : "
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00404040&
+         Height          =   255
+         Left            =   120
+         TabIndex        =   7
+         Top             =   480
+         Width           =   855
       End
    End
    Begin VB.Timer Timer1 
@@ -303,50 +267,11 @@ Begin VB.Form PASSFORM
       Left            =   0
       Top             =   3240
    End
-   Begin VB.Label lblbarraos 
-      Alignment       =   2  'Center
-      BackColor       =   &H000000FF&
-      Caption         =   "Inversiones San Martin SCRL"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H00FFFFFF&
-      Height          =   255
-      Left            =   0
-      TabIndex        =   16
-      Top             =   5880
-      Width           =   4935
-   End
-   Begin VB.Label empresa 
-      Alignment       =   2  'Center
-      BackColor       =   &H000000FF&
-      Caption         =   "Empresa:"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H00E0E0E0&
-      Height          =   255
-      Left            =   120
-      TabIndex        =   15
-      Top             =   840
-      Width           =   1095
-   End
    Begin VB.Label lblempresa 
       Alignment       =   2  'Center
       BackColor       =   &H00E0E0E0&
-      Caption         =   "-"
+      BackStyle       =   0  'Transparent
+      Caption         =   "EMPRESA"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   9.75
@@ -356,30 +281,12 @@ Begin VB.Form PASSFORM
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00000000&
+      ForeColor       =   &H0000FFFF&
       Height          =   255
-      Left            =   1200
-      TabIndex        =   12
-      Top             =   840
+      Left            =   600
+      TabIndex        =   0
+      Top             =   6000
       Width           =   3615
-   End
-   Begin VB.Label Label2 
-      BackColor       =   &H00C0C0C0&
-      Caption         =   "Password :"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   435
-      Left            =   240
-      TabIndex        =   10
-      Top             =   3240
-      Width           =   1185
    End
 End
 Attribute VB_Name = "PASSFORM"
@@ -522,12 +429,12 @@ pasa_todo:
  End If
  
   Dim wGUARDA As String
-  wGUARDA = Trim(Text2.Text) & CStr(cheGuarda.Value)
+  wGUARDA = Trim(Text2.Text) & CStr(cheguarda.Value)
   DoEvents
   Call WRITE1_READ2(1, wGUARDA)
-  momento.Visible = True
+  Momento.Visible = True
   DoEvents
-  momento.Caption = " O K .  ==  >>  " & momento.Caption
+  Momento.Caption = " O K .  ==  >>  " & Momento.Caption
   
   PSUSU_LLAVE(0) = "ADMIN"
   usu_llave.Requery
@@ -552,10 +459,10 @@ End Sub
 
 Private Sub fecha_proceso_Change()
 If IsDate(fecha_proceso.Text) Then
-   momento.Visible = True
-   momento.Caption = Format(fecha_proceso, "dddd, d mmmm yyyy")
+   Momento.Visible = True
+   Momento.Caption = Format(fecha_proceso, "dddd, d mmmm yyyy")
 Else
-   momento.Visible = False
+   Momento.Visible = False
 End If
 
 End Sub
@@ -570,13 +477,13 @@ DoEvents
 DoEvents
 PASSFORM.F2.Visible = True
 DoEvents
-PASSFORM.momento.Caption = "Cargando Usuarios ... " + PASSFORM.momento.Caption
+PASSFORM.Momento.Caption = "Cargando Usuarios ... " + PASSFORM.Momento.Caption
 DoEvents
-PASSFORM.momento.Visible = True
+PASSFORM.Momento.Visible = True
 DoEvents
 Text2.Enabled = True
 DoEvents
-PASSFORM.momento.Visible = False
+PASSFORM.Momento.Visible = False
 Dim WLON, WTODO
 WTODO = WRITE1_READ2(2)
 If WTODO = "" Then
@@ -596,7 +503,7 @@ If Trim(Nulo_Valors(GEN!gen_bloqueo)) = "A" Then
   GoTo SALTA
 End If
 wCHEK = Right(WTODO, 1)
-cheGuarda.Value = Val(wCHEK)
+cheguarda.Value = Val(wCHEK)
 If wCHEK = "0" Then
     Text2_KeyPress 13
 ElseIf wCHEK = "1" Then
@@ -613,7 +520,7 @@ Dim WRES
 Dim mensa As String
 If KeyAscii = 27 Then
    VECES = 0
-   cheGuarda.Enabled = False
+   cheguarda.Enabled = False
    cmdIngresar.Enabled = False
    Timer1.Enabled = False
    LBLPAS.Visible = True
@@ -743,7 +650,7 @@ SQ_OPER = 1
 PUB_CODCIA = usu!usu_CODCIA
 LEER_PAR_LLAVE
 fecha_proceso.Text = Format(par_llave!PAR_FECHA_DIA, "dd/mm/yyyy")
-cheGuarda.Enabled = True
+cheguarda.Enabled = True
 cmdIngresar.Enabled = True
 fecha_proceso.Mask = "##/##/####"
 fecha_proceso.SetFocus
@@ -763,8 +670,8 @@ If LOC_FLAG_OJO = "A" Then
   usu!usu_flag_ojo = " "
   usu.Update
 End If
-momento.Caption = Trim(par_llave!par_nombre) & " Fecha: " & Format(par_llave!PAR_FECHA_DIA, "dd/mm/yy")
-momento.Visible = True
+Momento.Caption = Trim(par_llave!par_nombre) & " Fecha: " & Format(par_llave!PAR_FECHA_DIA, "dd/mm/yy")
+Momento.Visible = True
 
 
 fin:
@@ -833,7 +740,7 @@ PASO_TODO:
        Loop
        
        'Correcto
-       cheGuarda.Enabled = False
+       cheguarda.Enabled = False
        cmdIngresar.Enabled = False
        usuario = Text2.Text
        Label3.Caption = usu!USU_NOMBRE

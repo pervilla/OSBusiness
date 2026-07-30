@@ -4,7 +4,7 @@ Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.MDIForm MDIForm1 
    BackColor       =   &H00E0E0E0&
-   Caption         =   "OSBusiness - Administraciï¿½n "
+   Caption         =   "OSBusiness - Administración "
    ClientHeight    =   6510
    ClientLeft      =   -210
    ClientTop       =   735
@@ -105,7 +105,7 @@ Begin VB.MDIForm MDIForm1
             Alignment       =   1
             Object.Width           =   1058
             MinWidth        =   1058
-            TextSave        =   "Nï¿½M"
+            TextSave        =   "NroM"
             Key             =   ""
             Object.Tag             =   ""
          EndProperty
@@ -177,7 +177,7 @@ Begin VB.MDIForm MDIForm1
          NumButtons      =   19
          BeginProperty Button1 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Key             =   "FRMDEF"
-            Object.ToolTipText     =   "Definiciï¿½n de Trannsacciones"
+            Object.ToolTipText     =   "Definición de Trannsacciones"
             ImageIndex      =   4
          EndProperty
          BeginProperty Button2 {66833FEA-8583-11D1-B16A-00C0F0283628} 
@@ -225,7 +225,7 @@ Begin VB.MDIForm MDIForm1
          EndProperty
          BeginProperty Button15 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Key             =   "ALTERNO"
-            Object.ToolTipText     =   "Parametros de Compaï¿½ia"
+            Object.ToolTipText     =   "Parametros de Compañia"
             ImageIndex      =   1
          EndProperty
          BeginProperty Button16 {66833FEA-8583-11D1-B16A-00C0F0283628} 
@@ -376,7 +376,7 @@ Begin VB.MDIForm MDIForm1
          Index           =   5
       End
       Begin VB.Menu SubmenuTit1 
-         Caption         =   "C&ompaï¿½ia"
+         Caption         =   "C&ompañia"
          Enabled         =   0   'False
          Index           =   6
          Shortcut        =   ^F
@@ -393,7 +393,7 @@ Begin VB.MDIForm MDIForm1
          Shortcut        =   ^T
       End
       Begin VB.Menu SubmenuTit1 
-         Caption         =   "&Definiciï¿½n de Transacciones"
+         Caption         =   "&Definición de Transacciones"
          Enabled         =   0   'False
          Index           =   9
          Shortcut        =   ^D
@@ -490,7 +490,7 @@ Begin VB.MDIForm MDIForm1
       Enabled         =   0   'False
       Visible         =   0   'False
       Begin VB.Menu submenutit3 
-         Caption         =   "Definiciï¿½n de &Estructura"
+         Caption         =   "Definición de &Estructura"
          Index           =   0
       End
       Begin VB.Menu submenutit3 
@@ -512,7 +512,7 @@ Begin VB.MDIForm MDIForm1
          Index           =   4
       End
       Begin VB.Menu submenutit3 
-         Caption         =   "Gestiï¿½n de Diario General"
+         Caption         =   "Gestión de Diario General"
          Index           =   5
       End
       Begin VB.Menu submenutit3 
@@ -759,7 +759,7 @@ Begin VB.MDIForm MDIForm1
          Visible         =   0   'False
       End
       Begin VB.Menu submenutit5 
-         Caption         =   "&Configuraciï¿½n de Reporte"
+         Caption         =   "&Configuración de Reporte"
          Enabled         =   0   'False
          Index           =   2
       End
@@ -778,7 +778,7 @@ Begin VB.MDIForm MDIForm1
          Index           =   5
       End
       Begin VB.Menu submenutit5 
-         Caption         =   "&Programaciï¿½n de Tareas"
+         Caption         =   "&Programación de Tareas"
          Index           =   6
       End
    End
@@ -838,7 +838,7 @@ Begin VB.MDIForm MDIForm1
          Index           =   10
       End
       Begin VB.Menu SubmenuTit6 
-         Caption         =   "&Actualizaciï¿½n Automatico de Stock"
+         Caption         =   "&Actualización Automatico de Stock"
          Index           =   11
       End
       Begin VB.Menu SubmenuTit6 
@@ -1159,20 +1159,17 @@ End If
 ' MDIForm1.submenutit5(2).Visible = True
 ' MDIForm1.submenutit5(3).Visible = True
 'End If
-usu.Requery
 ProBar.Value = ProBar.Value + 1
-Do Until usu.EOF
-If Trim(usu!usu_key) = LK_CODUSU Then
-   WUSU_CIAS = Trim(Nulo_Valors(usu!USU_CIAS))
-   WUSU_OTROS = Trim(Nulo_Valors(usu!USU_OTROS))
-   LK_PRECIO = Trim(Nulo_Valors(usu!USU_PRECIO))
-   USU_ACC_TIPDOC = Trim(Nulo_Valors(usu!USU_ACCTIPDOC))
-   Exit Do
+PSUSU_LLAVE(0) = LK_CODUSU
+usu_llave.Requery
+If Not usu_llave.EOF Then
+   WUSU_CIAS = Trim(Nulo_Valors(usu_llave!USU_CIAS))
+   WUSU_OTROS = Trim(Nulo_Valors(usu_llave!USU_OTROS))
+   LK_PRECIO = Trim(Nulo_Valors(usu_llave!USU_PRECIO))
+   USU_ACC_TIPDOC = Trim(Nulo_Valors(usu_llave!USU_ACCTIPDOC))
 End If
-usu.MoveNext
-Loop
 If Len(WUSU_CIAS) = 0 Then
-  MsgBox "Usted NO Tiene accesos a ninguna compaï¿½ia , consulte al Administrador ", 48, Pub_Titulo
+  MsgBox "Usted NO Tiene accesos a ninguna compañia , consulte al Administrador ", 48, Pub_Titulo
   GoTo fin_de_pro
 End If
 
@@ -1212,19 +1209,22 @@ Do Until cuenta = a
         WNUM = Left(WNUM, 2)
         wPosF = wPosF - 1
     End If
-    SQ_OPER = 1
     PUB_CODCIA = Format(WNUM, "00")
-    LEER_PAR_LLAVE
-    If Not par_llave.EOF Then
-       MDIForm1.menuCia(cuenta - 1).Caption = PUB_CODCIA & "-" & Trim(par_llave!PAR_NOMBRE)
+    par.MoveFirst
+    Do While Not par.EOF
+      If Trim(par!PAR_CODCIA) = PUB_CODCIA Then Exit Do
+      par.MoveNext
+    Loop
+    If Not par.EOF Then
+       MDIForm1.menuCia(cuenta - 1).Caption = PUB_CODCIA & "-" & Trim(par!PAR_NOMBRE)
        '*******************AGREGADO*****
-       Toolbar1.Buttons("CIA").ButtonMenus(cuenta).text = PUB_CODCIA & "-" & Trim(par_llave!PAR_NOMBRE)
+       Toolbar1.Buttons("CIA").ButtonMenus(cuenta).text = PUB_CODCIA & "-" & Trim(par!PAR_NOMBRE)
        '*******************AGREGADO*****
        MDIForm1.menuCia(cuenta - 1).Visible = True
-       If LK_CODCIA = par_llave!PAR_CODCIA Then wBAN = h - 1
+       If LK_CODCIA = par!PAR_CODCIA Then wBAN = h - 1
     Else
-       If a = 1 Then ' Cuando la unica compaï¿½ia de acceso no exite
-         MsgBox "Su Compaï¿½ia de Acceso NO Existe , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
+       If a = 1 Then ' Cuando la unica compañia de acceso no exite
+         MsgBox "Su Compañia de Acceso NO Existe , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
          GoTo fin_de_pro
        End If
        MDIForm1.menuCia(cuenta - 1).Caption = "* " & PUB_CODCIA & " , NO Procede"
@@ -1240,7 +1240,7 @@ If wBAN = -1 Then
     End If
   Next a
   If wBAN = -1 Then
-    MsgBox "Su(s) Compaï¿½ias de Acceso NO Existen , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
+    MsgBox "Su(s) Compañias de Acceso NO Existen , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
     GoTo fin_de_pro
   End If
 End If
@@ -1249,7 +1249,7 @@ For a = h To 40
   MDIForm1.menuCia(a).Visible = False
 Next a
 MDIForm1.menuCia(wBAN).Checked = True
-'asegura la compaï¿½ia por defecto
+'asegura la compañia por defecto
 ACTUALIZA_CIA Left(MDIForm1.menuCia(wBAN).Caption, 2)
 
 ProBar.Value = ProBar.Value + 1
@@ -1473,7 +1473,7 @@ If LK_EMP = "3AA" Then
   If LK_FECHA_DIA >= WFECHA Then
   If Val(gen!GEN_CBS) <> -9 Then
 sigue:
-    WS = InputBox("Nï¿½ Serial es : " & Format(gen!GEN_CFP, "0000000000000000") & " , Llame al proveedor y pida su nueva serie." & Chr(13) & "{Sï¿½ intenta colocar una serie que no es, por quinta vez... el Proveedor no responde por la informaciï¿½n almacenada.}", "Acceso Limitado ....")
+    WS = InputBox("Nro Serial es : " & Format(gen!GEN_CFP, "0000000000000000") & " , Llame al proveedor y pida su nueva serie." & Chr(13) & "{Sï¿½ intenta colocar una serie que no es, por quinta vez... el Proveedor no responde por la información almacenada.}", "Acceso Limitado ....")
     If WS = "" Then
       GoTo sigue
     End If
@@ -1483,7 +1483,7 @@ sigue:
        gen!GEN_CBS = -9
        gen.Update
     Else
-      MsgBox "LLame a su Proveedor de WinSoft y pida su Nï¿½ de Serie. Ingreso Incorrecto" & Chr(13) & "{No intentar si no tiene el nuevo Nro. de Serie.}", vbCritical, "Acceso limitado .... "
+      MsgBox "LLame a su Proveedor de WinSoft y pida su Nro de Serie. Ingreso Incorrecto" & Chr(13) & "{No intentar si no tiene el nuevo Nro. de Serie.}", vbCritical, "Acceso limitado .... "
       End
     End If
   End If
@@ -1567,7 +1567,7 @@ End Sub
 
 
 Private Sub menuAyudaSistema_Click()
-MsgBox "OSAdmin  - Mï¿½dulo de Administraciï¿½n " & Chr(13) & "  " & Chr(13) & "Casa de Desarrollo : " & Chr(13) & "OnlySoft S.A.C. Trujillo - Perï¿½ " & Chr(13) & "", vbInformation, "OnlySoft"
+MsgBox "OSAdmin  - Módulo de Administración " & Chr(13) & "  " & Chr(13) & "Casa de Desarrollo : " & Chr(13) & "OnlySoft S.A.C. Trujillo - Perú " & Chr(13) & "", vbInformation, "OnlySoft"
 End Sub
 
 Private Sub menuCia_Click(Index As Integer)

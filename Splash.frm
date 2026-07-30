@@ -2,10 +2,10 @@ VERSION 5.00
 Begin VB.Form Splash 
    AutoRedraw      =   -1  'True
    BorderStyle     =   0  'None
-   ClientHeight    =   3630
+   ClientHeight    =   6600
    ClientLeft      =   825
    ClientTop       =   1155
-   ClientWidth     =   5415
+   ClientWidth     =   4965
    BeginProperty Font 
       Name            =   "MS Sans Serif"
       Size            =   8.25
@@ -21,16 +21,16 @@ Begin VB.Form Splash
    LinkTopic       =   "Form1"
    PaletteMode     =   1  'UseZOrder
    Picture         =   "Splash.frx":57E2
-   ScaleHeight     =   3630
-   ScaleWidth      =   5415
+   ScaleHeight     =   6600
+   ScaleWidth      =   4965
    WhatsThisHelp   =   -1  'True
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
       Caption         =   "Autorizado a:"
       Height          =   255
-      Left            =   240
+      Left            =   120
       TabIndex        =   3
-      Top             =   2040
+      Top             =   2640
       Width           =   1335
    End
    Begin VB.Label Empresa 
@@ -47,9 +47,9 @@ Begin VB.Form Splash
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   240
-      Left            =   1440
+      Left            =   1320
       TabIndex        =   2
-      Top             =   2040
+      Top             =   2640
       Width           =   3540
    End
    Begin VB.Label lblporcentaje 
@@ -70,9 +70,9 @@ Begin VB.Form Splash
       EndProperty
       ForeColor       =   &H0000FFFF&
       Height          =   240
-      Left            =   2430
+      Left            =   2310
       TabIndex        =   1
-      Top             =   2520
+      Top             =   3120
       Width           =   525
    End
    Begin VB.Label LblMensa 
@@ -92,9 +92,9 @@ Begin VB.Form Splash
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   345
-      Left            =   240
+      Left            =   120
       TabIndex        =   0
-      Top             =   2280
+      Top             =   2880
       Width           =   4965
    End
 End
@@ -132,14 +132,14 @@ LogInfo "Splash: Inicio Form_Load"
 CenterMe Splash
 Dim wflag_bloq As String * 1
 Dim success%
-Dim pb
-pb = Chr(10) & Chr(13) & Chr(10) & Chr(13)
+Dim PB
+PB = Chr(10) & Chr(13) & Chr(10) & Chr(13)
 'On Error GoTo SALE
 Screen.MousePointer = 11
 If App.PrevInstance Then
   pub_mensaje = App.Path & " " & "Software"
-  pub_mensaje = pub_mensaje & pb & "Posiblemente la Aplicacion este cargada o no ha sido cerrada Correctamente "
-  pub_mensaje = pub_mensaje & pb & "Debe Cerrar todos los Programas e Iniciar la seccion como Usuario Distinto ..."
+  pub_mensaje = pub_mensaje & PB & "Posiblemente la Aplicacion este cargada o no ha sido cerrada Correctamente "
+  pub_mensaje = pub_mensaje & PB & "Debe Cerrar todos los Programas e Iniciar la seccion como Usuario Distinto ..."
   MsgBox pub_mensaje, vbCritical, "Software"
   Screen.MousePointer = 0
   End

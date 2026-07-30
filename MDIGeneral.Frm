@@ -2,12 +2,12 @@ VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Begin VB.MDIForm MDIForm1 
-   BackColor       =   &H00E0E0E0&
+   BackColor       =   &H000000C0&
    Caption         =   "MEDINAFARMA"
-   ClientHeight    =   12195
+   ClientHeight    =   12885
    ClientLeft      =   90
    ClientTop       =   735
-   ClientWidth     =   17925
+   ClientWidth     =   19755
    Icon            =   "MDIGeneral.frx":0000
    LinkTopic       =   "MDIForm1"
    LockControls    =   -1  'True
@@ -18,10 +18,12 @@ Begin VB.MDIForm MDIForm1
       Height          =   420
       Left            =   0
       TabIndex        =   0
-      Top             =   11775
-      Width           =   17925
-      _ExtentX        =   31618
+      Top             =   14895
+      Width           =   28560
+      _ExtentX        =   50377
       _ExtentY        =   741
+      ButtonWidth     =   635
+      ButtonHeight    =   582
       Appearance      =   1
       _Version        =   393216
       Begin VB.CommandButton TXTCIA 
@@ -45,7 +47,7 @@ Begin VB.MDIForm MDIForm1
       Begin VB.CommandButton cmdbuscacia 
          Height          =   350
          Left            =   6720
-         Picture         =   "MDIGeneral.frx":1525A
+         Picture         =   "MDIGeneral.frx":55FF7
          Style           =   1  'Graphical
          TabIndex        =   4
          Top             =   0
@@ -61,7 +63,7 @@ Begin VB.MDIForm MDIForm1
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Compaï¿½ia Activa :"
+            Caption         =   "Compañia Activa :"
             BeginProperty Font 
                Name            =   "Arial"
                Size            =   8.25
@@ -187,8 +189,8 @@ Begin VB.MDIForm MDIForm1
       Left            =   0
       TabIndex        =   10
       Top             =   0
-      Width           =   17925
-      _ExtentX        =   31618
+      Width           =   28560
+      _ExtentX        =   50377
       _ExtentY        =   688
       ButtonWidth     =   661
       ButtonHeight    =   635
@@ -220,7 +222,7 @@ Begin VB.MDIForm MDIForm1
          BeginProperty Button4 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Enabled         =   0   'False
             Key             =   "PRECIOS"
-            Object.ToolTipText     =   "Actualizaciï¿½n de Precios"
+            Object.ToolTipText     =   "Actualización de Precios"
             ImageIndex      =   11
          EndProperty
          BeginProperty Button5 {66833FEA-8583-11D1-B16A-00C0F0283628} 
@@ -329,7 +331,7 @@ Begin VB.MDIForm MDIForm1
          EndProperty
          BeginProperty Button26 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Key             =   "AVISO"
-            Object.ToolTipText     =   "Parar Impresiï¿½n..."
+            Object.ToolTipText     =   "Parar Impresión..."
             ImageIndex      =   3
          EndProperty
          BeginProperty Button27 {66833FEA-8583-11D1-B16A-00C0F0283628} 
@@ -397,7 +399,7 @@ Begin VB.MDIForm MDIForm1
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   1
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":1569C
+            Picture         =   "MDIGeneral.frx":56439
             Key             =   ""
          EndProperty
       EndProperty
@@ -415,75 +417,75 @@ Begin VB.MDIForm MDIForm1
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   18
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":15AF0
+            Picture         =   "MDIGeneral.frx":5688D
             Key             =   ""
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":15F44
+            Picture         =   "MDIGeneral.frx":56CE1
             Key             =   ""
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":16398
+            Picture         =   "MDIGeneral.frx":57135
             Key             =   ""
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":167EC
+            Picture         =   "MDIGeneral.frx":57589
             Key             =   ""
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":16C40
+            Picture         =   "MDIGeneral.frx":579DD
             Key             =   ""
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":17094
+            Picture         =   "MDIGeneral.frx":57E31
             Key             =   ""
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":174E8
+            Picture         =   "MDIGeneral.frx":58285
             Key             =   ""
          EndProperty
          BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":1793C
+            Picture         =   "MDIGeneral.frx":586D9
             Key             =   ""
          EndProperty
          BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":17D90
+            Picture         =   "MDIGeneral.frx":58B2D
             Key             =   ""
          EndProperty
          BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":180AC
+            Picture         =   "MDIGeneral.frx":58E49
             Key             =   ""
          EndProperty
          BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":18500
+            Picture         =   "MDIGeneral.frx":5929D
             Key             =   ""
          EndProperty
          BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":18954
+            Picture         =   "MDIGeneral.frx":596F1
             Key             =   ""
          EndProperty
          BeginProperty ListImage13 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":18DA8
+            Picture         =   "MDIGeneral.frx":59B45
             Key             =   ""
          EndProperty
          BeginProperty ListImage14 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":191FC
+            Picture         =   "MDIGeneral.frx":59F99
             Key             =   ""
          EndProperty
          BeginProperty ListImage15 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":19650
+            Picture         =   "MDIGeneral.frx":5A3ED
             Key             =   ""
          EndProperty
          BeginProperty ListImage16 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":19AA4
+            Picture         =   "MDIGeneral.frx":5A841
             Key             =   ""
          EndProperty
          BeginProperty ListImage17 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":19EF8
+            Picture         =   "MDIGeneral.frx":5AC95
             Key             =   ""
          EndProperty
          BeginProperty ListImage18 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":1A34C
+            Picture         =   "MDIGeneral.frx":5B0E9
             Key             =   ""
          EndProperty
       EndProperty
@@ -536,7 +538,7 @@ Begin VB.MDIForm MDIForm1
          Shortcut        =   ^D
       End
       Begin VB.Menu SubmenuTit1 
-         Caption         =   "Definiciï¿½n de &Bancos"
+         Caption         =   "Definición de &Bancos"
          Enabled         =   0   'False
          Index           =   3
          Shortcut        =   ^B
@@ -552,7 +554,7 @@ Begin VB.MDIForm MDIForm1
          Visible         =   0   'False
       End
       Begin VB.Menu SubmenuTit1 
-         Caption         =   "C&ompaï¿½ia"
+         Caption         =   "C&ompañia"
          Enabled         =   0   'False
          Index           =   6
          Shortcut        =   ^F
@@ -571,7 +573,7 @@ Begin VB.MDIForm MDIForm1
          Visible         =   0   'False
       End
       Begin VB.Menu SubmenuTit1 
-         Caption         =   "&Definiciï¿½n de Transacciones"
+         Caption         =   "&Definición de Transacciones"
          Enabled         =   0   'False
          Index           =   9
          Visible         =   0   'False
@@ -607,7 +609,7 @@ Begin VB.MDIForm MDIForm1
          Shortcut        =   ^U
       End
       Begin VB.Menu SubmenuTit1 
-         Caption         =   "&Reiniciar Aplicaciï¿½n"
+         Caption         =   "&Reiniciar Aplicación"
          Enabled         =   0   'False
          Index           =   16
          Shortcut        =   ^R
@@ -659,7 +661,7 @@ Begin VB.MDIForm MDIForm1
          Index           =   7
       End
       Begin VB.Menu SubmenuTit2 
-         Caption         =   "&Cierre de Operaciones del Dï¿½a"
+         Caption         =   "&Cierre de Operaciones del Día"
          Enabled         =   0   'False
          Index           =   8
       End
@@ -669,7 +671,7 @@ Begin VB.MDIForm MDIForm1
       Enabled         =   0   'False
       Visible         =   0   'False
       Begin VB.Menu submenugrifo 
-         Caption         =   "&Definiciï¿½n de Turnos"
+         Caption         =   "&Definición de Turnos"
          Index           =   0
       End
       Begin VB.Menu submenugrifo 
@@ -698,7 +700,7 @@ Begin VB.MDIForm MDIForm1
       Enabled         =   0   'False
       Visible         =   0   'False
       Begin VB.Menu submenutit3 
-         Caption         =   "Definiciï¿½n de &Estructura"
+         Caption         =   "Definición de &Estructura"
          Index           =   0
       End
       Begin VB.Menu submenutit3 
@@ -924,7 +926,7 @@ Begin VB.MDIForm MDIForm1
          Index           =   1
       End
       Begin VB.Menu submenutit5 
-         Caption         =   "&Configuraciï¿½n de Reporte"
+         Caption         =   "&Configuración de Reporte"
          Enabled         =   0   'False
          Index           =   2
       End
@@ -1001,7 +1003,7 @@ Begin VB.MDIForm MDIForm1
          Shortcut        =   ^P
       End
       Begin VB.Menu SubmenuTit6 
-         Caption         =   "&Actualizaciï¿½n Automatico de Stock"
+         Caption         =   "&Actualización Automatico de Stock"
          Enabled         =   0   'False
          Index           =   11
       End
@@ -1397,34 +1399,32 @@ End If
 ' MDIForm1.submenutit5(2).Visible = True
 ' MDIForm1.submenutit5(3).Visible = True
 'End If
-usu.Requery
 probar.Value = probar.Value + 1
+PSUSU_LLAVE(0) = LK_CODUSU
+usu_llave.Requery
 USU_ACC_TIPDOC = ""
-Do Until usu.EOF
-If Trim(usu!usu_key) = LK_CODUSU Then
-   WUSU_CIAS = Trim(Nulo_Valors(usu!USU_CIAS))
-   WUSU_OTROS = Trim(Nulo_Valors(usu!USU_OTROS))
-   LK_PRECIO = Trim(Nulo_Valors(usu!USU_PRECIO))
-   USU_ACC_TIPDOC = Trim(Nulo_Valors(usu!USU_ACCTIPDOC))
+If Not usu_llave.EOF Then
+   WUSU_CIAS = Trim(Nulo_Valors(usu_llave!USU_CIAS))
+   WUSU_OTROS = Trim(Nulo_Valors(usu_llave!USU_OTROS))
+   LK_PRECIO = Trim(Nulo_Valors(usu_llave!USU_PRECIO))
+   USU_ACC_TIPDOC = Trim(Nulo_Valors(usu_llave!USU_ACCTIPDOC))
+   lk_acc_repoall = Nulo_Valor0(usu_llave!USU_REPOALL)
    pub_codvenrel = ""
-   If Val(usu!USU_CODVENREL) <> 0 Then
-    pub_codvenrel = pub_codvenrel & usu!USU_CODVENREL & ""
+   If Val(usu_llave!USU_CODVENREL) <> 0 Then
+    pub_codvenrel = pub_codvenrel & usu_llave!USU_CODVENREL & ""
    End If
-   If Val(usu!USU_CODVENREL2) <> 0 Then
-    pub_codvenrel = pub_codvenrel & "," & usu!USU_CODVENREL2 & ""
+   If Val(usu_llave!USU_CODVENREL2) <> 0 Then
+    pub_codvenrel = pub_codvenrel & "," & usu_llave!USU_CODVENREL2 & ""
    End If
-   If Val(usu!USU_CODVENREL3) <> 0 Then
-    pub_codvenrel = pub_codvenrel & "," & usu!USU_CODVENREL3 & ""
+   If Val(usu_llave!USU_CODVENREL3) <> 0 Then
+    pub_codvenrel = pub_codvenrel & "," & usu_llave!USU_CODVENREL3 & ""
    End If
-   If Val(usu!USU_CODVENREL4) <> 0 Then
-    pub_codvenrel = pub_codvenrel & "," & usu!USU_CODVENREL4 & ""
+   If Val(usu_llave!USU_CODVENREL4) <> 0 Then
+    pub_codvenrel = pub_codvenrel & "," & usu_llave!USU_CODVENREL4 & ""
    End If
-   Exit Do
 End If
-usu.MoveNext
-Loop
 If Len(WUSU_CIAS) = 0 Then
-  MsgBox "Usted NO Tiene accesos a ninguna compaï¿½ia , consulte al Administrador ", 48, Pub_Titulo
+  MsgBox "Usted NO Tiene accesos a ninguna compañia , consulte al Administrador ", 48, Pub_Titulo
   GoTo fin_de_pro
 End If
 
@@ -1434,10 +1434,6 @@ If WUSU_OTROS = "" Then
 Else
  LLENA_ACCESO_OTROS WUSU_OTROS
 End If
-PSUSU_LLAVE(0) = LK_CODUSU
-usu_llave.Requery
-WUSU_CIAS = usu_llave!USU_CIAS
-lk_acc_repoall = Nulo_Valor0(usu_llave!USU_REPOALL)
 'LK_FLAG_SOS = Trim(Nulo_Valors(usu_llave!USU_FLAG_CONT))
 MDIForm1.Toolbar1.Buttons(20).Visible = False
 MDIForm1.Toolbar1.Buttons(28).Visible = False
@@ -1482,17 +1478,20 @@ Do Until cuenta = a
         WNUM = Left(WNUM, 2)
         wPosF = wPosF - 1
     End If
-    SQ_OPER = 1
     PUB_CODCIA = Format(WNUM, "00")
-    LEER_PAR_LLAVE
-    If Not par_llave.EOF Then
-       ciades = PUB_CODCIA & "-" & Trim(par_llave!par_nombre)
+    par.MoveFirst
+    Do While Not par.EOF
+      If Trim(par!PAR_CODCIA) = PUB_CODCIA Then Exit Do
+      par.MoveNext
+    Loop
+    If Not par.EOF Then
+       ciades = PUB_CODCIA & "-" & Trim(par!par_nombre)
        MDIForm1.menuCia(cuenta - 1).Caption = ciades
        MDIForm1.menuCia(cuenta - 1).Visible = True
-       If LK_CODCIA = par_llave!par_codcia Then wBAN = h - 1
+       If LK_CODCIA = par!par_codcia Then wBAN = h - 1
     Else
-       If a = 1 Then ' Cuando la unica compaï¿½ia de acceso no exite
-         MsgBox "Su Compaï¿½ia de Acceso NO Existe , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
+       If a = 1 Then ' Cuando la unica compañia de acceso no exite
+         MsgBox "Su Compañia de Acceso NO Existe , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
          GoTo fin_de_pro
        End If
        MDIForm1.menuCia(cuenta - 1).Caption = "* " & PUB_CODCIA & " , NO Procede"
@@ -1508,7 +1507,7 @@ If wBAN = -1 Then
     End If
   Next a
   If wBAN = -1 Then
-    MsgBox "Su(s) Compaï¿½ias de Acceso NO Existen , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
+    MsgBox "Su(s) Compañias de Acceso NO Existen , consulte al Administrador, Procede a Salir del Sistema", 48, Pub_Titulo
     GoTo fin_de_pro
   End If
 End If
@@ -1547,7 +1546,7 @@ PUB_ODBC = "ODBC;DSN=OSBusinessCR;UID=" & CONST_UID & ";PWD=" & CONST_PWD & ";AP
 ' * Permisos para los Menus *
 'Debug.Print PUB_ODBC
 
-'asegura la compaï¿½ia por defecto
+'asegura la compañia por defecto
 ACTUALIZA_CIA Left(MDIForm1.menuCia(wBAN).Caption, 2)
 
 If LK_CODUSU = "ADMIN" Or LK_CODUSU = "SUPERVISOR" Then
@@ -2355,7 +2354,7 @@ Private Sub menuRepoAyuda_Click()
 Dim WL As Object
 Dim var As String
 'Dim ee As Words
-MsgBox "En Construcciro n... " & Chr(13) & "Para mayor informaciro n llamar al Telf. Celular: (044) 9604779 Nextel 829*6446 - Trujillo - Perï¿½", vbInformation, "Asesoria y Soporte"
+MsgBox "En Construcciro n... " & Chr(13) & "Para mayor informaciro n llamar al Telf. Celular: (044) 9604779 Nextel 829*6446 - Trujillo - Perú", vbInformation, "Asesoria y Soporte"
 Exit Sub
 Dim ww As Form
 Dim I
@@ -3098,7 +3097,7 @@ Select Case Button.key
     End If
     'PAR_SALDO_CAJA_ayer
     If UCase(opdato) = "FA" Then
-         wclave = InputBox("Cambiar el Monto Maximo para pago por Dï¿½a (Facturas y Otros Documentos):", "Monto en Nuevos Soles", par_llave!PAR_TASA_VENTA)
+         wclave = InputBox("Cambiar el Monto Maximo para pago por Día (Facturas y Otros Documentos):", "Monto en Nuevos Soles", par_llave!PAR_TASA_VENTA)
          If wclave = "" Then Exit Sub
          If LK_CODCIA = "01" Or LK_CODCIA = "03" Or LK_CODCIA = "07" Or LK_CODCIA = "10" Then
              pub_cadena = "UPDATE PARGEN SET PAR_TASA_VENTA =  " & Val(wclave) & "  WHERE PAR_CODCIA IN ('01','03','07','10')"
@@ -3110,7 +3109,7 @@ Select Case Button.key
              par_llave.Update
         End If
    ElseIf UCase(opdato) = "LE" Then
-         wclave = InputBox("Cambiar el Monto Maximo para pago por Dï¿½a (Solo Letras y Renovadas):", "Monto en Nuevos Soles", par_llave!PAR_SALDO_CAJA_D_AYER)
+         wclave = InputBox("Cambiar el Monto Maximo para pago por Día (Solo Letras y Renovadas):", "Monto en Nuevos Soles", par_llave!PAR_SALDO_CAJA_D_AYER)
          If wclave = "" Then Exit Sub
          If LK_CODCIA = "01" Or LK_CODCIA = "03" Or LK_CODCIA = "07" Or LK_CODCIA = "10" Then
              pub_cadena = "UPDATE PARGEN SET PAR_SALDO_CAJA_D_AYER =  " & Val(wclave) & "  WHERE PAR_CODCIA IN ('01','03','07','10')"
@@ -3122,7 +3121,7 @@ Select Case Button.key
              par_llave.Update
         End If
    ElseIf UCase(opdato) = "PR" Then
-         wclave = InputBox("Cambiar el Monto Maximo para pago por Dï¿½a (Solo Programadas):", "Monto en Nuevos Soles", par_llave!PAR_SALDO_CAJA_HOY)
+         wclave = InputBox("Cambiar el Monto Maximo para pago por Día (Solo Programadas):", "Monto en Nuevos Soles", par_llave!PAR_SALDO_CAJA_HOY)
          If wclave = "" Then Exit Sub
          If LK_CODCIA = "01" Or LK_CODCIA = "03" Or LK_CODCIA = "07" Or LK_CODCIA = "10" Then
              pub_cadena = "UPDATE PARGEN SET PAR_SALDO_CAJA_HOY =  " & Val(wclave) & "  WHERE PAR_CODCIA IN ('01','03','07','10')"
@@ -3139,7 +3138,7 @@ Select Case Button.key
     wclave = InputBox("Tiene 2 opciones : Digitar 1 para cambiar la Fecha del Dia / Digitar 2 para Colocar Porcentaje para la Lista Precios Cientes ", "opcion", "1")
     If wclave = "" Then Exit Sub
     If wclave = 1 Then
-        wclave = InputBox("Cambiar de Fecha de Proceso :" & Chr(13) & "OJO, debe ser supervisado por el administrador del sistema." & Chr(13) & "Por Defecto Fecha del Dï¿½a.", "FECHA DE PROCESO !!!! ", Format(par_llave!PAR_FECHA_DIA, "dd/mm/yyyy"))
+        wclave = InputBox("Cambiar de Fecha de Proceso :" & Chr(13) & "OJO, debe ser supervisado por el administrador del sistema." & Chr(13) & "Por Defecto Fecha del Día.", "FECHA DE PROCESO !!!! ", Format(par_llave!PAR_FECHA_DIA, "dd/mm/yyyy"))
         If wclave = "" Then Exit Sub
         If Not IsDate(wclave) Then Exit Sub
         
