@@ -1904,7 +1904,16 @@ Begin VB.Form frmletras
       TabIndex        =   95
       Top             =   7185
       Width           =   11895
-   End
+    End
+    Begin VB.Label Label3 
+       BackColor       =   &H00808000&
+       BorderStyle     =   1  'Fixed Single
+       Height          =   7095
+       Index           =   5
+       Left            =   10320
+       Top             =   0
+       Width           =   1575
+    End
 End
 Attribute VB_Name = "frmletras"
 Attribute VB_GlobalNameSpace = False
@@ -2998,10 +3007,7 @@ Private Sub txtcp_Cancel()
     lblCP = ""
 End Sub
 Private Sub txtcp_GetRegistros(ByVal oKeyFind As Variant)
-Dim sSql As String
-    sSql = "SELECT 'Razon Social de la Empresa'=CLI_NOMBRE ,'Codigo'=CLI_CODCLIE FROM Clientes WHERE Cli_Codcia= '" & LK_CODCIA & "' AND Cli_CP = '" & sCP & "' AND Cli_Nombre LIKE '" & oKeyFind & "%' ORDER BY Cli_Nombre"
-    txtCP.TypeFind = NameField
-    txtCP.SetRecordset = OpenSQLForwardOnly(sSql)
+' txtCP reemplazado por VB.TextBox (ya no usa OSControlsUser.ocx)
 End Sub
 Private Sub txtcp_GotFocus()
     txtCP.ZOrder 0

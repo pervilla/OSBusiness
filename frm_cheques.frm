@@ -633,7 +633,16 @@ Begin VB.Form frm_cheques
       TabIndex        =   11
       Top             =   120
       Width           =   1095
-   End
+    End
+    Begin VB.Label Label3 
+       BackColor       =   &H00808000&
+       BorderStyle     =   1  'Fixed Single
+       Height          =   7095
+       Index           =   5
+       Left            =   10320
+       Top             =   0
+       Width           =   1575
+    End
 End
 Attribute VB_Name = "frm_cheques"
 Attribute VB_GlobalNameSpace = False

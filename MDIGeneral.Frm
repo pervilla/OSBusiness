@@ -1084,6 +1084,12 @@ Begin VB.MDIForm MDIForm1
          Index           =   8
       End
    End
+   Begin VB.Menu menuConsultorio 
+      Caption         =   "Con&sultorio"
+      Begin VB.Menu submenuConsultorio 
+         Caption         =   "&Reservar Cita Medica"
+      End
+   End
    Begin VB.Menu menuAyuda 
       Caption         =   "&Ayuda"
       Begin VB.Menu menuAyudaSistema 
@@ -2890,6 +2896,18 @@ Exit Sub
 
 End Sub
 
+
+Private Sub submenuConsultorio_Click()
+On Error GoTo sale
+  Screen.MousePointer = 11
+  Load FrmCitasMedicas
+  FrmCitasMedicas.Show
+  Screen.MousePointer = 0
+  Exit Sub
+sale:
+  Screen.MousePointer = 0
+  MsgBox Err.Description, 48, Pub_Titulo
+End Sub
 
 Private Sub Timer1_Timer()
 On Error GoTo sale

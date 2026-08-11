@@ -1,0 +1,52 @@
+========================================
+OSBusiness - Inicio de Sesion: 01/08/2026 09:05:08
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+09:05:08 [INFO] [GENERAL] Splash: Inicio Form_Load
+09:05:08 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+09:05:08 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+09:05:08 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+09:05:08 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+09:05:08 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+09:05:08 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+09:05:08 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+09:05:08 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+09:05:08 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+09:05:08 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+09:05:09 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+09:05:09 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+09:05:10 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+09:05:11 [TRACE] [GENERAL] MDI: Toolbar Click - FORMGEN
+09:05:12 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+09:05:12 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+09:05:12 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+09:05:13 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+09:05:13 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+09:05:13 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+========================================
+OSBusiness - Inicio de Sesion: 01/08/2026 09:05:46
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+09:05:46 [INFO] [GENERAL] Splash: Inicio Form_Load
+09:05:46 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+09:05:46 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+09:05:46 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+09:05:46 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+09:05:46 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+09:05:47 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+09:05:47 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+09:05:47 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+09:05:47 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+09:05:47 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+09:05:47 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+09:05:47 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+09:05:49 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+09:05:50 [TRACE] [GENERAL] MDI: Toolbar Click - FORMGEN
+09:05:51 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+09:05:52 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+09:05:52 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+09:05:52 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+09:05:52 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+09:05:52 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9

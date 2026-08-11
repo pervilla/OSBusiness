@@ -620,15 +620,16 @@ Begin VB.Form frmBancos
       Top             =   6600
       Width           =   1455
    End
-   Begin VB.Label Label3 
-      BackColor       =   &H00808000&
-      BorderStyle     =   1  'Fixed Single
-      Height          =   7095
-      Left            =   10320
-      TabIndex        =   27
-      Top             =   0
-      Width           =   1575
-   End
+    Begin VB.Label Label3 
+       BackColor       =   &H00808000&
+       BorderStyle     =   1  'Fixed Single
+       Height          =   7095
+       Index           =   5
+       Left            =   10320
+       TabIndex        =   27
+       Top             =   0
+       Width           =   1575
+    End
    Begin VB.Label momento 
       AutoSize        =   -1  'True
       Caption         =   "Procesando... un momento ..."

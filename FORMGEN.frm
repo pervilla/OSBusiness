@@ -8333,7 +8333,7 @@ If Index = 0 Then  ' Stock loc.
     ws_stock = ""
     
     On Error Resume Next
-    Set X = CN.OpenResultset("EXEC BDATOS.dbo.sp_stock_local " & ws_artkey & ", 'BDATOSPM'", rdOpenKeyset, rdConcurValues)
+    Set X = CN.OpenResultset("EXEC " & CONST_DATABASE & ".dbo.sp_stock_local " & ws_artkey & ", 'BDATOSPM'", rdOpenKeyset, rdConcurValues)
     If Err.Number <> 0 Then
         ws_stock = ws_stock & "Pena Meza: Error " & Err.Description
         Err.Clear
@@ -8341,7 +8341,7 @@ If Index = 0 Then  ' Stock loc.
         ws_stock = ws_stock & "Pena Meza: " & Format(X!arm_stock, "0.00")
     End If
     
-    Set X = CN.OpenResultset("EXEC BDATOS.dbo.sp_stock_local " & ws_artkey & ", 'SERVER02'", rdOpenKeyset, rdConcurValues)
+    Set X = CN.OpenResultset("EXEC " & CONST_DATABASE & ".dbo.sp_stock_local " & ws_artkey & ", 'SERVER02'", rdOpenKeyset, rdConcurValues)
     If Err.Number <> 0 Then
         If ws_stock <> "" Then ws_stock = ws_stock & " | "
         ws_stock = ws_stock & "Jj: Error " & Err.Description
@@ -8370,7 +8370,7 @@ ElseIf Index = 1 Then  ' Transito
     Screen.MousePointer = 11
     
     On Error Resume Next
-    Set X = CN.OpenResultset("EXEC BDATOS.dbo.sp_productos_transito '" & ws_nomart & "'", rdOpenKeyset, rdConcurValues)
+    Set X = CN.OpenResultset("EXEC " & CONST_DATABASE & ".dbo.sp_productos_transito '" & ws_nomart & "'", rdOpenKeyset, rdConcurValues)
     If Err.Number <> 0 Then
         MsgBox "Error al consultar transito: " & Err.Description, 48, Pub_Titulo
         Err.Clear
@@ -30165,7 +30165,6 @@ Private Sub lblbarraos_DblClick()
         Me.WindowState = vbMaximized
     End If
 End Sub
-
 
 
 

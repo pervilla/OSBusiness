@@ -1438,14 +1438,14 @@ MDIForm1.StatusBar1.Panels(4).Text = LK_CODUSU
 MDIForm1.StatusBar1.Panels(5).Text = MDIForm1.menuCia(wBAN).Caption
 ProBar.Value = ProBar.Value + 1
 MDIForm1.TXTCIA.Caption = MDIForm1.menuCia(wBAN).Caption
-CONST_SERVER = Trim(Nulo_Valors(GEN!GEN_SERVER))
-CONST_UID = Trim(Nulo_Valors(GEN!GEN_UID))
-CONST_PWD = Trim(Nulo_Valors(GEN!GEN_PWD))
+If Len(CONST_DATABASE) = 0 Then CONST_SERVER = Trim(Nulo_Valors(GEN!GEN_SERVER))
+If Len(CONST_DATABASE) = 0 Then CONST_UID = Trim(Nulo_Valors(GEN!GEN_UID))
+If Len(CONST_DATABASE) = 0 Then CONST_PWD = Trim(Nulo_Valors(GEN!GEN_PWD))
 ProBar.Value = ProBar.Value + 1
 If Len(CONST_SERVER) = 0 Or Len(CONST_UID) = 0 Then
   MsgBox "ADVERTENCIA ..!! DEBES DEFINIR EL NOMBRE DEL SERVIDOR , UID , PWD", 48, Pub_Titulo
 End If
-PUB_ODBC = "ODBC;DSN=OSBusinessCR;UID=" & CONST_UID & ";PWD=" & CONST_PWD & ";APP=Data From Designer;WSID=" & CONST_SERVER & ";LANGUAGE=us_english;DATABASE=BDATOS"
+PUB_ODBC = "ODBC;DSN=OSBusinessCR;UID=" & CONST_UID & ";PWD=" & CONST_PWD & ";APP=Data From Designer;WSID=" & CONST_SERVER & ";LANGUAGE=us_english;DATABASE=" & CONST_DATABASE"
 
 ' * Permisos para los Menus *
 Screen.MousePointer = 11
@@ -2681,4 +2681,3 @@ Dim WRES As Currency
 WRES = (WCFP * 9) + 9
 PRO_DES = WRES
 End Function
-

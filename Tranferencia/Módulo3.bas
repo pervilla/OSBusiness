@@ -19,6 +19,7 @@ Public CONST_DSN As String
 Public CONST_SERVER As String
 Public CONST_UID As String
 Public CONST_PWD As String
+Public CONST_DATABASE As String
 Public PUB_ODBC As String
 Public PUB_LINEAS As Integer
 Public PUB_FLAG As Integer

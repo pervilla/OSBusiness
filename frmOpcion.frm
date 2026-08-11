@@ -162,14 +162,15 @@ Begin VB.Form frmOpcion
          Top             =   1440
          Width           =   1695
       End
-      Begin VB.Label Label3 
-         Caption         =   "Año"
-         Height          =   375
-         Left            =   3240
-         TabIndex        =   7
-         Top             =   720
-         Width           =   495
-      End
+       Begin VB.Label Label3 
+          Caption         =   "Año"
+          Height          =   375
+          Index           =   5
+          Left            =   3240
+          TabIndex        =   7
+          Top             =   720
+          Width           =   495
+       End
       Begin VB.Label Label2 
          Alignment       =   2  'Center
          Caption         =   "Mes"

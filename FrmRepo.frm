@@ -3244,11 +3244,11 @@ If far_r.EOF = True Then
    MsgBox "!!! NO EXISTEN Documentos ...", 48, Pub_Titulo
    GoTo CANCELA
 End If
-FrmRepo.pbMax = far_r.RowCount
-FrmRepo.pbMin = 0
-FrmRepo.pbValue = 0
-FrmRepo.pb.Visible = True
-FrmRepo.lblmensa.Visible = True
+pbMax = far_r.RowCount
+pbMin = 0
+pbValue = 0
+pb.Visible = True
+lblmensa.Visible = True
 DoEvents
 If far_r!FAR_CODCIA <> LK_CODCIA Then
    MsgBox "!!! NO TE CORRESPONDE...", 48, Pub_Titulo
@@ -3313,7 +3313,7 @@ If LK_EMP = "HER" Then
     WS_FLETE = 0
 End If
 Do Until far_r.EOF
-   FrmRepo.pbValue = FrmRepo.pbValue + 1
+   pbValue = pbValue + 1
    If wnumfac <> far_r!far_numfac Then
     waumenta = wmaxitem - fila
     f1 = f1 + waumenta + 1

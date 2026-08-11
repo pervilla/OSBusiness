@@ -1,4 +1,5 @@
 Attribute VB_Name = "Módulo1"
+Private Declare Function GetPrivateProfileString Lib "kernel32" Alias "GetPrivateProfileStringA" (ByVal lpApplicationName As String, ByVal lpKeyName As String, ByVal lpDefault As String, ByVal lpReturnedString As String, ByVal nSize As Long, ByVal lpFileName As String) As Long
 Public WF_REINICIAR As Integer
 Public LK_NIVEL_MAX As Integer
 Public LK_ICA As String * 1
@@ -330,6 +331,14 @@ ven_llave.Requery
 
 End Sub
 
+
+Public Function LeerIni(ByVal Archivo As String, ByVal Seccion As String, ByVal Clave As String, Optional ByVal DefaultValue As String = "") As String
+    Dim Buffer As String * 256
+    Dim Ret As Long
+    Ret = GetPrivateProfileString(Seccion, Clave, DefaultValue, Buffer, 255, Archivo)
+    If Ret > 0 Then LeerIni = Left$(Buffer, Ret) Else LeerIni = DefaultValue
+End Function
+
 Public Sub CONEXION_GEN()
   LK_ICA = " "
   Dim success%
@@ -340,15 +349,38 @@ Public Sub CONEXION_GEN()
 
   Splash.lblmensa.Caption = "Intentando conexion con el servidor..."
   DoEvents
-  wdsn = "dsn_datos"
-  'wdsn = "dsn_medina_pm"
-  'wdsn = "dsn_medina_jj"
-  'wdsn = "DSN_MFARMA"
-  'wdsn = "dd"
-  PUB_DSN = UCase(wdsn)
-  wAcceso = "1478963SWS"
-  wAcceso = "159357852456"
-  'wAcceso = "oscliente"
+  Dim wIniServer As String, wIniUID As String, wIniPWD As String, wIniDB As String, wIniDriver As String
+  Dim wIniFile As String
+  wIniFile = App.Path & "\conexion.ini"
+  If Dir(wIniFile) = "" Then wIniFile = App.Path & "\..\conexion.ini"
+  If Dir(wIniFile) = "" Then
+    MsgBox "No se encuentra conexion.ini en " & App.Path, 48, "Error de Conexion"
+    End
+  End If
+  wIniServer = LeerIni(wIniFile, "Conexion", "Server")
+  wIniUID = LeerIni(wIniFile, "Conexion", "UID")
+  wIniPWD = LeerIni(wIniFile, "Conexion", "PWD")
+  wIniDB = LeerIni(wIniFile, "Conexion", "Database")
+  wIniDriver = LeerIni(wIniFile, "Conexion", "Driver")
+  If Len(wIniServer) = 0 Or Len(wIniUID) = 0 Or Len(wIniDB) = 0 Then
+    MsgBox "conexion.ini incompleto. Verifique Server, UID, Database.", 48, "Error de Conexion"
+    End
+  End If
+  If Len(wIniDriver) = 0 Then wIniDriver = "SQL Server"
+  CONST_SERVER = wIniServer
+  CONST_UID = wIniUID
+  CONST_PWD = wIniPWD
+  CONST_DATABASE = wIniDB
+  If InStr(1, wIniDB, "BDATOSPM", vbTextCompare) > 0 Then
+    Splash.Icon = LoadPicture(App.Path & "\Imagenes\icono-medina-pm.ico")
+  ElseIf InStr(1, wIniDB, "SERVER02", vbTextCompare) > 0 Or InStr(1, wIniDB, "JC", vbTextCompare) > 0 Then
+    Splash.Icon = LoadPicture(App.Path & "\Imagenes\icono-medina-JC.ico")
+  Else
+    Splash.Icon = LoadPicture(App.Path & "\Imagenes\icono-medina.ico")
+  End If
+  CONST_DSN = ""
+  PUB_DSN = ""
+  PUB_ODBC = "ODBC;DSN=OSBusinessCR;UID=" & CONST_UID & ";PWD=" & CONST_PWD & ";WSID=" & CONST_SERVER & ";DATABASE=" & CONST_DATABASE
   ws_color = 3
   Srutas = ""
   iStatusBarWidth = 4075
@@ -356,12 +388,10 @@ Public Sub CONEXION_GEN()
   DoEvents
   NL = Chr(13) & Chr(10)
   Set EN = rdoEnvironments(0)
- 'CONn$ = "dsn=" & wdsn & ";uid=jorge;pwd=jjj99;database=bdatos;"
-  CONn$ = "dsn=" & wdsn & ";uid=sa;pwd=" & wAcceso & ";database=BDATOS" ' bdchepen" 'bdatos;"
+  CONn$ = "driver={" & wIniDriver & "};server=" & CONST_SERVER & ";uid=" & CONST_UID & ";pwd=" & CONST_PWD & ";database=" & CONST_DATABASE
   Pub_ConnAdo.Open CONn$
-  'CONn$ = "dsn=" & wdsn & ";uid=sa;pwd=" & wAcceso & ";database=bdferreteros;"
   DoEvents
-  Set CN = EN.OpenConnection(" ", False, False, CONn$)
+  Set CN = EN.OpenConnection("", False, False, CONn$)
   CN.QueryTimeout = 90
   Splash.lblmensa.Caption = "Conexion efectuada..."
   Call PlaySound(Srutas, 1, 1)

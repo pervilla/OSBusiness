@@ -1,19 +1,19 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
-Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "CRYSTL32.OCX"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Begin VB.Form FrmImp3 
    Caption         =   "Reportes"
-   ClientHeight    =   4470
+   ClientHeight    =   6720
    ClientLeft      =   60
    ClientTop       =   345
-   ClientWidth     =   8715
+   ClientWidth     =   11805
    Icon            =   "FrmImp3.frx":0000
    LinkTopic       =   "Form2"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4470
-   ScaleWidth      =   8715
+   ScaleHeight     =   6720
+   ScaleWidth      =   11805
    StartUpPosition =   3  'Windows Default
    Begin VB.ComboBox cmbmoneda 
       Height          =   315
@@ -27,7 +27,7 @@ Begin VB.Form FrmImp3
    Begin VB.ComboBox CP 
       Height          =   315
       ItemData        =   "FrmImp3.frx":0442
-      Left            =   360
+      Left            =   120
       List            =   "FrmImp3.frx":044C
       Style           =   2  'Dropdown List
       TabIndex        =   29
@@ -39,7 +39,7 @@ Begin VB.Form FrmImp3
       Height          =   375
       Left            =   5760
       TabIndex        =   28
-      Top             =   3960
+      Top             =   4560
       Visible         =   0   'False
       Width           =   2895
       _ExtentX        =   5106
@@ -49,7 +49,7 @@ Begin VB.Form FrmImp3
       LabelEdit       =   1
       LabelWrap       =   -1  'True
       HideSelection   =   0   'False
-      _Version        =   327682
+      _Version        =   393217
       ForeColor       =   -2147483640
       BackColor       =   -2147483643
       Appearance      =   1
@@ -58,9 +58,9 @@ Begin VB.Form FrmImp3
    Begin VB.Frame frmop 
       Caption         =   "Clientes :"
       Height          =   1815
-      Left            =   240
+      Left            =   120
       TabIndex        =   21
-      Top             =   1560
+      Top             =   2640
       Visible         =   0   'False
       Width           =   8535
       Begin VB.OptionButton op1 
@@ -115,20 +115,20 @@ Begin VB.Form FrmImp3
       End
    End
    Begin VB.ListBox lisD 
-      Height          =   2085
-      Left            =   3720
+      Height          =   1635
+      Left            =   4440
       Style           =   1  'Checkbox
       TabIndex        =   19
-      Top             =   840
+      Top             =   720
       Visible         =   0   'False
-      Width           =   3255
+      Width           =   4215
    End
    Begin VB.Frame frmdocu 
       Caption         =   "Documentos"
       Height          =   855
-      Left            =   240
+      Left            =   120
       TabIndex        =   10
-      Top             =   1800
+      Top             =   1680
       Visible         =   0   'False
       Width           =   4215
       Begin VB.TextBox numfin 
@@ -200,10 +200,10 @@ Begin VB.Form FrmImp3
    End
    Begin VB.Frame Frame1 
       Height          =   615
-      Left            =   1800
+      Left            =   3720
       TabIndex        =   6
-      Top             =   -120
-      Width           =   4455
+      Top             =   0
+      Width           =   4935
       Begin VB.Label lblreporte 
          Alignment       =   2  'Center
          AutoSize        =   -1  'True
@@ -235,10 +235,10 @@ Begin VB.Form FrmImp3
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   2280
+      Left            =   1680
       Style           =   1  'Graphical
       TabIndex        =   2
-      Top             =   3840
+      Top             =   5040
       Width           =   1575
    End
    Begin VB.CommandButton cerrar 
@@ -253,21 +253,21 @@ Begin VB.Form FrmImp3
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   4680
+      Left            =   4080
       TabIndex        =   3
-      Top             =   3840
+      Top             =   5040
       Width           =   1095
    End
    Begin MSComctlLib.ProgressBar ProgBar 
       Height          =   255
-      Left            =   1920
+      Left            =   1320
       TabIndex        =   4
-      Top             =   3360
+      Top             =   4560
       Visible         =   0   'False
       Width           =   4095
       _ExtentX        =   7223
       _ExtentY        =   450
-      _Version        =   327682
+      _Version        =   393216
       Appearance      =   0
    End
    Begin Crystal.CrystalReport Reportes 
@@ -364,9 +364,9 @@ Begin VB.Form FrmImp3
       Alignment       =   2  'Center
       Caption         =   "Procesando ..."
       Height          =   255
-      Left            =   2400
+      Left            =   1800
       TabIndex        =   5
-      Top             =   3600
+      Top             =   4800
       Visible         =   0   'False
       Width           =   3375
    End
@@ -391,8 +391,8 @@ Dim wranF, wran1, wran2, WPAS
 Dim c1 As Integer
 Dim f1 As Integer
 Dim xcuenta As Integer
-Dim i As Integer
-Dim Mensaje, titulo, valorpred As String
+Dim I As Integer
+Dim mensaje, titulo, valorpred As String
 Dim Wfile  As String
 Dim WFORM  As String
 Dim REP_FECHA1
@@ -515,7 +515,7 @@ If Wfile = "Wfile = " Then
     SQ_OPER = 2
     LEER_TAB_LLAVE
     Do Until tab_mayor.EOF
-        fbg.AddItem Format(tab_mayor!tab_numtab, "00") & " - " & Trim(tab_mayor!tab_nomlargo)
+        fbg.AddItem Format(tab_mayor!TAB_NUMTAB, "00") & " - " & Trim(tab_mayor!TAB_NOMLARGO)
         tab_mayor.MoveNext
     Loop
     fbg.TabIndex = 0
@@ -660,7 +660,7 @@ ProgBar.Visible = True
 DoEvents
 Do Until llave_rep01.EOF
  ProgBar.Value = ProgBar.Value + 1
- listop.AddItem Format(llave_rep01!PED_fecha, "dd/mm/yyyy") & " O/P. " & Format(llave_rep01!PED_NUMSER, "000") & " - " & Format(llave_rep01!PED_NUMFAC, "0000000")
+ listop.AddItem Format(llave_rep01!PED_FECHA, "dd/mm/yyyy") & " O/P. " & Format(llave_rep01!PED_NUMSER, "000") & " - " & Format(llave_rep01!PED_NUMFAC, "0000000")
  llave_rep01.MoveNext
 Loop
 listop.SetFocus
@@ -772,7 +772,7 @@ Dim CONTA As Integer
     cont.Clear
 '    cont.AddItem " "
     Do Until tab_mayor.EOF
-        cont.AddItem tab_mayor!tab_nomlargo & String(60, " ") & tab_mayor!tab_numtab
+        cont.AddItem tab_mayor!TAB_NOMLARGO & String(60, " ") & tab_mayor!TAB_NUMTAB
         CONTA = CONTA + 1
         tab_mayor.MoveNext
     Loop
@@ -784,7 +784,7 @@ Public Sub LLENADOS_COMBO(cont As ComboBox, tip As Integer)
     cont.ToolTipText = "TAB_TIPREG = " & tip
     cont.Clear
     Do Until tab_mayor.EOF
-        cont.AddItem tab_mayor!tab_nomlargo & String(60, " ") & tab_mayor!tab_numtab
+        cont.AddItem tab_mayor!TAB_NOMLARGO & String(60, " ") & tab_mayor!TAB_NUMTAB
         tab_mayor.MoveNext
     Loop
 End Sub
@@ -1099,8 +1099,8 @@ Do Until llave_rep02.EOF
       MsgBox "Equivalencia 0 Reset "
       GoTo CANCELA
     End If
-    wvalor = Val(llave_rep02!FAR_SUBTOTAL)
-    wcanti = redondea((Val(llave_rep02!far_cantidad)) / Val(llave_rep02!FAR_equiv))
+    wvalor = Val(llave_rep02!far_subtotal)
+    wcanti = redondea((Val(llave_rep02!FAR_cantidad)) / Val(llave_rep02!FAR_equiv))
     If llave_rep02!far_signo_car = 0 And llave_rep02!FAR_TIPDOC <> "AU" Then
       suma_v_contado = suma_v_contado + wvalor
       suma_c_contado = suma_c_contado + wcanti
@@ -1118,7 +1118,7 @@ Do Until llave_rep02.EOF
     End If
     suma_v_total = suma_v_total + wvalor ' (suma_v_contado + suma_v_credito + suma_v_auto)
     suma_c_total = suma_c_total + wcanti '(suma_c_contado + suma_c_credito + suma_c_auto)
-    TT_COSTO_VENTAS = TT_COSTO_VENTAS + redondea((Val(llave_rep02!far_cantidad) * Val(llave_rep02!FAR_COSPRO)))
+    TT_COSTO_VENTAS = TT_COSTO_VENTAS + redondea((Val(llave_rep02!FAR_cantidad) * Val(llave_rep02!FAR_COSPRO)))
   llave_rep02.MoveNext
  Loop
  
@@ -1134,7 +1134,7 @@ IMPFACART:
        SQ_OPER = 1
        pu_codcia = LK_CODCIA
        LEER_ART_LLAVE
-       xl.Cells(f1, 2) = art_LLAVE!ART_NOMBRE
+       xl.Cells(f1, 2) = art_LLAVE!art_nombre
        xl.Cells(f1, 3) = suma_c_contado
        xl.Cells(f1, 4) = suma_v_contado
        xl.Cells(f1, 5) = suma_c_credito
@@ -1246,8 +1246,8 @@ Do Until art_mayor.EOF
     LEER_ARM_LLAVE
     If Val(arm_llave!arm_stock) <> 0 Then
       f1 = f1 + 1
-      xl.Cells(f1, 1) = Trim(art_mayor!art_alterno)
-      xl.Cells(f1, 2) = Trim(art_mayor!ART_NOMBRE)
+      xl.Cells(f1, 1) = Trim(art_mayor!ART_alterno)
+      xl.Cells(f1, 2) = Trim(art_mayor!art_nombre)
       xl.Cells(f1, 3) = Val(arm_llave!arm_stock)
       suma_total = suma_total + Val(arm_llave!arm_stock)
     End If
@@ -1302,7 +1302,7 @@ Dim tfechafin
 Dim ip_numfac
 Dim ip_fecha
 Dim wwnumfac
-Dim WFLAG As String * 1
+Dim wflag As String * 1
 If Trim(fbg.Text) = "" Then
   MsgBox "Ingrese Tipo de Documento.", 48, Pub_Titulo
   Exit Sub
@@ -1335,7 +1335,7 @@ FrmImp3.lblproceso.Caption = "Activando Reporte... un Momento ."
 DoEvents
 ws_clave = PUB_CLAVE
 f1 = 9  'Fila Inicial
-WFLAG = ""
+wflag = ""
 
 'WCONTROL = WCONTROL + 1
 pub_cadena = "SELECT Distinct FAR_NUMFAC, FAR_FECHA_COMPRA FROM FACART WHERE FAR_CODCIA = ? AND FAR_FBG = ? AND FAR_NUMSER = ? AND FAR_NUMFAC >= ? AND FAR_TIPMOV = 10  ORDER BY  FAR_NUMFAC"
@@ -1394,7 +1394,7 @@ FrmImp3.ProgBar.Value = 0
       ip_numfac = WW_CORRELA + fila - 1
       GoSub IMP_NUMFAC
       Next fila
-      WFLAG = "A"
+      wflag = "A"
     End If
     WW_CORRELA = llave_rep02!far_numfac
     WW_CORRELA = WW_CORRELA + 1
@@ -1406,7 +1406,7 @@ FrmImp3.ProgBar.Value = 0
  xl.Worksheets("Hoja1").Range(wranF).Borders.Item(xlEdgeTop).LineStyle = 1
  f1 = f1 + 2
  xl.Cells(f1, 1) = "FIN DE LISTADO "
- If WFLAG <> "A" Then
+ If wflag <> "A" Then
    f1 = f1 + 1
    xl.Cells(f1, 1) = "*** LOS DOC. ESTAN CORRECTOS *** "
  End If
@@ -1639,7 +1639,7 @@ Do Until art_mayor.EOF
  ACU_INGRESOS = 0
  
  If Not llave_rep03.EOF Then
-    SALDO_INI = (llave_rep03!FAR_STOCK / llave_rep03!FAR_equiv) + (llave_rep03!far_signo_arm * (llave_rep03!far_cantidad / llave_rep03!FAR_equiv) * -1)
+    SALDO_INI = (llave_rep03!FAR_STOCK / llave_rep03!FAR_equiv) + (llave_rep03!far_signo_arm * (llave_rep03!FAR_cantidad / llave_rep03!FAR_equiv) * -1)
  Else
     SQ_OPER = 1
     PUB_CODART = art_mayor!art_key
@@ -1647,7 +1647,7 @@ Do Until art_mayor.EOF
     LEER_ARM_LLAVE
     SALDO_INI = arm_llave!arm_stock
  End If
- xl.Cells(f1, c1) = art_mayor!ART_NOMBRE
+ xl.Cells(f1, c1) = art_mayor!art_nombre
  xl.Cells(f1, c1 - 1) = "ISLA"
  
  f1 = f1 + 1
@@ -1692,10 +1692,10 @@ Do Until art_mayor.EOF
  TOT_VENTA = 0
  Do Until tab_mayor.EOF
     max_islas = llave_rep04.RowCount + f1 + 2
-    WDOCU = "TURNO: " & tab_mayor!tab_numtab
+    WDOCU = "TURNO: " & tab_mayor!TAB_NUMTAB
     f1 = f1 + 1
     GoSub PROC_TURNOS
-    wturno = tab_mayor!tab_numtab
+    wturno = tab_mayor!TAB_NUMTAB
     tab_mayor.MoveNext
  Loop
  xl.Cells(max_islas + 1, c1) = TOT_VENTA
@@ -1718,7 +1718,7 @@ Do Until art_mayor.EOF
  PSST_LLAVE(4) = art_mayor!art_key
  stock_llave.Requery
  If Not stock_llave.EOF Then
-  WSTCKR = stock_llave!tab_nomlargo
+  WSTCKR = stock_llave!TAB_NOMLARGO
  Else
   WSTCKR = 0
  End If
@@ -1787,9 +1787,9 @@ Do Until llave_rep02.EOF
        ACU_SALDO_ARTI = ACU_SALDO_ARTI + wSaldo
        wSaldo = 0
     End If
-    wSaldo = wSaldo + (Val(llave_rep02!far_cantidad) / Val(llave_rep02!FAR_equiv))
-    If Val(llave_rep02!far_numfac_c) <> 0 Then
-      WDOCU = "FAC.: " & llave_rep02!far_numser_c & " - " & llave_rep02!far_numfac_c
+    wSaldo = wSaldo + (Val(llave_rep02!FAR_cantidad) / Val(llave_rep02!FAR_equiv))
+    If Val(llave_rep02!FAR_NUMFAC_C) <> 0 Then
+      WDOCU = "FAC.: " & llave_rep02!FAR_NUMSER_C & " - " & llave_rep02!FAR_NUMFAC_C
     Else
      WDOCU = "GUIA.: " & llave_rep02!far_numguia
     End If
@@ -1815,7 +1815,7 @@ wconta = 0
 ff_flag = ""
 wSaldo = 0
 If fila_islas = 0 Then fila_islas = f1
-PS_REP01(5) = tab_mayor!tab_numtab
+PS_REP01(5) = tab_mayor!TAB_NUMTAB
 llave_rep01.Requery
 If Not llave_rep01.EOF Then
  d_numfac = llave_rep01!far_ISLA
@@ -1831,7 +1831,7 @@ Do Until llave_rep01.EOF
        wconta = wconta + 1
    End If
    WISLA = llave_rep01!far_ISLA
-   wSaldo = wSaldo + (Val(llave_rep01!far_cantidad) / Val(llave_rep01!FAR_equiv))
+   wSaldo = wSaldo + (Val(llave_rep01!FAR_cantidad) / Val(llave_rep01!FAR_equiv))
    ff_flag = "A"
    llave_rep01.MoveNext
 Loop
@@ -1998,7 +1998,7 @@ Do Until art_mayor.EOF
    If art_mayor!art_familia = 1 Then
       WS_FILA = WS_FILA + 1
       xl.Cells(1, WS_FILA) = art_mayor!art_key
-      xl.Cells(4, WS_FILA) = Trim(art_mayor!ART_NOMBRE)
+      xl.Cells(4, WS_FILA) = Trim(art_mayor!art_nombre)
    End If
    art_mayor.MoveNext
 Loop
@@ -2032,20 +2032,20 @@ FrmImp3.ProgBar.Visible = True
 FrmImp3.ProgBar.Min = 0
 DoEvents
 WS_FILA = 5
-wq_fecha = Format(llave_rep02!FAR_fecha, "dd/mmm/yy")
+wq_fecha = Format(llave_rep02!far_fecha, "dd/mmm/yy")
 xl.Cells(WS_FILA, 1) = "'" & wq_fecha
 wq_codart = llave_rep02!far_codart
 
 Do Until llave_rep02.EOF
   
-  If wq_fecha = llave_rep02!FAR_fecha And wq_codart = llave_rep02!far_codart Then
+  If wq_fecha = llave_rep02!far_fecha And wq_codart = llave_rep02!far_codart Then
   Else
      GoSub escribe
-     wq_fecha = llave_rep02!FAR_fecha
+     wq_fecha = llave_rep02!far_fecha
      wq_codart = llave_rep02!far_codart
   End If
   
-  WQ_cANTIDAD = Val(llave_rep02!far_cantidad) + WQ_cANTIDAD
+  WQ_cANTIDAD = Val(llave_rep02!FAR_cantidad) + WQ_cANTIDAD
 'xl.Visible = True
   DoEvents
   FrmImp3.ProgBar.Value = FrmImp3.ProgBar.Value + 1
@@ -2053,12 +2053,12 @@ Do Until llave_rep02.EOF
 Loop
   GoSub escribe
 WS_FILA_ULTIMA = WS_FILA
-i = 5
+I = 5
 j = 2
-Do Until i > WS_FILA_ULTIMA
+Do Until I > WS_FILA_ULTIMA
    Do Until j > ws_ultimo
    PSPAG_LLAVE(0) = LK_CODCIA
-   PSPAG_LLAVE(1) = xl.Cells(i, 1)
+   PSPAG_LLAVE(1) = xl.Cells(I, 1)
    PSPAG_LLAVE(2) = xl.Cells(1, j)
    pag_llave.Requery
    If pag_llave.EOF Then MsgBox "ERROR ..."
@@ -2067,11 +2067,11 @@ Do Until i > WS_FILA_ULTIMA
       ww_cant = pag_llave!PAG_LEC_CIERRE - pag_llave!PAG_LEC_INICIO + ww_cant
       pag_llave.MoveNext
    Loop
-   xl.Cells(i, j) = ww_cant - Val(xl.Cells(i, j))
+   xl.Cells(I, j) = ww_cant - Val(xl.Cells(I, j))
 
    j = j + 1
    Loop
-   i = i + 1
+   I = I + 1
 Loop
    
   
@@ -2169,9 +2169,9 @@ Loop
 WQ_cANTIDAD = 0
 
 If Not llave_rep02.EOF Then
-If wq_fecha <> llave_rep02!FAR_fecha Then
+If wq_fecha <> llave_rep02!far_fecha Then
    WS_FILA = WS_FILA + 1
-   xl.Cells(WS_FILA, 1) = "'" & Format(llave_rep02!FAR_fecha, "dd/mmm/yy")
+   xl.Cells(WS_FILA, 1) = "'" & Format(llave_rep02!far_fecha, "dd/mmm/yy")
 End If
 End If
 Return
@@ -2410,8 +2410,8 @@ Do Until llave_rep02.EOF
       MsgBox "Equivalencia 0 Reset "
       GoTo CANCELA
     End If
-    wvalor = Val(llave_rep02!FAR_PRECIO) * (Val(llave_rep02!far_cantidad) / Val(llave_rep02!FAR_equiv))
-    wcanti = (Val(llave_rep02!far_cantidad)) / Val(llave_rep02!FAR_equiv)
+    wvalor = Val(llave_rep02!FAR_PRECIO) * (Val(llave_rep02!FAR_cantidad) / Val(llave_rep02!FAR_equiv))
+    wcanti = (Val(llave_rep02!FAR_cantidad)) / Val(llave_rep02!FAR_equiv)
     If llave_rep02!far_signo_car = 0 Then
       suma_v_contado = suma_v_contado + wvalor
       suma_c_contado = suma_c_contado + wcanti
@@ -2439,7 +2439,7 @@ IMPFACART:
        SQ_OPER = 1
        pu_codcia = LK_CODCIA
        LEER_ART_LLAVE
-       xl.Cells(f1, 2) = art_LLAVE!ART_NOMBRE
+       xl.Cells(f1, 2) = art_LLAVE!art_nombre
        xl.Cells(f1, 3) = suma_c_contado
        xl.Cells(f1, 4) = suma_v_contado
        xl.Cells(f1, 5) = suma_c_credito
@@ -2812,7 +2812,7 @@ End Sub
 Private Sub txt_cli_KeyPress(KeyAscii As Integer)
 Dim VALOR As String
 Dim tf As Integer
-Dim i
+Dim I
 Dim itmFound As MSComctlLib.ListItem    ' Variable FoundItem.
 If KeyAscii = 27 Then
  ListView2.Visible = False
@@ -2949,7 +2949,7 @@ Dim mes
 Dim MES1
 Dim ano
 Dim ANO1
-Dim WFLAG As String * 1
+Dim wflag As String * 1
 Dim CADENITA
 Dim wkSELECT
 Dim Wche
@@ -2997,11 +2997,11 @@ ANO1 = Year(REP_FECHA2)
 
  
 If op1(0).Value Then
-    WFLAG = " "
+    wflag = " "
 ElseIf op1(1).Value Then
-    WFLAG = "X"
+    wflag = "X"
 ElseIf op1(1).Value Then
-    WFLAG = "A"
+    wflag = "A"
 End If
 
 CADENITA = ""
@@ -3064,7 +3064,7 @@ Dim tfechafin
 Dim ip_numfac
 Dim ip_fecha
 Dim wwnumfac
-Dim WFLAG As String * 1
+Dim wflag As String * 1
 If Trim(fbg.Text) = "" Then
   MsgBox "Ingrese Tipo de Documento.", 48, Pub_Titulo
   Exit Sub
@@ -3097,7 +3097,7 @@ FrmImp3.lblproceso.Caption = "Activando Reporte... un Momento ."
 DoEvents
 ws_clave = PUB_CLAVE
 f1 = 9  'Fila Inicial
-WFLAG = ""
+wflag = ""
 
 'WCONTROL = WCONTROL + 1
 pub_cadena = "SELECT Distinct MOV_NUMFAC, MOV_FECHA_EMI FROM MOVICONT WHERE MOV_CODCIA = ? AND MOV_FBG = ? AND MOV_SERIE = ? AND MOV_NUMFAC >= ? AND MOV_NUMFAC <= ? AND MOV_TIPMOV = ?  ORDER BY  MOV_NUMFAC"
@@ -3158,7 +3158,7 @@ FrmImp3.ProgBar.Value = 0
       ip_numfac = WW_CORRELA + fila - 1
       GoSub IMP_NUMFAC
       Next fila
-      WFLAG = "A"
+      wflag = "A"
     End If
     WW_CORRELA = llave_rep02!MOV_numfac
     WW_CORRELA = WW_CORRELA + 1
@@ -3170,7 +3170,7 @@ FrmImp3.ProgBar.Value = 0
  xl.Worksheets("Hoja1").Range(wranF).Borders.Item(xlEdgeTop).LineStyle = 1
  f1 = f1 + 2
  xl.Cells(f1, 1) = "FIN DE LISTADO "
- If WFLAG <> "A" Then
+ If wflag <> "A" Then
    f1 = f1 + 1
    xl.Cells(f1, 1) = "*** LOS DOC. ESTAN CORRECTOS *** "
  End If
@@ -3412,7 +3412,7 @@ Do Until llave_rep01.EOF
     xl.Cells(f1, 2) = llave_rep02!PED_FECHA_EMISION
     xl.Cells(f1, 3) = llave_rep01!far_JABAS
     xl.Cells(f1, 4) = Format(llave_rep01!far_bruto, "0.00")
-    xl.Cells(f1, 5) = Trim(llave_rep02!ART_NOMBRE)
+    xl.Cells(f1, 5) = Trim(llave_rep02!art_nombre)
     xl.Cells(f1, 6) = llave_rep01!FAR_fecha_compra
     xl.Cells(f1, 7) = "'" & Format(llave_rep01!far_serguia, "000") & "-" & llave_rep01!far_numguia
     PS_REP03(0) = "00"
@@ -3428,7 +3428,7 @@ Do Until llave_rep01.EOF
     WPRECIO = 0
     CONS_CARDADO = Val(cli_llave!CLI_NOMBRE_EMPRESA)
     If Not llave_rep03.EOF Then
-       WPRECIO = Val(llave_rep03!tab_nomlargo)
+       WPRECIO = Val(llave_rep03!TAB_NOMLARGO)
     End If
     xl.Cells(f1, 8) = Format(WPRECIO, "0.00")
     xl.Cells(f1, 9) = Format(llave_rep01!far_bruto * WPRECIO, "0.00")
@@ -3647,8 +3647,8 @@ Do Until llave_rep01.EOF
     xl.Cells(f1, 1) = "'" & llave_rep01!PED_NUMGUIA
     xl.Cells(f1, 2) = llave_rep01!PED_FECHA_EMISION
     xl.Cells(f1, 3) = Val(llave_rep01!PED_ROLLOS)
-    xl.Cells(f1, 4) = Format(llave_rep01!PED_cantidad, "0.00")
-    xl.Cells(f1, 5) = Trim(llave_rep01!ART_NOMBRE)
+    xl.Cells(f1, 4) = Format(llave_rep01!PED_CANTIDAD, "0.00")
+    xl.Cells(f1, 5) = Trim(llave_rep01!art_nombre)
     'xl.Cells(f1, 6) = llave_rep01!FAR_fecha_compra
     'xl.Cells(f1, 7) = "'" & Format(llave_rep01!far_serguia, "000") & "-" & llave_rep01!far_numguia
     PS_REP03(0) = "00"
@@ -3662,10 +3662,10 @@ Do Until llave_rep01.EOF
     WPRECIO = 0
     CONS_CARDADO = Val(cli_llave!CLI_NOMBRE_EMPRESA)
     If Not llave_rep03.EOF Then
-       WPRECIO = Val(llave_rep03!tab_nomlargo)
+       WPRECIO = Val(llave_rep03!TAB_NOMLARGO)
     End If
     xl.Cells(f1, 8) = Format(WPRECIO, "0.00")
-    xl.Cells(f1, 9) = Format(llave_rep01!PED_cantidad * WPRECIO, "0.00")
+    xl.Cells(f1, 9) = Format(llave_rep01!PED_CANTIDAD * WPRECIO, "0.00")
     'If Trim(llave_rep02!PED_CONTACTO) = "OK" Then
     '   xl.Cells(f1, 10) = CONS_CARDADO
     'End If
@@ -3839,14 +3839,14 @@ PS_REP02(0) = LK_CODCIA
 PS_REP02(1) = 180
 xl.Cells(1, 1) = Trim(Mid(MDIForm1.TXTCIA.Caption, 4, Len(MDIForm1.TXTCIA.Caption)))
 If PUB_CP = "C" Then
-  xl.Cells(2, 1) = "CUANTAS POR COBRAR AL " & Format(wsFECHA1, "dd/mm/yy")
+  xl.Cells(2, 1) = "CUENTAS POR COBRAR AL " & Format(wsFECHA1, "dd/mm/yy")
   xl.Cells(5, 2) = "C L I E N T E S"
 Else
-  xl.Cells(2, 1) = "CUANTAS POR P�GAR AL " & Format(wsFECHA1, "dd/mm/yy")
+  xl.Cells(2, 1) = "CUENTAS POR PAGAR AL " & Format(wsFECHA1, "dd/mm/yy")
   xl.Cells(5, 2) = "P R O V E E D O R"
 End If
 f1 = 5
-ws_codclie = llave_rep01!car_codclie
+ws_codclie = llave_rep01!CAR_codclie
 wsuma_sal = 0
 wsuma_ini = 0
 wsuma_sal_DOL = 0
@@ -3857,10 +3857,10 @@ Do Until llave_rep01.EOF
     FrmImp3.ProgBar.Value = FrmImp3.ProgBar.Value + 1
     PS_REP02(0) = LK_CODCIA
     PS_REP02(1) = PUB_CP
-    PS_REP02(2) = llave_rep01!car_codclie
-    PS_REP02(3) = llave_rep01!car_tipdoc
+    PS_REP02(2) = llave_rep01!CAR_codclie
+    PS_REP02(3) = llave_rep01!CAR_TIPDOC
     PS_REP02(4) = llave_rep01!car_serdoc
-    PS_REP02(5) = llave_rep01!car_numdoc
+    PS_REP02(5) = llave_rep01!car_NUMDOC
     PS_REP02(6) = wsFECHA1
     llave_rep02.Requery
     WS_MONTO = 0
@@ -3869,8 +3869,8 @@ Do Until llave_rep01.EOF
       llave_rep02.MoveNext
     Loop
     If WS_MONTO = 0 Then GoTo dale
-    If f1 = 5 Then ws_codclie = llave_rep01!car_codclie
-    If ws_codclie <> llave_rep01!car_codclie Then
+    If f1 = 5 Then ws_codclie = llave_rep01!CAR_codclie
+    If ws_codclie <> llave_rep01!CAR_codclie Then
        f1 = f1 + 1
        xl.Cells(f1, 4) = "     S/.="
        xl.Cells(f1, 7) = wsuma_ini
@@ -3890,43 +3890,43 @@ Do Until llave_rep01.EOF
        wsuma_ini = 0
        wsuma_sal_DOL = 0
        wsuma_ini_DOL = 0
-       ws_codclie = llave_rep01!car_codclie
+       ws_codclie = llave_rep01!CAR_codclie
     End If
     
     SQ_OPER = 1
     pu_cp = PUB_CP
     pu_codcia = LK_CODCIA
-    pu_codclie = llave_rep01!car_codclie
+    pu_codclie = llave_rep01!CAR_codclie
     LEER_CLI_LLAVE
     f1 = f1 + 1
-    xl.Cells(f1, 1) = "'" & Format(llave_rep01!CAR_FECHA_SUNAT, "dd/mm/yy")
+    xl.Cells(f1, 1) = "'" & Format(llave_rep01!car_fecha_sunat, "dd/mm/yy")
     xl.Cells(f1, 2) = Left(cli_llave!cli_nombre, 30)
-    xl.Cells(f1, 3) = llave_rep01!car_tipdoc
+    xl.Cells(f1, 3) = llave_rep01!CAR_TIPDOC
     vdocum = ""
-    If llave_rep01!car_cp = "C" Then
+    If llave_rep01!CAR_CP = "C" Then
      If Trim(llave_rep01!car_fbg) = "F" Then
-        vdocum = "Fact. " & Trim(llave_rep01!car_numser) & " - " & llave_rep01!car_numfac
+        vdocum = "Fact. " & Trim(llave_rep01!car_NUMSER) & " - " & llave_rep01!car_NUMFAC
      ElseIf Trim(llave_rep01!car_fbg) = "B" Then
-        vdocum = "Bolet. " & Trim(llave_rep01!car_numser) & " - " & llave_rep01!car_numfac
+        vdocum = "Bolet. " & Trim(llave_rep01!car_NUMSER) & " - " & llave_rep01!car_NUMFAC
      ElseIf Trim(llave_rep01!car_fbg) = "G" Then
-        vdocum = "Guia . " & Trim(llave_rep01!car_numser) & " - " & Trim(llave_rep01!car_numfac)
+        vdocum = "Guia . " & Trim(llave_rep01!car_NUMSER) & " - " & Trim(llave_rep01!car_NUMFAC)
      ElseIf Trim(llave_rep01!car_fbg) = "N" Then
-        vdocum = "N.Cred. " & llave_rep01!car_numser & "-" & llave_rep01!car_numfac
+        vdocum = "N.Cred. " & llave_rep01!car_NUMSER & "-" & llave_rep01!car_NUMFAC
      ElseIf Trim(llave_rep01!car_fbg) = "D" Then
-        vdocum = "N.Deb. " & llave_rep01!car_numser & "-" & llave_rep01!car_numfac
+        vdocum = "N.Deb. " & llave_rep01!car_NUMSER & "-" & llave_rep01!car_NUMFAC
      Else
         vdocum = " "
      End If
      End If
      
      If llave_rep01!CAR_TIPMOV = 97 Then
-        vdocum = "N.-Cred. " & llave_rep01!car_numser & "-" & llave_rep01!car_numfac
+        vdocum = "N.-Cred. " & llave_rep01!car_NUMSER & "-" & llave_rep01!car_NUMFAC
      End If
      If llave_rep01!CAR_TIPMOV = 98 Then
-        vdocum = "N.-Deb. " & llave_rep01!car_numser & "-" & llave_rep01!car_numfac
+        vdocum = "N.-Deb. " & llave_rep01!car_NUMSER & "-" & llave_rep01!car_NUMFAC
      End If
     
-    If llave_rep01!car_cp = "P" Then
+    If llave_rep01!CAR_CP = "P" Then
        If llave_rep01!CAR_TIPMOV = 98 Then
           vdocum = "N.-Deb. " & llave_rep01!car_numser_c & "-" & llave_rep01!car_NUMFAC_C
        End If
@@ -3938,14 +3938,14 @@ Do Until llave_rep01.EOF
           If Val(Nulo_Valor0(llave_rep01!car_NUMFAC_C)) > 0 Then
              vdocum = "Fact. " & llave_rep01!car_numser_c & "-" & llave_rep01!car_NUMFAC_C
           Else
-             vdocum = "Guia . " & llave_rep01!car_numguia
+             vdocum = "Guia . " & llave_rep01!car_NUMGUIA
           End If
         End If
         If llave_rep01!CAR_TIPMOV = 99 Then
            If Val(Nulo_Valor0(llave_rep01!car_NUMFAC_C)) > 0 Then
                 vdocum = "Fact. " & llave_rep01!car_numser_c & "-" & llave_rep01!car_NUMFAC_C
             Else
-               vdocum = "Guia . " & Trim(llave_rep01!car_numguia)
+               vdocum = "Guia . " & Trim(llave_rep01!car_NUMGUIA)
             End If
         End If
         
@@ -3954,19 +3954,19 @@ Do Until llave_rep01.EOF
           If Val(Nulo_Valor0(llave_rep01!car_NUMFAC_C)) > 0 Then
              vdocum = "Fact. " & llave_rep01!car_numser_c & "-" & llave_rep01!car_NUMFAC_C
           ElseIf Trim(llave_rep01!car_fbg) <> "F" And Trim(llave_rep01!car_fbg) <> "B" Then
-             vdocum = "Guia . " & llave_rep01!car_numser & " - " & llave_rep01!car_numfac
+             vdocum = "Guia . " & llave_rep01!car_NUMSER & " - " & llave_rep01!car_NUMFAC
           End If
         End If
      End If
-     If llave_rep01!car_tipdoc = "LE" Then
-        vdocum = " " & llave_rep01!car_numser & " - " & llave_rep01!car_numfac
+     If llave_rep01!CAR_TIPDOC = "LE" Then
+        vdocum = " " & llave_rep01!car_NUMSER & " - " & llave_rep01!car_NUMFAC
      End If
     
-     If llave_rep01!CAR_TIPMOV = 0 Or llave_rep01!car_tipdoc = "CD" Then
+     If llave_rep01!CAR_TIPMOV = 0 Or llave_rep01!CAR_TIPDOC = "CD" Then
         If Val(llave_rep01!car_num_cheque) <> 0 Then
           vdocum = "Nro. " & llave_rep01!car_num_cheque
          End If
-        If llave_rep01!car_tipdoc = "FA" And llave_rep01!car_fbg <> " " Then
+        If llave_rep01!CAR_TIPDOC = "FA" And llave_rep01!car_fbg <> " " Then
           vdocum = llave_rep01!car_fbg & " / " & llave_rep01!car_numser_c & "-" & llave_rep01!car_NUMFAC_C
         End If
      End If
@@ -4183,14 +4183,14 @@ PS_REP02(0) = LK_CODCIA
 PS_REP02(1) = 180
 xl.Cells(1, 1) = Trim(Mid(MDIForm1.TXTCIA.Caption, 4, Len(MDIForm1.TXTCIA.Caption)))
 If PUB_CP = "C" Then
-  xl.Cells(2, 1) = "CUANTAS POR COBRAR AL " & Format(wsFECHA1, "dd/mm/yy")
+  xl.Cells(2, 1) = "CUENTAS POR COBRAR AL " & Format(wsFECHA1, "dd/mm/yy")
   xl.Cells(5, 2) = "C L I E N T E S"
 Else
-  xl.Cells(2, 1) = "CUANTAS POR P�GAR AL " & Format(wsFECHA1, "dd/mm/yy")
+  xl.Cells(2, 1) = "CUENTAS POR PAGAR AL " & Format(wsFECHA1, "dd/mm/yy")
   xl.Cells(5, 2) = "P R O V E E D O R"
 End If
 f1 = 5
-ws_codclie = llave_rep01!car_codclie
+ws_codclie = llave_rep01!CAR_codclie
 wsuma_sal = 0
 wsuma_ini = 0
 wsuma_sal_DOL = 0
@@ -4201,10 +4201,10 @@ Do Until llave_rep01.EOF
     FrmImp3.ProgBar.Value = FrmImp3.ProgBar.Value + 1
     PS_REP02(0) = LK_CODCIA
     PS_REP02(1) = PUB_CP
-    PS_REP02(2) = llave_rep01!car_codclie
-    PS_REP02(3) = llave_rep01!car_tipdoc
+    PS_REP02(2) = llave_rep01!CAR_codclie
+    PS_REP02(3) = llave_rep01!CAR_TIPDOC
     PS_REP02(4) = llave_rep01!car_serdoc
-    PS_REP02(5) = llave_rep01!car_numdoc
+    PS_REP02(5) = llave_rep01!car_NUMDOC
     PS_REP02(6) = wsFECHA1
     llave_rep02.Requery
     WS_MONTO = 0
@@ -4213,8 +4213,8 @@ Do Until llave_rep01.EOF
       llave_rep02.MoveNext
     Loop
     If WS_MONTO = 0 Then GoTo dale
-    If f1 = 5 Then ws_codclie = llave_rep01!car_codclie
-    If ws_codclie <> llave_rep01!car_codclie Then
+    If f1 = 5 Then ws_codclie = llave_rep01!CAR_codclie
+    If ws_codclie <> llave_rep01!CAR_codclie Then
        f1 = f1 + 1
        xl.Cells(f1, 4) = "     S/.="
        xl.Cells(f1, 7) = wsuma_ini
@@ -4234,43 +4234,43 @@ Do Until llave_rep01.EOF
        wsuma_ini = 0
        wsuma_sal_DOL = 0
        wsuma_ini_DOL = 0
-       ws_codclie = llave_rep01!car_codclie
+       ws_codclie = llave_rep01!CAR_codclie
     End If
     
     SQ_OPER = 1
     pu_cp = PUB_CP
     pu_codcia = LK_CODCIA
-    pu_codclie = llave_rep01!car_codclie
+    pu_codclie = llave_rep01!CAR_codclie
     LEER_CLI_LLAVE
     f1 = f1 + 1
-    xl.Cells(f1, 1) = "'" & Format(llave_rep01!CAR_FECHA_SUNAT, "dd/mm/yy")
+    xl.Cells(f1, 1) = "'" & Format(llave_rep01!car_fecha_sunat, "dd/mm/yy")
     xl.Cells(f1, 2) = Left(cli_llave!cli_nombre, 30)
-    xl.Cells(f1, 3) = llave_rep01!car_tipdoc
+    xl.Cells(f1, 3) = llave_rep01!CAR_TIPDOC
     vdocum = ""
-    If llave_rep01!car_cp = "C" Then
+    If llave_rep01!CAR_CP = "C" Then
      If Trim(llave_rep01!car_fbg) = "F" Then
-        vdocum = "Fact. " & Trim(llave_rep01!car_numser) & " - " & llave_rep01!car_numfac
+        vdocum = "Fact. " & Trim(llave_rep01!car_NUMSER) & " - " & llave_rep01!car_NUMFAC
      ElseIf Trim(llave_rep01!car_fbg) = "B" Then
-        vdocum = "Bolet. " & Trim(llave_rep01!car_numser) & " - " & llave_rep01!car_numfac
+        vdocum = "Bolet. " & Trim(llave_rep01!car_NUMSER) & " - " & llave_rep01!car_NUMFAC
      ElseIf Trim(llave_rep01!car_fbg) = "G" Then
-        vdocum = "Guia . " & Trim(llave_rep01!car_numser) & " - " & Trim(llave_rep01!car_numfac)
+        vdocum = "Guia . " & Trim(llave_rep01!car_NUMSER) & " - " & Trim(llave_rep01!car_NUMFAC)
      ElseIf Trim(llave_rep01!car_fbg) = "N" Then
-        vdocum = "N.Cred. " & llave_rep01!car_numser & "-" & llave_rep01!car_numfac
+        vdocum = "N.Cred. " & llave_rep01!car_NUMSER & "-" & llave_rep01!car_NUMFAC
      ElseIf Trim(llave_rep01!car_fbg) = "D" Then
-        vdocum = "N.Deb. " & llave_rep01!car_numser & "-" & llave_rep01!car_numfac
+        vdocum = "N.Deb. " & llave_rep01!car_NUMSER & "-" & llave_rep01!car_NUMFAC
      Else
         vdocum = " "
      End If
      End If
      
      If llave_rep01!CAR_TIPMOV = 97 Then
-        vdocum = "N.-Cred. " & llave_rep01!car_numser & "-" & llave_rep01!car_numfac
+        vdocum = "N.-Cred. " & llave_rep01!car_NUMSER & "-" & llave_rep01!car_NUMFAC
      End If
      If llave_rep01!CAR_TIPMOV = 98 Then
-        vdocum = "N.-Deb. " & llave_rep01!car_numser & "-" & llave_rep01!car_numfac
+        vdocum = "N.-Deb. " & llave_rep01!car_NUMSER & "-" & llave_rep01!car_NUMFAC
      End If
     
-    If llave_rep01!car_cp = "P" Then
+    If llave_rep01!CAR_CP = "P" Then
        If llave_rep01!CAR_TIPMOV = 98 Then
           vdocum = "N.-Deb. " & llave_rep01!car_numser_c & "-" & llave_rep01!car_NUMFAC_C
        End If
@@ -4282,14 +4282,14 @@ Do Until llave_rep01.EOF
           If Val(Nulo_Valor0(llave_rep01!car_NUMFAC_C)) > 0 Then
              vdocum = "Fact. " & llave_rep01!car_numser_c & "-" & llave_rep01!car_NUMFAC_C
           Else
-             vdocum = "Guia . " & llave_rep01!car_numguia
+             vdocum = "Guia . " & llave_rep01!car_NUMGUIA
           End If
         End If
         If llave_rep01!CAR_TIPMOV = 99 Then
            If Val(Nulo_Valor0(llave_rep01!car_NUMFAC_C)) > 0 Then
                 vdocum = "Fact. " & llave_rep01!car_numser_c & "-" & llave_rep01!car_NUMFAC_C
             Else
-               vdocum = "Guia . " & Trim(llave_rep01!car_numguia)
+               vdocum = "Guia . " & Trim(llave_rep01!car_NUMGUIA)
             End If
         End If
         
@@ -4298,19 +4298,19 @@ Do Until llave_rep01.EOF
           If Val(Nulo_Valor0(llave_rep01!car_NUMFAC_C)) > 0 Then
              vdocum = "Fact. " & llave_rep01!car_numser_c & "-" & llave_rep01!car_NUMFAC_C
           ElseIf Trim(llave_rep01!car_fbg) <> "F" And Trim(llave_rep01!car_fbg) <> "B" Then
-             vdocum = "Guia . " & llave_rep01!car_numser & " - " & llave_rep01!car_numfac
+             vdocum = "Guia . " & llave_rep01!car_NUMSER & " - " & llave_rep01!car_NUMFAC
           End If
         End If
      End If
-     If llave_rep01!car_tipdoc = "LE" Then
-        vdocum = " " & llave_rep01!car_numser & " - " & llave_rep01!car_numfac
+     If llave_rep01!CAR_TIPDOC = "LE" Then
+        vdocum = " " & llave_rep01!car_NUMSER & " - " & llave_rep01!car_NUMFAC
      End If
     
-     If llave_rep01!CAR_TIPMOV = 0 Or llave_rep01!car_tipdoc = "CD" Then
+     If llave_rep01!CAR_TIPMOV = 0 Or llave_rep01!CAR_TIPDOC = "CD" Then
         If Val(llave_rep01!car_num_cheque) <> 0 Then
           vdocum = "Nro. " & llave_rep01!car_num_cheque
          End If
-        If llave_rep01!car_tipdoc = "FA" And llave_rep01!car_fbg <> " " Then
+        If llave_rep01!CAR_TIPDOC = "FA" And llave_rep01!car_fbg <> " " Then
           vdocum = llave_rep01!car_fbg & " / " & llave_rep01!car_numser_c & "-" & llave_rep01!car_NUMFAC_C
         End If
      End If

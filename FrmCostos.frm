@@ -455,14 +455,15 @@ Begin VB.Form Frmcospro
          Top             =   240
          Width           =   615
       End
-      Begin VB.Label Label3 
-         Caption         =   "Digitar [enter] para modificar valores:"
-         Height          =   255
-         Left            =   120
-         TabIndex        =   10
-         Top             =   600
-         Width           =   3975
-      End
+       Begin VB.Label Label3 
+          Caption         =   "Digitar [enter] para modificar valores:"
+          Height          =   255
+          Index           =   5
+          Left            =   120
+          TabIndex        =   10
+          Top             =   600
+          Width           =   3975
+       End
       Begin VB.Label Label1 
          Caption         =   "Mostar del :"
          Height          =   255
@@ -940,6 +941,7 @@ Loop
 End Sub
 
 Private Sub cmdactpre_Click()
+Dim pbMin As Integer, pbMax As Integer, pbValue As Integer
 'If LK_CODCIA = "01" Or LK_CODCIA = "30" Then
 'Else
 '  MsgBox "No Permite Cambiar en esta Compañia", 48, Pub_Titulo

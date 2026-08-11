@@ -11901,10 +11901,10 @@ fila = 1
 
 xl.Application.Visible = True
 Do Until Trim(xl.Cells(fila, 1)) = ""
-    pub_cadena = "SELECT * FROM BDATOS.DBO.ARTI WHERE BDATOS.DBO.ARTI.ART_CODCIA = '05' AND BDATOS.DBO.ARTI.ART_ALTERNO = '" & Trim(xl.Cells(fila, 1)) & "'"
+    pub_cadena = "SELECT * FROM " & CONST_DATABASE & ".dbo.ARTI WHERE " & CONST_DATABASE & ".dbo.ARTI.ART_CODCIA = '05' AND " & CONST_DATABASE & ".dbo.ARTI.ART_ALTERNO = '" & Trim(xl.Cells(fila, 1)) & "'"
     Set X = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues)  ' rdConcurReadOnly) ', rdConcurLock)
     
-    pub_cadena = "SELECT * FROM BDATOS.DBO.PRECIOS WHERE BDATOS.DBO.PRECIOS.PRE_CODCIA = '05' AND BDATOS.DBO.PRECIOS.PRE_CODART = " & X!art_key
+    pub_cadena = "SELECT * FROM " & CONST_DATABASE & ".dbo.PRECIOS WHERE " & CONST_DATABASE & ".dbo.PRECIOS.PRE_CODCIA = '05' AND " & CONST_DATABASE & ".dbo.PRECIOS.PRE_CODART = " & X!art_key
     Set ps_llave_precios = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues)  ' rdConcurReadOnly) ', rdConcurLock)
     
     pub_cadena = "SELECT * FROM ARTI WHERE ARTI.ART_CODCIA = '05' AND ARTI.ART_ALTERNO = '" & Trim(xl.Cells(fila, 1)) & "'"
@@ -13770,12 +13770,12 @@ otravez_ver:
 fila = 9
     pub_cadena = "UPDATE BDCHEPEN.DBO.FACART SET BDCHEPEN.DBO.FACART.FAR_CODCIA = '99' , BDCHEPEN.DBO.FACART.FAR_CODART = " & art_llave_alt!art_key & " WHERE BDCHEPEN.DBO.FACART.FAR_CODCIA = '05' AND BDCHEPEN.DBO.FACART.FAR_CODART = " & pszona_llave1!art_key & " "
     CN.Execute pub_cadena, rdExecDirect
-    pub_cadena = "INSERT  INTO BDATOS.DBO.FACART SELECT * FROM BDCHEPEN.DBO.FACART WHERE  BDCHEPEN.DBO.FACART.FAR_CODCIA  = '99' AND   BDCHEPEN.DBO.FACART.FAR_CODART = " & art_llave_alt!art_key & " "
+    pub_cadena = "INSERT  INTO " & CONST_DATABASE & ".dbo.FACART SELECT * FROM BDCHEPEN.DBO.FACART WHERE  BDCHEPEN.DBO.FACART.FAR_CODCIA  = '99' AND   BDCHEPEN.DBO.FACART.FAR_CODART = " & art_llave_alt!art_key & " "
     CN.Execute pub_cadena, rdExecDirect
 '    On Error GoTo dale
-    pub_cadena = "UPDATE BDATOS.DBO.FACART SET BDATOS.DBO.FACART.FAR_CODCIA = '05' WHERE  BDATOS.DBO.FACART.FAR_CODCIA = '99' AND  BDATOS.DBO.FACART.FAR_CODART = " & art_llave_alt!art_key & ""
+    pub_cadena = "UPDATE " & CONST_DATABASE & ".dbo.FACART SET " & CONST_DATABASE & ".dbo.FACART.FAR_CODCIA = '05' WHERE  " & CONST_DATABASE & ".dbo.FACART.FAR_CODCIA = '99' AND  " & CONST_DATABASE & ".dbo.FACART.FAR_CODART = " & art_llave_alt!art_key & ""
     CN.Execute pub_cadena, rdExecDirect
-'    pub_cadena = "DELETE FROM BDATOS.DBO.FACART  WHERE  BDATOS.DBO.FACART.FAR_CODCIA = '99'"
+'    pub_cadena = "DELETE FROM " & CONST_DATABASE & ".dbo.FACART  WHERE  " & CONST_DATABASE & ".dbo.FACART.FAR_CODCIA = '99'"
  '   CN.Execute pub_cadena, rdExecDirect
 '    If fila = 9 Then Stop
 Print ""

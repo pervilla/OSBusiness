@@ -592,14 +592,15 @@ Begin VB.Form FrmNC
          Top             =   240
          Width           =   615
       End
-      Begin VB.Label Label3 
-         Caption         =   "Digitar [enter] para modificar valores:"
-         Height          =   255
-         Left            =   120
-         TabIndex        =   10
-         Top             =   600
-         Width           =   3975
-      End
+       Begin VB.Label Label3 
+          Caption         =   "Digitar [enter] para modificar valores:"
+          Height          =   255
+          Index           =   5
+          Left            =   120
+          TabIndex        =   10
+          Top             =   600
+          Width           =   3975
+       End
       Begin VB.Label Label1 
          Caption         =   "Mostar del :"
          Height          =   255
@@ -1005,6 +1006,7 @@ Dim PSlistcambio As rdoQuery
 
 Dim pre_caja As rdoResultset
 Dim PSPRE_CAJA As rdoQuery
+Dim pbMin As Integer, pbMax As Integer, pbValue As Integer
 
 gridcabe.Cols = 19
 gridcabe.Rows = 1

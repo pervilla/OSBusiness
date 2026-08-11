@@ -33,6 +33,7 @@ Public CONST_DSN As String
 Public CONST_SERVER As String
 Public CONST_UID As String
 Public CONST_PWD As String
+Public CONST_DATABASE As String
 Public PUB_ODBC As String
 Public PUB_LINEAS As Integer
 Public PUB_FLAG As Integer
@@ -2301,7 +2302,7 @@ Return
 
 End Sub
 Function GetConnectionString() As String
-    GetConnectionString = "Provider=SQLOLEDB.1;Password=" & CONST_PWD & "  ;Persist Security Info=True;User ID=" & CONST_UID & ";Initial Catalog=BDATOS;Data Source=" & CONST_SERVER & ""
+    GetConnectionString = "Provider=SQLOLEDB.1;Password=" & CONST_PWD & "  ;Persist Security Info=True;User ID=" & CONST_UID & ";Initial Catalog=" & CONST_DATABASE & ";Data Source=" & CONST_SERVER & ""
     
  
 
@@ -2447,5 +2448,4 @@ Ver_bloq_libros = True
 End If
     
 End Function
-
 

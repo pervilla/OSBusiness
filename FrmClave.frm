@@ -202,7 +202,16 @@ Begin VB.Form FrmClave
       TabIndex        =   5
       Top             =   120
       Width           =   2535
-   End
+    End
+    Begin VB.Label Label3 
+       BackColor       =   &H00808000&
+       BorderStyle     =   1  'Fixed Single
+       Height          =   7095
+       Index           =   5
+       Left            =   10320
+       Top             =   0
+       Width           =   1575
+    End
 End
 Attribute VB_Name = "FrmClave"
 Attribute VB_GlobalNameSpace = False

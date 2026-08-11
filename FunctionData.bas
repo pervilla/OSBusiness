@@ -2,7 +2,7 @@ Attribute VB_Name = "FunctionData"
 Option Explicit
 
 Function GetConnectionString() As String
-    GetConnectionString = "Provider=SQLOLEDB.1;Password=" & CONST_PWD & "  ;Persist Security Info=True;User ID=" & CONST_UID & ";Initial Catalog=BDATOS;Data Source=" & CONST_SERVER & ""
+    GetConnectionString = "Provider=SQLOLEDB.1;Password=" & CONST_PWD & "  ;Persist Security Info=True;User ID=" & CONST_UID & ";Initial Catalog=" & CONST_DATABASE & ";Data Source=" & CONST_SERVER & ""
     
  
 
@@ -158,4 +158,3 @@ ErrHandler:
     Set pmt = Nothing
     'RaiseError str_Module, "GetEditRecordset(" & strSQL & ", ...)"
 End Function
-

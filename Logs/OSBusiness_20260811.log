@@ -1,0 +1,19 @@
+========================================
+OSBusiness - Inicio de Sesion: 11/08/2026 10:55:14
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+10:55:14 [INFO] [GENERAL] Splash: Inicio Form_Load
+10:55:14 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+10:55:14 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+10:55:14 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+10:55:14 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+10:55:14 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+10:55:14 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+10:55:14 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+10:55:14 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+10:55:14 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+10:55:15 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+10:55:15 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+10:55:15 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+10:55:17 [INFO] [GENERAL] Splash: Despues de Load MDIForm1

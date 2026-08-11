@@ -581,6 +581,7 @@ End Sub
 Private Sub cmdgenerarpresup_Click()
 Dim rsaddreg  As rdoResultset
 Dim rscos As rdoResultset
+Dim pbpMin As Integer, pbpMax As Integer, pbpValue As Integer
 
 pub_cadena = "select  * from presup_ped where  ppe_codcia = '99'"
 Set rsaddreg = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues) ' rdConcurReadOnly) ', rdConcurLock)

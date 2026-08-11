@@ -4,23 +4,23 @@ Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Begin VB.Form FrmImp2 
    Caption         =   "Emitir Reportes"
-   ClientHeight    =   7650
+   ClientHeight    =   13740
    ClientLeft      =   60
    ClientTop       =   345
-   ClientWidth     =   11550
+   ClientWidth     =   20895
    ControlBox      =   0   'False
    Icon            =   "FrmImp2.frx":0000
    LinkTopic       =   "Form2"
    MDIChild        =   -1  'True
-   ScaleHeight     =   7650
-   ScaleWidth      =   11550
+   ScaleHeight     =   13740
+   ScaleWidth      =   20895
    WindowState     =   2  'Maximized
    Begin VB.Frame fraestadof 
       Caption         =   "Parametros para Los Estados Grupo Empresial : "
       Height          =   1500
-      Left            =   60
+      Left            =   1680
       TabIndex        =   165
-      Top             =   5115
+      Top             =   2640
       Visible         =   0   'False
       Width           =   4455
       Begin VB.ComboBox cmbestper 
@@ -147,20 +147,20 @@ Begin VB.Form FrmImp2
       BackColor       =   &H00E0E0E0&
       ForeColor       =   &H00000080&
       Height          =   1155
-      Left            =   120
+      Left            =   2160
       Sorted          =   -1  'True
       Style           =   1  'Checkbox
       TabIndex        =   164
-      Top             =   3120
+      Top             =   2760
       Visible         =   0   'False
       Width           =   3855
    End
    Begin VB.Frame fratipo 
       Caption         =   "Filtro por Tipo :"
       Height          =   615
-      Left            =   3240
+      Left            =   6120
       TabIndex        =   158
-      Top             =   6120
+      Top             =   2760
       Visible         =   0   'False
       Width           =   2775
       Begin VB.ComboBox cmbtipo 
@@ -176,9 +176,9 @@ Begin VB.Form FrmImp2
       Caption         =   "Datos para Filtro. :"
       ForeColor       =   &H00808000&
       Height          =   1095
-      Left            =   4560
+      Left            =   120
       TabIndex        =   148
-      Top             =   1200
+      Top             =   4080
       Visible         =   0   'False
       Width           =   5415
       Begin VB.CheckBox cheva 
@@ -256,9 +256,9 @@ Begin VB.Form FrmImp2
    Begin VB.Frame FraCodLista 
       Caption         =   "Codigo de Lista:"
       Height          =   615
-      Left            =   8160
+      Left            =   6120
       TabIndex        =   146
-      Top             =   6000
+      Top             =   3360
       Visible         =   0   'False
       Width           =   1695
       Begin VB.TextBox txtlista 
@@ -275,7 +275,7 @@ Begin VB.Form FrmImp2
       Height          =   375
       Left            =   7680
       TabIndex        =   93
-      Top             =   4920
+      Top             =   4440
       Visible         =   0   'False
       Width           =   1815
    End
@@ -283,9 +283,9 @@ Begin VB.Form FrmImp2
       Caption         =   "Usuario Responsable :"
       ForeColor       =   &H00808000&
       Height          =   855
-      Left            =   7560
+      Left            =   6120
       TabIndex        =   135
-      Top             =   5880
+      Top             =   1920
       Visible         =   0   'False
       Width           =   2415
       Begin VB.ComboBox cmbusu 
@@ -308,9 +308,9 @@ Begin VB.Form FrmImp2
    End
    Begin VB.Frame frapera 
       Height          =   1935
-      Left            =   3000
+      Left            =   4560
       TabIndex        =   132
-      Top             =   4320
+      Top             =   2640
       Visible         =   0   'False
       Width           =   3255
       Begin VB.CheckBox cheincluir 
@@ -424,9 +424,9 @@ Begin VB.Form FrmImp2
       Caption         =   "Proveedor"
       ForeColor       =   &H00808000&
       Height          =   1455
-      Left            =   120
+      Left            =   3480
       TabIndex        =   94
-      Top             =   4800
+      Top             =   1320
       Visible         =   0   'False
       Width           =   3015
       Begin VB.ListBox LSTCLI 
@@ -571,9 +571,9 @@ Begin VB.Form FrmImp2
    Begin VB.Frame fraresuana 
       Caption         =   "Parametros : "
       Height          =   2295
-      Left            =   7440
+      Left            =   6600
       TabIndex        =   110
-      Top             =   2280
+      Top             =   1440
       Visible         =   0   'False
       Width           =   2655
       Begin VB.CheckBox chestval 
@@ -661,9 +661,9 @@ Begin VB.Form FrmImp2
    Begin VB.Frame fraABC 
       Caption         =   "Opciones:"
       Height          =   4455
-      Left            =   7560
+      Left            =   6600
       TabIndex        =   118
-      Top             =   2280
+      Top             =   1200
       Visible         =   0   'False
       Width           =   2415
       Begin VB.CheckBox cheadd07 
@@ -679,9 +679,9 @@ Begin VB.Form FrmImp2
          EndProperty
          ForeColor       =   &H00808000&
          Height          =   375
-         Left            =   240
+         Left            =   120
          TabIndex        =   131
-         Top             =   2760
+         Top             =   2520
          Visible         =   0   'False
          Width           =   1695
       End
@@ -698,9 +698,9 @@ Begin VB.Form FrmImp2
          EndProperty
          ForeColor       =   &H00404000&
          Height          =   375
-         Left            =   240
+         Left            =   120
          TabIndex        =   130
-         Top             =   3120
+         Top             =   2880
          Width           =   2175
       End
       Begin VB.TextBox txtperiodo 
@@ -708,7 +708,7 @@ Begin VB.Form FrmImp2
          Left            =   1320
          TabIndex        =   126
          Text            =   "4"
-         Top             =   1320
+         Top             =   1080
          Width           =   615
       End
       Begin VB.TextBox txtdiaabc 
@@ -726,7 +726,7 @@ Begin VB.Form FrmImp2
          Index           =   2
          Left            =   240
          TabIndex        =   122
-         Top             =   2400
+         Top             =   1920
          Width           =   1455
       End
       Begin VB.OptionButton opABC 
@@ -736,7 +736,7 @@ Begin VB.Form FrmImp2
          Index           =   1
          Left            =   240
          TabIndex        =   121
-         Top             =   2160
+         Top             =   1680
          Width           =   1455
       End
       Begin VB.OptionButton opABC 
@@ -746,7 +746,7 @@ Begin VB.Form FrmImp2
          Index           =   0
          Left            =   240
          TabIndex        =   120
-         Top             =   1920
+         Top             =   1440
          Value           =   -1  'True
          Width           =   1455
       End
@@ -781,7 +781,7 @@ Begin VB.Form FrmImp2
          Height          =   495
          Left            =   240
          TabIndex        =   125
-         Top             =   1200
+         Top             =   960
          Width           =   975
       End
       Begin VB.Label Label8 
@@ -817,7 +817,7 @@ Begin VB.Form FrmImp2
       Height          =   1215
       Left            =   120
       TabIndex        =   105
-      Top             =   3120
+      Top             =   2640
       Visible         =   0   'False
       Width           =   6015
       Begin VB.CheckBox cheusar 
@@ -833,11 +833,11 @@ Begin VB.Form FrmImp2
          Caption         =   "Consolidar y Cerrar Cajas"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
-            Italic          =   -1  'True
+            Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00404000&
@@ -855,7 +855,7 @@ Begin VB.Form FrmImp2
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
-            Italic          =   -1  'True
+            Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00404000&
@@ -964,9 +964,9 @@ Begin VB.Form FrmImp2
       Caption         =   "Codigo de Producto :"
       ForeColor       =   &H00808000&
       Height          =   615
-      Left            =   3360
+      Left            =   2640
       TabIndex        =   101
-      Top             =   1200
+      Top             =   2160
       Visible         =   0   'False
       Width           =   3615
       Begin VB.TextBox i_codart2 
@@ -987,9 +987,9 @@ Begin VB.Form FrmImp2
    Begin VB.Frame frafbg 
       Caption         =   "Tipo de Doc."
       Height          =   1575
-      Left            =   3120
+      Left            =   3360
       TabIndex        =   99
-      Top             =   4680
+      Top             =   3960
       Visible         =   0   'False
       Width           =   1215
       Begin VB.ListBox lstfbg 
@@ -1014,9 +1014,9 @@ Begin VB.Form FrmImp2
       Caption         =   "Fecha de Ultimo Proceso:"
       ForeColor       =   &H00808000&
       Height          =   735
-      Left            =   0
+      Left            =   120
       TabIndex        =   90
-      Top             =   1080
+      Top             =   2160
       Visible         =   0   'False
       Width           =   2535
       Begin VB.TextBox txtultimopro 
@@ -1032,18 +1032,18 @@ Begin VB.Form FrmImp2
       Caption         =   "Modificar Saldo Inicial"
       ForeColor       =   &H000000C0&
       Height          =   195
-      Left            =   15
+      Left            =   120
       TabIndex        =   89
-      Top             =   2625
+      Top             =   2400
       Visible         =   0   'False
       Width           =   2010
    End
    Begin VB.Frame fradescto 
       Caption         =   "Condición  Descto.                                  Tipo de Descto:                  "
       Height          =   2055
-      Left            =   4800
+      Left            =   3480
       TabIndex        =   86
-      Top             =   2280
+      Top             =   3480
       Visible         =   0   'False
       Width           =   5175
       Begin VB.ListBox listat 
@@ -1084,9 +1084,9 @@ Begin VB.Form FrmImp2
    End
    Begin VB.Frame frazonas 
       Height          =   3015
-      Left            =   3240
+      Left            =   120
       TabIndex        =   32
-      Top             =   1080
+      Top             =   2520
       Visible         =   0   'False
       Width           =   6735
       Begin VB.OptionButton opzonas 
@@ -1235,9 +1235,9 @@ Begin VB.Form FrmImp2
    End
    Begin VB.Frame fcontab 
       Height          =   1695
-      Left            =   0
+      Left            =   120
       TabIndex        =   42
-      Top             =   1080
+      Top             =   4200
       Visible         =   0   'False
       Width           =   3615
       Begin VB.CheckBox chenivel 
@@ -1312,9 +1312,9 @@ Begin VB.Form FrmImp2
    End
    Begin VB.Frame FRASTOCK 
       Height          =   3015
-      Left            =   3240
+      Left            =   120
       TabIndex        =   25
-      Top             =   3240
+      Top             =   2520
       Visible         =   0   'False
       Width           =   6735
       Begin VB.ComboBox CmbCalidad 
@@ -1392,7 +1392,7 @@ Begin VB.Form FrmImp2
       End
    End
    Begin VB.Frame Frame3 
-      Caption         =   "Consilidar Compañias :"
+      Caption         =   "Consolidar Empresas :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -1451,9 +1451,9 @@ Begin VB.Form FrmImp2
    End
    Begin VB.Frame fracli 
       Height          =   975
-      Left            =   3240
+      Left            =   3480
       TabIndex        =   34
-      Top             =   1080
+      Top             =   3000
       Visible         =   0   'False
       Width           =   4215
       Begin VB.TextBox txtDias2 
@@ -1627,11 +1627,11 @@ Begin VB.Form FrmImp2
    Begin VB.CommandButton Chequeo 
       Caption         =   "chequeo FAR,ALL,CAR,CAA"
       Height          =   255
-      Left            =   10320
+      Left            =   10200
       TabIndex        =   68
-      Top             =   2760
+      Top             =   3120
       Visible         =   0   'False
-      Width           =   1095
+      Width           =   1215
    End
    Begin MSComctlLib.ProgressBar ProgBar 
       Height          =   195
@@ -1649,7 +1649,7 @@ Begin VB.Form FrmImp2
       Caption         =   "Opciones  : "
       ForeColor       =   &H00000080&
       Height          =   3615
-      Left            =   0
+      Left            =   4560
       TabIndex        =   61
       Top             =   2640
       Visible         =   0   'False
@@ -1768,9 +1768,9 @@ Begin VB.Form FrmImp2
    Begin VB.CheckBox cheasiento 
       Caption         =   "Pasar a Contabilidad"
       Height          =   255
-      Left            =   0
+      Left            =   120
       TabIndex        =   55
-      Top             =   1200
+      Top             =   2160
       Visible         =   0   'False
       Width           =   1935
    End
@@ -1944,7 +1944,7 @@ Begin VB.Form FrmImp2
       Picture         =   "FrmImp2.frx":0464
       Style           =   1  'Graphical
       TabIndex        =   16
-      Top             =   3120
+      Top             =   3480
       Width           =   1215
    End
    Begin VB.CommandButton cerrar 
@@ -1960,7 +1960,7 @@ Begin VB.Form FrmImp2
       EndProperty
       Height          =   750
       Left            =   10200
-      Picture         =   "FrmImp2.frx":08A6
+      Picture         =   "FrmImp2.frx":D6F0
       Style           =   1  'Graphical
       TabIndex        =   17
       Top             =   4320
@@ -1990,7 +1990,7 @@ Begin VB.Form FrmImp2
       PromptChar      =   "_"
    End
    Begin VB.CommandButton cmdultima 
-      Caption         =   "Ultima Edicï¿½on."
+      Caption         =   "Ultima Edicion."
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25

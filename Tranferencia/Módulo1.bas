@@ -1,4 +1,5 @@
 Attribute VB_Name = "Módulo1"
+Private Declare Function GetPrivateProfileString Lib "kernel32" Alias "GetPrivateProfileStringA" (ByVal lpApplicationName As String, ByVal lpKeyName As String, ByVal lpDefault As String, ByVal lpReturnedString As String, ByVal nSize As Long, ByVal lpFileName As String) As Long
 Public PUB_DSN As String
 Public CN As rdoConnection
 Public CONn As String
@@ -270,6 +271,14 @@ ven_llave.Requery
 
 End Sub
 
+
+Public Function LeerIni(ByVal Archivo As String, ByVal Seccion As String, ByVal Clave As String, Optional ByVal DefaultValue As String = "") As String
+    Dim Buffer As String * 256
+    Dim Ret As Long
+    Ret = GetPrivateProfileString(Seccion, Clave, DefaultValue, Buffer, 255, Archivo)
+    If Ret > 0 Then LeerIni = Left$(Buffer, Ret) Else LeerIni = DefaultValue
+End Function
+
 Public Sub CONEXION_GEN()
 ' On Error GoTo ALGUN_ERROR
   Dim success%
@@ -277,41 +286,39 @@ Public Sub CONEXION_GEN()
   Dim Srutas As String
   Dim ws_color As Integer
   Dim wAcceso As String
-  wdsn = "dsn_datos"
-  'wdsn = "dd"
-  PUB_DSN = UCase(wdsn)
-  wAcceso = ""
-  If LK_EMP = "CAM" Then
-  Srutas = "C:\SONIDOS\Splash.WAV"
+  Dim wIniServer As String, wIniUID As String, wIniPWD As String, wIniDB As String, wIniDriver As String
+  Dim wIniFile As String
+  wIniFile = App.Path & "\conexion.ini"
+  If Dir(wIniFile) = "" Then wIniFile = App.Path & "\..\conexion.ini"
+  If Dir(wIniFile) = "" Then
+    MsgBox "No se encuentra conexion.ini en " & App.Path, 48, "Error de Conexion"
+    End
   End If
-  
-  wAcceso = "1478963SWS"
- ' wAcceso = ""
-  ws_color = 3
-  Srutas = "C:\SONIDOS\Splash.WAV"
-  iStatusBarWidth = 4075
+  wIniServer = LeerIni(wIniFile, "Conexion", "Server")
+  wIniUID = LeerIni(wIniFile, "Conexion", "UID")
+  wIniPWD = LeerIni(wIniFile, "Conexion", "PWD")
+  wIniDB = LeerIni(wIniFile, "Conexion", "Database")
+  wIniDriver = LeerIni(wIniFile, "Conexion", "Driver")
+  If Len(wIniServer) = 0 Or Len(wIniUID) = 0 Or Len(wIniDB) = 0 Then
+    MsgBox "conexion.ini incompleto. Verifique Server, UID, Database.", 48, "Error de Conexion"
+    End
+  End If
+  If Len(wIniDriver) = 0 Then wIniDriver = "SQL Server"
+  CONST_SERVER = wIniServer
+  CONST_UID = wIniUID
+  CONST_PWD = wIniPWD
+  CONST_DATABASE = wIniDB
+  CONST_DSN = ""
+  PUB_DSN = ""
+  PUB_ODBC = "ODBC;DSN=OSBusinessCR;UID=" & CONST_UID & ";PWD=" & CONST_PWD & ";WSID=" & CONST_SERVER & ";DATABASE=" & CONST_DATABASE
   Screen.MousePointer = vbHourglass
   DoEvents
-  'Splash.Show
-  'DoEventsh
-  'success% = SetWindowPos(Splash.hWnd, HWND_TOPMOST, 0, 0, 0, 0, FLAGS)
-  Splash.rctStatusBar.Value = Splash.rctStatusBar.Value + 100
   NL = Chr(13) & Chr(10)
   Set EN = rdoEnvironments(0)
-  'CONn$ = "dsn=" & wdsn & ";uid=abel;pwd=abel;database=bdatos;"
-  'CONn$ = "dsn=" & wdsn & ";uid=jorge;pwd=jjj99;database=bdatos;"
-  CONn$ = "dsn=" & wdsn & ";uid=sa;pwd=" & wAcceso & ";database=bdatos;"
-  If Dir("C:\SISWF2\", vbDirectory) <> "" Then
-    pub_mensaje = "WIN SOFT - DEFINICION DE MONEDA" & Chr(13) & "  " & Chr(13) & " MONEDA EXTRANJERA DOLLARES(US$) .- Responder ( Si ) " & Chr(13) & " MONEDA NACIONAL SOLES(S/.)  .- Responder ( No ) "
-    Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, "Win Soft")
-    If Pub_Respuesta = vbYes Then
-      CONn$ = "dsn=" & "DSN_DATOS" & ";uid=sa;pwd=;database=bdatos;"
-    Else
-      CONn$ = "dsn=" & "DSN_DATOS2" & ";uid=sa;pwd=;database=bdatos2;"
-    End If
-  End If
+  CONn$ = "driver={" & wIniDriver & "};server=" & CONST_SERVER & ";uid=" & CONST_UID & ";pwd=" & CONST_PWD & ";database=" & CONST_DATABASE
   DoEvents
-  Set CN = EN.OpenConnection(" ", False, False, CONn$)
+  Set CN = EN.OpenConnection("", False, False, CONn$)
+  CN.QueryTimeout = 90
   CN.QueryTimeout = 90
   Splash.rctStatusBar.Value = Splash.rctStatusBar.Value + 100
   DoEvents
@@ -1485,4 +1492,3 @@ cov_mayor.Requery
 
 fin:
 End Sub
-
