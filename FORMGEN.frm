@@ -13159,8 +13159,7 @@ Do Until ps_vta.EOF
 
    WS_EQUIV = Nulo_Valor0(ps_vta!FAR_equiv)
    If WS_EQUIV = 0 Then WS_EQUIV = 1
-   WS_CANT = Nulo_Valor0(ps_vta!FAR_cantidad) - Nulo_Valor0(ps_vta!FAR_cantidad_p)
-   If WS_CANT < 0 Then WS_CANT = 0
+   WS_CANT = Nulo_Valor0(ps_vta!FAR_cantidad)
 
    grid_fac.TextMatrix(WS_FILA, 0) = art_LLAVE!art_nombre
    grid_fac.TextMatrix(WS_FILA, 1) = art_LLAVE!art_key
