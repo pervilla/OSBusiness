@@ -12996,6 +12996,17 @@ Resume Next
 End Sub
 
 Private Sub Grid_all_DblClick()
+If LK_CODTRA = 2401 Then
+   If Grid_all.COL <> 25 And Grid_all.COL <> 26 Then
+      If Val(Grid_all.TextMatrix(Grid_all.Row, 2)) = 2401 Then
+         CARGA_VENTA_ANTERIOR
+         Exit Sub
+      Else
+         MsgBox "La fila seleccionada no es una Venta ...", 48, Pub_Titulo
+         Exit Sub
+      End If
+   End If
+End If
 If Grid_all.COL = 25 Then
     LK_ACCESO_REPORT = ""
     Load frmclave2
@@ -13042,6 +13053,198 @@ If Grid_all.COL = 26 Then
     i_cias.SetFocus
 End If
 
+End Sub
+
+Private Sub CARGA_VENTA_ANTERIOR()
+Dim WS_FBG As String
+Dim WS_NUMSER As Long
+Dim WS_NUMFAC As Double
+Dim WS_EQUIV As Currency
+Dim WS_CANT As Currency
+Dim WFEC_LOT As String
+Dim WS_FILA As Integer
+Dim WRESP As Integer
+Dim ps_vta As rdoResultset
+
+On Error GoTo SALE_CARGA
+
+If Grid_all.Rows <= 1 Then Exit Sub
+If Grid_all.Row < 1 Then Exit Sub
+
+WS_NUMFAC = Val(Grid_all.TextMatrix(Grid_all.Row, 24))
+If WS_NUMFAC = 0 Then Exit Sub
+
+WRESP = MsgBox("Copiar esta Venta a la grilla y reemplazar los productos actuales ... ?", vbYesNo + vbQuestion, Pub_Titulo)
+If WRESP <> vbYes Then Exit Sub
+
+WS_FBG = Left(Trim(Grid_all.TextMatrix(Grid_all.Row, 7)), 1)
+WS_NUMSER = Val(Grid_all.TextMatrix(Grid_all.Row, 23))
+pub_cadena = "SELECT * FROM FACART WHERE FAR_CODCIA = '" & LK_CODCIA & "' AND FAR_TIPMOV = 10 AND FAR_NUMSER = " & WS_NUMSER & " AND FAR_FBG = '" & WS_FBG & "' AND FAR_NUMFAC = " & WS_NUMFAC & " AND FAR_SIGNO_ARM = -1 ORDER BY FAR_NUMSEC"
+Set ps_vta = CN.OpenResultset(pub_cadena, rdOpenKeyset, rdConcurValues)
+If ps_vta.EOF Then
+   MsgBox "No se encontraron productos para esta Venta ...", 48, Pub_Titulo
+   Exit Sub
+End If
+
+Screen.MousePointer = 11
+DoEvents
+
+grid_fac.Rows = 3
+pasa_cabeza
+Do While det_lot.Rows > 1
+   det_lot.RemoveItem det_lot.Rows - 1
+Loop
+
+PUB_CODCLIE = Val(Grid_all.TextMatrix(Grid_all.Row, 17))
+PUB_CODVEN = Val(Grid_all.TextMatrix(Grid_all.Row, 9))
+
+On Error Resume Next
+i_codcli.Text = PUB_CODCLIE
+i_codven.Text = PUB_CODVEN
+On Error GoTo SALE_CARGA
+
+If PUB_CODCLIE <> 0 Then
+   pu_cp = PUB_CP
+   pu_codclie = PUB_CODCLIE
+   pu_codcia = LK_CODCIA
+   SQ_OPER = 1
+   LEER_CLI_LLAVE
+   If Not cli_llave.EOF Then
+      i_codcli_KeyPress 13
+   End If
+End If
+
+On Error Resume Next
+If Grid_all.TextMatrix(Grid_all.Row, 12) = "S" Or Grid_all.TextMatrix(Grid_all.Row, 12) = "D" Then
+   i_ds.Text = Grid_all.TextMatrix(Grid_all.Row, 12)
+End If
+On Error GoTo SALE_CARGA
+
+WS_FILA = 2
+Do Until ps_vta.EOF
+   DoEvents
+   grid_fac.Rows = WS_FILA + 2
+
+   PUB_KEY = Val(ps_vta!far_codart)
+   pu_codcia = LK_CODCIA
+   SQ_OPER = 1
+   LEER_ART_LLAVE
+   If art_LLAVE.EOF Then
+      GoTo SIGUE_VTA
+   End If
+   If art_LLAVE!art_situacion <> 0 Then
+      MsgBox "Producto Esta Desactivado : " & Trim(art_LLAVE!art_nombre), 48, Pub_Titulo
+      GoTo SIGUE_VTA
+   End If
+   If PUB_TIPMOV = 10 Then
+      If Val(Nulo_Valor0(art_LLAVE!ART_CALIDAD)) <> 1 Then
+         MsgBox "No procede para la Venta (Articulo defectuoso) : " & Trim(art_LLAVE!art_nombre), 48, Pub_Titulo
+         GoTo SIGUE_VTA
+      End If
+   End If
+
+   PUB_CODART = Val(ps_vta!far_codart)
+   pu_codcia = LK_CODCIA
+   SQ_OPER = 1
+   LEER_ARM_LLAVE
+   If arm_llave.EOF Then
+      GoTo SIGUE_VTA
+   End If
+
+   PUB_CODART = Val(ps_vta!far_codart)
+   pu_codcia = LK_CODCIA
+   PUB_SECUEN = Val(ps_vta!far_num_precio)
+   SQ_OPER = 1
+   LEER_PRE_LLAVE
+
+   WS_EQUIV = Nulo_Valor0(ps_vta!FAR_equiv)
+   If WS_EQUIV = 0 Then WS_EQUIV = 1
+   WS_CANT = Nulo_Valor0(ps_vta!FAR_cantidad) - Nulo_Valor0(ps_vta!FAR_cantidad_p)
+   If WS_CANT < 0 Then WS_CANT = 0
+
+   grid_fac.TextMatrix(WS_FILA, 0) = art_LLAVE!art_nombre
+   grid_fac.TextMatrix(WS_FILA, 1) = art_LLAVE!art_key
+   grid_fac.TextMatrix(WS_FILA, 16) = art_LLAVE!art_key
+   grid_fac.TextMatrix(WS_FILA, 33) = art_LLAVE!art_key
+   grid_fac.TextMatrix(WS_FILA, 51) = Nulo_Valor0(art_LLAVE!ART_MARGEN)
+   grid_fac.TextMatrix(WS_FILA, 2) = Nulo_Valor0(ps_vta!far_JABAS)
+   grid_fac.TextMatrix(WS_FILA, 3) = Nulo_Valor0(ps_vta!far_UNIDADES)
+   grid_fac.TextMatrix(WS_FILA, 11) = Nulo_Valor0(ps_vta!FAR_COSPRO)
+   grid_fac.TextMatrix(WS_FILA, 4) = Format(WS_CANT / WS_EQUIV, "0.000")
+   grid_fac.TextMatrix(WS_FILA, 6) = Nulo_Valor0(ps_vta!FAR_PRECIO)
+   grid_fac.TextMatrix(WS_FILA, 14) = WS_EQUIV
+   grid_fac.TextMatrix(WS_FILA, 5) = Nulo_Valors(ps_vta!far_descri)
+   grid_fac.TextMatrix(WS_FILA, 8) = Nulo_Valor0(ps_vta!FAR_FLETE)
+   grid_fac.TextMatrix(WS_FILA, 10) = Nulo_Valor0(ps_vta!far_PORDESCTOS)
+   grid_fac.TextMatrix(WS_FILA, 42) = Nulo_Valor0(ps_vta!far_PORDESCTOS)
+   grid_fac.TextMatrix(WS_FILA, 49) = Nulo_Valor0(ps_vta!FAR_pordescto1)
+   grid_fac.TextMatrix(WS_FILA, 12) = Nulo_Valor0(ps_vta!far_signo_arm)
+   grid_fac.TextMatrix(WS_FILA, 35) = Nulo_Valor0(ps_vta!FAR_PRECIO)
+   grid_fac.TextMatrix(WS_FILA, 17) = Nulo_Valor0(ps_vta!far_num_precio)
+   If Not pre_llave.EOF Then
+      grid_fac.TextMatrix(WS_FILA, 32) = Nulo_Valor0(pre_llave!PRE_PRE5)
+   End If
+   grid_fac.TextMatrix(WS_FILA, 37) = Nulo_Valor0(ps_vta!far_PESO)
+   grid_fac.TextMatrix(WS_FILA, 43) = Nulo_Valor0(ps_vta!FAR_LITRO)
+   If i_fbg.Visible And LK_ACTIVA = "A" Then
+      If PUB_TIPMOV <> 0 And (i_fbg.Text = "F" Or i_fbg.Text = "B") Then
+         grid_fac.TextMatrix(WS_FILA, 13) = arm_llave!ARM_saldo_s
+      Else
+         grid_fac.TextMatrix(WS_FILA, 13) = arm_llave!ARM_Saldo_n
+      End If
+   Else
+      grid_fac.TextMatrix(WS_FILA, 13) = arm_llave!arm_stock
+   End If
+   grid_fac.TextMatrix(WS_FILA, 21) = Nulo_Valors(art_LLAVE!art_flag_stock)
+   grid_fac.TextMatrix(WS_FILA, 23) = Nulo_Valors(art_LLAVE!ART_EX_IGV)
+   grid_fac.TextMatrix(WS_FILA, 24) = Nulo_Valor0(art_LLAVE!ART_POR_IGV)
+   grid_fac.TextMatrix(WS_FILA, 26) = Nulo_Valor0(ps_vta!FAR_tipmov)
+   grid_fac.TextMatrix(WS_FILA, 27) = Nulo_Valors(ps_vta!FAR_CODCIA)
+   grid_fac.TextMatrix(WS_FILA, 28) = Nulo_Valor0(ps_vta!far_numser)
+   grid_fac.TextMatrix(WS_FILA, 29) = Nulo_Valors(ps_vta!far_fbg)
+   grid_fac.TextMatrix(WS_FILA, 30) = Nulo_Valor0(ps_vta!far_numfac)
+   grid_fac.TextMatrix(WS_FILA, 31) = Nulo_Valor0(ps_vta!far_numsec)
+
+   If Trim(Nulo_Valors(ps_vta!far_codlot)) <> "" Then
+      PSLOT_LLAVE(0) = LK_CODCIA
+      PSLOT_LLAVE(1) = Val(ps_vta!far_codart)
+      PSLOT_LLAVE(2) = Trim(ps_vta!far_codlot)
+      lot_llave.Requery
+      If lot_llave.EOF Then
+         WFEC_LOT = Format(LK_FECHA_DIA, "dd/mm/yyyy")
+      Else
+         WFEC_LOT = Format(lot_llave!lot_fecha_vcto, "dd/mm/yyyy")
+      End If
+      det_lot.Rows = det_lot.Rows + 1
+      det_lot.TextMatrix(det_lot.Rows - 1, 0) = LK_CODCIA
+      det_lot.TextMatrix(det_lot.Rows - 1, 1) = Val(ps_vta!far_codart)
+      det_lot.TextMatrix(det_lot.Rows - 1, 2) = Trim(ps_vta!far_codlot)
+      det_lot.TextMatrix(det_lot.Rows - 1, 3) = Nulo_Valor0(ps_vta!FAR_cantidad_p)
+      det_lot.TextMatrix(det_lot.Rows - 1, 4) = WS_FILA
+      det_lot.TextMatrix(det_lot.Rows - 1, 5) = 0
+      det_lot.TextMatrix(det_lot.Rows - 1, 6) = WFEC_LOT
+      det_lot.TextMatrix(det_lot.Rows - 1, 7) = Nulo_Valors(ps_vta!far_descri)
+      det_lot.TextMatrix(det_lot.Rows - 1, 8) = WS_EQUIV
+      det_lot.TextMatrix(det_lot.Rows - 1, 9) = Trim(ps_vta!far_codlot)
+      det_lot.TextMatrix(det_lot.Rows - 1, 10) = WS_FILA
+   End If
+
+   WS_FILA = WS_FILA + 1
+SIGUE_VTA:
+   ps_vta.MoveNext
+Loop
+
+Grid_all.Visible = False
+label_grid.Visible = False
+calcula_totales
+If grid_fac.Visible Then grid_fac.SetFocus
+Screen.MousePointer = 0
+MsgBox "Venta copiada ... Revise productos, precios y haga clic en Grabar.", 48, Pub_Titulo
+Exit Sub
+
+SALE_CARGA:
+Screen.MousePointer = 0
+MsgBox Err.Description, 48, Pub_Titulo
 End Sub
 
 Private Sub Grid_all_KeyDown(KeyCode As Integer, Shift As Integer)
