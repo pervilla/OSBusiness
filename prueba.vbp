@@ -30,6 +30,7 @@ Form=FrmVend.frm
 Form=frmOpcion.frm
 Form=Frmprodia.frm
 Form=FrmMsgbox.frm
+Form=FrmPago.frm
 Form=FORM_COTV.frm
 Form=frmsucesos.frm
 Form=frmclave2.frm

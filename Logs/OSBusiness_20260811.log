@@ -17,3 +17,283 @@ PC: DESKTOP-QIL4IGM
 10:55:15 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
 10:55:15 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
 10:55:17 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+11:05:22 [TRACE] [GENERAL] MDI: Toolbar Click - Salir
+========================================
+OSBusiness - Inicio de Sesion: 11/08/2026 11:05:36
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+11:05:36 [INFO] [GENERAL] Splash: Inicio Form_Load
+11:05:36 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+11:05:37 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+11:05:37 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+11:05:37 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+11:05:37 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+11:05:37 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+11:05:37 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+11:05:37 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+11:05:37 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+11:05:37 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+11:05:37 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+11:05:37 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+11:05:41 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+11:11:31 [TRACE] [GENERAL] MDI: Toolbar Click - Salir
+========================================
+OSBusiness - Inicio de Sesion: 11/08/2026 11:17:09
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+11:17:09 [INFO] [GENERAL] Splash: Inicio Form_Load
+11:17:09 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+11:17:09 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+11:17:09 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+11:17:09 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+11:17:09 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+11:17:09 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+11:17:09 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+11:17:09 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+11:17:09 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+11:17:09 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+11:17:09 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+11:17:10 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+11:17:12 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+11:18:45 [TRACE] [GENERAL] MDI: Toolbar Click - Salir
+========================================
+OSBusiness - Inicio de Sesion: 11/08/2026 11:29:43
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+11:29:43 [INFO] [GENERAL] Splash: Inicio Form_Load
+11:29:43 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+11:29:43 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+11:29:43 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+11:29:43 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+11:29:43 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+11:29:43 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+11:29:43 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+11:29:43 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+11:29:43 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+11:29:43 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+11:29:44 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+11:29:44 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+11:29:46 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+11:30:53 [TRACE] [GENERAL] MDI: Toolbar Click - Salir
+========================================
+OSBusiness - Inicio de Sesion: 11/08/2026 11:31:21
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+11:31:21 [INFO] [GENERAL] Splash: Inicio Form_Load
+11:31:21 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+11:31:21 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+11:31:21 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+11:31:21 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+11:31:21 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+11:31:21 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+11:31:21 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+11:31:21 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+11:31:21 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+11:31:21 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+11:31:21 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+11:31:21 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+11:31:25 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+11:32:53 [TRACE] [GENERAL] MDI: Toolbar Click - Salir
+========================================
+OSBusiness - Inicio de Sesion: 11/08/2026 15:14:02
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+15:14:02 [INFO] [GENERAL] Splash: Inicio Form_Load
+15:14:02 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+15:14:02 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+15:14:02 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+15:14:03 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+15:14:03 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+15:14:03 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+15:14:03 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+15:14:03 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+15:14:03 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+15:14:03 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+15:14:03 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+15:14:03 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+15:14:05 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+15:15:28 [TRACE] [GENERAL] MDI: Toolbar Click - Salir
+========================================
+OSBusiness - Inicio de Sesion: 11/08/2026 15:19:00
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+15:19:00 [INFO] [GENERAL] Splash: Inicio Form_Load
+15:19:01 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+15:19:01 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+15:19:01 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+15:19:01 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+15:19:01 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+15:19:01 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+15:19:01 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+15:19:01 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+15:19:01 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+15:19:01 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+15:19:01 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+15:19:01 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+15:19:05 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+15:19:45 [TRACE] [GENERAL] MDI: Toolbar Click - Salir
+========================================
+OSBusiness - Inicio de Sesion: 11/08/2026 15:20:45
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+15:20:45 [INFO] [GENERAL] Splash: Inicio Form_Load
+15:20:45 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+15:20:45 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+15:20:45 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+15:20:45 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+15:20:45 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+15:20:45 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+15:20:45 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+15:20:45 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+15:20:45 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+15:20:46 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+15:20:46 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+15:20:46 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+15:20:48 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+15:29:22 [TRACE] [GENERAL] MDI: Toolbar Click - CAL
+15:30:34 [TRACE] [GENERAL] MDI: Toolbar Click - Excel
+15:30:36 [TRACE] [GENERAL] MDI: Toolbar Click - Excel
+15:30:43 [TRACE] [GENERAL] MDI: Toolbar Click - ORDEN
+15:30:52 [TRACE] [GENERAL] MDI: Toolbar Click - CHEQUES
+15:30:56 [TRACE] [GENERAL] MDI: Toolbar Click - consultas
+15:31:12 [TRACE] [GENERAL] MDI: Toolbar Click - Salir
+========================================
+OSBusiness - Inicio de Sesion: 11/08/2026 16:17:37
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+16:17:37 [INFO] [GENERAL] Splash: Inicio Form_Load
+16:17:37 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+16:17:37 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+16:17:37 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+16:17:37 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+16:17:37 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+16:17:37 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+16:17:37 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+16:17:37 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+16:17:37 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+16:17:37 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+16:17:37 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+16:17:37 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+16:17:40 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+16:22:54 [TRACE] [GENERAL] MDI: Toolbar Click - Salir
+========================================
+OSBusiness - Inicio de Sesion: 11/08/2026 16:25:38
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+16:25:38 [INFO] [GENERAL] Splash: Inicio Form_Load
+16:25:38 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+16:25:38 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+16:25:38 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+16:25:38 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+16:25:38 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+16:25:38 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+16:25:38 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+16:25:38 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+16:25:38 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+16:25:38 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+16:25:38 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+16:25:38 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+16:25:44 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+16:26:20 [TRACE] [GENERAL] MDI: Toolbar Click - tope
+16:26:23 [TRACE] [GENERAL] MDI: Toolbar Click - Salir
+========================================
+OSBusiness - Inicio de Sesion: 11/08/2026 16:27:10
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+16:27:10 [INFO] [GENERAL] Splash: Inicio Form_Load
+16:27:10 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+16:27:11 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+16:27:11 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+16:27:11 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+16:27:11 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+16:27:11 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+16:27:11 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+16:27:11 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+16:27:11 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+16:27:11 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+16:27:11 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+16:27:11 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+16:27:14 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+16:50:10 [TRACE] [GENERAL] MDI: Toolbar Click - Salir
+========================================
+OSBusiness - Inicio de Sesion: 11/08/2026 16:51:41
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+16:51:41 [INFO] [GENERAL] Splash: Inicio Form_Load
+16:51:41 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+16:51:42 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+16:51:42 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+16:51:42 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+16:51:42 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+16:51:42 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+16:51:42 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+16:51:42 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+16:51:42 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+16:51:42 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+16:51:42 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+16:51:42 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+16:51:44 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+17:51:41 [TRACE] [GENERAL] MDI: Toolbar Click - Salir
+========================================
+OSBusiness - Inicio de Sesion: 11/08/2026 17:55:37
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+17:55:37 [INFO] [GENERAL] Splash: Inicio Form_Load
+17:55:37 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+17:55:37 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+17:55:37 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+17:55:37 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+17:55:37 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+17:55:37 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+17:55:37 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+17:55:37 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+17:55:37 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+17:55:38 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+17:55:38 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+17:55:38 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+17:55:41 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+2026-08-11 18:02:51	INFO	SISTEMA.INICIO	Usu=	Cia=  	Equipo=DESKTOP-QIL4IGM	Exe=OSBusiness 2026-01 Path=C:\OSBusiness FE
+2026-08-11 18:02:51	INFO	Splash.Form_Load	Usu=	Cia=  	Equipo=DESKTOP-QIL4IGM	Inicio Form_Load
+2026-08-11 18:02:51	INFO	Splash.Form_Load	Usu=	Cia=  	Equipo=DESKTOP-QIL4IGM	Antes App.PrevInstance
+2026-08-11 18:02:51	INFO	Splash.Form_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Antes validacion licencia
+2026-08-11 18:02:51	INFO	Splash.Form_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Antes Splash.Show
+2026-08-11 18:02:51	INFO	Splash.Form_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Antes CONEXION_GEN
+2026-08-11 18:02:51	INFO	Splash.Form_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Despues CONEXION_GEN
+2026-08-11 18:02:51	INFO	Splash.Form_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Antes Load MDIForm1
+2026-08-11 18:02:51	INFO	MDIForm1.MDIForm_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Inicio
+2026-08-11 18:02:51	INFO	MDIForm1.MDIForm_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Antes GEN.Requery
+2026-08-11 18:02:51	INFO	MDIForm1.MDIForm_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Despues GEN.Requery
+2026-08-11 18:02:51	INFO	MDIForm1.MDIForm_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Rutas Reporte=Y:\ADMIN\NORDI\ Otro=Y:\ADMIN\NORDI\
+2026-08-11 18:02:51	INFO	MDIForm1.MDIForm_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Antes Splash.Hide
+2026-08-11 18:02:51	INFO	MDIForm1.MDIForm_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Antes MDIForm1.Show
+2026-08-11 18:02:51	INFO	MDIForm1.MDIForm_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Despues MDIForm1.Show
+2026-08-11 18:02:51	INFO	MDIForm1.MDIForm_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Antes NOTPermisos
+2026-08-11 18:02:51	INFO	MDIForm1.MDIForm_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Despues NOTPermisos
+2026-08-11 18:02:51	INFO	MDIForm1.MDIForm_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Antes PASSFORM.Show
+2026-08-11 18:02:52	INFO	PASSFORM.Form_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Inicio
+2026-08-11 18:02:52	INFO	PASSFORM.Form_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Antes GEN.Requery
+2026-08-11 18:02:52	INFO	PASSFORM.Form_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Despues GEN.Requery
+2026-08-11 18:02:52	INFO	PASSFORM.Form_Load	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Fin
+2026-08-11 18:02:52	INFO	PASSFORM.Form_Activate	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Inicio
+2026-08-11 18:02:52	INFO	PASSFORM.Form_Activate	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Antes WRITE1_READ2
+2026-08-11 18:02:52	INFO	PASSFORM.WRITE1_READ2	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Modo=2 Ruta=C:\CODUSU$.txt
+2026-08-11 18:02:52	INFO	PASSFORM.Form_Activate	Usu=	Cia=	Equipo=DESKTOP-QIL4IGM	Despues WRITE1_READ2 Len=6
+2026-08-11 18:02:52	INFO	PASSFORM.Form_Activate	Usu=ADMIN	Cia=25	Equipo=DESKTOP-QIL4IGM	Fin
+2026-08-11 18:02:54	INFO	PASSFORM.WRITE1_READ2	Usu=ADMIN	Cia=25	Equipo=DESKTOP-QIL4IGM	Modo=1 Ruta=C:\CODUSU$.txt
+2026-08-11 18:02:54	INFO	MDIForm1.MDIForm_Load	Usu=ADMIN	Cia=25	Equipo=DESKTOP-QIL4IGM	Despues PASSFORM.Show
+2026-08-11 18:02:54	INFO	MDIForm1.MDIForm_Load	Usu=ADMIN	Cia=25	Equipo=DESKTOP-QIL4IGM	Antes GEN.Requery
+2026-08-11 18:02:54	INFO	MDIForm1.MDIForm_Load	Usu=ADMIN	Cia=25	Equipo=DESKTOP-QIL4IGM	Despues GEN.Requery
+2026-08-11 18:02:54	INFO	MDIForm1.MDIForm_Load	Usu=ADMIN	Cia=25	Equipo=DESKTOP-QIL4IGM	Rutas Reporte=Y:\ADMIN\NORDI\ Otro=Y:\ADMIN\NORDI\
+2026-08-11 18:02:55	INFO	Splash.Form_Load	Usu=ADMIN	Cia=25	Equipo=DESKTOP-QIL4IGM	Despues Load MDIForm1

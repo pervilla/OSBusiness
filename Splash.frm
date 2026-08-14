@@ -27,10 +27,11 @@ Begin VB.Form Splash
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
       Caption         =   "Autorizado a:"
+      ForeColor       =   &H0000FFFF&
       Height          =   255
       Left            =   120
       TabIndex        =   3
-      Top             =   2640
+      Top             =   2400
       Width           =   1335
    End
    Begin VB.Label Empresa 
@@ -49,7 +50,7 @@ Begin VB.Form Splash
       Height          =   240
       Left            =   1320
       TabIndex        =   2
-      Top             =   2640
+      Top             =   2400
       Width           =   3540
    End
    Begin VB.Label lblporcentaje 
@@ -70,9 +71,9 @@ Begin VB.Form Splash
       EndProperty
       ForeColor       =   &H0000FFFF&
       Height          =   240
-      Left            =   2310
+      Left            =   2280
       TabIndex        =   1
-      Top             =   3120
+      Top             =   3480
       Width           =   525
    End
    Begin VB.Label LblMensa 
@@ -94,7 +95,7 @@ Begin VB.Form Splash
       Height          =   345
       Left            =   120
       TabIndex        =   0
-      Top             =   2880
+      Top             =   3120
       Width           =   4965
    End
 End

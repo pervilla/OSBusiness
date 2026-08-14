@@ -5,30 +5,30 @@ Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "crystl32.ocx"
 Begin VB.Form frmDocu 
    Caption         =   "Consulta de Operaciones"
-   ClientHeight    =   7545
+   ClientHeight    =   7425
    ClientLeft      =   60
    ClientTop       =   345
-   ClientWidth     =   11970
+   ClientWidth     =   12000
    ControlBox      =   0   'False
    ForeColor       =   &H00404000&
    LinkTopic       =   "Form2"
    MDIChild        =   -1  'True
-   ScaleHeight     =   7545
-   ScaleWidth      =   11970
+   ScaleHeight     =   7425
+   ScaleWidth      =   12000
    WindowState     =   2  'Maximized
    Begin VB.Frame Fracruze 
       Caption         =   "Cruze de Documento(Solo Ventas):"
       Height          =   2175
-      Left            =   4560
-      TabIndex        =   112
-      Top             =   3240
+      Left            =   5880
+      TabIndex        =   107
+      Top             =   3960
       Visible         =   0   'False
       Width           =   4695
       Begin VB.CommandButton CmdCruze_escapar 
          Caption         =   "Escapar"
          Height          =   330
          Left            =   1080
-         TabIndex        =   123
+         TabIndex        =   118
          Top             =   1680
          Width           =   2085
       End
@@ -38,7 +38,7 @@ Begin VB.Form frmDocu
          Left            =   3600
          Picture         =   "FrmDocu.frx":0000
          Style           =   1  'Graphical
-         TabIndex        =   122
+         TabIndex        =   117
          Top             =   360
          Width           =   975
       End
@@ -49,7 +49,7 @@ Begin VB.Form frmDocu
          Left            =   960
          List            =   "FrmDocu.frx":E0CB
          Style           =   2  'Dropdown List
-         TabIndex        =   121
+         TabIndex        =   116
          Top             =   1320
          Width           =   510
       End
@@ -60,7 +60,7 @@ Begin VB.Form frmDocu
          Left            =   960
          List            =   "FrmDocu.frx":E0E5
          Style           =   2  'Dropdown List
-         TabIndex        =   120
+         TabIndex        =   115
          Top             =   840
          Width           =   510
       End
@@ -68,7 +68,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00404000&
          Height          =   285
          Left            =   2160
-         TabIndex        =   119
+         TabIndex        =   114
          Text            =   "0"
          Top             =   1320
          Width           =   975
@@ -77,7 +77,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00404000&
          Height          =   285
          Left            =   2160
-         TabIndex        =   118
+         TabIndex        =   113
          Text            =   "0"
          Top             =   840
          Width           =   975
@@ -86,7 +86,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00404000&
          Height          =   285
          Left            =   1560
-         TabIndex        =   117
+         TabIndex        =   112
          Text            =   "0"
          Top             =   1320
          Width           =   495
@@ -95,7 +95,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00404000&
          Height          =   285
          Left            =   1560
-         TabIndex        =   116
+         TabIndex        =   111
          Text            =   "0"
          Top             =   840
          Width           =   495
@@ -103,7 +103,7 @@ Begin VB.Form frmDocu
       Begin MSMask.MaskEdBox tfcruze 
          Height          =   285
          Left            =   960
-         TabIndex        =   124
+         TabIndex        =   119
          Top             =   480
          Width           =   1335
          _ExtentX        =   2355
@@ -139,7 +139,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   3
          Left            =   120
-         TabIndex        =   125
+         TabIndex        =   120
          Top             =   480
          Width           =   855
       End
@@ -200,7 +200,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   2
          Left            =   120
-         TabIndex        =   115
+         TabIndex        =   110
          Top             =   1320
          Width           =   855
       End
@@ -219,7 +219,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   1
          Left            =   120
-         TabIndex        =   114
+         TabIndex        =   109
          Top             =   840
          Width           =   855
       End
@@ -238,7 +238,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   0
          Left            =   120
-         TabIndex        =   113
+         TabIndex        =   108
          Top             =   240
          Width           =   2295
       End
@@ -248,14 +248,14 @@ Begin VB.Form frmDocu
       Caption         =   "Forzar Guia R."
       Height          =   495
       Left            =   10560
-      TabIndex        =   107
+      TabIndex        =   102
       Top             =   3120
       Width           =   1215
    End
    Begin VB.CommandButton DOCANEXO 
       Height          =   555
       Left            =   10590
-      TabIndex        =   98
+      TabIndex        =   94
       Top             =   1470
       Width           =   1155
    End
@@ -272,16 +272,16 @@ Begin VB.Form frmDocu
       EndProperty
       ForeColor       =   &H00404040&
       Height          =   1380
-      Left            =   3570
-      TabIndex        =   86
-      Top             =   5655
+      Left            =   120
+      TabIndex        =   82
+      Top             =   3960
       Visible         =   0   'False
       Width           =   5745
       Begin VB.CommandButton cmdesc 
          Caption         =   "Escapar"
          Height          =   330
          Left            =   4260
-         TabIndex        =   96
+         TabIndex        =   92
          Top             =   750
          Width           =   1365
       End
@@ -289,7 +289,7 @@ Begin VB.Form frmDocu
          Caption         =   "Cambiar"
          Height          =   330
          Left            =   4260
-         TabIndex        =   95
+         TabIndex        =   91
          Top             =   300
          Width           =   1350
       End
@@ -297,7 +297,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00000080&
          Height          =   300
          Left            =   3225
-         TabIndex        =   94
+         TabIndex        =   90
          Text            =   "000000"
          Top             =   780
          Width           =   840
@@ -306,7 +306,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00000080&
          Height          =   300
          Left            =   1605
-         TabIndex        =   92
+         TabIndex        =   88
          Text            =   "000000"
          Top             =   795
          Width           =   795
@@ -315,7 +315,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00000080&
          Height          =   300
          Left            =   2985
-         TabIndex        =   90
+         TabIndex        =   86
          Text            =   "000"
          Top             =   300
          Width           =   540
@@ -327,7 +327,7 @@ Begin VB.Form frmDocu
          Left            =   1095
          List            =   "FrmDocu.frx":E108
          Style           =   2  'Dropdown List
-         TabIndex        =   87
+         TabIndex        =   83
          Top             =   285
          Width           =   1140
       End
@@ -337,7 +337,7 @@ Begin VB.Form frmDocu
          Height          =   225
          Index           =   3
          Left            =   2415
-         TabIndex        =   93
+         TabIndex        =   89
          Top             =   825
          Width           =   945
       End
@@ -347,7 +347,7 @@ Begin VB.Form frmDocu
          Height          =   225
          Index           =   2
          Left            =   135
-         TabIndex        =   91
+         TabIndex        =   87
          Top             =   795
          Width           =   1410
       End
@@ -357,7 +357,7 @@ Begin VB.Form frmDocu
          Height          =   225
          Index           =   1
          Left            =   2400
-         TabIndex        =   89
+         TabIndex        =   85
          Top             =   315
          Width           =   540
       End
@@ -367,7 +367,7 @@ Begin VB.Form frmDocu
          Height          =   225
          Index           =   0
          Left            =   315
-         TabIndex        =   88
+         TabIndex        =   84
          Top             =   330
          Width           =   675
       End
@@ -375,9 +375,9 @@ Begin VB.Form frmDocu
    Begin VB.Frame FRADIRE 
       Caption         =   "Direccion de Entrega de Mercaderia :"
       Height          =   735
-      Left            =   1080
-      TabIndex        =   78
-      Top             =   2760
+      Left            =   120
+      TabIndex        =   74
+      Top             =   3240
       Visible         =   0   'False
       Width           =   8055
       Begin VB.ComboBox TxtZonaTrabajo 
@@ -394,7 +394,7 @@ Begin VB.Form frmDocu
          Left            =   3960
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   82
+         TabIndex        =   78
          Top             =   360
          WhatsThisHelpID =   5
          Width           =   1935
@@ -413,7 +413,7 @@ Begin VB.Form frmDocu
          Left            =   6000
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   81
+         TabIndex        =   77
          Top             =   360
          WhatsThisHelpID =   6
          Width           =   1935
@@ -422,7 +422,7 @@ Begin VB.Form frmDocu
          Height          =   285
          Left            =   3240
          MaxLength       =   4
-         TabIndex        =   80
+         TabIndex        =   76
          Top             =   360
          Width           =   615
       End
@@ -430,7 +430,7 @@ Begin VB.Form frmDocu
          Height          =   285
          Left            =   240
          MaxLength       =   30
-         TabIndex        =   79
+         TabIndex        =   75
          Top             =   360
          Width           =   3015
       End
@@ -450,7 +450,7 @@ Begin VB.Form frmDocu
       ForeColor       =   &H00FFFFFF&
       Height          =   435
       Left            =   10560
-      TabIndex        =   77
+      TabIndex        =   73
       Top             =   3720
       Width           =   1215
    End
@@ -460,7 +460,7 @@ Begin VB.Form frmDocu
       Left            =   10560
       Picture         =   "FrmDocu.frx":E15B
       Style           =   1  'Graphical
-      TabIndex        =   76
+      TabIndex        =   72
       Top             =   5160
       Width           =   1215
    End
@@ -479,7 +479,7 @@ Begin VB.Form frmDocu
       Left            =   10560
       Picture         =   "FrmDocu.frx":569E5
       Style           =   1  'Graphical
-      TabIndex        =   75
+      TabIndex        =   71
       Top             =   4320
       Width           =   1215
    End
@@ -504,7 +504,7 @@ Begin VB.Form frmDocu
          Caption         =   "Cruzar Docum."
          Height          =   495
          Left            =   9240
-         TabIndex        =   126
+         TabIndex        =   121
          Top             =   4800
          Width           =   975
       End
@@ -521,7 +521,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   315
          Left            =   6720
-         TabIndex        =   97
+         TabIndex        =   93
          Top             =   1200
          Width           =   1095
       End
@@ -529,39 +529,30 @@ Begin VB.Form frmDocu
          Caption         =   "Cambiar Orden N. Documen."
          Height          =   750
          Left            =   9225
-         TabIndex        =   85
+         TabIndex        =   81
          Top             =   5640
          Width           =   960
       End
       Begin VB.TextBox NUMERO 
          Height          =   285
          Left            =   4560
-         TabIndex        =   71
+         TabIndex        =   68
          Top             =   5760
          Visible         =   0   'False
          Width           =   495
       End
       Begin VB.CheckBox sin_valor 
          Caption         =   "&Guia Sin Valor"
-         BeginProperty Font 
-            Name            =   "MS Serif"
-            Size            =   6.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          Height          =   315
          Left            =   6720
-         TabIndex        =   69
+         TabIndex        =   67
          Top             =   1440
-         Width           =   1215
+         Width           =   1335
       End
       Begin VB.TextBox FECHA_PART 
          Height          =   285
          Left            =   9120
-         TabIndex        =   67
+         TabIndex        =   65
          Top             =   4440
          Visible         =   0   'False
          Width           =   1215
@@ -572,15 +563,15 @@ Begin VB.Form frmDocu
          Height          =   315
          Left            =   120
          Style           =   2  'Dropdown List
-         TabIndex        =   66
+         TabIndex        =   64
          Top             =   5760
          Width           =   4335
       End
       Begin MSFlexGridLib.MSFlexGrid grid_fac2 
          Height          =   2535
-         Left            =   150
+         Left            =   120
          TabIndex        =   5
-         Top             =   2160
+         Top             =   2280
          Width           =   8895
          _ExtentX        =   15690
          _ExtentY        =   4471
@@ -595,7 +586,7 @@ Begin VB.Form frmDocu
       Begin VB.TextBox tguia 
          Height          =   285
          Left            =   9120
-         TabIndex        =   61
+         TabIndex        =   59
          Top             =   3720
          Visible         =   0   'False
          Width           =   1215
@@ -604,7 +595,7 @@ Begin VB.Form frmDocu
          Caption         =   "Guia Rem."
          Height          =   255
          Left            =   9120
-         TabIndex        =   60
+         TabIndex        =   58
          Top             =   3465
          Visible         =   0   'False
          Width           =   1095
@@ -614,7 +605,7 @@ Begin VB.Form frmDocu
          Left            =   120
          TabIndex        =   14
          Tag             =   "119"
-         Top             =   4680
+         Top             =   4800
          Width           =   9015
          Begin VB.Label lblabono 
             Alignment       =   1  'Right Justify
@@ -623,7 +614,7 @@ Begin VB.Form frmDocu
             ForeColor       =   &H00C00000&
             Height          =   285
             Left            =   8160
-            TabIndex        =   111
+            TabIndex        =   106
             Top             =   360
             Width           =   735
          End
@@ -642,7 +633,7 @@ Begin VB.Form frmDocu
             Height          =   255
             Index           =   1
             Left            =   8280
-            TabIndex        =   110
+            TabIndex        =   105
             Top             =   120
             Width           =   615
          End
@@ -653,7 +644,7 @@ Begin VB.Form frmDocu
             ForeColor       =   &H00C00000&
             Height          =   285
             Left            =   6240
-            TabIndex        =   109
+            TabIndex        =   104
             Top             =   360
             Width           =   735
          End
@@ -672,7 +663,7 @@ Begin VB.Form frmDocu
             Height          =   255
             Index           =   0
             Left            =   6360
-            TabIndex        =   108
+            TabIndex        =   103
             Top             =   120
             Width           =   615
          End
@@ -682,7 +673,7 @@ Begin VB.Form frmDocu
             BorderStyle     =   1  'Fixed Single
             Height          =   285
             Left            =   5160
-            TabIndex        =   100
+            TabIndex        =   96
             Top             =   360
             Width           =   1005
          End
@@ -701,7 +692,7 @@ Begin VB.Form frmDocu
             Height          =   255
             Index           =   0
             Left            =   5160
-            TabIndex        =   101
+            TabIndex        =   97
             Tag             =   "9999"
             Top             =   120
             Width           =   1005
@@ -712,7 +703,7 @@ Begin VB.Form frmDocu
             BorderStyle     =   1  'Fixed Single
             Height          =   285
             Left            =   4080
-            TabIndex        =   34
+            TabIndex        =   33
             ToolTipText     =   "Doble Click para modificar..."
             Top             =   360
             Width           =   1005
@@ -723,7 +714,7 @@ Begin VB.Form frmDocu
             BorderStyle     =   1  'Fixed Single
             Height          =   285
             Left            =   7080
-            TabIndex        =   33
+            TabIndex        =   32
             Top             =   360
             Width           =   1005
          End
@@ -733,7 +724,7 @@ Begin VB.Form frmDocu
             BorderStyle     =   1  'Fixed Single
             Height          =   285
             Left            =   2040
-            TabIndex        =   32
+            TabIndex        =   31
             Top             =   360
             Width           =   765
          End
@@ -743,7 +734,7 @@ Begin VB.Form frmDocu
             BorderStyle     =   1  'Fixed Single
             Height          =   285
             Left            =   3000
-            TabIndex        =   31
+            TabIndex        =   30
             Top             =   360
             Width           =   1005
          End
@@ -753,7 +744,7 @@ Begin VB.Form frmDocu
             BorderStyle     =   1  'Fixed Single
             Height          =   285
             Left            =   1200
-            TabIndex        =   30
+            TabIndex        =   29
             Top             =   360
             Width           =   765
          End
@@ -763,7 +754,7 @@ Begin VB.Form frmDocu
             BorderStyle     =   1  'Fixed Single
             Height          =   285
             Left            =   120
-            TabIndex        =   29
+            TabIndex        =   28
             Top             =   360
             Width           =   1005
          End
@@ -891,7 +882,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   120
-         TabIndex        =   62
+         TabIndex        =   60
          Top             =   5520
          Visible         =   0   'False
          Width           =   4215
@@ -899,7 +890,7 @@ Begin VB.Form frmDocu
       Begin MSComctlLib.ProgressBar PB 
          Height          =   165
          Left            =   3720
-         TabIndex        =   35
+         TabIndex        =   34
          Top             =   360
          Visible         =   0   'False
          Width           =   2895
@@ -908,15 +899,101 @@ Begin VB.Form frmDocu
          _Version        =   393216
          Appearance      =   0
       End
+      Begin VB.Label d_ruc 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H80000004&
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00008000&
+         Height          =   280
+         Left            =   5400
+         TabIndex        =   128
+         Top             =   840
+         Width           =   1215
+         WordWrap        =   -1  'True
+      End
+      Begin VB.Label d_codven 
+         Alignment       =   1  'Right Justify
+         BackColor       =   &H00E0E0E0&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   6960
+         TabIndex        =   127
+         Top             =   840
+         Width           =   525
+      End
+      Begin VB.Label d_nomven 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000004&
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000008&
+         Height          =   285
+         Left            =   7560
+         TabIndex        =   126
+         Top             =   840
+         Width           =   2655
+      End
+      Begin VB.Label FCONT 
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   "Fec. Contable :"
+         Height          =   255
+         Left            =   120
+         TabIndex        =   125
+         Top             =   840
+         Width           =   2655
+      End
+      Begin VB.Label d_fecha_can 
+         BackColor       =   &H00E0E0E0&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   270
+         Left            =   4080
+         TabIndex        =   124
+         Top             =   850
+         Width           =   1185
+      End
       Begin VB.Label lblmotivo 
          BorderStyle     =   1  'Fixed Single
          ForeColor       =   &H00800000&
-         Height          =   495
-         Left            =   7920
-         TabIndex        =   105
-         Top             =   1200
+         Height          =   255
+         Left            =   8160
+         TabIndex        =   100
+         Top             =   1440
          Visible         =   0   'False
-         Width           =   2175
+         Width           =   2055
       End
       Begin VB.Label LBLEXTORNO 
          Caption         =   "DOCUMENTO EXTORNADO"
@@ -931,8 +1008,8 @@ Begin VB.Form frmDocu
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   255
-         Left            =   3480
-         TabIndex        =   36
+         Left            =   3600
+         TabIndex        =   35
          Top             =   600
          Visible         =   0   'False
          Width           =   3015
@@ -951,7 +1028,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   255
          Left            =   2640
-         TabIndex        =   104
+         TabIndex        =   99
          Top             =   285
          Width           =   1140
       End
@@ -970,30 +1047,13 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   195
          Left            =   2880
-         TabIndex        =   103
+         TabIndex        =   98
          Top             =   840
          Width           =   1080
       End
-      Begin VB.Label d_fecha_can 
-         BackColor       =   &H00E0E0E0&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   270
-         Left            =   4080
-         TabIndex        =   102
-         Top             =   870
-         Width           =   1185
-      End
       Begin VB.Label lbltipvta 
-         Caption         =   "Tipo.:"
+         Alignment       =   1  'Right Justify
+         Caption         =   "Tipo:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1005,10 +1065,10 @@ Begin VB.Form frmDocu
          EndProperty
          ForeColor       =   &H00808000&
          Height          =   255
-         Left            =   6585
-         TabIndex        =   84
+         Left            =   6825
+         TabIndex        =   80
          Top             =   450
-         Width           =   975
+         Width           =   615
       End
       Begin VB.Label d_tipvta 
          Alignment       =   2  'Center
@@ -1024,45 +1084,17 @@ Begin VB.Form frmDocu
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   7575
-         TabIndex        =   83
+         Left            =   7530
+         TabIndex        =   79
          Top             =   465
-         Width           =   1860
-      End
-      Begin VB.Label FCONT 
-         BorderStyle     =   1  'Fixed Single
-         Caption         =   "Fec. Contable :"
-         Height          =   255
-         Left            =   120
-         TabIndex        =   72
-         Top             =   840
-         Width           =   2655
-      End
-      Begin VB.Label d_nomven 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000004&
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   315
-         Left            =   7440
-         TabIndex        =   70
-         Top             =   840
-         Width           =   2775
+         Width           =   2685
       End
       Begin VB.Label lbldocu 
          Caption         =   "Fecha Part."
          Height          =   255
          Index           =   2
          Left            =   9120
-         TabIndex        =   68
+         TabIndex        =   66
          Top             =   4200
          Width           =   1095
       End
@@ -1102,7 +1134,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H80000008&
          Height          =   285
          Left            =   9120
-         TabIndex        =   39
+         TabIndex        =   38
          Top             =   3045
          Width           =   1125
       End
@@ -1114,25 +1146,6 @@ Begin VB.Form frmDocu
          TabIndex        =   23
          Top             =   1800
          Width           =   855
-      End
-      Begin VB.Label d_codven 
-         Alignment       =   1  'Right Justify
-         BackColor       =   &H00E0E0E0&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   6960
-         TabIndex        =   25
-         Top             =   825
-         Width           =   405
       End
       Begin VB.Label d_fecha_compra 
          BackColor       =   &H00E0E0E0&
@@ -1148,7 +1161,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   270
          Left            =   1440
-         TabIndex        =   63
+         TabIndex        =   61
          Top             =   555
          Width           =   1185
       End
@@ -1167,7 +1180,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   270
          Left            =   1440
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   240
          Width           =   1155
       End
@@ -1186,7 +1199,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   195
          Left            =   120
-         TabIndex        =   64
+         TabIndex        =   62
          Top             =   525
          Width           =   1215
       End
@@ -1205,17 +1218,17 @@ Begin VB.Form frmDocu
          ForeColor       =   &H80000008&
          Height          =   375
          Left            =   6600
-         TabIndex        =   48
+         TabIndex        =   46
          Top             =   5760
          Width           =   375
       End
       Begin VB.Label txtdocu 
          BorderStyle     =   1  'Fixed Single
          Height          =   315
-         Left            =   5520
-         TabIndex        =   49
-         Top             =   1800
-         Width           =   3495
+         Left            =   6720
+         TabIndex        =   47
+         Top             =   1920
+         Width           =   2535
       End
       Begin VB.Label d_dire 
          AutoSize        =   -1  'True
@@ -1225,14 +1238,14 @@ Begin VB.Form frmDocu
             Name            =   "MS Sans Serif"
             Size            =   8.25
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   225
-         Left            =   1080
-         TabIndex        =   41
+         Height          =   315
+         Left            =   1200
+         TabIndex        =   40
          Top             =   1920
          Width           =   4380
          WordWrap        =   -1  'True
@@ -1251,13 +1264,13 @@ Begin VB.Form frmDocu
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   4200
-         TabIndex        =   57
-         Top             =   120
-         Width           =   1575
+         Left            =   8160
+         TabIndex        =   55
+         Top             =   1200
+         Width           =   2055
       End
       Begin VB.Label lbldireccion 
-         Caption         =   "Dirección Entrega:"
+         Caption         =   "Dir.Entrega:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1270,7 +1283,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   120
-         TabIndex        =   43
+         TabIndex        =   42
          Top             =   1920
          Width           =   1335
       End
@@ -1287,10 +1300,10 @@ Begin VB.Form frmDocu
          EndProperty
          ForeColor       =   &H00808000&
          Height          =   225
-         Left            =   5520
-         TabIndex        =   50
-         Top             =   1560
-         Width           =   1095
+         Left            =   5640
+         TabIndex        =   48
+         Top             =   1935
+         Width           =   975
       End
       Begin VB.Label lbldomicilio 
          Caption         =   "Domicilio :"
@@ -1306,8 +1319,8 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   120
-         TabIndex        =   56
-         Top             =   1680
+         TabIndex        =   54
+         Top             =   1560
          Width           =   975
       End
       Begin VB.Label d_domicilio 
@@ -1318,17 +1331,17 @@ Begin VB.Form frmDocu
             Name            =   "MS Sans Serif"
             Size            =   8.25
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H00FFFFFF&
+         ForeColor       =   &H00404000&
          Height          =   195
-         Left            =   1080
-         TabIndex        =   55
-         Top             =   1680
-         Width           =   5220
+         Left            =   1110
+         TabIndex        =   53
+         Top             =   1560
+         Width           =   5505
          WordWrap        =   -1  'True
       End
       Begin VB.Label d_efectivo 
@@ -1346,7 +1359,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00FF0000&
          Height          =   285
          Left            =   240
-         TabIndex        =   54
+         TabIndex        =   52
          Tag             =   "9999"
          Top             =   5640
          Visible         =   0   'False
@@ -1365,7 +1378,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   255
          Left            =   240
-         TabIndex        =   53
+         TabIndex        =   51
          Tag             =   "9999"
          Top             =   5520
          Visible         =   0   'False
@@ -1384,7 +1397,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   375
          Left            =   5160
-         TabIndex        =   37
+         TabIndex        =   36
          Tag             =   "9999"
          Top             =   5760
          Width           =   1275
@@ -1402,7 +1415,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   255
          Left            =   2280
-         TabIndex        =   52
+         TabIndex        =   50
          Tag             =   "9999"
          Top             =   5520
          Visible         =   0   'False
@@ -1423,32 +1436,11 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00FF0000&
          Height          =   285
          Left            =   2280
-         TabIndex        =   51
+         TabIndex        =   49
          Tag             =   "9999"
          Top             =   5640
          Visible         =   0   'False
          Width           =   1605
-      End
-      Begin VB.Label d_ruc 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H80000004&
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00FFFFFF&
-         Height          =   240
-         Left            =   5640
-         TabIndex        =   45
-         Top             =   1080
-         Width           =   1215
-         WordWrap        =   -1  'True
       End
       Begin VB.Label LBLRUC 
          Caption         =   "R.U.C."
@@ -1463,7 +1455,7 @@ Begin VB.Form frmDocu
          EndProperty
          Height          =   255
          Left            =   5040
-         TabIndex        =   44
+         TabIndex        =   43
          Top             =   600
          Width           =   495
       End
@@ -1473,7 +1465,7 @@ Begin VB.Form frmDocu
          Height          =   195
          Index           =   1
          Left            =   9120
-         TabIndex        =   40
+         TabIndex        =   39
          Top             =   2805
          Width           =   900
       End
@@ -1493,12 +1485,13 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00FF0000&
          Height          =   330
          Left            =   7080
-         TabIndex        =   38
+         TabIndex        =   37
          Tag             =   "9999"
          Top             =   5760
          Width           =   1485
       End
       Begin VB.Label lblcondicion 
+         Alignment       =   1  'Right Justify
          Caption         =   "Condición:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -1511,8 +1504,8 @@ Begin VB.Form frmDocu
          EndProperty
          ForeColor       =   &H00808000&
          Height          =   255
-         Left            =   6525
-         TabIndex        =   26
+         Left            =   6420
+         TabIndex        =   25
          Top             =   135
          Width           =   1020
       End
@@ -1550,10 +1543,10 @@ Begin VB.Form frmDocu
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   7560
+         Left            =   7530
          TabIndex        =   12
          Top             =   135
-         Width           =   2565
+         Width           =   2685
       End
       Begin VB.Label d_nomclie 
          Appearance      =   0  'Flat
@@ -1568,23 +1561,23 @@ Begin VB.Form frmDocu
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H80000008&
-         Height          =   405
-         Left            =   1200
+         Height          =   280
+         Left            =   2040
          TabIndex        =   11
-         Top             =   1320
+         Top             =   1200
          Width           =   4575
       End
       Begin VB.Label d_Codclie 
          Alignment       =   1  'Right Justify
          BorderStyle     =   1  'Fixed Single
          Height          =   285
-         Left            =   120
+         Left            =   960
          TabIndex        =   10
-         Top             =   1320
+         Top             =   1200
          Width           =   1005
       End
       Begin VB.Label lblpersona 
-         Caption         =   "Cliente"
+         Caption         =   "Cliente:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1598,8 +1591,8 @@ Begin VB.Form frmDocu
          Height          =   255
          Left            =   120
          TabIndex        =   22
-         Top             =   1080
-         Width           =   1215
+         Top             =   1200
+         Width           =   855
       End
       Begin VB.Label lbldocu 
          Caption         =   "Fecha de Vcto."
@@ -1625,7 +1618,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   7
          Left            =   120
-         TabIndex        =   28
+         TabIndex        =   27
          Top             =   240
          Width           =   1335
       End
@@ -1644,7 +1637,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00FFFFFF&
          Height          =   255
          Left            =   3480
-         TabIndex        =   46
+         TabIndex        =   44
          Top             =   600
          Visible         =   0   'False
          Width           =   3255
@@ -1665,7 +1658,7 @@ Begin VB.Form frmDocu
       EndProperty
       Height          =   285
       Left            =   6210
-      TabIndex        =   59
+      TabIndex        =   57
       Text            =   "S/."
       Top             =   4920
       Width           =   495
@@ -1691,7 +1684,7 @@ Begin VB.Form frmDocu
          Height          =   405
          Left            =   6000
          MaxLength       =   3
-         TabIndex        =   128
+         TabIndex        =   123
          Top             =   360
          Width           =   735
       End
@@ -1699,7 +1692,7 @@ Begin VB.Form frmDocu
          BackColor       =   &H00E0E0E0&
          Height          =   285
          Left            =   3045
-         TabIndex        =   127
+         TabIndex        =   122
          Top             =   360
          Visible         =   0   'False
          Width           =   495
@@ -1797,7 +1790,7 @@ Begin VB.Form frmDocu
          ForeColor       =   &H00808000&
          Height          =   255
          Left            =   3000
-         TabIndex        =   65
+         TabIndex        =   63
          Top             =   120
          Visible         =   0   'False
          Width           =   615
@@ -1825,7 +1818,7 @@ Begin VB.Form frmDocu
          BackColor       =   &H00000080&
          Height          =   855
          Left            =   5880
-         TabIndex        =   58
+         TabIndex        =   56
          Top             =   120
          Width           =   2415
       End
@@ -1845,7 +1838,7 @@ Begin VB.Form frmDocu
          Height          =   255
          Index           =   6
          Left            =   120
-         TabIndex        =   47
+         TabIndex        =   45
          Top             =   120
          Width           =   2655
       End
@@ -1896,7 +1889,7 @@ Begin VB.Form frmDocu
       ForeColor       =   &H00C00000&
       Height          =   255
       Left            =   10560
-      TabIndex        =   106
+      TabIndex        =   101
       Top             =   1080
       Width           =   1215
    End
@@ -1905,7 +1898,7 @@ Begin VB.Form frmDocu
       ForeColor       =   &H00FFFFFF&
       Height          =   675
       Left            =   10500
-      TabIndex        =   99
+      TabIndex        =   95
       Top             =   1410
       Visible         =   0   'False
       Width           =   1305
@@ -1927,7 +1920,7 @@ Begin VB.Form frmDocu
       ForeColor       =   &H00E0E0E0&
       Height          =   255
       Left            =   10440
-      TabIndex        =   73
+      TabIndex        =   69
       Top             =   6120
       Width           =   1335
    End
@@ -1937,7 +1930,7 @@ Begin VB.Form frmDocu
       Height          =   7335
       Index           =   5
       Left            =   10440
-      TabIndex        =   74
+      TabIndex        =   70
       Top             =   0
       Width           =   1455
    End
@@ -1945,7 +1938,7 @@ Begin VB.Form frmDocu
       Caption         =   "Cliente"
       Height          =   255
       Left            =   0
-      TabIndex        =   42
+      TabIndex        =   41
       Top             =   0
       Width           =   1335
    End
@@ -2465,7 +2458,7 @@ If LOC_TIPMOV = 10 Then
      Exit Sub
  End If
 End If
-Dim I, j
+Dim i, j
 Dim wranF
 Dim LETRAS(24) As String * 1
 
@@ -2486,26 +2479,26 @@ xl.Cells(3, 1) = "'" & Format(LK_FECHA_DIA, "dd/mm/yyyy")
 xl.Cells(1, 1) = Trim(Mid(MDIForm1.TXTCIA.Caption, 4, Len(MDIForm1.TXTCIA.Caption)))
 xl.Cells(2, 1) = "PLANILLA DE COBRANZA"
 pbValue = pbValue + 1
-For I = 0 To grid_fac2.Rows - 1
+For i = 0 To grid_fac2.Rows - 1
   For j = 0 To 14
-     If grid_fac2.TextMatrix(I, j) = "" Then
-       xl.Cells(I + 7, j + 1) = " "
+     If grid_fac2.TextMatrix(i, j) = "" Then
+       xl.Cells(i + 7, j + 1) = " "
      Else
-       xl.Cells(I + 7, j + 1) = grid_fac2.TextMatrix(I, j)
+       xl.Cells(i + 7, j + 1) = grid_fac2.TextMatrix(i, j)
      End If
   Next j
-Next I
+Next i
 pbValue = pbValue + 1
 GoSub LETRAS
 pbValue = pbValue + 1
-wranF = "A" & I + 8 & ":D" & I + 8
+wranF = "A" & i + 8 & ":D" & i + 8
 xl.Range(wranF).Borders.Item(xlEdgeTop).LineStyle = 3
-xl.Cells(I + 1 + 7, 1) = "Total Cheque.  ="
-xl.Cells(I + 1 + 7, 2) = "'" & d_cheque.Caption
-xl.Cells(I + 2 + 7, 1) = "Total Efectivo.="
-xl.Cells(I + 2 + 7, 2) = "'" & d_efectivo.Caption
-xl.Cells(I + 3 + 7, 1) = "Total Planilla.="
-xl.Cells(I + 3 + 7, 2) = "'" & d_saldo.Caption
+xl.Cells(i + 1 + 7, 1) = "Total Cheque.  ="
+xl.Cells(i + 1 + 7, 2) = "'" & d_cheque.Caption
+xl.Cells(i + 2 + 7, 1) = "Total Efectivo.="
+xl.Cells(i + 2 + 7, 2) = "'" & d_efectivo.Caption
+xl.Cells(i + 3 + 7, 1) = "Total Planilla.="
+xl.Cells(i + 3 + 7, 2) = "'" & d_saldo.Caption
 
 wranF = "A8:" & "O8"
 xl.Range(wranF).Borders.Item(xlEdgeTop).LineStyle = 3
@@ -2656,7 +2649,7 @@ If cli_llave.EOF Then
    MsgBox "Codigo de Proveedor no Existe", 48, Pub_Titulo
    Exit Sub
 End If
-pub_mensaje = "Cambiar por el codigo : " & Chr(13) & cli_llave!cli_codclie & " - " & Trim(cli_llave!cli_nombre) & Chr(13) & "   ¿Desea Continuar... ?"
+pub_mensaje = "Cambiar por el codigo : " & Chr(13) & cli_llave!cli_codclie & " - " & Trim(cli_llave!CLI_NOMBRE) & Chr(13) & "   ¿Desea Continuar... ?"
 Pub_Respuesta = MsgBox(pub_mensaje, Pub_Estilo, Pub_Titulo)
 If Pub_Respuesta = vbNo Then
    Exit Sub
@@ -3866,7 +3859,7 @@ d_Codclie.Caption = Trim(cli_llave!cli_codclie)
 If Trim(cli_llave!cli_codclie) = 1 Then
    d_nomclie.Caption = Trim(far_r!far_cliente)
 Else
-  d_nomclie.Caption = Trim(cli_llave!cli_nombre)
+  d_nomclie.Caption = Trim(cli_llave!CLI_NOMBRE)
 End If
 
 
@@ -4447,7 +4440,7 @@ If grid_fac2.Row > 0 And (grid_fac2.COL = 0 Or grid_fac2.COL = 10) Then
    If Val(grid_fac2.TextMatrix(grid_fac2.Row, 10)) > 0 Then
       frmARTI.Show vbModeless
       DoEvents
-      frmARTI.txt_key.Text = Trim(Str(Val(grid_fac2.TextMatrix(grid_fac2.Row, 10))))
+      frmARTI.Txt_key.Text = Trim(Str(Val(grid_fac2.TextMatrix(grid_fac2.Row, 10))))
       ' Usuario debe presionar Enter para buscar el articulo
       Exit Sub
    End If
@@ -4922,7 +4915,7 @@ Do Until llave_rep01.EOF
       MsgBox "Error en Codigo de cliente, NO EXISTE ...", 48, Pub_Titulo
       GoTo CANCELA
    End If
-    grid_fac2.TextMatrix(f1, 0) = Trim(cli_llave!cli_nombre)
+    grid_fac2.TextMatrix(f1, 0) = Trim(cli_llave!CLI_NOMBRE)
     grid_fac2.TextMatrix(f1, 1) = Trim(cli_llave!cli_codclie)
     grid_fac2.TextMatrix(f1, 2) = Trim(llave_rep01!CAA_CODVEN)
    If Trim(llave_rep01!CAA_TIPDOC) = "FA" Or Trim(llave_rep01!CAA_TIPDOC) = "CC" Then
@@ -5034,7 +5027,7 @@ End If
 pbValue = pbValue + 1
 d_condicion.Caption = "Orden de Compra"
 d_Codclie.Caption = Trim(cli_llave!cli_codclie)
-d_nomclie.Caption = Trim(cli_llave!cli_nombre)
+d_nomclie.Caption = Trim(cli_llave!CLI_NOMBRE)
 d_domicilio.Caption = Trim(cli_llave!CLI_CASA_DIREC)
 d_ruc.Caption = Trim(cli_llave!cli_ruc_esposo)
 d_dire.Caption = "      AGENCIA: " & Trim(Nulo_Valors(par_llave!PAR_AGE_EMP))
@@ -5216,10 +5209,10 @@ Dim Xx As String * 1
 Dim wser As String * 3
 Dim WSRUTA As String
 Dim indice As Integer
-Dim wm As Integer
+Dim wM As Integer
 Dim llave_rep01 As rdoResultset
 Dim PS_REP01 As rdoQuery
-Dim I As Integer
+Dim i As Integer
 Dim VALOR
 Dim loc_xl As Object
 Dim loc_codtra As Integer

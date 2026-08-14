@@ -10211,6 +10211,13 @@ Dim RUTA
 Dim plaza_tasa1
 Dim plaza_tasa2
 PUB_CODUSU = LK_CODUSU
+PUB_RESP_COBRO = 0
+PUB_PAG_MEDIO = ""
+PUB_PAG_EFECTIVO = 0
+PUB_PAG_QR = 0
+PUB_PAG_TARJETA = 0
+PUB_PAG_TOTAL = 0
+PUB_PAG_VUELTO = 0
 WDILVISA_FLAG2401 = ""
 WK_MODI_1401 = ""
 LOC_FLAG_ALLOG = ""
@@ -10251,69 +10258,31 @@ WS_NUMSEC = 0
 WS_TRANSAC = 0
 If LK_CODTRA = 2401 And PUB_PROCESO = 0 Then
     PUB_CODUSU = LK_CODUSU
-    If LK_CODUSU = "SUPERVISOR" Or LK_CODUSU = "ADMIN" Or LK_CODUSU = "SUPER" Or loc_acceso_impres = "A" Then
-         pub_mensaje = "- Grabar e Imprimir (Si)" & Chr(13) & "- Solo grabar (No).." & Chr(13) & "- No Grabar (Cancelar).."
-        Pub_Respuesta = MsgBox(pub_mensaje, vbYesNoCancel + vbInformation + vbDefaultButton2, Pub_Titulo)
+    Load FrmPago
+    FrmPago.Inicia Val(i_neto.Text), (LK_CODUSU = "SUPERVISOR" Or LK_CODUSU = "ADMIN" Or LK_CODUSU = "SUPER" Or loc_acceso_impres = "A")
+    FrmPago.Show 1
+    WS_TRANSAC = 0
+    If PUB_RESP_COBRO = vbNo Then
         WS_TRANSAC = 0
-        If Pub_Respuesta = vbNo Then
-            WS_TRANSAC = 0
-        ElseIf Pub_Respuesta = vbYes Then
-            WS_TRANSAC = 9
-        Else
-            grid_fac.COL = 1
-            grid_fac.Row = grid_fac.Rows - 1
-            grid_fac.SetFocus
-            If TEXTOVAR.Visible Then TEXTOVAR.SetFocus
+    ElseIf PUB_RESP_COBRO = vbYes Then
+        WS_TRANSAC = 9
+    Else
+        grid_fac.COL = 1
+        grid_fac.Row = grid_fac.Rows - 1
+        grid_fac.SetFocus
+        If TEXTOVAR.Visible Then TEXTOVAR.SetFocus
+        Exit Sub
+    End If
+    If WS_TRANSAC = 9 Then
+        If che_detener() Then
+            If Trim(PUB_CODCIA) = "XX" Then
+                MsgBox "Espere un momento, esta colocando Papel en la impresora!!!", 48, Pub_Titulo
+            Else
+                MsgBox "Motivos q no puede imprimir :" & Chr(13) & "1 - ESPERE UN MOMENTO, la Impresora no tiene papel o esta en Pause...." & Chr(13) & "2 - Impresora no definida en esta PC", 48, Pub_Titulo
+            End If
             Exit Sub
         End If
-
-    Else
-        If i_fbg.Text = "G" Or i_fbg.Text = "F" Then
-            pub_mensaje = "Solo grabar en Interno..."
-            Pub_Respuesta = MsgBox(pub_mensaje, vbYesNo + vbInformation + vbDefaultButton2, Pub_Titulo)
-            WS_TRANSAC = 0
-            If Pub_Respuesta = vbYes Then
-                WS_TRANSAC = 0
-            Else
-                grid_fac.COL = 1
-                grid_fac.Row = grid_fac.Rows - 1
-                grid_fac.SetFocus
-                If TEXTOVAR.Visible Then TEXTOVAR.SetFocus
-                Exit Sub
-            End If
-         Else ' otros usuarios
-            pub_mensaje = "Desea Grabar e Imprimir...?"
-            Pub_Respuesta = MsgBox(pub_mensaje, vbYesNo + vbInformation + vbDefaultButton2, Pub_Titulo)
-            WS_TRANSAC = 0
-            If Pub_Respuesta = vbYes Then
-                WS_TRANSAC = 9
-            ElseIf Pub_Respuesta = vbNo Then
-                grid_fac.COL = 1
-                grid_fac.Row = grid_fac.Rows - 1
-                grid_fac.SetFocus
-                If TEXTOVAR.Visible Then TEXTOVAR.SetFocus
-                Exit Sub
-            End If
-         End If
     End If
- If WS_TRANSAC = 9 Then
-    If che_detener() Then
-       If Trim(PUB_CODCIA) = "XX" Then
-          MsgBox "Espere un momento, esta colocando Papel en la impresora!!!", 48, Pub_Titulo
-       Else
-          MsgBox "Motivos q no puede imprimir :" & Chr(13) & "1 - ESPERE UN MOMENTO, la Impresora no tiene papel o esta en Pause...." & Chr(13) & "2 - Impresora no definida en esta PC", 48, Pub_Titulo
-       End If
-       Exit Sub
-    End If
-    'ctaprint = 0
-    'For Each P In Printers
-    '    ctaprint = ctaprint + 1
-    'Next P
-    'If Val(par_llave!PAR_DEVICE_FBG) > ctaprint Then
-    '   MsgBox "Problema Interno de Windows. (Tema: Impresion directa)" & Chr(13) & "Por favor salga del programa y cierre la sesion de su usuario/Reiniciar el Equipo e Ingrese Nuevamente al Sistema", 48, Pub_Titulo
-    '   Exit Sub
-    'End If
- End If
 End If
 
 exito = True
@@ -12337,6 +12306,10 @@ If LK_CODTRA = 5353 Then
 End If
 marca_especial 1
 all_llave.Update
+If LK_CODTRA = 2401 And PUB_PAG_MEDIO <> "" Then
+   pub_cadena = "INSERT INTO PAGOS_VENTA (PAG_CODCIA, PAG_NUMOPER, PAG_FECHA, PAG_MEDIO, PAG_EFECTIVO, PAG_QR, PAG_TARJETA, PAG_TOTAL, PAG_VUELTO, PAG_USUARIO, PAG_FBG, PAG_NUMSER, PAG_NUMFAC) VALUES ('" & LK_CODCIA & "', " & CStr(CLng(PUB_NUM_OPER_XXX)) & ", GETDATE(), '" & PUB_PAG_MEDIO & "', CAST(" & CStr(CLng(PUB_PAG_EFECTIVO * 100)) & " AS MONEY)/100, CAST(" & CStr(CLng(PUB_PAG_QR * 100)) & " AS MONEY)/100, CAST(" & CStr(CLng(PUB_PAG_TARJETA * 100)) & " AS MONEY)/100, CAST(" & CStr(CLng(PUB_PAG_TOTAL * 100)) & " AS MONEY)/100, CAST(" & CStr(CLng(PUB_PAG_VUELTO * 100)) & " AS MONEY)/100, '" & PUB_CODUSU & "', '" & PUB_FBG & "', " & PUB_NUMSER & ", " & PUB_NUMFAC & ")"
+   CN.Execute pub_cadena, rdExecDirect
+End If
 WK_MODI_1401 = "A"
 LOC_FLAG_ALLOG = "A"
 loc_flag_1111 = "A"

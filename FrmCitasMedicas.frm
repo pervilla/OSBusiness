@@ -2,21 +2,21 @@ VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form FrmCitasMedicas 
    Caption         =   "Reservar Cita Medica - Consultorio"
-   ClientHeight    =   7875
+   ClientHeight    =   8190
    ClientLeft      =   60
    ClientTop       =   330
-   ClientWidth     =   9855
+   ClientWidth     =   13290
    LinkTopic       =   "Form1"
    MDIChild        =   -1  'True
-   ScaleHeight     =   7875
-   ScaleWidth      =   9855
+   ScaleHeight     =   8190
+   ScaleWidth      =   13290
    Begin MSFlexGridLib.MSFlexGrid gridCamp 
       Height          =   2295
       Left            =   120
       TabIndex        =   0
-      Top             =   360
-      Width           =   9615
-      _ExtentX        =   16960
+      Top             =   420
+      Width           =   8055
+      _ExtentX        =   14208
       _ExtentY        =   4048
       _Version        =   393216
       Rows            =   1
@@ -26,7 +26,7 @@ Begin VB.Form FrmCitasMedicas
       AllowBigSelection=   0   'False
    End
    Begin VB.Frame Frame1 
-      Caption         =   "PACIENTE"
+      Caption         =   "1. PACIENTE"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -36,18 +36,28 @@ Begin VB.Form FrmCitasMedicas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   2295
+      Height          =   2895
       Left            =   120
       TabIndex        =   2
-      Top             =   2745
-      Width           =   9615
+      Top             =   2760
+      Width           =   8055
+      Begin VB.CommandButton cmdNuevoPaciente 
+         Caption         =   "Nuevo Paciente"
+         Height          =   840
+         Left            =   5880
+         Picture         =   "FrmCitasMedicas.frx":0000
+         Style           =   1  'Graphical
+         TabIndex        =   18
+         Top             =   120
+         Width           =   1575
+      End
       Begin MSFlexGridLib.MSFlexGrid gridPac 
          Height          =   1575
          Left            =   240
          TabIndex        =   5
-         Top             =   600
-         Width           =   9255
-         _ExtentX        =   16325
+         Top             =   1080
+         Width           =   7695
+         _ExtentX        =   13573
          _ExtentY        =   2778
          _Version        =   393216
          Rows            =   1
@@ -58,16 +68,16 @@ Begin VB.Form FrmCitasMedicas
       End
       Begin VB.CommandButton cmdBuscar 
          Caption         =   "Buscar"
-         Height          =   480
+         Height          =   840
          Left            =   4560
-         Picture         =   "FrmCitasMedicas.frx":0000
+         Picture         =   "FrmCitasMedicas.frx":35FD6
          Style           =   1  'Graphical
          TabIndex        =   4
-         Top             =   135
+         Top             =   120
          Width           =   1215
       End
       Begin VB.TextBox txtBuscar 
-         Height          =   285
+         Height          =   405
          Left            =   240
          TabIndex        =   3
          Top             =   270
@@ -75,7 +85,7 @@ Begin VB.Form FrmCitasMedicas
       End
    End
    Begin VB.Frame Frame2 
-      Caption         =   "PAGO / COBRO"
+      Caption         =   "2. PAGO / COBRO"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -88,8 +98,8 @@ Begin VB.Form FrmCitasMedicas
       Height          =   720
       Left            =   120
       TabIndex        =   6
-      Top             =   5100
-      Width           =   9615
+      Top             =   5700
+      Width           =   8055
       Begin VB.OptionButton optReserva 
          Caption         =   "Solo Reservar (paga el dia)"
          Height          =   255
@@ -105,20 +115,30 @@ Begin VB.Form FrmCitasMedicas
          Left            =   3120
          TabIndex        =   8
          Top             =   240
-         Width           =   3150
+         Width           =   2775
       End
       Begin VB.Label lblMonto 
          Alignment       =   1  'Right Justify
          Caption         =   "MONTO: S/ 0.00"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H0000C000&
          Height          =   300
-         Left            =   6400
+         Left            =   6120
          TabIndex        =   9
          Top             =   225
-         Width           =   2900
+         Width           =   1695
       End
    End
    Begin VB.Frame Frame3 
-      Caption         =   "COMPROBANTE DEL DIA"
+      Caption         =   "3. COMPROBANTE DEL DIA"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -131,8 +151,8 @@ Begin VB.Form FrmCitasMedicas
       Height          =   615
       Left            =   120
       TabIndex        =   10
-      Top             =   5865
-      Width           =   9615
+      Top             =   6465
+      Width           =   8055
       Begin VB.OptionButton optBoleta 
          Caption         =   "Boleta"
          Height          =   255
@@ -160,37 +180,29 @@ Begin VB.Form FrmCitasMedicas
       End
    End
    Begin VB.CommandButton cmdSalir 
+      BackColor       =   &H80000004&
       Caption         =   "Salir"
       Height          =   840
-      Left            =   7800
-      Picture         =   "FrmCitasMedicas.frx":170C0
-      Style           =   1  'Graphical
-      TabIndex        =   17
-      Top             =   6615
-      Width           =   1815
-   End
-   Begin VB.CommandButton cmdReservar 
-      Caption         =   "Reservar Cita"
-      Height          =   840
-      Left            =   3300
-      Picture         =   "FrmCitasMedicas.frx":5F94A
+      Left            =   6360
+      Picture         =   "FrmCitasMedicas.frx":4D096
       Style           =   1  'Graphical
       TabIndex        =   16
-      Top             =   6615
-      Width           =   1800
+      Top             =   7200
+      Width           =   1815
    End
-   Begin VB.CommandButton cmdNuevoPaciente 
-      Caption         =   "Nuevo Paciente"
+   Begin VB.CommandButton cmdSoloReservar 
+      BackColor       =   &H00FFFFC0&
+      Caption         =   "Solo Reservar"
       Height          =   840
       Left            =   120
-      Picture         =   "FrmCitasMedicas.frx":A547C
       Style           =   1  'Graphical
-      TabIndex        =   14
-      Top             =   6615
-      Width           =   1700
+      TabIndex        =   15
+      Top             =   7200
+      Width           =   1800
    End
-   Begin VB.Label lblCamp 
-      Caption         =   "CAMPANAS / HORARIOS DISPONIBLES"
+   Begin VB.CommandButton cmdCobrarReservar 
+      BackColor       =   &H0000C000&
+      Caption         =   "Cobrar y Reservar"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -200,18 +212,79 @@ Begin VB.Form FrmCitasMedicas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   255
-      Left            =   120
+      Height          =   840
+      Left            =   2040
+      Style           =   1  'Graphical
+      TabIndex        =   17
+      Top             =   7200
+      Width           =   2000
+   End
+   Begin VB.TextBox txtTicket 
+      BackColor       =   &H00FFFFFF&
+      BeginProperty Font 
+         Name            =   "Courier New"
+         Size            =   9
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   7620
+      Left            =   8160
+      Locked          =   -1  'True
+      MultiLine       =   -1  'True
+      ScrollBars      =   2  'Vertical
+      TabIndex        =   19
+      Top             =   420
+      Width           =   5000
+   End
+   Begin VB.Label lblCamp 
+      Alignment       =   2  'Center
+      BackColor       =   &H00FF8000&
+      Caption         =   "RESERVAR CITA MEDICA - CONSULTORIO"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
+      Left            =   0
       TabIndex        =   1
-      Top             =   90
-      Width           =   4000
+      Top             =   0
+      Width           =   8175
    End
    Begin VB.Label lblMsg 
-      Height          =   255
-      Left            =   5200
-      TabIndex        =   15
-      Top             =   6690
-      Width           =   2450
+      Height          =   735
+      Left            =   4200
+      TabIndex        =   14
+      Top             =   7290
+      Width           =   2100
+   End
+   Begin VB.Label lblTicketPreview 
+      Alignment       =   2  'Center
+      BackColor       =   &H00800000&
+      Caption         =   "VISTA PREVIA DEL TICKET"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FF8000&
+      Height          =   375
+      Left            =   8160
+      TabIndex        =   20
+      Top             =   0
+      Width           =   4995
    End
 End
 Attribute VB_Name = "FrmCitasMedicas"
@@ -242,6 +315,7 @@ Private Sub Form_Load()
     Frame3.Enabled = False
     ConfigurarGrids
     LimpiarSeleccion
+    lblComp.Caption = "Se emitira el dia de la cita (Serie " & SerieConsultorio("03") & "/" & SerieConsultorio("01") & ")"
     CargarCampanias
     BuscarPacientes
 End Sub
@@ -270,6 +344,9 @@ Private Sub ConfigurarGrids()
         .ColWidth(8) = 0
         .ColWidth(9) = 0
         .ColWidth(10) = 0
+        .HighLight = 1
+        .BackColorSel = &HFF8000
+        .ForeColorSel = &HFFFFFF
     End With
     With gridPac
         .TextMatrix(0, 0) = "pid"
@@ -282,6 +359,9 @@ Private Sub ConfigurarGrids()
         .ColWidth(2) = 5200
         .ColWidth(3) = 1100
         .ColWidth(4) = 1300
+        .HighLight = 1
+        .BackColorSel = &HFF8000
+        .ForeColorSel = &HFFFFFF
     End With
 End Sub
 
@@ -300,6 +380,31 @@ Private Sub LimpiarSeleccion()
     mPacNombre = ""
     mPacDNI = ""
     lblMonto.Caption = "MONTO: S/ 0.00"
+    ActualizarVistaTicket
+End Sub
+
+Private Sub ActualizarVistaTicket()
+    Dim ws As String
+    ws = "==================================" & vbCrLf
+    ws = ws & "   TICKET DE RESERVA DE CITA" & vbCrLf
+    ws = ws & "==================================" & vbCrLf
+    If mHorarioId <= 0 Then
+        ws = ws & vbCrLf
+        ws = ws & "   (Seleccione una campana" & vbCrLf
+        ws = ws & "    para ver la reserva)" & vbCrLf
+    Else
+        ws = ws & "PACIENTE  : " & mPacNombre & vbCrLf
+        ws = ws & "DNI       : " & mPacDNI & vbCrLf
+        ws = ws & "MEDICO    : " & mMedico & vbCrLf
+        If Len(mEspecialidad) > 0 Then ws = ws & "ESPEC     : " & mEspecialidad & vbCrLf
+        ws = ws & "CITA      : " & Format(mFechaCitaDate, "dd/mm/yyyy") & " " & mHoraCita & vbCrLf
+        ws = ws & "MONTO     : S/ " & Format(mPrecio, "0.00") & vbCrLf
+        ws = ws & "CANJE POR : " & IIf(optFactura.Value, "FACTURA", "BOLETA") & vbCrLf
+        ws = ws & vbCrLf
+        ws = ws & "TICKET    : TKT-______" & vbCrLf
+        ws = ws & "            (se genera al cobrar)" & vbCrLf
+    End If
+    txtTicket.Text = ws
 End Sub
 
 Private Sub CargarCampanias()
@@ -433,6 +538,7 @@ Private Sub gridCamp_Click()
     mCuposLibres = Val(gridCamp.TextMatrix(i, 6))
     mFechaCitaDate = FechaDeSql(mFechaCita)
     lblMonto.Caption = "MONTO: S/ " & Format(mPrecio, "0.00")
+    ActualizarVistaTicket
 End Sub
 
 Private Sub gridPac_Click()
@@ -448,6 +554,15 @@ Private Sub gridPac_Click()
     Else
         optBoleta.Value = True
     End If
+    ActualizarVistaTicket
+End Sub
+
+Private Sub optBoleta_Click()
+    ActualizarVistaTicket
+End Sub
+
+Private Sub optFactura_Click()
+    ActualizarVistaTicket
 End Sub
 
 Private Function FechaDeSql(ByVal wFec As String) As Date
@@ -464,6 +579,31 @@ End Function
 
 Private Function FechaSql() As String
     FechaSql = Format(mFechaCitaDate, "dd/mm/yyyy")
+End Function
+
+Private Function SerieConsultorio(ByVal tipoDoc As String) As String
+    Dim rs As rdoResultset
+    Dim wLocal As Long
+    Dim wDef As String
+    wLocal = Val(pu_codCaja)
+    If wLocal = 0 Then wLocal = 1
+    If wLocal = 2 Then
+        wDef = "20"
+    ElseIf wLocal = 3 Then
+        wDef = "22"
+    Else
+        wDef = "21"
+    End If
+    On Error Resume Next
+    Set rs = CN.OpenResultset("SELECT TOP 1 prefijo FROM CM_SERIE_DOCUMENTOS WHERE local_id = " & wLocal & " AND tipo_documento = '" & tipoDoc & "' AND tipo_servicio = 'CONSULTORIO' AND estado = 1", rdOpenKeyset, rdConcurReadOnly)
+    If Not rs.EOF Then
+        SerieConsultorio = Trim(Nulo_Valors(rs!prefijo))
+    Else
+        SerieConsultorio = wDef
+    End If
+    rs.Close
+    Set rs = Nothing
+    On Error GoTo 0
 End Function
 
 Private Sub cmdBuscar_Click()
@@ -499,8 +639,12 @@ Private Sub cmdNuevoPaciente_Click()
     Unload FrmPacienteNuevo
 End Sub
 
-Private Sub cmdReservar_Click()
-    GuardarCita optPagado.Value
+Private Sub cmdSoloReservar_Click()
+    GuardarCita False
+End Sub
+
+Private Sub cmdCobrarReservar_Click()
+    GuardarCita True
 End Sub
 
 Private Sub cmdSalir_Click()

@@ -11,17 +11,17 @@ Begin VB.MDIForm MDIForm1
    Icon            =   "MDIGeneral.frx":0000
    LinkTopic       =   "MDIForm1"
    LockControls    =   -1  'True
-   Picture         =   "MDIGeneral.frx":57E2
+   Picture         =   "MDIGeneral.frx":25168
    WindowState     =   2  'Maximized
    Begin MSComctlLib.Toolbar Toolbar2 
       Align           =   2  'Align Bottom
-      Height          =   420
+      Height          =   660
       Left            =   0
       TabIndex        =   0
-      Top             =   14895
-      Width           =   28560
-      _ExtentX        =   50377
-      _ExtentY        =   741
+      Top             =   12225
+      Width           =   19755
+      _ExtentX        =   34846
+      _ExtentY        =   1164
       ButtonWidth     =   635
       ButtonHeight    =   582
       Appearance      =   1
@@ -47,7 +47,7 @@ Begin VB.MDIForm MDIForm1
       Begin VB.CommandButton cmdbuscacia 
          Height          =   350
          Left            =   6720
-         Picture         =   "MDIGeneral.frx":55FF7
+         Picture         =   "MDIGeneral.frx":7597D
          Style           =   1  'Graphical
          TabIndex        =   4
          Top             =   0
@@ -189,8 +189,8 @@ Begin VB.MDIForm MDIForm1
       Left            =   0
       TabIndex        =   10
       Top             =   0
-      Width           =   28560
-      _ExtentX        =   50377
+      Width           =   19755
+      _ExtentX        =   34846
       _ExtentY        =   688
       ButtonWidth     =   661
       ButtonHeight    =   635
@@ -399,7 +399,7 @@ Begin VB.MDIForm MDIForm1
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   1
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":56439
+            Picture         =   "MDIGeneral.frx":75DBF
             Key             =   ""
          EndProperty
       EndProperty
@@ -417,75 +417,75 @@ Begin VB.MDIForm MDIForm1
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   18
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":5688D
+            Picture         =   "MDIGeneral.frx":76213
             Key             =   ""
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":56CE1
+            Picture         =   "MDIGeneral.frx":76667
             Key             =   ""
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":57135
+            Picture         =   "MDIGeneral.frx":76ABB
             Key             =   ""
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":57589
+            Picture         =   "MDIGeneral.frx":76F0F
             Key             =   ""
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":579DD
+            Picture         =   "MDIGeneral.frx":77363
             Key             =   ""
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":57E31
+            Picture         =   "MDIGeneral.frx":777B7
             Key             =   ""
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":58285
+            Picture         =   "MDIGeneral.frx":77C0B
             Key             =   ""
          EndProperty
          BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":586D9
+            Picture         =   "MDIGeneral.frx":7805F
             Key             =   ""
          EndProperty
          BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":58B2D
+            Picture         =   "MDIGeneral.frx":784B3
             Key             =   ""
          EndProperty
          BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":58E49
+            Picture         =   "MDIGeneral.frx":787CF
             Key             =   ""
          EndProperty
          BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":5929D
+            Picture         =   "MDIGeneral.frx":78C23
             Key             =   ""
          EndProperty
          BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":596F1
+            Picture         =   "MDIGeneral.frx":79077
             Key             =   ""
          EndProperty
          BeginProperty ListImage13 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":59B45
+            Picture         =   "MDIGeneral.frx":794CB
             Key             =   ""
          EndProperty
          BeginProperty ListImage14 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":59F99
+            Picture         =   "MDIGeneral.frx":7991F
             Key             =   ""
          EndProperty
          BeginProperty ListImage15 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":5A3ED
+            Picture         =   "MDIGeneral.frx":79D73
             Key             =   ""
          EndProperty
          BeginProperty ListImage16 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":5A841
+            Picture         =   "MDIGeneral.frx":7A1C7
             Key             =   ""
          EndProperty
          BeginProperty ListImage17 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":5AC95
+            Picture         =   "MDIGeneral.frx":7A61B
             Key             =   ""
          EndProperty
          BeginProperty ListImage18 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "MDIGeneral.frx":5B0E9
+            Picture         =   "MDIGeneral.frx":7AA6F
             Key             =   ""
          EndProperty
       EndProperty
@@ -1278,7 +1278,7 @@ Dim Wfile As String
 Dim WFORM As String
 Public Sub LLENA_ACCESO_OTROS(WSOTROS As String)
 Dim W1 As String * 2
-Dim I, wPosF, WPosV, cuenta As Integer
+Dim i, wPosF, WPosV, cuenta As Integer
 Dim sal As Boolean
 Dim cade As String
 Dim WNUM As Integer
@@ -1293,11 +1293,11 @@ cade = Trim(WSOTROS)
 cuenta = 0
 wPosF = 1
 a = 0
-For I = 1 To Len(cade)
- If Mid(cade, I, 1) = "." Then
+For i = 1 To Len(cade)
+ If Mid(cade, i, 1) = "." Then
    a = a + 1
  End If
-Next I
+Next i
 lk_OTROS_Count = a
 ReDim lk_OTROS(a)
 Do Until cuenta = a
@@ -1336,7 +1336,7 @@ Dim wflag As String * 1
 Dim F, g, fg As Integer
 Dim wserie As Currency
 Dim wfecha
-Dim WS
+Dim ws
 LogInfo "MDI: Inicio MDIForm_Load"
 cmdbuscacia.Enabled = False
 ciades = ""
@@ -1487,7 +1487,7 @@ Do Until cuenta = a
     PUB_CODCIA = Format(WNUM, "00")
     par.MoveFirst
     Do While Not par.EOF
-      If Trim(par!PAR_CODCIA) = PUB_CODCIA Then Exit Do
+      If Trim(par!par_codcia) = PUB_CODCIA Then Exit Do
       par.MoveNext
     Loop
     If Not par.EOF Then
@@ -1782,7 +1782,7 @@ sigue:
   '  If WS = "" Then
       GoTo sigue
   '  End If
-    wserie = Val(WS)
+    wserie = Val(ws)
     If Val(PRO_DES(GEN!GEN_CFP)) = Val(wserie) Then
        GEN.Edit
        GEN!GEN_CBS = -9
@@ -2363,7 +2363,7 @@ Dim var As String
 MsgBox "En Construcciro n... " & Chr(13) & "Para mayor informaciro n llamar al Telf. Celular: (044) 9604779 Nextel 829*6446 - Trujillo - Perú", vbInformation, "Asesoria y Soporte"
 Exit Sub
 Dim ww As Form
-Dim I
+Dim i
 On Error GoTo OJO
 var = Trim(MDIForm1.ActiveForm.Name)
 If UCase(var) = "FORMGEN" Then

@@ -1,26 +1,31 @@
 VERSION 5.00
 Begin VB.Form FrmPacienteNuevo 
    Caption         =   "Nuevo Paciente"
-   ClientHeight    =   2865
+   ClientHeight    =   3465
    ClientLeft      =   60
    ClientTop       =   345
    ClientWidth     =   6600
+   Icon            =   "FrmPacienteNuevo.frx":0000
    LinkTopic       =   "Form1"
-   ScaleHeight     =   2865
+   ScaleHeight     =   3465
    ScaleWidth      =   6600
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton cmdCancelar 
       Caption         =   "Cancelar"
-      Height          =   450
-      Left            =   4140
+      Height          =   915
+      Left            =   4920
+      Picture         =   "FrmPacienteNuevo.frx":35FD6
+      Style           =   1  'Graphical
       TabIndex        =   11
       Top             =   2220
       Width           =   1500
    End
    Begin VB.CommandButton cmdGuardar 
       Caption         =   "Guardar"
-      Height          =   450
-      Left            =   240
+      Height          =   915
+      Left            =   3360
+      Picture         =   "FrmPacienteNuevo.frx":7E860
+      Style           =   1  'Graphical
       TabIndex        =   10
       Top             =   2220
       Width           =   1500
@@ -61,12 +66,14 @@ Begin VB.Form FrmPacienteNuevo
       Width           =   2400
    End
    Begin VB.CommandButton cmdFactiliza 
-      Caption         =   "Factiliza"
-      Height          =   360
+      Appearance      =   0  'Flat
+      Height          =   480
       Left            =   4620
+      Picture         =   "FrmPacienteNuevo.frx":8A0E6
+      Style           =   1  'Graphical
       TabIndex        =   12
-      Top             =   225
-      Width           =   1500
+      Top             =   105
+      Width           =   540
    End
    Begin VB.Label lbl1 
       Caption         =   "DNI / RUC:"
@@ -101,7 +108,7 @@ Begin VB.Form FrmPacienteNuevo
       Width           =   1800
    End
    Begin VB.Label lbl5 
-      Caption         =   "Fecha nacimiento (dd/mm/aaaa):"
+      Caption         =   "Nacimiento (dd/mm/aaaa):"
       Height          =   255
       Left            =   240
       TabIndex        =   8
@@ -126,22 +133,26 @@ Private Sub Form_Load()
     Nombre = ""
 End Sub
 
-Private Sub cmdCancelar_Click()
+Private Sub cmdcancelar_Click()
     Me.Hide
 End Sub
 
 Private Sub cmdFactiliza_Click()
     On Error GoTo ErrorHTTP
     Dim ws_dni As String
-    Dim ws_tipo As String
+    Dim WS_TIPO As String
     Dim ws_url As String
     Dim ws_response As String
     Dim http As Object
     Dim ws_nombre As String
     Dim ws_direccion As String
     Dim ws_fec As String
-    Dim ws_estado As String
+    Dim WS_ESTADO As String
     Dim ws_token As String
+    Dim rsLocal As rdoResultset
+    Dim wCiaL As Long
+    Dim wCodExist As Long
+    Dim wMsgExist As String
 
     ws_dni = Trim(txtDNI.Text)
     If Len(ws_dni) <> 8 And Len(ws_dni) <> 11 Then
@@ -149,17 +160,58 @@ Private Sub cmdFactiliza_Click()
         Exit Sub
     End If
     If Len(ws_dni) = 8 Then
-        ws_tipo = "DNI"
+        WS_TIPO = "DNI"
     Else
-        ws_tipo = "RUC"
+        WS_TIPO = "RUC"
     End If
+
+    ' Comprobar en BD local antes de consultar la API
+    wCiaL = Val(LK_CODCIA)
+    If wCiaL = 0 Then wCiaL = 25
+    If WS_TIPO = "DNI" Then
+        Set rsLocal = CN.OpenResultset("SELECT TOP 1 CLI_CODCLIE, CLI_NOMBRE, CLI_TELEF1, CLI_CASA_DIREC, CLI_FECHA_NAC FROM CLIENTES WHERE CLI_RUC_ESPOSA = '" & ws_dni & "' AND CLI_CODCIA = " & wCiaL, rdOpenKeyset, rdConcurReadOnly)
+    Else
+        Set rsLocal = CN.OpenResultset("SELECT TOP 1 CLI_CODCLIE, CLI_NOMBRE, CLI_TELEF1, CLI_CASA_DIREC, CLI_FECHA_NAC FROM CLIENTES WHERE CLI_RUC_ESPOSO = '" & ws_dni & "' AND CLI_CODCIA = " & wCiaL, rdOpenKeyset, rdConcurReadOnly)
+    End If
+    If Not rsLocal.EOF Then
+        wCodExist = Val(rsLocal!cli_codclie)
+        ClienteId = wCodExist
+        txtNombre.Text = Trim(Nulo_Valors(rsLocal!CLI_NOMBRE))
+        txtTelefono.Text = Trim(Nulo_Valors(rsLocal!cli_telef1))
+        txtDireccion.Text = Trim(Nulo_Valors(rsLocal!CLI_CASA_DIREC))
+        If IsDate(Nulo_Valors(rsLocal!CLI_FECHA_NAC)) Then
+            txtFechaNac.Text = Format(CDate(Nulo_Valors(rsLocal!CLI_FECHA_NAC)), "dd/mm/yyyy")
+        Else
+            txtFechaNac.Text = ""
+        End If
+        rsLocal.Close
+        Set rsLocal = Nothing
+        Set rsLocal = CN.OpenResultset("SELECT id FROM CM_PACIENTES WHERE cliente_id = " & wCodExist, rdOpenKeyset, rdConcurReadOnly)
+        If Not rsLocal.EOF Then
+            PacienteId = Val(rsLocal!ID)
+            wMsgExist = "El " & WS_TIPO & " " & ws_dni & " ya existe en el sistema (Cliente Nro " & wCodExist & ")." & Chr(13) & _
+                        "Es paciente registrado del consultorio. Se cargaron sus datos para revision." & Chr(13) & Chr(13) & _
+                        "Si es el mismo paciente, use GUARDAR para actualizar, o seleccionelo desde la lista del modulo de citas."
+        Else
+            PacienteId = 0
+            wMsgExist = "El " & WS_TIPO & " " & ws_dni & " ya existe en el sistema (Cliente Nro " & wCodExist & ")" & Chr(13) & _
+                        "pero aun no es paciente del consultorio." & Chr(13) & Chr(13) & _
+                        "Puede usar GUARDAR para registrarlo como paciente sin duplicar el cliente."
+        End If
+        rsLocal.Close
+        Set rsLocal = Nothing
+        MsgBox wMsgExist, vbInformation, Pub_Titulo
+        Exit Sub
+    End If
+    rsLocal.Close
+    Set rsLocal = Nothing
 
     ws_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1NTgiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJjb25zdWx0b3IifQ.K8PwFsfNIpIl2ve0KJ2F08JZYLdGaBEx6_PvMRCm_Mw"
 
     Screen.MousePointer = 11
     DoEvents
 
-    If ws_tipo = "DNI" Then
+    If WS_TIPO = "DNI" Then
         ws_url = "https://api.factiliza.com/v1/dni/info/" & ws_dni
     Else
         ws_url = "https://api.factiliza.com/v1/ruc/info/" & ws_dni
@@ -182,7 +234,7 @@ Private Sub cmdFactiliza_Click()
     Set http = Nothing
     Screen.MousePointer = 0
 
-    If ws_tipo = "DNI" Then
+    If WS_TIPO = "DNI" Then
         ws_nombre = ExtraerJSON(ws_response, "nombre_completo")
         ws_direccion = ExtraerJSON(ws_response, "direccion_completa")
         ws_fec = ExtraerJSON(ws_response, "fecha_nacimiento")
@@ -193,27 +245,30 @@ Private Sub cmdFactiliza_Click()
     Else
         ws_nombre = ExtraerJSON(ws_response, "nombre_o_razon_social")
         ws_direccion = ExtraerJSON(ws_response, "direccion_completa")
-        ws_estado = ExtraerJSON(ws_response, "estado")
+        WS_ESTADO = ExtraerJSON(ws_response, "estado")
     End If
 
     If ws_nombre = "" Then
-        MsgBox "No se encontro informacion para el " & ws_tipo & ": " & ws_dni, vbExclamation, Pub_Titulo
+        MsgBox "No se encontro informacion para el " & WS_TIPO & ": " & ws_dni, vbExclamation, Pub_Titulo
         Exit Sub
     End If
 
-    If ws_tipo = "RUC" And Len(ws_estado) > 0 Then
-        If UCase(ws_estado) <> "ACTIVO" And UCase(ws_estado) <> "HABIDO" Then
-            MsgBox "El RUC " & ws_dni & " esta en estado: " & ws_estado & Chr(13) & _
+    If WS_TIPO = "RUC" And Len(WS_ESTADO) > 0 Then
+        If UCase(WS_ESTADO) <> "ACTIVO" And UCase(WS_ESTADO) <> "HABIDO" Then
+            MsgBox "El RUC " & ws_dni & " esta en estado: " & WS_ESTADO & Chr(13) & _
                    "Verifique la informacion antes de continuar.", vbExclamation, Pub_Titulo
         End If
     End If
 
+    ' Nuevo paciente desde la API: asegurar que no arrastre un cliente existente
+    ClienteId = 0
+    PacienteId = 0
     txtNombre.Text = ws_nombre
     If Len(ws_direccion) > 0 Then txtDireccion.Text = ws_direccion
     If Len(ws_fec) > 0 Then txtFechaNac.Text = ws_fec
 
-    MsgBox ws_tipo & " importado desde Factiliza:" & Chr(13) & _
-           ws_tipo & ": " & ws_dni & Chr(13) & _
+    MsgBox WS_TIPO & " importado desde Factiliza:" & Chr(13) & _
+           WS_TIPO & ": " & ws_dni & Chr(13) & _
            "Nombre: " & ws_nombre & Chr(13) & _
            "Direccion: " & ws_direccion, vbInformation, Pub_Titulo
     Exit Sub
@@ -245,19 +300,19 @@ End Function
 
 Private Sub cmdGuardar_Click()
     On Error GoTo EH
-    Dim wNombre As String
+    Dim wnombre As String
     Dim wDNI As String
     Dim wTel As String
     Dim wDir As String
     Dim wFec As String
     Dim wFecSql As String
-    Dim wCod As Long
+    Dim wcod As Long
     Dim wCia As Long
     Dim wSql As String
     Dim rs As rdoResultset
 
-    wNombre = Trim(UCase(txtNombre.Text))
-    If Len(wNombre) < 3 Then
+    wnombre = Trim(UCase(txtNombre.Text))
+    If Len(wnombre) < 3 Then
         MsgBox "Ingrese el nombre completo del paciente.", vbExclamation, Pub_Titulo
         Exit Sub
     End If
@@ -283,50 +338,86 @@ Private Sub cmdGuardar_Click()
     Screen.MousePointer = 11
     DoEvents
 
-    Set rs = CN.OpenResultset("SELECT ISNULL(MAX(CLI_CODCLIE), 0) + 1 AS nuevo FROM CLIENTES WHERE CLI_CP = 'C' AND CLI_CODCIA = " & wCia, rdOpenKeyset, rdConcurReadOnly)
-    wCod = Val(Nulo_Valor0(rs!nuevo))
-    rs.Close
-    Set rs = Nothing
+    ' Determinar si el DNI/RUC ya existe en CLIENTES (evita duplicados)
+    ClienteId = 0
+    If Len(wDNI) = 8 Then
+        Set rs = CN.OpenResultset("SELECT TOP 1 CLI_CODCLIE FROM CLIENTES WHERE CLI_RUC_ESPOSA = '" & SQLC(wDNI) & "' AND CLI_CODCIA = " & wCia, rdOpenKeyset, rdConcurReadOnly)
+        If Not rs.EOF Then ClienteId = Val(rs!cli_codclie)
+        rs.Close
+        Set rs = Nothing
+    ElseIf Len(wDNI) = 11 Then
+        Set rs = CN.OpenResultset("SELECT TOP 1 CLI_CODCLIE FROM CLIENTES WHERE CLI_RUC_ESPOSO = '" & SQLC(wDNI) & "' AND CLI_CODCIA = " & wCia, rdOpenKeyset, rdConcurReadOnly)
+        If Not rs.EOF Then ClienteId = Val(rs!cli_codclie)
+        rs.Close
+        Set rs = Nothing
+    End If
 
-    wSql = "INSERT INTO CLIENTES (" & _
-           "CLI_CODCLIE, CLI_CODCIA, CLI_CP, CLI_NOMBRE, CLI_NOMBRE_ESPOSO, CLI_NOMBRE_ESPOSA, CLI_NOMBRE_EMPRESA, " & _
-           "CLI_123, CLI_TELEF1, CLI_TELEF2, CLI_CASA_DIREC, CLI_CASA_NUM, CLI_CASA_ZONA, CLI_CASA_SUBZONA, " & _
-           "CLI_TRAB_DIREC, CLI_TRAB_NUM, CLI_TRAB_ZONA, CLI_TRAB_SUBZONA, CLI_TRAB_PROV, " & _
-           "CLI_RUC_ESPOSO, CLI_RUC_ESPOSA, CLI_RUC_EMPRESA, " & _
-           "CLI_CASA1, CLI_CASA2, CLI_REGPUB1, CLI_REGPUB2, CLI_AUTOAVALUO, CLI_PRENDA, " & _
-           "CLI_AUTO1, CLI_AUTO2, CLI_IGV_INCLUIDO, CLI_OTRO_CONTR, CLI_LETRA, CLI_LIMCRE, CLI_FECHA_FAC, " & _
-           "CLI_TIPO_BLOQ1, CLI_TIPO_BLOQ2, CLI_TIPO_BLOQ3, CLI_TIPO_BLOQ4, CLI_DET_TOT, " & _
-           "CLI_NOM_LET1, CLI_NOM_LET2, CLI_GRUPO, CLI_SUBGRUPO, CLI_DIVISION, CLI_ESTADO, CLI_MONEDA, " & _
-           "CLI_CODART, CLI_NUCLEO, CLI_CUENTA_CONTAB, CLI_CIA_REF, CLI_PORDESCTO, CLI_SALDO, CLI_PRECIOS, " & _
-           "CLI_DIA_VISITA, CLI_ZONA_NEW, CLI_PROGRAMADO, CLI_LUGAR_CASA, CLI_LUGAR_TRAB, CLI_CUENTA_CONTAB2, " & _
-           "CLI_DIAS_CRED, CLI_DIAS_FAC, CLI_CUENTA_CONTAB22, CLI_LIMCRE2, CLI_TIPO, CLI_FECHAHORA, " & _
-           "CLI_CIARELA, CLI_MARCAID, CLI_TIPOCLI, CLI_FECHA_NAC, CLI_HISTORIA) VALUES (" & _
-           wCod & ", " & wCia & ", 'C', '" & SQLC(wNombre) & "', '" & SQLC(wNombre) & "', '', '', " & _
-           "1, '" & SQLC(wTel) & "', '', '" & SQLC(Left(wDir, 120)) & "', 0, 0, 0, " & _
-           "'" & SQLC(Left(wDir, 30)) & "', 0, 0, 0, 0, " & _
-           "'" & SQLC(IIf(Len(wDNI) = 11, wDNI, "")) & "', '" & SQLC(IIf(Len(wDNI) = 8, wDNI, "")) & "', '', " & _
-           "'', '', '', '', '', '', " & _
-           "'07', '', '', 1, 0, 0, 0, " & _
-           "1, '', '', '', '', " & _
-           "'', '', 1, 0, 0, 'A', 'S', " & _
-           "'', '', '', '', 0, 0, '', " & _
-           "3, 0, '', 1, 1, 1, " & _
-           "0, 2, '', 0, '', '" & Format(Date, "yy/mm/dd") & " " & Format(Time, "hh:mm AM/PM") & " CM', " & _
-           "'', '', 7, " & wFecSql & ", 0)"
-    CN.Execute wSql, rdExecDirect
+    If ClienteId > 0 Then
+        ' Ya existe: actualizar CLIENTES
+        wcod = ClienteId
+        wSql = "UPDATE CLIENTES SET CLI_NOMBRE = '" & SQLC(wnombre) & "', CLI_NOMBRE_ESPOSO = '" & SQLC(wnombre) & "', " & _
+               "CLI_TELEF1 = '" & SQLC(wTel) & "', CLI_CASA_DIREC = '" & SQLC(Left(wDir, 120)) & "', " & _
+               "CLI_TRAB_DIREC = '" & SQLC(Left(wDir, 30)) & "', " & _
+               "CLI_RUC_ESPOSO = '" & SQLC(IIf(Len(wDNI) = 11, wDNI, "")) & "', CLI_RUC_ESPOSA = '" & SQLC(IIf(Len(wDNI) = 8, wDNI, "")) & "', " & _
+               "CLI_FECHA_NAC = " & wFecSql & " WHERE CLI_CODCLIE = " & wcod & " AND CLI_CODCIA = " & wCia
+        CN.Execute wSql, rdExecDirect
+    Else
+        ' Nuevo cliente
+        Set rs = CN.OpenResultset("SELECT ISNULL(MAX(CLI_CODCLIE), 0) + 1 AS nuevo FROM CLIENTES WHERE CLI_CP = 'C' AND CLI_CODCIA = " & wCia, rdOpenKeyset, rdConcurReadOnly)
+        wcod = Val(Nulo_Valor0(rs!nuevo))
+        rs.Close
+        Set rs = Nothing
 
-    wSql = "INSERT INTO DIRCLI (CODCIA, CODCLI, CP, DIREC, DIRCOMP, REF, CLI_LUGAR_TRAB, CLI_TRAB_ZONA, CLI_CASA_SUBZONA, CLI_TRAB_SUBZONA, NUMERO) VALUES (" & _
-           wCia & ", " & wCod & ", 'C', '" & SQLC(Left(wDir, 60)) & "', '" & SQLC(Left(wDir, 100)) & "', '', 0, 0, 0, 0, 0)"
-    CN.Execute wSql, rdExecDirect
+        wSql = "INSERT INTO CLIENTES (" & _
+               "CLI_CODCLIE, CLI_CODCIA, CLI_CP, CLI_NOMBRE, CLI_NOMBRE_ESPOSO, CLI_NOMBRE_ESPOSA, CLI_NOMBRE_EMPRESA, " & _
+               "CLI_123, CLI_TELEF1, CLI_TELEF2, CLI_CASA_DIREC, CLI_CASA_NUM, CLI_CASA_ZONA, CLI_CASA_SUBZONA, " & _
+               "CLI_TRAB_DIREC, CLI_TRAB_NUM, CLI_TRAB_ZONA, CLI_TRAB_SUBZONA, CLI_TRAB_PROV, " & _
+               "CLI_RUC_ESPOSO, CLI_RUC_ESPOSA, CLI_RUC_EMPRESA, " & _
+               "CLI_CASA1, CLI_CASA2, CLI_REGPUB1, CLI_REGPUB2, CLI_AUTOAVALUO, CLI_PRENDA, " & _
+               "CLI_AUTO1, CLI_AUTO2, CLI_IGV_INCLUIDO, CLI_OTRO_CONTR, CLI_LETRA, CLI_LIMCRE, CLI_FECHA_FAC, " & _
+               "CLI_TIPO_BLOQ1, CLI_TIPO_BLOQ2, CLI_TIPO_BLOQ3, CLI_TIPO_BLOQ4, CLI_DET_TOT, " & _
+               "CLI_NOM_LET1, CLI_NOM_LET2, CLI_GRUPO, CLI_SUBGRUPO, CLI_DIVISION, CLI_ESTADO, CLI_MONEDA, " & _
+               "CLI_CODART, CLI_NUCLEO, CLI_CUENTA_CONTAB, CLI_CIA_REF, CLI_PORDESCTO, CLI_SALDO, CLI_PRECIOS, " & _
+               "CLI_DIA_VISITA, CLI_ZONA_NEW, CLI_PROGRAMADO, CLI_LUGAR_CASA, CLI_LUGAR_TRAB, CLI_CUENTA_CONTAB2, " & _
+               "CLI_DIAS_CRED, CLI_DIAS_FAC, CLI_CUENTA_CONTAB22, CLI_LIMCRE2, CLI_TIPO, CLI_FECHAHORA, " & _
+               "CLI_CIARELA, CLI_MARCAID, CLI_TIPOCLI, CLI_FECHA_NAC, CLI_HISTORIA) VALUES (" & _
+               wcod & ", " & wCia & ", 'C', '" & SQLC(wnombre) & "', '" & SQLC(wnombre) & "', '', '', " & _
+               "1, '" & SQLC(wTel) & "', '', '" & SQLC(Left(wDir, 120)) & "', 0, 0, 0, " & _
+               "'" & SQLC(Left(wDir, 30)) & "', 0, 0, 0, 0, " & _
+               "'" & SQLC(IIf(Len(wDNI) = 11, wDNI, "")) & "', '" & SQLC(IIf(Len(wDNI) = 8, wDNI, "")) & "', '', " & _
+               "'', '', '', '', '', '', " & _
+               "'07', '', '', 1, 0, 0, 0, " & _
+               "1, '', '', '', '', " & _
+               "'', '', 1, 0, 0, 'A', 'S', " & _
+               "'', '', '', '', 0, 0, '', " & _
+               "3, 0, '', 1, 1, 1, " & _
+               "0, 2, '', 0, '', '" & Format(Date, "yy/mm/dd") & " " & Format(Time, "hh:mm AM/PM") & " CM', " & _
+               "'', '', 7, " & wFecSql & ", 0)"
+        CN.Execute wSql, rdExecDirect
 
-    CN.Execute "INSERT INTO CM_PACIENTES (cliente_id, estado) VALUES (" & wCod & ", 1)", rdExecDirect
-    Set rs = CN.OpenResultset("SELECT @@IDENTITY AS nuevo_id", rdOpenKeyset, rdConcurReadOnly)
-    If Not rs.EOF Then PacienteId = Val(rs!nuevo_id)
-    rs.Close
-    Set rs = Nothing
+        wSql = "INSERT INTO DIRCLI (CODCIA, CODCLI, CP, DIREC, DIRCOMP, REF, CLI_LUGAR_TRAB, CLI_TRAB_ZONA, CLI_CASA_SUBZONA, CLI_TRAB_SUBZONA, NUMERO) VALUES (" & _
+               wCia & ", " & wcod & ", 'C', '" & SQLC(Left(wDir, 60)) & "', '" & SQLC(Left(wDir, 100)) & "', '', 0, 0, 0, 0, 0)"
+        CN.Execute wSql, rdExecDirect
+    End If
 
-    ClienteId = wCod
-    Nombre = wNombre
+    ' Asegurar que exista como paciente CM_PACIENTES
+    Set rs = CN.OpenResultset("SELECT id FROM CM_PACIENTES WHERE cliente_id = " & wcod, rdOpenKeyset, rdConcurReadOnly)
+    If Not rs.EOF Then
+        PacienteId = Val(rs!ID)
+        rs.Close
+        Set rs = Nothing
+    Else
+        rs.Close
+        Set rs = Nothing
+        CN.Execute "INSERT INTO CM_PACIENTES (cliente_id, estado) VALUES (" & wcod & ", 1)", rdExecDirect
+        Set rs = CN.OpenResultset("SELECT @@IDENTITY AS nuevo_id", rdOpenKeyset, rdConcurReadOnly)
+        If Not rs.EOF Then PacienteId = Val(rs!nuevo_id)
+        rs.Close
+        Set rs = Nothing
+    End If
+
+    ClienteId = wcod
+    Nombre = wnombre
 
     Screen.MousePointer = 0
     Me.Hide
@@ -336,6 +427,6 @@ EH:
     MsgBox "Error al guardar el paciente: " & Err.Description, vbExclamation, Pub_Titulo
 End Sub
 
-Private Function SQLC(ByVal wValor As String) As String
-    SQLC = Replace(wValor, "'", "''")
+Private Function SQLC(ByVal wvalor As String) As String
+    SQLC = Replace(wvalor, "'", "''")
 End Function

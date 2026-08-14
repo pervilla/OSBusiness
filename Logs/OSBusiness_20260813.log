@@ -1,0 +1,137 @@
+========================================
+OSBusiness - Inicio de Sesion: 13/08/2026 08:19:21
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+08:19:21 [INFO] [GENERAL] Splash: Inicio Form_Load
+08:19:21 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+08:19:22 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+08:19:22 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+08:19:22 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+08:19:22 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+08:19:22 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+08:19:22 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+08:19:22 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+08:19:22 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+08:19:22 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+08:19:22 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+08:19:22 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+08:19:25 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+08:19:29 [TRACE] [GENERAL] MDI: Toolbar Click - FORMGEN
+08:19:30 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+08:19:31 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+08:19:31 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+08:19:31 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+08:19:42 [TRACE] [GENERAL] PROC_LISVIEW: Inicio numarchi=7
+08:19:42 [TRACE] [GENERAL] PROC_LISVIEW: PrepararListView, SQL=SELECT TOP 1000 ART_KEY, ART_CODCIA, LTRIM(RTRIM(ART_NOMBRE)) ART_NOMBRE, ART_ALTERNO,ART_SUBGRU, cia_actual.ARM_STOCK as ARM_STOCK, PreC.PRE_EQUIV,PreC.PRE_UNIDAD, PreU.PRE_PRE1,PreC.PRE_PRE1 PRE_PRE
+08:19:42 [TRACE] [GENERAL] PROC_LISVIEW: Fin items=111/111
+09:08:14 [TRACE] [GENERAL] MDI: Toolbar Click - Salir
+========================================
+OSBusiness - Inicio de Sesion: 13/08/2026 11:04:00
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+11:04:00 [INFO] [GENERAL] Splash: Inicio Form_Load
+11:04:00 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+11:04:01 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+11:04:01 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+11:04:01 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+11:04:01 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+11:04:01 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+11:04:01 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+11:04:01 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+11:04:01 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+11:04:01 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+11:04:01 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+11:04:01 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+11:04:03 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+11:04:05 [TRACE] [GENERAL] MDI: Toolbar Click - FORMGEN
+11:04:07 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+11:04:07 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+11:04:07 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+11:04:07 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+11:04:15 [TRACE] [GENERAL] PROC_LISVIEW: Inicio numarchi=7
+11:04:15 [TRACE] [GENERAL] PROC_LISVIEW: PrepararListView, SQL=SELECT TOP 1000 ART_KEY, ART_CODCIA, LTRIM(RTRIM(ART_NOMBRE)) ART_NOMBRE, ART_ALTERNO,ART_SUBGRU, cia_actual.ARM_STOCK as ARM_STOCK, PreC.PRE_EQUIV,PreC.PRE_UNIDAD, PreU.PRE_PRE1,PreC.PRE_PRE1 PRE_PRE
+11:04:15 [TRACE] [GENERAL] PROC_LISVIEW: Fin items=111/111
+========================================
+OSBusiness - Inicio de Sesion: 13/08/2026 11:09:30
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+11:09:30 [INFO] [GENERAL] Splash: Inicio Form_Load
+11:09:30 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+11:09:31 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+11:09:31 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+11:09:31 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+11:09:31 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+11:09:31 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+11:09:31 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+11:09:31 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+11:09:31 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+11:09:31 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+11:09:31 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+11:09:31 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+11:09:34 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+11:09:35 [TRACE] [GENERAL] MDI: Toolbar Click - FORMGEN
+11:09:36 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+11:09:37 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+11:09:37 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+11:09:37 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+11:09:43 [TRACE] [GENERAL] PROC_LISVIEW: Inicio numarchi=7
+11:09:43 [TRACE] [GENERAL] PROC_LISVIEW: PrepararListView, SQL=SELECT TOP 1000 ART_KEY, ART_CODCIA, LTRIM(RTRIM(ART_NOMBRE)) ART_NOMBRE, ART_ALTERNO,ART_SUBGRU, cia_actual.ARM_STOCK as ARM_STOCK, PreC.PRE_EQUIV,PreC.PRE_UNIDAD, PreU.PRE_PRE1,PreC.PRE_PRE1 PRE_PRE
+11:09:43 [TRACE] [GENERAL] PROC_LISVIEW: Fin items=111/111
+========================================
+OSBusiness - Inicio de Sesion: 13/08/2026 11:10:39
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+11:10:39 [INFO] [GENERAL] Splash: Inicio Form_Load
+11:10:39 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+11:10:39 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+11:10:39 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+11:10:39 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+11:10:39 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+11:10:39 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+11:10:39 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+11:10:39 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+11:10:39 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+11:10:39 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+11:10:39 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+11:10:39 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+11:10:41 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+11:10:43 [TRACE] [GENERAL] MDI: Toolbar Click - FORMGEN
+11:10:45 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+11:10:46 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+11:10:46 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+11:10:46 [TRACE] [GENERAL] PROC_TRANSA: Inicio numarchi=9
+11:10:51 [TRACE] [GENERAL] PROC_LISVIEW: Inicio numarchi=7
+11:10:51 [TRACE] [GENERAL] PROC_LISVIEW: PrepararListView, SQL=SELECT TOP 1000 ART_KEY, ART_CODCIA, LTRIM(RTRIM(ART_NOMBRE)) ART_NOMBRE, ART_ALTERNO,ART_SUBGRU, cia_actual.ARM_STOCK as ARM_STOCK, PreC.PRE_EQUIV,PreC.PRE_UNIDAD, PreU.PRE_PRE1,PreC.PRE_PRE1 PRE_PRE
+11:10:51 [TRACE] [GENERAL] PROC_LISVIEW: Fin items=111/111
+16:29:34 [TRACE] [GENERAL] MDI: Toolbar Click - CAL
+16:29:56 [TRACE] [GENERAL] MDI: Toolbar Click - tope
+16:30:15 [TRACE] [GENERAL] MDI: Toolbar Click - Salir
+========================================
+OSBusiness - Inicio de Sesion: 13/08/2026 16:30:20
+Usuario: Jose Luis
+PC: DESKTOP-QIL4IGM
+========================================
+16:30:20 [INFO] [GENERAL] Splash: Inicio Form_Load
+16:30:20 [INFO] [GENERAL] Splash: Antes de CONEXION_GEN
+16:30:21 [INFO] [GENERAL] Splash: Despues de CONEXION_GEN
+16:30:21 [INFO] [GENERAL] Splash: Antes de Load MDIForm1
+16:30:21 [INFO] [GENERAL] MDI: Inicio MDIForm_Load
+16:30:21 [INFO] [GENERAL] MDI: Antes de GEN.Requery
+16:30:21 [INFO] [GENERAL] MDI: Despues de GEN.Requery
+16:30:21 [INFO] [GENERAL] MDI: Ruta Reportes = Y:\ADMIN\NORDI\
+16:30:21 [INFO] [GENERAL] MDI: Antes de Splash.Hide
+16:30:21 [INFO] [GENERAL] MDI: Despues de Splash.Hide
+16:30:21 [INFO] [GENERAL] MDI: Antes de PASSFORM.Show
+16:30:21 [INFO] [GENERAL] PASSFORM: Inicio Form_Load
+16:30:21 [INFO] [GENERAL] PASSFORM: Inicio Form_Activate
+16:30:30 [INFO] [GENERAL] Splash: Despues de Load MDIForm1
+16:30:32 [TRACE] [GENERAL] MDI: Toolbar Click - tope
+16:30:34 [TRACE] [GENERAL] MDI: Toolbar Click - tope
+16:30:35 [TRACE] [GENERAL] MDI: Toolbar Click - tope
+16:30:35 [TRACE] [GENERAL] MDI: Toolbar Click - tope
+16:30:37 [TRACE] [GENERAL] MDI: Toolbar Click - CAL
+16:32:26 [TRACE] [GENERAL] MDI: Toolbar Click - Salir

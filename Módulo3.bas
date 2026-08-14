@@ -91,6 +91,13 @@ Public PUB_PEDSEC As Integer
 Public PUB_PEDFAC As Long
 Public PUB_IMPORTE As Currency
 Public PUB_IMPORTE_AMORT As Currency
+Public PUB_RESP_COBRO As Integer
+Public PUB_PAG_MEDIO As String * 1
+Public PUB_PAG_EFECTIVO As Currency
+Public PUB_PAG_QR As Currency
+Public PUB_PAG_TARJETA As Currency
+Public PUB_PAG_TOTAL As Currency
+Public PUB_PAG_VUELTO As Currency
 Public pub_numplan As Double
 Public pub_diasA As Long
 Public pub_dias As Integer
@@ -1608,7 +1615,20 @@ otras_bol:
         FORMGEN.Reportes.Destination = crptToPrinter
         REP_TRANSAC = 1
     End If
-    FORMGEN.Reportes.Formulas(0) = ""
+    If LK_CODTRA = 2401 And PUB_PAG_TOTAL > 0 Then
+        Select Case PUB_PAG_MEDIO
+          Case "E":
+            FORMGEN.Reportes.Formulas(0) = "EFECTIVO: S/ " & Format(PUB_PAG_EFECTIVO, "0.00") & "   VUELTO: S/ " & Format(PUB_PAG_VUELTO, "0.00")
+          Case "Q":
+            FORMGEN.Reportes.Formulas(0) = "PAGO QR (YAPE/PLIN): S/ " & Format(PUB_PAG_QR, "0.00")
+          Case "T":
+            FORMGEN.Reportes.Formulas(0) = "PAGO TARJETA: S/ " & Format(PUB_PAG_TARJETA, "0.00")
+          Case "M":
+            FORMGEN.Reportes.Formulas(0) = "EFECTIVO: S/ " & Format(PUB_PAG_EFECTIVO, "0.00") & "  QR: S/ " & Format(PUB_PAG_QR, "0.00") & "  TARJETA: S/ " & Format(PUB_PAG_TARJETA, "0.00") & "   VUELTO: S/ " & Format(PUB_PAG_VUELTO, "0.00")
+        End Select
+    Else
+        FORMGEN.Reportes.Formulas(0) = ""
+    End If
     FORMGEN.Reportes.Formulas(1) = ""
     FORMGEN.Reportes.Formulas(2) = ""
     FORMGEN.Reportes.Formulas(3) = ""
